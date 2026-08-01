@@ -8,6 +8,8 @@ import { loadOfficialChannels, type OfficialChannel, type OfficialSource } from 
 import { validateCandidate } from "../validation/validate-stream.js";
 import type { CountryCode, StreamCandidate, ValidationResult } from "../types.js";
 import yaml from "yaml";
+import { StreamlinkFastAdapter } from "./adapters/fast/streamlink-fast.js";
+import type { FastDiscoveryRecord } from "./adapters/fast/types.js";
 
 type DirectCompatibility =
   | "stable_direct"
@@ -61,6 +63,8 @@ const DIRECT_STATUS_FILE = path.join(OUTPUT_DIR, "direct-status.json");
 const DIRECT_STATUS_HTML_FILE = path.join(OUTPUT_DIR, "direct-status.html");
 const DIRECT_HISTORY_FILE = path.join(DATA_DIR, "direct-health-history.json");
 const DIRECT_REGISTRY_FILE = path.join(DATA_DIR, "direct-official-registry.yml");
+const SOURCE_ATTRIBUTION_FILE = path.join(OUTPUT_DIR, "source-attribution.json");
+const FAST_REPORT_FILE = path.join(DATA_DIR, "fast-discovery-report.json");
 
 type DirectRegion = "europe" | "americas" | "middle-east" | "asia" | "international";
 
@@ -79,8 +83,11 @@ export async function directDiscover(): Promise<DirectCandidate[]> {
   const channels = loadDirectChannels();
   const limit = pLimit(3);
   const candidates = (await Promise.all(channels.map((channel) => limit(() => discoverChannel(channel))))).flat();
+  const fastRecords = await discoverFastPlatforms();
   fs.writeFileSync(DIRECT_CANDIDATES_FILE, JSON.stringify(candidates.map(serializeCandidate), null, 2), "utf8");
+  fs.writeFileSync(FAST_REPORT_FILE, JSON.stringify({ generatedAt: new Date().toISOString(), records: fastRecords }, null, 2), "utf8");
   console.log(`Direct official candidates discovered: ${candidates.length}`);
+  console.log(`FAST platform records reviewed: ${fastRecords.length}`);
   return candidates;
 }
 
@@ -103,6 +110,7 @@ export async function directValidate(): Promise<DirectStatusEntry[]> {
 export async function directGenerate(): Promise<DirectStatusEntry[]> {
   const statuses = readStatuses();
   writeDirectPlaylists(statuses);
+  writeSourceAttribution(statuses);
   console.log(`Generated output/playlist-direct.m3u (${statuses.filter((entry) => entry.playable).length} channels)`);
   return statuses;
 }
@@ -123,6 +131,11 @@ export async function directAudit(): Promise<void> {
   const unvalidated = ids.filter((id) => !playableIds.has(id));
   if (unvalidated.length > 0) errors.push(`Playlist includes unvalidated channels: ${unvalidated.join(", ")}`);
   if (!countryOrderIsValid(ids)) errors.push("Country ordering is wrong");
+  if (fs.existsSync(SOURCE_ATTRIBUTION_FILE)) {
+    const attribution = JSON.parse(fs.readFileSync(SOURCE_ATTRIBUTION_FILE, "utf8")) as { entries?: Array<{ channelId?: string; officialOwner?: string; distributionPlatform?: string }> };
+    const missing = ids.filter((id) => !attribution.entries?.some((entry) => entry.channelId === id && (entry.officialOwner || entry.distributionPlatform)));
+    if (missing.length > 0) errors.push(`Missing attribution: ${missing.join(", ")}`);
+  }
   if (errors.length > 0) {
     for (const error of errors) console.error(error);
     throw new Error("Direct playlist audit failed");
@@ -131,6 +144,7 @@ export async function directAudit(): Promise<void> {
   console.log(`Gateway URLs: 0`);
   console.log(`Duplicate IDs: 0`);
   console.log(`Duplicate media URLs: 0`);
+  console.log(`Missing attribution: 0`);
   console.log(`Direct playlist entries: ${ids.length}`);
 }
 
@@ -337,6 +351,20 @@ function writeHistory(statuses: DirectStatusEntry[]): void {
   fs.writeFileSync(DIRECT_HISTORY_FILE, JSON.stringify(history, null, 2), "utf8");
 }
 
+async function discoverFastPlatforms(): Promise<FastDiscoveryRecord[]> {
+  const adapters = [new StreamlinkFastAdapter()];
+  return (await Promise.all(adapters.map((adapter) => adapter.discover().catch((err: Error) => [{
+    platform: adapter.platform,
+    market: "unknown",
+    officialPlatformPage: "",
+    sessionRequired: false,
+    regionRequired: false,
+    deviceRequired: false,
+    directCompatibility: "invalid" as const,
+    failureReason: err.message
+  }])))).flat();
+}
+
 function writeDirectPlaylists(statuses: DirectStatusEntry[]): void {
   const channels = loadDirectChannels();
   const candidateById = new Map(readCandidates().map((candidate) => [candidate.channel.id, candidate]));
@@ -385,6 +413,44 @@ function writeDeprecatedGatewayPlaylists(): void {
   ]) {
     fs.writeFileSync(path.join(OUTPUT_DIR, fileName), text, "utf8");
   }
+}
+
+function writeSourceAttribution(statuses: DirectStatusEntry[]): void {
+  const channels = new Map(loadDirectChannels().map((channel) => [channel.id, channel]));
+  const entries = statuses.filter((status) => status.playable).map((status) => {
+    const channel = channels.get(status.channelId);
+    return {
+      channelId: status.channelId,
+      name: status.channelName,
+      country: status.countryName ?? status.country,
+      officialOwner: channel?.officialOwner ?? status.officialOwner,
+      officialWebsite: channel?.officialWebsite,
+      officialLivePage: channel?.officialLivePage ?? status.officialPage,
+      distributionPlatform: status.sourceType?.includes("platform") ? status.sourceType : undefined,
+      sourceType: status.sourceType,
+      directStatus: status.directCompatibility,
+      lastValidated: status.secondCheckedAt,
+      mediaUrlHash: status.mediaUrlHash
+    };
+  });
+  const fastRecords = fs.existsSync(FAST_REPORT_FILE) ? JSON.parse(fs.readFileSync(FAST_REPORT_FILE, "utf8")) as { records?: FastDiscoveryRecord[] } : { records: [] };
+  fs.writeFileSync(SOURCE_ATTRIBUTION_FILE, JSON.stringify({
+    generatedAt: new Date().toISOString(),
+    entries,
+    fastPlatformsReviewed: fastRecords.records?.map((record) => ({
+      platform: record.platform,
+      market: record.market,
+      channelName: record.channelName,
+      channelOwner: record.channelOwner,
+      officialPlatformPage: record.officialPlatformPage,
+      sessionRequired: record.sessionRequired,
+      regionRequired: record.regionRequired,
+      deviceRequired: record.deviceRequired,
+      directCompatibility: record.directCompatibility,
+      failureReason: record.failureReason,
+      manifestCandidateHash: record.manifestCandidate ? hashUrl(record.manifestCandidate) : undefined
+    })) ?? []
+  }, null, 2), "utf8");
 }
 
 function readCandidates(): DirectCandidate[] {

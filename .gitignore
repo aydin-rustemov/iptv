@@ -41,3 +41,4 @@ output/*
 !output/playlist-direct-international.m3u
 !output/direct-status.json
 !output/direct-status.html
+!output/source-attribution.json

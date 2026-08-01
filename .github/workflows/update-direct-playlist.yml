@@ -51,7 +51,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add output/playlist-direct.m3u output/playlist-direct-az.m3u output/playlist-direct-tr.m3u output/playlist-direct-ru.m3u output/playlist-direct-europe.m3u output/playlist-direct-americas.m3u output/playlist-direct-middle-east.m3u output/playlist-direct-asia.m3u output/playlist-direct-international.m3u output/direct-status.json output/direct-status.html data/direct-health-history.json
+          git add output/playlist-direct.m3u output/playlist-direct-az.m3u output/playlist-direct-tr.m3u output/playlist-direct-ru.m3u output/playlist-direct-europe.m3u output/playlist-direct-americas.m3u output/playlist-direct-middle-east.m3u output/playlist-direct-asia.m3u output/playlist-direct-international.m3u output/direct-status.json output/direct-status.html output/source-attribution.json data/direct-health-history.json
           if git diff --cached --quiet; then
             echo "Playlist changed: no"
           else

@@ -23,6 +23,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.448Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "ictimai-tv": [
@@ -46,6 +52,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.874Z",
+      "playable": true,
+      "compatibility": "stable_direct",
+      "mediaUrlHash": "26ba87952d7540ab69058e831c177d05036a1751d40d20b1aaeadd76be9fe951"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.448Z",
       "playable": true,
       "compatibility": "stable_direct",
       "mediaUrlHash": "26ba87952d7540ab69058e831c177d05036a1751d40d20b1aaeadd76be9fe951"
@@ -75,6 +87,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.448Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "atv-az": [
@@ -98,6 +116,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.874Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.448Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -127,6 +151,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.448Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "arb24": [
@@ -150,6 +180,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.874Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.448Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -179,6 +215,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.448Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "real-tv": [
@@ -202,6 +244,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.874Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.448Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -231,6 +279,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.448Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "cbc": [
@@ -254,6 +308,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.874Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.448Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -283,6 +343,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.448Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "idman-tv": [
@@ -306,6 +372,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.448Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -335,6 +407,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.448Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "trt-1": [
@@ -358,6 +436,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.448Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -387,6 +471,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.448Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "kanal-d": [
@@ -410,6 +500,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": true,
+      "compatibility": "stable_direct",
+      "mediaUrlHash": "1860f68a3e99e5bb588563d9bab01a5882a218fdbfd59afe908b62f33d177007"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.448Z",
       "playable": true,
       "compatibility": "stable_direct",
       "mediaUrlHash": "1860f68a3e99e5bb588563d9bab01a5882a218fdbfd59afe908b62f33d177007"
@@ -439,6 +535,12 @@
       "playable": true,
       "compatibility": "stable_direct",
       "mediaUrlHash": "d877f096f1c00b00792a3035a84a119266aef786df64c8a122a5a0729c9554a2"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.448Z",
+      "playable": true,
+      "compatibility": "stable_direct",
+      "mediaUrlHash": "37fa57e2977ea2541175fe549838826d1b28436acada9f5dcb30b0cbe331cdfa"
     }
   ],
   "star-tv": [
@@ -462,6 +564,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.448Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -494,6 +602,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.448Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "tv8": [
@@ -520,6 +634,12 @@
       "playable": true,
       "compatibility": "stable_direct",
       "mediaUrlHash": "907aa8f3127b50a123521b7abedd3aafbd8f107ae9813b9c2110bd7c5535ebb0"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.448Z",
+      "playable": true,
+      "compatibility": "stable_direct",
+      "mediaUrlHash": "1fee6e8aa8ae56dd5af0d45b007512a4e51807261128a3666f0c31e7f4ed455f"
     }
   ],
   "kanal-7": [
@@ -543,6 +663,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.448Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -572,6 +698,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "beyaz-tv": [
@@ -595,6 +727,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -624,6 +762,12 @@
       "playable": true,
       "compatibility": "stable_direct",
       "mediaUrlHash": "75d377694347e5d6d3124c8cff133f98fc3d2aa37e6c17014299f6a9ba6ae26d"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": true,
+      "compatibility": "stable_direct",
+      "mediaUrlHash": "75d377694347e5d6d3124c8cff133f98fc3d2aa37e6c17014299f6a9ba6ae26d"
     }
   ],
   "tv8-5": [
@@ -647,6 +791,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -676,6 +826,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "show-max": [
@@ -699,6 +855,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -728,6 +890,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "tv4": [
@@ -751,6 +919,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -780,6 +954,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "cnn-turk": [
@@ -803,6 +983,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -832,6 +1018,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "a-haber": [
@@ -858,6 +1050,12 @@
       "playable": true,
       "compatibility": "stable_direct",
       "mediaUrlHash": "0f223c4c2581dfd0a57aa7c6732acb8e1e9bbfc84036f6d979df448c252797ed"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": true,
+      "compatibility": "stable_direct",
+      "mediaUrlHash": "84408ae480dd67fc2e0217376b7234402de285df3a95368eda0a08d507fde517"
     }
   ],
   "haberturk-tv": [
@@ -884,6 +1082,12 @@
       "playable": true,
       "compatibility": "stable_direct",
       "mediaUrlHash": "8d188ce03b73534ddd0508676390f33f9f27832956089eb43c45868e777b375c"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": true,
+      "compatibility": "stable_direct",
+      "mediaUrlHash": "174db950fe7e51a72a817132a8692108d2a1db2dbdc3a912998b156f993fc239"
     }
   ],
   "haber-global": [
@@ -907,6 +1111,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -936,6 +1146,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "halk-tv": [
@@ -959,6 +1175,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -988,6 +1210,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "tv100": [
@@ -1011,6 +1239,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -1040,6 +1274,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "ekoturk-tv": [
@@ -1063,6 +1303,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -1092,6 +1338,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "yirmi-dort-tv": [
@@ -1115,6 +1367,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -1144,6 +1402,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "trt-spor": [
@@ -1167,6 +1431,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -1196,6 +1466,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "a-spor": [
@@ -1219,6 +1495,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -1248,6 +1530,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "ht-spor": [
@@ -1271,6 +1559,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -1300,6 +1594,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "gs-tv": [
@@ -1323,6 +1623,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -1352,6 +1658,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "trt-belgesel": [
@@ -1375,6 +1687,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -1404,6 +1722,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "trt-turk": [
@@ -1427,6 +1751,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -1456,6 +1786,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "trt-world": [
@@ -1479,6 +1815,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -1508,6 +1850,12 @@
       "playable": false,
       "compatibility": "provider_required",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "provider_required",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "tlc-tr": [
@@ -1531,6 +1879,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "provider_required",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "provider_required",
       "failureCategory": "No direct media candidate discovered"
@@ -1560,6 +1914,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "trt-cocuk": [
@@ -1583,6 +1943,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -1612,6 +1978,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "minika-go": [
@@ -1635,6 +2007,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.875Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -1664,6 +2042,12 @@
       "playable": false,
       "compatibility": "provider_required",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "provider_required",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "dream-turk": [
@@ -1690,6 +2074,12 @@
       "playable": true,
       "compatibility": "stable_direct",
       "mediaUrlHash": "c3e98adedd2f3f54e83ee249c1c480ef3e332d1f7458c1ab54f8c8139b083d53"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": true,
+      "compatibility": "stable_direct",
+      "mediaUrlHash": "c577d3a492416ad382c5a178bbbd82371a56f58437ec209f6bf413789e153a69"
     }
   ],
   "kral-pop": [
@@ -1713,6 +2103,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -1742,6 +2138,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "number-1-turk": [
@@ -1768,6 +2170,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "powerturk-slow": [
@@ -1791,6 +2199,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -1824,6 +2238,13 @@
       "compatibility": "unavailable",
       "mediaUrlHash": "24253c7f261451892893306038dd1de9ce5b477bcdf89723019e241ecbb29430",
       "failureCategory": "segment_probe_failed"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "mediaUrlHash": "f2f101ca2653b0e1ce7da323c561d72333251686eb3c5a8b144f6b71abe1e885",
+      "failureCategory": "segment_probe_failed"
     }
   ],
   "rossiya-1": [
@@ -1847,6 +2268,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -1876,6 +2303,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "rossiya-k": [
@@ -1899,6 +2332,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -1928,6 +2367,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "pyatyy-kanal": [
@@ -1951,6 +2396,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -1980,6 +2431,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "ren-tv": [
@@ -2003,6 +2460,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -2032,6 +2495,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "tnt": [
@@ -2055,6 +2524,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -2084,6 +2559,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "otr": [
@@ -2107,6 +2588,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -2136,6 +2623,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "mir-24": [
@@ -2159,6 +2652,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -2188,6 +2687,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "moskva-24": [
@@ -2211,6 +2716,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -2240,6 +2751,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "pyatnica": [
@@ -2263,6 +2780,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -2292,6 +2815,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "domashniy": [
@@ -2315,6 +2844,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -2344,6 +2879,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "two-x-two": [
@@ -2367,6 +2908,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -2396,6 +2943,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "spas": [
@@ -2419,6 +2972,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -2448,6 +3007,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "yu": [
@@ -2471,6 +3036,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -2500,6 +3071,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "match-tv": [
@@ -2523,6 +3100,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -2552,6 +3135,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "izvestiya": [
@@ -2575,6 +3164,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -2604,6 +3199,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "belros": [
@@ -2627,6 +3228,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -2656,6 +3263,12 @@
       "playable": false,
       "compatibility": "provider_required",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "provider_required",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "moya-planeta": [
@@ -2679,6 +3292,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -2708,6 +3327,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "istoriya": [
@@ -2731,6 +3356,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "provider_required",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "provider_required",
       "failureCategory": "No direct media candidate discovered"
@@ -2760,6 +3391,12 @@
       "playable": false,
       "compatibility": "provider_required",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "provider_required",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "t24": [
@@ -2783,6 +3420,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -2812,6 +3455,12 @@
       "playable": false,
       "compatibility": "provider_required",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "provider_required",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "mult": [
@@ -2835,6 +3484,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "provider_required",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "provider_required",
       "failureCategory": "No direct media candidate discovered"
@@ -2864,6 +3519,12 @@
       "playable": false,
       "compatibility": "provider_required",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "provider_required",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "muz-tv": [
@@ -2887,6 +3548,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -2916,6 +3583,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "shanson-tv": [
@@ -2939,6 +3612,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -2968,6 +3647,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "sankt-peterburg": [
@@ -2991,6 +3676,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3020,6 +3711,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "moskva-doverie": [
@@ -3043,6 +3740,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3072,6 +3775,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "kuban-24": [
@@ -3095,6 +3804,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3124,6 +3839,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "volgograd-24": [
@@ -3147,6 +3868,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3176,6 +3903,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "bashkortostan-24": [
@@ -3199,6 +3932,12 @@
     },
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3228,6 +3967,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "nat-geo-wild": [
@@ -3254,11 +3999,23 @@
       "playable": false,
       "compatibility": "provider_required",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.450Z",
+      "playable": false,
+      "compatibility": "provider_required",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "dw-english": [
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3270,11 +4027,23 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "ard-das-erste": [
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3286,11 +4055,23 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "arte-fr": [
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3302,11 +4083,23 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "franceinfo": [
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3318,11 +4111,23 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "rai-1": [
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3335,11 +4140,24 @@
       "compatibility": "unavailable",
       "mediaUrlHash": "d70fd23f9d39427bffca6c4f4cba1741f53f6b57e82fc9cf20bc243a3b73a66a",
       "failureCategory": "segment_probe_failed"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "mediaUrlHash": "d70fd23f9d39427bffca6c4f4cba1741f53f6b57e82fc9cf20bc243a3b73a66a",
+      "failureCategory": "segment_probe_failed"
     }
   ],
   "rtve-la-1": [
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3351,11 +4169,23 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "rtp-1": [
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3367,11 +4197,23 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "bbc-one": [
     {
       "checkedAt": "2026-08-01T17:20:59.876Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3383,11 +4225,23 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "sky-news": [
     {
       "checkedAt": "2026-08-01T17:20:59.877Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3399,11 +4253,23 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "svt-1": [
     {
       "checkedAt": "2026-08-01T17:20:59.877Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3415,11 +4281,23 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "nrk-1": [
     {
       "checkedAt": "2026-08-01T17:20:59.877Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3431,11 +4309,23 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "yle-tv1": [
     {
       "checkedAt": "2026-08-01T17:20:59.877Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3447,11 +4337,23 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "lrt-tv": [
     {
       "checkedAt": "2026-08-01T17:20:59.877Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3463,11 +4365,23 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "tvp-info": [
     {
       "checkedAt": "2026-08-01T17:20:59.877Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3480,6 +4394,13 @@
       "compatibility": "unavailable",
       "mediaUrlHash": "03091e141e1dadd45120496c4af13fb2bd12044adc2604d53538baedbae7614e",
       "failureCategory": "invalid_hls_manifest"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.449Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "mediaUrlHash": "6ee9014d69df565c47b626b1b7669c545e3470f12a6bda1cb8f907b19fb3b62d",
+      "failureCategory": "invalid_hls_manifest"
     }
   ],
   "rtvs-jednotka": [
@@ -3488,11 +4409,23 @@
       "playable": true,
       "compatibility": "stable_direct",
       "mediaUrlHash": "c68831c6fb369b9bbc39e9dc988f9b7be93f13288965e7d835ffebfa08795f08"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.450Z",
+      "playable": true,
+      "compatibility": "stable_direct",
+      "mediaUrlHash": "36dcf87b0682df176a38d76e10e847f67125454c62ebcf84388a55397ade5569"
     }
   ],
   "m1-hungary": [
     {
       "checkedAt": "2026-08-01T17:20:59.877Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.450Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3504,6 +4437,12 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.450Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "tv3-cat": [
@@ -3512,11 +4451,23 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.450Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "aloula": [
     {
       "checkedAt": "2026-08-01T17:20:59.877Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.450Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3529,6 +4480,13 @@
       "compatibility": "unavailable",
       "mediaUrlHash": "fc82e81eeb3b3836aa4d2d6ae6304ad457362979a9a64b207d16127d7cb79a56",
       "failureCategory": "forbidden_operational_url"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.450Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "mediaUrlHash": "bf7558359ce67388442b1e1da97f3366b47414cc1404dc08bdc8833f81a36cdf",
+      "failureCategory": "forbidden_operational_url"
     }
   ],
   "alarabiya-youtube": [
@@ -3538,11 +4496,24 @@
       "compatibility": "unavailable",
       "mediaUrlHash": "af0cb5237eff10adba81b9ac41b9119cab7525459798f7d392cf1c3e6d0d88d5",
       "failureCategory": "forbidden_operational_url"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.450Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "mediaUrlHash": "c59359b5521e97eb35cf4d513eb51aed5cf1b47d426636aad22c8577dea8d118",
+      "failureCategory": "forbidden_operational_url"
     }
   ],
   "zeenews": [
     {
       "checkedAt": "2026-08-01T17:20:59.877Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.450Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3555,6 +4526,13 @@
       "compatibility": "unavailable",
       "mediaUrlHash": "4371d248d090c2444faf8ae2f7477f52a9571b25761434ad11c4a18cab20fe55",
       "failureCategory": "forbidden_operational_url"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.450Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "mediaUrlHash": "8ee775a1ad9c6f1394d7e0a13ae1a3efc6f85066d8566acc910073057ab6f20c",
+      "failureCategory": "forbidden_operational_url"
     }
   ],
   "arirang-tv": [
@@ -3563,11 +4541,23 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.450Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "nhk-world-japan": [
     {
       "checkedAt": "2026-08-01T17:20:59.877Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.450Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3580,11 +4570,24 @@
       "compatibility": "unavailable",
       "mediaUrlHash": "6ac23f25c8fe8ee5615ac6bc12d3ae7d3110fc8c9230857ff4c3baf0a926cceb",
       "failureCategory": "forbidden_operational_url"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.450Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "mediaUrlHash": "e8ca0520833a448a810b722dd2edae62ced043a1b4e137ce18c2ea9e099897d7",
+      "failureCategory": "forbidden_operational_url"
     }
   ],
   "bloomberg-tv": [
     {
       "checkedAt": "2026-08-01T17:20:59.877Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.450Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3596,11 +4599,23 @@
       "playable": true,
       "compatibility": "stable_direct",
       "mediaUrlHash": "cfd57576b6aded681b1958eb6785631f7d9836bd7a3a66ef2c2c2c80c3340e05"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.450Z",
+      "playable": true,
+      "compatibility": "stable_direct",
+      "mediaUrlHash": "3f7427273b92349e3a1e64cabb018b91f1b407269c5d372802a5ffffadcd1600"
     }
   ],
   "nasa-plus": [
     {
       "checkedAt": "2026-08-01T17:20:59.877Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.450Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3612,11 +4627,23 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.450Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "euronews-en": [
     {
       "checkedAt": "2026-08-01T17:20:59.877Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.450Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
@@ -3628,11 +4655,23 @@
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.450Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
     }
   ],
   "reuters-tv": [
     {
       "checkedAt": "2026-08-01T17:20:59.877Z",
+      "playable": false,
+      "compatibility": "unavailable",
+      "failureCategory": "No direct media candidate discovered"
+    },
+    {
+      "checkedAt": "2026-08-01T17:36:33.450Z",
       "playable": false,
       "compatibility": "unavailable",
       "failureCategory": "No direct media candidate discovered"
