@@ -1,26 +1,21 @@
-# IPTV Local Resolver Gateway
+# IPTV Playlist
 
-This project publishes a direct official-source IPTV playlist. The TV connects from the GitHub-hosted M3U directly to broadcaster media URLs; no local Node.js gateway is required for normal viewing.
+This project downloads publicly available IPTV stream candidates, validates actual media playback and publishes up to 300 working channels.
 
-## Start
+No local server is required. The user's computer may be turned off. The playlist is updated automatically every three hours.
+
+## TV Link
+
+```text
+https://raw.githubusercontent.com/aydin-rustemov/iptv/main/output/playlist.m3u
+```
+
+Streams originate from public upstream indexes and remain subject to availability and rights held by their respective owners.
+
+## Local Update
 
 ```powershell
 npm install
-npm run direct:update
+npm run update
+npm run audit
 ```
-
-## Operational playlist
-
-```text
-output/playlist-direct.m3u
-```
-
-## GitHub playlist
-
-```text
-https://raw.githubusercontent.com/aydin-rustemov/iptv/main/output/playlist-direct.m3u
-```
-
-Use `output/playlist-direct.m3u`. No local server is required.
-
-Legacy local-gateway playlists are archived for comparison only and are not operational TV playlists.

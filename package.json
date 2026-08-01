@@ -1,49 +1,24 @@
 {
-  "name": "official-iptv-playlist",
+  "name": "validated-iptv-playlist",
   "version": "1.0.0",
   "private": true,
-  "description": "Official-source IPTV playlist automation",
+  "description": "Small auto-updated IPTV playlist downloader and validator",
   "type": "module",
   "engines": {
-    "node": ">=24.0.0"
+    "node": ">=22.0.0"
   },
   "scripts": {
-    "discover": "tsx src/cli.ts discover",
-    "check": "tsx src/cli.ts check",
-    "generate": "tsx src/cli.ts generate",
-    "scan": "tsx src/cli.ts scan",
-    "serve": "tsx src/cli.ts serve",
-    "debug:channel": "tsx src/cli.ts debug:channel",
-    "shootout": "tsx src/cli.ts shootout",
-    "arb:check": "tsx src/cli.ts arb-check",
-    "resolver:install": "tsx src/cli.ts resolver-install",
-    "resolver:check": "tsx src/cli.ts resolver-check",
-    "resolver:scan": "tsx src/cli.ts resolver-scan",
-    "regression:working": "tsx src/cli.ts regression-working",
-    "playlist": "tsx src/cli.ts playlist",
-    "direct:discover": "tsx src/cli.ts direct:discover",
-    "direct:validate": "tsx src/cli.ts direct:validate",
-    "direct:generate": "tsx src/cli.ts direct:generate",
-    "direct:update": "tsx src/cli.ts direct:update",
-    "direct:audit": "tsx src/cli.ts direct:audit",
+    "build": "tsc",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
-    "verify": "npm run typecheck && npm run test"
+    "update": "tsx src/index.ts",
+    "audit": "tsx src/audit.ts"
   },
   "dependencies": {
-    "cheerio": "^1.2.0",
-    "execa": "^10.0.1",
     "ffprobe-static": "^3.1.0",
-    "m3u8-parser": "^7.2.0",
-    "p-limit": "^7.3.1",
-    "playwright": "^1.62.1",
-    "tsx": "^4.23.1",
-    "yaml": "2.7.1",
-    "zod": "^4.4.3"
+    "tsx": "^4.23.1"
   },
   "devDependencies": {
     "@types/node": "22.14.1",
-    "typescript": "5.8.3",
-    "vitest": "3.1.1"
+    "typescript": "5.8.3"
   }
 }
