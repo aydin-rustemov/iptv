@@ -1,0 +1,145 @@
+channels:
+  - id: aztv
+    name: AzTV
+    country: AZ
+    aliases: [AzTV, Az TV]
+    sources:
+      - group: VoloTV
+        site: VoloTV
+        pageUrl: https://tv.canlitvvolo.com/az-tv-izle/
+      - group: Official
+        site: Official AZ
+        pageUrl: https://aztv.az/az/live/
+      - group: Fallback
+        site: Yoda/Public IPTV
+        pageUrl: yoda-public-iptv
+  - id: arb
+    name: ARB
+    country: AZ
+    aliases: [ARB, ARB TV]
+    sources:
+      - group: VoloTV
+        site: VoloTV
+        pageUrl: https://tv.canlitvvolo.com/arb-tv-az-izle/
+      - group: Official
+        site: Official AZ
+        pageUrl: https://arbtv.az/az/pages/live
+      - group: Fallback
+        site: Yoda/Public IPTV
+        pageUrl: yoda-public-iptv
+  - id: xezer-tv
+    name: Xəzər TV
+    country: AZ
+    aliases: [Xəzər TV, Xezer TV, Xazar TV]
+    sources:
+      - group: VoloTV
+        site: VoloTV
+        pageUrl: https://tv.canlitvvolo.com/xezer-tv-canli-izle/
+      - group: Official
+        site: Official AZ
+        pageUrl: https://xezerxeber.az/az/live
+      - group: Fallback
+        site: Yoda/Public IPTV
+        pageUrl: yoda-public-iptv
+  - id: trt-1
+    name: TRT 1
+    country: TR
+    aliases: [TRT 1, TRT1]
+    sources:
+      - group: izle.cc
+        site: izle.cc
+        pageUrl: https://www.izle.cc/trt1/
+      - group: VoloTV
+        site: VoloTV
+        pageUrl: https://tv.canlitvvolo.com/trt-1-hd-canli-izle/
+      - group: Official
+        site: Official TR
+        pageUrl: https://www.trt1.com.tr/canli-izle
+  - id: kanal-d
+    name: Kanal D
+    country: TR
+    aliases: [Kanal D, KanalD]
+    sources:
+      - group: izle.cc
+        site: izle.cc
+        pageUrl: https://www.izle.cc/kanal-d/
+      - group: VoloTV
+        site: VoloTV
+        pageUrl: https://tv.canlitvvolo.com/kanal-d-izleme/
+      - group: Official
+        site: Official TR
+        pageUrl: https://www.kanald.com.tr/canli-yayin
+  - id: show-tv
+    name: Show TV
+    country: TR
+    aliases: [Show TV, Show Tv]
+    sources:
+      - group: izle.cc
+        site: izle.cc
+        pageUrl: https://www.izle.cc/show-tv/
+      - group: VoloTV
+        site: VoloTV
+        pageUrl: discover:show-tv
+      - group: Official
+        site: Official TR
+        pageUrl: https://www.showtv.com.tr/canli-yayin
+  - id: ntv-ru
+    name: НТВ
+    country: RU
+    aliases: [НТВ, NTV]
+    sources:
+      - group: Smotrim.ru
+        site: Smotrim.ru
+        pageUrl: https://smotrim.ru/live
+      - group: NTV.ru
+        site: NTV.ru
+        pageUrl: https://www.ntv.ru/air/
+      - group: Third-party
+        site: federal.tv
+        pageUrl: https://federal.tv/
+      - group: Third-party
+        site: rustv.life
+        pageUrl: https://rustv.life/
+      - group: Third-party
+        site: smotrim.org
+        pageUrl: https://smotrim.org/
+  - id: rossiya-24
+    name: Россия 24
+    country: RU
+    aliases: [Россия 24, Rossiya 24]
+    sources:
+      - group: Smotrim.ru
+        site: Smotrim.ru
+        pageUrl: https://smotrim.ru/live
+      - group: NTV.ru
+        site: NTV.ru
+        pageUrl: https://www.ntv.ru/air/russia24/
+      - group: Third-party
+        site: federal.tv
+        pageUrl: https://federal.tv/
+      - group: Third-party
+        site: rustv.life
+        pageUrl: https://rustv.life/
+      - group: Third-party
+        site: smotrim.org
+        pageUrl: https://smotrim.org/
+  - id: pyatyy-kanal
+    name: Пятый канал
+    country: RU
+    aliases: [Пятый канал, 5 канал, 5TV]
+    sources:
+      - group: Smotrim.ru
+        site: Smotrim.ru
+        pageUrl: https://smotrim.ru/live
+      - group: NTV.ru
+        site: NTV.ru
+        pageUrl: https://www.ntv.ru/air/5tv/
+      - group: Third-party
+        site: federal.tv
+        pageUrl: https://federal.tv/
+      - group: Third-party
+        site: rustv.life
+        pageUrl: https://rustv.life/
+      - group: Third-party
+        site: smotrim.org
+        pageUrl: https://smotrim.org/

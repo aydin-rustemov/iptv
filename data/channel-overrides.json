@@ -1,0 +1,8 @@
+{
+  "overrides": [
+    {
+      "id": "bad-stream-channel",
+      "enabled": false
+    }
+  ]
+}

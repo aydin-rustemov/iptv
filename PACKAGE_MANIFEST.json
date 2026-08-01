@@ -1,0 +1,28 @@
+{
+  "package": "iptv_project_documentation_pack",
+  "version": "1.0.0",
+  "createdFor": "official-source IPTV playlist automation",
+  "documents": [
+    "00_MASTER_IMPLEMENTATION_PROMPT.md",
+    "START_HERE.md",
+    "docs/00_DECISIONS.md",
+    "docs/01_PRODUCT_REQUIREMENTS.md",
+    "docs/02_ARCHITECTURE.md",
+    "docs/03_OFFICIAL_SOURCE_POLICY.md",
+    "docs/04_CHANNEL_REGISTRY_SPEC.md",
+    "docs/05_SOURCE_ADAPTERS.md",
+    "docs/06_STREAM_VALIDATION.md",
+    "docs/07_PLAYLIST_AND_REPORTS.md",
+    "docs/08_SECURITY.md",
+    "docs/09_GITHUB_AUTOMATION.md",
+    "docs/10_TESTING.md",
+    "docs/11_IMPLEMENTATION_ROADMAP.md",
+    "docs/12_AGENT_RULES.md",
+    "docs/13_ACCEPTANCE_CHECKLIST.md",
+    "docs/14_CHANNEL_RESEARCH_BACKLOG.md",
+    "docs/15_MANUAL_GITHUB_SETUP.md",
+    "docs/16_OPERATOR_GUIDE.md",
+    "docs/17_EXTERNAL_REFERENCES.md"
+  ],
+  "instructions": "Extract into an empty IPTV workspace and give 00_MASTER_IMPLEMENTATION_PROMPT.md to a new Roo Code agent."
+}

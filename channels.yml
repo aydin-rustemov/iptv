@@ -1,0 +1,470 @@
+channels:
+  - id: aztv
+    name: AzTV
+    country: AZ
+    category: general
+    officialPage: https://aztv.az/
+    aliases: [AzTV, Az TV, Azərbaycan Televiziyası, Az TV Canlı izle, Az TV Canlı izle | Canlitv.com]
+    enabled: true
+  - id: ictimai-tv
+    name: İctimai TV
+    country: AZ
+    category: general
+    officialPage: https://itv.az/
+    aliases: [İctimai TV, Ictimai TV, ITV, İctimai Televiziya, İctimai Tv Canlı izle, Ictimai Tv Canlı izle]
+    enabled: true
+  - id: xezer-tv
+    name: Xəzər TV
+    country: AZ
+    category: general
+    officialPage: https://xezertv.az/
+    aliases: [Xəzər TV, Xezer TV, Xezer Tv, Xazar TV, Hazar TV, Хазар ТВ]
+    enabled: true
+  - id: atv-az
+    name: ATV Azərbaycan
+    country: AZ
+    category: general
+    officialPage: https://atv.az/
+    aliases: [ATV Azərbaycan, ATV Azerbaijan, ATV Az, Atv Azad TV, Atv Azad TV Canlı izle, Azad Azərbaycan, Azad Azerbaijan]
+    enabled: true
+  - id: arb
+    name: ARB
+    country: AZ
+    category: general
+    officialPage: https://arbtv.az/
+    aliases: [ARB, ARB TV, ARB TV Canlı izle, ARB Media Group]
+    enabled: true
+  - id: arb24
+    name: ARB24
+    country: AZ
+    category: news
+    officialPage: https://arb24.az/
+    aliases: [ARB24, ARB 24, ARB 24 TV, ARB 24 TV Canlı izle]
+    enabled: true
+  - id: space-tv
+    name: Space TV
+    country: AZ
+    category: general
+    officialPage: https://spacetv.az/
+    aliases: [Space TV, Space, Space Azerbaijan, Space TV Canlı izle]
+    enabled: true
+  - id: real-tv
+    name: Real TV
+    country: AZ
+    category: news
+    officialPage: https://realtv.az/
+    aliases: [Real TV, Real Tv, Real TV Canlı izle, Real Analitik İnformasiya Mərkəzi]
+    enabled: true
+  - id: baku-tv
+    name: Baku TV
+    country: AZ
+    category: news
+    officialPage: https://baku.tv/
+    aliases: [Baku TV, BakuTV, Baku.TV, Bakü TV, Bakü TV Canlı izle]
+    enabled: true
+  - id: cbc
+    name: CBC
+    country: AZ
+    category: general
+    officialPage: http://cbctv.az/
+    aliases: [CBC, CBC TV, CBC Tv, CBC Tv Canlı izle, CBC Azerbaijan]
+    enabled: true
+  - id: cbc-sport
+    name: CBC Sport
+    country: AZ
+    category: sports
+    officialPage: https://cbcsport.az/
+    aliases: [CBC Sport, CBC Sport HD, CBCSport, CBC Sport Canlı izle]
+    enabled: true
+  - id: idman-tv
+    name: İdman TV
+    country: AZ
+    category: sports
+    officialPage: https://idmantv.az/
+    aliases: [İdman TV, Idman TV, İdman Tv, Idman Tv, İdman Azerbaijan, İdman Azərbaycan]
+    enabled: true
+  - id: medeniyyet-tv
+    name: Mədəniyyət TV
+    country: AZ
+    category: culture
+    officialPage: https://medeniyyettv.az/
+    aliases: [Mədəniyyət TV, Medeniyyet TV, Medeniyet Tv, Medeniyyet, Mədəniyyət]
+    enabled: true
+  - id: mtv-az
+    name: MTV Azərbaycan
+    country: AZ
+    category: music
+    officialPage: https://mtvaz.tv/
+    aliases: [MTV Azərbaycan, MTV Azerbaijan, MTV Az]
+    enabled: true
+  - id: dunya-tv
+    name: Dünya TV
+    country: AZ
+    category: general
+    officialPage: http://dunyatv.az/
+    aliases: [Dünya TV, Dunya TV, Dünya TV Canlı izle, Dunya]
+    enabled: true
+  - id: kanal-s
+    name: Kanal S
+    country: AZ
+    category: general
+    officialPage: http://kanal-s.az/
+    aliases: [Kanal S, Kanal-S, Kanal S Az, Kanal S Azərbaycan, Kanal S Şəki]
+    enabled: true
+  - id: naxcivan-tv
+    name: Naxçıvan TV
+    country: AZ
+    category: general
+    officialPage: http://naxcivantv.az/
+    aliases: [Naxçıvan TV, Naxcivan TV, NTV Naxcivan]
+    enabled: true
+  - id: gunaz-tv
+    name: Günaz TV
+    country: AZ
+    category: general
+    aliases: [Günaz TV, Gunaz TV, Günaz Tv Canlı izle]
+    enabled: true
+
+  - id: trt-1
+    name: TRT 1
+    country: TR
+    category: general
+    aliases: [TRT 1, TRT1, TRT 1 Canlı izle]
+    enabled: true
+  - id: show-tv
+    name: Show TV
+    country: TR
+    category: general
+    aliases: [Show TV, Show Tv, Show TV Canlı izle]
+    enabled: true
+  - id: star-tv
+    name: Star TV
+    country: TR
+    category: general
+    aliases: [Star TV, Star Tv, Star TV Canlı izle]
+    enabled: true
+  - id: atv-tr
+    name: ATV
+    country: TR
+    category: general
+    aliases: [ATV, ATV Türkiye, ATV Canlı izle]
+    enabled: true
+  - id: kanal-d
+    name: Kanal D
+    country: TR
+    category: general
+    aliases: [Kanal D, KanalD, Kanal D Canlı izle, Kanal D Canlı izle | Canlitv.com]
+    enabled: true
+  - id: now-tv
+    name: NOW TV
+    country: TR
+    category: general
+    aliases: [NOW TV, Now TV, NOW, Fox TV, FOX, NOW TV Canlı izle]
+    enabled: true
+  - id: tv8
+    name: TV8
+    country: TR
+    category: general
+    aliases: [TV8, TV 8, TV8 Canlı izle]
+    enabled: true
+  - id: kanal-7
+    name: Kanal 7
+    country: TR
+    category: general
+    aliases: [Kanal 7, Kanal7, Kanal 7 Canlı izle]
+    enabled: true
+  - id: tv360
+    name: 360
+    country: TR
+    category: general
+    aliases: [360, 360 TV, 360 Canlı izle]
+    enabled: true
+  - id: beyaz-tv
+    name: Beyaz TV
+    country: TR
+    category: general
+    aliases: [Beyaz TV, Beyaz Tv, Beyaz TV Canlı izle]
+    enabled: true
+  - id: tv8-5
+    name: TV8.5
+    country: TR
+    category: general
+    aliases: [TV8.5, TV 8.5, TV8,5]
+    enabled: true
+  - id: tv4
+    name: TV4
+    country: TR
+    category: general
+    aliases: [TV4, TV 4]
+    enabled: true
+  - id: show-max
+    name: Show Max
+    country: TR
+    category: general
+    aliases: [Show Max, ShowMax]
+    enabled: true
+  - id: tv2
+    name: TV2
+    country: TR
+    category: general
+    aliases: [TV2, TV 2]
+    enabled: true
+  - id: cnbc-e
+    name: CNBC-e
+    country: TR
+    category: general
+    aliases: [CNBC-e, CNBC e, CNBC-e Canlı izle]
+    enabled: true
+  - id: trt-haber
+    name: TRT Haber
+    country: TR
+    category: news
+    aliases: [TRT Haber, TRTHaber, TRT Haber Canlı izle]
+    enabled: true
+  - id: cnn-turk
+    name: CNN Türk
+    country: TR
+    category: news
+    aliases: [CNN Türk, CNN Turk, CNN TÜRK Canlı izle]
+    enabled: true
+  - id: ntv
+    name: NTV
+    country: TR
+    category: news
+    aliases: [NTV, NTV Canlı izle]
+    enabled: true
+  - id: a-haber
+    name: A Haber
+    country: TR
+    category: news
+    aliases: [A Haber, AHaber, A Haber Canlı izle]
+    enabled: true
+  - id: haberturk-tv
+    name: Habertürk TV
+    country: TR
+    category: news
+    aliases: [Habertürk TV, Haberturk TV, Habertürk, Haberturk]
+    enabled: true
+  - id: halk-tv
+    name: Halk TV
+    country: TR
+    category: news
+    aliases: [Halk TV, Halk Tv]
+    enabled: true
+  - id: sozcu-tv
+    name: Sözcü TV
+    country: TR
+    category: news
+    aliases: [Sözcü TV, Sozcu TV, Sözcü]
+    enabled: true
+  - id: haber-global
+    name: Haber Global
+    country: TR
+    category: news
+    aliases: [Haber Global]
+    enabled: true
+  - id: tv100
+    name: TV100
+    country: TR
+    category: news
+    aliases: [TV100, TV 100]
+    enabled: true
+  - id: tgrt-haber
+    name: TGRT Haber
+    country: TR
+    category: news
+    aliases: [TGRT Haber]
+    enabled: true
+  - id: bloomberg-ht
+    name: Bloomberg HT
+    country: TR
+    category: news
+    aliases: [Bloomberg HT]
+    enabled: true
+  - id: ekoturk-tv
+    name: Ekotürk TV
+    country: TR
+    category: news
+    aliases: [Ekotürk TV, Ekoturk TV]
+    enabled: true
+  - id: tvnet
+    name: TVNET
+    country: TR
+    category: news
+    aliases: [TVNET, TV Net]
+    enabled: true
+  - id: kanal-24
+    name: 24 TV
+    country: TR
+    category: news
+    aliases: [24 TV, 24, Kanal 24]
+    enabled: true
+  - id: a-news
+    name: A News
+    country: TR
+    category: news
+    aliases: [A News, ANews]
+    enabled: true
+  - id: trt-spor
+    name: TRT Spor
+    country: TR
+    category: sports
+    aliases: [TRT Spor]
+    enabled: true
+  - id: trt-spor-yildiz
+    name: TRT Spor Yıldız
+    country: TR
+    category: sports
+    aliases: [TRT Spor Yıldız, TRT Spor Yildiz]
+    enabled: true
+  - id: a-spor
+    name: A Spor
+    country: TR
+    category: sports
+    aliases: [A Spor, ASpor]
+    enabled: true
+  - id: bein-sports-haber
+    name: beIN Sports Haber
+    country: TR
+    category: sports
+    aliases: [beIN Sports Haber, Bein Sports Haber]
+    enabled: true
+  - id: ht-spor
+    name: HT Spor
+    country: TR
+    category: sports
+    aliases: [HT Spor]
+    enabled: true
+  - id: fb-tv
+    name: FB TV
+    country: TR
+    category: sports
+    aliases: [FB TV, Fenerbahçe TV, Fenerbahce TV]
+    enabled: true
+  - id: gs-tv
+    name: GS TV
+    country: TR
+    category: sports
+    aliases: [GS TV, Galatasaray TV]
+    enabled: true
+  - id: tjk-tv
+    name: TJK TV
+    country: TR
+    category: sports
+    aliases: [TJK TV]
+    enabled: true
+  - id: trt-belgesel
+    name: TRT Belgesel
+    country: TR
+    category: culture
+    aliases: [TRT Belgesel]
+    enabled: true
+  - id: dmax
+    name: DMAX
+    country: TR
+    category: culture
+    aliases: [DMAX, DMAX Türkiye]
+    enabled: true
+  - id: tlc
+    name: TLC
+    country: TR
+    category: culture
+    aliases: [TLC, TLC Türkiye]
+    enabled: true
+  - id: trt2
+    name: TRT 2
+    country: TR
+    category: culture
+    aliases: [TRT 2, TRT2]
+    enabled: true
+  - id: trt-turk
+    name: TRT Türk
+    country: TR
+    category: culture
+    aliases: [TRT Türk, TRT Turk]
+    enabled: true
+  - id: trt-world
+    name: TRT World
+    country: TR
+    category: news
+    aliases: [TRT World]
+    enabled: true
+  - id: trt-avaz
+    name: TRT Avaz
+    country: TR
+    category: culture
+    aliases: [TRT Avaz]
+    enabled: true
+  - id: trt-muzik
+    name: TRT Müzik
+    country: TR
+    category: music
+    aliases: [TRT Müzik, TRT Muzik]
+    enabled: true
+  - id: trt-cocuk
+    name: TRT Çocuk
+    country: TR
+    category: children
+    aliases: [TRT Çocuk, TRT Cocuk]
+    enabled: true
+  - id: minika-cocuk
+    name: Minika Çocuk
+    country: TR
+    category: children
+    aliases: [Minika Çocuk, Minika Cocuk]
+    enabled: true
+  - id: minika-go
+    name: Minika GO
+    country: TR
+    category: children
+    aliases: [Minika GO, Minika Go]
+    enabled: true
+  - id: cartoonito
+    name: Cartoonito
+    country: TR
+    category: children
+    aliases: [Cartoonito]
+    enabled: true
+  - id: power-turk
+    name: Power Türk
+    country: TR
+    category: music
+    aliases: [Power Türk, Power Turk, PowerTürk]
+    enabled: true
+  - id: power-turk-slow
+    name: Power Türk Slow
+    country: TR
+    category: music
+    aliases: [Power Türk Slow, Power Turk Slow]
+    enabled: true
+  - id: number-1-turk
+    name: Number 1 Türk
+    country: TR
+    category: music
+    aliases: [Number 1 Türk, Number 1 Turk]
+    enabled: true
+  - id: dream-turk
+    name: Dream Türk
+    country: TR
+    category: music
+    aliases: [Dream Türk, Dream Turk]
+    enabled: true
+  - id: kral-pop
+    name: Kral Pop
+    country: TR
+    category: music
+    aliases: [Kral Pop]
+    enabled: true
+
+  - id: rtr-planeta
+    name: RTR Planeta
+    country: RU
+    category: general
+    aliases: [RTR Planeta, РТР Планета]
+    enabled: true
+  - id: mir24
+    name: MIR 24
+    country: RU
+    category: news
+    aliases: [MIR 24, МИР 24, Мир 24]
+    enabled: true

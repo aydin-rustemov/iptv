@@ -1,0 +1,21 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="ictimai-tv" group-title="Azərbaycan",İctimai TV
+http://192.168.1.67:8787/live/ictimai-tv
+#EXTINF:-1 tvg-id="perviy-kanal" group-title="Россия",Первый канал
+http://192.168.1.67:8787/live/perviy-kanal
+#EXTINF:-1 tvg-id="kanal-d" group-title="Türkiye",Kanal D
+http://192.168.1.67:8787/live/kanal-d
+#EXTINF:-1 tvg-id="show-tv" group-title="Türkiye",Show TV
+http://192.168.1.67:8787/live/show-tv
+#EXTINF:-1 tvg-id="now-tv" group-title="Türkiye",NOW TV
+http://192.168.1.67:8787/live/now-tv
+#EXTINF:-1 tvg-id="tv8" group-title="Türkiye",TV8
+http://192.168.1.67:8787/live/tv8
+#EXTINF:-1 tvg-id="teve2" group-title="Türkiye",teve2
+http://192.168.1.67:8787/live/teve2
+#EXTINF:-1 tvg-id="a-haber" group-title="Türkiye",A Haber
+http://192.168.1.67:8787/live/a-haber
+#EXTINF:-1 tvg-id="haberturk-tv" group-title="Türkiye",Habertürk TV
+http://192.168.1.67:8787/live/haberturk-tv
+#EXTINF:-1 tvg-id="dream-turk" group-title="Türkiye",Dream Türk
+http://192.168.1.67:8787/live/dream-turk
