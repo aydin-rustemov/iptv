@@ -12,7 +12,7 @@ npm run serve
 ## Local playlist
 
 ```text
-http://192.168.1.67:8787/playlist-working.m3u
+http://192.168.1.65:8787/playlist-working.m3u
 ```
 
 ## GitHub playlist
@@ -21,6 +21,6 @@ http://192.168.1.67:8787/playlist-working.m3u
 https://raw.githubusercontent.com/aydin-rustemov/iptv/main/output/playlist-working.m3u
 ```
 
-The computer running the gateway must remain powered on, `npm run serve` must remain running, and the TV must be able to access `192.168.1.67` on the local network.
+The computer running the gateway must remain powered on, `npm run serve` must remain running, and the TV must be able to access `192.168.1.65` on the local network.
 
 GitHub hosts only the M3U playlist. Actual channel media is delivered by the local gateway.

@@ -102,6 +102,7 @@ type ResolverProcess = ChildProcessByStdio<null, Readable, Readable>;
 const activeProcesses = new Set<ResolverProcess>();
 const healthCache = new Map<string, { expiresAt: number; result: ResolverCheckResult }>();
 const COUNTRY_ORDER: Record<CountryCode, number> = { AZ: 0, TR: 1, RU: 2, OTHER: 3 };
+const WORKING_BASELINE_FILE = path.resolve("data/working-baseline.json");
 
 export function loadOfficialChannels(): OfficialChannel[] {
   const parsed = yaml.parse(fs.readFileSync(OFFICIAL_CHANNELS_FILE, "utf8")) as { channels: OfficialChannel[] };
@@ -138,6 +139,41 @@ export async function resolverCheck(): Promise<void> {
   console.log(`Custom plugin directory: ${info.pluginDir}`);
   console.log(`Child process startup/cleanup: ${info.childProcessCheck ? "ok" : "failed"}`);
   console.log(`Environment status: ${info.status}`);
+}
+
+export async function regressionWorking(): Promise<void> {
+  const baseline = JSON.parse(fs.readFileSync(WORKING_BASELINE_FILE, "utf8")) as {
+    channels: Array<{ name: string; id: string }>;
+  };
+  const lanIp = chooseLanIp();
+  const rows: string[] = [];
+  let failed = false;
+  for (const channel of baseline.channels) {
+    const local = await verifyGatewayEndpointWithRetry(`http://localhost:${DEFAULT_CONFIG.serverPort}/live/${channel.id}`).catch((err: any) => ({
+      ok: false,
+      http: 0,
+      contentType: "",
+      bytes: 0,
+      ffprobe: false,
+      error: err?.message ?? String(err)
+    }));
+    const lan = await verifyGatewayEndpointWithRetry(`http://${lanIp}:${DEFAULT_CONFIG.serverPort}/live/${channel.id}`).catch((err: any) => ({
+      ok: false,
+      http: 0,
+      contentType: "",
+      bytes: 0,
+      ffprobe: false,
+      error: err?.message ?? String(err)
+    }));
+    const ok = local.ok && lan.ok;
+    if (!ok) failed = true;
+    rows.push(`${channel.name} | ${channel.id} | ${local.http} | ${local.contentType} | ${local.bytes} | ${local.ffprobe ? "pass" : "fail"} | ${lan.ok ? "pass" : "fail"} | ${ok ? "PASS" : "FAIL"}`);
+    if (!ok) rows.push(`  local=${local.error ?? ""} lan=${lan.error ?? ""}`);
+  }
+  console.log("Channel | Canonical ID | HTTP | Content-Type | Bytes | FFprobe | LAN | Result");
+  for (const row of rows) console.log(row);
+  console.log("cacheUsed=false");
+  if (failed) throw new Error("Working-channel regression failed");
 }
 
 export async function resolverScan(): Promise<ResolverCheckResult[]> {
@@ -189,21 +225,24 @@ export async function handleOfficialLive(req: IncomingMessage, res: ServerRespon
       if (!(result instanceof Error)) return;
       continue;
     }
-    const proc = spawnStreamlink(source.page);
-    if (!proc) continue;
-    activeProcesses.add(proc);
-    const cleanup = () => {
-      proc.kill("SIGTERM");
-      activeProcesses.delete(proc);
-    };
-    req.once("close", cleanup);
-    const started = await waitForFirstBytes(proc, res, 25_000).catch(() => false);
-    if (started) {
-      proc.stdout.pipe(res);
-      proc.once("close", cleanup);
-      return;
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      const proc = spawnStreamlink(source.page);
+      if (!proc) break;
+      activeProcesses.add(proc);
+      const cleanup = () => {
+        proc.kill("SIGTERM");
+        activeProcesses.delete(proc);
+      };
+      req.once("close", cleanup);
+      const started = await waitForFirstBytes(proc, res, 25_000).catch(() => false);
+      if (started) {
+        proc.stdout.pipe(res);
+        proc.once("close", cleanup);
+        return;
+      }
+      cleanup();
+      if (attempt < 2) await new Promise((resolve) => setTimeout(resolve, 1000));
     }
-    cleanup();
     const resolved = await resolveStaticMedia(source.page).catch(() => undefined);
     if (resolved?.url.includes(".m3u8")) {
       const result = await pipeDirectHls(resolved.url, res, resolved.referer ? { Referer: resolved.referer } : undefined).catch((err: any) => err);
@@ -657,6 +696,57 @@ async function probeSample(bytes: Buffer): Promise<{ hasAudio: boolean; hasVideo
   }
 }
 
+async function verifyGatewayEndpoint(url: string): Promise<{ ok: boolean; http: number; contentType: string; bytes: number; ffprobe: boolean; error?: string }> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 30_000);
+  try {
+    const response = await fetch(url, { signal: controller.signal });
+    const contentType = response.headers.get("content-type") ?? "";
+    if (!response.ok) {
+      return { ok: false, http: response.status, contentType, bytes: 0, ffprobe: false, error: `HTTP ${response.status}` };
+    }
+    if (/html|json/i.test(contentType)) {
+      return { ok: false, http: response.status, contentType, bytes: 0, ffprobe: false, error: `Unexpected content-type ${contentType}` };
+    }
+    if (!response.body) {
+      return { ok: false, http: response.status, contentType, bytes: 0, ffprobe: false, error: "No response body" };
+    }
+    const reader = response.body.getReader();
+    const chunks: Buffer[] = [];
+    let total = 0;
+    try {
+      while (total < 1024 * 1024) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        if (!value) continue;
+        const chunk = Buffer.from(value);
+        chunks.push(chunk);
+        total += chunk.length;
+      }
+    } finally {
+      reader.releaseLock();
+      controller.abort();
+    }
+    const sample = Buffer.concat(chunks, total);
+    if (sample.length < 4096) {
+      return { ok: false, http: response.status, contentType, bytes: sample.length, ffprobe: false, error: "Less than 4096 media bytes" };
+    }
+    const probe = await probeSample(sample).then((result) => result.hasAudio || result.hasVideo).catch(() => false);
+    return { ok: probe, http: response.status, contentType, bytes: sample.length, ffprobe: probe, error: probe ? undefined : "ffprobe failed" };
+  } finally {
+    clearTimeout(timeout);
+    controller.abort();
+  }
+}
+
+async function verifyGatewayEndpointWithRetry(url: string): Promise<{ ok: boolean; http: number; contentType: string; bytes: number; ffprobe: boolean; error?: string }> {
+  let last = await verifyGatewayEndpoint(url);
+  if (last.ok) return last;
+  await new Promise((resolve) => setTimeout(resolve, 1500));
+  const retry = await verifyGatewayEndpoint(url);
+  return retry.ok ? retry : { ...retry, error: `${last.error ?? "first attempt failed"}; retry: ${retry.error ?? "failed"}` };
+}
+
 function runProcess(command: string, args: string[], timeoutMs: number): Promise<string> {
   return new Promise((resolve, reject) => {
     const child = spawn(command, args, { stdio: ["ignore", "pipe", "pipe"] });
@@ -810,9 +900,8 @@ function sortedSources(channel: OfficialChannel): OfficialSource[] {
 function chooseLanIp(): string {
   const configured = process.env["IPTV_GATEWAY_IP"];
   if (configured) return configured;
-  const fixedGateway = "192.168.1.67";
   const addresses = getLanAddresses();
-  return addresses.includes(fixedGateway) ? fixedGateway : fixedGateway;
+  return addresses.find((address) => address.startsWith("192.168.1.")) ?? addresses[0] ?? "127.0.0.1";
 }
 
 function groupTitle(country: CountryCode): string {

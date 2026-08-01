@@ -11,7 +11,7 @@ import { writeDashboard } from "./output/generate-dashboard.js";
 import { startLocalServer } from "./server/local-server.js";
 import { runShootout } from "./shootout.js";
 import { runArbCheck, writeArbPlaylist } from "./arb-live.js";
-import { generateOfficialPlaylists, resolverCheck, resolverInstall, resolverScan } from "./official-gateway.js";
+import { generateOfficialPlaylists, regressionWorking, resolverCheck, resolverInstall, resolverScan } from "./official-gateway.js";
 import {
   DEFAULT_CONFIG,
   CANDIDATES_FILE,
@@ -72,6 +72,9 @@ async function main() {
       break;
     case "playlist":
       await generateOfficialPlaylists();
+      break;
+    case "regression-working":
+      await regressionWorking();
       break;
     default:
       console.error(`Unknown command: ${command}`);

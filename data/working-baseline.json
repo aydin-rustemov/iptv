@@ -1,0 +1,15 @@
+{
+  "lockedAt": "2026-08-01",
+  "channels": [
+    { "name": "İctimai TV", "id": "ictimai-tv" },
+    { "name": "Kanal D", "id": "kanal-d" },
+    { "name": "Show TV", "id": "show-tv" },
+    { "name": "NOW TV", "id": "now-tv" },
+    { "name": "TV8", "id": "tv8" },
+    { "name": "teve2", "id": "teve2" },
+    { "name": "A Haber", "id": "a-haber" },
+    { "name": "Habertürk TV", "id": "haberturk-tv" },
+    { "name": "Dream Türk", "id": "dream-turk" },
+    { "name": "Первый канал", "id": "perviy-kanal" }
+  ]
+}

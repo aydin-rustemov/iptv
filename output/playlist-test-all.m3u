@@ -1,251 +1,251 @@
 #EXTM3U
 #EXTINF:-1 tvg-id="aztv" group-title="Azərbaycan",AzTV
-http://192.168.1.67:8787/live/aztv
+http://192.168.1.65:8787/live/aztv
 #EXTINF:-1 tvg-id="ictimai-tv" group-title="Azərbaycan",İctimai TV
-http://192.168.1.67:8787/live/ictimai-tv
+http://192.168.1.65:8787/live/ictimai-tv
 #EXTINF:-1 tvg-id="xezer-tv" group-title="Azərbaycan",Xəzər TV
-http://192.168.1.67:8787/live/xezer-tv
+http://192.168.1.65:8787/live/xezer-tv
 #EXTINF:-1 tvg-id="atv-az" group-title="Azərbaycan",ATV Azərbaycan
-http://192.168.1.67:8787/live/atv-az
+http://192.168.1.65:8787/live/atv-az
 #EXTINF:-1 tvg-id="arb" group-title="Azərbaycan",ARB
-http://192.168.1.67:8787/live/arb
+http://192.168.1.65:8787/live/arb
 #EXTINF:-1 tvg-id="arb24" group-title="Azərbaycan",ARB24
-http://192.168.1.67:8787/live/arb24
+http://192.168.1.65:8787/live/arb24
 #EXTINF:-1 tvg-id="space-tv" group-title="Azərbaycan",Space TV
-http://192.168.1.67:8787/live/space-tv
+http://192.168.1.65:8787/live/space-tv
 #EXTINF:-1 tvg-id="real-tv" group-title="Azərbaycan",Real TV
-http://192.168.1.67:8787/live/real-tv
+http://192.168.1.65:8787/live/real-tv
 #EXTINF:-1 tvg-id="baku-tv" group-title="Azərbaycan",Baku TV
-http://192.168.1.67:8787/live/baku-tv
+http://192.168.1.65:8787/live/baku-tv
 #EXTINF:-1 tvg-id="cbc" group-title="Azərbaycan",CBC
-http://192.168.1.67:8787/live/cbc
+http://192.168.1.65:8787/live/cbc
 #EXTINF:-1 tvg-id="cbc-sport" group-title="Azərbaycan",CBC Sport
-http://192.168.1.67:8787/live/cbc-sport
+http://192.168.1.65:8787/live/cbc-sport
 #EXTINF:-1 tvg-id="idman-tv" group-title="Azərbaycan",İdman TV
-http://192.168.1.67:8787/live/idman-tv
+http://192.168.1.65:8787/live/idman-tv
 #EXTINF:-1 tvg-id="medeniyyet-tv" group-title="Azərbaycan",Mədəniyyət TV
-http://192.168.1.67:8787/live/medeniyyet-tv
+http://192.168.1.65:8787/live/medeniyyet-tv
 #EXTINF:-1 tvg-id="trt-1" group-title="Türkiyə",TRT 1
-http://192.168.1.67:8787/live/trt-1
+http://192.168.1.65:8787/live/trt-1
 #EXTINF:-1 tvg-id="atv-tr" group-title="Türkiyə",ATV
-http://192.168.1.67:8787/live/atv-tr
+http://192.168.1.65:8787/live/atv-tr
 #EXTINF:-1 tvg-id="kanal-d" group-title="Türkiyə",Kanal D
-http://192.168.1.67:8787/live/kanal-d
+http://192.168.1.65:8787/live/kanal-d
 #EXTINF:-1 tvg-id="show-tv" group-title="Türkiyə",Show TV
-http://192.168.1.67:8787/live/show-tv
+http://192.168.1.65:8787/live/show-tv
 #EXTINF:-1 tvg-id="star-tv" group-title="Türkiyə",Star TV
-http://192.168.1.67:8787/live/star-tv
+http://192.168.1.65:8787/live/star-tv
 #EXTINF:-1 tvg-id="now-tv" group-title="Türkiyə",NOW TV
-http://192.168.1.67:8787/live/now-tv
+http://192.168.1.65:8787/live/now-tv
 #EXTINF:-1 tvg-id="tv8" group-title="Türkiyə",TV8
-http://192.168.1.67:8787/live/tv8
+http://192.168.1.65:8787/live/tv8
 #EXTINF:-1 tvg-id="kanal-7" group-title="Türkiyə",Kanal 7
-http://192.168.1.67:8787/live/kanal-7
+http://192.168.1.65:8787/live/kanal-7
 #EXTINF:-1 tvg-id="360-tv" group-title="Türkiyə",360
-http://192.168.1.67:8787/live/360-tv
+http://192.168.1.65:8787/live/360-tv
 #EXTINF:-1 tvg-id="beyaz-tv" group-title="Türkiyə",Beyaz TV
-http://192.168.1.67:8787/live/beyaz-tv
+http://192.168.1.65:8787/live/beyaz-tv
 #EXTINF:-1 tvg-id="teve2" group-title="Türkiyə",teve2
-http://192.168.1.67:8787/live/teve2
+http://192.168.1.65:8787/live/teve2
 #EXTINF:-1 tvg-id="tv8-5" group-title="Türkiyə",TV8.5
-http://192.168.1.67:8787/live/tv8-5
+http://192.168.1.65:8787/live/tv8-5
 #EXTINF:-1 tvg-id="a2" group-title="Türkiyə",a2
-http://192.168.1.67:8787/live/a2
+http://192.168.1.65:8787/live/a2
 #EXTINF:-1 tvg-id="show-max" group-title="Türkiyə",Show Max
-http://192.168.1.67:8787/live/show-max
+http://192.168.1.65:8787/live/show-max
 #EXTINF:-1 tvg-id="cnbc-e" group-title="Türkiyə",CNBC-e
-http://192.168.1.67:8787/live/cnbc-e
+http://192.168.1.65:8787/live/cnbc-e
 #EXTINF:-1 tvg-id="tv4" group-title="Türkiyə",TV4
-http://192.168.1.67:8787/live/tv4
+http://192.168.1.65:8787/live/tv4
 #EXTINF:-1 tvg-id="trt-haber" group-title="Türkiyə",TRT Haber
-http://192.168.1.67:8787/live/trt-haber
+http://192.168.1.65:8787/live/trt-haber
 #EXTINF:-1 tvg-id="cnn-turk" group-title="Türkiyə",CNN Türk
-http://192.168.1.67:8787/live/cnn-turk
+http://192.168.1.65:8787/live/cnn-turk
 #EXTINF:-1 tvg-id="ntv-tr" group-title="Türkiyə",NTV
-http://192.168.1.67:8787/live/ntv-tr
+http://192.168.1.65:8787/live/ntv-tr
 #EXTINF:-1 tvg-id="a-haber" group-title="Türkiyə",A Haber
-http://192.168.1.67:8787/live/a-haber
+http://192.168.1.65:8787/live/a-haber
 #EXTINF:-1 tvg-id="haberturk-tv" group-title="Türkiyə",Habertürk TV
-http://192.168.1.67:8787/live/haberturk-tv
+http://192.168.1.65:8787/live/haberturk-tv
 #EXTINF:-1 tvg-id="haber-global" group-title="Türkiyə",Haber Global
-http://192.168.1.67:8787/live/haber-global
+http://192.168.1.65:8787/live/haber-global
 #EXTINF:-1 tvg-id="sozcu-tv" group-title="Türkiyə",Sözcü TV
-http://192.168.1.67:8787/live/sozcu-tv
+http://192.168.1.65:8787/live/sozcu-tv
 #EXTINF:-1 tvg-id="halk-tv" group-title="Türkiyə",Halk TV
-http://192.168.1.67:8787/live/halk-tv
+http://192.168.1.65:8787/live/halk-tv
 #EXTINF:-1 tvg-id="tgrt-haber" group-title="Türkiyə",TGRT Haber
-http://192.168.1.67:8787/live/tgrt-haber
+http://192.168.1.65:8787/live/tgrt-haber
 #EXTINF:-1 tvg-id="tv100" group-title="Türkiyə",TV100
-http://192.168.1.67:8787/live/tv100
+http://192.168.1.65:8787/live/tv100
 #EXTINF:-1 tvg-id="bloomberg-ht" group-title="Türkiyə",Bloomberg HT
-http://192.168.1.67:8787/live/bloomberg-ht
+http://192.168.1.65:8787/live/bloomberg-ht
 #EXTINF:-1 tvg-id="ekoturk-tv" group-title="Türkiyə",Ekotürk TV
-http://192.168.1.67:8787/live/ekoturk-tv
+http://192.168.1.65:8787/live/ekoturk-tv
 #EXTINF:-1 tvg-id="tvnet" group-title="Türkiyə",TVNET
-http://192.168.1.67:8787/live/tvnet
+http://192.168.1.65:8787/live/tvnet
 #EXTINF:-1 tvg-id="yirmi-dort-tv" group-title="Türkiyə",24 TV
-http://192.168.1.67:8787/live/yirmi-dort-tv
+http://192.168.1.65:8787/live/yirmi-dort-tv
 #EXTINF:-1 tvg-id="a-news" group-title="Türkiyə",A News
-http://192.168.1.67:8787/live/a-news
+http://192.168.1.65:8787/live/a-news
 #EXTINF:-1 tvg-id="trt-spor" group-title="Türkiyə",TRT Spor
-http://192.168.1.67:8787/live/trt-spor
+http://192.168.1.65:8787/live/trt-spor
 #EXTINF:-1 tvg-id="trt-spor-yildiz" group-title="Türkiyə",TRT Spor Yıldız
-http://192.168.1.67:8787/live/trt-spor-yildiz
+http://192.168.1.65:8787/live/trt-spor-yildiz
 #EXTINF:-1 tvg-id="a-spor" group-title="Türkiyə",A Spor
-http://192.168.1.67:8787/live/a-spor
+http://192.168.1.65:8787/live/a-spor
 #EXTINF:-1 tvg-id="bein-sports-haber" group-title="Türkiyə",beIN Sports Haber
-http://192.168.1.67:8787/live/bein-sports-haber
+http://192.168.1.65:8787/live/bein-sports-haber
 #EXTINF:-1 tvg-id="ht-spor" group-title="Türkiyə",HT Spor
-http://192.168.1.67:8787/live/ht-spor
+http://192.168.1.65:8787/live/ht-spor
 #EXTINF:-1 tvg-id="fb-tv" group-title="Türkiyə",FB TV
-http://192.168.1.67:8787/live/fb-tv
+http://192.168.1.65:8787/live/fb-tv
 #EXTINF:-1 tvg-id="gs-tv" group-title="Türkiyə",GS TV
-http://192.168.1.67:8787/live/gs-tv
+http://192.168.1.65:8787/live/gs-tv
 #EXTINF:-1 tvg-id="tjk-tv" group-title="Türkiyə",TJK TV
-http://192.168.1.67:8787/live/tjk-tv
+http://192.168.1.65:8787/live/tjk-tv
 #EXTINF:-1 tvg-id="trt-belgesel" group-title="Türkiyə",TRT Belgesel
-http://192.168.1.67:8787/live/trt-belgesel
+http://192.168.1.65:8787/live/trt-belgesel
 #EXTINF:-1 tvg-id="trt-2" group-title="Türkiyə",TRT 2
-http://192.168.1.67:8787/live/trt-2
+http://192.168.1.65:8787/live/trt-2
 #EXTINF:-1 tvg-id="trt-turk" group-title="Türkiyə",TRT Türk
-http://192.168.1.67:8787/live/trt-turk
+http://192.168.1.65:8787/live/trt-turk
 #EXTINF:-1 tvg-id="trt-avaz" group-title="Türkiyə",TRT Avaz
-http://192.168.1.67:8787/live/trt-avaz
+http://192.168.1.65:8787/live/trt-avaz
 #EXTINF:-1 tvg-id="trt-world" group-title="Türkiyə",TRT World
-http://192.168.1.67:8787/live/trt-world
+http://192.168.1.65:8787/live/trt-world
 #EXTINF:-1 tvg-id="dmax-tr" group-title="Türkiyə",DMAX
-http://192.168.1.67:8787/live/dmax-tr
+http://192.168.1.65:8787/live/dmax-tr
 #EXTINF:-1 tvg-id="tlc-tr" group-title="Türkiyə",TLC
-http://192.168.1.67:8787/live/tlc-tr
+http://192.168.1.65:8787/live/tlc-tr
 #EXTINF:-1 tvg-id="trt-muzik" group-title="Türkiyə",TRT Müzik
-http://192.168.1.67:8787/live/trt-muzik
+http://192.168.1.65:8787/live/trt-muzik
 #EXTINF:-1 tvg-id="trt-cocuk" group-title="Türkiyə",TRT Çocuk
-http://192.168.1.67:8787/live/trt-cocuk
+http://192.168.1.65:8787/live/trt-cocuk
 #EXTINF:-1 tvg-id="minika-cocuk" group-title="Türkiyə",Minika Çocuk
-http://192.168.1.67:8787/live/minika-cocuk
+http://192.168.1.65:8787/live/minika-cocuk
 #EXTINF:-1 tvg-id="minika-go" group-title="Türkiyə",Minika GO
-http://192.168.1.67:8787/live/minika-go
+http://192.168.1.65:8787/live/minika-go
 #EXTINF:-1 tvg-id="cartoonito-tr" group-title="Türkiyə",Cartoonito
-http://192.168.1.67:8787/live/cartoonito-tr
+http://192.168.1.65:8787/live/cartoonito-tr
 #EXTINF:-1 tvg-id="dream-turk" group-title="Türkiyə",Dream Türk
-http://192.168.1.67:8787/live/dream-turk
+http://192.168.1.65:8787/live/dream-turk
 #EXTINF:-1 tvg-id="kral-pop" group-title="Türkiyə",Kral Pop
-http://192.168.1.67:8787/live/kral-pop
+http://192.168.1.65:8787/live/kral-pop
 #EXTINF:-1 tvg-id="powerturk" group-title="Türkiyə",PowerTürk
-http://192.168.1.67:8787/live/powerturk
+http://192.168.1.65:8787/live/powerturk
 #EXTINF:-1 tvg-id="number-1-turk" group-title="Türkiyə",Number 1 Türk
-http://192.168.1.67:8787/live/number-1-turk
+http://192.168.1.65:8787/live/number-1-turk
 #EXTINF:-1 tvg-id="powerturk-slow" group-title="Türkiyə",PowerTürk Slow
-http://192.168.1.67:8787/live/powerturk-slow
+http://192.168.1.65:8787/live/powerturk-slow
 #EXTINF:-1 tvg-id="perviy-kanal" group-title="Rusiya",Первый канал
-http://192.168.1.67:8787/live/perviy-kanal
+http://192.168.1.65:8787/live/perviy-kanal
 #EXTINF:-1 tvg-id="rossiya-1" group-title="Rusiya",Россия 1
-http://192.168.1.67:8787/live/rossiya-1
+http://192.168.1.65:8787/live/rossiya-1
 #EXTINF:-1 tvg-id="rossiya-24" group-title="Rusiya",Россия 24
-http://192.168.1.67:8787/live/rossiya-24
+http://192.168.1.65:8787/live/rossiya-24
 #EXTINF:-1 tvg-id="rossiya-k" group-title="Rusiya",Россия К
-http://192.168.1.67:8787/live/rossiya-k
+http://192.168.1.65:8787/live/rossiya-k
 #EXTINF:-1 tvg-id="ntv-ru" group-title="Rusiya",НТВ
-http://192.168.1.67:8787/live/ntv-ru
+http://192.168.1.65:8787/live/ntv-ru
 #EXTINF:-1 tvg-id="pyatyy-kanal" group-title="Rusiya",Пятый канал
-http://192.168.1.67:8787/live/pyatyy-kanal
+http://192.168.1.65:8787/live/pyatyy-kanal
 #EXTINF:-1 tvg-id="tv-centr" group-title="Rusiya",ТВ Центр
-http://192.168.1.67:8787/live/tv-centr
+http://192.168.1.65:8787/live/tv-centr
 #EXTINF:-1 tvg-id="ren-tv" group-title="Rusiya",РЕН ТВ
-http://192.168.1.67:8787/live/ren-tv
+http://192.168.1.65:8787/live/ren-tv
 #EXTINF:-1 tvg-id="sts" group-title="Rusiya",СТС
-http://192.168.1.67:8787/live/sts
+http://192.168.1.65:8787/live/sts
 #EXTINF:-1 tvg-id="tnt" group-title="Rusiya",ТНТ
-http://192.168.1.67:8787/live/tnt
+http://192.168.1.65:8787/live/tnt
 #EXTINF:-1 tvg-id="zvezda" group-title="Rusiya",Звезда
-http://192.168.1.67:8787/live/zvezda
+http://192.168.1.65:8787/live/zvezda
 #EXTINF:-1 tvg-id="otr" group-title="Rusiya",ОТР
-http://192.168.1.67:8787/live/otr
+http://192.168.1.65:8787/live/otr
 #EXTINF:-1 tvg-id="mir" group-title="Rusiya",Мир
-http://192.168.1.67:8787/live/mir
+http://192.168.1.65:8787/live/mir
 #EXTINF:-1 tvg-id="mir-24" group-title="Rusiya",Мир 24
-http://192.168.1.67:8787/live/mir-24
+http://192.168.1.65:8787/live/mir-24
 #EXTINF:-1 tvg-id="rbk" group-title="Rusiya",РБК
-http://192.168.1.67:8787/live/rbk
+http://192.168.1.65:8787/live/rbk
 #EXTINF:-1 tvg-id="moskva-24" group-title="Rusiya",Москва 24
-http://192.168.1.67:8787/live/moskva-24
+http://192.168.1.65:8787/live/moskva-24
 #EXTINF:-1 tvg-id="ru-360" group-title="Rusiya",360
-http://192.168.1.67:8787/live/ru-360
+http://192.168.1.65:8787/live/ru-360
 #EXTINF:-1 tvg-id="pyatnica" group-title="Rusiya",Пятница!
-http://192.168.1.67:8787/live/pyatnica
+http://192.168.1.65:8787/live/pyatnica
 #EXTINF:-1 tvg-id="tv3" group-title="Rusiya",ТВ-3
-http://192.168.1.67:8787/live/tv3
+http://192.168.1.65:8787/live/tv3
 #EXTINF:-1 tvg-id="domashniy" group-title="Rusiya",Домашний
-http://192.168.1.67:8787/live/domashniy
+http://192.168.1.65:8787/live/domashniy
 #EXTINF:-1 tvg-id="che" group-title="Rusiya",Че!
-http://192.168.1.67:8787/live/che
+http://192.168.1.65:8787/live/che
 #EXTINF:-1 tvg-id="two-x-two" group-title="Rusiya",2x2
-http://192.168.1.67:8787/live/two-x-two
+http://192.168.1.65:8787/live/two-x-two
 #EXTINF:-1 tvg-id="karusel" group-title="Rusiya",Карусель
-http://192.168.1.67:8787/live/karusel
+http://192.168.1.65:8787/live/karusel
 #EXTINF:-1 tvg-id="spas" group-title="Rusiya",Спас
-http://192.168.1.67:8787/live/spas
+http://192.168.1.65:8787/live/spas
 #EXTINF:-1 tvg-id="subbota" group-title="Rusiya",Суббота!
-http://192.168.1.67:8787/live/subbota
+http://192.168.1.65:8787/live/subbota
 #EXTINF:-1 tvg-id="yu" group-title="Rusiya",Ю
-http://192.168.1.67:8787/live/yu
+http://192.168.1.65:8787/live/yu
 #EXTINF:-1 tvg-id="solnce" group-title="Rusiya",Солнце
-http://192.168.1.67:8787/live/solnce
+http://192.168.1.65:8787/live/solnce
 #EXTINF:-1 tvg-id="match-tv" group-title="Rusiya",Матч ТВ
-http://192.168.1.67:8787/live/match-tv
+http://192.168.1.65:8787/live/match-tv
 #EXTINF:-1 tvg-id="match-strana" group-title="Rusiya",Матч! Страна
-http://192.168.1.67:8787/live/match-strana
+http://192.168.1.65:8787/live/match-strana
 #EXTINF:-1 tvg-id="izvestiya" group-title="Rusiya",Известия
-http://192.168.1.67:8787/live/izvestiya
+http://192.168.1.65:8787/live/izvestiya
 #EXTINF:-1 tvg-id="krasnaya-liniya" group-title="Rusiya",Красная линия
-http://192.168.1.67:8787/live/krasnaya-liniya
+http://192.168.1.65:8787/live/krasnaya-liniya
 #EXTINF:-1 tvg-id="belros" group-title="Rusiya",БелРос
-http://192.168.1.67:8787/live/belros
+http://192.168.1.65:8787/live/belros
 #EXTINF:-1 tvg-id="pobeda" group-title="Rusiya",Победа
-http://192.168.1.67:8787/live/pobeda
+http://192.168.1.65:8787/live/pobeda
 #EXTINF:-1 tvg-id="moya-planeta" group-title="Rusiya",Моя Планета
-http://192.168.1.67:8787/live/moya-planeta
+http://192.168.1.65:8787/live/moya-planeta
 #EXTINF:-1 tvg-id="nauka" group-title="Rusiya",Наука
-http://192.168.1.67:8787/live/nauka
+http://192.168.1.65:8787/live/nauka
 #EXTINF:-1 tvg-id="istoriya" group-title="Rusiya",История
-http://192.168.1.67:8787/live/istoriya
+http://192.168.1.65:8787/live/istoriya
 #EXTINF:-1 tvg-id="zhivaya-planeta" group-title="Rusiya",Живая Планета
-http://192.168.1.67:8787/live/zhivaya-planeta
+http://192.168.1.65:8787/live/zhivaya-planeta
 #EXTINF:-1 tvg-id="t24" group-title="Rusiya",Т24
-http://192.168.1.67:8787/live/t24
+http://192.168.1.65:8787/live/t24
 #EXTINF:-1 tvg-id="sarafan" group-title="Rusiya",Сарафан
-http://192.168.1.67:8787/live/sarafan
+http://192.168.1.65:8787/live/sarafan
 #EXTINF:-1 tvg-id="mult" group-title="Rusiya",Мульт
-http://192.168.1.67:8787/live/mult
+http://192.168.1.65:8787/live/mult
 #EXTINF:-1 tvg-id="o" group-title="Rusiya",О!
-http://192.168.1.67:8787/live/o
+http://192.168.1.65:8787/live/o
 #EXTINF:-1 tvg-id="muz-tv" group-title="Rusiya",МУЗ-ТВ
-http://192.168.1.67:8787/live/muz-tv
+http://192.168.1.65:8787/live/muz-tv
 #EXTINF:-1 tvg-id="ru-tv" group-title="Rusiya",RU.TV
-http://192.168.1.67:8787/live/ru-tv
+http://192.168.1.65:8787/live/ru-tv
 #EXTINF:-1 tvg-id="shanson-tv" group-title="Rusiya",Шансон ТВ
-http://192.168.1.67:8787/live/shanson-tv
+http://192.168.1.65:8787/live/shanson-tv
 #EXTINF:-1 tvg-id="music-box-russia" group-title="Rusiya",Music Box Russia
-http://192.168.1.67:8787/live/music-box-russia
+http://192.168.1.65:8787/live/music-box-russia
 #EXTINF:-1 tvg-id="sankt-peterburg" group-title="Rusiya",Санкт-Петербург
-http://192.168.1.67:8787/live/sankt-peterburg
+http://192.168.1.65:8787/live/sankt-peterburg
 #EXTINF:-1 tvg-id="lentv24" group-title="Rusiya",ЛенТВ24
-http://192.168.1.67:8787/live/lentv24
+http://192.168.1.65:8787/live/lentv24
 #EXTINF:-1 tvg-id="moskva-doverie" group-title="Rusiya",Москва Доверие
-http://192.168.1.67:8787/live/moskva-doverie
+http://192.168.1.65:8787/live/moskva-doverie
 #EXTINF:-1 tvg-id="krym-24" group-title="Rusiya",Крым 24
-http://192.168.1.67:8787/live/krym-24
+http://192.168.1.65:8787/live/krym-24
 #EXTINF:-1 tvg-id="kuban-24" group-title="Rusiya",Кубань 24
-http://192.168.1.67:8787/live/kuban-24
+http://192.168.1.65:8787/live/kuban-24
 #EXTINF:-1 tvg-id="don-24" group-title="Rusiya",Дон 24
-http://192.168.1.67:8787/live/don-24
+http://192.168.1.65:8787/live/don-24
 #EXTINF:-1 tvg-id="volgograd-24" group-title="Rusiya",Волгоград 24
-http://192.168.1.67:8787/live/volgograd-24
+http://192.168.1.65:8787/live/volgograd-24
 #EXTINF:-1 tvg-id="tatarstan-24" group-title="Rusiya",Татарстан 24
-http://192.168.1.67:8787/live/tatarstan-24
+http://192.168.1.65:8787/live/tatarstan-24
 #EXTINF:-1 tvg-id="bashkortostan-24" group-title="Rusiya",Башкортостан 24
-http://192.168.1.67:8787/live/bashkortostan-24
+http://192.168.1.65:8787/live/bashkortostan-24
 #EXTINF:-1 tvg-id="pskov-24" group-title="Rusiya",Псков 24
-http://192.168.1.67:8787/live/pskov-24
+http://192.168.1.65:8787/live/pskov-24
 #EXTINF:-1 tvg-id="nat-geo-wild" group-title="Provider Required",Nat Geo Wild
-http://192.168.1.67:8787/live/nat-geo-wild
+http://192.168.1.65:8787/live/nat-geo-wild

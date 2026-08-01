@@ -19,6 +19,7 @@
     "resolver:install": "tsx src/cli.ts resolver-install",
     "resolver:check": "tsx src/cli.ts resolver-check",
     "resolver:scan": "tsx src/cli.ts resolver-scan",
+    "regression:working": "tsx src/cli.ts regression-working",
     "playlist": "tsx src/cli.ts playlist",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
