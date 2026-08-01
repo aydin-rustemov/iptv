@@ -15,6 +15,12 @@ npm run serve
 http://192.168.1.65:8787/playlist-working.m3u
 ```
 
+Use `playlist-working.m3u` for TV. Diagnostic-all contains unresolved channels and is only for troubleshooting:
+
+```text
+http://192.168.1.65:8787/playlist-diagnostic-all.m3u
+```
+
 ## GitHub playlist
 
 ```text

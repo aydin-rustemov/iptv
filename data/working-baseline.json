@@ -1,15 +1,26 @@
 {
   "lockedAt": "2026-08-01",
+  "publicBaseUrl": "http://192.168.1.65:8787",
   "channels": [
+    { "name": "AzTV", "id": "aztv" },
     { "name": "İctimai TV", "id": "ictimai-tv" },
+    { "name": "Baku TV", "id": "baku-tv" },
     { "name": "Kanal D", "id": "kanal-d" },
     { "name": "Show TV", "id": "show-tv" },
     { "name": "NOW TV", "id": "now-tv" },
     { "name": "TV8", "id": "tv8" },
     { "name": "teve2", "id": "teve2" },
+    { "name": "TV4", "id": "tv4" },
+    { "name": "TRT Haber", "id": "trt-haber" },
     { "name": "A Haber", "id": "a-haber" },
     { "name": "Habertürk TV", "id": "haberturk-tv" },
+    { "name": "Halk TV", "id": "halk-tv" },
+    { "name": "TVNET", "id": "tvnet" },
+    { "name": "24 TV", "id": "yirmi-dort-tv" },
+    { "name": "TRT World", "id": "trt-world" },
     { "name": "Dream Türk", "id": "dream-turk" },
-    { "name": "Первый канал", "id": "perviy-kanal" }
+    { "name": "Первый канал", "id": "perviy-kanal" },
+    { "name": "Москва 24", "id": "moskva-24" },
+    { "name": "Татарстан 24", "id": "tatarstan-24" }
   ]
 }

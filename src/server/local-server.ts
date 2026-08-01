@@ -37,7 +37,7 @@ export function startLocalServer(
     }
 
     if (reqUrl === "/" || reqUrl === "") {
-      reqUrl = "/index.html";
+      reqUrl = fs.existsSync(path.join(outputDir, "resolver-status.html")) ? "/resolver-status.html" : "/index.html";
     }
 
     let pathname: string;
@@ -105,23 +105,28 @@ export function startLocalServer(
 
   server.listen(port, "0.0.0.0", () => {
     const lanIps = getLanAddresses();
+    const publicBaseUrl = readPublicBaseUrl();
     console.log(`\n========================================`);
     console.log(`  IPTV Local Serving Server Ready`);
     console.log(`========================================`);
     console.log(`Local Access:`);
     console.log(`  Dashboard:           http://localhost:${port}/`);
-    console.log(`  Playlist:            http://localhost:${port}/playlist.m3u`);
+    console.log(`  Working Playlist:    http://localhost:${port}/playlist-working.m3u`);
+    console.log(`  Diagnostic Playlist: http://localhost:${port}/playlist-diagnostic-all.m3u`);
     console.log(`  ARB Playlist:        http://localhost:${port}/playlist-arb.m3u`);
     console.log(`  ARB Channel:         http://localhost:${port}/live/arb`);
     console.log(`  Experimental Play:   http://localhost:${port}/playlist-experimental.m3u`);
     console.log(`  Status Report:       http://localhost:${port}/status.json`);
     console.log(`  Source Report:       http://localhost:${port}/source-report.json`);
+    console.log(`\nUse playlist-working.m3u for TV. Diagnostic-all contains unresolved channels.`);
+    if (publicBaseUrl) warnIfPublicBaseUrlIsNotLocal(publicBaseUrl, lanIps);
 
     if (lanIps.length > 0) {
       console.log(`\nLAN Access (e.g. for Smart TV):`);
       for (const ip of lanIps) {
         console.log(`  Dashboard:           http://${ip}:${port}/`);
-        console.log(`  Playlist:            http://${ip}:${port}/playlist.m3u`);
+        console.log(`  Working Playlist:    http://${ip}:${port}/playlist-working.m3u`);
+        console.log(`  Diagnostic Playlist: http://${ip}:${port}/playlist-diagnostic-all.m3u`);
         console.log(`  ARB Playlist:        http://${ip}:${port}/playlist-arb.m3u`);
         console.log(`  ARB Channel:         http://${ip}:${port}/live/arb`);
         console.log(`  Experimental Play:   http://${ip}:${port}/playlist-experimental.m3u`);
@@ -141,4 +146,27 @@ export function startLocalServer(
   process.once("SIGTERM", shutdown);
 
   return server;
+}
+
+function readPublicBaseUrl(): string | undefined {
+  if (process.env["IPTV_PUBLIC_BASE_URL"]) return process.env["IPTV_PUBLIC_BASE_URL"];
+  try {
+    const baseline = JSON.parse(fs.readFileSync(path.resolve("data/working-baseline.json"), "utf8")) as { publicBaseUrl?: string };
+    return baseline.publicBaseUrl;
+  } catch {
+    return undefined;
+  }
+}
+
+function warnIfPublicBaseUrlIsNotLocal(publicBaseUrl: string, lanIps: string[]): void {
+  try {
+    const parsed = new URL(publicBaseUrl);
+    const host = parsed.hostname;
+    if (host !== "localhost" && host !== "127.0.0.1" && !lanIps.includes(host)) {
+      console.warn(`[WARN] Configured IPTV_PUBLIC_BASE_URL host ${host} is not assigned to this machine.`);
+      console.warn(`[WARN] Current LAN IPv4 addresses: ${lanIps.join(", ") || "none"}`);
+    }
+  } catch {
+    console.warn("[WARN] IPTV_PUBLIC_BASE_URL is not a valid URL.");
+  }
 }

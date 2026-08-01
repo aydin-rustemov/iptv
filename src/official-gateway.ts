@@ -145,7 +145,7 @@ export async function regressionWorking(): Promise<void> {
   const baseline = JSON.parse(fs.readFileSync(WORKING_BASELINE_FILE, "utf8")) as {
     channels: Array<{ name: string; id: string }>;
   };
-  const lanIp = chooseLanIp();
+  const publicBaseUrl = getPublicBaseUrl();
   const rows: string[] = [];
   let failed = false;
   for (const channel of baseline.channels) {
@@ -157,7 +157,7 @@ export async function regressionWorking(): Promise<void> {
       ffprobe: false,
       error: err?.message ?? String(err)
     }));
-    const lan = await verifyGatewayEndpointWithRetry(`http://${lanIp}:${DEFAULT_CONFIG.serverPort}/live/${channel.id}`).catch((err: any) => ({
+    const lan = await verifyGatewayEndpointWithRetry(`${publicBaseUrl}/live/${channel.id}`).catch((err: any) => ({
       ok: false,
       http: 0,
       contentType: "",
@@ -448,7 +448,13 @@ function writeOfficialPlaylists(results: ResolverCheckResult[]): void {
   const allChannels = loadOfficialChannels();
   const byId = new Map(results.map((result) => [result.channelId, result]));
   const healthy = results.filter((result) => result.status === "healthy" || result.status === "slow_start");
-  writeM3u("playlist-test-all.m3u", allChannels);
+  writeM3u("playlist-diagnostic-all.m3u", allChannels, [
+    "# WARNING: Diagnostic playlist. Many channels are unavailable and may return errors."
+  ]);
+  writeM3u("playlist-test-all.m3u", allChannels, [
+    "# WARNING: Diagnostic playlist. Many channels are unavailable and may return errors.",
+    "# Compatibility alias for playlist-diagnostic-all.m3u."
+  ]);
   writeM3u("playlist-working.m3u", healthy.map((result) => allChannels.find((channel) => channel.id === result.channelId)!).filter(Boolean));
   writeM3u("playlist.m3u", healthy.map((result) => allChannels.find((channel) => channel.id === result.channelId)!).filter(Boolean));
   writeM3u("playlist-az.m3u", allChannels.filter((channel) => channel.country === "AZ" && ["healthy", "slow_start"].includes(byId.get(channel.id)?.status ?? "")));
@@ -456,19 +462,20 @@ function writeOfficialPlaylists(results: ResolverCheckResult[]): void {
   writeM3u("playlist-ru.m3u", allChannels.filter((channel) => channel.country === "RU" && ["healthy", "slow_start"].includes(byId.get(channel.id)?.status ?? "")));
 }
 
-function writeM3u(fileName: string, channels: OfficialChannel[]): void {
-  const lanIp = chooseLanIp();
+function writeM3u(fileName: string, channels: OfficialChannel[], comments: string[] = []): void {
+  const publicBaseUrl = getPublicBaseUrl();
   let text = "#EXTM3U\n";
+  for (const comment of comments) text += `${comment}\n`;
   for (const channel of channels) {
     text += `#EXTINF:-1 tvg-id="${channel.id}" group-title="${groupTitleFixed(channel.country)}",${channel.name}\n`;
-    text += `http://${lanIp}:${DEFAULT_CONFIG.serverPort}/live/${channel.id}\n`;
+    text += `${publicBaseUrl}/live/${channel.id}\n`;
   }
   fs.writeFileSync(path.join(DEFAULT_CONFIG.outputDir, fileName), text, "utf8");
 }
 
 function renderResolverHtml(results: ResolverCheckResult[], summary: Record<string, number>): string {
   const rows = results.map((r) => `<tr><td>${r.country}</td><td>${escapeHtml(r.name)}</td><td>${escapeHtml(r.category)}</td><td>${r.status}</td><td>${r.selectedSourceType ?? ""}</td><td>${r.startupMs ?? ""}</td><td>${r.hasAudio}</td><td>${r.hasVideo}</td><td>${r.resolution ?? ""}</td><td>${r.lastSuccessfulCheck ?? ""}</td><td>${escapeHtml(r.exactBlocker ?? "")}</td></tr>`).join("");
-  return `<!doctype html><html><head><meta charset="utf-8"><title>Official IPTV Resolver Status</title><style>body{font-family:Arial,sans-serif;margin:24px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ddd;padding:6px}th{background:#f3f3f3}</style></head><body><h1>Official IPTV Resolver Status</h1><p>Configured: ${results.length} Healthy: ${summary.healthy ?? 0} Slow: ${summary.slow_start ?? 0} Unavailable: ${summary.unavailable ?? 0} Provider required: ${summary.provider_required ?? 0}</p><table><thead><tr><th>Country</th><th>Channel</th><th>Category</th><th>Status</th><th>Source</th><th>Startup</th><th>Audio</th><th>Video</th><th>Resolution</th><th>Last success</th><th>Blocker</th></tr></thead><tbody>${rows}</tbody></table></body></html>`;
+  return `<!doctype html><html><head><meta charset="utf-8"><title>Official IPTV Resolver Status</title><style>body{font-family:Arial,sans-serif;margin:24px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ddd;padding:6px}th{background:#f3f3f3}.notice{background:#fff8d9;border:1px solid #e2c85d;padding:10px;margin:12px 0}</style></head><body><h1>Official IPTV Resolver Status</h1><div class="notice">Use playlist-working.m3u for TV. Diagnostic-all contains unresolved channels.</div><p>Configured: ${results.length} Healthy: ${summary.healthy ?? 0} Slow: ${summary.slow_start ?? 0} Unavailable: ${summary.unavailable ?? 0} Provider required: ${summary.provider_required ?? 0}</p><table><thead><tr><th>Country</th><th>Channel</th><th>Category</th><th>Status</th><th>Source</th><th>Startup</th><th>Audio</th><th>Video</th><th>Resolution</th><th>Last success</th><th>Blocker</th></tr></thead><tbody>${rows}</tbody></table></body></html>`;
 }
 
 function summarize(results: ResolverCheckResult[]): Record<string, number> {
@@ -897,11 +904,33 @@ function sortedSources(channel: OfficialChannel): OfficialSource[] {
   return [...channel.sources].sort((a, b) => a.priority - b.priority);
 }
 
-function chooseLanIp(): string {
-  const configured = process.env["IPTV_GATEWAY_IP"];
-  if (configured) return configured;
-  const addresses = getLanAddresses();
-  return addresses.find((address) => address.startsWith("192.168.1.")) ?? addresses[0] ?? "127.0.0.1";
+function getPublicBaseUrl(): string {
+  const configured = process.env["IPTV_PUBLIC_BASE_URL"] ?? readSavedPublicBaseUrl();
+  if (!configured) {
+    throw new Error("IPTV_PUBLIC_BASE_URL is required for playlist generation. See .env.example.");
+  }
+  const parsed = new URL(configured);
+  if (!["http:", "https:"].includes(parsed.protocol)) {
+    throw new Error("IPTV_PUBLIC_BASE_URL must use http or https");
+  }
+  const host = parsed.hostname;
+  const localHosts = new Set(["localhost", "127.0.0.1"]);
+  if (!localHosts.has(host)) {
+    const addresses = getLanAddresses();
+    if (!addresses.includes(host)) {
+      throw new Error(`Configured IPTV_PUBLIC_BASE_URL host ${host} is not assigned to this machine. Current LAN addresses: ${addresses.join(", ") || "none"}`);
+    }
+  }
+  return configured.replace(/\/+$/g, "");
+}
+
+function readSavedPublicBaseUrl(): string | undefined {
+  try {
+    const baseline = JSON.parse(fs.readFileSync(WORKING_BASELINE_FILE, "utf8")) as { publicBaseUrl?: string };
+    return baseline.publicBaseUrl;
+  } catch {
+    return undefined;
+  }
 }
 
 function groupTitle(country: CountryCode): string {

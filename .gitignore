@@ -5,6 +5,7 @@ coverage/
 
 .env
 .env.*
+!.env.example
 *.log
 *.rar
 
@@ -22,6 +23,7 @@ temp/
 output/*
 !output/
 !output/playlist-working.m3u
+!output/playlist-diagnostic-all.m3u
 !output/playlist-test-all.m3u
 !output/playlist.m3u
 !output/playlist-az.m3u
