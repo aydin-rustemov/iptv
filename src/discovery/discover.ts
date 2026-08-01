@@ -85,7 +85,7 @@ export async function runDiscovery(config: AppConfig = DEFAULT_CONFIG): Promise<
   const startTime = Date.now();
   console.log("Starting IPTV candidate discovery...");
 
-  if (!config.legacyDiscoveryEnabled) {
+  if (!config.legacyDiscoveryEnabled && isDefaultLegacyAdapterRequest(config.enabledAdapters)) {
     fs.mkdirSync(DATA_DIR, { recursive: true });
     fs.mkdirSync(path.dirname(CANDIDATES_FILE), { recursive: true });
     fs.writeFileSync(CANDIDATES_FILE, JSON.stringify([], null, 2), "utf8");
@@ -211,6 +211,11 @@ export async function runDiscovery(config: AppConfig = DEFAULT_CONFIG): Promise<
   );
 
   return finalCandidates;
+}
+
+function isDefaultLegacyAdapterRequest(enabledAdapters: string[]): boolean {
+  return enabledAdapters.length === DEFAULT_CONFIG.enabledAdapters.length &&
+    enabledAdapters.every((adapter) => DEFAULT_CONFIG.enabledAdapters.includes(adapter));
 }
 
 export function selectCandidatesWithQuotas(

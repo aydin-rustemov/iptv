@@ -12,6 +12,7 @@ import { startLocalServer } from "./server/local-server.js";
 import { runShootout } from "./shootout.js";
 import { runArbCheck, writeArbPlaylist } from "./arb-live.js";
 import { generateOfficialPlaylists, regressionWorking, resolverCheck, resolverInstall, resolverScan } from "./official-gateway.js";
+import { directAudit, directDiscover, directGenerate, directUpdate, directValidate } from "./direct/index.js";
 import {
   DEFAULT_CONFIG,
   CANDIDATES_FILE,
@@ -76,9 +77,24 @@ async function main() {
     case "regression-working":
       await regressionWorking();
       break;
+    case "direct:discover":
+      await directDiscover();
+      break;
+    case "direct:validate":
+      await directValidate();
+      break;
+    case "direct:generate":
+      await directGenerate();
+      break;
+    case "direct:audit":
+      await directAudit();
+      break;
+    case "direct:update":
+      await directUpdate();
+      break;
     default:
       console.error(`Unknown command: ${command}`);
-      console.log("Usage: npm run [discover|check|generate|scan|serve|debug:channel|shootout|arb-check]");
+      console.log("Usage: npm run [discover|check|generate|scan|serve|debug:channel|shootout|arb-check|direct:update]");
       process.exit(1);
   }
 }

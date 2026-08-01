@@ -21,6 +21,11 @@
     "resolver:scan": "tsx src/cli.ts resolver-scan",
     "regression:working": "tsx src/cli.ts regression-working",
     "playlist": "tsx src/cli.ts playlist",
+    "direct:discover": "tsx src/cli.ts direct:discover",
+    "direct:validate": "tsx src/cli.ts direct:validate",
+    "direct:generate": "tsx src/cli.ts direct:generate",
+    "direct:update": "tsx src/cli.ts direct:update",
+    "direct:audit": "tsx src/cli.ts direct:audit",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "verify": "npm run typecheck && npm run test"

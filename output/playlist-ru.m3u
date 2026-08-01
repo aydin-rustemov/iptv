@@ -1,7 +1,3 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="perviy-kanal" group-title="Rusiya",Первый канал
-http://192.168.1.65:8787/live/perviy-kanal
-#EXTINF:-1 tvg-id="moskva-24" group-title="Rusiya",Москва 24
-http://192.168.1.65:8787/live/moskva-24
-#EXTINF:-1 tvg-id="tatarstan-24" group-title="Rusiya",Татарстан 24
-http://192.168.1.65:8787/live/tatarstan-24
+# DEPRECATED: local-gateway playlists are not operational.
+# Use output/playlist-direct.m3u or the GitHub raw playlist-direct.m3u URL.

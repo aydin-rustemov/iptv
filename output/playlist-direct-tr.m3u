@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="kanal-d" tvg-name="Kanal D" group-title="Türkiyə",Kanal D
+https://demiroren.daioncdn.net/kanald/kanald_1080p.m3u8?&sid=8mpb168rgmdm&app=da2109ea-5dfe-4107-89ab-23593336ed61&ce=3
+#EXTINF:-1 tvg-id="show-tv" tvg-name="Show TV" group-title="Türkiyə",Show TV
+https://ciner.daioncdn.net/showtv/showtv_1080p.m3u8?ex=1664766175&st=RBzhSuGauna0OGld-DJUVA&tv=1&sid=8mpb1b3ubaij&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&ce=3
+#EXTINF:-1 tvg-id="tv8" tvg-name="TV8" group-title="Türkiyə",TV8
+https://tv8.daioncdn.net/tv8/tv8_1080p.m3u8?&sid=8mpb1ke6qy0k&app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=3
+#EXTINF:-1 tvg-id="teve2" tvg-name="teve2" group-title="Türkiyə",teve2
+https://teve2.duhnet.tv/S2/HLS_LIVE/teve2np/track_4_1000/playlist.m3u8
+#EXTINF:-1 tvg-id="a-haber" tvg-name="A Haber" group-title="Türkiyə",A Haber
+https://trkvz-live.ercdn.net/ahaberhd/ahaberhd_720p.m3u8?st=Cnq9PFyD1DJQVML461VqhA&e=1785648579
+#EXTINF:-1 tvg-id="haberturk-tv" tvg-name="Habertürk TV" group-title="Türkiyə",Habertürk TV
+https://ciner.daioncdn.net/haberturktv/haberturktv_1080p.m3u8?sid=8mpb2hznk3zp&app=c98ab0b0-50cc-495b-bb37-778e91f5ff5b&ce=3
+#EXTINF:-1 tvg-id="dream-turk" tvg-name="Dream Türk" group-title="Türkiyə",Dream Türk
+https://live.duhnet.tv/S2/HLS_LIVE/dreamturknp/track_4_1250/playlist.m3u8?&live=true&app=com.dreamturk&st=00xyFFv03VFR09tA6iS85w&e=1785614134

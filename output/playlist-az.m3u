@@ -1,7 +1,3 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="aztv" group-title="Azərbaycan",AzTV
-http://192.168.1.65:8787/live/aztv
-#EXTINF:-1 tvg-id="ictimai-tv" group-title="Azərbaycan",İctimai TV
-http://192.168.1.65:8787/live/ictimai-tv
-#EXTINF:-1 tvg-id="baku-tv" group-title="Azərbaycan",Baku TV
-http://192.168.1.65:8787/live/baku-tv
+# DEPRECATED: local-gateway playlists are not operational.
+# Use output/playlist-direct.m3u or the GitHub raw playlist-direct.m3u URL.
