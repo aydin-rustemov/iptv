@@ -7,6 +7,7 @@ import { DEFAULT_CONFIG } from "../config.js";
 import { loadOfficialChannels, type OfficialChannel, type OfficialSource } from "../official-gateway.js";
 import { validateCandidate } from "../validation/validate-stream.js";
 import type { CountryCode, StreamCandidate, ValidationResult } from "../types.js";
+import yaml from "yaml";
 
 type DirectCompatibility =
   | "stable_direct"
@@ -21,7 +22,7 @@ type DirectCompatibility =
   | "unavailable";
 
 interface DirectCandidate {
-  channel: OfficialChannel;
+  channel: DirectChannel;
   source: OfficialSource;
   mediaUrl: string;
   sourceType: "direct_hls_official" | "streamlink_url_only";
@@ -32,6 +33,8 @@ interface DirectStatusEntry {
   channelId: string;
   channelName: string;
   country: CountryCode;
+  region?: DirectRegion;
+  countryName?: string;
   category: string;
   officialPage: string;
   officialOwner: string;
@@ -57,10 +60,23 @@ const DIRECT_CANDIDATES_FILE = path.join(DATA_DIR, "direct-candidates.private.js
 const DIRECT_STATUS_FILE = path.join(OUTPUT_DIR, "direct-status.json");
 const DIRECT_STATUS_HTML_FILE = path.join(OUTPUT_DIR, "direct-status.html");
 const DIRECT_HISTORY_FILE = path.join(DATA_DIR, "direct-health-history.json");
+const DIRECT_REGISTRY_FILE = path.join(DATA_DIR, "direct-official-registry.yml");
+
+type DirectRegion = "europe" | "americas" | "middle-east" | "asia" | "international";
+
+interface DirectChannel extends OfficialChannel {
+  region?: DirectRegion;
+  countryName?: string;
+  language?: string;
+  officialOwner?: string;
+  officialWebsite?: string;
+  officialLivePage?: string;
+  sourceDiscoveryMethod?: string;
+}
 
 export async function directDiscover(): Promise<DirectCandidate[]> {
   fs.mkdirSync(DATA_DIR, { recursive: true });
-  const channels = loadOfficialChannels();
+  const channels = loadDirectChannels();
   const limit = pLimit(3);
   const candidates = (await Promise.all(channels.map((channel) => limit(() => discoverChannel(channel))))).flat();
   fs.writeFileSync(DIRECT_CANDIDATES_FILE, JSON.stringify(candidates.map(serializeCandidate), null, 2), "utf8");
@@ -71,13 +87,13 @@ export async function directDiscover(): Promise<DirectCandidate[]> {
 export async function directValidate(): Promise<DirectStatusEntry[]> {
   const candidates = readCandidates();
   const channelsWithCandidates = new Set(candidates.map((candidate) => candidate.channel.id));
-  const missing = loadOfficialChannels()
+  const missing = loadDirectChannels()
     .filter((channel) => !channelsWithCandidates.has(channel.id))
     .map((channel) => unavailableEntry(channel, "No direct media candidate discovered"));
   const limit = pLimit(2);
   const validated = await Promise.all(candidates.map((candidate) => limit(() => validateDirectCandidate(candidate))));
   const byChannel = selectBestByChannel([...validated, ...missing]);
-  const statuses = loadOfficialChannels().map((channel) => byChannel.get(channel.id) ?? unavailableEntry(channel, "No direct validation result"));
+  const statuses = loadDirectChannels().map((channel) => byChannel.get(channel.id) ?? unavailableEntry(channel, "No direct validation result"));
   writeDirectStatus(statuses);
   writeHistory(statuses);
   console.log(`Direct-compatible: ${statuses.filter((entry) => entry.playable).length}`);
@@ -130,7 +146,7 @@ export async function directUpdate(): Promise<void> {
   console.log(`Total directly playable: ${playable.length}`);
 }
 
-async function discoverChannel(channel: OfficialChannel): Promise<DirectCandidate[]> {
+async function discoverChannel(channel: DirectChannel): Promise<DirectCandidate[]> {
   const results: DirectCandidate[] = [];
   for (const source of [...channel.sources].sort((a, b) => a.priority - b.priority)) {
     if (source.type === "provider_required" || source.type === "unavailable" || !source.page) continue;
@@ -186,6 +202,8 @@ async function validateDirectCandidate(candidate: DirectCandidate): Promise<Dire
     channelId: candidate.channel.id,
     channelName: candidate.channel.name,
     country: candidate.channel.country,
+    region: candidate.channel.region,
+    countryName: candidate.channel.countryName,
     category: candidate.channel.category,
     officialPage: candidate.source.page,
     officialOwner: officialOwner(candidate.source.page),
@@ -219,6 +237,8 @@ function validationFailure(candidate: DirectCandidate, result: ValidationResult,
     channelId: candidate.channel.id,
     channelName: candidate.channel.name,
     country: candidate.channel.country,
+    region: candidate.channel.region,
+    countryName: candidate.channel.countryName,
     category: candidate.channel.category,
     officialPage: candidate.source.page,
     officialOwner: officialOwner(candidate.source.page),
@@ -243,6 +263,8 @@ function failedEntry(candidate: DirectCandidate, compatibility: DirectCompatibil
     channelId: candidate.channel.id,
     channelName: candidate.channel.name,
     country: candidate.channel.country,
+    region: candidate.channel.region,
+    countryName: candidate.channel.countryName,
     category: candidate.channel.category,
     officialPage: candidate.source.page,
     officialOwner: officialOwner(candidate.source.page),
@@ -257,12 +279,14 @@ function failedEntry(candidate: DirectCandidate, compatibility: DirectCompatibil
   };
 }
 
-function unavailableEntry(channel: OfficialChannel, failureCategory: string): DirectStatusEntry {
+function unavailableEntry(channel: DirectChannel, failureCategory: string): DirectStatusEntry {
   const provider = channel.sources.find((source) => source.type === "provider_required");
   return {
     channelId: channel.id,
     channelName: channel.name,
     country: channel.country,
+    region: channel.region,
+    countryName: channel.countryName,
     category: channel.category,
     officialPage: provider?.page ?? "",
     officialOwner: provider ? "provider" : "unknown",
@@ -314,7 +338,7 @@ function writeHistory(statuses: DirectStatusEntry[]): void {
 }
 
 function writeDirectPlaylists(statuses: DirectStatusEntry[]): void {
-  const channels = loadOfficialChannels();
+  const channels = loadDirectChannels();
   const candidateById = new Map(readCandidates().map((candidate) => [candidate.channel.id, candidate]));
   const playableIds = new Set(statuses.filter((entry) => entry.playable).map((entry) => entry.channelId));
   const playableChannels = channels.filter((channel) => playableIds.has(channel.id) && candidateById.has(channel.id));
@@ -322,17 +346,21 @@ function writeDirectPlaylists(statuses: DirectStatusEntry[]): void {
   writePlaylist("playlist-direct-az.m3u", playableChannels.filter((channel) => channel.country === "AZ"), candidateById);
   writePlaylist("playlist-direct-tr.m3u", playableChannels.filter((channel) => channel.country === "TR"), candidateById);
   writePlaylist("playlist-direct-ru.m3u", playableChannels.filter((channel) => channel.country === "RU"), candidateById);
-  writePlaylist("playlist-direct-international.m3u", playableChannels.filter((channel) => channel.country === "OTHER"), candidateById);
+  writePlaylist("playlist-direct-europe.m3u", playableChannels.filter((channel) => channel.region === "europe"), candidateById);
+  writePlaylist("playlist-direct-americas.m3u", playableChannels.filter((channel) => channel.region === "americas"), candidateById);
+  writePlaylist("playlist-direct-middle-east.m3u", playableChannels.filter((channel) => channel.region === "middle-east"), candidateById);
+  writePlaylist("playlist-direct-asia.m3u", playableChannels.filter((channel) => channel.region === "asia"), candidateById);
+  writePlaylist("playlist-direct-international.m3u", playableChannels.filter((channel) => channel.region === "international" || (channel.country === "OTHER" && !channel.region)), candidateById);
   writeDeprecatedGatewayPlaylists();
 }
 
-function writePlaylist(fileName: string, channels: OfficialChannel[], candidateById: Map<string, DirectCandidate>): void {
+function writePlaylist(fileName: string, channels: DirectChannel[], candidateById: Map<string, DirectCandidate>): void {
   let text = "#EXTM3U\n";
   for (const channel of channels) {
     const candidate = candidateById.get(channel.id);
     if (!candidate) continue;
     if (isForbiddenOperationalUrl(candidate.mediaUrl)) throw new Error(`Forbidden URL for ${channel.id}`);
-    text += `#EXTINF:-1 tvg-id="${escapeM3u(channel.id)}" tvg-name="${escapeM3u(channel.name)}" group-title="${escapeM3u(groupTitle(channel.country))}",${channel.name}\n`;
+    text += `#EXTINF:-1 tvg-id="${escapeM3u(channel.id)}" tvg-name="${escapeM3u(channel.name)}" group-title="${escapeM3u(groupTitle(channel))}",${channel.name}\n`;
     text += `${candidate.mediaUrl}\n`;
   }
   assertNoForbiddenOperationalUrls(text);
@@ -367,7 +395,7 @@ function readCandidates(): DirectCandidate[] {
     sourceType: "direct_hls_official" | "streamlink_url_only";
     discoveredAt: string;
   }>;
-  const channels = new Map(loadOfficialChannels().map((channel) => [channel.id, channel]));
+  const channels = new Map(loadDirectChannels().map((channel) => [channel.id, channel]));
   return raw.flatMap((item) => {
     const channel = channels.get(item.channelId);
     const source = channel?.sources.find((candidateSource) => candidateSource.priority === item.sourcePriority);
@@ -419,19 +447,33 @@ function renderStatusHtml(statuses: DirectStatusEntry[], summary: Record<string,
 }
 
 function countryOrderIsValid(ids: string[]): boolean {
-  const channels = new Map(loadOfficialChannels().map((channel) => [channel.id, channel]));
-  const ranks = ids.map((id) => countryRank(channels.get(id)?.country ?? "OTHER"));
+  const channels = new Map(loadDirectChannels().map((channel) => [channel.id, channel]));
+  const ranks = ids.map((id) => countryRank(channels.get(id)));
   return ranks.every((rank, index) => index === 0 || rank >= ranks[index - 1]!);
 }
 
-function countryRank(country: CountryCode): number {
-  return country === "AZ" ? 0 : country === "TR" ? 1 : country === "RU" ? 2 : 3;
+function countryRank(channel: DirectChannel | undefined): number {
+  if (!channel) return 99;
+  if (channel.country === "AZ") return 0;
+  if (channel.country === "TR") return 1;
+  if (channel.country === "RU") return 2;
+  if (channel.countryName === "Gürcüstan") return 3;
+  if (channel.countryName === "Qazaxıstan") return 4;
+  if (channel.countryName === "Özbəkistan") return 5;
+  if (channel.countryName === "Qırğızıstan") return 6;
+  if (channel.countryName === "Ukrayna") return 7;
+  if (channel.region === "europe") return 8;
+  if (channel.region === "middle-east") return 9;
+  if (channel.region === "asia") return 10;
+  if (channel.region === "americas") return 11;
+  return 12;
 }
 
-function groupTitle(country: CountryCode): string {
-  if (country === "AZ") return "Azərbaycan";
-  if (country === "TR") return "Türkiyə";
-  if (country === "RU") return "Rusiya";
+function groupTitle(channel: DirectChannel): string {
+  if (channel.countryName) return channel.countryName;
+  if (channel.country === "AZ") return "Azərbaycan";
+  if (channel.country === "TR") return "Türkiyə";
+  if (channel.country === "RU") return "Rusiya";
   return "Beynəlxalq";
 }
 
@@ -545,4 +587,14 @@ function sanitizeLog(value: string): string {
     .replace(/(cookie|authorization|proxy-authorization):[^\r\n]*/gi, "$1:<redacted>")
     .replace(/([?&](?:token|hash|sig|signature|auth|key)=)[^&\s]+/gi, "$1<redacted>")
     .slice(0, 1000);
+}
+
+function loadDirectChannels(): DirectChannel[] {
+  const legacy = loadOfficialChannels().map((channel) => ({ ...channel }) as DirectChannel);
+  if (!fs.existsSync(DIRECT_REGISTRY_FILE)) return legacy;
+  const parsed = yaml.parse(fs.readFileSync(DIRECT_REGISTRY_FILE, "utf8")) as { channels?: DirectChannel[] };
+  const extra = (parsed.channels ?? []).filter((channel) => channel.enabled);
+  const byId = new Map<string, DirectChannel>();
+  for (const channel of [...legacy, ...extra]) byId.set(channel.id, channel);
+  return [...byId.values()].sort((a, b) => countryRank(a) - countryRank(b) || a.priority - b.priority || a.id.localeCompare(b.id));
 }

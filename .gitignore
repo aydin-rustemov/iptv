@@ -34,6 +34,10 @@ output/*
 !output/playlist-direct-az.m3u
 !output/playlist-direct-tr.m3u
 !output/playlist-direct-ru.m3u
+!output/playlist-direct-europe.m3u
+!output/playlist-direct-americas.m3u
+!output/playlist-direct-middle-east.m3u
+!output/playlist-direct-asia.m3u
 !output/playlist-direct-international.m3u
 !output/direct-status.json
 !output/direct-status.html
