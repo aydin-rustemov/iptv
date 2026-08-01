@@ -11,7 +11,7 @@ import { OFFICIAL_CHANNELS_FILE, DEFAULT_CONFIG, RESOLVER_STATUS_FILE, RESOLVER_
 import { getLanAddresses } from "./server/network-addresses.js";
 import { validateCandidate } from "./validation/validate-stream.js";
 import type { CountryCode, StreamCandidate, ValidationResult } from "./types.js";
-import { fetchSafe } from "./validation/fetch-manifest.js";
+import { fetchSafe, fetchTextSafe } from "./validation/fetch-manifest.js";
 import { parseHlsManifest } from "./validation/parse-hls.js";
 
 export type OfficialSourceType =
@@ -101,13 +101,14 @@ type ResolverProcess = ChildProcessByStdio<null, Readable, Readable>;
 
 const activeProcesses = new Set<ResolverProcess>();
 const healthCache = new Map<string, { expiresAt: number; result: ResolverCheckResult }>();
+const COUNTRY_ORDER: Record<CountryCode, number> = { AZ: 0, TR: 1, RU: 2, OTHER: 3 };
 
 export function loadOfficialChannels(): OfficialChannel[] {
   const parsed = yaml.parse(fs.readFileSync(OFFICIAL_CHANNELS_FILE, "utf8")) as { channels: OfficialChannel[] };
   return parsed.channels
     .filter((channel) => channel.enabled)
     .map((channel) => ({ ...channel, name: repairMojibake(channel.name) }))
-    .sort((a, b) => a.country.localeCompare(b.country) || a.priority - b.priority);
+    .sort((a, b) => COUNTRY_ORDER[a.country] - COUNTRY_ORDER[b.country] || a.priority - b.priority);
 }
 
 export async function resolverInstall(): Promise<EnvironmentInfo> {
@@ -203,6 +204,11 @@ export async function handleOfficialLive(req: IncomingMessage, res: ServerRespon
       return;
     }
     cleanup();
+    const resolved = await resolveStaticMedia(source.page).catch(() => undefined);
+    if (resolved?.url.includes(".m3u8")) {
+      const result = await pipeDirectHls(resolved.url, res, resolved.referer ? { Referer: resolved.referer } : undefined).catch((err: any) => err);
+      if (!(result instanceof Error)) return;
+    }
   }
 
   res.statusCode = 503;
@@ -248,6 +254,11 @@ async function checkOfficialChannel(channel: OfficialChannel): Promise<ResolverC
 
     const result = await sampleStreamlinkSource(channel, source);
     if (result.status === "healthy" || result.status === "slow_start") return result;
+    const staticResult = await sampleStaticOfficialSource(channel, source).catch((err: any) => ({
+      ...baseResult(channel, classifyStreamlinkFailure(String(err?.message ?? err)), source.type, sanitizeLog(String(err?.message ?? err)), source),
+      resolverMethod: `${source.type}:static-extractor`
+    }) as ResolverCheckResult);
+    if (staticResult.status === "healthy" || staticResult.status === "slow_start") return staticResult;
     lastFailure = result;
   }
 
@@ -346,6 +357,47 @@ async function sampleStreamlinkSource(channel: OfficialChannel, source: Official
   }
 }
 
+async function sampleStaticOfficialSource(channel: OfficialChannel, source: OfficialSource): Promise<ResolverCheckResult> {
+  const start = Date.now();
+  const resolved = await resolveStaticMedia(source.page);
+  if (!resolved) {
+    return baseResult(channel, "plugin_unsupported", source.type, "No public HLS/DASH URL found in official page or public iframe/script", source);
+  }
+  if (!resolved.url.includes(".m3u8")) {
+    return baseResult(channel, "plugin_unsupported", source.type, "Static extractor found a non-HLS media reference that is not supported yet", source);
+  }
+  const candidate: StreamCandidate = {
+    channelId: channel.id,
+    channelName: channel.name,
+    country: channel.country,
+    category: channel.category,
+    pageUrl: source.page,
+    streamUrl: resolved.url,
+    sourceName: "official-static",
+    discoveryMethod: resolved.method,
+    discoveredAt: new Date().toISOString(),
+    metadata: {
+      iframeUrl: resolved.evidenceUrl === source.page ? undefined : resolved.evidenceUrl,
+      playbackHeaders: {
+        referer: resolved.referer
+      },
+      requiredHeaderNames: resolved.referer ? ["Referer"] : []
+    }
+  };
+  const validation = await validateCandidate(candidate, DEFAULT_CONFIG).catch((err: any) => err as Error);
+  if (!(validation instanceof Error) && ["portable", "portable_with_headers"].includes(validation.status) && (validation.hasAudio || validation.hasVideo)) {
+    return {
+      ...validationToResult(channel, source, validation, Date.now() - start),
+      selectedSourceType: source.type,
+      resolverMethod: `${source.type}:static-extractor`,
+      attemptedSource: source.page,
+      mediaBytesReceived: validation.segmentSample?.bytesRead
+    };
+  }
+  const msg = validation instanceof Error ? validation.message : validation.failureReason;
+  return baseResult(channel, msg?.includes("timeout") ? "media_timeout" : "official_stream_down", source.type, msg ?? "Static official media validation failed", source);
+}
+
 function writeResolverReports(results: ResolverCheckResult[]): void {
   fs.mkdirSync(DEFAULT_CONFIG.outputDir, { recursive: true });
   const summary = summarize(results);
@@ -386,7 +438,7 @@ function summarize(results: ResolverCheckResult[]): Record<string, number> {
   return summary;
 }
 
-async function pipeDirectHls(url: string, res: ServerResponse): Promise<void> {
+async function pipeDirectHls(url: string, res: ServerResponse, headers: Record<string, string> = {}): Promise<void> {
   const abort = new AbortController();
   res.once("close", () => abort.abort());
   let mediaUrl = url;
@@ -394,7 +446,8 @@ async function pipeDirectHls(url: string, res: ServerResponse): Promise<void> {
   while (!abort.signal.aborted) {
     const manifest = await fetchSafe(mediaUrl, {
       timeoutMs: DEFAULT_CONFIG.manifestTimeoutMs,
-      limitBytes: 2 * 1024 * 1024
+      limitBytes: 2 * 1024 * 1024,
+      headers
     });
     const parsed = parseHlsManifest(manifest.body.toString("utf8"), manifest.finalUrl);
     if (parsed.isMaster) {
@@ -409,7 +462,8 @@ async function pipeDirectHls(url: string, res: ServerResponse): Promise<void> {
       seen.add(segment.url);
       const body = await fetchSafe(segment.url, {
         timeoutMs: DEFAULT_CONFIG.segmentTimeoutMs,
-        limitBytes: 16 * 1024 * 1024
+        limitBytes: 16 * 1024 * 1024,
+        headers
       });
       if (!res.write(body.body)) await new Promise((resolve) => res.once("drain", resolve));
       if (seen.size > 200) for (const old of [...seen].slice(0, 50)) seen.delete(old);
@@ -646,6 +700,83 @@ function classifyStreamlinkFailure(message: string): ResolverStatus {
   return "plugin_failed";
 }
 
+interface StaticMediaResolution {
+  url: string;
+  evidenceUrl: string;
+  referer?: string;
+  method: StreamCandidate["discoveryMethod"];
+}
+
+async function resolveStaticMedia(pageUrl: string): Promise<StaticMediaResolution | undefined> {
+  if (!pageUrl) return undefined;
+  const visited = new Set<string>();
+  return resolveStaticMediaFromPage(pageUrl, pageUrl, visited, 0);
+}
+
+async function resolveStaticMediaFromPage(pageUrl: string, referer: string, visited: Set<string>, depth: number): Promise<StaticMediaResolution | undefined> {
+  if (visited.has(pageUrl) || depth > 2) return undefined;
+  visited.add(pageUrl);
+  const page = await fetchTextSafe(pageUrl, {
+    timeoutMs: DEFAULT_CONFIG.manifestTimeoutMs,
+    limitBytes: 2 * 1024 * 1024,
+    headers: { Referer: referer }
+  });
+  const direct = extractMediaUrl(page.text, page.finalUrl);
+  if (direct) return { url: direct, evidenceUrl: page.finalUrl, referer: page.finalUrl, method: "html" };
+
+  const iframeUrls = extractAttributeUrls(page.text, page.finalUrl, ["iframe"], ["src", "data-src"]).slice(0, 5);
+  for (const iframeUrl of iframeUrls) {
+    const nested = await resolveStaticMediaFromPage(iframeUrl, page.finalUrl, visited, depth + 1).catch(() => undefined);
+    if (nested) return { ...nested, method: "iframe" };
+  }
+
+  const scriptUrls = extractAttributeUrls(page.text, page.finalUrl, ["script"], ["src"]).slice(0, 8);
+  for (const scriptUrl of scriptUrls) {
+    const script = await fetchTextSafe(scriptUrl, {
+      timeoutMs: DEFAULT_CONFIG.manifestTimeoutMs,
+      limitBytes: 1024 * 1024,
+      headers: { Referer: page.finalUrl }
+    }).catch(() => undefined);
+    if (!script) continue;
+    const media = extractMediaUrl(script.text, script.finalUrl);
+    if (media) return { url: media, evidenceUrl: script.finalUrl, referer: page.finalUrl, method: "embedded-script" };
+  }
+
+  return undefined;
+}
+
+function extractMediaUrl(text: string, baseUrl: string): string | undefined {
+  const decoded = text.replace(/\\\//g, "/").replace(/&amp;/g, "&");
+  const absolute = decoded.match(/https?:\/\/[^"'\\<>\s]+?\.(?:m3u8|mpd)(?:\?[^"'\\<>\s]*)?/i);
+  if (absolute) return stripTrailingPunctuation(absolute[0]);
+  const relative = decoded.match(/["']([^"']+?\.(?:m3u8|mpd)(?:\?[^"']*)?)["']/i);
+  if (relative?.[1]) return new URL(stripTrailingPunctuation(relative[1]), baseUrl).toString();
+  return undefined;
+}
+
+function extractAttributeUrls(text: string, baseUrl: string, tags: string[], attributes: string[]): string[] {
+  const urls: string[] = [];
+  for (const tag of tags) {
+    const tagRegex = new RegExp(`<${tag}\\b[^>]*>`, "gi");
+    const matches = text.matchAll(tagRegex);
+    for (const match of matches) {
+      const fragment = match[0];
+      for (const attr of attributes) {
+        const attrMatch = fragment.match(new RegExp(`${attr}\\s*=\\s*["']([^"']+)["']`, "i"));
+        if (!attrMatch?.[1]) continue;
+        const value = attrMatch[1].trim();
+        if (!value || value.startsWith("data:") || value.startsWith("javascript:")) continue;
+        urls.push(new URL(value, baseUrl).toString());
+      }
+    }
+  }
+  return [...new Set(urls)];
+}
+
+function stripTrailingPunctuation(value: string): string {
+  return value.replace(/[),.;]+$/g, "");
+}
+
 function extractPluginName(stderr: string): string | undefined {
   const match = stderr.match(/plugin\s+([a-z0-9_]+)/i) ?? stderr.match(/\[cli\]\[info\]\s+Found matching plugin\s+([a-z0-9_]+)/i);
   return match?.[1];
@@ -677,8 +808,11 @@ function sortedSources(channel: OfficialChannel): OfficialSource[] {
 }
 
 function chooseLanIp(): string {
+  const configured = process.env["IPTV_GATEWAY_IP"];
+  if (configured) return configured;
+  const fixedGateway = "192.168.1.67";
   const addresses = getLanAddresses();
-  return addresses.find((address) => address.startsWith("192.168.1.")) ?? addresses[0] ?? "127.0.0.1";
+  return addresses.includes(fixedGateway) ? fixedGateway : fixedGateway;
 }
 
 function groupTitle(country: CountryCode): string {
@@ -696,8 +830,8 @@ void groupTitle;
 
 function groupTitleFixed(country: CountryCode): string {
   if (country === "AZ") return "Az\u0259rbaycan";
-  if (country === "TR") return "T\u00fcrkiye";
-  if (country === "RU") return "\u0420\u043e\u0441\u0441\u0438\u044f";
+  if (country === "TR") return "T\u00fcrkiy\u0259";
+  if (country === "RU") return "Rusiya";
   return "Provider Required";
 }
 

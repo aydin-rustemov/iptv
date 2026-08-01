@@ -1,17 +1,29 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="kanal-d" group-title="Türkiye",Kanal D
+#EXTINF:-1 tvg-id="kanal-d" group-title="Türkiyə",Kanal D
 http://192.168.1.67:8787/live/kanal-d
-#EXTINF:-1 tvg-id="show-tv" group-title="Türkiye",Show TV
+#EXTINF:-1 tvg-id="show-tv" group-title="Türkiyə",Show TV
 http://192.168.1.67:8787/live/show-tv
-#EXTINF:-1 tvg-id="now-tv" group-title="Türkiye",NOW TV
+#EXTINF:-1 tvg-id="now-tv" group-title="Türkiyə",NOW TV
 http://192.168.1.67:8787/live/now-tv
-#EXTINF:-1 tvg-id="tv8" group-title="Türkiye",TV8
+#EXTINF:-1 tvg-id="tv8" group-title="Türkiyə",TV8
 http://192.168.1.67:8787/live/tv8
-#EXTINF:-1 tvg-id="teve2" group-title="Türkiye",teve2
+#EXTINF:-1 tvg-id="teve2" group-title="Türkiyə",teve2
 http://192.168.1.67:8787/live/teve2
-#EXTINF:-1 tvg-id="a-haber" group-title="Türkiye",A Haber
+#EXTINF:-1 tvg-id="tv4" group-title="Türkiyə",TV4
+http://192.168.1.67:8787/live/tv4
+#EXTINF:-1 tvg-id="trt-haber" group-title="Türkiyə",TRT Haber
+http://192.168.1.67:8787/live/trt-haber
+#EXTINF:-1 tvg-id="a-haber" group-title="Türkiyə",A Haber
 http://192.168.1.67:8787/live/a-haber
-#EXTINF:-1 tvg-id="haberturk-tv" group-title="Türkiye",Habertürk TV
+#EXTINF:-1 tvg-id="haberturk-tv" group-title="Türkiyə",Habertürk TV
 http://192.168.1.67:8787/live/haberturk-tv
-#EXTINF:-1 tvg-id="dream-turk" group-title="Türkiye",Dream Türk
+#EXTINF:-1 tvg-id="halk-tv" group-title="Türkiyə",Halk TV
+http://192.168.1.67:8787/live/halk-tv
+#EXTINF:-1 tvg-id="tvnet" group-title="Türkiyə",TVNET
+http://192.168.1.67:8787/live/tvnet
+#EXTINF:-1 tvg-id="yirmi-dort-tv" group-title="Türkiyə",24 TV
+http://192.168.1.67:8787/live/yirmi-dort-tv
+#EXTINF:-1 tvg-id="trt-world" group-title="Türkiyə",TRT World
+http://192.168.1.67:8787/live/trt-world
+#EXTINF:-1 tvg-id="dream-turk" group-title="Türkiyə",Dream Türk
 http://192.168.1.67:8787/live/dream-turk
