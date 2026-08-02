@@ -28,11 +28,24 @@ export async function fastCheck(entry: PlaylistEntry): Promise<FastCheckResult> 
   if (isForbiddenUrl(entry.url)) return { ok: false, reason: "forbidden_url" };
   if (hasSensitiveHeaders(entry)) return { ok: false, reason: "sensitive_headers" };
   try {
-    const response = await fetch(entry.url, {
+    let response = await fetch(entry.url, {
       redirect: "follow",
       headers: requestHeaders(entry),
       signal: AbortSignal.timeout(10_000)
     });
+    if (response.status === 403) {
+      for (const headers of publicHeaderRetries(entry)) {
+        response = await fetch(entry.url, {
+          redirect: "follow",
+          headers: { ...requestHeaders(entry), ...headers },
+          signal: AbortSignal.timeout(10_000)
+        });
+        if (response.ok) {
+          entry.headers = { ...entry.headers, ...headers };
+          break;
+        }
+      }
+    }
     const contentType = response.headers.get("content-type") ?? "";
     if (!response.ok) return { ok: false, contentType, reason: `http_${response.status}` };
     const bytes = new Uint8Array((await response.clone().arrayBuffer()).slice(0, 512 * 1024));
@@ -163,6 +176,24 @@ function probeSample(sample: Buffer): Promise<Omit<MediaCheckResult, "ok" | "byt
 
 function requestHeaders(entry: PlaylistEntry): Record<string, string> {
   return { "User-Agent": USER_AGENT, ...entry.headers };
+}
+
+function publicHeaderRetries(entry: PlaylistEntry): Array<Record<string, string>> {
+  const androidTv = "Mozilla/5.0 (Linux; Android 11; Android TV) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
+  const browser = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
+  const referer = entry.headers["Referer"] ?? entry.candidateReferer;
+  const sets: Array<Record<string, string>> = [
+    { "User-Agent": androidTv },
+    { "User-Agent": browser }
+  ];
+  if (referer) {
+    sets.push(
+      { Referer: referer },
+      { "User-Agent": androidTv, Referer: referer },
+      { "User-Agent": browser, Referer: referer }
+    );
+  }
+  return sets;
 }
 
 function hasSensitiveHeaders(entry: PlaylistEntry): boolean {

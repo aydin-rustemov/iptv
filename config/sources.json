@@ -4,7 +4,10 @@
       "name": "iptv-org",
       "url": "https://iptv-org.github.io/iptv/index.m3u",
       "enabled": true,
-      "lastSuccessfulDownload": "2026-08-02T08:50:52.146Z",
+      "countryScope": [
+        "global"
+      ],
+      "lastSuccessfulDownload": "2026-08-02T11:11:54.968Z",
       "parsedEntries": 13470,
       "workingPriorityCandidates": 39
     },
@@ -12,7 +15,10 @@
       "name": "iptv-org-azerbaijan",
       "url": "https://iptv-org.github.io/iptv/countries/az.m3u",
       "enabled": true,
-      "lastSuccessfulDownload": "2026-08-02T08:50:52.146Z",
+      "countryScope": [
+        "AZ"
+      ],
+      "lastSuccessfulDownload": "2026-08-02T11:11:54.969Z",
       "parsedEntries": 23,
       "workingPriorityCandidates": 0
     },
@@ -20,7 +26,10 @@
       "name": "iptv-org-turkey",
       "url": "https://iptv-org.github.io/iptv/countries/tr.m3u",
       "enabled": true,
-      "lastSuccessfulDownload": "2026-08-02T08:50:52.146Z",
+      "countryScope": [
+        "TR"
+      ],
+      "lastSuccessfulDownload": "2026-08-02T11:11:54.969Z",
       "parsedEntries": 160,
       "workingPriorityCandidates": 0
     },
@@ -28,8 +37,95 @@
       "name": "iptv-org-russia",
       "url": "https://iptv-org.github.io/iptv/countries/ru.m3u",
       "enabled": true,
-      "lastSuccessfulDownload": "2026-08-02T08:50:52.146Z",
+      "countryScope": [
+        "RU"
+      ],
+      "lastSuccessfulDownload": "2026-08-02T11:11:54.969Z",
       "parsedEntries": 475,
+      "workingPriorityCandidates": 0
+    },
+    {
+      "name": "iptv-org-azerbaijani-language",
+      "url": "https://iptv-org.github.io/iptv/languages/aze.m3u",
+      "enabled": true,
+      "countryScope": [
+        "AZ",
+        "aze"
+      ],
+      "lastSuccessfulDownload": "2026-08-02T11:11:54.969Z",
+      "parsedEntries": 25,
+      "workingPriorityCandidates": 0
+    },
+    {
+      "name": "iptv-org-turkish-language",
+      "url": "https://iptv-org.github.io/iptv/languages/tur.m3u",
+      "enabled": true,
+      "countryScope": [
+        "TR",
+        "tur"
+      ],
+      "lastSuccessfulDownload": "2026-08-02T11:11:54.969Z",
+      "parsedEntries": 161,
+      "workingPriorityCandidates": 0
+    },
+    {
+      "name": "iptv-org-russian-language",
+      "url": "https://iptv-org.github.io/iptv/languages/rus.m3u",
+      "enabled": true,
+      "countryScope": [
+        "RU",
+        "rus"
+      ],
+      "lastSuccessfulDownload": "2026-08-02T11:11:54.969Z",
+      "parsedEntries": 603,
+      "workingPriorityCandidates": 0
+    },
+    {
+      "name": "iptv-org-news",
+      "url": "https://iptv-org.github.io/iptv/categories/news.m3u",
+      "enabled": true,
+      "countryScope": [
+        "global",
+        "news"
+      ],
+      "lastSuccessfulDownload": "2026-08-02T11:11:54.969Z",
+      "parsedEntries": 1008,
+      "workingPriorityCandidates": 0
+    },
+    {
+      "name": "iptv-org-sports",
+      "url": "https://iptv-org.github.io/iptv/categories/sports.m3u",
+      "enabled": true,
+      "countryScope": [
+        "global",
+        "sports"
+      ],
+      "lastSuccessfulDownload": "2026-08-02T11:11:54.969Z",
+      "parsedEntries": 498,
+      "workingPriorityCandidates": 0
+    },
+    {
+      "name": "iptv-org-kids",
+      "url": "https://iptv-org.github.io/iptv/categories/kids.m3u",
+      "enabled": true,
+      "countryScope": [
+        "global",
+        "kids"
+      ],
+      "lastSuccessfulDownload": "2026-08-02T11:11:54.969Z",
+      "parsedEntries": 391,
+      "workingPriorityCandidates": 0
+    },
+    {
+      "name": "iptv-org-music",
+      "url": "https://iptv-org.github.io/iptv/categories/music.m3u",
+      "enabled": true,
+      "countryScope": [
+        "global",
+        "music"
+      ],
+      "lastSuccessfulDownload": "2026-08-02T11:11:54.969Z",
+      "parsedEntries": 772,
       "workingPriorityCandidates": 0
     }
   ]

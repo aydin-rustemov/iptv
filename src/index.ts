@@ -23,13 +23,13 @@ async function main(): Promise<void> {
 
   const fastResults = new Map<PlaylistEntry, FastCheckResult>();
   await runPool(candidates, FAST_CONCURRENCY, async (entry) => {
-    fastResults.set(entry, await fastCheck(entry));
+    fastResults.set(entry, await checkFastWithRetry(entry));
   });
   const fastPassed = candidates.filter((entry) => fastResults.get(entry)?.ok);
 
   const mediaResults = new Map<PlaylistEntry, MediaCheckResult>();
   await runPool(fastPassed, MEDIA_CONCURRENCY, async (entry) => {
-    mediaResults.set(entry, await mediaCheck(entry, fastResults.get(entry)!));
+    mediaResults.set(entry, await checkMediaWithRetry(entry, fastResults.get(entry)!));
   });
 
   const validated: ValidatedEntry[] = fastPassed.flatMap((entry) => {
@@ -90,6 +90,20 @@ async function runPool<T>(items: T[], concurrency: number, worker: (item: T) => 
       await worker(item);
     }
   }));
+}
+
+async function checkFastWithRetry(entry: PlaylistEntry): Promise<FastCheckResult> {
+  const first = await fastCheck(entry);
+  if (first.ok || !entry.priorityId) return first;
+  return await fastCheck(entry);
+}
+
+async function checkMediaWithRetry(entry: PlaylistEntry, fast: FastCheckResult): Promise<MediaCheckResult> {
+  const first = await mediaCheck(entry, fast);
+  if (first.ok || !entry.priorityId) return first;
+  const second = await mediaCheck(entry, fast);
+  if (second.ok) return second;
+  return await mediaCheck(entry, fast);
 }
 
 function shouldKeepPrevious(previousCount: number, nextCount: number): boolean {

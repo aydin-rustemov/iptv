@@ -1,5 +1,5 @@
 import fs from "node:fs";
-import type { FastCheckResult, MediaCheckResult, MissingPriorityDetail, PlaylistEntry, PriorityChannel, PriorityChannelStatus, ValidatedEntry } from "./types.js";
+import type { FastCheckResult, MediaCheckResult, MissingPriorityDetail, PlaylistEntry, PriorityChannel, PriorityChannelStatus, PrioritySocialCheck, ValidatedEntry } from "./types.js";
 import { normalizeCountry } from "./parser.js";
 import { isForbiddenUrl } from "./validator.js";
 
@@ -7,8 +7,10 @@ interface PriorityConfig {
   channels: PriorityChannel[];
 }
 
+const socialChecks = new Map<string, PrioritySocialCheck[]>();
+
 export function loadPriorityChannels(file = "config/priority-channels.json"): PriorityChannel[] {
-  const config = JSON.parse(fs.readFileSync(file, "utf8")) as PriorityConfig;
+  const config = JSON.parse(fs.readFileSync(file, "utf8").replace(/^\uFEFF/, "")) as PriorityConfig;
   return [...config.channels].sort((a, b) => a.priority - b.priority);
 }
 
@@ -78,9 +80,15 @@ export async function addTargetedPriorityCandidates(entries: PlaylistEntry[], pr
     for (const url of priority.directCandidates ?? []) additions.push(priorityEntry(priority, url, "priority-direct"));
     for (const page of priority.officialPages ?? []) {
       officialPagesChecked++;
-      for (const url of await extractMediaUrls(page, 2)) additions.push(priorityEntry(priority, url, "official-page"));
+      for (const url of await extractMediaUrls(page, 2)) {
+        if (mediaUrlLooksRelevant(priority, url)) additions.push(priorityEntry(priority, url, "official-page"));
+      }
     }
-    officialSocialAccountsChecked += priority.officialSocial?.length ?? 0;
+    if ((priority.officialSocial?.length ?? 0) > 0) {
+      const checks = await checkOfficialSocial(priority.officialSocial ?? []);
+      socialChecks.set(priority.id, checks);
+      officialSocialAccountsChecked += checks.length;
+    }
   }
 
   return { entries: tagPriorityEntries([...entries, ...additions], priorities), officialPagesChecked, officialSocialAccountsChecked };
@@ -94,7 +102,7 @@ export function buildMissingPriorityDetails(
   mediaResults: Map<PlaylistEntry, MediaCheckResult>,
   sourcesChecked: number,
   officialPagesChecked: number,
-  officialSocialAccountsChecked: number
+  _officialSocialAccountsChecked: number
 ): MissingPriorityDetail[] {
   return statuses.filter((status) => status.status !== "working").map((status) => {
     const priority = priorities.find((item) => item.id === status.id)!;
@@ -111,11 +119,13 @@ export function buildMissingPriorityDetails(
       aliasesChecked: [priority.name, ...priority.aliases],
       sourcesChecked,
       officialPagesChecked: Math.min(priority.officialPages?.length ?? 0, officialPagesChecked),
-      officialSocialAccountsChecked: Math.min(priority.officialSocial?.length ?? 0, officialSocialAccountsChecked),
+      officialSocialAccountsChecked: socialChecks.get(priority.id)?.length ?? 0,
       candidatesFound: found.length,
       candidates: details,
+      socialAccounts: socialChecks.get(priority.id) ?? [],
       bestResult: details.find((item) => item.result === "working")?.result ?? details[0]?.result,
-      finalStatus: status.status
+      finalStatus: finalMissingStatus(status, details, socialChecks.get(priority.id) ?? []),
+      nextRecommendedDiscoveryMethod: nextRecommendedDiscoveryMethod(status, details, socialChecks.get(priority.id) ?? [])
     };
   });
 }
@@ -179,12 +189,40 @@ function priorityEntry(priority: PriorityChannel, url: string, sourceName: strin
     name: priority.name,
     url,
     headers: {},
+    candidateReferer: priority.officialPages?.[0],
     priorityId: priority.id,
     priorityName: priority.name,
     priorityCountry: priority.country,
     priorityCategory: priority.category,
     priorityOrder: priority.priority
   };
+}
+
+async function checkOfficialSocial(urls: string[]): Promise<PrioritySocialCheck[]> {
+  const checks: PrioritySocialCheck[] = [];
+  for (const url of urls) {
+    try {
+      if (isForbiddenUrl(url)) {
+        checks.push({ platform: socialPlatform(url), host: safeHost(url), result: "forbidden_url" });
+        continue;
+      }
+      const response = await fetch(url, {
+        redirect: "follow",
+        headers: { "User-Agent": "Mozilla/5.0 IPTV-Playlist-Updater/1.0" },
+        signal: AbortSignal.timeout(12_000)
+      });
+      if (!response.ok) {
+        checks.push({ platform: socialPlatform(url), host: safeHost(url), result: `http_${response.status}` });
+        continue;
+      }
+      const text = await response.text();
+      const hasLiveHint = /"isLive(Content)?"\s*:\s*true|LIVE_STREAM|liveBroadcastDetails|canl[ıi]\s*yay[ıi]n|live/i.test(text);
+      checks.push({ platform: socialPlatform(url), host: safeHost(url), result: hasLiveHint ? "live_hint_found_no_direct_manifest" : "social_live_not_active" });
+    } catch (err: any) {
+      checks.push({ platform: socialPlatform(url), host: safeHost(url), result: err?.name === "TimeoutError" ? "connection_timeout" : "dns_or_network_failure" });
+    }
+  }
+  return checks;
 }
 
 async function extractMediaUrls(page: string, depth: number): Promise<string[]> {
@@ -229,6 +267,17 @@ function cleanEmbeddedUrl(raw: string): string {
   return raw.replace(/\\\//g, "/").replace(/&amp;/g, "&");
 }
 
+function mediaUrlLooksRelevant(priority: PriorityChannel, url: string): boolean {
+  if (!priority.id.startsWith("trt-")) return true;
+  const compactUrl = compactAscii(url);
+  const needles = [priority.id, priority.name, ...priority.aliases].map(compactAscii).filter(Boolean);
+  return needles.some((needle) => compactUrl.includes(needle));
+}
+
+function compactAscii(value: string): string {
+  return normalizeName(value).replace(/\s+/g, "");
+}
+
 function safeHost(raw: string): string {
   try {
     return new URL(raw).hostname;
@@ -243,6 +292,37 @@ function candidateResult(_entry: PlaylistEntry, fast?: FastCheckResult, media?: 
   if (!media) return "media_not_checked";
   if (!media.ok) return normalizeFailure(media.reason);
   return "working";
+}
+
+function finalMissingStatus(
+  status: PriorityChannelStatus,
+  details: Array<{ result: string }>,
+  socials: PrioritySocialCheck[]
+): MissingPriorityDetail["finalStatus"] {
+  if (status.status === "working") return "working";
+  if (details.length === 0 && socials.some((item) => item.result === "social_live_not_active")) return "social_live_not_active";
+  if (details.length === 0) return "not_found_after_all_sources";
+  return "all_direct_candidates_failed";
+}
+
+function nextRecommendedDiscoveryMethod(
+  status: PriorityChannelStatus,
+  details: Array<{ result: string }>,
+  socials: PrioritySocialCheck[]
+): string {
+  if (status.status === "working") return "none";
+  if (details.some((item) => item.result === "http_403")) return "find alternate direct source or official header-compatible M3U entry";
+  if (details.some((item) => item.result === "dns_or_network_failure")) return "replace obsolete CDN hostname from another public M3U source";
+  if (socials.length > 0 && socials.every((item) => item.result !== "live_hint_found_no_direct_manifest")) return "recheck official social account when continuous live is active";
+  return "target another public direct M3U source or official page manifest";
+}
+
+function socialPlatform(raw: string): PrioritySocialCheck["platform"] {
+  const host = safeHost(raw);
+  if (/youtube|youtu\.be/i.test(host)) return "youtube";
+  if (/(^|\.)vk\.com$/i.test(host)) return "vk";
+  if (/(^|\.)ok\.ru$/i.test(host)) return "ok";
+  return "other";
 }
 
 function normalizeFailure(reason?: string): string {

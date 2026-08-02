@@ -3,17 +3,14 @@ import { normalizeCategory, normalizeCountry } from "./parser.js";
 import { priorityIdFor } from "./priority.js";
 
 export function dedupe(entries: PlaylistEntry[]): { entries: PlaylistEntry[]; duplicatesRemoved: number } {
-  const seenUrls = new Set<string>();
-  const seenChannels = new Set<string>();
-  const unique: PlaylistEntry[] = [];
+  const byUrl = new Map<string, PlaylistEntry>();
   for (const entry of entries) {
     const urlKey = normalizeUrl(entry.url);
-    const channelKey = `${entry.tvgId || ""}|${entry.name.toLocaleLowerCase()}|${normalizeCountry(entry.country ?? entry.groupTitle)}`;
-    if (seenUrls.has(urlKey) || seenChannels.has(channelKey)) continue;
-    seenUrls.add(urlKey);
-    seenChannels.add(channelKey);
-    unique.push({ ...entry, country: normalizeCountry(entry.country ?? entry.groupTitle), category: normalizeCategory(entry.category ?? entry.groupTitle) });
+    const normalized = { ...entry, country: normalizeCountry(entry.country ?? entry.groupTitle), category: normalizeCategory(entry.category ?? entry.groupTitle) };
+    const existing = byUrl.get(urlKey);
+    if (!existing || (!existing.priorityId && normalized.priorityId)) byUrl.set(urlKey, normalized);
   }
+  const unique = [...byUrl.values()];
   return { entries: unique, duplicatesRemoved: entries.length - unique.length };
 }
 

@@ -180,18 +180,6 @@
     "failureReason": "Matching candidates did not pass media validation"
   },
   {
-    "id": "teve2",
-    "name": "teve2",
-    "country": "Türkiyə",
-    "category": "general",
-    "priority": 111,
-    "aliasesChecked": 2,
-    "candidatesFound": 1,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
     "id": "tv8-5",
     "name": "TV8.5",
     "country": "Türkiyə",
@@ -354,7 +342,7 @@
     "category": "sports",
     "priority": 136,
     "aliasesChecked": 1,
-    "candidatesFound": 1,
+    "candidatesFound": 4,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
@@ -402,7 +390,7 @@
     "category": "documentary",
     "priority": 144,
     "aliasesChecked": 1,
-    "candidatesFound": 1,
+    "candidatesFound": 2,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
@@ -454,6 +442,18 @@
     "candidatesValidated": 0,
     "status": "not_found",
     "failureReason": "No matching alias found in enabled M3U sources"
+  },
+  {
+    "id": "trt-cocuk",
+    "name": "TRT Çocuk",
+    "country": "Türkiyə",
+    "category": "children",
+    "priority": 154,
+    "aliasesChecked": 1,
+    "candidatesFound": 2,
+    "candidatesValidated": 0,
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "cartoonito-tr",

@@ -3,8 +3,8 @@ import { isForbiddenUrl } from "./validator.js";
 import type { PriorityChannel, PriorityChannelStatus } from "./types.js";
 
 const playlist = fs.readFileSync("output/playlist.m3u", "utf8");
-const status = JSON.parse(fs.readFileSync("output/status.json", "utf8")) as { published?: number; priorityChannels?: PriorityChannelStatus[] };
-const priorityConfig = JSON.parse(fs.readFileSync("config/priority-channels.json", "utf8")) as { channels: PriorityChannel[] };
+const status = JSON.parse(readJsonText("output/status.json")) as { published?: number; priorityChannels?: PriorityChannelStatus[] };
+const priorityConfig = JSON.parse(readJsonText("config/priority-channels.json")) as { channels: PriorityChannel[] };
 const missingPriority = fs.existsSync("output/missing-priority-channels.json")
   ? JSON.parse(fs.readFileSync("output/missing-priority-channels.json", "utf8")) as PriorityChannelStatus[]
   : [];
@@ -60,4 +60,8 @@ function priorityOrderIsValid(ids: string[], priorities: PriorityChannel[]): boo
   const priorityRanks = new Map(priorities.map((priority) => [priority.id, priority.priority]));
   const ranks = ids.flatMap((id) => priorityRanks.has(id) ? [priorityRanks.get(id)!] : []);
   return ranks.every((rank, index) => index === 0 || rank > ranks[index - 1]!);
+}
+
+function readJsonText(file: string): string {
+  return fs.readFileSync(file, "utf8").replace(/^\uFEFF/, "");
 }

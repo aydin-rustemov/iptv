@@ -10,12 +10,20 @@
       "ATV AZ",
       "ATV Azerbaijan"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "ARB",
@@ -26,12 +34,20 @@
       "ARB",
       "ARB TV"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "ARB24",
@@ -43,9 +59,9 @@
       "ARB 24",
       "ARB 24 TV"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 1,
     "candidates": [
       {
@@ -54,8 +70,16 @@
         "result": "http_404"
       }
     ],
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
     "bestResult": "http_404",
-    "finalStatus": "all_candidates_failed"
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "Space TV",
@@ -66,9 +90,9 @@
       "Space TV",
       "Space Azerbaijan"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 1,
     "candidates": [
       {
@@ -77,8 +101,16 @@
         "result": "http_404"
       }
     ],
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "http_404"
+      }
+    ],
     "bestResult": "http_404",
-    "finalStatus": "all_candidates_failed"
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
   },
   {
     "channel": "Real TV",
@@ -89,12 +121,20 @@
       "Real TV",
       "Real Azerbaijan"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "http_404"
+      }
+    ],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
   },
   {
     "channel": "Baku TV",
@@ -105,9 +145,9 @@
       "Baku TV",
       "Bakı TV"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 1,
     "candidates": [
       {
@@ -116,8 +156,16 @@
         "result": "http_404"
       }
     ],
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
     "bestResult": "http_404",
-    "finalStatus": "all_candidates_failed"
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "CBC",
@@ -129,9 +177,9 @@
       "CBC TV",
       "CBC Azerbaijan"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 1,
     "candidates": [
       {
@@ -140,8 +188,16 @@
         "result": "dns_or_network_failure"
       }
     ],
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "http_404"
+      }
+    ],
     "bestResult": "dns_or_network_failure",
-    "finalStatus": "all_candidates_failed"
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "replace obsolete CDN hostname from another public M3U source"
   },
   {
     "channel": "CBC Sport",
@@ -152,12 +208,20 @@
       "CBC Sport",
       "CBC Sports"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "İdman TV",
@@ -170,12 +234,20 @@
       "İdman Azərbaycan",
       "Idman Azerbaijan"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "MTV Azərbaycan",
@@ -187,12 +259,20 @@
       "MTV Azerbaijan",
       "MTV AZ"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "ARB Günəş",
@@ -203,9 +283,9 @@
       "ARB Günəş",
       "ARB Gunes"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 1,
     "candidates": [
       {
@@ -214,8 +294,16 @@
         "result": "http_404"
       }
     ],
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
     "bestResult": "http_404",
-    "finalStatus": "all_candidates_failed"
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "Dünya TV",
@@ -226,9 +314,9 @@
       "Dünya TV",
       "Dunya TV"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 1,
     "candidates": [
       {
@@ -237,8 +325,16 @@
         "result": "http_404"
       }
     ],
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "http_404"
+      }
+    ],
     "bestResult": "http_404",
-    "finalStatus": "all_candidates_failed"
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
   },
   {
     "channel": "Qafqaz TV",
@@ -249,12 +345,20 @@
       "Qafqaz TV",
       "Qafqaz"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "http_404"
+      }
+    ],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
   },
   {
     "channel": "EL TV",
@@ -265,9 +369,9 @@
       "EL TV",
       "El TV"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 1,
     "candidates": [
       {
@@ -276,8 +380,16 @@
         "result": "private_or_local_url"
       }
     ],
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
     "bestResult": "private_or_local_url",
-    "finalStatus": "all_candidates_failed"
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "Beyaz TV",
@@ -288,7 +400,7 @@
       "Beyaz TV",
       "Beyaz"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
     "candidatesFound": 1,
@@ -299,32 +411,10 @@
         "result": "dns_or_network_failure"
       }
     ],
+    "socialAccounts": [],
     "bestResult": "dns_or_network_failure",
-    "finalStatus": "all_candidates_failed"
-  },
-  {
-    "channel": "teve2",
-    "id": "teve2",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "teve2",
-      "teve2",
-      "Teve2",
-      "TV2"
-    ],
-    "sourcesChecked": 4,
-    "officialPagesChecked": 1,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 1,
-    "candidates": [
-      {
-        "host": "tv2.duhnet.tv",
-        "sourceName": "official-page",
-        "result": "dns_or_network_failure"
-      }
-    ],
-    "bestResult": "dns_or_network_failure",
-    "finalStatus": "all_candidates_failed"
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "replace obsolete CDN hostname from another public M3U source"
   },
   {
     "channel": "TV8.5",
@@ -335,12 +425,14 @@
       "TV8.5",
       "TV 8.5"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "a2",
@@ -351,12 +443,14 @@
       "a2",
       "A2 TV"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "Show Max",
@@ -367,12 +461,14 @@
       "Show Max",
       "ShowMax"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "CNN Türk",
@@ -383,12 +479,20 @@
       "CNN Türk",
       "CNN Turk"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "Sözcü TV",
@@ -399,12 +503,20 @@
       "Sözcü TV",
       "Sozcu TV"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "TV100",
@@ -415,12 +527,20 @@
       "TV100",
       "TV 100"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "Bloomberg HT",
@@ -430,12 +550,20 @@
       "Bloomberg HT",
       "Bloomberg HT"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "Ülke TV",
@@ -446,7 +574,7 @@
       "Ülke TV",
       "Ulke TV"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
     "candidatesFound": 1,
@@ -457,8 +585,10 @@
         "result": "http_403"
       }
     ],
+    "socialAccounts": [],
     "bestResult": "http_403",
-    "finalStatus": "all_candidates_failed"
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "find alternate direct source or official header-compatible M3U entry"
   },
   {
     "channel": "24 TV",
@@ -469,12 +599,20 @@
       "24 TV",
       "Yirmidort TV"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "A Para",
@@ -485,12 +623,20 @@
       "A Para",
       "APara"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "A News",
@@ -501,12 +647,20 @@
       "A News",
       "ANews"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "Ekotürk TV",
@@ -517,12 +671,20 @@
       "Ekotürk TV",
       "Ekoturk TV"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "Ulusal Kanal",
@@ -532,12 +694,20 @@
       "Ulusal Kanal",
       "Ulusal Kanal"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "http_404"
+      }
+    ],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
   },
   {
     "channel": "TRT Spor",
@@ -547,19 +717,36 @@
       "TRT Spor",
       "TRT Spor"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 1,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 1,
+    "candidatesFound": 4,
     "candidates": [
       {
         "host": "tv-trtspor1.medya.trt.com.tr",
         "sourceName": "priority-direct",
         "result": "http_403"
+      },
+      {
+        "host": "tv-trtspor2.medya.trt.com.tr",
+        "sourceName": "priority-direct",
+        "result": "http_403"
+      },
+      {
+        "host": "trt.daioncdn.net",
+        "sourceName": "official-page",
+        "result": "http_403"
+      },
+      {
+        "host": "trt.daioncdn.net",
+        "sourceName": "official-page",
+        "result": "http_403"
       }
     ],
+    "socialAccounts": [],
     "bestResult": "http_403",
-    "finalStatus": "all_candidates_failed"
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "find alternate direct source or official header-compatible M3U entry"
   },
   {
     "channel": "TRT Spor Yıldız",
@@ -570,7 +757,7 @@
       "TRT Spor Yıldız",
       "TRT Spor Yildiz"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 1,
     "officialSocialAccountsChecked": 0,
     "candidatesFound": 1,
@@ -581,8 +768,10 @@
         "result": "dns_or_network_failure"
       }
     ],
+    "socialAccounts": [],
     "bestResult": "dns_or_network_failure",
-    "finalStatus": "all_candidates_failed"
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "replace obsolete CDN hostname from another public M3U source"
   },
   {
     "channel": "beIN Sports Haber",
@@ -593,12 +782,14 @@
       "beIN Sports Haber",
       "Bein Sports Haber"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "GS TV",
@@ -609,12 +800,20 @@
       "GS TV",
       "Galatasaray TV"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "TRT Belgesel",
@@ -624,19 +823,26 @@
       "TRT Belgesel",
       "TRT Belgesel"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 1,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 1,
+    "candidatesFound": 2,
     "candidates": [
       {
         "host": "tv-trtbelgesel.medya.trt.com.tr",
         "sourceName": "iptv-org",
         "result": "http_403"
+      },
+      {
+        "host": "tv-trtbelgesel-dash.medya.trt.com.tr",
+        "sourceName": "official-page",
+        "result": "http_403"
       }
     ],
+    "socialAccounts": [],
     "bestResult": "http_403",
-    "finalStatus": "all_candidates_failed"
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "find alternate direct source or official header-compatible M3U entry"
   },
   {
     "channel": "TRT 2",
@@ -647,7 +853,7 @@
       "TRT 2",
       "TRT2"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 1,
     "officialSocialAccountsChecked": 0,
     "candidatesFound": 1,
@@ -658,8 +864,10 @@
         "result": "http_403"
       }
     ],
+    "socialAccounts": [],
     "bestResult": "http_403",
-    "finalStatus": "all_candidates_failed"
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "find alternate direct source or official header-compatible M3U entry"
   },
   {
     "channel": "DMAX",
@@ -670,12 +878,14 @@
       "DMAX",
       "DMAX Türkiye"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "TLC",
@@ -686,12 +896,14 @@
       "TLC",
       "TLC Türkiye"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "Yaban TV",
@@ -703,12 +915,50 @@
       "Yaban Televizyonu",
       "Yaban"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
+    "channel": "TRT Çocuk",
+    "id": "trt-cocuk",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "TRT Çocuk",
+      "TRT Çocuk",
+      "TRT Cocuk"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 1,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 2,
+    "candidates": [
+      {
+        "host": "tv-trtcocuk.medya.trt.com.tr",
+        "sourceName": "priority-direct",
+        "result": "http_403"
+      },
+      {
+        "host": "trtcanlitv-lh.akamaihd.net",
+        "sourceName": "official-page",
+        "result": "http_400"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "http_403",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "find alternate direct source or official header-compatible M3U entry"
   },
   {
     "channel": "Cartoonito",
@@ -719,12 +969,14 @@
       "Cartoonito",
       "Cartoonito Türkiye"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "Disney Channel Türkiye",
@@ -735,12 +987,14 @@
       "Disney Channel Türkiye",
       "Disney Channel Turkey"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "Nickelodeon Türkiye",
@@ -751,12 +1005,14 @@
       "Nickelodeon Türkiye",
       "Nickelodeon Turkey"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "Cartoon Network Türkiye",
@@ -767,12 +1023,14 @@
       "Cartoon Network Türkiye",
       "Cartoon Network Turkey"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "Kral Pop TV",
@@ -783,9 +1041,9 @@
       "Kral Pop TV",
       "Kral Pop"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 1,
     "candidates": [
       {
@@ -794,8 +1052,16 @@
         "result": "http_403"
       }
     ],
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "http_404"
+      }
+    ],
     "bestResult": "http_403",
-    "finalStatus": "all_candidates_failed"
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "find alternate direct source or official header-compatible M3U entry"
   },
   {
     "channel": "Number 1 Türk",
@@ -807,12 +1073,20 @@
       "Number One Türk",
       "Number 1 Turk"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "http_404"
+      }
+    ],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
   },
   {
     "channel": "PowerTürk Slow",
@@ -824,12 +1098,14 @@
       "PowerTurk Slow",
       "Power Türk Slow"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "Milyon TV",
@@ -839,12 +1115,20 @@
       "Milyon TV",
       "Milyon TV"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "Tatlıses TV",
@@ -855,11 +1139,19 @@
       "Tatlıses TV",
       "Tatlises TV"
     ],
-    "sourcesChecked": 4,
+    "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 0,
     "candidates": [],
-    "finalStatus": "not_found"
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "http_404"
+      }
+    ],
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
   }
 ]

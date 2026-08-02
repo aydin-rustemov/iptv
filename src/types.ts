@@ -19,6 +19,7 @@ export interface PlaylistEntry {
   name: string;
   url: string;
   headers: Record<string, string>;
+  candidateReferer?: string;
   priorityId?: string;
   priorityName?: string;
   priorityCountry?: string;
@@ -103,6 +104,12 @@ export interface PriorityCandidateDetail {
   result: string;
 }
 
+export interface PrioritySocialCheck {
+  platform: "youtube" | "vk" | "ok" | "other";
+  host: string;
+  result: string;
+}
+
 export interface MissingPriorityDetail {
   channel: string;
   id: string;
@@ -113,6 +120,8 @@ export interface MissingPriorityDetail {
   officialSocialAccountsChecked: number;
   candidatesFound: number;
   candidates: PriorityCandidateDetail[];
+  socialAccounts: PrioritySocialCheck[];
   bestResult?: string;
-  finalStatus: PriorityChannelStatus["status"];
+  finalStatus: PriorityChannelStatus["status"] | "not_found_after_all_sources" | "all_direct_candidates_failed" | "temporary_offline" | "social_live_not_active";
+  nextRecommendedDiscoveryMethod?: string;
 }
