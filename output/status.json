@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-08-02T08:13:53.717Z",
+  "updatedAt": "2026-08-02T08:50:52.147Z",
   "sources": 4,
-  "downloadedEntries": 14128,
-  "uniqueCandidates": 13199,
-  "fastCheckPassed": 890,
-  "mediaCheckPassed": 733,
+  "downloadedEntries": 14250,
+  "uniqueCandidates": 13205,
+  "fastCheckPassed": 892,
+  "mediaCheckPassed": 748,
   "published": 300,
-  "failed": 518,
-  "duplicatesRemoved": 929,
+  "failed": 509,
+  "duplicatesRemoved": 1045,
   "countryCounts": {
     "Azərbaycan": 11,
     "Türkiyə": 70,
@@ -25,7 +25,7 @@
     "ABŞ": 36,
     "Argentina": 1,
     "IQ": 7,
-    "QA": 17,
+    "QA": 18,
     "AE": 7,
     "Almaniya": 3,
     "GR": 1,
@@ -43,7 +43,7 @@
     "JO": 1,
     "KE": 1,
     "CM": 1,
-    "Böyük Britaniya": 3,
+    "Böyük Britaniya": 2,
     "LB": 1,
     "AL": 1,
     "PY": 1,
@@ -57,15 +57,15 @@
     "BR": 1
   },
   "categoryCounts": {
-    "General": 100,
+    "General": 102,
     "Culture": 13,
-    "Music": 14,
-    "News": 49,
+    "Music": 18,
+    "News": 52,
     "Sports": 15,
-    "Children": 11,
+    "Children": 9,
     "Documentary": 6,
-    "Other": 84,
-    "Movies": 7,
+    "Other": 78,
+    "Movies": 6,
     "Education": 1
   },
   "degraded": false,
@@ -329,10 +329,10 @@
       "category": "general",
       "priority": 101,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 1,
+      "candidatesValidated": 1,
+      "selectedSource": "priority-direct",
+      "status": "working"
     },
     {
       "id": "atv-tr",
@@ -365,10 +365,10 @@
       "category": "general",
       "priority": 104,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 1,
+      "candidatesValidated": 1,
+      "selectedSource": "official-page",
+      "status": "working"
     },
     {
       "id": "star-tv",
@@ -449,10 +449,10 @@
       "category": "general",
       "priority": 111,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
+      "candidatesFound": 1,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "tv8-5",
@@ -749,10 +749,10 @@
       "category": "sports",
       "priority": 136,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
+      "candidatesFound": 1,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "trt-spor-yildiz",
@@ -761,10 +761,10 @@
       "category": "sports",
       "priority": 137,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
+      "candidatesFound": 1,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "a-spor",
@@ -965,10 +965,10 @@
       "category": "children",
       "priority": 154,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 1,
+      "candidatesValidated": 1,
+      "selectedSource": "priority-direct",
+      "status": "working"
     },
     {
       "id": "minika-cocuk",
@@ -1074,9 +1074,9 @@
       "priority": 163,
       "aliasesChecked": 3,
       "candidatesFound": 1,
-      "candidatesValidated": 0,
-      "status": "all_candidates_failed",
-      "failureReason": "Matching candidates did not pass media validation"
+      "candidatesValidated": 1,
+      "selectedSource": "iptv-org",
+      "status": "working"
     },
     {
       "id": "number-1-turk",

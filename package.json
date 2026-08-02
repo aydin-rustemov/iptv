@@ -11,6 +11,7 @@
     "build": "tsc",
     "typecheck": "tsc --noEmit",
     "update": "tsx src/index.ts",
+    "priority:find": "tsx src/index.ts && tsx src/audit.ts",
     "audit": "tsx src/audit.ts"
   },
   "dependencies": {

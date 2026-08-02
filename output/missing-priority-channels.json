@@ -168,30 +168,6 @@
     "failureReason": "Matching candidates did not pass media validation"
   },
   {
-    "id": "trt-1",
-    "name": "TRT 1",
-    "country": "Türkiyə",
-    "category": "general",
-    "priority": 101,
-    "aliasesChecked": 2,
-    "candidatesFound": 0,
-    "candidatesValidated": 0,
-    "status": "not_found",
-    "failureReason": "No matching alias found in enabled M3U sources"
-  },
-  {
-    "id": "show-tv",
-    "name": "Show TV",
-    "country": "Türkiyə",
-    "category": "general",
-    "priority": 104,
-    "aliasesChecked": 2,
-    "candidatesFound": 0,
-    "candidatesValidated": 0,
-    "status": "not_found",
-    "failureReason": "No matching alias found in enabled M3U sources"
-  },
-  {
     "id": "beyaz-tv",
     "name": "Beyaz TV",
     "country": "Türkiyə",
@@ -210,10 +186,10 @@
     "category": "general",
     "priority": 111,
     "aliasesChecked": 2,
-    "candidatesFound": 0,
+    "candidatesFound": 1,
     "candidatesValidated": 0,
-    "status": "not_found",
-    "failureReason": "No matching alias found in enabled M3U sources"
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "tv8-5",
@@ -378,10 +354,10 @@
     "category": "sports",
     "priority": 136,
     "aliasesChecked": 1,
-    "candidatesFound": 0,
+    "candidatesFound": 1,
     "candidatesValidated": 0,
-    "status": "not_found",
-    "failureReason": "No matching alias found in enabled M3U sources"
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "trt-spor-yildiz",
@@ -390,10 +366,10 @@
     "category": "sports",
     "priority": 137,
     "aliasesChecked": 1,
-    "candidatesFound": 0,
+    "candidatesFound": 1,
     "candidatesValidated": 0,
-    "status": "not_found",
-    "failureReason": "No matching alias found in enabled M3U sources"
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "bein-sports-haber",
@@ -480,18 +456,6 @@
     "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
-    "id": "trt-cocuk",
-    "name": "TRT Çocuk",
-    "country": "Türkiyə",
-    "category": "children",
-    "priority": 154,
-    "aliasesChecked": 1,
-    "candidatesFound": 0,
-    "candidatesValidated": 0,
-    "status": "not_found",
-    "failureReason": "No matching alias found in enabled M3U sources"
-  },
-  {
     "id": "cartoonito-tr",
     "name": "Cartoonito",
     "country": "Türkiyə",
@@ -546,18 +510,6 @@
     "category": "music",
     "priority": 162,
     "aliasesChecked": 2,
-    "candidatesFound": 1,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
-    "id": "powerturk-tv",
-    "name": "PowerTürk TV",
-    "country": "Türkiyə",
-    "category": "music",
-    "priority": 163,
-    "aliasesChecked": 3,
     "candidatesFound": 1,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",

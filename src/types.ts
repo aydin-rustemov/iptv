@@ -2,6 +2,10 @@ export interface SourceConfig {
   name: string;
   url: string;
   enabled: boolean;
+  countryScope?: string[];
+  lastSuccessfulDownload?: string;
+  parsedEntries?: number;
+  workingPriorityCandidates?: number;
 }
 
 export interface PlaylistEntry {
@@ -74,6 +78,9 @@ export interface PriorityChannel {
   priority: number;
   core: boolean;
   aliases: string[];
+  officialPages?: string[];
+  directCandidates?: string[];
+  officialSocial?: string[];
 }
 
 export interface PriorityChannelStatus {
@@ -88,4 +95,24 @@ export interface PriorityChannelStatus {
   selectedSource?: string;
   status: "working" | "not_found" | "all_candidates_failed" | "provider_required" | "drm" | "geo_blocked" | "authentication_required";
   failureReason?: string;
+}
+
+export interface PriorityCandidateDetail {
+  host: string;
+  sourceName: string;
+  result: string;
+}
+
+export interface MissingPriorityDetail {
+  channel: string;
+  id: string;
+  previousStatus: string;
+  aliasesChecked: string[];
+  sourcesChecked: number;
+  officialPagesChecked: number;
+  officialSocialAccountsChecked: number;
+  candidatesFound: number;
+  candidates: PriorityCandidateDetail[];
+  bestResult?: string;
+  finalStatus: PriorityChannelStatus["status"];
 }

@@ -3,22 +3,34 @@
     {
       "name": "iptv-org",
       "url": "https://iptv-org.github.io/iptv/index.m3u",
-      "enabled": true
+      "enabled": true,
+      "lastSuccessfulDownload": "2026-08-02T08:50:52.146Z",
+      "parsedEntries": 13470,
+      "workingPriorityCandidates": 39
     },
     {
       "name": "iptv-org-azerbaijan",
       "url": "https://iptv-org.github.io/iptv/countries/az.m3u",
-      "enabled": true
+      "enabled": true,
+      "lastSuccessfulDownload": "2026-08-02T08:50:52.146Z",
+      "parsedEntries": 23,
+      "workingPriorityCandidates": 0
     },
     {
       "name": "iptv-org-turkey",
       "url": "https://iptv-org.github.io/iptv/countries/tr.m3u",
-      "enabled": true
+      "enabled": true,
+      "lastSuccessfulDownload": "2026-08-02T08:50:52.146Z",
+      "parsedEntries": 160,
+      "workingPriorityCandidates": 0
     },
     {
       "name": "iptv-org-russia",
       "url": "https://iptv-org.github.io/iptv/countries/ru.m3u",
-      "enabled": true
+      "enabled": true,
+      "lastSuccessfulDownload": "2026-08-02T08:50:52.146Z",
+      "parsedEntries": 475,
+      "workingPriorityCandidates": 0
     }
   ]
 }

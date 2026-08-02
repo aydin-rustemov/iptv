@@ -1,0 +1,865 @@
+[
+  {
+    "channel": "ATV Azərbaycan",
+    "id": "atv-az",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "ATV Azərbaycan",
+      "ATV Azərbaycan",
+      "Azad Azərbaycan",
+      "ATV AZ",
+      "ATV Azerbaijan"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "ARB",
+    "id": "arb",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "ARB",
+      "ARB",
+      "ARB TV"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "ARB24",
+    "id": "arb24",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "ARB24",
+      "ARB24",
+      "ARB 24",
+      "ARB 24 TV"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "raw.githubusercontent.com",
+        "sourceName": "iptv-org",
+        "result": "http_404"
+      }
+    ],
+    "bestResult": "http_404",
+    "finalStatus": "all_candidates_failed"
+  },
+  {
+    "channel": "Space TV",
+    "id": "space-tv",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "Space TV",
+      "Space TV",
+      "Space Azerbaijan"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "raw.githubusercontent.com",
+        "sourceName": "iptv-org",
+        "result": "http_404"
+      }
+    ],
+    "bestResult": "http_404",
+    "finalStatus": "all_candidates_failed"
+  },
+  {
+    "channel": "Real TV",
+    "id": "real-tv",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "Real TV",
+      "Real TV",
+      "Real Azerbaijan"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "Baku TV",
+    "id": "baku-tv",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "Baku TV",
+      "Baku TV",
+      "Bakı TV"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "raw.githubusercontent.com",
+        "sourceName": "iptv-org",
+        "result": "http_404"
+      }
+    ],
+    "bestResult": "http_404",
+    "finalStatus": "all_candidates_failed"
+  },
+  {
+    "channel": "CBC",
+    "id": "cbc",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "CBC",
+      "CBC",
+      "CBC TV",
+      "CBC Azerbaijan"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "mn-nl.mncdn.com",
+        "sourceName": "iptv-org",
+        "result": "dns_or_network_failure"
+      }
+    ],
+    "bestResult": "dns_or_network_failure",
+    "finalStatus": "all_candidates_failed"
+  },
+  {
+    "channel": "CBC Sport",
+    "id": "cbc-sport",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "CBC Sport",
+      "CBC Sport",
+      "CBC Sports"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "İdman TV",
+    "id": "idman-tv",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "İdman TV",
+      "İdman TV",
+      "Idman TV",
+      "İdman Azərbaycan",
+      "Idman Azerbaijan"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "MTV Azərbaycan",
+    "id": "mtv-az",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "MTV Azərbaycan",
+      "MTV Azərbaycan",
+      "MTV Azerbaijan",
+      "MTV AZ"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "ARB Günəş",
+    "id": "arb-gunes",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "ARB Günəş",
+      "ARB Günəş",
+      "ARB Gunes"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "raw.githubusercontent.com",
+        "sourceName": "iptv-org",
+        "result": "http_404"
+      }
+    ],
+    "bestResult": "http_404",
+    "finalStatus": "all_candidates_failed"
+  },
+  {
+    "channel": "Dünya TV",
+    "id": "dunya-tv",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "Dünya TV",
+      "Dünya TV",
+      "Dunya TV"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "raw.githubusercontent.com",
+        "sourceName": "iptv-org",
+        "result": "http_404"
+      }
+    ],
+    "bestResult": "http_404",
+    "finalStatus": "all_candidates_failed"
+  },
+  {
+    "channel": "Qafqaz TV",
+    "id": "qafqaz-tv",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "Qafqaz TV",
+      "Qafqaz TV",
+      "Qafqaz"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "EL TV",
+    "id": "el-tv",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "EL TV",
+      "EL TV",
+      "El TV"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "85.132.53.162",
+        "sourceName": "iptv-org",
+        "result": "private_or_local_url"
+      }
+    ],
+    "bestResult": "private_or_local_url",
+    "finalStatus": "all_candidates_failed"
+  },
+  {
+    "channel": "Beyaz TV",
+    "id": "beyaz-tv",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "Beyaz TV",
+      "Beyaz TV",
+      "Beyaz"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "mn-nl.mncdn.com",
+        "sourceName": "iptv-org",
+        "result": "dns_or_network_failure"
+      }
+    ],
+    "bestResult": "dns_or_network_failure",
+    "finalStatus": "all_candidates_failed"
+  },
+  {
+    "channel": "teve2",
+    "id": "teve2",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "teve2",
+      "teve2",
+      "Teve2",
+      "TV2"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 1,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "tv2.duhnet.tv",
+        "sourceName": "official-page",
+        "result": "dns_or_network_failure"
+      }
+    ],
+    "bestResult": "dns_or_network_failure",
+    "finalStatus": "all_candidates_failed"
+  },
+  {
+    "channel": "TV8.5",
+    "id": "tv8-5",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "TV8.5",
+      "TV8.5",
+      "TV 8.5"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "a2",
+    "id": "a2",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "a2",
+      "a2",
+      "A2 TV"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "Show Max",
+    "id": "show-max",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "Show Max",
+      "Show Max",
+      "ShowMax"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "CNN Türk",
+    "id": "cnn-turk",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "CNN Türk",
+      "CNN Türk",
+      "CNN Turk"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "Sözcü TV",
+    "id": "sozcu-tv",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "Sözcü TV",
+      "Sözcü TV",
+      "Sozcu TV"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "TV100",
+    "id": "tv100",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "TV100",
+      "TV100",
+      "TV 100"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "Bloomberg HT",
+    "id": "bloomberg-ht",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "Bloomberg HT",
+      "Bloomberg HT"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "Ülke TV",
+    "id": "ulke-tv",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "Ülke TV",
+      "Ülke TV",
+      "Ulke TV"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "217.174.229.138",
+        "sourceName": "iptv-org",
+        "result": "http_403"
+      }
+    ],
+    "bestResult": "http_403",
+    "finalStatus": "all_candidates_failed"
+  },
+  {
+    "channel": "24 TV",
+    "id": "24-tv",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "24 TV",
+      "24 TV",
+      "Yirmidort TV"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "A Para",
+    "id": "a-para",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "A Para",
+      "A Para",
+      "APara"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "A News",
+    "id": "a-news",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "A News",
+      "A News",
+      "ANews"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "Ekotürk TV",
+    "id": "ekoturk-tv",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "Ekotürk TV",
+      "Ekotürk TV",
+      "Ekoturk TV"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "Ulusal Kanal",
+    "id": "ulusal-kanal",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "Ulusal Kanal",
+      "Ulusal Kanal"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "TRT Spor",
+    "id": "trt-spor",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "TRT Spor",
+      "TRT Spor"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 1,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "tv-trtspor1.medya.trt.com.tr",
+        "sourceName": "priority-direct",
+        "result": "http_403"
+      }
+    ],
+    "bestResult": "http_403",
+    "finalStatus": "all_candidates_failed"
+  },
+  {
+    "channel": "TRT Spor Yıldız",
+    "id": "trt-spor-yildiz",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "TRT Spor Yıldız",
+      "TRT Spor Yıldız",
+      "TRT Spor Yildiz"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 1,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "tv-trtsporyildiz.medya.trt.com.tr",
+        "sourceName": "priority-direct",
+        "result": "dns_or_network_failure"
+      }
+    ],
+    "bestResult": "dns_or_network_failure",
+    "finalStatus": "all_candidates_failed"
+  },
+  {
+    "channel": "beIN Sports Haber",
+    "id": "bein-sports-haber",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "beIN Sports Haber",
+      "beIN Sports Haber",
+      "Bein Sports Haber"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "GS TV",
+    "id": "gs-tv",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "GS TV",
+      "GS TV",
+      "Galatasaray TV"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "TRT Belgesel",
+    "id": "trt-belgesel",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "TRT Belgesel",
+      "TRT Belgesel"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 1,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "tv-trtbelgesel.medya.trt.com.tr",
+        "sourceName": "iptv-org",
+        "result": "http_403"
+      }
+    ],
+    "bestResult": "http_403",
+    "finalStatus": "all_candidates_failed"
+  },
+  {
+    "channel": "TRT 2",
+    "id": "trt-2",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "TRT 2",
+      "TRT 2",
+      "TRT2"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 1,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "tv-trt2.medya.trt.com.tr",
+        "sourceName": "iptv-org",
+        "result": "http_403"
+      }
+    ],
+    "bestResult": "http_403",
+    "finalStatus": "all_candidates_failed"
+  },
+  {
+    "channel": "DMAX",
+    "id": "dmax",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "DMAX",
+      "DMAX",
+      "DMAX Türkiye"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "TLC",
+    "id": "tlc",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "TLC",
+      "TLC",
+      "TLC Türkiye"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "Yaban TV",
+    "id": "yaban-tv",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "Yaban TV",
+      "Yaban TV",
+      "Yaban Televizyonu",
+      "Yaban"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "Cartoonito",
+    "id": "cartoonito-tr",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "Cartoonito",
+      "Cartoonito",
+      "Cartoonito Türkiye"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "Disney Channel Türkiye",
+    "id": "disney-channel-tr",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "Disney Channel Türkiye",
+      "Disney Channel Türkiye",
+      "Disney Channel Turkey"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "Nickelodeon Türkiye",
+    "id": "nickelodeon-tr",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "Nickelodeon Türkiye",
+      "Nickelodeon Türkiye",
+      "Nickelodeon Turkey"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "Cartoon Network Türkiye",
+    "id": "cartoon-network-tr",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "Cartoon Network Türkiye",
+      "Cartoon Network Türkiye",
+      "Cartoon Network Turkey"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "Kral Pop TV",
+    "id": "kral-pop-tv",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "Kral Pop TV",
+      "Kral Pop TV",
+      "Kral Pop"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "dogus-live.daioncdn.net",
+        "sourceName": "iptv-org",
+        "result": "http_403"
+      }
+    ],
+    "bestResult": "http_403",
+    "finalStatus": "all_candidates_failed"
+  },
+  {
+    "channel": "Number 1 Türk",
+    "id": "number-1-turk",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "Number 1 Türk",
+      "Number 1 Türk",
+      "Number One Türk",
+      "Number 1 Turk"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "PowerTürk Slow",
+    "id": "powerturk-slow",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "PowerTürk Slow",
+      "PowerTürk Slow",
+      "PowerTurk Slow",
+      "Power Türk Slow"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "Milyon TV",
+    "id": "milyon-tv",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "Milyon TV",
+      "Milyon TV"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  },
+  {
+    "channel": "Tatlıses TV",
+    "id": "tatlises-tv",
+    "previousStatus": "not_found",
+    "aliasesChecked": [
+      "Tatlıses TV",
+      "Tatlıses TV",
+      "Tatlises TV"
+    ],
+    "sourcesChecked": 4,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 0,
+    "candidates": [],
+    "finalStatus": "not_found"
+  }
+]

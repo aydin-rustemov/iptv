@@ -1,11 +1,11 @@
 import fs from "node:fs";
-import { loadSources, downloadSource } from "./downloader.js";
+import { loadSources, downloadSource, updateSourceStats } from "./downloader.js";
 import { parseM3u } from "./parser.js";
 import { fastCheck, mediaCheck } from "./validator.js";
 import { dedupe, preselect, score, select } from "./selector.js";
 import { countBy, writePlaylist, writeStatus } from "./generator.js";
 import type { FastCheckResult, MediaCheckResult, PlaylistEntry, StatusOutput, ValidatedEntry } from "./types.js";
-import { buildPriorityStatuses, loadPriorityChannels, tagPriorityEntries, writeMissingPriority } from "./priority.js";
+import { addTargetedPriorityCandidates, buildMissingPriorityDetails, buildPriorityStatuses, loadPriorityChannels, tagPriorityEntries, writeMissingPriority, writeMissingPriorityDetails } from "./priority.js";
 
 const FAST_CONCURRENCY = Number(process.env["IPTV_FAST_CONCURRENCY"] ?? 30);
 const MEDIA_CONCURRENCY = Number(process.env["IPTV_MEDIA_CONCURRENCY"] ?? 5);
@@ -14,7 +14,10 @@ async function main(): Promise<void> {
   const sources = loadSources();
   const priorities = loadPriorityChannels();
   const downloaded = await Promise.all(sources.map(async (source) => ({ source, text: await downloadSource(source) })));
-  const entries = tagPriorityEntries(downloaded.flatMap(({ source, text }) => parseM3u(text, source.name)), priorities);
+  const parsedBySource = downloaded.map(({ source, text }) => ({ source, entries: parseM3u(text, source.name) }));
+  const parsedEntries = tagPriorityEntries(parsedBySource.flatMap((item) => item.entries), priorities);
+  const targeted = await addTargetedPriorityCandidates(parsedEntries, priorities);
+  const entries = targeted.entries;
   const { entries: uniqueEntries, duplicatesRemoved } = dedupe(entries);
   const candidates = preselect(uniqueEntries);
 
@@ -44,13 +47,20 @@ async function main(): Promise<void> {
 
   const selected = select(validated, 300, priorities);
   const priorityChannels = buildPriorityStatuses(priorities, uniqueEntries, validated, selected);
+  const missingDetails = buildMissingPriorityDetails(priorityChannels, priorities, uniqueEntries, fastResults, mediaResults, sources.length, targeted.officialPagesChecked, targeted.officialSocialAccountsChecked);
   const previousCount = countPreviousPlaylist();
   const degraded = shouldKeepPrevious(previousCount, selected.length);
   if (!degraded) {
     if (fs.existsSync("output/playlist.m3u")) fs.copyFileSync("output/playlist.m3u", "output/playlist.previous.m3u");
     writePlaylist(selected);
     writeMissingPriority(priorityChannels);
+    writeMissingPriorityDetails(missingDetails);
   }
+  updateSourceStats(parsedBySource.map(({ source, entries: sourceEntries }) => ({
+    name: source.name,
+    parsedEntries: sourceEntries.length,
+    workingPriorityCandidates: selected.filter((entry) => entry.sourceName === source.name && entry.priorityId).length
+  })));
 
   const status: StatusOutput = {
     updatedAt: new Date().toISOString(),
