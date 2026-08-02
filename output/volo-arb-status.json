@@ -1,0 +1,99 @@
+{
+  "page": "https://tv.canlitvvolo.com/arb-tv-az-izle/",
+  "apiEndpoint": "https://api.canlitvvolo.com/api/tv/stream",
+  "apiMethod": "POST",
+  "alternativesChecked": 3,
+  "channelName": "ARB TV AZ",
+  "playerType": "videojs",
+  "candidateHost": "proxy.hdtvcanli.com",
+  "plainRequestResult": "http_400",
+  "publicHeaderResult": "origin_required_not_m3u_compatible",
+  "manifestResult": "valid_manifest",
+  "segmentBytes": 1489712,
+  "ffprobeResult": "video_detected",
+  "browserClosedRetest": "not_tested",
+  "finalStatus": "session_or_cookie_dependent",
+  "alternatives": [
+    {
+      "yayin": 1,
+      "pageUrl": "https://tv.canlitvvolo.com/arb-tv-az-izle/?yayin=1",
+      "apiEndpoint": "https://api.canlitvvolo.com/api/tv/stream",
+      "apiMethod": "POST",
+      "channelName": "ARB TV AZ",
+      "playerType": "videojs",
+      "iframeUrl": null,
+      "customCodePresent": false,
+      "broadcastButtons": [
+        {
+          "yayinNo": 1,
+          "isActive": true
+        },
+        {
+          "yayinNo": 2,
+          "isActive": false
+        }
+      ],
+      "streamHost": "proxy.hdtvcanli.com",
+      "capturedManifestHeaders": [
+        "User-Agent",
+        "Referer"
+      ],
+      "plainRequestResult": "http_400",
+      "publicHeaderResult": "origin_required_not_m3u_compatible",
+      "manifestResult": "valid_manifest",
+      "segmentBytes": 1489712,
+      "ffprobeResult": "video_detected",
+      "browserClosedRetest": "not_tested",
+      "finalStatus": "session_or_cookie_dependent"
+    },
+    {
+      "yayin": 2,
+      "pageUrl": "https://tv.canlitvvolo.com/arb-tv-az-izle/?yayin=2",
+      "apiEndpoint": "https://api.canlitvvolo.com/api/tv/stream",
+      "apiMethod": "POST",
+      "channelName": "ARB TV AZ",
+      "playerType": "videojs",
+      "iframeUrl": null,
+      "customCodePresent": false,
+      "broadcastButtons": [
+        {
+          "yayinNo": 1,
+          "isActive": false
+        },
+        {
+          "yayinNo": 2,
+          "isActive": true
+        }
+      ],
+      "streamHost": "proxy.hdtvcanli.com",
+      "capturedManifestHeaders": [
+        "User-Agent",
+        "Referer"
+      ],
+      "plainRequestResult": "http_400",
+      "publicHeaderResult": "http_400",
+      "manifestResult": "http_400",
+      "segmentBytes": 0,
+      "ffprobeResult": "not_tested",
+      "browserClosedRetest": "not_tested",
+      "finalStatus": "all_alternatives_failed"
+    },
+    {
+      "yayin": 3,
+      "pageUrl": "https://tv.canlitvvolo.com/arb-tv-az-izle/?yayin=3",
+      "iframeUrl": null,
+      "customCodePresent": false,
+      "capturedManifestHeaders": [
+        "User-Agent",
+        "Referer"
+      ],
+      "plainRequestResult": "no_stream_url",
+      "publicHeaderResult": "not_tested",
+      "manifestResult": "not_tested",
+      "segmentBytes": 0,
+      "ffprobeResult": "not_tested",
+      "browserClosedRetest": "not_tested",
+      "finalStatus": "all_alternatives_failed"
+    }
+  ]
+}

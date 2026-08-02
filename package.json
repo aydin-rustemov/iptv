@@ -12,7 +12,8 @@
     "typecheck": "tsc --noEmit",
     "update": "tsx src/index.ts",
     "priority:find": "tsx src/index.ts && tsx src/audit.ts",
-    "audit": "tsx src/audit.ts"
+    "audit": "tsx src/audit.ts",
+    "volo:test:arb": "tsx src/volo-arb.ts"
   },
   "dependencies": {
     "ffprobe-static": "^3.1.0",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@types/node": "22.14.1",
+    "playwright": "^1.62.1",
     "typescript": "5.8.3"
   }
 }

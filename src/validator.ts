@@ -8,7 +8,7 @@ import type { FastCheckResult, MediaCheckResult, PlaylistEntry } from "./types.j
 
 const USER_AGENT = "Mozilla/5.0 IPTV-Playlist-Updater/1.0";
 
-export function isForbiddenUrl(raw: string): boolean {
+export function isForbiddenUrl(raw: string, options: { allowLivePath?: boolean } = {}): boolean {
   try {
     const url = new URL(raw);
     const host = url.hostname.toLowerCase();
@@ -16,7 +16,7 @@ export function isForbiddenUrl(raw: string): boolean {
     if (host === "localhost" || host === "127.0.0.1" || host === "::1") return true;
     if (/^192\.168\./.test(host) || /^10\./.test(host) || /^172\.(1[6-9]|2\d|3[0-1])\./.test(host)) return true;
     if (url.port === "8787") return true;
-    if (/\/live\//i.test(url.pathname)) return true;
+    if (!options.allowLivePath && /\/live\//i.test(url.pathname)) return true;
     return false;
   } catch {
     return true;
@@ -25,7 +25,7 @@ export function isForbiddenUrl(raw: string): boolean {
 
 export async function fastCheck(entry: PlaylistEntry): Promise<FastCheckResult> {
   const start = Date.now();
-  if (isForbiddenUrl(entry.url)) return { ok: false, reason: "forbidden_url" };
+  if (isForbiddenUrl(entry.url, { allowLivePath: entry.allowLivePath })) return { ok: false, reason: "forbidden_url" };
   if (hasSensitiveHeaders(entry)) return { ok: false, reason: "sensitive_headers" };
   try {
     let response = await fetch(entry.url, {
@@ -117,7 +117,7 @@ async function fetchText(url: string, entry: PlaylistEntry): Promise<string> {
 }
 
 async function downloadSample(url: string, entry: PlaylistEntry, maxBytes: number): Promise<Buffer> {
-  if (isForbiddenUrl(url)) throw new Error("forbidden_url");
+  if (isForbiddenUrl(url, { allowLivePath: entry.allowLivePath })) throw new Error("forbidden_url");
   const response = await fetch(url, {
     headers: { ...requestHeaders(entry), Range: `bytes=0-${maxBytes - 1}` },
     signal: AbortSignal.timeout(15_000)

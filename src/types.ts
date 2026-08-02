@@ -20,6 +20,7 @@ export interface PlaylistEntry {
   url: string;
   headers: Record<string, string>;
   candidateReferer?: string;
+  allowLivePath?: boolean;
   priorityId?: string;
   priorityName?: string;
   priorityCountry?: string;

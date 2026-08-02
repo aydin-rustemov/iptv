@@ -18,7 +18,7 @@ const extinfCount = (playlist.match(/^#EXTINF/gm) ?? []).length;
 
 if (ids.length !== new Set(ids).size) errors.push("Duplicate channel ID exists");
 if (urls.length !== new Set(urls.map((url) => url.toLowerCase())).size) errors.push("Duplicate stream URL exists");
-if (urls.some(isForbiddenUrl)) errors.push("Private/local/gateway URL exists");
+if (urls.some((url) => isForbiddenUrl(url))) errors.push("Private/local/gateway URL exists");
 if (urls.some((url) => /\/live\//i.test(url) || /:8787/.test(url))) errors.push("Gateway URL exists");
 if (extinfCount !== urls.length) errors.push("Malformed EXTINF exists");
 if (extinfCount > 300) errors.push("Published count exceeds 300");
