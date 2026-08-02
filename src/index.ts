@@ -5,14 +5,16 @@ import { fastCheck, mediaCheck } from "./validator.js";
 import { dedupe, preselect, score, select } from "./selector.js";
 import { countBy, writePlaylist, writeStatus } from "./generator.js";
 import type { FastCheckResult, MediaCheckResult, PlaylistEntry, StatusOutput, ValidatedEntry } from "./types.js";
+import { buildPriorityStatuses, loadPriorityChannels, tagPriorityEntries, writeMissingPriority } from "./priority.js";
 
 const FAST_CONCURRENCY = Number(process.env["IPTV_FAST_CONCURRENCY"] ?? 30);
 const MEDIA_CONCURRENCY = Number(process.env["IPTV_MEDIA_CONCURRENCY"] ?? 5);
 
 async function main(): Promise<void> {
   const sources = loadSources();
+  const priorities = loadPriorityChannels();
   const downloaded = await Promise.all(sources.map(async (source) => ({ source, text: await downloadSource(source) })));
-  const entries = downloaded.flatMap(({ source, text }) => parseM3u(text, source.name));
+  const entries = tagPriorityEntries(downloaded.flatMap(({ source, text }) => parseM3u(text, source.name)), priorities);
   const { entries: uniqueEntries, duplicatesRemoved } = dedupe(entries);
   const candidates = preselect(uniqueEntries);
 
@@ -40,12 +42,14 @@ async function main(): Promise<void> {
     }];
   });
 
-  const selected = select(validated, 300);
+  const selected = select(validated, 300, priorities);
+  const priorityChannels = buildPriorityStatuses(priorities, uniqueEntries, validated, selected);
   const previousCount = countPreviousPlaylist();
   const degraded = shouldKeepPrevious(previousCount, selected.length);
   if (!degraded) {
     if (fs.existsSync("output/playlist.m3u")) fs.copyFileSync("output/playlist.m3u", "output/playlist.previous.m3u");
     writePlaylist(selected);
+    writeMissingPriority(priorityChannels);
   }
 
   const status: StatusOutput = {
@@ -60,7 +64,8 @@ async function main(): Promise<void> {
     duplicatesRemoved,
     countryCounts: countBy(degraded ? [] : selected, (entry) => entry.country),
     categoryCounts: countBy(degraded ? [] : selected, (entry) => entry.category),
-    degraded
+    degraded,
+    priorityChannels
   };
   writeStatus(status);
   console.log(JSON.stringify(status, null, 2));

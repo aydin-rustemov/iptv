@@ -4,6 +4,21 @@
       "name": "iptv-org",
       "url": "https://iptv-org.github.io/iptv/index.m3u",
       "enabled": true
+    },
+    {
+      "name": "iptv-org-azerbaijan",
+      "url": "https://iptv-org.github.io/iptv/countries/az.m3u",
+      "enabled": true
+    },
+    {
+      "name": "iptv-org-turkey",
+      "url": "https://iptv-org.github.io/iptv/countries/tr.m3u",
+      "enabled": true
+    },
+    {
+      "name": "iptv-org-russia",
+      "url": "https://iptv-org.github.io/iptv/countries/ru.m3u",
+      "enabled": true
     }
   ]
 }

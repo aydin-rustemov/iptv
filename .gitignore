@@ -16,3 +16,4 @@ output/*
 !output/playlist.previous.m3u
 !output/status.json
 !output/status.html
+!output/missing-priority-channels.json

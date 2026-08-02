@@ -15,6 +15,11 @@ export interface PlaylistEntry {
   name: string;
   url: string;
   headers: Record<string, string>;
+  priorityId?: string;
+  priorityName?: string;
+  priorityCountry?: string;
+  priorityCategory?: string;
+  priorityOrder?: number;
 }
 
 export interface FastCheckResult {
@@ -58,4 +63,29 @@ export interface StatusOutput {
   countryCounts: Record<string, number>;
   categoryCounts: Record<string, number>;
   degraded: boolean;
+  priorityChannels?: PriorityChannelStatus[];
+}
+
+export interface PriorityChannel {
+  id: string;
+  name: string;
+  country: string;
+  category: string;
+  priority: number;
+  core: boolean;
+  aliases: string[];
+}
+
+export interface PriorityChannelStatus {
+  id: string;
+  name: string;
+  country: string;
+  category: string;
+  priority: number;
+  aliasesChecked: number;
+  candidatesFound: number;
+  candidatesValidated: number;
+  selectedSource?: string;
+  status: "working" | "not_found" | "all_candidates_failed" | "provider_required" | "drm" | "geo_blocked" | "authentication_required";
+  failureReason?: string;
 }
