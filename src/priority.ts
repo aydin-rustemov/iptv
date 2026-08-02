@@ -29,7 +29,7 @@ export function tagPriorityEntries(entries: PlaylistEntry[], priorities: Priorit
       category: categoryName(match.category),
       name: match.name,
       tvgName: match.name,
-      tvgId: match.id
+      tvgId: entry.sourceName === "manual-locked" ? entry.tvgId : match.id
     };
   });
 }

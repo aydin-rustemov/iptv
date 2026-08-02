@@ -7,12 +7,13 @@ export function writePlaylist(entries: ValidatedEntry[], file = "output/playlist
   let text = "#EXTM3U\n";
   const ordered = [...entries].sort((a, b) => groupCountryRank(groupTitle(a)) - groupCountryRank(groupTitle(b)));
   for (const entry of ordered) {
-    const name = displayName(entry.name);
+    const group = groupTitle(entry);
+    const name = withWarningPrefix(displayName(entry.name), group);
     const attrs = [
       `tvg-id="${escapeAttr(entry.tvgId ?? slug(name))}"`,
       `tvg-name="${escapeAttr(entry.tvgName ?? name)}"`,
       entry.tvgLogo ? `tvg-logo="${escapeAttr(entry.tvgLogo)}"` : undefined,
-      `group-title="${escapeAttr(groupTitle(entry))}"`
+      `group-title="${escapeAttr(group)}"`
     ].filter(Boolean).join(" ");
     text += `#EXTINF:-1 ${attrs},${name}\n`;
     if (entry.headers["User-Agent"]) text += `#EXTVLCOPT:http-user-agent=${entry.headers["User-Agent"]}\n`;
@@ -20,6 +21,11 @@ export function writePlaylist(entries: ValidatedEntry[], file = "output/playlist
     text += `${entry.url}\n`;
   }
   fs.writeFileSync(file, text, "utf8");
+}
+
+function withWarningPrefix(name: string, group: string): string {
+  if (!/Yoxlan/i.test(group)) return name;
+  return name.startsWith("⚠") ? name : `⚠ ${name}`;
 }
 
 function displayName(value: string): string {

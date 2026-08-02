@@ -15,6 +15,8 @@ export interface ManualOverride {
   locked?: boolean;
   neverReplace?: boolean;
   neverRemove?: boolean;
+  forcePublish?: boolean;
+  staticUrl?: boolean;
   allowPublishWhenGithubRunnerCannotValidate?: boolean;
   useWhenCurrentPrimaryFails?: boolean;
   preferOfficialDirectUrl?: boolean;
@@ -39,37 +41,37 @@ export function manualOverrideCandidates(overrides: ManualOverride[]): PlaylistE
       tvgName: override.name,
       groupTitle: override.group,
       country: countryName(override.country),
-      category: "General",
+      category: categoryFor(override),
       name: override.name,
       url,
       headers: {},
-      priorityId: override.id,
+      priorityId: priorityIdFor(override),
       priorityName: override.name,
       priorityCountry: countryName(override.country),
-      priorityCategory: "general",
-      priorityOrder: override.id === "cbc-sport-az" ? 11 : 3
+      priorityCategory: priorityCategoryFor(override),
+      priorityOrder: priorityOrderFor(override)
     }];
   });
 }
 
 export function forcedPublishedOverrides(overrides: ManualOverride[]): ValidatedEntry[] {
   return overrides
-    .filter((override) => override.locked && override.url && override.allowPublishWhenGithubRunnerCannotValidate)
+    .filter((override) => override.locked && override.url && (override.forcePublish || override.allowPublishWhenGithubRunnerCannotValidate))
     .map((override) => ({
       sourceName: "manual-locked",
       tvgId: override.id,
       tvgName: override.name,
       groupTitle: override.group,
       country: countryName(override.country),
-      category: "Sports",
+      category: categoryFor(override),
       name: override.name,
       url: override.url!,
       headers: {},
-      priorityId: override.id,
+      priorityId: priorityIdFor(override),
       priorityName: override.name,
       priorityCountry: countryName(override.country),
-      priorityCategory: "sports",
-      priorityOrder: 11,
+      priorityCategory: priorityCategoryFor(override),
+      priorityOrder: priorityOrderFor(override),
       normalizedUrl: override.url!.toLowerCase(),
       score: 10000,
       fast: {
@@ -95,4 +97,29 @@ function countryName(code: string): string {
   if (code === "TR") return "Türkiyə";
   if (code === "RU") return "Rusiya";
   return code;
+}
+
+function priorityIdFor(override: ManualOverride): string {
+  if (override.id === "arb-az") return "arb";
+  if (override.id === "space-tv-az") return "space-tv";
+  if (override.id === "cbc-sport-az") return "cbc-sport";
+  return override.id;
+}
+
+function priorityOrderFor(override: ManualOverride): number {
+  if (override.id === "atv-az") return 3;
+  if (override.id === "arb-az") return 5;
+  if (override.id === "cbc-sport-az") return 11;
+  if (override.id === "space-tv-az") return 7;
+  return Number.MAX_SAFE_INTEGER;
+}
+
+function priorityCategoryFor(override: ManualOverride): string {
+  if (override.id === "cbc-sport-az") return "sports";
+  return "general";
+}
+
+function categoryFor(override: ManualOverride): string {
+  if (override.id === "cbc-sport-az") return "Sports";
+  return "General";
 }

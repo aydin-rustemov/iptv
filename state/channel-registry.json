@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T16:23:58.470Z",
+  "updatedAt": "2026-08-02T17:38:18.519Z",
   "channels": [
     {
       "canonicalId": "az-arb-24",
@@ -12,9 +12,9 @@
       "currentSource": "none",
       "candidateUrls": [],
       "manualOverride": false,
-      "lastFailureAt": "2026-08-02T16:23:58.470Z",
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
       "consecutiveFailures": 1,
-      "lastCanliTvDiscoveryAt": "2026-08-02T16:23:58.470Z",
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
       "verificationStatus": "no_manifest",
       "tokenClassification": "stable",
       "requiredHeaders": [],
@@ -31,9 +31,9 @@
       "currentSource": "none",
       "candidateUrls": [],
       "manualOverride": false,
-      "lastFailureAt": "2026-08-02T16:23:58.470Z",
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
       "consecutiveFailures": 1,
-      "lastCanliTvDiscoveryAt": "2026-08-02T16:23:58.470Z",
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
       "verificationStatus": "no_manifest",
       "tokenClassification": "stable",
       "requiredHeaders": [],
@@ -50,9 +50,9 @@
       "currentSource": "none",
       "candidateUrls": [],
       "manualOverride": false,
-      "lastFailureAt": "2026-08-02T16:23:58.470Z",
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
       "consecutiveFailures": 1,
-      "lastCanliTvDiscoveryAt": "2026-08-02T16:23:58.470Z",
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
       "verificationStatus": "no_manifest",
       "tokenClassification": "stable",
       "requiredHeaders": [],
@@ -69,9 +69,9 @@
       "currentSource": "none",
       "candidateUrls": [],
       "manualOverride": false,
-      "lastFailureAt": "2026-08-02T16:23:58.470Z",
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
       "consecutiveFailures": 1,
-      "lastCanliTvDiscoveryAt": "2026-08-02T16:23:58.470Z",
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
       "verificationStatus": "no_manifest",
       "tokenClassification": "stable",
       "requiredHeaders": [],
@@ -88,13 +88,1719 @@
       "currentSource": "none",
       "candidateUrls": [],
       "manualOverride": false,
-      "lastFailureAt": "2026-08-02T16:23:58.470Z",
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
       "consecutiveFailures": 1,
-      "lastCanliTvDiscoveryAt": "2026-08-02T16:23:58.470Z",
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
       "verificationStatus": "no_manifest",
       "tokenClassification": "stable",
       "requiredHeaders": [],
       "sourcePage": "https://web.canlitv.az/asanradio-dinle-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-asanradio-dinle",
+      "displayName": "Asanradio dinle",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "Asanradio dinle"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/asanradio-dinle-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-atv",
+      "displayName": "atv",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "atv"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli_adaptive.m3u8",
+        "https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/atv-canli-yayim-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-aztv",
+      "displayName": "aztv",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "aztv"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/aztv-canli-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-aztv",
+      "displayName": "Aztv",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "Aztv"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/aztv-canli-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-baku-tv",
+      "displayName": "baku tv",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "baku tv"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://rtmp.baku.tv/hls/bakutv.m3u8",
+        "https://rtmp.baku.tv/hls/bakutv_1080p.m3u8",
+        "https://rtmp.baku.tv/hls/bakutv.m3u8",
+        "https://rtmp.baku.tv/hls/bakutv_1080p.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/baku-tv-canli-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-baku-tv",
+      "displayName": "Baku tv",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "Baku tv"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://rtmp.baku.tv/hls/bakutv.m3u8",
+        "https://rtmp.baku.tv/hls/bakutv_1080p.m3u8",
+        "https://rtmp.baku.tv/hls/bakutv.m3u8",
+        "https://rtmp.baku.tv/hls/bakutv_1080p.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/baku-tv-canli-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-cbc-sport",
+      "displayName": "cbc sport",
+      "country": "Azərbaycan",
+      "category": "Sports",
+      "aliases": [
+        "cbc sport"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://cbcsports-live.lg.mncdn.com/cbcsports_live/cbcsports/chunklist.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/cbc-sport-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-cbc-tv",
+      "displayName": "cbc tv",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "cbc tv"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/cbc-tv-canli-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-cbc-tv",
+      "displayName": "CBC tv",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "CBC tv"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/cbc-tv-canli-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-deadpool-3-39-651-izlenme",
+      "displayName": "Deadpool 3 39,651 izlenme",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "Deadpool 3 39,651 izlenme"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/deadpool-3-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-elyas-turkce-bublaj-33-514-izlenme",
+      "displayName": "Elyas turkce bublaj 33,514 izlenme",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "Elyas turkce bublaj 33,514 izlenme"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/elyas-turkce-bublaj-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-futboltv",
+      "displayName": "futboltv",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "futboltv"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukobs1/playlist.m3u8",
+        "https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukobs1/playlist.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/futboltv-canli-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-futboltv",
+      "displayName": "Futboltv",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "Futboltv"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukobs1/playlist.m3u8",
+        "https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukobs1/playlist.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/futboltv-canli-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-ictimai-tv",
+      "displayName": "ictimai tv",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "ictimai tv"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://live.itv.az/itv.m3u8",
+        "https://live.itv.az/itv.m3u8?bandwidth=1700&shift=0",
+        "https://live.itv.az/itv.m3u8?bandwidth=2500&shift=0",
+        "https://live.itv.az/itv.m3u8?bandwidth=3900&shift=0",
+        "https://live.itv.az/itv.m3u8",
+        "https://live.itv.az/itv.m3u8?bandwidth=1700&shift=0",
+        "https://live.itv.az/itv.m3u8?bandwidth=2500&shift=0",
+        "https://live.itv.az/itv.m3u8?bandwidth=3900&shift=0"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/ictimai-tv-canli-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-ictimai-tv",
+      "displayName": "ictimai Tv",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "ictimai Tv"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://live.itv.az/itv.m3u8",
+        "https://live.itv.az/itv.m3u8?bandwidth=1700&shift=0",
+        "https://live.itv.az/itv.m3u8?bandwidth=2500&shift=0",
+        "https://live.itv.az/itv.m3u8?bandwidth=3900&shift=0",
+        "https://live.itv.az/itv.m3u8",
+        "https://live.itv.az/itv.m3u8?bandwidth=1700&shift=0",
+        "https://live.itv.az/itv.m3u8?bandwidth=2500&shift=0",
+        "https://live.itv.az/itv.m3u8?bandwidth=3900&shift=0"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/ictimai-tv-canli-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-idman-tv",
+      "displayName": "idman tv",
+      "country": "Azərbaycan",
+      "category": "Sports",
+      "aliases": [
+        "idman tv"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/idman-tv-canli-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-medeniyet-tv-canl",
+      "displayName": "medeniyet tv canl",
+      "country": "Azərbaycan",
+      "category": "Documentary",
+      "aliases": [
+        "medeniyet tv canl"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/medeniyet-tv-canl-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-medeniyet-tv-canl",
+      "displayName": "Medeniyet tv canlı",
+      "country": "Azərbaycan",
+      "category": "Documentary",
+      "aliases": [
+        "Medeniyet tv canlı"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/medeniyet-tv-canl-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-muz-tv",
+      "displayName": "muz tv",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "muz tv"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/muz-tv-canli-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-muz-tv",
+      "displayName": "Muz tv",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "Muz tv"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/muz-tv-canli-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-qafqaz-tv",
+      "displayName": "qafqaz tv",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "qafqaz tv"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/qafqaz-tv-canli-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-qafqaz-tv",
+      "displayName": "Qafqaz tv",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "Qafqaz tv"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/qafqaz-tv-canli-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-real-tv-canl",
+      "displayName": "real tv canl",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "real tv canl"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/real-tv-canl-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-real-tv-canl",
+      "displayName": "Real Tv Canlı",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "Real Tv Canlı"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/real-tv-canl-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-space-tv",
+      "displayName": "space tv",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "space tv"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/space-tv-canli-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-space-tv",
+      "displayName": "Space Tv",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "Space Tv"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/space-tv-canli-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-tmb-azerbaycan",
+      "displayName": "tmb azerbaycan",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "tmb azerbaycan"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/tmb-azerbaycan-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-tmb-azerbaycan",
+      "displayName": "TMB AZERBAYCAN",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "TMB AZERBAYCAN"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/tmb-azerbaycan-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-tnt-sports-3",
+      "displayName": "tnt sports 3",
+      "country": "Azərbaycan",
+      "category": "Sports",
+      "aliases": [
+        "tnt sports 3"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/tnt-sports-3-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-tnt-sports-3",
+      "displayName": "TNT Sports 3",
+      "country": "Azərbaycan",
+      "category": "Sports",
+      "aliases": [
+        "TNT Sports 3"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/tnt-sports-3-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-tudn-tv",
+      "displayName": "tudn tv",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "tudn tv"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc1us/medhigh.m3u8",
+        "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc1us/medhigh.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/tudn-tv-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-tudn-tv",
+      "displayName": "TUDN TV",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "TUDN TV"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc1us/medhigh.m3u8",
+        "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc1us/medhigh.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/tudn-tv-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-xezer-tv-canl",
+      "displayName": "xezer tv canl",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "xezer tv canl"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/xezer-tv-canl-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-xezer-tv-canl",
+      "displayName": "Xezer Tv Canlı",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "Xezer Tv Canlı"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/xezer-tv-canl-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-a-haber",
+      "displayName": "a haber",
+      "country": "Türkiyə",
+      "category": "News",
+      "aliases": [
+        "a haber"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/a-haber-canli-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-a-haber",
+      "displayName": "A haber",
+      "country": "Türkiyə",
+      "category": "News",
+      "aliases": [
+        "A haber"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/a-haber-canli-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-a-spor-canl",
+      "displayName": "a spor canl",
+      "country": "Türkiyə",
+      "category": "Sports",
+      "aliases": [
+        "a spor canl"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/aspor/aspor_480p.m3u8?hash=%5Bredacted%5D",
+        "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/aspor/aspor_480p.m3u8?hash=%5Bredacted%5D"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "unknown_token",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/a-spor-canl-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-a-spor-canl",
+      "displayName": "A Spor Canlı",
+      "country": "Türkiyə",
+      "category": "Sports",
+      "aliases": [
+        "A Spor Canlı"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/aspor/aspor_480p.m3u8?hash=%5Bredacted%5D",
+        "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/aspor/aspor_480p.m3u8?hash=%5Bredacted%5D"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "unknown_token",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/a-spor-canl-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-a2-tv",
+      "displayName": "a2 tv",
+      "country": "Türkiyə",
+      "category": "General",
+      "aliases": [
+        "a2 tv"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/a2-tv-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-a2-tv",
+      "displayName": "A2 TV",
+      "country": "Türkiyə",
+      "category": "General",
+      "aliases": [
+        "A2 TV"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/a2-tv-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-atv-avrupa",
+      "displayName": "atv avrupa",
+      "country": "Türkiyə",
+      "category": "General",
+      "aliases": [
+        "atv avrupa"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/atv-avrupa-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-atv-avrupa",
+      "displayName": "Atv Avrupa",
+      "country": "Türkiyə",
+      "category": "General",
+      "aliases": [
+        "Atv Avrupa"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/atv-avrupa-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-atv-canl",
+      "displayName": "atv canl",
+      "country": "Türkiyə",
+      "category": "General",
+      "aliases": [
+        "atv canl"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/atv-canl-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-atv-canl",
+      "displayName": "ATV Canlı",
+      "country": "Türkiyə",
+      "category": "General",
+      "aliases": [
+        "ATV Canlı"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/atv-canl-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-banliyo-cocuklari-3",
+      "displayName": "banliyo cocuklari 3",
+      "country": "Türkiyə",
+      "category": "Children",
+      "aliases": [
+        "banliyo cocuklari 3"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/banliyo-cocuklari-3-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-banliyo-cocuklari-3",
+      "displayName": "Banliyo Cocuklari 3",
+      "country": "Türkiyə",
+      "category": "Children",
+      "aliases": [
+        "Banliyo Cocuklari 3"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/banliyo-cocuklari-3-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-bein-sport",
+      "displayName": "bein sport",
+      "country": "Türkiyə",
+      "category": "Sports",
+      "aliases": [
+        "bein sport"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/bein-sport-canli-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-bein-sport",
+      "displayName": "Bein sport",
+      "country": "Türkiyə",
+      "category": "Sports",
+      "aliases": [
+        "Bein sport"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/bein-sport-canli-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-cnn-turk",
+      "displayName": "CNN Türk",
+      "country": "Türkiyə",
+      "category": "General",
+      "aliases": [
+        "CNN Türk"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/cnn-trk-canli-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-ctc-love-tv",
+      "displayName": "ctc love tv",
+      "country": "Türkiyə",
+      "category": "General",
+      "aliases": [
+        "ctc love tv"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/ctc-love-tv-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-ctc-love-tv",
+      "displayName": "CTC LOVE TV",
+      "country": "Türkiyə",
+      "category": "General",
+      "aliases": [
+        "CTC LOVE TV"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/ctc-love-tv-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-diyanet-cocuk",
+      "displayName": "Diyanet Çocuk",
+      "country": "Türkiyə",
+      "category": "Children",
+      "aliases": [
+        "Diyanet Çocuk"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://tv-trtdiyanetcocuk.medya.trt.com.tr/master_720.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/diyanet-ocuk-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-dmax-tv",
+      "displayName": "dmax tv",
+      "country": "Türkiyə",
+      "category": "General",
+      "aliases": [
+        "dmax tv"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://yayin2.canlitv.fun/live/dmax.stream/chunklist_w1284122548.m3u8?hash=%5Bredacted%5D",
+        "https://yayin2.canlitv.fun/live/dmax.stream/chunklist_w1284122548.m3u8?hash=%5Bredacted%5D"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "unknown_token",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/dmax-tv-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-dmax-tv",
+      "displayName": "DMAX TV",
+      "country": "Türkiyə",
+      "category": "General",
+      "aliases": [
+        "DMAX TV"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://yayin2.canlitv.fun/live/dmax.stream/chunklist_w1284122548.m3u8?hash=%5Bredacted%5D",
+        "https://yayin2.canlitv.fun/live/dmax.stream/chunklist_w1284122548.m3u8?hash=%5Bredacted%5D"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "unknown_token",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/dmax-tv-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-fb-tv-canl",
+      "displayName": "fb tv canl",
+      "country": "Türkiyə",
+      "category": "General",
+      "aliases": [
+        "fb tv canl"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://tgn.bozztv.com/trn03/gin-fbtv1/tracks-v1a1/mono.m3u8",
+        "https://tgn.bozztv.com/trn03/gin-fbtv1/tracks-v1a1/mono.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/fb-tv-canl-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-fb-tv-canl",
+      "displayName": "FB TV Canlı",
+      "country": "Türkiyə",
+      "category": "General",
+      "aliases": [
+        "FB TV Canlı"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://tgn.bozztv.com/trn03/gin-fbtv1/tracks-v1a1/mono.m3u8",
+        "https://tgn.bozztv.com/trn03/gin-fbtv1/tracks-v1a1/mono.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/fb-tv-canl-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-fox-tv-canl",
+      "displayName": "fox tv canl",
+      "country": "Türkiyə",
+      "category": "General",
+      "aliases": [
+        "fox tv canl"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/fox-tv-canl-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-fox-tv-canl",
+      "displayName": "Fox Tv Canlı",
+      "country": "Türkiyə",
+      "category": "General",
+      "aliases": [
+        "Fox Tv Canlı"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/fox-tv-canl-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-gem-sport",
+      "displayName": "gem sport",
+      "country": "Türkiyə",
+      "category": "Sports",
+      "aliases": [
+        "gem sport"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/gem-sport-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-gem-sport",
+      "displayName": "GEM Sport",
+      "country": "Türkiyə",
+      "category": "Sports",
+      "aliases": [
+        "GEM Sport"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/gem-sport-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-gs-tv-canl",
+      "displayName": "gs tv canl",
+      "country": "Türkiyə",
+      "category": "General",
+      "aliases": [
+        "gs tv canl"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/gs-tv-canl-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-gs-tv-canl",
+      "displayName": "GS TV Canlı",
+      "country": "Türkiyə",
+      "category": "General",
+      "aliases": [
+        "GS TV Canlı"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/gs-tv-canl-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-habertrk-tv",
+      "displayName": "habertrk tv",
+      "country": "Türkiyə",
+      "category": "News",
+      "aliases": [
+        "habertrk tv"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/habertrk-tv-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-haberturk-tv",
+      "displayName": "Habertürk TV",
+      "country": "Türkiyə",
+      "category": "News",
+      "aliases": [
+        "Habertürk TV"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/habertrk-tv-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-halk-tv",
+      "displayName": "halk tv",
+      "country": "Türkiyə",
+      "category": "General",
+      "aliases": [
+        "halk tv"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://halktv-live.daioncdn.net/halktv/halktv_1080p.m3u8",
+        "https://halktv-live.daioncdn.net/halktv/halktv_1080p.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/halk-tv-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-halk-tv",
+      "displayName": "Halk TV",
+      "country": "Türkiyə",
+      "category": "General",
+      "aliases": [
+        "Halk TV"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://halktv-live.daioncdn.net/halktv/halktv_1080p.m3u8",
+        "https://halktv-live.daioncdn.net/halktv/halktv_1080p.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/halk-tv-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-trt-spor-y-ld-z",
+      "displayName": "TRT SPOR Yıldız",
+      "country": "Türkiyə",
+      "category": "Sports",
+      "aliases": [
+        "TRT SPOR Yıldız"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukobs1/playlist.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/trt-spor-yldz-canli-izle.html"
+    },
+    {
+      "canonicalId": "tr-trt-spor-yldz",
+      "displayName": "trt spor yldz",
+      "country": "Türkiyə",
+      "category": "Sports",
+      "aliases": [
+        "trt spor yldz"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://dga1op10s1u3leo.33a6243d11525c.click/live/selcukobs1/playlist.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/trt-spor-yldz-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "ru-1-tv-crimea",
+      "displayName": "1 tv crimea",
+      "country": "Rusiya",
+      "category": "General",
+      "aliases": [
+        "1 tv crimea"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://live1.1tvcrimea.ru/1tvcrimea.m3u8",
+        "https://live1.1tvcrimea.ru/1tvcrimea.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/1-tv-crimea-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "ru-1-tv-crimea",
+      "displayName": "1 TV Crimea",
+      "country": "Rusiya",
+      "category": "General",
+      "aliases": [
+        "1 TV Crimea"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://live1.1tvcrimea.ru/1tvcrimea.m3u8",
+        "https://live1.1tvcrimea.ru/1tvcrimea.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/1-tv-crimea-canli-izle.html"
+    },
+    {
+      "canonicalId": "ru-360-tv",
+      "displayName": "360 tv",
+      "country": "Rusiya",
+      "category": "General",
+      "aliases": [
+        "360 tv"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://e10-ll.facecast.io/evacoder_hls_hi/CkxfR1xNUAJwTgtXTBZTAJli/0.m3u8",
+        "https://e10-ll.facecast.io/evacoder_hls_hi/CkxfR1xNUAJwTgtXTBZTAJli/0.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/360-tv-canli-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "ru-360-tv",
+      "displayName": "360 TV",
+      "country": "Rusiya",
+      "category": "General",
+      "aliases": [
+        "360 TV"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://e10-ll.facecast.io/evacoder_hls_hi/CkxfR1xNUAJwTgtXTBZTAJli/0.m3u8",
+        "https://e10-ll.facecast.io/evacoder_hls_hi/CkxfR1xNUAJwTgtXTBZTAJli/0.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/360-tv-canli-canli-izle.html"
+    },
+    {
+      "canonicalId": "ru-animal-planet-tv",
+      "displayName": "animal planet tv",
+      "country": "Rusiya",
+      "category": "General",
+      "aliases": [
+        "animal planet tv"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/animal-planet-tv-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "ru-animal-planet-tv",
+      "displayName": "Animal planet Tv",
+      "country": "Rusiya",
+      "category": "General",
+      "aliases": [
+        "Animal planet Tv"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/animal-planet-tv-canli-izle.html"
+    },
+    {
+      "canonicalId": "ru-atv-32-196-izlenme",
+      "displayName": "ATV 32,196 izlenme",
+      "country": "Rusiya",
+      "category": "General",
+      "aliases": [
+        "ATV 32,196 izlenme"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli_adaptive.m3u8",
+        "https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/atv-canli-yayim-canli-izle.html"
+    },
+    {
+      "canonicalId": "ru-belarus-5-tv",
+      "displayName": "belarus 5 tv",
+      "country": "Rusiya",
+      "category": "General",
+      "aliases": [
+        "belarus 5 tv"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://edge50.dc.beltelecom.by/ngtrk/_definst_/smil:belarus5/chunklist_w211594992_b2660000_sleng.m3u8",
+        "https://edge50.dc.beltelecom.by/ngtrk/_definst_/smil:belarus5/chunklist_w211594992_b2660000_sleng.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/belarus-5-tv-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "ru-belarus-5-tv",
+      "displayName": "Belarus 5 tv",
+      "country": "Rusiya",
+      "category": "General",
+      "aliases": [
+        "Belarus 5 tv"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://edge50.dc.beltelecom.by/ngtrk/_definst_/smil:belarus5/chunklist_w211594992_b2660000_sleng.m3u8",
+        "https://edge50.dc.beltelecom.by/ngtrk/_definst_/smil:belarus5/chunklist_w211594992_b2660000_sleng.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/belarus-5-tv-canli-izle.html"
+    },
+    {
+      "canonicalId": "ru-cbc-sport-97-388-izlenme",
+      "displayName": "CBC Sport 97,388 izlenme",
+      "country": "Rusiya",
+      "category": "Sports",
+      "aliases": [
+        "CBC Sport 97,388 izlenme"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://cbcsports-live.lg.mncdn.com/cbcsports_live/cbcsports/chunklist.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/cbc-sport-canli-izle.html"
+    },
+    {
+      "canonicalId": "ru-che-tv",
+      "displayName": "che tv",
+      "country": "Rusiya",
+      "category": "General",
+      "aliases": [
+        "che tv"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://vsd279.okcdn.ru/hls/7629212093055.m3u8/sig/OVTIuSQzsE4/expires/1785778673636/srcIp/37.61.124.150/urls/176.112.172.96/clientType/0/srcAg/CHROME/mid/8755107733119/video.m3u8?p",
+        "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/OiTUvyxcGBM/expires/1785778676289/srcIp/37.61.124.150/urls/176.112.172.96/clientType/0/srcAg/CHROME/mid/8755107733119/video.m3u8?p",
+        "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/OiTUvyxcGBM/expires/1785778676289/srcIp/37.61.124.150/urls/176.112.172.96/clientType/0/srcAg/CHROME/mid/8755107733119/7629212093055_lowest/index.m3u8",
+        "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/OiTUvyxcGBM/expires/1785778676289/srcIp/37.61.124.150/urls/176.112.172.96/clientType/0/srcAg/CHROME/mid/8755107733119/7629212093055_low/index.m3u8",
+        "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/OiTUvyxcGBM/expires/1785778676289/srcIp/37.61.124.150/urls/176.112.172.96/clientType/0/srcAg/CHROME/mid/8755107733119/7629212093055_high/index.m3u8",
+        "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/D5sV6O8gS5I/expires/1785778680224/srcIp/37.61.124.150/urls/185.226.55.118/clientType/0/srcAg/CHROME/mid/8755107733119/video.m3u8?p",
+        "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/D5sV6O8gS5I/expires/1785778680224/srcIp/37.61.124.150/urls/185.226.55.118/clientType/0/srcAg/CHROME/mid/8755107733119/7629212093055_lowest/index.m3u8",
+        "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/C_O9B9nVV90/expires/1785778682872/srcIp/37.61.124.150/urls/176.112.172.96/clientType/0/srcAg/CHROME/mid/8755107733119/video.m3u8?p",
+        "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/C_O9B9nVV90/expires/1785778682872/srcIp/37.61.124.150/urls/176.112.172.96/clientType/0/srcAg/CHROME/mid/8755107733119/7629212093055_lowest/index.m3u8",
+        "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/C_O9B9nVV90/expires/1785778682872/srcIp/37.61.124.150/urls/176.112.172.96/clientType/0/srcAg/CHROME/mid/8755107733119/7629212093055_medium/index.m3u8",
+        "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/C_O9B9nVV90/expires/1785778682872/srcIp/37.61.124.150/urls/176.112.172.96/clientType/0/srcAg/CHROME/mid/8755107733119/7629212093055_high/index.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/che-tv-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "ru-che-tv",
+      "displayName": "Che TV",
+      "country": "Rusiya",
+      "category": "General",
+      "aliases": [
+        "Che TV"
+      ],
+      "currentSource": "canlitv-az",
+      "candidateUrls": [
+        "https://vsd279.okcdn.ru/hls/7629212093055.m3u8/sig/OVTIuSQzsE4/expires/1785778673636/srcIp/37.61.124.150/urls/176.112.172.96/clientType/0/srcAg/CHROME/mid/8755107733119/video.m3u8?p",
+        "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/OiTUvyxcGBM/expires/1785778676289/srcIp/37.61.124.150/urls/176.112.172.96/clientType/0/srcAg/CHROME/mid/8755107733119/video.m3u8?p",
+        "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/OiTUvyxcGBM/expires/1785778676289/srcIp/37.61.124.150/urls/176.112.172.96/clientType/0/srcAg/CHROME/mid/8755107733119/7629212093055_lowest/index.m3u8",
+        "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/OiTUvyxcGBM/expires/1785778676289/srcIp/37.61.124.150/urls/176.112.172.96/clientType/0/srcAg/CHROME/mid/8755107733119/7629212093055_low/index.m3u8",
+        "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/OiTUvyxcGBM/expires/1785778676289/srcIp/37.61.124.150/urls/176.112.172.96/clientType/0/srcAg/CHROME/mid/8755107733119/7629212093055_high/index.m3u8",
+        "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/D5sV6O8gS5I/expires/1785778680224/srcIp/37.61.124.150/urls/185.226.55.118/clientType/0/srcAg/CHROME/mid/8755107733119/video.m3u8?p",
+        "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/D5sV6O8gS5I/expires/1785778680224/srcIp/37.61.124.150/urls/185.226.55.118/clientType/0/srcAg/CHROME/mid/8755107733119/7629212093055_lowest/index.m3u8",
+        "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/C_O9B9nVV90/expires/1785778682872/srcIp/37.61.124.150/urls/176.112.172.96/clientType/0/srcAg/CHROME/mid/8755107733119/video.m3u8?p",
+        "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/C_O9B9nVV90/expires/1785778682872/srcIp/37.61.124.150/urls/176.112.172.96/clientType/0/srcAg/CHROME/mid/8755107733119/7629212093055_lowest/index.m3u8",
+        "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/C_O9B9nVV90/expires/1785778682872/srcIp/37.61.124.150/urls/176.112.172.96/clientType/0/srcAg/CHROME/mid/8755107733119/7629212093055_medium/index.m3u8",
+        "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/C_O9B9nVV90/expires/1785778682872/srcIp/37.61.124.150/urls/176.112.172.96/clientType/0/srcAg/CHROME/mid/8755107733119/7629212093055_high/index.m3u8"
+      ],
+      "manualOverride": false,
+      "consecutiveFailures": 0,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "candidate",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/che-tv-canli-izle.html"
+    },
+    {
+      "canonicalId": "ru-diema-sport",
+      "displayName": "diema sport",
+      "country": "Rusiya",
+      "category": "Sports",
+      "aliases": [
+        "diema sport"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/diema-sport-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "ru-diema-sport",
+      "displayName": "Diema Sport",
+      "country": "Rusiya",
+      "category": "Sports",
+      "aliases": [
+        "Diema Sport"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/diema-sport-canli-izle.html"
+    },
+    {
+      "canonicalId": "ru-diema-sport-2",
+      "displayName": "diema sport 2",
+      "country": "Rusiya",
+      "category": "Sports",
+      "aliases": [
+        "diema sport 2"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/diema-sport-2-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "ru-diema-sport-2",
+      "displayName": "Diema Sport 2",
+      "country": "Rusiya",
+      "category": "Sports",
+      "aliases": [
+        "Diema Sport 2"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/diema-sport-2-canli-izle.html"
+    },
+    {
+      "canonicalId": "ru-diema-sport-3",
+      "displayName": "diema sport 3",
+      "country": "Rusiya",
+      "category": "Sports",
+      "aliases": [
+        "diema sport 3"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T17:38:18.519Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T17:38:18.519Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/diema-sport-3-hd-canli-izle.html"
     }
   ]
 }

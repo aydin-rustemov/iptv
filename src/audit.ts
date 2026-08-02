@@ -4,6 +4,8 @@ import type { PriorityChannel, PriorityChannelStatus } from "./types.js";
 
 const CBC_SPORT_URL = "https://cbcsports-live.lg.mncdn.com/cbcsports_live/cbcsports/chunklist.m3u8";
 const ATV_FALLBACK_URL = "https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8";
+const ARB_STATIC_URL = "https://str.yodacdn.net/arb/tracks-v1a1/mono.ts.m3u8";
+const SPACE_STATIC_URL = "https://str.yodacdn.net/space/tracks-v1a1/mono.ts.m3u8";
 
 const playlist = fs.readFileSync("output/playlist.m3u", "utf8");
 const status = JSON.parse(readJsonText("output/status.json")) as { published?: number; priorityChannels?: PriorityChannelStatus[] };
@@ -24,6 +26,7 @@ const groups = playlist.split(/\r?\n/).flatMap((line) => {
   const match = line.match(/group-title="([^"]+)"/);
   return match?.[1] ? [match[1]] : [];
 });
+const entries = parsePlaylistEntries(playlist);
 
 if (ids.length !== new Set(ids).size) errors.push("Duplicate channel ID exists");
 if (urls.length !== new Set(urls.map((url) => url.toLowerCase())).size) errors.push("Duplicate stream URL exists");
@@ -35,17 +38,26 @@ if (!status.priorityChannels?.some((channel) => channel.id === "yaban-tv")) erro
 if (!missingPriority.some((channel) => channel.id === "yaban-tv") && !ids.includes("yaban-tv")) errors.push("Yaban TV missing result is not reported");
 if (!playlist.includes(CBC_SPORT_URL)) errors.push("CBC Sport exact locked URL is missing");
 if (!manualOverrides.includes(ATV_FALLBACK_URL)) errors.push("ATV official fallback is not configured");
+if (!playlist.includes(ARB_STATIC_URL)) errors.push("ARB exact locked URL is missing");
+if (!playlist.includes(SPACE_STATIC_URL)) errors.push("Space TV exact locked URL is missing");
+if (/[?&]token=/i.test(ARB_STATIC_URL) || /[?&]token=/i.test(SPACE_STATIC_URL)) errors.push("ARB or Space static URL contains token parameter");
+if (!manualOverrides.includes(ARB_STATIC_URL) || !manualOverrides.includes(SPACE_STATIC_URL)) errors.push("ARB or Space static override is not configured");
 if (/yoda/i.test(playlist) && /(?:ip|ua|exp|jti|token|signature|sig)=/i.test(playlist)) errors.push("Yoda short-lived token URL exists");
 if (/^#EXTHTTP:.*(?:cookie|authorization)|[|&](?:cookie|authorization)=|bearer\s+[a-z0-9._-]+/im.test(playlist)) errors.push("Account credential or Authorization header exists");
 if (/widevine|playready|license|drm/i.test(playlist)) errors.push("DRM/license URL exists");
 if (/dublaj|izle film|webcam|ufc event|canl[ıi]\s+ma[cç]|\bvs\b/i.test(playlist)) errors.push("Movie/VOD/radio/webcam/event entry exists");
 
 if (!countryOrderIsValid(groups)) errors.push("Country order is not Azerbaijan, Turkey, Russia, other");
+if (!lockedAzerbaijanOrderIsValid(entries)) errors.push("Locked ARB/Space Azerbaijan ordering is invalid");
+if (entries.filter((entry) => entry.id === "arb-az").length !== 1) errors.push("Exactly one canonical ARB entry must exist");
+if (entries.filter((entry) => entry.id === "space-tv-az").length !== 1) errors.push("Exactly one canonical Space TV entry must exist");
+if (entries.some((entry) => entry.id === "arb-az" && entry.url !== ARB_STATIC_URL)) errors.push("ARB was replaced by a non-static source");
+if (entries.some((entry) => entry.id === "space-tv-az" && entry.url !== SPACE_STATIC_URL)) errors.push("Space TV was replaced by a non-static source");
 if (!priorityOrderIsValid(priorityIdsOutsideUnverifiedBlocks(playlist), priorityConfig.channels)) errors.push("Priority channels do not preserve configured order");
 if (!unverifiedEntriesAreMarked(playlist)) errors.push("Unverified fallback entries are not warning-marked and grouped");
 
 for (const priority of status.priorityChannels ?? []) {
-  if (priority.status === "working" && !ids.includes(priority.id)) {
+  if (priority.status === "working" && !ids.includes(publishedIdForPriority(priority.id))) {
     errors.push(`Priority channel ${priority.name} was working but omitted`);
   }
 }
@@ -60,6 +72,45 @@ console.log(`Audit passed. Published: ${extinfCount}`);
 function countryOrderIsValid(items: string[]): boolean {
   const ranks = items.map(groupRank).filter((rank, index, all) => index === 0 || rank !== all[index - 1]);
   return ranks.every((rank, index) => index === 0 || rank >= ranks[index - 1]!);
+}
+
+interface M3uEntry {
+  id: string;
+  name: string;
+  group: string;
+  url: string;
+}
+
+function parsePlaylistEntries(text: string): M3uEntry[] {
+  const entries: M3uEntry[] = [];
+  let current: Omit<M3uEntry, "url"> | undefined;
+  for (const line of text.split(/\r?\n/)) {
+    if (line.startsWith("#EXTINF")) {
+      current = {
+        id: line.match(/tvg-id="([^"]+)"/)?.[1] ?? "",
+        group: line.match(/group-title="([^"]+)"/)?.[1] ?? "",
+        name: line.split(",").slice(1).join(",").trim()
+      };
+    } else if (current && /^https?:\/\//i.test(line)) {
+      entries.push({ ...current, url: line.trim() });
+      current = undefined;
+    }
+  }
+  return entries;
+}
+
+function lockedAzerbaijanOrderIsValid(entries: M3uEntry[]): boolean {
+  const index = (id: string) => entries.findIndex((entry) => entry.id === id);
+  const turkeyStart = entries.findIndex((entry) => groupRank(entry.group) === 1);
+  const arb = index("arb-az");
+  const arb24 = entries.findIndex((entry) => /^arb24?$|arb\s*24/i.test(entry.id) || /^ARB24$/i.test(entry.name));
+  const space = index("space-tv-az");
+  if (arb < 0 || space < 0) return false;
+  if (turkeyStart >= 0 && (arb > turkeyStart || space > turkeyStart)) return false;
+  if (entries[arb]?.group !== "Azərbaycan" || entries[space]?.group !== "Azərbaycan") return false;
+  if (ARB_STATIC_URL.includes("?token=") || SPACE_STATIC_URL.includes("?token=")) return false;
+  if (arb24 >= 0) return arb < arb24 && arb24 < space;
+  return arb < space;
 }
 
 function groupRank(group: string): number {
@@ -92,12 +143,18 @@ function priorityOrderIsValid(ids: string[], priorities: PriorityChannel[]): boo
 }
 
 function unverifiedEntriesAreMarked(text: string): boolean {
-  const blocks = text.split(/^#EXTINF/m).slice(1).map((block) => `#EXTINF${block}`);
-  return blocks.every((block) => {
-    const isUnverifiedGroup = /Yoxlan|YoxlanÄ/i.test(block);
+  return parsePlaylistEntries(text).every((entry) => {
+    const isUnverifiedGroup = /Yoxlan|YoxlanÄ/i.test(entry.group);
     if (!isUnverifiedGroup) return true;
-    return /^#EXTINF[^\n]+,⚠ /m.test(block);
+    return entry.name.startsWith("⚠") || entry.name.startsWith("âš ");
   });
+}
+
+function publishedIdForPriority(priorityId: string): string {
+  if (priorityId === "arb") return "arb-az";
+  if (priorityId === "space-tv") return "space-tv-az";
+  if (priorityId === "cbc-sport") return "cbc-sport-az";
+  return priorityId;
 }
 
 function readJsonText(file: string): string {
