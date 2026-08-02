@@ -12,18 +12,6 @@
     "failureReason": "Matching candidates did not pass media validation"
   },
   {
-    "id": "real-tv",
-    "name": "Real TV",
-    "country": "Azərbaycan",
-    "category": "news",
-    "priority": 8,
-    "aliasesChecked": 2,
-    "candidatesFound": 0,
-    "candidatesValidated": 0,
-    "status": "not_found",
-    "failureReason": "No matching alias found in enabled M3U sources"
-  },
-  {
     "id": "baku-tv",
     "name": "Baku TV",
     "country": "Azərbaycan",
@@ -31,7 +19,7 @@
     "priority": 9,
     "aliasesChecked": 2,
     "candidatesFound": 3,
-    "candidatesValidated": 0,
+    "candidatesValidated": 2,
     "selectedSource": "canlitv-az-unverified",
     "status": "all_candidates_failed",
     "failureReason": "Only warning-marked unverified CanliTV fallback is available"
@@ -47,18 +35,6 @@
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
-    "id": "idman-tv",
-    "name": "İdman TV",
-    "country": "Azərbaycan",
-    "category": "sports",
-    "priority": 12,
-    "aliasesChecked": 3,
-    "candidatesFound": 0,
-    "candidatesValidated": 0,
-    "status": "not_found",
-    "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
     "id": "mtv-az",
@@ -119,18 +95,6 @@
     "candidatesValidated": 0,
     "status": "not_found",
     "failureReason": "No matching alias found in enabled M3U sources"
-  },
-  {
-    "id": "el-tv",
-    "name": "EL TV",
-    "country": "Azərbaycan",
-    "category": "regional",
-    "priority": 20,
-    "aliasesChecked": 1,
-    "candidatesFound": 1,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "trt-1",
@@ -392,11 +356,10 @@
     "category": "documentary",
     "priority": 146,
     "aliasesChecked": 2,
-    "candidatesFound": 1,
+    "candidatesFound": 0,
     "candidatesValidated": 0,
-    "selectedSource": "canlitv-az-unverified",
-    "status": "all_candidates_failed",
-    "failureReason": "Only warning-marked unverified CanliTV fallback is available"
+    "status": "not_found",
+    "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
     "id": "tlc",

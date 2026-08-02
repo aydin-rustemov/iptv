@@ -102,6 +102,9 @@ function countryName(code: string): string {
 function priorityIdFor(override: ManualOverride): string {
   if (override.id === "arb-az") return "arb";
   if (override.id === "space-tv-az") return "space-tv";
+  if (override.id === "real-tv-az") return "real-tv";
+  if (override.id === "idman-tv-az") return "idman-tv";
+  if (override.id === "el-tv-az") return "el-tv";
   if (override.id === "cbc-sport-az") return "cbc-sport";
   return override.id;
 }
@@ -109,17 +112,27 @@ function priorityIdFor(override: ManualOverride): string {
 function priorityOrderFor(override: ManualOverride): number {
   if (override.id === "atv-az") return 3;
   if (override.id === "arb-az") return 5;
-  if (override.id === "cbc-sport-az") return 11;
   if (override.id === "space-tv-az") return 7;
+  if (override.id === "real-tv-az") return 8;
+  if (override.id === "apa-tv-az") return 9;
+  if (override.id === "cbc-sport-az") return 12;
+  if (override.id === "idman-tv-az") return 13;
+  if (override.id === "el-tv-az") return 20;
   return Number.MAX_SAFE_INTEGER;
 }
 
 function priorityCategoryFor(override: ManualOverride): string {
+  if (override.id === "real-tv-az" || override.id === "apa-tv-az") return "news";
   if (override.id === "cbc-sport-az") return "sports";
+  if (override.id === "idman-tv-az") return "sports";
+  if (override.id === "el-tv-az") return "regional";
   return "general";
 }
 
 function categoryFor(override: ManualOverride): string {
+  if (override.id === "real-tv-az" || override.id === "apa-tv-az") return "News";
   if (override.id === "cbc-sport-az") return "Sports";
+  if (override.id === "idman-tv-az") return "Sports";
+  if (override.id === "el-tv-az") return "Other";
   return "General";
 }

@@ -32,30 +32,6 @@
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
-    "channel": "Real TV",
-    "id": "real-tv",
-    "previousStatus": "not_found",
-    "aliasesChecked": [
-      "Real TV",
-      "Real TV",
-      "Real Azerbaijan"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 1,
-    "candidatesFound": 0,
-    "candidates": [],
-    "socialAccounts": [
-      {
-        "platform": "youtube",
-        "host": "www.youtube.com",
-        "result": "http_404"
-      }
-    ],
-    "finalStatus": "not_found_after_all_sources",
-    "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
-  },
-  {
     "channel": "Baku TV",
     "id": "baku-tv",
     "previousStatus": "all_candidates_failed",
@@ -77,12 +53,12 @@
       {
         "host": "rtmp.baku.tv",
         "sourceName": "canlitv-az",
-        "result": "http_404"
+        "result": "working"
       },
       {
         "host": "rtmp.baku.tv",
         "sourceName": "canlitv-az-unverified",
-        "result": "http_404"
+        "result": "working"
       }
     ],
     "socialAccounts": [
@@ -92,7 +68,7 @@
         "result": "live_hint_found_no_direct_manifest"
       }
     ],
-    "bestResult": "http_404",
+    "bestResult": "working",
     "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
@@ -127,32 +103,6 @@
     "bestResult": "dns_or_network_failure",
     "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "replace obsolete CDN hostname from another public M3U source"
-  },
-  {
-    "channel": "İdman TV",
-    "id": "idman-tv",
-    "previousStatus": "not_found",
-    "aliasesChecked": [
-      "İdman TV",
-      "İdman TV",
-      "Idman TV",
-      "İdman Azərbaycan",
-      "Idman Azerbaijan"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 1,
-    "candidatesFound": 0,
-    "candidates": [],
-    "socialAccounts": [
-      {
-        "platform": "youtube",
-        "host": "www.youtube.com",
-        "result": "live_hint_found_no_direct_manifest"
-      }
-    ],
-    "finalStatus": "not_found_after_all_sources",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "MTV Azərbaycan",
@@ -294,37 +244,6 @@
     ],
     "finalStatus": "not_found_after_all_sources",
     "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
-  },
-  {
-    "channel": "EL TV",
-    "id": "el-tv",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "EL TV",
-      "EL TV",
-      "El TV"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 1,
-    "candidatesFound": 1,
-    "candidates": [
-      {
-        "host": "85.132.53.162",
-        "sourceName": "iptv-org",
-        "result": "private_or_local_url"
-      }
-    ],
-    "socialAccounts": [
-      {
-        "platform": "youtube",
-        "host": "www.youtube.com",
-        "result": "live_hint_found_no_direct_manifest"
-      }
-    ],
-    "bestResult": "private_or_local_url",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "TRT 1",
@@ -837,7 +756,7 @@
   {
     "channel": "DMAX",
     "id": "dmax",
-    "previousStatus": "all_candidates_failed",
+    "previousStatus": "not_found",
     "aliasesChecked": [
       "DMAX",
       "DMAX",
@@ -846,18 +765,11 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 1,
-    "candidates": [
-      {
-        "host": "yayin2.canlitv.fun",
-        "sourceName": "canlitv-az-unverified",
-        "result": "http_403"
-      }
-    ],
+    "candidatesFound": 0,
+    "candidates": [],
     "socialAccounts": [],
-    "bestResult": "http_403",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "find alternate direct source or official header-compatible M3U entry"
+    "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "TLC",

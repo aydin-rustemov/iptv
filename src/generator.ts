@@ -85,8 +85,9 @@ function groupTitle(entry: ValidatedEntry): string {
   const priorityCountry = normalizeCountryLabel(entry.priorityCountry);
   const country = normalizeCountryLabel(entry.country);
   if (priorityCountry === "Türkiyə") return `Türkiyə — ${turkishGroup(entry.priorityCategory ?? entry.category)}`;
+  if (priorityCountry === "Azərbaycan") return azerbaijanGroup(entry.priorityCategory ?? entry.category);
   if (priorityCountry) return priorityCountry;
-  if (country === "Azərbaycan") return "Azərbaycan";
+  if (country === "Azərbaycan") return azerbaijanGroup(entry.category);
   if (country === "Türkiyə") return `Türkiyə — ${turkishGroup(entry.category)}`;
   if (country === "Rusiya") return russianGroup(entry.category);
   return normalizeGroup(entry.groupTitle ?? entry.country ?? "Beynəlxalq");
@@ -99,6 +100,15 @@ function turkishGroup(category?: string): string {
   if (category === "children" || category === "Children") return "Uşaq";
   if (category === "music" || category === "Music") return "Musiqi";
   return "Ümumi";
+}
+
+function azerbaijanGroup(category?: string): string {
+  if (category === "news" || category === "News") return "Azərbaycan — Xəbər";
+  if (category === "sports" || category === "Sports") return "Azərbaycan — İdman";
+  if (category === "music" || category === "Music") return "Azərbaycan — Musiqi";
+  if (category === "children" || category === "Children") return "Azərbaycan — Uşaq";
+  if (category === "regional" || category === "Other") return "Azərbaycan — Digər";
+  return "Azərbaycan";
 }
 
 function russianGroup(category?: string): string {

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T17:38:18.519Z",
+  "updatedAt": "2026-08-02T18:13:10.252Z",
   "countryPages": {
     "Azərbaycan": 3,
     "Türkiyə": 9,
@@ -12,12 +12,12 @@
   },
   "excludedPages": 859,
   "processedPages": 90,
-  "manifestCandidatesCaptured": 50,
+  "manifestCandidatesCaptured": 34,
   "verifiedDirectChannels": 0,
-  "unverifiedFallbackChannels": 31,
+  "unverifiedFallbackChannels": 26,
   "tokenDependentRejected": 0,
   "cookieOriginAccountRejected": 0,
-  "noManifestChannels": 59,
+  "noManifestChannels": 64,
   "channels": [
     {
       "canonicalId": "az-arb-24",
@@ -202,8 +202,8 @@
       "published": false
     },
     {
-      "canonicalId": "az-deadpool-3-39-651-izlenme",
-      "name": "Deadpool 3 39,651 izlenme",
+      "canonicalId": "az-deadpool-3-39-656-izlenme",
+      "name": "Deadpool 3 39,656 izlenme",
       "country": "Azərbaycan",
       "sourcePage": "https://web.canlitv.az/deadpool-3-canli-izle.html",
       "variantsChecked": 1,
@@ -215,8 +215,8 @@
       "published": false
     },
     {
-      "canonicalId": "az-elyas-turkce-bublaj-33-514-izlenme",
-      "name": "Elyas turkce bublaj 33,514 izlenme",
+      "canonicalId": "az-elyas-turkce-bublaj-33-518-izlenme",
+      "name": "Elyas turkce bublaj 33,518 izlenme",
       "country": "Azərbaycan",
       "sourcePage": "https://web.canlitv.az/elyas-turkce-bublaj-canli-izle.html",
       "variantsChecked": 1,
@@ -259,7 +259,7 @@
       "country": "Azərbaycan",
       "sourcePage": "https://web.canlitv.az/ictimai-tv-canli-hd-canli-izle.html",
       "variantsChecked": 1,
-      "manifestCandidatesFound": 4,
+      "manifestCandidatesFound": 3,
       "selectedCandidate": "https://live.itv.az/itv.m3u8?bandwidth=3900&shift=0",
       "selectedSource": "canlitv-az",
       "verificationStatus": "candidate",
@@ -272,7 +272,7 @@
       "country": "Azərbaycan",
       "sourcePage": "https://web.canlitv.az/ictimai-tv-canli-canli-izle.html",
       "variantsChecked": 1,
-      "manifestCandidatesFound": 4,
+      "manifestCandidatesFound": 3,
       "selectedCandidate": "https://live.itv.az/itv.m3u8?bandwidth=3900&shift=0",
       "selectedSource": "canlitv-az",
       "verificationStatus": "candidate",
@@ -766,11 +766,11 @@
       "country": "Türkiyə",
       "sourcePage": "https://web.canlitv.az/dmax-tv-hd-canli-izle.html",
       "variantsChecked": 1,
-      "manifestCandidatesFound": 1,
-      "selectedCandidate": "https://yayin2.canlitv.fun/live/dmax.stream/chunklist_w1284122548.m3u8?hash=%5Bredacted%5D",
-      "selectedSource": "canlitv-az",
-      "verificationStatus": "candidate",
-      "tokenClassification": "unknown_token",
+      "manifestCandidatesFound": 0,
+      "selectedSource": "none",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "lastFailureReason": "no_channel_manifest_captured",
       "published": false
     },
     {
@@ -779,11 +779,11 @@
       "country": "Türkiyə",
       "sourcePage": "https://web.canlitv.az/dmax-tv-canli-izle.html",
       "variantsChecked": 1,
-      "manifestCandidatesFound": 1,
-      "selectedCandidate": "https://yayin2.canlitv.fun/live/dmax.stream/chunklist_w1284122548.m3u8?hash=%5Bredacted%5D",
-      "selectedSource": "canlitv-az",
-      "verificationStatus": "candidate",
-      "tokenClassification": "unknown_token",
+      "manifestCandidatesFound": 0,
+      "selectedSource": "none",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "lastFailureReason": "no_channel_manifest_captured",
       "published": false
     },
     {
@@ -1047,16 +1047,16 @@
       "published": false
     },
     {
-      "canonicalId": "ru-atv-32-196-izlenme",
-      "name": "ATV 32,196 izlenme",
+      "canonicalId": "ru-atv-32-205-izlenme",
+      "name": "ATV 32,205 izlenme",
       "country": "Rusiya",
       "sourcePage": "https://web.canlitv.az/atv-canli-yayim-canli-izle.html",
       "variantsChecked": 1,
-      "manifestCandidatesFound": 2,
-      "selectedCandidate": "https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8",
-      "selectedSource": "canlitv-az",
-      "verificationStatus": "candidate",
+      "manifestCandidatesFound": 0,
+      "selectedSource": "none",
+      "verificationStatus": "no_manifest",
       "tokenClassification": "stable",
+      "lastFailureReason": "no_channel_manifest_captured",
       "published": false
     },
     {
@@ -1065,11 +1065,11 @@
       "country": "Rusiya",
       "sourcePage": "https://web.canlitv.az/belarus-5-tv-hd-canli-izle.html",
       "variantsChecked": 1,
-      "manifestCandidatesFound": 1,
-      "selectedCandidate": "https://edge50.dc.beltelecom.by/ngtrk/_definst_/smil:belarus5/chunklist_w211594992_b2660000_sleng.m3u8",
-      "selectedSource": "canlitv-az",
-      "verificationStatus": "candidate",
+      "manifestCandidatesFound": 0,
+      "selectedSource": "none",
+      "verificationStatus": "no_manifest",
       "tokenClassification": "stable",
+      "lastFailureReason": "no_channel_manifest_captured",
       "published": false
     },
     {
@@ -1086,8 +1086,8 @@
       "published": false
     },
     {
-      "canonicalId": "ru-cbc-sport-97-388-izlenme",
-      "name": "CBC Sport 97,388 izlenme",
+      "canonicalId": "ru-cbc-sport-97-393-izlenme",
+      "name": "CBC Sport 97,393 izlenme",
       "country": "Rusiya",
       "sourcePage": "https://web.canlitv.az/cbc-sport-canli-izle.html",
       "variantsChecked": 1,
@@ -1104,8 +1104,8 @@
       "country": "Rusiya",
       "sourcePage": "https://web.canlitv.az/che-tv-hd-canli-izle.html",
       "variantsChecked": 1,
-      "manifestCandidatesFound": 5,
-      "selectedCandidate": "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/OiTUvyxcGBM/expires/1785778676289/srcIp/37.61.124.150/urls/176.112.172.96/clientType/0/srcAg/CHROME/mid/8755107733119/7629212093055_high/index.m3u8",
+      "manifestCandidatesFound": 2,
+      "selectedCandidate": "https://vsd159.okcdn.ru/hls/7629212093055.m3u8/sig/iQC9oqCoRCk/expires/1785780768190/srcIp/37.61.124.150/urls/185.180.203.114/clientType/0/srcAg/CHROME/mid/8755107733119/7629212093055_lowest/index.m3u8",
       "selectedSource": "canlitv-az",
       "verificationStatus": "candidate",
       "tokenClassification": "stable",
@@ -1117,11 +1117,11 @@
       "country": "Rusiya",
       "sourcePage": "https://web.canlitv.az/che-tv-canli-izle.html",
       "variantsChecked": 1,
-      "manifestCandidatesFound": 6,
-      "selectedCandidate": "https://vsd196.okcdn.ru/hls/7629212093055.m3u8/sig/C_O9B9nVV90/expires/1785778682872/srcIp/37.61.124.150/urls/176.112.172.96/clientType/0/srcAg/CHROME/mid/8755107733119/7629212093055_high/index.m3u8",
-      "selectedSource": "canlitv-az",
-      "verificationStatus": "candidate",
+      "manifestCandidatesFound": 0,
+      "selectedSource": "none",
+      "verificationStatus": "no_manifest",
       "tokenClassification": "stable",
+      "lastFailureReason": "no_channel_manifest_captured",
       "published": false
     },
     {
