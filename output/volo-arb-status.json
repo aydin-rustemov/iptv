@@ -13,6 +13,15 @@
   "ffprobeResult": "video_detected",
   "browserClosedRetest": "not_tested",
   "finalStatus": "session_or_cookie_dependent",
+  "manualHeaderCompatibilityTest": true,
+  "testEntryCount": 5,
+  "testVariants": [
+    "plain",
+    "pipe_headers",
+    "exthttp",
+    "kodi_headers",
+    "vlc_options"
+  ],
   "alternatives": [
     {
       "yayin": 1,

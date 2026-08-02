@@ -1,1 +1,21 @@
 #EXTM3U
+
+#EXTINF:-1 tvg-id="arb-volo-plain" tvg-name="ARB Volo - Plain" group-title="VOLO Test",ARB Volo - Plain
+https://proxy.hdtvcanli.com/https://yayin2.canlitv.fun/live/arb.stream/playlist.m3u8?hash=62d73cfb044b604a7f9b3f95709b5440
+
+#EXTINF:-1 tvg-id="arb-volo-pipe" tvg-name="ARB Volo - Pipe Headers" group-title="VOLO Test",ARB Volo - Pipe Headers
+https://proxy.hdtvcanli.com/https://yayin2.canlitv.fun/live/arb.stream/playlist.m3u8?hash=62d73cfb044b604a7f9b3f95709b5440|User-Agent=Mozilla%2F5.0&Referer=https%3A%2F%2Ftv.canlitvvolo.com%2F&Origin=https%3A%2F%2Ftv.canlitvvolo.com
+
+#EXTINF:-1 tvg-id="arb-volo-exthttp" tvg-name="ARB Volo - EXTHTTP" group-title="VOLO Test",ARB Volo - EXTHTTP
+#EXTHTTP:{"User-Agent":"Mozilla/5.0","Referer":"https://tv.canlitvvolo.com/","Origin":"https://tv.canlitvvolo.com"}
+https://proxy.hdtvcanli.com/https://yayin2.canlitv.fun/live/arb.stream/playlist.m3u8?hash=62d73cfb044b604a7f9b3f95709b5440
+
+#EXTINF:-1 tvg-id="arb-volo-kodi" tvg-name="ARB Volo - Kodi Headers" group-title="VOLO Test",ARB Volo - Kodi Headers
+#KODIPROP:inputstream.adaptive.stream_headers=User-Agent=Mozilla%2F5.0&Referer=https%3A%2F%2Ftv.canlitvvolo.com%2F&Origin=https%3A%2F%2Ftv.canlitvvolo.com
+#KODIPROP:inputstream.adaptive.manifest_headers=User-Agent=Mozilla%2F5.0&Referer=https%3A%2F%2Ftv.canlitvvolo.com%2F&Origin=https%3A%2F%2Ftv.canlitvvolo.com
+https://proxy.hdtvcanli.com/https://yayin2.canlitv.fun/live/arb.stream/playlist.m3u8?hash=62d73cfb044b604a7f9b3f95709b5440
+
+#EXTINF:-1 tvg-id="arb-volo-vlc" tvg-name="ARB Volo - VLC Headers" group-title="VOLO Test",ARB Volo - VLC Headers
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://tv.canlitvvolo.com/
+https://proxy.hdtvcanli.com/https://yayin2.canlitv.fun/live/arb.stream/playlist.m3u8?hash=62d73cfb044b604a7f9b3f95709b5440
