@@ -1,0 +1,27 @@
+{
+  "channels": [
+    {
+      "id": "cbc-sport-az",
+      "name": "CBC Sport",
+      "country": "AZ",
+      "group": "Azərbaycan",
+      "url": "https://cbcsports-live.lg.mncdn.com/cbcsports_live/cbcsports/chunklist.m3u8",
+      "locked": true,
+      "neverReplace": true,
+      "neverRemove": true,
+      "userConfirmedWorkingInAzerbaijan": true,
+      "allowPublishWhenGithubRunnerCannotValidate": true
+    },
+    {
+      "id": "atv-az",
+      "name": "ATV Azərbaycan",
+      "country": "AZ",
+      "group": "Azərbaycan",
+      "fallbackUrl": "https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8",
+      "useWhenCurrentPrimaryFails": true,
+      "preferOfficialDirectUrl": true,
+      "neverDiscardFallback": true,
+      "userConfirmedWorking": true
+    }
+  ]
+}

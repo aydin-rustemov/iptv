@@ -6,6 +6,8 @@ import { dedupe, preselect, score, select } from "./selector.js";
 import { countBy, writePlaylist, writeStatus } from "./generator.js";
 import type { FastCheckResult, MediaCheckResult, PlaylistEntry, StatusOutput, ValidatedEntry } from "./types.js";
 import { addTargetedPriorityCandidates, buildMissingPriorityDetails, buildPriorityStatuses, loadPriorityChannels, tagPriorityEntries, writeMissingPriority, writeMissingPriorityDetails } from "./priority.js";
+import { discoverCanliTvAz } from "./sources/canlitvAz.js";
+import { forcedPublishedOverrides, loadManualOverrides, manualOverrideCandidates } from "./manualOverrides.js";
 
 const FAST_CONCURRENCY = Number(process.env["IPTV_FAST_CONCURRENCY"] ?? 30);
 const MEDIA_CONCURRENCY = Number(process.env["IPTV_MEDIA_CONCURRENCY"] ?? 5);
@@ -13,9 +15,15 @@ const MEDIA_CONCURRENCY = Number(process.env["IPTV_MEDIA_CONCURRENCY"] ?? 5);
 async function main(): Promise<void> {
   const sources = loadSources();
   const priorities = loadPriorityChannels();
+  const manualOverrides = loadManualOverrides();
   const downloaded = await Promise.all(sources.map(async (source) => ({ source, text: await downloadSource(source) })));
   const parsedBySource = downloaded.map(({ source, text }) => ({ source, entries: parseM3u(text, source.name) }));
-  const parsedEntries = tagPriorityEntries(parsedBySource.flatMap((item) => item.entries), priorities);
+  const canliTv = await discoverCanliTvAz({ full: shouldRunFullCanliTvDiscovery() });
+  const parsedEntries = tagPriorityEntries([
+    ...parsedBySource.flatMap((item) => item.entries),
+    ...manualOverrideCandidates(manualOverrides),
+    ...canliTv.entries
+  ], priorities);
   const targeted = await addTargetedPriorityCandidates(parsedEntries, priorities);
   const entries = targeted.entries;
   const { entries: uniqueEntries, duplicatesRemoved } = dedupe(entries);
@@ -45,7 +53,9 @@ async function main(): Promise<void> {
     }];
   });
 
-  const selected = select(validated, 300, priorities);
+  const forced = forcedPublishedOverrides(manualOverrides);
+  const unverifiedFallbacks = unverifiedCanliTvFallbacks(uniqueEntries, validated, forced);
+  const selected = select([...forced, ...validated, ...unverifiedFallbacks], Number.MAX_SAFE_INTEGER, priorities);
   const priorityChannels = buildPriorityStatuses(priorities, uniqueEntries, validated, selected);
   const missingDetails = buildMissingPriorityDetails(priorityChannels, priorities, uniqueEntries, fastResults, mediaResults, sources.length, targeted.officialPagesChecked, targeted.officialSocialAccountsChecked);
   const previousCount = countPreviousPlaylist();
@@ -77,6 +87,7 @@ async function main(): Promise<void> {
     degraded,
     priorityChannels
   };
+  writeChannelHealth(selected, validated, canliTv.status);
   writeStatus(status);
   console.log(JSON.stringify(status, null, 2));
   if (degraded) process.exitCode = 2;
@@ -120,6 +131,52 @@ function countPreviousPlaylist(): number {
   } catch {
     return 0;
   }
+}
+
+function shouldRunFullCanliTvDiscovery(): boolean {
+  if (process.env["IPTV_CANLITV_FULL"] === "1") return true;
+  try {
+    const status = JSON.parse(fs.readFileSync("output/canlitv-status.json", "utf8")) as { updatedAt?: string };
+    if (!status.updatedAt) return true;
+    return Date.now() - Date.parse(status.updatedAt) > 24 * 60 * 60 * 1000;
+  } catch {
+    return true;
+  }
+}
+
+function unverifiedCanliTvFallbacks(entries: PlaylistEntry[], validated: ValidatedEntry[], forced: ValidatedEntry[]): ValidatedEntry[] {
+  const publishedIds = new Set([...validated, ...forced].map((entry) => entry.priorityId ?? entry.tvgId ?? entry.name));
+  return entries
+    .filter((entry) => entry.sourceName === "canlitv-az-unverified")
+    .filter((entry) => !publishedIds.has(entry.priorityId ?? entry.tvgId ?? entry.name))
+    .map((entry) => ({
+      ...entry,
+      name: entry.name.startsWith("⚠ ") ? entry.name : `⚠ ${entry.name}`,
+      tvgName: (entry.tvgName ?? entry.name).startsWith("⚠ ") ? entry.tvgName : `⚠ ${entry.tvgName ?? entry.name}`,
+      groupTitle: fallbackGroup(entry.country),
+      normalizedUrl: normalizeUrl(entry.url),
+      score: -1000,
+      fast: { ok: true, finalUrl: entry.url, kind: "hls", reason: "unverified_canlitv_fallback" },
+      media: { ok: false, hasVideo: false, hasAudio: false, bytesRead: 0, reason: "unverified_canlitv_fallback" }
+    }));
+}
+
+function fallbackGroup(country?: string): string {
+  if (country === "Azərbaycan" || country === "AzÉ™rbaycan" || country === "AzÃ‰â„¢rbaycan") return "Azərbaycan — Yoxlanılmamış";
+  if (country === "Türkiyə" || country === "TÃ¼rkiyÉ™" || country === "TÃƒÂ¼rkiyÃ‰â„¢") return "Türkiyə — Yoxlanılmamış";
+  if (country === "Rusiya") return "Rusiya — Yoxlanılmamış";
+  return `${country ?? "Beynəlxalq"} — Yoxlanılmamış`;
+}
+
+function writeChannelHealth(selected: ValidatedEntry[], validated: ValidatedEntry[], canliTv: unknown): void {
+  fs.mkdirSync("output", { recursive: true });
+  fs.writeFileSync("output/channel-health.json", JSON.stringify({
+    updatedAt: new Date().toISOString(),
+    published: selected.length,
+    verifiedWorking: validated.length,
+    unverifiedCanliTvFallbacks: selected.filter((entry) => entry.sourceName === "canlitv-az-unverified").length,
+    canliTv
+  }, null, 2), "utf8");
 }
 
 function normalizeUrl(raw: string): string {

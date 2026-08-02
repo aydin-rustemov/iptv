@@ -1,0 +1,100 @@
+{
+  "updatedAt": "2026-08-02T16:23:58.470Z",
+  "channels": [
+    {
+      "canonicalId": "az-arb-24",
+      "displayName": "arb 24",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "arb 24"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T16:23:58.470Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T16:23:58.470Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/arb-24-canli-yayim-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-arb-24",
+      "displayName": "ARB 24",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "ARB 24"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T16:23:58.470Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T16:23:58.470Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/arb-24-canli-yayim-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-arb-gunes",
+      "displayName": "arb gunes",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "arb gunes"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T16:23:58.470Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T16:23:58.470Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/arb-gunes-canli-hd-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-arb-gunes",
+      "displayName": "ARB Gunes",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "ARB Gunes"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T16:23:58.470Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T16:23:58.470Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/arb-gunes-canli-canli-izle.html"
+    },
+    {
+      "canonicalId": "az-asanradio-dinle",
+      "displayName": "asanradio dinle",
+      "country": "Azərbaycan",
+      "category": "General",
+      "aliases": [
+        "asanradio dinle"
+      ],
+      "currentSource": "none",
+      "candidateUrls": [],
+      "manualOverride": false,
+      "lastFailureAt": "2026-08-02T16:23:58.470Z",
+      "consecutiveFailures": 1,
+      "lastCanliTvDiscoveryAt": "2026-08-02T16:23:58.470Z",
+      "verificationStatus": "no_manifest",
+      "tokenClassification": "stable",
+      "requiredHeaders": [],
+      "sourcePage": "https://web.canlitv.az/asanradio-dinle-hd-canli-izle.html"
+    }
+  ]
+}

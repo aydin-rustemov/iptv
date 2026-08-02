@@ -1,58 +1,5 @@
 [
   {
-    "channel": "İctimai TV",
-    "id": "ictimai-tv",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "İctimai TV",
-      "İctimai TV",
-      "Ictimai TV",
-      "İTV",
-      "ITV Azerbaijan"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 1,
-    "candidates": [
-      {
-        "host": "live.itv.az",
-        "sourceName": "iptv-org",
-        "result": "connection_timeout"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "connection_timeout",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
-    "channel": "ATV Azərbaycan",
-    "id": "atv-az",
-    "previousStatus": "not_found",
-    "aliasesChecked": [
-      "ATV Azərbaycan",
-      "ATV Azərbaycan",
-      "Azad Azərbaycan",
-      "ATV AZ",
-      "ATV Azerbaijan"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 1,
-    "candidatesFound": 0,
-    "candidates": [],
-    "socialAccounts": [
-      {
-        "platform": "youtube",
-        "host": "www.youtube.com",
-        "result": "live_hint_found_no_direct_manifest"
-      }
-    ],
-    "finalStatus": "not_found_after_all_sources",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
     "channel": "ARB",
     "id": "arb",
     "previousStatus": "not_found",
@@ -225,30 +172,6 @@
     "bestResult": "dns_or_network_failure",
     "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "replace obsolete CDN hostname from another public M3U source"
-  },
-  {
-    "channel": "CBC Sport",
-    "id": "cbc-sport",
-    "previousStatus": "not_found",
-    "aliasesChecked": [
-      "CBC Sport",
-      "CBC Sport",
-      "CBC Sports"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 1,
-    "candidatesFound": 0,
-    "candidates": [],
-    "socialAccounts": [
-      {
-        "platform": "youtube",
-        "host": "www.youtube.com",
-        "result": "live_hint_found_no_direct_manifest"
-      }
-    ],
-    "finalStatus": "not_found_after_all_sources",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "İdman TV",
@@ -445,32 +368,6 @@
       }
     ],
     "bestResult": "private_or_local_url",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
-    "channel": "Kəpəz TV",
-    "id": "kepez-tv",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "Kəpəz TV",
-      "Kəpəz TV",
-      "Kepez TV",
-      "Kapaz TV"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 1,
-    "candidates": [
-      {
-        "host": "85.132.78.122",
-        "sourceName": "iptv-org",
-        "result": "the_operation_was_aborted_due_to_timeout"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "the_operation_was_aborted_due_to_timeout",
     "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
@@ -791,45 +688,6 @@
     ],
     "finalStatus": "not_found_after_all_sources",
     "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
-  },
-  {
-    "channel": "TRT Spor",
-    "id": "trt-spor",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "TRT Spor",
-      "TRT Spor"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 1,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 4,
-    "candidates": [
-      {
-        "host": "tv-trtspor1.medya.trt.com.tr",
-        "sourceName": "priority-direct",
-        "result": "http_403"
-      },
-      {
-        "host": "tv-trtspor2.medya.trt.com.tr",
-        "sourceName": "priority-direct",
-        "result": "http_403"
-      },
-      {
-        "host": "trt.daioncdn.net",
-        "sourceName": "official-page",
-        "result": "http_403"
-      },
-      {
-        "host": "trt.daioncdn.net",
-        "sourceName": "official-page",
-        "result": "http_403"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "http_403",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "find alternate direct source or official header-compatible M3U entry"
   },
   {
     "channel": "TRT Spor Yıldız",

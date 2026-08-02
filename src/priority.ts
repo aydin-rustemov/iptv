@@ -44,6 +44,7 @@ export function buildPriorityStatuses(
     const found = candidates.filter((entry) => entry.priorityId === priority.id);
     const good = validated.filter((entry) => entry.priorityId === priority.id);
     const picked = selected.find((entry) => entry.priorityId === priority.id);
+    const verifiedPicked = picked && picked.sourceName !== "canlitv-az-unverified";
     return {
       id: priority.id,
       name: priority.name,
@@ -54,8 +55,8 @@ export function buildPriorityStatuses(
       candidatesFound: found.length,
       candidatesValidated: good.length,
       selectedSource: picked?.sourceName,
-      status: picked ? "working" : found.length === 0 ? "not_found" : "all_candidates_failed",
-      failureReason: picked ? undefined : found.length === 0 ? "No matching alias found in enabled M3U sources" : "Matching candidates did not pass media validation"
+      status: verifiedPicked ? "working" : found.length === 0 ? "not_found" : "all_candidates_failed",
+      failureReason: verifiedPicked ? undefined : picked?.sourceName === "canlitv-az-unverified" ? "Only warning-marked unverified CanliTV fallback is available" : found.length === 0 ? "No matching alias found in enabled M3U sources" : "Matching candidates did not pass media validation"
     };
   });
 }

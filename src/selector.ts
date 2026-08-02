@@ -14,18 +14,17 @@ export function dedupe(entries: PlaylistEntry[]): { entries: PlaylistEntry[]; du
   return { entries: unique, duplicatesRemoved: entries.length - unique.length };
 }
 
-export function preselect(entries: PlaylistEntry[], max = Number(process.env["IPTV_MAX_CANDIDATES"] ?? 1200)): PlaylistEntry[] {
+export function preselect(entries: PlaylistEntry[], max = Number(process.env["IPTV_MAX_CANDIDATES"] ?? 2500)): PlaylistEntry[] {
   const allowed = [...entries].filter(isAllowed).sort((a, b) => baseScore(b) - baseScore(a) || a.name.localeCompare(b.name));
   const priorityCandidates = allowed.filter((entry) => entry.priorityId);
   const priorityKeys = new Set(priorityCandidates.map((entry) => normalizeUrl(entry.url)));
   const remainingAllowed = allowed.filter((entry) => !priorityKeys.has(normalizeUrl(entry.url)));
-  const regional = remainingAllowed.filter((entry) => ["Azərbaycan", "Türkiyə", "Rusiya"].includes(entry.country ?? ""));
-  const other = remainingAllowed.filter((entry) => !["Azərbaycan", "Türkiyə", "Rusiya"].includes(entry.country ?? ""));
-  return [...priorityCandidates, ...regional.slice(0, Math.floor(max * 0.45)), ...other.slice(0, Math.ceil(max * 0.55))];
+  const regional = remainingAllowed.filter((entry) => outputCountryRank(entry) <= 2);
+  const other = remainingAllowed.filter((entry) => outputCountryRank(entry) > 2);
+  return [...priorityCandidates, ...regional.slice(0, Math.floor(max * 0.6)), ...other.slice(0, Math.ceil(max * 0.4))];
 }
 
-export function select(validated: ValidatedEntry[], max = 300, priorities: PriorityChannel[] = []): ValidatedEntry[] {
-  const byCountry = (country: string) => validated.filter((entry) => entry.country === country).sort(compareValidated);
+export function select(validated: ValidatedEntry[], max = Number.MAX_SAFE_INTEGER, priorities: PriorityChannel[] = []): ValidatedEntry[] {
   const selected: ValidatedEntry[] = [];
   const usedUrls = new Set<string>();
   const usedIds = new Set<string>();
@@ -38,10 +37,9 @@ export function select(validated: ValidatedEntry[], max = 300, priorities: Prior
     usedIds.add(id);
     return true;
   };
-  const add = (items: ValidatedEntry[], limit: number) => {
+  const add = (items: ValidatedEntry[]) => {
     for (const item of items) {
-      if (selected.length >= max) continue;
-      if (selected.filter((entry) => entry.country === item.country).length >= limit) continue;
+      if (selected.length >= max) break;
       addOne(item);
     }
   };
@@ -53,13 +51,10 @@ export function select(validated: ValidatedEntry[], max = 300, priorities: Prior
     if (best) addOne(best);
   }
 
-  add(byCountry("Azərbaycan"), 999);
-  add(byCountry("Türkiyə"), 70);
-  add(byCountry("Rusiya"), 70);
-  for (const item of validated.filter((entry) => !usedUrls.has(normalizeUrl(entry.url)) && !["Türkiyə", "Rusiya"].includes(entry.country ?? "")).sort(compareValidated)) {
-    if (selected.length >= max) break;
-    addOne(item);
-  }
+  add(validated.filter((entry) => outputCountryRank(entry) === 0).sort(compareValidated));
+  add(validated.filter((entry) => outputCountryRank(entry) === 1).sort(compareValidated));
+  add(validated.filter((entry) => outputCountryRank(entry) === 2).sort(compareValidated));
+  add(validated.filter((entry) => outputCountryRank(entry) > 2).sort(compareValidated));
   return selected.sort((a, b) => compareOutput(a, b, priorities));
 }
 
@@ -73,20 +68,23 @@ export function score(entry: PlaylistEntry, media?: { width?: number; height?: n
 
 function baseScore(entry: PlaylistEntry): number {
   let value = 0;
-  if (entry.country === "Azərbaycan") value += 30;
-  if (entry.country === "Türkiyə") value += 25;
-  if (entry.country === "Rusiya") value += 25;
+  if (outputCountryRank(entry) === 0) value += 30;
+  if (outputCountryRank(entry) === 1) value += 25;
+  if (outputCountryRank(entry) === 2) value += 25;
+  if (entry.sourceName === "manual-locked") value += 10000;
+  if (entry.sourceName === "manual-fallback") value += 500;
+  if (entry.sourceName === "canlitv-az" || entry.sourceName === "canlitv-az-unverified") value -= 100;
   if (entry.url.startsWith("https://")) value += 20;
   else value -= 20;
   if (entry.tvgLogo) value += 8;
   if (entry.tvgId) value += 5;
-  if (entry.country && entry.country !== "Beynəlxalq") value += 5;
+  if (outputCountryRank(entry) <= 2) value += 5;
   return value;
 }
 
 function isAllowed(entry: PlaylistEntry): boolean {
-  const haystack = `${entry.name} ${entry.groupTitle ?? ""} ${entry.category ?? ""}`.toLowerCase();
-  if (/adult|xxx|nsfw|radio|webcam|camera|event|test/.test(haystack)) return false;
+  const haystack = `${entry.name} ${entry.tvgId ?? ""} ${entry.tvgName ?? ""} ${entry.groupTitle ?? ""} ${entry.category ?? ""}`.toLocaleLowerCase("tr");
+  if (/adult|xxx|nsfw|radio|webcam|camera|event|test|dublaj|vod|movie|movies|series|filim|film/.test(haystack)) return false;
   if (/\.(mp4|mkv|avi)(?:$|\?)/i.test(entry.url)) return false;
   return true;
 }
@@ -96,8 +94,10 @@ function compareValidated(a: ValidatedEntry, b: ValidatedEntry): number {
 }
 
 function compareOutput(a: ValidatedEntry, b: ValidatedEntry, priorities: PriorityChannel[]): number {
-  const country = countryRank(a.country) - countryRank(b.country);
+  const country = outputCountryRank(a) - outputCountryRank(b);
   if (country !== 0) return country;
+  const unverified = unverifiedRank(a) - unverifiedRank(b);
+  if (unverified !== 0) return unverified;
   const priority = priorityRank(a, priorities) - priorityRank(b, priorities);
   if (priority !== 0) return priority;
   const category = categoryRank(a.category) - categoryRank(b.category);
@@ -111,10 +111,25 @@ function priorityRank(entry: ValidatedEntry, priorities: PriorityChannel[]): num
   return priority?.priority ?? entry.priorityOrder ?? Number.MAX_SAFE_INTEGER;
 }
 
+function unverifiedRank(entry: ValidatedEntry): number {
+  return entry.sourceName === "canlitv-az-unverified" ? 1 : 0;
+}
+
+function outputCountryRank(entry: PlaylistEntry): number {
+  return Math.min(countryRank(entry.country), countryRank(entry.groupTitle));
+}
+
 function countryRank(country?: string): number {
-  if (country === "Azərbaycan") return 0;
-  if (country === "Türkiyə") return 1;
-  if (country === "Rusiya") return 2;
+  const normalized = (country ?? "")
+    .toLocaleLowerCase("tr")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[\u0259\u018f]/g, "e")
+    .replace(/[\u0131\u0130]/g, "i")
+    .replace(/[\u00fc\u00dc]/g, "u");
+  if (/azerbaycan|^az$/.test(normalized)) return 0;
+  if (/turkiye|^tr$/.test(normalized)) return 1;
+  if (/rusiya|^ru$/.test(normalized)) return 2;
   return 3;
 }
 
@@ -133,5 +148,5 @@ function normalizeUrl(raw: string): string {
 }
 
 function outputId(entry: PlaylistEntry): string {
-  return entry.priorityId ?? entry.tvgId ?? entry.name.toLocaleLowerCase();
+  return entry.priorityId ?? entry.tvgId ?? entry.name.toLocaleLowerCase("tr");
 }

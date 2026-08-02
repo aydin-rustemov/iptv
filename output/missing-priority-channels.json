@@ -1,29 +1,5 @@
 [
   {
-    "id": "ictimai-tv",
-    "name": "İctimai TV",
-    "country": "Azərbaycan",
-    "category": "general",
-    "priority": 2,
-    "aliasesChecked": 3,
-    "candidatesFound": 1,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
-    "id": "atv-az",
-    "name": "ATV Azərbaycan",
-    "country": "Azərbaycan",
-    "category": "general",
-    "priority": 3,
-    "aliasesChecked": 4,
-    "candidatesFound": 0,
-    "candidatesValidated": 0,
-    "status": "not_found",
-    "failureReason": "No matching alias found in enabled M3U sources"
-  },
-  {
     "id": "arb",
     "name": "ARB",
     "country": "Azərbaycan",
@@ -94,18 +70,6 @@
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
-    "id": "cbc-sport",
-    "name": "CBC Sport",
-    "country": "Azərbaycan",
-    "category": "sports",
-    "priority": 11,
-    "aliasesChecked": 2,
-    "candidatesFound": 0,
-    "candidatesValidated": 0,
-    "status": "not_found",
-    "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
     "id": "idman-tv",
@@ -186,18 +150,6 @@
     "category": "regional",
     "priority": 20,
     "aliasesChecked": 1,
-    "candidatesFound": 1,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
-    "id": "kepez-tv",
-    "name": "Kəpəz TV",
-    "country": "Azərbaycan",
-    "category": "regional",
-    "priority": 21,
-    "aliasesChecked": 2,
     "candidatesFound": 1,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
@@ -370,18 +322,6 @@
     "candidatesValidated": 0,
     "status": "not_found",
     "failureReason": "No matching alias found in enabled M3U sources"
-  },
-  {
-    "id": "trt-spor",
-    "name": "TRT Spor",
-    "country": "Türkiyə",
-    "category": "sports",
-    "priority": 136,
-    "aliasesChecked": 1,
-    "candidatesFound": 4,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "trt-spor-yildiz",

@@ -18,5 +18,7 @@ output/*
 !output/status.html
 !output/missing-priority-channels.json
 !output/missing-priority-details.json
+!output/canlitv-status.json
+!output/channel-health.json
 !output/playlist-volo-test.m3u
 !output/volo-arb-status.json

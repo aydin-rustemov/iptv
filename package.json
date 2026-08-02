@@ -13,6 +13,9 @@
     "update": "tsx src/index.ts",
     "priority:find": "tsx src/index.ts && tsx src/audit.ts",
     "audit": "tsx src/audit.ts",
+    "canlitv:discover": "tsx src/sources/canlitvAz.ts",
+    "canlitv:refresh": "tsx src/index.ts",
+    "channel:health": "tsx src/index.ts && tsx src/audit.ts",
     "volo:test:arb": "tsx src/volo-arb.ts"
   },
   "dependencies": {
