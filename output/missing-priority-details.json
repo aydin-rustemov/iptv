@@ -1,5 +1,32 @@
 [
   {
+    "channel": "İctimai TV",
+    "id": "ictimai-tv",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "İctimai TV",
+      "İctimai TV",
+      "Ictimai TV",
+      "İTV",
+      "ITV Azerbaijan"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "live.itv.az",
+        "sourceName": "iptv-org",
+        "result": "connection_timeout"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "connection_timeout",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
     "channel": "ARB24",
     "id": "arb24",
     "previousStatus": "all_candidates_failed",
@@ -43,22 +70,12 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 1,
-    "candidatesFound": 3,
+    "candidatesFound": 1,
     "candidates": [
       {
         "host": "raw.githubusercontent.com",
         "sourceName": "iptv-org",
         "result": "http_404"
-      },
-      {
-        "host": "rtmp.baku.tv",
-        "sourceName": "canlitv-az",
-        "result": "working"
-      },
-      {
-        "host": "rtmp.baku.tv",
-        "sourceName": "canlitv-az-unverified",
-        "result": "working"
       }
     ],
     "socialAccounts": [
@@ -68,7 +85,7 @@
         "result": "live_hint_found_no_direct_manifest"
       }
     ],
-    "bestResult": "working",
+    "bestResult": "http_404",
     "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
@@ -192,36 +209,6 @@
     "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
   },
   {
-    "channel": "Kanal S",
-    "id": "kanal-s",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "Kanal S",
-      "Kanal S",
-      "KanalS"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 2,
-    "candidates": [
-      {
-        "host": "lives.atv.az",
-        "sourceName": "iptv-org",
-        "result": "http_404"
-      },
-      {
-        "host": "raw.githubusercontent.com",
-        "sourceName": "iptv-org",
-        "result": "http_404"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "http_404",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
     "channel": "Qafqaz TV",
     "id": "qafqaz-tv",
     "previousStatus": "not_found",
@@ -244,31 +231,6 @@
     ],
     "finalStatus": "not_found_after_all_sources",
     "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
-  },
-  {
-    "channel": "TRT 1",
-    "id": "trt-1",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "TRT 1",
-      "TRT 1",
-      "TRT1"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 1,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 1,
-    "candidates": [
-      {
-        "host": "tv-trt1.medya.trt.com.tr",
-        "sourceName": "priority-direct",
-        "result": "http_403"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "http_403",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "find alternate direct source or official header-compatible M3U entry"
   },
   {
     "channel": "Beyaz TV",
@@ -599,8 +561,13 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 1,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 4,
+    "candidatesFound": 5,
     "candidates": [
+      {
+        "host": "trt.daioncdn.net",
+        "sourceName": "iptv-org",
+        "result": "http_403"
+      },
       {
         "host": "tv-trtspor1.medya.trt.com.tr",
         "sourceName": "priority-direct",
@@ -639,13 +606,8 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 1,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 2,
+    "candidatesFound": 1,
     "candidates": [
-      {
-        "host": "dga1op10s1u3leo.33a6243d11525c.click",
-        "sourceName": "canlitv-az-unverified",
-        "result": "working"
-      },
       {
         "host": "tv-trtsporyildiz.medya.trt.com.tr",
         "sourceName": "priority-direct",
@@ -653,7 +615,7 @@
       }
     ],
     "socialAccounts": [],
-    "bestResult": "working",
+    "bestResult": "dns_or_network_failure",
     "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "replace obsolete CDN hostname from another public M3U source"
   },
@@ -813,36 +775,6 @@
     ],
     "finalStatus": "not_found_after_all_sources",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
-    "channel": "TRT Çocuk",
-    "id": "trt-cocuk",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "TRT Çocuk",
-      "TRT Çocuk",
-      "TRT Cocuk"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 1,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 2,
-    "candidates": [
-      {
-        "host": "tv-trtcocuk.medya.trt.com.tr",
-        "sourceName": "priority-direct",
-        "result": "http_403"
-      },
-      {
-        "host": "trtcanlitv-lh.akamaihd.net",
-        "sourceName": "official-page",
-        "result": "http_400"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "http_403",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "find alternate direct source or official header-compatible M3U entry"
   },
   {
     "channel": "Cartoonito",

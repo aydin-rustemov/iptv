@@ -1,5 +1,17 @@
 [
   {
+    "id": "ictimai-tv",
+    "name": "İctimai TV",
+    "country": "Azərbaycan",
+    "category": "general",
+    "priority": 2,
+    "aliasesChecked": 3,
+    "candidatesFound": 1,
+    "candidatesValidated": 0,
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
+  },
+  {
     "id": "arb24",
     "name": "ARB24",
     "country": "Azərbaycan",
@@ -18,11 +30,10 @@
     "category": "news",
     "priority": 9,
     "aliasesChecked": 2,
-    "candidatesFound": 3,
-    "candidatesValidated": 2,
-    "selectedSource": "canlitv-az-unverified",
+    "candidatesFound": 1,
+    "candidatesValidated": 0,
     "status": "all_candidates_failed",
-    "failureReason": "Only warning-marked unverified CanliTV fallback is available"
+    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "cbc",
@@ -73,18 +84,6 @@
     "failureReason": "Matching candidates did not pass media validation"
   },
   {
-    "id": "kanal-s",
-    "name": "Kanal S",
-    "country": "Azərbaycan",
-    "category": "regional",
-    "priority": 17,
-    "aliasesChecked": 2,
-    "candidatesFound": 2,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
     "id": "qafqaz-tv",
     "name": "Qafqaz TV",
     "country": "Azərbaycan",
@@ -95,18 +94,6 @@
     "candidatesValidated": 0,
     "status": "not_found",
     "failureReason": "No matching alias found in enabled M3U sources"
-  },
-  {
-    "id": "trt-1",
-    "name": "TRT 1",
-    "country": "Türkiyə",
-    "category": "general",
-    "priority": 101,
-    "aliasesChecked": 2,
-    "candidatesFound": 1,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "beyaz-tv",
@@ -283,7 +270,7 @@
     "category": "sports",
     "priority": 136,
     "aliasesChecked": 1,
-    "candidatesFound": 4,
+    "candidatesFound": 5,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
@@ -295,11 +282,10 @@
     "category": "sports",
     "priority": 137,
     "aliasesChecked": 1,
-    "candidatesFound": 2,
-    "candidatesValidated": 1,
-    "selectedSource": "canlitv-az-unverified",
+    "candidatesFound": 1,
+    "candidatesValidated": 0,
     "status": "all_candidates_failed",
-    "failureReason": "Only warning-marked unverified CanliTV fallback is available"
+    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "bein-sports-haber",
@@ -384,18 +370,6 @@
     "candidatesValidated": 0,
     "status": "not_found",
     "failureReason": "No matching alias found in enabled M3U sources"
-  },
-  {
-    "id": "trt-cocuk",
-    "name": "TRT Çocuk",
-    "country": "Türkiyə",
-    "category": "children",
-    "priority": 154,
-    "aliasesChecked": 1,
-    "candidatesFound": 2,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "cartoonito-tr",
