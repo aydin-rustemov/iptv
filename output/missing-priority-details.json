@@ -360,6 +360,30 @@
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
+    "channel": "TGRT Haber",
+    "id": "tgrt-haber",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "TGRT Haber",
+      "TGRT Haber"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "canli.tgrthaber.com",
+        "sourceName": "iptv-org",
+        "result": "http_404"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "http_404",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
     "channel": "TV100",
     "id": "tv100",
     "previousStatus": "not_found",

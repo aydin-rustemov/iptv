@@ -168,6 +168,18 @@
     "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
+    "id": "tgrt-haber",
+    "name": "TGRT Haber",
+    "country": "Türkiyə",
+    "category": "news",
+    "priority": 125,
+    "aliasesChecked": 1,
+    "candidatesFound": 1,
+    "candidatesValidated": 0,
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
+  },
+  {
     "id": "tv100",
     "name": "TV100",
     "country": "Türkiyə",
