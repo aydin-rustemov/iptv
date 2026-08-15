@@ -18,10 +18,10 @@
     "category": "news",
     "priority": 6,
     "aliasesChecked": 3,
-    "candidatesFound": 1,
+    "candidatesFound": 0,
     "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
+    "status": "not_found",
+    "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
     "id": "baku-tv",
@@ -66,10 +66,10 @@
     "category": "children",
     "priority": 15,
     "aliasesChecked": 1,
-    "candidatesFound": 1,
+    "candidatesFound": 0,
     "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
+    "status": "not_found",
+    "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
     "id": "dunya-tv",
@@ -78,10 +78,10 @@
     "category": "general",
     "priority": 16,
     "aliasesChecked": 1,
-    "candidatesFound": 1,
+    "candidatesFound": 0,
     "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
+    "status": "not_found",
+    "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
     "id": "qafqaz-tv",
@@ -252,18 +252,6 @@
     "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
-    "id": "trt-spor",
-    "name": "TRT Spor",
-    "country": "Türkiyə",
-    "category": "sports",
-    "priority": 136,
-    "aliasesChecked": 1,
-    "candidatesFound": 5,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
     "id": "trt-spor-yildiz",
     "name": "TRT Spor Yıldız",
     "country": "Türkiyə",
@@ -358,6 +346,18 @@
     "candidatesValidated": 0,
     "status": "not_found",
     "failureReason": "No matching alias found in enabled M3U sources"
+  },
+  {
+    "id": "trt-cocuk",
+    "name": "TRT Çocuk",
+    "country": "Türkiyə",
+    "category": "children",
+    "priority": 154,
+    "aliasesChecked": 1,
+    "candidatesFound": 2,
+    "candidatesValidated": 0,
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "cartoonito-tr",
