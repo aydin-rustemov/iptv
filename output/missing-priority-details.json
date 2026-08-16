@@ -291,6 +291,31 @@
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
+    "channel": "Flash Haber TV",
+    "id": "flash-haber-tv",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "Flash Haber TV",
+      "Flash Haber TV",
+      "Flash TV"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "b01c02nl.mediatriple.net",
+        "sourceName": "iptv-org",
+        "result": "http_404"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "http_404",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
     "channel": "CNN Türk",
     "id": "cnn-turk",
     "previousStatus": "not_found",
@@ -686,36 +711,6 @@
     ],
     "finalStatus": "not_found_after_all_sources",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
-    "channel": "TRT Çocuk",
-    "id": "trt-cocuk",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "TRT Çocuk",
-      "TRT Çocuk",
-      "TRT Cocuk"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 1,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 2,
-    "candidates": [
-      {
-        "host": "tv-trtcocuk.medya.trt.com.tr",
-        "sourceName": "iptv-org",
-        "result": "http_403"
-      },
-      {
-        "host": "trtcanlitv-lh.akamaihd.net",
-        "sourceName": "official-page",
-        "result": "http_400"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "http_403",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "find alternate direct source or official header-compatible M3U entry"
   },
   {
     "channel": "Cartoonito",
