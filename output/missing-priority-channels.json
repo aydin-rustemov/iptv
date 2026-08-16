@@ -96,18 +96,6 @@
     "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
-    "id": "kepez-tv",
-    "name": "Kəpəz TV",
-    "country": "Azərbaycan",
-    "category": "regional",
-    "priority": 21,
-    "aliasesChecked": 2,
-    "candidatesFound": 1,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
     "id": "beyaz-tv",
     "name": "Beyaz TV",
     "country": "Türkiyə",
@@ -190,6 +178,18 @@
     "candidatesValidated": 0,
     "status": "not_found",
     "failureReason": "No matching alias found in enabled M3U sources"
+  },
+  {
+    "id": "tgrt-haber",
+    "name": "TGRT Haber",
+    "country": "Türkiyə",
+    "category": "news",
+    "priority": 125,
+    "aliasesChecked": 1,
+    "candidatesFound": 1,
+    "candidatesValidated": 0,
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "bloomberg-ht",
@@ -370,6 +370,18 @@
     "candidatesValidated": 0,
     "status": "not_found",
     "failureReason": "No matching alias found in enabled M3U sources"
+  },
+  {
+    "id": "trt-cocuk",
+    "name": "TRT Çocuk",
+    "country": "Türkiyə",
+    "category": "children",
+    "priority": 154,
+    "aliasesChecked": 1,
+    "candidatesFound": 2,
+    "candidatesValidated": 0,
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "cartoonito-tr",

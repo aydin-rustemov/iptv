@@ -212,32 +212,6 @@
     "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
   },
   {
-    "channel": "Kəpəz TV",
-    "id": "kepez-tv",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "Kəpəz TV",
-      "Kəpəz TV",
-      "Kepez TV",
-      "Kapaz TV"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 1,
-    "candidates": [
-      {
-        "host": "85.132.78.122",
-        "sourceName": "iptv-org",
-        "result": "the_operation_was_aborted_due_to_timeout"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "the_operation_was_aborted_due_to_timeout",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
     "channel": "Beyaz TV",
     "id": "beyaz-tv",
     "previousStatus": "all_candidates_failed",
@@ -387,6 +361,30 @@
       }
     ],
     "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
+    "channel": "TGRT Haber",
+    "id": "tgrt-haber",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "TGRT Haber",
+      "TGRT Haber"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "canli.tgrthaber.com",
+        "sourceName": "iptv-org",
+        "result": "http_404"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "http_404",
+    "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
@@ -737,6 +735,36 @@
     ],
     "finalStatus": "not_found_after_all_sources",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
+    "channel": "TRT Çocuk",
+    "id": "trt-cocuk",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "TRT Çocuk",
+      "TRT Çocuk",
+      "TRT Cocuk"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 1,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 2,
+    "candidates": [
+      {
+        "host": "tv-trtcocuk.medya.trt.com.tr",
+        "sourceName": "iptv-org",
+        "result": "http_403"
+      },
+      {
+        "host": "trtcanlitv-lh.akamaihd.net",
+        "sourceName": "official-page",
+        "result": "http_400"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "http_403",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "find alternate direct source or official header-compatible M3U entry"
   },
   {
     "channel": "Cartoonito",
