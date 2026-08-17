@@ -115,32 +115,6 @@
     "nextRecommendedDiscoveryMethod": "replace obsolete CDN hostname from another public M3U source"
   },
   {
-    "channel": "Mədəniyyət TV",
-    "id": "medeniyyet-tv",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "Mədəniyyət TV",
-      "Mədəniyyət TV",
-      "Medeniyyet TV",
-      "Medeniyet TV"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 1,
-    "candidates": [
-      {
-        "host": "str.yodacdn.net",
-        "sourceName": "iptv-org",
-        "result": "the_operation_was_aborted_due_to_timeout"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "the_operation_was_aborted_due_to_timeout",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
     "channel": "MTV Azərbaycan",
     "id": "mtv-az",
     "previousStatus": "not_found",
@@ -236,6 +210,32 @@
     ],
     "finalStatus": "not_found_after_all_sources",
     "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
+  },
+  {
+    "channel": "Kəpəz TV",
+    "id": "kepez-tv",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "Kəpəz TV",
+      "Kəpəz TV",
+      "Kepez TV",
+      "Kapaz TV"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "85.132.78.122",
+        "sourceName": "iptv-org",
+        "result": "the_operation_was_aborted_due_to_timeout"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "the_operation_was_aborted_due_to_timeout",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "Beyaz TV",
@@ -579,55 +579,6 @@
     ],
     "finalStatus": "not_found_after_all_sources",
     "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
-  },
-  {
-    "channel": "TRT Spor",
-    "id": "trt-spor",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "TRT Spor",
-      "TRT Spor"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 1,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 6,
-    "candidates": [
-      {
-        "host": "corestream.siteyaptim.live",
-        "sourceName": "iptv-org",
-        "result": "http_403"
-      },
-      {
-        "host": "trt.daioncdn.net",
-        "sourceName": "iptv-org",
-        "result": "http_403"
-      },
-      {
-        "host": "tv-trtspor1.medya.trt.com.tr",
-        "sourceName": "priority-direct",
-        "result": "http_403"
-      },
-      {
-        "host": "tv-trtspor2.medya.trt.com.tr",
-        "sourceName": "priority-direct",
-        "result": "http_403"
-      },
-      {
-        "host": "trt.daioncdn.net",
-        "sourceName": "official-page",
-        "result": "http_403"
-      },
-      {
-        "host": "trt.daioncdn.net",
-        "sourceName": "official-page",
-        "result": "http_403"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "http_403",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "find alternate direct source or official header-compatible M3U entry"
   },
   {
     "channel": "TRT Spor Yıldız",

@@ -48,18 +48,6 @@
     "failureReason": "Matching candidates did not pass media validation"
   },
   {
-    "id": "medeniyyet-tv",
-    "name": "Mədəniyyət TV",
-    "country": "Azərbaycan",
-    "category": "culture",
-    "priority": 13,
-    "aliasesChecked": 2,
-    "candidatesFound": 1,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
     "id": "mtv-az",
     "name": "MTV Azərbaycan",
     "country": "Azərbaycan",
@@ -106,6 +94,18 @@
     "candidatesValidated": 0,
     "status": "not_found",
     "failureReason": "No matching alias found in enabled M3U sources"
+  },
+  {
+    "id": "kepez-tv",
+    "name": "Kəpəz TV",
+    "country": "Azərbaycan",
+    "category": "regional",
+    "priority": 21,
+    "aliasesChecked": 2,
+    "candidatesFound": 1,
+    "candidatesValidated": 0,
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "beyaz-tv",
@@ -286,18 +286,6 @@
     "candidatesValidated": 0,
     "status": "not_found",
     "failureReason": "No matching alias found in enabled M3U sources"
-  },
-  {
-    "id": "trt-spor",
-    "name": "TRT Spor",
-    "country": "Türkiyə",
-    "category": "sports",
-    "priority": 136,
-    "aliasesChecked": 1,
-    "candidatesFound": 6,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "trt-spor-yildiz",
