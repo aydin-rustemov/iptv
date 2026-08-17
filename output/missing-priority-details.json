@@ -18,13 +18,13 @@
       {
         "host": "live.itv.az",
         "sourceName": "iptv-org",
-        "result": "connection_timeout"
+        "result": "dns_or_network_failure"
       }
     ],
     "socialAccounts": [],
-    "bestResult": "connection_timeout",
+    "bestResult": "dns_or_network_failure",
     "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+    "nextRecommendedDiscoveryMethod": "replace obsolete CDN hostname from another public M3U source"
   },
   {
     "channel": "ARB24",
@@ -333,11 +333,11 @@
       {
         "host": "b01c02nl.mediatriple.net",
         "sourceName": "iptv-org",
-        "result": "http_5xx"
+        "result": "http_404"
       }
     ],
     "socialAccounts": [],
-    "bestResult": "http_5xx",
+    "bestResult": "http_404",
     "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
