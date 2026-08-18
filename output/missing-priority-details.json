@@ -841,6 +841,31 @@
     "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
   },
   {
+    "channel": "Number 1 TV",
+    "id": "number-1-tv",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "Number 1 TV",
+      "Number 1 TV",
+      "Number One TV"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "b01c02nl.mediatriple.net",
+        "sourceName": "iptv-org",
+        "result": "http_404"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "http_404",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
     "channel": "PowerTürk Slow",
     "id": "powerturk-slow",
     "previousStatus": "not_found",

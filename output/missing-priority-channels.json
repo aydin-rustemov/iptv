@@ -432,6 +432,18 @@
     "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
+    "id": "number-1-tv",
+    "name": "Number 1 TV",
+    "country": "Türkiyə",
+    "category": "music",
+    "priority": 165,
+    "aliasesChecked": 2,
+    "candidatesFound": 1,
+    "candidatesValidated": 0,
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
+  },
+  {
     "id": "powerturk-slow",
     "name": "PowerTürk Slow",
     "country": "Türkiyə",
