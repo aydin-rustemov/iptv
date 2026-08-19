@@ -108,6 +108,18 @@
     "failureReason": "Matching candidates did not pass media validation"
   },
   {
+    "id": "now-tv",
+    "name": "NOW TV",
+    "country": "Türkiyə",
+    "category": "general",
+    "priority": 106,
+    "aliasesChecked": 4,
+    "candidatesFound": 1,
+    "candidatesValidated": 0,
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
+  },
+  {
     "id": "beyaz-tv",
     "name": "Beyaz TV",
     "country": "Türkiyə",

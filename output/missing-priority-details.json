@@ -238,6 +238,33 @@
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
+    "channel": "NOW TV",
+    "id": "now-tv",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "NOW TV",
+      "NOW TV",
+      "NOW Türkiye",
+      "Fox TV",
+      "FOX Türkiye"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "uycyyuuzyh.turknet.ercdn.net",
+        "sourceName": "iptv-org",
+        "result": "the_operation_was_aborted_due_to_timeout"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "the_operation_was_aborted_due_to_timeout",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
     "channel": "Beyaz TV",
     "id": "beyaz-tv",
     "previousStatus": "all_candidates_failed",
