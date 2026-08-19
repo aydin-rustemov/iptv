@@ -96,30 +96,6 @@
     "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
-    "id": "kepez-tv",
-    "name": "Kəpəz TV",
-    "country": "Azərbaycan",
-    "category": "regional",
-    "priority": 21,
-    "aliasesChecked": 2,
-    "candidatesFound": 1,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
-    "id": "trt-1",
-    "name": "TRT 1",
-    "country": "Türkiyə",
-    "category": "general",
-    "priority": 101,
-    "aliasesChecked": 2,
-    "candidatesFound": 1,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
     "id": "beyaz-tv",
     "name": "Beyaz TV",
     "country": "Türkiyə",
@@ -204,18 +180,6 @@
     "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
-    "id": "tgrt-haber",
-    "name": "TGRT Haber",
-    "country": "Türkiyə",
-    "category": "news",
-    "priority": 125,
-    "aliasesChecked": 1,
-    "candidatesFound": 1,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
     "id": "bloomberg-ht",
     "name": "Bloomberg HT",
     "country": "Türkiyə",
@@ -298,6 +262,18 @@
     "candidatesValidated": 0,
     "status": "not_found",
     "failureReason": "No matching alias found in enabled M3U sources"
+  },
+  {
+    "id": "trt-spor",
+    "name": "TRT Spor",
+    "country": "Türkiyə",
+    "category": "sports",
+    "priority": 136,
+    "aliasesChecked": 1,
+    "candidatesFound": 6,
+    "candidatesValidated": 0,
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "trt-spor-yildiz",
@@ -466,18 +442,6 @@
     "candidatesValidated": 0,
     "status": "not_found",
     "failureReason": "No matching alias found in enabled M3U sources"
-  },
-  {
-    "id": "number-1-tv",
-    "name": "Number 1 TV",
-    "country": "Türkiyə",
-    "category": "music",
-    "priority": 165,
-    "aliasesChecked": 2,
-    "candidatesFound": 1,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "powerturk-slow",
