@@ -96,30 +96,6 @@
     "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
-    "id": "kepez-tv",
-    "name": "Kəpəz TV",
-    "country": "Azərbaycan",
-    "category": "regional",
-    "priority": 21,
-    "aliasesChecked": 2,
-    "candidatesFound": 1,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
-    "id": "now-tv",
-    "name": "NOW TV",
-    "country": "Türkiyə",
-    "category": "general",
-    "priority": 106,
-    "aliasesChecked": 4,
-    "candidatesFound": 1,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
     "id": "beyaz-tv",
     "name": "Beyaz TV",
     "country": "Türkiyə",
@@ -286,18 +262,6 @@
     "candidatesValidated": 0,
     "status": "not_found",
     "failureReason": "No matching alias found in enabled M3U sources"
-  },
-  {
-    "id": "trt-spor",
-    "name": "TRT Spor",
-    "country": "Türkiyə",
-    "category": "sports",
-    "priority": 136,
-    "aliasesChecked": 1,
-    "candidatesFound": 6,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "trt-spor-yildiz",
