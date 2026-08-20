@@ -7,9 +7,9 @@
       "countryScope": [
         "global"
       ],
-      "lastSuccessfulDownload": "2026-08-19T13:22:07.405Z",
-      "parsedEntries": 12712,
-      "workingPriorityCandidates": 42
+      "lastSuccessfulDownload": "2026-08-20T02:05:02.542Z",
+      "parsedEntries": 12738,
+      "workingPriorityCandidates": 38
     },
     {
       "name": "iptv-org-azerbaijan",
@@ -18,7 +18,7 @@
       "countryScope": [
         "AZ"
       ],
-      "lastSuccessfulDownload": "2026-08-19T13:22:07.405Z",
+      "lastSuccessfulDownload": "2026-08-20T02:05:02.542Z",
       "parsedEntries": 18,
       "workingPriorityCandidates": 0
     },
@@ -29,8 +29,8 @@
       "countryScope": [
         "TR"
       ],
-      "lastSuccessfulDownload": "2026-08-19T13:22:07.405Z",
-      "parsedEntries": 173,
+      "lastSuccessfulDownload": "2026-08-20T02:05:02.542Z",
+      "parsedEntries": 174,
       "workingPriorityCandidates": 0
     },
     {
@@ -40,7 +40,7 @@
       "countryScope": [
         "RU"
       ],
-      "lastSuccessfulDownload": "2026-08-19T13:22:07.405Z",
+      "lastSuccessfulDownload": "2026-08-20T02:05:02.542Z",
       "parsedEntries": 452,
       "workingPriorityCandidates": 0
     },
@@ -52,7 +52,7 @@
         "AZ",
         "aze"
       ],
-      "lastSuccessfulDownload": "2026-08-19T13:22:07.405Z",
+      "lastSuccessfulDownload": "2026-08-20T02:05:02.542Z",
       "parsedEntries": 20,
       "workingPriorityCandidates": 0
     },
@@ -64,8 +64,8 @@
         "TR",
         "tur"
       ],
-      "lastSuccessfulDownload": "2026-08-19T13:22:07.405Z",
-      "parsedEntries": 172,
+      "lastSuccessfulDownload": "2026-08-20T02:05:02.542Z",
+      "parsedEntries": 173,
       "workingPriorityCandidates": 0
     },
     {
@@ -76,7 +76,7 @@
         "RU",
         "rus"
       ],
-      "lastSuccessfulDownload": "2026-08-19T13:22:07.405Z",
+      "lastSuccessfulDownload": "2026-08-20T02:05:02.542Z",
       "parsedEntries": 579,
       "workingPriorityCandidates": 0
     },
@@ -88,8 +88,8 @@
         "global",
         "news"
       ],
-      "lastSuccessfulDownload": "2026-08-19T13:22:07.405Z",
-      "parsedEntries": 942,
+      "lastSuccessfulDownload": "2026-08-20T02:05:02.542Z",
+      "parsedEntries": 944,
       "workingPriorityCandidates": 0
     },
     {
@@ -100,8 +100,8 @@
         "global",
         "sports"
       ],
-      "lastSuccessfulDownload": "2026-08-19T13:22:07.405Z",
-      "parsedEntries": 455,
+      "lastSuccessfulDownload": "2026-08-20T02:05:02.542Z",
+      "parsedEntries": 459,
       "workingPriorityCandidates": 0
     },
     {
@@ -112,8 +112,8 @@
         "global",
         "kids"
       ],
-      "lastSuccessfulDownload": "2026-08-19T13:22:07.405Z",
-      "parsedEntries": 367,
+      "lastSuccessfulDownload": "2026-08-20T02:05:02.542Z",
+      "parsedEntries": 368,
       "workingPriorityCandidates": 0
     },
     {
@@ -124,8 +124,8 @@
         "global",
         "music"
       ],
-      "lastSuccessfulDownload": "2026-08-19T13:22:07.405Z",
-      "parsedEntries": 726,
+      "lastSuccessfulDownload": "2026-08-20T02:05:02.542Z",
+      "parsedEntries": 727,
       "workingPriorityCandidates": 0
     }
   ]

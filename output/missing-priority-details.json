@@ -27,6 +27,39 @@
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
+    "channel": "ATV Azərbaycan",
+    "id": "atv-az",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "ATV Azərbaycan",
+      "ATV Azərbaycan",
+      "Azad Azərbaycan",
+      "ATV AZ",
+      "ATV Azerbaijan"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 1,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "lives.atv.az",
+        "sourceName": "manual-fallback",
+        "result": "connection_timeout"
+      }
+    ],
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
+    "bestResult": "connection_timeout",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
     "channel": "ARB24",
     "id": "arb24",
     "previousStatus": "not_found",
@@ -188,6 +221,31 @@
     "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
   },
   {
+    "channel": "Kanal S",
+    "id": "kanal-s",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "Kanal S",
+      "Kanal S",
+      "KanalS"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "lives.atv.az",
+        "sourceName": "iptv-org",
+        "result": "connection_timeout"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "connection_timeout",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
     "channel": "Qafqaz TV",
     "id": "qafqaz-tv",
     "previousStatus": "not_found",
@@ -210,6 +268,32 @@
     ],
     "finalStatus": "not_found_after_all_sources",
     "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
+  },
+  {
+    "channel": "Kəpəz TV",
+    "id": "kepez-tv",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "Kəpəz TV",
+      "Kəpəz TV",
+      "Kepez TV",
+      "Kapaz TV"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "85.132.78.122",
+        "sourceName": "iptv-org",
+        "result": "the_operation_was_aborted_due_to_timeout"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "the_operation_was_aborted_due_to_timeout",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "Beyaz TV",
@@ -307,11 +391,11 @@
       {
         "host": "b01c02nl.mediatriple.net",
         "sourceName": "iptv-org",
-        "result": "http_404"
+        "result": "http_5xx"
       }
     ],
     "socialAccounts": [],
-    "bestResult": "http_404",
+    "bestResult": "http_5xx",
     "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
@@ -342,7 +426,7 @@
   {
     "channel": "Sözcü TV",
     "id": "sozcu-tv",
-    "previousStatus": "not_found",
+    "previousStatus": "all_candidates_failed",
     "aliasesChecked": [
       "Sözcü TV",
       "Sözcü TV",
@@ -351,8 +435,14 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 1,
-    "candidatesFound": 0,
-    "candidates": [],
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "5.178.103.239",
+        "sourceName": "iptv-org",
+        "result": "private_or_local_url"
+      }
+    ],
     "socialAccounts": [
       {
         "platform": "youtube",
@@ -360,7 +450,32 @@
         "result": "live_hint_found_no_direct_manifest"
       }
     ],
-    "finalStatus": "not_found_after_all_sources",
+    "bestResult": "private_or_local_url",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
+    "channel": "TGRT Haber",
+    "id": "tgrt-haber",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "TGRT Haber",
+      "TGRT Haber"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "canli.tgrthaber.com",
+        "sourceName": "iptv-org",
+        "result": "http_404"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "http_404",
+    "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
