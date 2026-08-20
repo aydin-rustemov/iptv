@@ -12,18 +12,6 @@
     "failureReason": "Matching candidates did not pass media validation"
   },
   {
-    "id": "atv-az",
-    "name": "ATV Azərbaycan",
-    "country": "Azərbaycan",
-    "category": "general",
-    "priority": 3,
-    "aliasesChecked": 4,
-    "candidatesFound": 1,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
     "id": "arb24",
     "name": "ARB24",
     "country": "Azərbaycan",
@@ -96,18 +84,6 @@
     "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
-    "id": "kanal-s",
-    "name": "Kanal S",
-    "country": "Azərbaycan",
-    "category": "regional",
-    "priority": 17,
-    "aliasesChecked": 2,
-    "candidatesFound": 1,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
     "id": "qafqaz-tv",
     "name": "Qafqaz TV",
     "country": "Azərbaycan",
@@ -118,6 +94,18 @@
     "candidatesValidated": 0,
     "status": "not_found",
     "failureReason": "No matching alias found in enabled M3U sources"
+  },
+  {
+    "id": "kepez-tv",
+    "name": "Kəpəz TV",
+    "country": "Azərbaycan",
+    "category": "regional",
+    "priority": 21,
+    "aliasesChecked": 2,
+    "candidatesFound": 1,
+    "candidatesValidated": 0,
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "beyaz-tv",
