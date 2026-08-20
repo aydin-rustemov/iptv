@@ -108,6 +108,18 @@
     "failureReason": "Matching candidates did not pass media validation"
   },
   {
+    "id": "trt-1",
+    "name": "TRT 1",
+    "country": "Türkiyə",
+    "category": "general",
+    "priority": 101,
+    "aliasesChecked": 2,
+    "candidatesFound": 1,
+    "candidatesValidated": 0,
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
+  },
+  {
     "id": "beyaz-tv",
     "name": "Beyaz TV",
     "country": "Türkiyə",
@@ -185,18 +197,6 @@
     "country": "Türkiyə",
     "category": "news",
     "priority": 123,
-    "aliasesChecked": 1,
-    "candidatesFound": 1,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
-    "id": "tgrt-haber",
-    "name": "TGRT Haber",
-    "country": "Türkiyə",
-    "category": "news",
-    "priority": 125,
     "aliasesChecked": 1,
     "candidatesFound": 1,
     "candidatesValidated": 0,
@@ -288,6 +288,18 @@
     "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
+    "id": "trt-spor",
+    "name": "TRT Spor",
+    "country": "Türkiyə",
+    "category": "sports",
+    "priority": 136,
+    "aliasesChecked": 1,
+    "candidatesFound": 6,
+    "candidatesValidated": 0,
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
+  },
+  {
     "id": "trt-spor-yildiz",
     "name": "TRT Spor Yıldız",
     "country": "Türkiyə",
@@ -310,6 +322,18 @@
     "candidatesValidated": 0,
     "status": "not_found",
     "failureReason": "No matching alias found in enabled M3U sources"
+  },
+  {
+    "id": "ht-spor",
+    "name": "HT Spor",
+    "country": "Türkiyə",
+    "category": "sports",
+    "priority": 140,
+    "aliasesChecked": 2,
+    "candidatesFound": 1,
+    "candidatesValidated": 0,
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "gs-tv",

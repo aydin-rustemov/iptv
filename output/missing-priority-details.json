@@ -238,6 +238,31 @@
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
+    "channel": "TRT 1",
+    "id": "trt-1",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "TRT 1",
+      "TRT 1",
+      "TRT1"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 1,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "tv-trt1.medya.trt.com.tr",
+        "sourceName": "iptv-org",
+        "result": "http_403"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "http_403",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "find alternate direct source or official header-compatible M3U entry"
+  },
+  {
     "channel": "Beyaz TV",
     "id": "beyaz-tv",
     "previousStatus": "all_candidates_failed",
@@ -333,11 +358,11 @@
       {
         "host": "b01c02nl.mediatriple.net",
         "sourceName": "iptv-org",
-        "result": "http_5xx"
+        "result": "http_404"
       }
     ],
     "socialAccounts": [],
-    "bestResult": "http_5xx",
+    "bestResult": "http_404",
     "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
@@ -393,30 +418,6 @@
       }
     ],
     "bestResult": "private_or_local_url",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
-    "channel": "TGRT Haber",
-    "id": "tgrt-haber",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "TGRT Haber",
-      "TGRT Haber"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 1,
-    "candidates": [
-      {
-        "host": "canli.tgrthaber.com",
-        "sourceName": "iptv-org",
-        "result": "http_404"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "http_404",
     "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
@@ -588,6 +589,55 @@
     "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
   },
   {
+    "channel": "TRT Spor",
+    "id": "trt-spor",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "TRT Spor",
+      "TRT Spor"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 1,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 6,
+    "candidates": [
+      {
+        "host": "corestream.siteyaptim.live",
+        "sourceName": "iptv-org",
+        "result": "http_403"
+      },
+      {
+        "host": "trt.daioncdn.net",
+        "sourceName": "iptv-org",
+        "result": "http_403"
+      },
+      {
+        "host": "tv-trtspor1.medya.trt.com.tr",
+        "sourceName": "priority-direct",
+        "result": "http_403"
+      },
+      {
+        "host": "tv-trtspor2.medya.trt.com.tr",
+        "sourceName": "priority-direct",
+        "result": "http_403"
+      },
+      {
+        "host": "trt.daioncdn.net",
+        "sourceName": "official-page",
+        "result": "http_403"
+      },
+      {
+        "host": "trt.daioncdn.net",
+        "sourceName": "official-page",
+        "result": "http_403"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "http_403",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "find alternate direct source or official header-compatible M3U entry"
+  },
+  {
     "channel": "TRT Spor Yıldız",
     "id": "trt-spor-yildiz",
     "previousStatus": "all_candidates_failed",
@@ -628,6 +678,31 @@
     "candidates": [],
     "socialAccounts": [],
     "finalStatus": "not_found_after_all_sources",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
+    "channel": "HT Spor",
+    "id": "ht-spor",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "HT Spor",
+      "HT Spor",
+      "HTSpor TV"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "ciner.daioncdn.net",
+        "sourceName": "iptv-org",
+        "result": "http_401"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "http_401",
+    "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
