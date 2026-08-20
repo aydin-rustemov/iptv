@@ -333,11 +333,11 @@
       {
         "host": "b01c02nl.mediatriple.net",
         "sourceName": "iptv-org",
-        "result": "http_5xx"
+        "result": "http_404"
       }
     ],
     "socialAccounts": [],
-    "bestResult": "http_5xx",
+    "bestResult": "http_404",
     "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
