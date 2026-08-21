@@ -18,13 +18,13 @@
       {
         "host": "live.itv.az",
         "sourceName": "iptv-org",
-        "result": "dns_or_network_failure"
+        "result": "connection_timeout"
       }
     ],
     "socialAccounts": [],
-    "bestResult": "dns_or_network_failure",
+    "bestResult": "connection_timeout",
     "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "replace obsolete CDN hostname from another public M3U source"
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "ARB24",
@@ -418,6 +418,30 @@
       }
     ],
     "bestResult": "private_or_local_url",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
+    "channel": "TGRT Haber",
+    "id": "tgrt-haber",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "TGRT Haber",
+      "TGRT Haber"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "canli.tgrthaber.com",
+        "sourceName": "iptv-org",
+        "result": "http_404"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "http_404",
     "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },

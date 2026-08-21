@@ -204,6 +204,18 @@
     "failureReason": "Matching candidates did not pass media validation"
   },
   {
+    "id": "tgrt-haber",
+    "name": "TGRT Haber",
+    "country": "Türkiyə",
+    "category": "news",
+    "priority": 125,
+    "aliasesChecked": 1,
+    "candidatesFound": 1,
+    "candidatesValidated": 0,
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
+  },
+  {
     "id": "bloomberg-ht",
     "name": "Bloomberg HT",
     "country": "Türkiyə",
