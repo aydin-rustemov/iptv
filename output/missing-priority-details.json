@@ -18,13 +18,13 @@
       {
         "host": "live.itv.az",
         "sourceName": "iptv-org",
-        "result": "connection_timeout"
+        "result": "dns_or_network_failure"
       }
     ],
     "socialAccounts": [],
-    "bestResult": "connection_timeout",
+    "bestResult": "dns_or_network_failure",
     "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+    "nextRecommendedDiscoveryMethod": "replace obsolete CDN hostname from another public M3U source"
   },
   {
     "channel": "ARB24",
@@ -238,31 +238,6 @@
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
-    "channel": "TRT 1",
-    "id": "trt-1",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "TRT 1",
-      "TRT 1",
-      "TRT1"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 1,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 1,
-    "candidates": [
-      {
-        "host": "tv-trt1.medya.trt.com.tr",
-        "sourceName": "iptv-org",
-        "result": "http_403"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "http_403",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "find alternate direct source or official header-compatible M3U entry"
-  },
-  {
     "channel": "Beyaz TV",
     "id": "beyaz-tv",
     "previousStatus": "all_candidates_failed",
@@ -358,11 +333,11 @@
       {
         "host": "b01c02nl.mediatriple.net",
         "sourceName": "iptv-org",
-        "result": "http_5xx"
+        "result": "http_404"
       }
     ],
     "socialAccounts": [],
-    "bestResult": "http_5xx",
+    "bestResult": "http_404",
     "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
@@ -418,6 +393,30 @@
       }
     ],
     "bestResult": "private_or_local_url",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
+    "channel": "TGRT Haber",
+    "id": "tgrt-haber",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "TGRT Haber",
+      "TGRT Haber"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "canli.tgrthaber.com",
+        "sourceName": "iptv-org",
+        "result": "http_404"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "http_404",
     "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
