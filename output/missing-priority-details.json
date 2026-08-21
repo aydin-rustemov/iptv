@@ -18,13 +18,13 @@
       {
         "host": "live.itv.az",
         "sourceName": "iptv-org",
-        "result": "dns_or_network_failure"
+        "result": "connection_timeout"
       }
     ],
     "socialAccounts": [],
-    "bestResult": "dns_or_network_failure",
+    "bestResult": "connection_timeout",
     "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "replace obsolete CDN hostname from another public M3U source"
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "ARB24",
@@ -210,32 +210,6 @@
     ],
     "finalStatus": "not_found_after_all_sources",
     "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
-  },
-  {
-    "channel": "Kəpəz TV",
-    "id": "kepez-tv",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "Kəpəz TV",
-      "Kəpəz TV",
-      "Kepez TV",
-      "Kapaz TV"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 1,
-    "candidates": [
-      {
-        "host": "85.132.78.122",
-        "sourceName": "iptv-org",
-        "result": "the_operation_was_aborted_due_to_timeout"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "the_operation_was_aborted_due_to_timeout",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "Beyaz TV",
@@ -896,6 +870,31 @@
     ],
     "finalStatus": "not_found_after_all_sources",
     "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
+  },
+  {
+    "channel": "Number 1 TV",
+    "id": "number-1-tv",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "Number 1 TV",
+      "Number 1 TV",
+      "Number One TV"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "b01c02nl.mediatriple.net",
+        "sourceName": "iptv-org",
+        "result": "http_404"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "http_404",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "PowerTürk Slow",

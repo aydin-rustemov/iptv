@@ -96,18 +96,6 @@
     "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
-    "id": "kepez-tv",
-    "name": "Kəpəz TV",
-    "country": "Azərbaycan",
-    "category": "regional",
-    "priority": 21,
-    "aliasesChecked": 2,
-    "candidatesFound": 1,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
     "id": "beyaz-tv",
     "name": "Beyaz TV",
     "country": "Türkiyə",
@@ -454,6 +442,18 @@
     "candidatesValidated": 0,
     "status": "not_found",
     "failureReason": "No matching alias found in enabled M3U sources"
+  },
+  {
+    "id": "number-1-tv",
+    "name": "Number 1 TV",
+    "country": "Türkiyə",
+    "category": "music",
+    "priority": 165,
+    "aliasesChecked": 2,
+    "candidatesFound": 1,
+    "candidatesValidated": 0,
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "powerturk-slow",
