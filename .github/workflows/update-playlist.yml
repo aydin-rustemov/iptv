@@ -80,5 +80,6 @@ jobs:
             echo "No playlist changes"
           else
             git commit -m "Maintain working IPTV playlist incrementally"
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
