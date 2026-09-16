@@ -1,0 +1,53 @@
+name: Refresh Turkey from Volo
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "tools/refresh-turkey-volo.ts"
+      - ".github/workflows/refresh-turkey-volo.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-turkey-from-volo
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install chromium
+
+      - name: Refresh Turkish channels from Volo
+        run: npx tsx tools/refresh-turkey-volo.ts
+
+      - name: Commit refreshed playlist
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output/playlist.m3u output/turkey-volo-status.json
+          if git diff --cached --quiet; then
+            echo "No Turkey/Volo playlist changes"
+          else
+            git commit -m "Refresh Turkish channels from Volo"
+            git push
+          fi
