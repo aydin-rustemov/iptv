@@ -1,13 +1,12 @@
 import { chromium, type Browser, type Response } from "playwright";
 import type { PlaylistEntry } from "../types.js";
 import { isForbiddenUrl } from "../validator.js";
-
-const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/126 Safari/537.36";
-const MAX_PAGES = Number(process.env["IPTV_WEB_MAX_PAGES_PER_SOURCE"] ?? 12);
-const PAGE_CONCURRENCY = Number(process.env["IPTV_WEB_PAGE_CONCURRENCY"] ?? 3);
-const SOURCE_CONCURRENCY = Number(process.env["IPTV_WEB_SOURCE_CONCURRENCY"] ?? 3);
-
 import { SOURCES, type ChannelPage, type Country, type Source } from "./webSources.js";
+
+const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
+const MAX_PAGES = Number(process.env["IPTV_WEB_MAX_PAGES_PER_SOURCE"] ?? 600);
+const PAGE_CONCURRENCY = Number(process.env["IPTV_WEB_PAGE_CONCURRENCY"] ?? 6);
+const SOURCE_CONCURRENCY = Number(process.env["IPTV_WEB_SOURCE_CONCURRENCY"] ?? 2);
 
 export interface WebSourceStatus {
   source: string;
@@ -29,13 +28,14 @@ export async function discoverWebAggregators(): Promise<WebDiscoveryResult> {
   const entries: PlaylistEntry[] = [];
   const statuses: WebSourceStatus[] = [];
   const browser = await chromium.launch({ headless: true }).catch(() => undefined);
+
   try {
     await runPool(SOURCES, SOURCE_CONCURRENCY, async (source) => {
       try {
         const result = await discoverSource(source, browser);
         entries.push(...result.entries);
         statuses.push(result.status);
-        console.log(`[WEB SOURCE ${result.status.ok ? "OK" : "FAILED"}] ${source.name}: ${result.entries.length} candidates`);
+        console.log(`[WEB SOURCE ${result.status.ok ? "OK" : "FAILED"}] ${source.name}: ${result.entries.length} candidates; pages ${result.status.processedPages}/${result.status.channelPages}`);
       } catch (err) {
         const error = errText(err);
         statuses.push({ source: source.name, ok: false, seedPages: 0, channelPages: 0, processedPages: 0, manifestCandidates: 0, entries: 0, error });
@@ -45,6 +45,7 @@ export async function discoverWebAggregators(): Promise<WebDiscoveryResult> {
   } finally {
     await browser?.close().catch(() => undefined);
   }
+
   return { entries: dedupe(entries), statuses: statuses.sort((a, b) => a.source.localeCompare(b.source)) };
 }
 
@@ -55,16 +56,16 @@ async function discoverSource(source: Source, browser?: Browser): Promise<{ entr
 
   for (const seed of source.seeds) {
     try {
-      const html = await fetchText(seed.url);
+      const html = await fetchSeedHtml(seed.url, browser);
       seedPages++;
-      for (const link of links(html, seed.url)) {
-        if (!allowedHost(link.href, source.hosts) || !channelLike(link.text, link.href)) continue;
-        const title = cleanTitle(link.text) || titleFromUrl(link.href);
-        if (!title || excluded(title)) continue;
-        pages.set(link.href, { url: link.href, title, country: inferCountry(title, link.href, seed.country) });
-      }
+      collectChannelPages(pages, html, seed.url, seed.country, source);
+
       if (manifestUrls(html, seed.url).length) {
-        pages.set(seed.url, { url: seed.url, title: pageTitle(html) || source.name, country: seed.country });
+        pages.set(seed.url, {
+          url: seed.url,
+          title: pageTitle(html) || source.name,
+          country: seed.country
+        });
       }
     } catch (err) {
       firstError ??= errText(err);
@@ -75,6 +76,7 @@ async function discoverSource(source: Source, browser?: Browser): Promise<{ entr
   const selected = [...pages.values()].slice(0, MAX_PAGES);
   const entries: PlaylistEntry[] = [];
   let manifestCandidates = 0;
+
   await runPool(selected, PAGE_CONCURRENCY, async (page) => {
     try {
       const found = await pageCandidates(page, browser);
@@ -102,12 +104,61 @@ async function discoverSource(source: Source, browser?: Browser): Promise<{ entr
   };
 }
 
+function collectChannelPages(
+  pages: Map<string, ChannelPage>,
+  html: string,
+  base: string,
+  fallbackCountry: Country,
+  source: Source
+): void {
+  for (const link of links(html, base)) {
+    if (!allowedHost(link.href, source.hosts) || !channelLike(link.text, link.href)) continue;
+    const title = cleanTitle(link.text) || titleFromUrl(link.href);
+    if (!title || excluded(title)) continue;
+    pages.set(link.href, {
+      url: link.href,
+      title,
+      country: inferCountry(title, link.href, fallbackCountry)
+    });
+  }
+}
+
+async function fetchSeedHtml(url: string, browser?: Browser): Promise<string> {
+  try {
+    return await fetchText(url);
+  } catch (fetchErr) {
+    if (!browser) throw fetchErr;
+    try {
+      const html = await browserHtml(url, browser);
+      console.log(`[WEB SEED BROWSER FALLBACK] ${url}`);
+      return html;
+    } catch (browserErr) {
+      throw new Error(`${errText(fetchErr)}; browser=${errText(browserErr)}`);
+    }
+  }
+}
+
+async function browserHtml(url: string, browser: Browser): Promise<string> {
+  const context = await browser.newContext({ serviceWorkers: "block", userAgent: UA });
+  try {
+    const page = await context.newPage();
+    const response = await page.goto(url, { waitUntil: "domcontentloaded", timeout: 20_000 });
+    if (!response) throw new Error("browser_no_response");
+    if (!response.ok()) throw new Error(`browser_http_${response.status()}`);
+    await page.waitForTimeout(1_500);
+    return await page.content();
+  } finally {
+    await context.close().catch(() => undefined);
+  }
+}
+
 async function pageCandidates(page: ChannelPage, browser?: Browser): Promise<string[]> {
   const found = new Set<string>();
   const html = await fetchText(page.url).catch(() => "");
+
   manifestUrls(html, page.url).forEach((url) => found.add(url));
 
-  for (const iframe of iframeUrls(html, page.url).slice(0, 4)) {
+  for (const iframe of iframeUrls(html, page.url).slice(0, 5)) {
     const text = await fetchText(iframe, page.url).catch(() => "");
     manifestUrls(text, iframe).forEach((url) => found.add(url));
   }
@@ -116,12 +167,23 @@ async function pageCandidates(page: ChannelPage, browser?: Browser): Promise<str
   for (const variant of variants) {
     const text = await fetchText(variant, page.url).catch(() => "");
     manifestUrls(text, variant).forEach((url) => found.add(url));
+    for (const iframe of iframeUrls(text, variant).slice(0, 3)) {
+      const iframeHtml = await fetchText(iframe, variant).catch(() => "");
+      manifestUrls(iframeHtml, iframe).forEach((url) => found.add(url));
+    }
   }
 
-  if (browser) {
+  // Static HTML/iframe extraction is cheap. Use Playwright only when it did not
+  // already expose a playable manifest, except Volo where player JSON/network
+  // is the primary discovery path.
+  const needsBrowser = found.size === 0 || isVolo(page.url);
+  if (browser && needsBrowser) {
     (await captureNetwork(page.url, browser)).forEach((url) => found.add(url));
-    for (const variant of variants.slice(0, 2)) (await captureNetwork(variant, browser)).forEach((url) => found.add(url));
+    for (const variant of variants.slice(0, 2)) {
+      (await captureNetwork(variant, browser)).forEach((url) => found.add(url));
+    }
   }
+
   return [...found].filter(publishable);
 }
 
@@ -129,14 +191,18 @@ async function captureNetwork(url: string, browser: Browser): Promise<string[]> 
   const found = new Set<string>();
   const context = await browser.newContext({ serviceWorkers: "block", userAgent: UA }).catch(() => undefined);
   if (!context) return [];
+
   try {
     const page = await context.newPage();
     page.on("response", (response) => { void captureResponse(response, found); });
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 15_000 }).catch(() => undefined);
-    await page.waitForTimeout(2_500);
+    await page.waitForTimeout(2_000);
+  } catch {
+    // Browser/network failures are source-local and must never abort the update.
   } finally {
     await context.close().catch(() => undefined);
   }
+
   return [...found];
 }
 
@@ -166,6 +232,7 @@ function variantUrls(html: string, base: string): string[] {
   } catch {
     // Ignore malformed base URL.
   }
+
   for (const link of links(html, base)) {
     if (/yay[ıi]n|alternatif|server\s*[1-9]|source\s*[1-9]/i.test(link.text)) found.add(link.href);
   }
@@ -175,12 +242,12 @@ function variantUrls(html: string, base: string): string[] {
 function manifestUrls(text: string, base: string): string[] {
   const found = new Set<string>();
   for (const match of text.matchAll(/https?:\\?\/\\?\/[^"'<>\\\s]+?(?:\.m3u8|\.mpd)(?:\?[^"'<>\\\s]*)?/gi)) {
-    const url = match[0]!.replace(/\\\//g, "/").replace(/&amp;/g, "&").replace(/\\u0026/g, "&");
+    const url = cleanEmbeddedUrl(match[0]!);
     if (publishable(url)) found.add(url);
   }
   for (const match of text.matchAll(/["']([^"']+(?:\.m3u8|\.mpd)(?:\?[^"']*)?)["']/gi)) {
     try {
-      const url = new URL(match[1]!.replace(/\\\//g, "/").replace(/&amp;/g, "&"), base).toString();
+      const url = new URL(cleanEmbeddedUrl(match[1]!), base).toString();
       if (publishable(url)) found.add(url);
     } catch {
       // Ignore malformed relative URL.
@@ -191,7 +258,11 @@ function manifestUrls(text: string, base: string): string[] {
 
 function links(html: string, base: string): Array<{ href: string; text: string }> {
   return [...html.matchAll(/<a[^>]+href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi)].flatMap((m) => {
-    try { return [{ href: new URL(m[1]!, base).toString(), text: strip(m[2] ?? "") }]; } catch { return []; }
+    try {
+      return [{ href: new URL(m[1]!, base).toString(), text: strip(m[2] ?? "") }];
+    } catch {
+      return [];
+    }
   });
 }
 
@@ -200,7 +271,9 @@ function iframeUrls(html: string, base: string): string[] {
     try {
       const url = new URL(m[1]!, base).toString();
       return isForbiddenUrl(url, { allowLivePath: true }) ? [] : [url];
-    } catch { return []; }
+    } catch {
+      return [];
+    }
   });
 }
 
@@ -208,7 +281,11 @@ async function fetchText(url: string, referer?: string): Promise<string> {
   if (isForbiddenUrl(url, { allowLivePath: true })) throw new Error("forbidden_url");
   const response = await fetch(url, {
     redirect: "follow",
-    headers: { "User-Agent": UA, ...(referer ? { Referer: referer } : {}) },
+    headers: {
+      "User-Agent": UA,
+      "Accept": "text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8",
+      ...(referer ? { Referer: referer } : {})
+    },
     signal: AbortSignal.timeout(15_000)
   });
   if (!response.ok) throw new Error(`http_${response.status}`);
@@ -226,14 +303,15 @@ function publishable(url: string): boolean {
 function channelLike(text: string, href: string): boolean {
   const value = `${text} ${href}`.toLocaleLowerCase("tr");
   if (/blog|program|yayin-akisi|frekans|iletisim|privacy|gizlilik|dmca|reklam|category|search|arama|favori|reyting/.test(value)) return false;
+  if (/\/(?:tag|author|page)\//i.test(href)) return false;
   return /canli|canlı|yayin|yayın|izle|live|watch|online|stream|tv|kanal|channel|spor|sport|haber|news|trt|atv|show|star|arb|cbc|xezer|xəzər|ictimai|aztv|idman|baku|нтв|тнт|рен|стс|россия|первый|пятый|звезда|карусель|матч|мир/i.test(value);
 }
 
 function inferCountry(title: string, url: string, fallback: Country): Country {
   if (fallback !== "Türkiyə") return fallback;
   const value = `${title} ${url}`.toLocaleLowerCase("tr");
-  if (/azerbaycan|azerbaijan|azərbaycan|aztv|xezer|xəzər|ictimai|idman|medeniyyet|arb|cbc sport|baku tv|naxcivan|qafqaz|kepez|kanal s/.test(value)) return "Azərbaycan";
-  if (/rusya|russia|россия|первый|пятый|нтв|рен|стс|тнт|звезда|карусель|матч|твц/.test(value)) return "Rusiya";
+  if (/azerbaycan|azerbaijan|azərbaycan|aztv|xezer|xəzər|ictimai|idman|medeniyyet|mədəniyyət|arb(?:\W|$)|cbc sport|cbc tv|baku tv|naxcivan|naxçıvan|qafqaz|kepez|kəpəz|kanal s/.test(value)) return "Azərbaycan";
+  if (/rusya|russia|russian|россия|первый|пятый|нтв|рен(?:\W|$)|стс|тнт|звезда|карусель|пятница|матч|мир 24|твц|домашний/.test(value)) return "Rusiya";
   return fallback;
 }
 
@@ -257,7 +335,17 @@ function allowedHost(raw: string, hosts: string[]): boolean {
   try {
     const host = new URL(raw).hostname.toLowerCase();
     return hosts.some((allowed) => host === allowed || host.endsWith(`.${allowed}`));
-  } catch { return false; }
+  } catch {
+    return false;
+  }
+}
+
+function isVolo(raw: string): boolean {
+  try {
+    return new URL(raw).hostname.endsWith("canlitvvolo.com");
+  } catch {
+    return false;
+  }
 }
 
 function pageTitle(html: string): string {
@@ -265,7 +353,11 @@ function pageTitle(html: string): string {
 }
 
 function titleFromUrl(raw: string): string {
-  try { return cleanTitle(new URL(raw).pathname.split("/").filter(Boolean).at(-1)?.replace(/[-_]+/g, " ") ?? ""); } catch { return ""; }
+  try {
+    return cleanTitle(new URL(raw).pathname.split("/").filter(Boolean).at(-1)?.replace(/[-_]+/g, " ") ?? "");
+  } catch {
+    return "";
+  }
 }
 
 function cleanTitle(value: string): string {
@@ -280,10 +372,14 @@ function category(value: string): string {
   const text = value.toLocaleLowerCase("tr");
   if (/haber|xeber|xəbər|news|24/.test(text)) return "News";
   if (/spor|sport|idman|match|матч/.test(text)) return "Sports";
-  if (/belgesel|documentary|kultur|medeniyyet/.test(text)) return "Documentary";
+  if (/belgesel|documentary|kultur|kültür|medeniyyet|mədəniyyət/.test(text)) return "Documentary";
   if (/cocuk|çocuk|usaq|uşaq|kids|карусель/.test(text)) return "Children";
-  if (/muzik|müzik|musiqi|music/.test(text)) return "Music";
+  if (/muzik|müzik|musiqi|music|ru tv/.test(text)) return "Music";
   return "General";
+}
+
+function cleanEmbeddedUrl(raw: string): string {
+  return raw.replace(/\\\//g, "/").replace(/&amp;/g, "&").replace(/\\u0026/g, "&");
 }
 
 function strip(value: string): string {
@@ -316,6 +412,9 @@ async function runPool<T>(items: T[], concurrency: number, worker: (item: T) => 
   let index = 0;
   const count = Math.min(Math.max(1, concurrency), Math.max(1, items.length));
   await Promise.all(Array.from({ length: count }, async () => {
-    while (index < items.length) await worker(items[index++]!);
+    while (index < items.length) {
+      const item = items[index++]!;
+      await worker(item);
+    }
   }));
 }
