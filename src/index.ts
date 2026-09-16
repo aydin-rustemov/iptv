@@ -7,23 +7,55 @@ import { countBy, writePlaylist, writeStatus } from "./generator.js";
 import type { FastCheckResult, MediaCheckResult, PlaylistEntry, StatusOutput, ValidatedEntry } from "./types.js";
 import { addTargetedPriorityCandidates, buildMissingPriorityDetails, buildPriorityStatuses, loadPriorityChannels, tagPriorityEntries, writeMissingPriority, writeMissingPriorityDetails } from "./priority.js";
 import { discoverCanliTvAz } from "./sources/canlitvAz.js";
+import { discoverWebAggregators } from "./sources/webAggregators.js";
 import { forcedPublishedOverrides, loadManualOverrides, manualOverrideCandidates } from "./manualOverrides.js";
 
 const FAST_CONCURRENCY = Number(process.env["IPTV_FAST_CONCURRENCY"] ?? 30);
 const MEDIA_CONCURRENCY = Number(process.env["IPTV_MEDIA_CONCURRENCY"] ?? 5);
 
 async function main(): Promise<void> {
-  const sources = loadSources();
-  const priorities = loadPriorityChannels();
+  const legacyM3uSourcesEnabled = process.env["IPTV_LEGACY_M3U_SOURCES"] === "1";
+  const sources = legacyM3uSourcesEnabled ? loadSources() : [];
+  if (!legacyM3uSourcesEnabled) console.log("[M3U SOURCES] Third-party playlist sources are disabled; using website discovery + manual overrides.");
+  const officialPageDiscoveryEnabled = process.env["IPTV_OFFICIAL_PAGES"] === "1";
+  const priorities = loadPriorityChannels().map((priority) =>
+    officialPageDiscoveryEnabled ? priority : { ...priority, officialPages: [] }
+  );
   const manualOverrides = loadManualOverrides();
-  const downloaded = await Promise.all(sources.map(async (source) => ({ source, text: await downloadSource(source) })));
-  const parsedBySource = downloaded.map(({ source, text }) => ({ source, entries: parseM3u(text, source.name) }));
-  const canliTv = await discoverCanliTvAz({ full: shouldRunFullCanliTvDiscovery() });
+
+  const downloaded: Array<{ source: (typeof sources)[number]; text: string }> = [];
+  const sourceFailures: Array<{ source: string; error: string }> = [];
+  const downloadResults = await Promise.allSettled(
+    sources.map(async (source) => ({ source, text: await downloadSource(source) }))
+  );
+
+  for (let i = 0; i < downloadResults.length; i++) {
+    const result = downloadResults[i]!;
+    const source = sources[i]!;
+    if (result.status === "fulfilled") {
+      downloaded.push(result.value);
+    } else {
+      const error = errorMessage(result.reason);
+      sourceFailures.push({ source: source.name, error });
+      console.warn(`[M3U SOURCE FAILED] ${source.name}: ${error}`);
+    }
+  }
+
+  const parsedBySource = downloaded.map(({ source, text }) => ({
+    source,
+    entries: parseM3u(text, source.name)
+  }));
+
+  const canliTv = await safeDiscoverCanliTvAz(shouldRunFullCanliTvDiscovery());
+  const webAggregators = await discoverWebAggregators();
+
   const parsedEntries = tagPriorityEntries([
     ...parsedBySource.flatMap((item) => item.entries),
     ...manualOverrideCandidates(manualOverrides),
-    ...canliTv.entries
+    ...canliTv.entries,
+    ...webAggregators.entries
   ], priorities);
+
   const targeted = await addTargetedPriorityCandidates(parsedEntries, priorities);
   const entries = targeted.entries;
   const { entries: uniqueEntries, duplicatesRemoved } = dedupe(entries);
@@ -57,7 +89,18 @@ async function main(): Promise<void> {
   const unverifiedFallbacks = unverifiedCanliTvFallbacks(uniqueEntries, validated, forced);
   const selected = select([...forced, ...validated, ...unverifiedFallbacks], Number.MAX_SAFE_INTEGER, priorities);
   const priorityChannels = buildPriorityStatuses(priorities, uniqueEntries, validated, selected);
-  const missingDetails = buildMissingPriorityDetails(priorityChannels, priorities, uniqueEntries, fastResults, mediaResults, sources.length, targeted.officialPagesChecked, targeted.officialSocialAccountsChecked);
+  const discoverySourceCount = sources.length + webAggregators.statuses.length + 1;
+  const missingDetails = buildMissingPriorityDetails(
+    priorityChannels,
+    priorities,
+    uniqueEntries,
+    fastResults,
+    mediaResults,
+    discoverySourceCount,
+    targeted.officialPagesChecked,
+    targeted.officialSocialAccountsChecked
+  );
+
   const previousCount = countPreviousPlaylist();
   const degraded = shouldKeepPrevious(previousCount, selected.length);
   if (!degraded) {
@@ -65,7 +108,10 @@ async function main(): Promise<void> {
     writePlaylist(selected);
     writeMissingPriority(priorityChannels);
     writeMissingPriorityDetails(missingDetails);
+  } else {
+    console.warn(`[DEGRADED] Keeping previous playlist (${previousCount} channels). New validated selection: ${selected.length}.`);
   }
+
   updateSourceStats(parsedBySource.map(({ source, entries: sourceEntries }) => ({
     name: source.name,
     parsedEntries: sourceEntries.length,
@@ -74,7 +120,7 @@ async function main(): Promise<void> {
 
   const status: StatusOutput = {
     updatedAt: new Date().toISOString(),
-    sources: sources.length,
+    sources: discoverySourceCount,
     downloadedEntries: entries.length,
     uniqueCandidates: uniqueEntries.length,
     fastCheckPassed: fastPassed.length,
@@ -87,10 +133,34 @@ async function main(): Promise<void> {
     degraded,
     priorityChannels
   };
-  writeChannelHealth(selected, validated, canliTv.status);
+
+  writeChannelHealth(selected, validated, {
+    canliTv: canliTv.status,
+    webAggregators: webAggregators.statuses,
+    m3uSourceFailures: sourceFailures
+  });
   writeStatus(status);
   console.log(JSON.stringify(status, null, 2));
-  if (degraded) process.exitCode = 2;
+
+  // A degraded refresh is not a CI failure. The previous known-good playlist stays published.
+}
+
+async function safeDiscoverCanliTvAz(full: boolean): Promise<{ entries: PlaylistEntry[]; status: unknown }> {
+  try {
+    return await discoverCanliTvAz({ full });
+  } catch (err) {
+    const error = errorMessage(err);
+    console.warn(`[WEB SOURCE FAILED] canlitv-az: ${error}`);
+    return {
+      entries: [],
+      status: {
+        updatedAt: new Date().toISOString(),
+        source: "canlitv-az",
+        ok: false,
+        error
+      }
+    };
+  }
 }
 
 async function runPool<T>(items: T[], concurrency: number, worker: (item: T) => Promise<void>): Promise<void> {
@@ -168,14 +238,14 @@ function fallbackGroup(country?: string): string {
   return `${country ?? "Beynəlxalq"} — Yoxlanılmamış`;
 }
 
-function writeChannelHealth(selected: ValidatedEntry[], validated: ValidatedEntry[], canliTv: unknown): void {
+function writeChannelHealth(selected: ValidatedEntry[], validated: ValidatedEntry[], discovery: unknown): void {
   fs.mkdirSync("output", { recursive: true });
   fs.writeFileSync("output/channel-health.json", JSON.stringify({
     updatedAt: new Date().toISOString(),
     published: selected.length,
     verifiedWorking: validated.length,
     unverifiedCanliTvFallbacks: selected.filter((entry) => entry.sourceName === "canlitv-az-unverified").length,
-    canliTv
+    discovery
   }, null, 2), "utf8");
 }
 
@@ -185,6 +255,14 @@ function normalizeUrl(raw: string): string {
   } catch {
     return raw.toLowerCase();
   }
+}
+
+function errorMessage(err: unknown): string {
+  if (err instanceof Error) {
+    const cause = (err as Error & { cause?: { code?: string } }).cause;
+    return cause?.code ? `${cause.code}: ${err.message}` : err.message;
+  }
+  return String(err);
 }
 
 main().catch((err) => {

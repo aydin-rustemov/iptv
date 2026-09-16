@@ -2,6 +2,15 @@ name: Update IPTV Playlist
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/**"
+      - "config/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/update-playlist.yml"
   schedule:
     - cron: "17 */3 * * *"
 
@@ -30,6 +39,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install Playwright Chromium
+        run: npx playwright install chromium
+
       - name: Typecheck
         run: npm run typecheck
 
@@ -37,13 +49,32 @@ jobs:
         run: npm run update
 
       - name: Audit playlist
-        run: npm run audit
+        run: |
+          if node -e 'const fs=require("fs");const s=JSON.parse(fs.readFileSync("output/status.json","utf8"));process.exit(s.degraded?0:1)'; then
+            echo "Degraded refresh: previous known-good playlist kept; strict audit skipped."
+          else
+            npm run audit
+          fi
 
       - name: Commit output files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add config/sources.json output/playlist.m3u output/status.json output/status.html output/missing-priority-channels.json output/missing-priority-details.json output/playlist.previous.m3u
+          for file in \
+            config/sources.json \
+            output/playlist.m3u \
+            output/status.json \
+            output/status.html \
+            output/missing-priority-channels.json \
+            output/missing-priority-details.json \
+            output/playlist.previous.m3u \
+            output/channel-health.json \
+            output/canlitv-status.json \
+            state/channel-registry.json; do
+            if [ -e "$file" ]; then
+              git add "$file"
+            fi
+          done
           if git diff --cached --quiet; then
             echo "No playlist changes"
           else
