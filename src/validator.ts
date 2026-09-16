@@ -250,6 +250,7 @@ function isTurkeyEntry(entry: PlaylistEntry): boolean {
     .toLocaleLowerCase("tr")
     .normalize("NFKD")
     .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[əƏ]/g, "e")
     .replace(/ı/g, "i")
     .replace(/ü/g, "u");
   return value.includes("turkiye") || /(?:^|\s)tr(?:\s|$)/.test(value);
