@@ -13,13 +13,19 @@ export function parseM3u(text: string, sourceName: string): PlaylistEntry[] {
       const attrsText = comma >= 0 ? line.slice(0, comma) : line;
       const displayName = comma >= 0 ? line.slice(comma + 1).trim() : "";
       const attrs = parseAttributes(attrsText);
+      const countryHint =
+        attrs["tvg-country"] ??
+        attrs["tvg-country-code"] ??
+        attrs["country"] ??
+        countryFromTvgId(attrs["tvg-id"]) ??
+        countryFromGroupTitle(attrs["group-title"]);
       pending = {
         sourceName,
         tvgId: attrs["tvg-id"],
         tvgName: attrs["tvg-name"],
         tvgLogo: attrs["tvg-logo"],
         groupTitle: attrs["group-title"],
-        country: normalizeCountry(attrs["tvg-country"] ?? attrs["tvg-country-code"] ?? attrs["country"] ?? countryFromTvgId(attrs["tvg-id"])),
+        country: normalizeCountry(countryHint),
         category: normalizeCategory(attrs["group-title"]),
         name: attrs["tvg-name"] || displayName || attrs["tvg-id"] || "Unnamed",
         headers: {}
@@ -76,8 +82,8 @@ export function normalizeCountry(raw?: string): string {
   const value = (raw ?? "").trim();
   const upper = value.toUpperCase();
   if (upper === "AZ" || /AZER|AZƏR|AZERBAIJAN/i.test(value)) return "Azərbaycan";
-  if (upper === "TR" || /TURK|TÜRK|TURKEY/i.test(value)) return "Türkiyə";
-  if (upper === "RU" || /RUSS|РОСС|RUSSIAN/i.test(value)) return "Rusiya";
+  if (upper === "TR" || /TURK|TÜRK|TURKEY|TURKIYE|TÜRKİYE|TÜRKİYƏ|TÜRKIYƏ/i.test(value)) return "Türkiyə";
+  if (upper === "RU" || /RUSS|РОСС|RUSSIAN|RUSIYA|RUSİYA/i.test(value)) return "Rusiya";
   if (upper === "US" || upper.includes("USA") || /UNITED STATES/i.test(value)) return "ABŞ";
   if (upper === "NL") return "Niderland";
   if (upper === "UA") return "Ukrayna";
@@ -113,4 +119,11 @@ export function normalizeCategory(raw?: string): string {
 function countryFromTvgId(tvgId?: string): string | undefined {
   const match = tvgId?.match(/\.([a-z]{2})(?:@|$)/i);
   return match?.[1]?.toUpperCase();
+}
+
+function countryFromGroupTitle(groupTitle?: string): string | undefined {
+  if (!groupTitle) return undefined;
+  const normalized = normalizeCountry(groupTitle);
+  if (normalized === "Azərbaycan" || normalized === "Türkiyə" || normalized === "Rusiya") return normalized;
+  return undefined;
 }
