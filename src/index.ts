@@ -8,7 +8,7 @@ import type { FastCheckResult, MediaCheckResult, PlaylistEntry, PriorityChannel,
 import { addTargetedPriorityCandidates, buildMissingPriorityDetails, buildPriorityStatuses, loadPriorityChannels, normalizeName, tagPriorityEntries, writeMissingPriority, writeMissingPriorityDetails } from "./priority.js";
 import { discoverCanliTvAz } from "./sources/canlitvAz.js";
 import { discoverWebAggregators } from "./sources/webAggregators.js";
-import { loadManualOverrides, manualOverrideCandidates } from "./manualOverrides.js";
+import { forcedPublishedOverrides, loadManualOverrides, manualOverrideCandidates } from "./manualOverrides.js";
 
 const FAST_CONCURRENCY = Number(process.env["IPTV_FAST_CONCURRENCY"] ?? 30);
 const MEDIA_CONCURRENCY = Number(process.env["IPTV_MEDIA_CONCURRENCY"] ?? 12);
@@ -39,9 +39,11 @@ async function main(): Promise<void> {
     officialPageDiscoveryEnabled ? priority : { ...priority, officialPages: [] }
   );
   const manualOverrides = loadManualOverrides();
+  const lockedEntries = forcedPublishedOverrides(manualOverrides);
 
   const currentEntries = tagExistingEntries(readCurrentPlaylist(), priorities);
   console.log(`[CURRENT] ${currentEntries.length} channels loaded from ${PLAYLIST_FILE}.`);
+  console.log(`[LOCKED] ${lockedEntries.length} user-confirmed static channels will be preserved exactly.`);
 
   const downloaded: Array<{ source: (typeof sources)[number]; text: string }> = [];
   const sourceFailures: Array<{ source: string; error: string }> = [];
@@ -80,17 +82,23 @@ async function main(): Promise<void> {
   const { entries: uniqueDiscovered, duplicatesRemoved } = dedupe(targeted.entries);
   const discoveryCandidates = preselect(uniqueDiscovered);
 
-  // Existing playlist links are always checked first and independently. A source
-  // outage can never remove a currently working link.
+  // Existing playlist links are checked independently. Locked manual channels are
+  // handled separately and never depend on GitHub runner validation because some
+  // providers are geo/network sensitive even though the user confirmed them on TV.
   const currentValidation = await validateEntries(currentEntries, true, true);
   const discoveryValidation = await validateEntries(discoveryCandidates, false, false);
 
-  const maintenance = reconcilePlaylist(currentEntries, currentValidation.validated, discoveryValidation.validated);
+  const maintenance = reconcilePlaylist(
+    currentEntries,
+    currentValidation.validated,
+    discoveryValidation.validated,
+    lockedEntries
+  );
   const selected = maintenance.entries;
   const maintenanceStats = maintenance.stats;
 
-  const allCandidates = dedupe([...currentEntries, ...uniqueDiscovered]).entries;
-  const allValidated = dedupeValidated([...currentValidation.validated, ...discoveryValidation.validated]);
+  const allCandidates = dedupe([...currentEntries, ...uniqueDiscovered, ...lockedEntries]).entries;
+  const allValidated = dedupeValidated([...lockedEntries, ...currentValidation.validated, ...discoveryValidation.validated]);
   const combinedFastResults = mergeMaps(currentValidation.fastResults, discoveryValidation.fastResults);
   const combinedMediaResults = mergeMaps(currentValidation.mediaResults, discoveryValidation.mediaResults);
 
@@ -136,6 +144,7 @@ async function main(): Promise<void> {
 
   writeChannelHealth(selected, allValidated, {
     maintenance: maintenanceStats,
+    lockedStaticChannels: lockedEntries.map((entry) => ({ id: entry.tvgId, name: entry.name, url: entry.url })),
     canliTv: canliTv.status,
     webAggregators: webAggregators.statuses,
     m3uSourceFailures: sourceFailures
@@ -185,7 +194,8 @@ async function validateEntries(entries: PlaylistEntry[], retryAll: boolean, pres
 function reconcilePlaylist(
   currentEntries: PlaylistEntry[],
   currentValidated: ValidatedEntry[],
-  discoveredValidated: ValidatedEntry[]
+  discoveredValidated: ValidatedEntry[],
+  lockedEntries: ValidatedEntry[]
 ): { entries: ValidatedEntry[]; stats: MaintenanceStats } {
   const currentWorkingByUrl = new Map(currentValidated.map((entry) => [normalizeUrl(entry.url), entry]));
   const discovered = [...discoveredValidated].sort((a, b) => replacementScore(b) - replacementScore(a) || b.score - a.score);
@@ -197,7 +207,26 @@ function reconcilePlaylist(
   let removed = 0;
   let added = 0;
 
+  // Locked entries are matched against the existing playlist first. If a scraper
+  // previously replaced one of them, restore the exact user-provided URL in the
+  // same logical channel slot. These entries are never replaced or removed.
   for (const current of currentEntries) {
+    const locked = findMatchingEntry(current, lockedEntries);
+    if (locked) {
+      if (!usedUrls.has(normalizeUrl(locked.url))) {
+        output.push(locked);
+        markUsed(locked, usedUrls, usedKeys);
+        if (normalizeUrl(current.url) === normalizeUrl(locked.url)) {
+          preserved++;
+          console.log(`[LOCKED PRESERVED] ${displayName(locked)}: ${safeHost(locked.url)}`);
+        } else {
+          replaced++;
+          console.log(`[LOCKED RESTORED] ${displayName(locked)}: ${safeHost(current.url)} -> ${safeHost(locked.url)}`);
+        }
+      }
+      continue;
+    }
+
     const working = currentWorkingByUrl.get(normalizeUrl(current.url));
     if (working) {
       output.push(working);
@@ -218,6 +247,16 @@ function reconcilePlaylist(
       removed++;
       console.warn(`[REMOVED BROKEN] ${displayName(current)}: ${safeHost(current.url)}`);
     }
+  }
+
+  // A locked channel may be completely absent from the current playlist. Add it
+  // back unconditionally, still using the exact manual URL.
+  for (const locked of lockedEntries) {
+    if (usedUrls.has(normalizeUrl(locked.url))) continue;
+    output.push(locked);
+    markUsed(locked, usedUrls, usedKeys);
+    added++;
+    console.log(`[LOCKED ADDED] ${displayName(locked)}: ${safeHost(locked.url)}`);
   }
 
   for (const candidate of discovered) {
@@ -241,6 +280,11 @@ function reconcilePlaylist(
       published: output.length
     }
   };
+}
+
+function findMatchingEntry(current: PlaylistEntry, candidates: ValidatedEntry[]): ValidatedEntry | undefined {
+  const currentKeys = new Set(channelKeys(current));
+  return candidates.find((candidate) => channelKeys(candidate).some((key) => currentKeys.has(key)));
 }
 
 function findReplacement(current: PlaylistEntry, candidates: ValidatedEntry[], usedUrls: Set<string>): ValidatedEntry | undefined {
