@@ -24,7 +24,11 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
+    env:
+      IPTV_WEB_MAX_PAGES_PER_SOURCE: "600"
+      IPTV_WEB_PAGE_CONCURRENCY: "6"
+      IPTV_WEB_SOURCE_CONCURRENCY: "2"
     steps:
       - uses: actions/checkout@v4
 
