@@ -1,18 +1,55 @@
 {
-  "updatedAt": "2026-09-16T13:02:00.944Z",
-  "published": 1093,
-  "verifiedWorking": 1331,
+  "updatedAt": "2026-09-16T19:02:53.514Z",
+  "published": 1001,
+  "verifiedWorking": 1094,
   "discovery": {
     "maintenance": {
-      "previous": 928,
-      "preserved": 799,
-      "replaced": 3,
-      "removed": 126,
-      "added": 291,
-      "published": 1093
+      "previous": 1093,
+      "preserved": 933,
+      "replaced": 49,
+      "removed": 111,
+      "added": 19,
+      "published": 1001
     },
+    "lockedStaticChannels": [
+      {
+        "id": "cbc-sport-az",
+        "name": "CBC Sport",
+        "url": "https://cbcsports-live.lg.mncdn.com/cbcsports_live/cbcsports/chunklist.m3u8"
+      },
+      {
+        "id": "arb-az",
+        "name": "ARB",
+        "url": "https://str.yodacdn.net/arb/tracks-v1a1/mono.ts.m3u8"
+      },
+      {
+        "id": "space-tv-az",
+        "name": "Space TV",
+        "url": "https://str.yodacdn.net/space/tracks-v1a1/mono.ts.m3u8"
+      },
+      {
+        "id": "real-tv-az",
+        "name": "Real TV",
+        "url": "https://str.yodacdn.net/real/tracks-v1a1/mono.ts.m3u8"
+      },
+      {
+        "id": "apa-tv-az",
+        "name": "APA TV",
+        "url": "https://str.yodacdn.net/apatv/tracks-v1a1/mono.ts.m3u8"
+      },
+      {
+        "id": "idman-tv-az",
+        "name": "İdman TV",
+        "url": "https://str.yodacdn.net/idmantele/tracks-v3a1/mono.ts.m3u8"
+      },
+      {
+        "id": "el-tv-az",
+        "name": "EL TV",
+        "url": "https://str.yodacdn.net/eltv/tracks-v1a1/mono.ts.m3u8"
+      }
+    ],
     "canliTv": {
-      "updatedAt": "2026-09-16T12:35:01.315Z",
+      "updatedAt": "2026-09-16T18:33:28.368Z",
       "source": "canlitv-az",
       "ok": false,
       "error": "EAI_AGAIN: fetch failed"
@@ -24,8 +61,8 @@
         "seedPages": 1,
         "channelPages": 315,
         "processedPages": 315,
-        "manifestCandidates": 216,
-        "entries": 216
+        "manifestCandidates": 183,
+        "entries": 183
       },
       {
         "source": "canlitv-date",
@@ -33,7 +70,7 @@
         "seedPages": 1,
         "channelPages": 273,
         "processedPages": 273,
-        "manifestCandidates": 183,
+        "manifestCandidates": 185,
         "entries": 182
       },
       {
@@ -42,8 +79,8 @@
         "seedPages": 1,
         "channelPages": 68,
         "processedPages": 68,
-        "manifestCandidates": 4,
-        "entries": 3
+        "manifestCandidates": 12,
+        "entries": 4
       },
       {
         "source": "canlitv-video",
@@ -58,10 +95,10 @@
         "source": "canlitv-volo",
         "ok": true,
         "seedPages": 23,
-        "channelPages": 606,
+        "channelPages": 603,
         "processedPages": 600,
-        "manifestCandidates": 683,
-        "entries": 648
+        "manifestCandidates": 495,
+        "entries": 471
       },
       {
         "source": "canlitv-watch",
@@ -69,8 +106,8 @@
         "seedPages": 2,
         "channelPages": 116,
         "processedPages": 116,
-        "manifestCandidates": 69,
-        "entries": 65
+        "manifestCandidates": 66,
+        "entries": 63
       },
       {
         "source": "glaz-tv-ru",
@@ -96,8 +133,8 @@
         "seedPages": 1,
         "channelPages": 83,
         "processedPages": 83,
-        "manifestCandidates": 168,
-        "entries": 145
+        "manifestCandidates": 171,
+        "entries": 148
       },
       {
         "source": "tvstream-az",
@@ -105,8 +142,8 @@
         "seedPages": 1,
         "channelPages": 14,
         "processedPages": 14,
-        "manifestCandidates": 185,
-        "entries": 185
+        "manifestCandidates": 197,
+        "entries": 197
       }
     ],
     "m3uSourceFailures": []

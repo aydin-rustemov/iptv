@@ -1,135 +1,5 @@
 [
   {
-    "channel": "AzTV",
-    "id": "aztv",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "AzTV",
-      "AzTV",
-      "Az TV",
-      "Azerbaijan TV"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 5,
-    "candidates": [
-      {
-        "host": "str.yodacdn.net",
-        "sourceName": "canlitv-watch",
-        "result": "not_checked"
-      },
-      {
-        "host": "yayin2.canlitv.fun",
-        "sourceName": "canlitv-date",
-        "result": "not_checked"
-      },
-      {
-        "host": "az.tvstream.az",
-        "sourceName": "tvstream-az",
-        "result": "not_checked"
-      },
-      {
-        "host": "az.tvstream.az",
-        "sourceName": "tvstream-az",
-        "result": "not_checked"
-      },
-      {
-        "host": "az.tvstream.az",
-        "sourceName": "tvstream-az",
-        "result": "not_checked"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
-    "channel": "ATV Azərbaycan",
-    "id": "atv-az",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "ATV Azərbaycan",
-      "ATV Azərbaycan",
-      "Azad Azərbaycan",
-      "ATV AZ",
-      "ATV Azerbaijan"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 1,
-    "candidatesFound": 3,
-    "candidates": [
-      {
-        "host": "lives.atv.az",
-        "sourceName": "manual-fallback",
-        "result": "not_checked"
-      },
-      {
-        "host": "rnttwmjcin.turknet.ercdn.net",
-        "sourceName": "canlitv-watch",
-        "result": "not_checked"
-      },
-      {
-        "host": "proxy.hdtvcanli.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      }
-    ],
-    "socialAccounts": [
-      {
-        "platform": "youtube",
-        "host": "www.youtube.com",
-        "result": "live_hint_found_no_direct_manifest"
-      }
-    ],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
-    "channel": "Xəzər TV",
-    "id": "xezer-tv",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "Xəzər TV",
-      "Xəzər TV",
-      "Xezer TV",
-      "Khazar TV"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 4,
-    "candidates": [
-      {
-        "host": "xezerxeber.az",
-        "sourceName": "canlitv-watch",
-        "result": "not_checked"
-      },
-      {
-        "host": "yayin2.canlitv.fun",
-        "sourceName": "canlitv-date",
-        "result": "not_checked"
-      },
-      {
-        "host": "xezerxeber.az",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "bstelevision.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
     "channel": "Baku TV",
     "id": "baku-tv",
     "previousStatus": "all_candidates_failed",
@@ -161,83 +31,6 @@
         "result": "live_hint_found_no_direct_manifest"
       }
     ],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
-    "channel": "CBC Sport",
-    "id": "cbc-sport",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "CBC Sport",
-      "CBC Sport",
-      "CBC Sports"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 1,
-    "candidatesFound": 1,
-    "candidates": [
-      {
-        "host": "cbcsports-live.lg.mncdn.com",
-        "sourceName": "manual-locked",
-        "result": "not_checked"
-      }
-    ],
-    "socialAccounts": [
-      {
-        "platform": "youtube",
-        "host": "www.youtube.com",
-        "result": "live_hint_found_no_direct_manifest"
-      }
-    ],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
-    "channel": "Mədəniyyət TV",
-    "id": "medeniyyet-tv",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "Mədəniyyət TV",
-      "Mədəniyyət TV",
-      "Medeniyyet TV",
-      "Medeniyet TV"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 5,
-    "candidates": [
-      {
-        "host": "yayin2.canlitv.fun",
-        "sourceName": "canlitv-date",
-        "result": "not_checked"
-      },
-      {
-        "host": "proxy.hdtvcanli.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "proxy.hdtvcanli.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "proxy.hdtvcanli.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "proxy.hdtvcanli.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      }
-    ],
-    "socialAccounts": [],
     "bestResult": "not_checked",
     "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
@@ -292,98 +85,6 @@
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
-    "channel": "Dünya TV",
-    "id": "dunya-tv",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "Dünya TV",
-      "Dünya TV",
-      "Dunya TV"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 1,
-    "candidatesFound": 1,
-    "candidates": [
-      {
-        "host": "yayin2.canlitv.fun",
-        "sourceName": "canlitv-date",
-        "result": "not_checked"
-      }
-    ],
-    "socialAccounts": [
-      {
-        "platform": "youtube",
-        "host": "www.youtube.com",
-        "result": "http_404"
-      }
-    ],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
-  },
-  {
-    "channel": "Kanal S",
-    "id": "kanal-s",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "Kanal S",
-      "Kanal S",
-      "KanalS"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 2,
-    "candidates": [
-      {
-        "host": "lives.atv.az",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "yayin2.canlitv.fun",
-        "sourceName": "canlitv-com",
-        "result": "not_checked"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
-    "channel": "Naxçıvan TV",
-    "id": "naxcivan-tv",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "Naxçıvan TV",
-      "Naxçıvan TV",
-      "Naxcivan TV",
-      "Nakhchivan TV"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 2,
-    "candidates": [
-      {
-        "host": "str.yodacdn.net",
-        "sourceName": "canlitv-watch",
-        "result": "not_checked"
-      },
-      {
-        "host": "proxy.hdtvcanli.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
     "channel": "Qafqaz TV",
     "id": "qafqaz-tv",
     "previousStatus": "all_candidates_failed",
@@ -420,37 +121,6 @@
     "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
   },
   {
-    "channel": "EL TV",
-    "id": "el-tv",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "EL TV",
-      "EL TV",
-      "El TV"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 1,
-    "candidatesFound": 1,
-    "candidates": [
-      {
-        "host": "str.yodacdn.net",
-        "sourceName": "manual-locked",
-        "result": "not_checked"
-      }
-    ],
-    "socialAccounts": [
-      {
-        "platform": "youtube",
-        "host": "www.youtube.com",
-        "result": "live_hint_found_no_direct_manifest"
-      }
-    ],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
     "channel": "Kəpəz TV",
     "id": "kepez-tv",
     "previousStatus": "not_found",
@@ -485,87 +155,12 @@
     "candidates": [
       {
         "host": "tv-trt1.medya.trt.com.tr",
-        "sourceName": "canlitv-watch",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       },
       {
         "host": "tvizle.tr",
         "sourceName": "canlitv-watch",
-        "result": "not_checked"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
-    "channel": "ATV",
-    "id": "atv-tr",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "ATV",
-      "ATV",
-      "ATV Türkiye"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 11,
-    "candidates": [
-      {
-        "host": "rnttwmjcin.turknet.ercdn.net",
-        "sourceName": "canlitv-com",
-        "result": "not_checked"
-      },
-      {
-        "host": "lives.atv.az",
-        "sourceName": "canlitv-com",
-        "result": "not_checked"
-      },
-      {
-        "host": "cdn-alanyatv.yayin.com.tr",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "www.livereacting.com",
-        "sourceName": "canlitv-date",
-        "result": "not_checked"
-      },
-      {
-        "host": "proxy.hdtvcanli.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "proxy.hdtvcanli.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "api.codetabs.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "proxy.hdtvcanli.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "proxy.hdtvcanli.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "proxy.hdtvcanli.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "tvaktuellr.iptv-playoutcenter.de",
-        "sourceName": "canlitv-volo",
         "result": "not_checked"
       }
     ],
@@ -586,11 +181,11 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 6,
+    "candidatesFound": 5,
     "candidates": [
       {
-        "host": "yayin2.canlitv.fun",
-        "sourceName": "canlitv-com",
+        "host": "demiroren.daioncdn.net",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       },
       {
@@ -609,133 +204,7 @@
         "result": "not_checked"
       },
       {
-        "host": "proxy.hdtvcanli.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
         "host": "ackaxsqacw.turknet.ercdn.net",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
-    "channel": "Show TV",
-    "id": "show-tv",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "Show TV",
-      "Show TV",
-      "Show"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 7,
-    "candidates": [
-      {
-        "host": "rmtftbjlne.turknet.ercdn.net",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "yayin2.canlitv.fun",
-        "sourceName": "canlitv-com",
-        "result": "not_checked"
-      },
-      {
-        "host": "rmtftbjlne.turknet.ercdn.net",
-        "sourceName": "canlitv-date",
-        "result": "not_checked"
-      },
-      {
-        "host": "rmtftbjlne.turknet.ercdn.net",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "rtmp.showplus.tv",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "proxy.hdtvcanli.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "proxy.hdtvcanli.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
-    "channel": "Star TV",
-    "id": "star-tv",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "Star TV",
-      "Star TV",
-      "STAR",
-      "Star Türkiye"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 9,
-    "candidates": [
-      {
-        "host": "live.livestreamtv.ca",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "live.livestreamtv.ca",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "yayin2.canlitv.fun",
-        "sourceName": "canlitv-com",
-        "result": "not_checked"
-      },
-      {
-        "host": "live.livestreamtv.ca",
-        "sourceName": "canlitv-com",
-        "result": "not_checked"
-      },
-      {
-        "host": "dogus.daioncdn.net",
-        "sourceName": "canlitv-date",
-        "result": "not_checked"
-      },
-      {
-        "host": "bstelevision.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "bstelevision.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "bstelevision.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "gcdn.2mdn.net",
         "sourceName": "canlitv-volo",
         "result": "not_checked"
       }
@@ -763,7 +232,7 @@
     "candidates": [
       {
         "host": "uycyyuuzyh.turknet.ercdn.net",
-        "sourceName": "canlitv-watch",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       },
       {
@@ -789,8 +258,13 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 4,
+    "candidatesFound": 5,
     "candidates": [
+      {
+        "host": "tv8.daioncdn.net",
+        "sourceName": "existing-playlist",
+        "result": "not_checked"
+      },
       {
         "host": "rkhubpaomb.turknet.ercdn.net",
         "sourceName": "canlitv-volo",
@@ -818,37 +292,27 @@
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
-    "channel": "Kanal 7",
-    "id": "kanal-7",
+    "channel": "Beyaz TV",
+    "id": "beyaz-tv",
     "previousStatus": "all_candidates_failed",
     "aliasesChecked": [
-      "Kanal 7",
-      "Kanal 7",
-      "Kanal7"
+      "Beyaz TV",
+      "Beyaz TV",
+      "Beyaz"
     ],
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 5,
+    "candidatesFound": 3,
     "candidates": [
       {
-        "host": "livetv.radyotvonline.net",
-        "sourceName": "canlitv-volo",
+        "host": "beyaztv-live.daioncdn.net",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       },
       {
-        "host": "kanal7-live.daioncdn.net",
+        "host": "beyaztv-live.daioncdn.net",
         "sourceName": "canlitv-com",
-        "result": "not_checked"
-      },
-      {
-        "host": "livetv.radyotvonline.net",
-        "sourceName": "canlitv-com",
-        "result": "not_checked"
-      },
-      {
-        "host": "proxy.hdtvcanli.com",
-        "sourceName": "canlitv-volo",
         "result": "not_checked"
       },
       {
@@ -878,7 +342,7 @@
     "candidates": [
       {
         "host": "turkmedya-live.ercdn.net",
-        "sourceName": "canlitv-volo",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       },
       {
@@ -910,8 +374,13 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 2,
+    "candidatesFound": 3,
     "candidates": [
+      {
+        "host": "demiroren.daioncdn.net",
+        "sourceName": "existing-playlist",
+        "result": "not_checked"
+      },
       {
         "host": "ackaxsqacw.turknet.ercdn.net",
         "sourceName": "canlitv-watch",
@@ -920,6 +389,101 @@
       {
         "host": "yayin2.canlitv.fun",
         "sourceName": "canlitv-com",
+        "result": "not_checked"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "not_checked",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
+    "channel": "TV8.5",
+    "id": "tv8-5",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "TV8.5",
+      "TV8.5",
+      "TV 8.5"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 4,
+    "candidates": [
+      {
+        "host": "rkhubpaomb.turknet.ercdn.net",
+        "sourceName": "existing-playlist",
+        "result": "not_checked"
+      },
+      {
+        "host": "rkhubpaomb.turknet.ercdn.net",
+        "sourceName": "canlitv-watch",
+        "result": "not_checked"
+      },
+      {
+        "host": "rkhubpaomb.turknet.ercdn.net",
+        "sourceName": "canlitv-com",
+        "result": "not_checked"
+      },
+      {
+        "host": "proxy.hdtvcanli.com",
+        "sourceName": "canlitv-volo",
+        "result": "not_checked"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "not_checked",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
+    "channel": "a2",
+    "id": "a2",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "a2",
+      "a2",
+      "A2 TV"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 2,
+    "candidates": [
+      {
+        "host": "rnttwmjcin.turknet.ercdn.net",
+        "sourceName": "canlitv-watch",
+        "result": "not_checked"
+      },
+      {
+        "host": "rnttwmjcin.turknet.ercdn.net",
+        "sourceName": "existing-playlist",
+        "result": "not_checked"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "not_checked",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
+    "channel": "Show Max",
+    "id": "show-max",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "Show Max",
+      "Show Max",
+      "ShowMax"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "rmtftbjlne.turknet.ercdn.net",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       }
     ],
@@ -940,21 +504,16 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 3,
+    "candidatesFound": 2,
     "candidates": [
       {
         "host": "turkmedya-live.ercdn.net",
-        "sourceName": "canlitv-volo",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       },
       {
         "host": "turkmedya-live.ercdn.net",
         "sourceName": "canlitv-com",
-        "result": "not_checked"
-      },
-      {
-        "host": "turkmedya-live.ercdn.net",
-        "sourceName": "canlitv-volo",
         "result": "not_checked"
       }
     ],
@@ -974,16 +533,11 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 2,
+    "candidatesFound": 1,
     "candidates": [
       {
         "host": "tv-trthaber.medya.trt.com.tr",
-        "sourceName": "canlitv-watch",
-        "result": "not_checked"
-      },
-      {
-        "host": "tv-trthaber.medya.trt.com.tr",
-        "sourceName": "canlitv-volo",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       }
     ],
@@ -995,7 +549,7 @@
   {
     "channel": "CNN Türk",
     "id": "cnn-turk",
-    "previousStatus": "not_found",
+    "previousStatus": "all_candidates_failed",
     "aliasesChecked": [
       "CNN Türk",
       "CNN Türk",
@@ -1004,8 +558,19 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 1,
-    "candidatesFound": 0,
-    "candidates": [],
+    "candidatesFound": 2,
+    "candidates": [
+      {
+        "host": "www.youtube.com",
+        "sourceName": "canlitv-date",
+        "result": "not_checked"
+      },
+      {
+        "host": "www.youtube.com",
+        "sourceName": "canlitv-date",
+        "result": "not_checked"
+      }
+    ],
     "socialAccounts": [
       {
         "platform": "youtube",
@@ -1013,7 +578,8 @@
         "result": "live_hint_found_no_direct_manifest"
       }
     ],
-    "finalStatus": "not_found_after_all_sources",
+    "bestResult": "not_checked",
+    "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
@@ -1028,26 +594,11 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 4,
+    "candidatesFound": 1,
     "candidates": [
       {
-        "host": "dogusdyg-ntv.lg.mncdn.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "dogusdyg-ntv.lg.mncdn.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "dogusdyg-ntv.lg.mncdn.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "proxy.hdtvcanli.com",
-        "sourceName": "canlitv-volo",
+        "host": "dogus.daioncdn.net",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       }
     ],
@@ -1068,90 +619,11 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 2,
+    "candidatesFound": 1,
     "candidates": [
       {
         "host": "rnttwmjcin.turknet.ercdn.net",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "bstelevision.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
-    "channel": "Habertürk TV",
-    "id": "haberturk-tv",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "Habertürk TV",
-      "Habertürk TV",
-      "Haberturk"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 2,
-    "candidates": [
-      {
-        "host": "tv.ensonhaber.com",
-        "sourceName": "canlitv-watch",
-        "result": "not_checked"
-      },
-      {
-        "host": "rmtftbjlne.turknet.ercdn.net",
-        "sourceName": "canlitv-watch",
-        "result": "not_checked"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
-    "channel": "Haber Global",
-    "id": "haber-global",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "Haber Global",
-      "Haber Global"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 5,
-    "candidates": [
-      {
-        "host": "tv.ensonhaber.com",
-        "sourceName": "canlitv-watch",
-        "result": "not_checked"
-      },
-      {
-        "host": "bstelevision.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "bstelevision.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "ensonhaber-live.ercdn.net",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "ensonhaber-live.ercdn.net",
-        "sourceName": "canlitv-volo",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       }
     ],
@@ -1171,16 +643,11 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 3,
+    "candidatesFound": 2,
     "candidates": [
       {
         "host": "halktv-live.daioncdn.net",
-        "sourceName": "canlitv-watch",
-        "result": "not_checked"
-      },
-      {
-        "host": "proxy.hdtvcanli.com",
-        "sourceName": "canlitv-volo",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       },
       {
@@ -1209,7 +676,7 @@
     "candidates": [
       {
         "host": "canli.tgrthaber.com",
-        "sourceName": "canlitv-watch",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       },
       {
@@ -1224,31 +691,72 @@
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
-    "channel": "TVNET",
-    "id": "tvnet",
+    "channel": "TV100",
+    "id": "tv100",
     "previousStatus": "all_candidates_failed",
     "aliasesChecked": [
-      "TVNET",
-      "TVNET",
-      "TV Net"
+      "TV100",
+      "TV100",
+      "TV 100"
     ],
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
+    "officialSocialAccountsChecked": 1,
     "candidatesFound": 2,
     "candidates": [
       {
-        "host": "tvnet-live.lg.mncdn.com",
-        "sourceName": "canlitv-volo",
+        "host": "yayin2.canlitv.fun",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       },
       {
-        "host": "tvnet-live.lg.mncdn.com",
+        "host": "yayin2.canlitv.fun",
         "sourceName": "canlitv-com",
         "result": "not_checked"
       }
     ],
-    "socialAccounts": [],
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
+    "bestResult": "not_checked",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
+    "channel": "Bloomberg HT",
+    "id": "bloomberg-ht",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "Bloomberg HT",
+      "Bloomberg HT"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 1,
+    "candidatesFound": 2,
+    "candidates": [
+      {
+        "host": "rmtftbjlne.turknet.ercdn.net",
+        "sourceName": "existing-playlist",
+        "result": "not_checked"
+      },
+      {
+        "host": "tv.ensonhaber.com",
+        "sourceName": "canlitv-watch",
+        "result": "not_checked"
+      }
+    ],
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
     "bestResult": "not_checked",
     "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
@@ -1351,16 +859,11 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 3,
+    "candidatesFound": 2,
     "candidates": [
       {
         "host": "tele1-live.ercdn.net",
         "sourceName": "canlitv-watch",
-        "result": "not_checked"
-      },
-      {
-        "host": "proxy.hdtvcanli.com",
-        "sourceName": "canlitv-volo",
         "result": "not_checked"
       },
       {
@@ -1385,7 +888,7 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 5,
+    "candidatesFound": 4,
     "candidates": [
       {
         "host": "tv-trtspor1.medya.trt.com.tr",
@@ -1405,11 +908,6 @@
       {
         "host": "tv-trtspor1.medya.trt.com.tr",
         "sourceName": "canlitv-date",
-        "result": "not_checked"
-      },
-      {
-        "host": "proxy.hdtvcanli.com",
-        "sourceName": "canlitv-volo",
         "result": "not_checked"
       }
     ],
@@ -1449,6 +947,36 @@
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
+    "channel": "A Spor",
+    "id": "a-spor",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "A Spor",
+      "A Spor",
+      "ASpor"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 2,
+    "candidates": [
+      {
+        "host": "rnttwmjcin.turknet.ercdn.net",
+        "sourceName": "existing-playlist",
+        "result": "not_checked"
+      },
+      {
+        "host": "rnttwmjcin.turknet.ercdn.net",
+        "sourceName": "canlitv-com",
+        "result": "not_checked"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "not_checked",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
     "channel": "HT Spor",
     "id": "ht-spor",
     "previousStatus": "all_candidates_failed",
@@ -1460,80 +988,16 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 1,
-    "candidates": [
-      {
-        "host": "rmtftbjlne.turknet.ercdn.net",
-        "sourceName": "canlitv-watch",
-        "result": "not_checked"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
-    "channel": "TJK TV",
-    "id": "tjk-tv",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "TJK TV",
-      "TJK TV"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
     "candidatesFound": 2,
     "candidates": [
       {
-        "host": "tjktv-live.tjk.org",
-        "sourceName": "canlitv-volo",
+        "host": "ciner.daioncdn.net",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       },
       {
-        "host": "tjktv-live.tjk.org",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
-    "channel": "FB TV",
-    "id": "fb-tv",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "FB TV",
-      "FB TV",
-      "Fenerbahce TV"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 4,
-    "candidates": [
-      {
-        "host": "fbtv.fenerbahce.org",
+        "host": "rmtftbjlne.turknet.ercdn.net",
         "sourceName": "canlitv-watch",
-        "result": "not_checked"
-      },
-      {
-        "host": "yayin2.canlitv.fun",
-        "sourceName": "canlitv-com",
-        "result": "not_checked"
-      },
-      {
-        "host": "fbtv.fenerbahce.org",
-        "sourceName": "canlitv-date",
-        "result": "not_checked"
-      },
-      {
-        "host": "fbtv.fenerbahce.org",
-        "sourceName": "canlitv-volo",
         "result": "not_checked"
       }
     ],
@@ -1597,6 +1061,91 @@
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
+    "channel": "DMAX",
+    "id": "dmax",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "DMAX",
+      "DMAX",
+      "DMAX Türkiye"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 4,
+    "candidates": [
+      {
+        "host": "yayin2.canlitv.fun",
+        "sourceName": "existing-playlist",
+        "result": "not_checked"
+      },
+      {
+        "host": "bstelevision.com",
+        "sourceName": "canlitv-watch",
+        "result": "not_checked"
+      },
+      {
+        "host": "yayin2.canlitv.fun",
+        "sourceName": "canlitv-com",
+        "result": "not_checked"
+      },
+      {
+        "host": "proxy.hdtvcanli.com",
+        "sourceName": "canlitv-volo",
+        "result": "not_checked"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "not_checked",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
+    "channel": "TLC",
+    "id": "tlc",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "TLC",
+      "TLC",
+      "TLC Türkiye"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 5,
+    "candidates": [
+      {
+        "host": "yayin2.canlitv.fun",
+        "sourceName": "existing-playlist",
+        "result": "not_checked"
+      },
+      {
+        "host": "bstelevision.com",
+        "sourceName": "canlitv-watch",
+        "result": "not_checked"
+      },
+      {
+        "host": "yayin2.canlitv.fun",
+        "sourceName": "canlitv-com",
+        "result": "not_checked"
+      },
+      {
+        "host": "proxy.hdtvcanli.com",
+        "sourceName": "canlitv-volo",
+        "result": "not_checked"
+      },
+      {
+        "host": "proxy.hdtvcanli.com",
+        "sourceName": "canlitv-volo",
+        "result": "not_checked"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "not_checked",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
     "channel": "TRT Türk",
     "id": "trt-turk",
     "previousStatus": "all_candidates_failed",
@@ -1612,7 +1161,7 @@
     "candidates": [
       {
         "host": "tv-trtturk.medya.trt.com.tr",
-        "sourceName": "canlitv-com",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       }
     ],
@@ -1636,7 +1185,7 @@
     "candidates": [
       {
         "host": "tv-trtavaz.medya.trt.com.tr",
-        "sourceName": "canlitv-com",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       }
     ],
@@ -1656,16 +1205,11 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 2,
+    "candidatesFound": 1,
     "candidates": [
       {
         "host": "tv-trtworld.medya.trt.com.tr",
-        "sourceName": "canlitv-com",
-        "result": "not_checked"
-      },
-      {
-        "host": "tv-trtworld.medya.trt.com.tr",
-        "sourceName": "canlitv-volo",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       }
     ],
@@ -1690,7 +1234,7 @@
     "candidates": [
       {
         "host": "tv-trtmuzik.medya.trt.com.tr",
-        "sourceName": "canlitv-com",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       },
       {
@@ -1705,30 +1249,43 @@
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
-    "channel": "Diyanet TV",
-    "id": "diyanet-tv",
+    "channel": "Yaban TV",
+    "id": "yaban-tv",
     "previousStatus": "all_candidates_failed",
     "aliasesChecked": [
-      "Diyanet TV",
-      "Diyanet TV"
+      "Yaban TV",
+      "Yaban TV",
+      "Yaban Televizyonu",
+      "Yaban"
     ],
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 2,
+    "officialSocialAccountsChecked": 1,
+    "candidatesFound": 3,
     "candidates": [
       {
-        "host": "eustr73.mediatriple.net",
+        "host": "yayin1.canlitv.fun",
+        "sourceName": "existing-playlist",
+        "result": "not_checked"
+      },
+      {
+        "host": "yayin1.canlitv.fun",
         "sourceName": "canlitv-com",
         "result": "not_checked"
       },
       {
-        "host": "bstelevision.com",
+        "host": "proxy.hdtvcanli.com",
         "sourceName": "canlitv-volo",
         "result": "not_checked"
       }
     ],
-    "socialAccounts": [],
+    "socialAccounts": [
+      {
+        "platform": "youtube",
+        "host": "www.youtube.com",
+        "result": "live_hint_found_no_direct_manifest"
+      }
+    ],
     "bestResult": "not_checked",
     "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
@@ -1745,16 +1302,11 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 2,
+    "candidatesFound": 1,
     "candidates": [
       {
         "host": "tv-trtcocuk.medya.trt.com.tr",
-        "sourceName": "canlitv-watch",
-        "result": "not_checked"
-      },
-      {
-        "host": "tv-trtcocuk.medya.trt.com.tr",
-        "sourceName": "canlitv-volo",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       }
     ],
@@ -1779,7 +1331,7 @@
     "candidates": [
       {
         "host": "rnttwmjcin.turknet.ercdn.net",
-        "sourceName": "canlitv-watch",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       },
       {
@@ -1809,7 +1361,7 @@
     "candidates": [
       {
         "host": "rnttwmjcin.turknet.ercdn.net",
-        "sourceName": "canlitv-watch",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       },
       {
@@ -1920,36 +1472,6 @@
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
-    "channel": "Dream Türk",
-    "id": "dream-turk",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "Dream Türk",
-      "Dream Türk",
-      "Dream Turk"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 2,
-    "candidates": [
-      {
-        "host": "proxy.hdtvcanli.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "proxy.hdtvcanli.com",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
-  },
-  {
     "channel": "Kral Pop TV",
     "id": "kral-pop-tv",
     "previousStatus": "not_found",
@@ -1972,78 +1494,6 @@
     ],
     "finalStatus": "not_found_after_all_sources",
     "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
-  },
-  {
-    "channel": "PowerTürk TV",
-    "id": "powerturk-tv",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "PowerTürk TV",
-      "PowerTürk TV",
-      "PowerTurk",
-      "Power Türk"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 1,
-    "candidatesFound": 3,
-    "candidates": [
-      {
-        "host": "livetv.powerapp.com.tr",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "livetv.powerapp.com.tr",
-        "sourceName": "canlitv-com",
-        "result": "not_checked"
-      },
-      {
-        "host": "canlitv.diy",
-        "sourceName": "canlitv-com",
-        "result": "not_checked"
-      }
-    ],
-    "socialAccounts": [
-      {
-        "platform": "youtube",
-        "host": "www.youtube.com",
-        "result": "http_404"
-      }
-    ],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
-  },
-  {
-    "channel": "Number 1 TV",
-    "id": "number-1-tv",
-    "previousStatus": "all_candidates_failed",
-    "aliasesChecked": [
-      "Number 1 TV",
-      "Number 1 TV",
-      "Number One TV"
-    ],
-    "sourcesChecked": 11,
-    "officialPagesChecked": 0,
-    "officialSocialAccountsChecked": 0,
-    "candidatesFound": 2,
-    "candidates": [
-      {
-        "host": "b01c02nl.mediatriple.net",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      },
-      {
-        "host": "b01c02nl.mediatriple.net",
-        "sourceName": "canlitv-volo",
-        "result": "not_checked"
-      }
-    ],
-    "socialAccounts": [],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
-    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
     "channel": "Milyon TV",
