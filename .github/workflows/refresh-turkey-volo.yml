@@ -19,7 +19,7 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
 
@@ -38,6 +38,9 @@ jobs:
         run: npx playwright install chromium
 
       - name: Refresh Turkish channels from Volo
+        env:
+          VOLO_TR_CONCURRENCY: "10"
+          VOLO_TR_PAGE_WAIT_MS: "2500"
         run: npx tsx tools/refresh-turkey-volo.ts
 
       - name: Commit refreshed playlist
