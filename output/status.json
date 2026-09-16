@@ -1,16 +1,113 @@
 {
-  "updatedAt": "2026-09-16T10:58:00.001Z",
+  "updatedAt": "2026-09-16T13:02:00.944Z",
   "sources": 11,
-  "downloadedEntries": 71,
-  "uniqueCandidates": 70,
-  "fastCheckPassed": 21,
-  "mediaCheckPassed": 12,
-  "published": 928,
-  "failed": 58,
-  "duplicatesRemoved": 1,
-  "countryCounts": {},
-  "categoryCounts": {},
-  "degraded": true,
+  "downloadedEntries": 1544,
+  "uniqueCandidates": 1319,
+  "fastCheckPassed": 1392,
+  "mediaCheckPassed": 1331,
+  "published": 1093,
+  "failed": 853,
+  "duplicatesRemoved": 225,
+  "countryCounts": {
+    "Beynəlxalq": 42,
+    "Azərbaycan": 17,
+    "Türkiyə": 300,
+    "Rusiya": 263,
+    "Niderland": 5,
+    "Ukrayna": 7,
+    "İspaniya": 9,
+    "Mərakeş": 1,
+    "Peru": 11,
+    "İtaliya": 10,
+    "Dominikan Respublikası": 12,
+    "Rumıniya": 8,
+    "ABŞ": 114,
+    "Argentina": 6,
+    "IQ": 9,
+    "QA": 11,
+    "AE": 7,
+    "Almaniya": 14,
+    "Fransa": 9,
+    "GR": 6,
+    "SY": 1,
+    "CO": 4,
+    "PR": 2,
+    "AD": 1,
+    "Çili": 10,
+    "AM": 3,
+    "BE": 3,
+    "CA": 6,
+    "MX": 7,
+    "UG": 5,
+    "BY": 4,
+    "BG": 5,
+    "PY": 5,
+    "GE": 3,
+    "CI": 4,
+    "Avstraliya": 4,
+    "KR": 3,
+    "HN": 3,
+    "EC": 6,
+    "JO": 2,
+    "CR": 4,
+    "BO": 4,
+    "BD": 1,
+    "PL": 7,
+    "BR": 6,
+    "HU": 3,
+    "ZA": 1,
+    "TH": 2,
+    "TM": 3,
+    "ID": 4,
+    "Böyük Britaniya": 10,
+    "NG": 3,
+    "PH": 1,
+    "IN": 45,
+    "SA": 6,
+    "YE": 3,
+    "PS": 2,
+    "LA": 1,
+    "EG": 2,
+    "GN": 1,
+    "LY": 1,
+    "LB": 3,
+    "DZ": 1,
+    "BJ": 1,
+    "VE": 2,
+    "KE": 1,
+    "KZ": 3,
+    "UZ": 4,
+    "AL": 1,
+    "EE": 1,
+    "IR": 5,
+    "AT": 2,
+    "LU": 1,
+    "BQ": 1,
+    "AW": 3,
+    "SN": 1,
+    "SG": 2,
+    "TT": 1,
+    "SV": 1,
+    "GT": 1,
+    "GH": 1,
+    "KH": 1,
+    "PT": 1,
+    "TW": 1,
+    "OM": 1,
+    "CW": 1
+  },
+  "categoryCounts": {
+    "Other": 443,
+    "News": 130,
+    "Documentary": 38,
+    "Children": 32,
+    "General": 388,
+    "Sports": 13,
+    "Music": 37,
+    "Culture": 10,
+    "Education": 2
+  },
+  "degraded": false,
   "priorityChannels": [
     {
       "id": "aztv",
@@ -19,10 +116,10 @@
       "category": "general",
       "priority": 1,
       "aliasesChecked": 3,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 5,
+      "candidatesValidated": 3,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "ictimai-tv",
@@ -31,10 +128,10 @@
       "category": "general",
       "priority": 2,
       "aliasesChecked": 3,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 5,
+      "candidatesValidated": 4,
+      "selectedSource": "canlitv-volo",
+      "status": "working"
     },
     {
       "id": "atv-az",
@@ -43,10 +140,10 @@
       "category": "general",
       "priority": 3,
       "aliasesChecked": 4,
-      "candidatesFound": 1,
+      "candidatesFound": 3,
       "candidatesValidated": 1,
-      "selectedSource": "manual-fallback",
-      "status": "working"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "xezer-tv",
@@ -55,10 +152,10 @@
       "category": "general",
       "priority": 4,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 4,
+      "candidatesValidated": 3,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "arb",
@@ -67,9 +164,9 @@
       "category": "general",
       "priority": 5,
       "aliasesChecked": 2,
-      "candidatesFound": 1,
-      "candidatesValidated": 0,
-      "selectedSource": "manual-locked",
+      "candidatesFound": 15,
+      "candidatesValidated": 4,
+      "selectedSource": "canlitv-com",
       "status": "working"
     },
     {
@@ -79,10 +176,10 @@
       "category": "news",
       "priority": 6,
       "aliasesChecked": 3,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 48,
+      "candidatesValidated": 3,
+      "selectedSource": "canlitv-com",
+      "status": "working"
     },
     {
       "id": "space-tv",
@@ -91,9 +188,9 @@
       "category": "general",
       "priority": 7,
       "aliasesChecked": 2,
-      "candidatesFound": 1,
-      "candidatesValidated": 0,
-      "selectedSource": "manual-locked",
+      "candidatesFound": 5,
+      "candidatesValidated": 3,
+      "selectedSource": "canlitv-date",
       "status": "working"
     },
     {
@@ -103,9 +200,9 @@
       "category": "news",
       "priority": 8,
       "aliasesChecked": 2,
-      "candidatesFound": 1,
-      "candidatesValidated": 0,
-      "selectedSource": "manual-locked",
+      "candidatesFound": 4,
+      "candidatesValidated": 2,
+      "selectedSource": "tvstream-az",
       "status": "working"
     },
     {
@@ -115,10 +212,10 @@
       "category": "news",
       "priority": 9,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
+      "candidatesFound": 2,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "cbc",
@@ -127,10 +224,10 @@
       "category": "general",
       "priority": 10,
       "aliasesChecked": 3,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 49,
+      "candidatesValidated": 3,
+      "selectedSource": "canlitv-com",
+      "status": "working"
     },
     {
       "id": "cbc-sport",
@@ -141,8 +238,8 @@
       "aliasesChecked": 2,
       "candidatesFound": 1,
       "candidatesValidated": 0,
-      "selectedSource": "manual-locked",
-      "status": "working"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "idman-tv",
@@ -151,8 +248,8 @@
       "category": "sports",
       "priority": 12,
       "aliasesChecked": 3,
-      "candidatesFound": 1,
-      "candidatesValidated": 1,
+      "candidatesFound": 6,
+      "candidatesValidated": 3,
       "selectedSource": "manual-locked",
       "status": "working"
     },
@@ -163,10 +260,10 @@
       "category": "culture",
       "priority": 13,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 5,
+      "candidatesValidated": 1,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "mtv-az",
@@ -199,10 +296,10 @@
       "category": "general",
       "priority": 16,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
+      "candidatesFound": 1,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "kanal-s",
@@ -211,10 +308,10 @@
       "category": "regional",
       "priority": 17,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 2,
+      "candidatesValidated": 1,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "naxcivan-tv",
@@ -223,10 +320,10 @@
       "category": "regional",
       "priority": 18,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 2,
+      "candidatesValidated": 1,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "qafqaz-tv",
@@ -235,10 +332,10 @@
       "category": "regional",
       "priority": 19,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
+      "candidatesFound": 2,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "el-tv",
@@ -249,8 +346,8 @@
       "aliasesChecked": 1,
       "candidatesFound": 1,
       "candidatesValidated": 0,
-      "selectedSource": "manual-locked",
-      "status": "working"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "kepez-tv",
@@ -271,10 +368,10 @@
       "category": "general",
       "priority": 101,
       "aliasesChecked": 2,
-      "candidatesFound": 1,
-      "candidatesValidated": 1,
-      "selectedSource": "priority-direct",
-      "status": "working"
+      "candidatesFound": 2,
+      "candidatesValidated": 0,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "atv-tr",
@@ -283,8 +380,8 @@
       "category": "general",
       "priority": 102,
       "aliasesChecked": 2,
-      "candidatesFound": 1,
-      "candidatesValidated": 0,
+      "candidatesFound": 11,
+      "candidatesValidated": 4,
       "status": "all_candidates_failed",
       "failureReason": "Matching candidates did not pass media validation"
     },
@@ -295,10 +392,10 @@
       "category": "general",
       "priority": 103,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 6,
+      "candidatesValidated": 3,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "show-tv",
@@ -307,10 +404,10 @@
       "category": "general",
       "priority": 104,
       "aliasesChecked": 2,
-      "candidatesFound": 3,
-      "candidatesValidated": 1,
-      "selectedSource": "canlitv-date",
-      "status": "working"
+      "candidatesFound": 7,
+      "candidatesValidated": 4,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "star-tv",
@@ -319,8 +416,8 @@
       "category": "general",
       "priority": 105,
       "aliasesChecked": 3,
-      "candidatesFound": 1,
-      "candidatesValidated": 0,
+      "candidatesFound": 9,
+      "candidatesValidated": 7,
       "status": "all_candidates_failed",
       "failureReason": "Matching candidates did not pass media validation"
     },
@@ -331,10 +428,10 @@
       "category": "general",
       "priority": 106,
       "aliasesChecked": 4,
-      "candidatesFound": 0,
+      "candidatesFound": 2,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "tv8",
@@ -343,10 +440,10 @@
       "category": "general",
       "priority": 107,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 4,
+      "candidatesValidated": 2,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "kanal-7",
@@ -355,8 +452,8 @@
       "category": "general",
       "priority": 108,
       "aliasesChecked": 2,
-      "candidatesFound": 2,
-      "candidatesValidated": 0,
+      "candidatesFound": 5,
+      "candidatesValidated": 1,
       "status": "all_candidates_failed",
       "failureReason": "Matching candidates did not pass media validation"
     },
@@ -367,10 +464,10 @@
       "category": "general",
       "priority": 109,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 4,
+      "candidatesValidated": 2,
+      "selectedSource": "canlitv-watch",
+      "status": "working"
     },
     {
       "id": "360-tv",
@@ -379,10 +476,10 @@
       "category": "general",
       "priority": 110,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 3,
+      "candidatesValidated": 1,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "teve2",
@@ -391,10 +488,10 @@
       "category": "general",
       "priority": 111,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 2,
+      "candidatesValidated": 2,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "tv8-5",
@@ -403,10 +500,10 @@
       "category": "general",
       "priority": 112,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 4,
+      "candidatesValidated": 3,
+      "selectedSource": "canlitv-volo",
+      "status": "working"
     },
     {
       "id": "a2",
@@ -415,10 +512,10 @@
       "category": "general",
       "priority": 113,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 2,
+      "candidatesValidated": 1,
+      "selectedSource": "canlitv-volo",
+      "status": "working"
     },
     {
       "id": "show-max",
@@ -427,10 +524,10 @@
       "category": "general",
       "priority": 114,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 1,
+      "candidatesValidated": 1,
+      "selectedSource": "canlitv-com",
+      "status": "working"
     },
     {
       "id": "tv4",
@@ -439,10 +536,10 @@
       "category": "general",
       "priority": 115,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 3,
+      "candidatesValidated": 2,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "flash-haber-tv",
@@ -451,10 +548,10 @@
       "category": "general",
       "priority": 116,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 2,
+      "candidatesValidated": 1,
+      "selectedSource": "canlitv-date",
+      "status": "working"
     },
     {
       "id": "trt-haber",
@@ -463,10 +560,10 @@
       "category": "news",
       "priority": 117,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 2,
+      "candidatesValidated": 1,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "cnn-turk",
@@ -487,10 +584,10 @@
       "category": "news",
       "priority": 119,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 4,
+      "candidatesValidated": 3,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "a-haber",
@@ -499,10 +596,10 @@
       "category": "news",
       "priority": 120,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 2,
+      "candidatesValidated": 1,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "haberturk-tv",
@@ -511,10 +608,10 @@
       "category": "news",
       "priority": 121,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 2,
+      "candidatesValidated": 1,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "haber-global",
@@ -523,10 +620,10 @@
       "category": "news",
       "priority": 122,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 5,
+      "candidatesValidated": 2,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "sozcu-tv",
@@ -535,10 +632,10 @@
       "category": "news",
       "priority": 123,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 5,
+      "candidatesValidated": 3,
+      "selectedSource": "canlitv-volo",
+      "status": "working"
     },
     {
       "id": "halk-tv",
@@ -547,10 +644,10 @@
       "category": "news",
       "priority": 124,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
+      "candidatesFound": 3,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "tgrt-haber",
@@ -559,10 +656,10 @@
       "category": "news",
       "priority": 125,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
+      "candidatesFound": 2,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "tv100",
@@ -571,10 +668,10 @@
       "category": "news",
       "priority": 126,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 3,
+      "candidatesValidated": 1,
+      "selectedSource": "canlitv-com",
+      "status": "working"
     },
     {
       "id": "bloomberg-ht",
@@ -583,10 +680,10 @@
       "category": "news",
       "priority": 127,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 3,
+      "candidatesValidated": 2,
+      "selectedSource": "canlitv-watch",
+      "status": "working"
     },
     {
       "id": "ulke-tv",
@@ -595,10 +692,10 @@
       "category": "news",
       "priority": 128,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 2,
+      "candidatesValidated": 1,
+      "selectedSource": "canlitv-watch",
+      "status": "working"
     },
     {
       "id": "tvnet",
@@ -607,10 +704,10 @@
       "category": "news",
       "priority": 129,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 2,
+      "candidatesValidated": 1,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "24-tv",
@@ -619,10 +716,10 @@
       "category": "news",
       "priority": 130,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
+      "candidatesFound": 1,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "a-para",
@@ -643,10 +740,10 @@
       "category": "news",
       "priority": 132,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
+      "candidatesFound": 1,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "ekoturk-tv",
@@ -655,10 +752,10 @@
       "category": "news",
       "priority": 133,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 1,
+      "candidatesValidated": 1,
+      "selectedSource": "canlitv-volo",
+      "status": "working"
     },
     {
       "id": "tele1",
@@ -667,10 +764,10 @@
       "category": "news",
       "priority": 134,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
+      "candidatesFound": 3,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "ulusal-kanal",
@@ -679,10 +776,10 @@
       "category": "news",
       "priority": 135,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 3,
+      "candidatesValidated": 1,
+      "selectedSource": "canlitv-volo",
+      "status": "working"
     },
     {
       "id": "trt-spor",
@@ -691,7 +788,7 @@
       "category": "sports",
       "priority": 136,
       "aliasesChecked": 1,
-      "candidatesFound": 2,
+      "candidatesFound": 5,
       "candidatesValidated": 0,
       "status": "all_candidates_failed",
       "failureReason": "Matching candidates did not pass media validation"
@@ -703,7 +800,7 @@
       "category": "sports",
       "priority": 137,
       "aliasesChecked": 1,
-      "candidatesFound": 1,
+      "candidatesFound": 2,
       "candidatesValidated": 0,
       "status": "all_candidates_failed",
       "failureReason": "Matching candidates did not pass media validation"
@@ -715,10 +812,10 @@
       "category": "sports",
       "priority": 138,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 3,
+      "candidatesValidated": 3,
+      "selectedSource": "canlitv-watch",
+      "status": "working"
     },
     {
       "id": "bein-sports-haber",
@@ -727,10 +824,10 @@
       "category": "sports",
       "priority": 139,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 2,
+      "candidatesValidated": 2,
+      "selectedSource": "canlitv-volo",
+      "status": "working"
     },
     {
       "id": "ht-spor",
@@ -739,10 +836,10 @@
       "category": "sports",
       "priority": 140,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 1,
+      "candidatesValidated": 1,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "tjk-tv",
@@ -751,10 +848,10 @@
       "category": "sports",
       "priority": 141,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 2,
+      "candidatesValidated": 2,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "fb-tv",
@@ -763,10 +860,10 @@
       "category": "sports",
       "priority": 142,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 4,
+      "candidatesValidated": 1,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "gs-tv",
@@ -775,10 +872,10 @@
       "category": "sports",
       "priority": 143,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 1,
+      "candidatesValidated": 1,
+      "selectedSource": "canlitv-volo",
+      "status": "working"
     },
     {
       "id": "trt-belgesel",
@@ -787,7 +884,7 @@
       "category": "documentary",
       "priority": 144,
       "aliasesChecked": 1,
-      "candidatesFound": 1,
+      "candidatesFound": 2,
       "candidatesValidated": 0,
       "status": "all_candidates_failed",
       "failureReason": "Matching candidates did not pass media validation"
@@ -811,10 +908,10 @@
       "category": "documentary",
       "priority": 146,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 4,
+      "candidatesValidated": 1,
+      "selectedSource": "canlitv-com",
+      "status": "working"
     },
     {
       "id": "tlc",
@@ -823,10 +920,10 @@
       "category": "documentary",
       "priority": 147,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 4,
+      "candidatesValidated": 1,
+      "selectedSource": "canlitv-com",
+      "status": "working"
     },
     {
       "id": "trt-turk",
@@ -835,10 +932,10 @@
       "category": "culture",
       "priority": 148,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
+      "candidatesFound": 1,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "trt-avaz",
@@ -847,10 +944,10 @@
       "category": "culture",
       "priority": 149,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
+      "candidatesFound": 1,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "trt-world",
@@ -859,10 +956,10 @@
       "category": "culture",
       "priority": 150,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 2,
+      "candidatesValidated": 1,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "trt-muzik",
@@ -871,10 +968,10 @@
       "category": "music",
       "priority": 151,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 2,
+      "candidatesValidated": 1,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "diyanet-tv",
@@ -883,10 +980,10 @@
       "category": "culture",
       "priority": 152,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 2,
+      "candidatesValidated": 1,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "yaban-tv",
@@ -895,10 +992,10 @@
       "category": "documentary",
       "priority": 153,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 4,
+      "candidatesValidated": 1,
+      "selectedSource": "canlitv-com",
+      "status": "working"
     },
     {
       "id": "trt-cocuk",
@@ -907,10 +1004,10 @@
       "category": "children",
       "priority": 154,
       "aliasesChecked": 1,
-      "candidatesFound": 1,
+      "candidatesFound": 2,
       "candidatesValidated": 1,
-      "selectedSource": "priority-direct",
-      "status": "working"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "minika-cocuk",
@@ -919,10 +1016,10 @@
       "category": "children",
       "priority": 155,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
+      "candidatesFound": 2,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "minika-go",
@@ -931,10 +1028,10 @@
       "category": "children",
       "priority": 156,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 3,
+      "candidatesValidated": 1,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "cartoonito-tr",
@@ -955,10 +1052,10 @@
       "category": "children",
       "priority": 158,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
+      "candidatesFound": 1,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "nickelodeon-tr",
@@ -979,10 +1076,10 @@
       "category": "children",
       "priority": 160,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
+      "candidatesFound": 2,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "dream-turk",
@@ -991,10 +1088,10 @@
       "category": "music",
       "priority": 161,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
+      "candidatesFound": 2,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "kral-pop-tv",
@@ -1015,10 +1112,10 @@
       "category": "music",
       "priority": 163,
       "aliasesChecked": 3,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 3,
+      "candidatesValidated": 1,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "number-1-turk",
@@ -1027,10 +1124,10 @@
       "category": "music",
       "priority": 164,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 2,
+      "candidatesValidated": 2,
+      "selectedSource": "canlitv-volo",
+      "status": "working"
     },
     {
       "id": "number-1-tv",
@@ -1039,10 +1136,10 @@
       "category": "music",
       "priority": 165,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
+      "candidatesFound": 2,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "powerturk-slow",
@@ -1051,10 +1148,10 @@
       "category": "music",
       "priority": 166,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 1,
+      "candidatesValidated": 1,
+      "selectedSource": "canlitv-com",
+      "status": "working"
     },
     {
       "id": "milyon-tv",
