@@ -3,8 +3,13 @@ export type Seed = { url: string; country: Country };
 export type Source = { name: string; seeds: Seed[]; hosts: string[] };
 export type ChannelPage = { url: string; title: string; country: Country };
 
+const VOLO_SEEDS: Seed[] = Array.from({ length: 23 }, (_, index) => ({
+  url: `https://tv.canlitvvolo.com/?sayfa=${index + 1}`,
+  country: "Türkiyə"
+}));
+
 export const SOURCES: Source[] = [
-  { name: "canlitv-volo", seeds: [{ url: "https://tv.canlitvvolo.com/canli-tv-list", country: "Türkiyə" }], hosts: ["tv.canlitvvolo.com"] },
+  { name: "canlitv-volo", seeds: VOLO_SEEDS, hosts: ["tv.canlitvvolo.com"] },
   { name: "canlitv-video", seeds: [{ url: "https://www.canlitv.video/", country: "Türkiyə" }], hosts: ["canlitv.video"] },
   { name: "canlitv-me", seeds: [{ url: "https://www.canlitv.me/", country: "Türkiyə" }], hosts: ["canlitv.me"] },
   { name: "canlitv-watch", seeds: [{ url: "https://tr.canlitv.watch/", country: "Türkiyə" }, { url: "https://tr.canlitv.watch/kanallar/azerbaycan", country: "Azərbaycan" }], hosts: ["canlitv.watch"] },
