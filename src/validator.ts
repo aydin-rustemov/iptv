@@ -240,7 +240,7 @@ function hasSensitiveHeaders(entry: PlaylistEntry): boolean {
 function isAllowedTurkeySource(entry: PlaylistEntry): boolean {
   if (!isTurkeyEntry(entry)) return true;
   if (entry.sourceName === "existing-playlist") return true;
-  if (entry.sourceName === "canlitv-volo") return true;
+  if (entry.sourceName.startsWith("canlitv-volo")) return true;
   if (entry.sourceName.startsWith("manual-")) return true;
   return false;
 }
