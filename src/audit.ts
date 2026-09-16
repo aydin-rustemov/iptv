@@ -1,5 +1,5 @@
 import fs from "node:fs";
-import { isForbiddenUrl } from "./validator.js";
+import { isForbiddenUrl, isTurkeyAdSlateProneUrl } from "./validator.js";
 
 const playlist = fs.readFileSync("output/playlist.m3u", "utf8");
 const status = JSON.parse(readJsonText("output/status.json")) as { published?: number };
@@ -32,6 +32,15 @@ if (urls.length !== new Set(urls.map(normalizeUrl)).size) errors.push("Duplicate
 if (urls.some((url) => isForbiddenUrl(url, { allowLivePath: true }))) errors.push("Private/local/gateway URL exists");
 if (/^#EXTHTTP:.*(?:cookie|authorization)|[|&](?:cookie|authorization)=|bearer\s+[a-z0-9._-]+/im.test(playlist)) errors.push("Account credential or Authorization header exists");
 if (/widevine|playready|license|drm/i.test(playlist)) errors.push("DRM/license URL exists");
+
+// Turkish direct CDN streams from these families may be technically playable but
+// replace the real television ad break with a static digital-ad slate. Such a
+// stream is not acceptable for the final TV playlist.
+for (const entry of entries) {
+  if (countryKey(entry.group) === "TR" && isTurkeyAdSlateProneUrl(entry.url)) {
+    errors.push(`Turkish ad-slate-prone stream is still published: ${entry.name}`);
+  }
+}
 
 // Locked manual channels are a user-controlled contract. They must appear once,
 // keep the exact configured URL, and must not be shadowed by a scraped duplicate.
