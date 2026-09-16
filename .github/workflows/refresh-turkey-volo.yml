@@ -2,12 +2,6 @@ name: Refresh Turkey from Volo
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - "tools/refresh-turkey-volo.ts"
-      - ".github/workflows/refresh-turkey-volo.yml"
 
 permissions:
   contents: write
