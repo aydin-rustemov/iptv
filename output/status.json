@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-09-16T19:02:53.514Z",
+  "updatedAt": "2026-09-16T21:51:13.079Z",
   "sources": 11,
-  "downloadedEntries": 1348,
-  "uniqueCandidates": 1147,
-  "fastCheckPassed": 1205,
-  "mediaCheckPassed": 1094,
-  "published": 1001,
-  "failed": 1033,
-  "duplicatesRemoved": 201,
+  "downloadedEntries": 1350,
+  "uniqueCandidates": 1126,
+  "fastCheckPassed": 1245,
+  "mediaCheckPassed": 1128,
+  "published": 990,
+  "failed": 880,
+  "duplicatesRemoved": 224,
   "countryCounts": {
     "Azərbaycan": 29,
-    "Türkiyə": 257,
-    "Rusiya": 263,
+    "Türkiyə": 259,
+    "Rusiya": 257,
     "Niderland": 5,
     "Ukrayna": 7,
     "İspaniya": 9,
@@ -20,12 +20,12 @@
     "İtaliya": 10,
     "Dominikan Respublikası": 11,
     "Rumıniya": 8,
-    "ABŞ": 112,
+    "ABŞ": 111,
     "Argentina": 6,
     "IQ": 9,
     "QA": 11,
     "AE": 7,
-    "Almaniya": 14,
+    "Almaniya": 13,
     "Fransa": 9,
     "GR": 6,
     "SY": 1,
@@ -40,19 +40,19 @@
     "UG": 3,
     "BY": 2,
     "BG": 5,
-    "PY": 5,
     "GE": 3,
     "CI": 4,
     "Avstraliya": 4,
     "KR": 3,
+    "PY": 4,
     "HN": 3,
     "EC": 6,
     "JO": 2,
-    "CR": 4,
+    "CR": 3,
     "BO": 4,
     "BD": 1,
     "PL": 7,
-    "BR": 6,
+    "BR": 5,
     "HU": 3,
     "ZA": 1,
     "TH": 2,
@@ -60,7 +60,7 @@
     "Böyük Britaniya": 10,
     "NG": 3,
     "PH": 1,
-    "IN": 42,
+    "IN": 40,
     "YE": 3,
     "PS": 2,
     "SA": 5,
@@ -95,13 +95,13 @@
     "CW": 1
   },
   "categoryCounts": {
-    "Other": 630,
+    "Other": 628,
     "Sports": 9,
-    "General": 140,
-    "News": 119,
+    "General": 131,
+    "News": 120,
     "Documentary": 31,
     "Children": 28,
-    "Music": 35,
+    "Music": 34,
     "Culture": 7,
     "Education": 2
   },
@@ -126,8 +126,8 @@
       "category": "general",
       "priority": 2,
       "aliasesChecked": 3,
-      "candidatesFound": 5,
-      "candidatesValidated": 3,
+      "candidatesFound": 6,
+      "candidatesValidated": 4,
       "selectedSource": "canlitv-volo",
       "status": "working"
     },
@@ -138,7 +138,7 @@
       "category": "general",
       "priority": 3,
       "aliasesChecked": 4,
-      "candidatesFound": 2,
+      "candidatesFound": 3,
       "candidatesValidated": 2,
       "selectedSource": "existing-playlist",
       "status": "working"
@@ -150,8 +150,8 @@
       "category": "general",
       "priority": 4,
       "aliasesChecked": 2,
-      "candidatesFound": 4,
-      "candidatesValidated": 4,
+      "candidatesFound": 5,
+      "candidatesValidated": 5,
       "selectedSource": "existing-playlist",
       "status": "working"
     },
@@ -162,8 +162,8 @@
       "category": "general",
       "priority": 5,
       "aliasesChecked": 2,
-      "candidatesFound": 13,
-      "candidatesValidated": 5,
+      "candidatesFound": 12,
+      "candidatesValidated": 6,
       "selectedSource": "manual-locked",
       "status": "working"
     },
@@ -174,7 +174,7 @@
       "category": "news",
       "priority": 6,
       "aliasesChecked": 3,
-      "candidatesFound": 53,
+      "candidatesFound": 32,
       "candidatesValidated": 3,
       "selectedSource": "canlitv-com",
       "status": "working"
@@ -186,7 +186,7 @@
       "category": "general",
       "priority": 7,
       "aliasesChecked": 2,
-      "candidatesFound": 6,
+      "candidatesFound": 5,
       "candidatesValidated": 4,
       "selectedSource": "manual-locked",
       "status": "working"
@@ -222,7 +222,7 @@
       "category": "general",
       "priority": 10,
       "aliasesChecked": 3,
-      "candidatesFound": 54,
+      "candidatesFound": 34,
       "candidatesValidated": 3,
       "selectedSource": "canlitv-com",
       "status": "working"
@@ -294,7 +294,7 @@
       "category": "general",
       "priority": 16,
       "aliasesChecked": 1,
-      "candidatesFound": 1,
+      "candidatesFound": 2,
       "candidatesValidated": 1,
       "selectedSource": "canlitv-date",
       "status": "working"
@@ -378,9 +378,9 @@
       "category": "general",
       "priority": 102,
       "aliasesChecked": 2,
-      "candidatesFound": 10,
+      "candidatesFound": 9,
       "candidatesValidated": 2,
-      "selectedSource": "canlitv-volo",
+      "selectedSource": "existing-playlist",
       "status": "working"
     },
     {
@@ -402,9 +402,9 @@
       "category": "general",
       "priority": 104,
       "aliasesChecked": 2,
-      "candidatesFound": 7,
+      "candidatesFound": 8,
       "candidatesValidated": 1,
-      "selectedSource": "canlitv-volo",
+      "selectedSource": "existing-playlist",
       "status": "working"
     },
     {
@@ -414,9 +414,9 @@
       "category": "general",
       "priority": 105,
       "aliasesChecked": 3,
-      "candidatesFound": 6,
+      "candidatesFound": 5,
       "candidatesValidated": 1,
-      "selectedSource": "canlitv-volo",
+      "selectedSource": "existing-playlist",
       "status": "working"
     },
     {
@@ -438,7 +438,7 @@
       "category": "general",
       "priority": 107,
       "aliasesChecked": 2,
-      "candidatesFound": 5,
+      "candidatesFound": 4,
       "candidatesValidated": 0,
       "status": "all_candidates_failed",
       "failureReason": "Matching candidates did not pass media validation"
@@ -462,7 +462,7 @@
       "category": "general",
       "priority": 109,
       "aliasesChecked": 2,
-      "candidatesFound": 3,
+      "candidatesFound": 2,
       "candidatesValidated": 0,
       "status": "all_candidates_failed",
       "failureReason": "Matching candidates did not pass media validation"
@@ -486,7 +486,7 @@
       "category": "general",
       "priority": 111,
       "aliasesChecked": 2,
-      "candidatesFound": 3,
+      "candidatesFound": 2,
       "candidatesValidated": 0,
       "status": "all_candidates_failed",
       "failureReason": "Matching candidates did not pass media validation"
@@ -498,7 +498,7 @@
       "category": "general",
       "priority": 112,
       "aliasesChecked": 2,
-      "candidatesFound": 4,
+      "candidatesFound": 2,
       "candidatesValidated": 0,
       "status": "all_candidates_failed",
       "failureReason": "Matching candidates did not pass media validation"
@@ -510,7 +510,7 @@
       "category": "general",
       "priority": 113,
       "aliasesChecked": 2,
-      "candidatesFound": 2,
+      "candidatesFound": 1,
       "candidatesValidated": 0,
       "status": "all_candidates_failed",
       "failureReason": "Matching candidates did not pass media validation"
@@ -570,10 +570,10 @@
       "category": "news",
       "priority": 118,
       "aliasesChecked": 1,
-      "candidatesFound": 2,
+      "candidatesFound": 0,
       "candidatesValidated": 0,
-      "status": "all_candidates_failed",
-      "failureReason": "Matching candidates did not pass media validation"
+      "status": "not_found",
+      "failureReason": "No matching alias found in enabled M3U sources"
     },
     {
       "id": "ntv-tr",
@@ -582,10 +582,10 @@
       "category": "news",
       "priority": 119,
       "aliasesChecked": 2,
-      "candidatesFound": 1,
+      "candidatesFound": 0,
       "candidatesValidated": 0,
-      "status": "all_candidates_failed",
-      "failureReason": "Matching candidates did not pass media validation"
+      "status": "not_found",
+      "failureReason": "No matching alias found in enabled M3U sources"
     },
     {
       "id": "a-haber",
@@ -786,7 +786,7 @@
       "category": "sports",
       "priority": 136,
       "aliasesChecked": 1,
-      "candidatesFound": 4,
+      "candidatesFound": 5,
       "candidatesValidated": 0,
       "status": "all_candidates_failed",
       "failureReason": "Matching candidates did not pass media validation"
@@ -834,7 +834,7 @@
       "category": "sports",
       "priority": 140,
       "aliasesChecked": 2,
-      "candidatesFound": 2,
+      "candidatesFound": 1,
       "candidatesValidated": 0,
       "status": "all_candidates_failed",
       "failureReason": "Matching candidates did not pass media validation"
@@ -906,7 +906,7 @@
       "category": "documentary",
       "priority": 146,
       "aliasesChecked": 2,
-      "candidatesFound": 4,
+      "candidatesFound": 3,
       "candidatesValidated": 0,
       "status": "all_candidates_failed",
       "failureReason": "Matching candidates did not pass media validation"
@@ -918,7 +918,7 @@
       "category": "documentary",
       "priority": 147,
       "aliasesChecked": 2,
-      "candidatesFound": 5,
+      "candidatesFound": 4,
       "candidatesValidated": 0,
       "status": "all_candidates_failed",
       "failureReason": "Matching candidates did not pass media validation"
@@ -966,7 +966,7 @@
       "category": "music",
       "priority": 151,
       "aliasesChecked": 1,
-      "candidatesFound": 2,
+      "candidatesFound": 3,
       "candidatesValidated": 0,
       "status": "all_candidates_failed",
       "failureReason": "Matching candidates did not pass media validation"
@@ -978,8 +978,8 @@
       "category": "culture",
       "priority": 152,
       "aliasesChecked": 1,
-      "candidatesFound": 1,
-      "candidatesValidated": 1,
+      "candidatesFound": 2,
+      "candidatesValidated": 2,
       "selectedSource": "existing-playlist",
       "status": "working"
     },
@@ -990,7 +990,7 @@
       "category": "documentary",
       "priority": 153,
       "aliasesChecked": 2,
-      "candidatesFound": 3,
+      "candidatesFound": 2,
       "candidatesValidated": 0,
       "status": "all_candidates_failed",
       "failureReason": "Matching candidates did not pass media validation"
@@ -1002,7 +1002,7 @@
       "category": "children",
       "priority": 154,
       "aliasesChecked": 1,
-      "candidatesFound": 1,
+      "candidatesFound": 2,
       "candidatesValidated": 0,
       "status": "all_candidates_failed",
       "failureReason": "Matching candidates did not pass media validation"
@@ -1074,7 +1074,7 @@
       "category": "children",
       "priority": 160,
       "aliasesChecked": 2,
-      "candidatesFound": 2,
+      "candidatesFound": 4,
       "candidatesValidated": 0,
       "status": "all_candidates_failed",
       "failureReason": "Matching candidates did not pass media validation"
@@ -1086,7 +1086,7 @@
       "category": "music",
       "priority": 161,
       "aliasesChecked": 1,
-      "candidatesFound": 2,
+      "candidatesFound": 3,
       "candidatesValidated": 1,
       "selectedSource": "existing-playlist",
       "status": "working"
@@ -1122,8 +1122,8 @@
       "category": "music",
       "priority": 164,
       "aliasesChecked": 2,
-      "candidatesFound": 1,
-      "candidatesValidated": 1,
+      "candidatesFound": 2,
+      "candidatesValidated": 2,
       "selectedSource": "existing-playlist",
       "status": "working"
     },
@@ -1134,10 +1134,10 @@
       "category": "music",
       "priority": 165,
       "aliasesChecked": 2,
-      "candidatesFound": 1,
-      "candidatesValidated": 1,
-      "selectedSource": "canlitv-volo",
-      "status": "working"
+      "candidatesFound": 2,
+      "candidatesValidated": 0,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "powerturk-slow",

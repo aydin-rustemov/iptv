@@ -102,7 +102,7 @@
     "category": "general",
     "priority": 107,
     "aliasesChecked": 2,
-    "candidatesFound": 5,
+    "candidatesFound": 4,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
@@ -114,7 +114,7 @@
     "category": "general",
     "priority": 109,
     "aliasesChecked": 2,
-    "candidatesFound": 3,
+    "candidatesFound": 2,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
@@ -138,7 +138,7 @@
     "category": "general",
     "priority": 111,
     "aliasesChecked": 2,
-    "candidatesFound": 3,
+    "candidatesFound": 2,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
@@ -150,7 +150,7 @@
     "category": "general",
     "priority": 112,
     "aliasesChecked": 2,
-    "candidatesFound": 4,
+    "candidatesFound": 2,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
@@ -162,7 +162,7 @@
     "category": "general",
     "priority": 113,
     "aliasesChecked": 2,
-    "candidatesFound": 2,
+    "candidatesFound": 1,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
@@ -210,10 +210,10 @@
     "category": "news",
     "priority": 118,
     "aliasesChecked": 1,
-    "candidatesFound": 2,
+    "candidatesFound": 0,
     "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
+    "status": "not_found",
+    "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
     "id": "ntv-tr",
@@ -222,10 +222,10 @@
     "category": "news",
     "priority": 119,
     "aliasesChecked": 2,
-    "candidatesFound": 1,
+    "candidatesFound": 0,
     "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
+    "status": "not_found",
+    "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
     "id": "a-haber",
@@ -342,7 +342,7 @@
     "category": "sports",
     "priority": 136,
     "aliasesChecked": 1,
-    "candidatesFound": 4,
+    "candidatesFound": 5,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
@@ -378,7 +378,7 @@
     "category": "sports",
     "priority": 140,
     "aliasesChecked": 2,
-    "candidatesFound": 2,
+    "candidatesFound": 1,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
@@ -414,7 +414,7 @@
     "category": "documentary",
     "priority": 146,
     "aliasesChecked": 2,
-    "candidatesFound": 4,
+    "candidatesFound": 3,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
@@ -426,7 +426,7 @@
     "category": "documentary",
     "priority": 147,
     "aliasesChecked": 2,
-    "candidatesFound": 5,
+    "candidatesFound": 4,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
@@ -474,7 +474,7 @@
     "category": "music",
     "priority": 151,
     "aliasesChecked": 1,
-    "candidatesFound": 2,
+    "candidatesFound": 3,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
@@ -486,7 +486,7 @@
     "category": "documentary",
     "priority": 153,
     "aliasesChecked": 2,
-    "candidatesFound": 3,
+    "candidatesFound": 2,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
@@ -498,7 +498,7 @@
     "category": "children",
     "priority": 154,
     "aliasesChecked": 1,
-    "candidatesFound": 1,
+    "candidatesFound": 2,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
@@ -570,7 +570,7 @@
     "category": "children",
     "priority": 160,
     "aliasesChecked": 2,
-    "candidatesFound": 2,
+    "candidatesFound": 4,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
@@ -586,6 +586,18 @@
     "candidatesValidated": 0,
     "status": "not_found",
     "failureReason": "No matching alias found in enabled M3U sources"
+  },
+  {
+    "id": "number-1-tv",
+    "name": "Number 1 TV",
+    "country": "Türkiyə",
+    "category": "music",
+    "priority": 165,
+    "aliasesChecked": 2,
+    "candidatesFound": 2,
+    "candidatesValidated": 0,
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "milyon-tv",
