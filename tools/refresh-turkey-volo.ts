@@ -335,7 +335,7 @@ function renderPlaylist(header: string, blocks: Block[], replacements: Map<Block
 }
 
 function isTurkeyBlock(block: Block): boolean {
-  return normalizeName(block.groupTitle).includes("turkiye");
+  return /Türkiyə|Türkiye|Turkey/i.test(block.groupTitle);
 }
 
 function parseAttrs(line: string): Record<string, string> {
