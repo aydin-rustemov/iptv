@@ -8,6 +8,16 @@ import type { FastCheckResult, MediaCheckResult, PlaylistEntry } from "./types.j
 
 const USER_AGENT = "Mozilla/5.0 IPTV-Playlist-Updater/1.0";
 
+// These Turkish direct/official CDN families are known to return a technically
+// valid HLS stream while replacing the real television ad break with a static
+// "Dijital Reklam Kuşağındasınız" slate. For our TV playlist that is not a
+// healthy linear broadcast, even though HTTP/HLS validation succeeds.
+const TURKEY_AD_SLATE_HOSTS = [
+  /(^|\.)daioncdn\.net$/i,
+  /(^|\.)ercdn\.net$/i,
+  /(^|\.)medya\.trt\.com\.tr$/i
+];
+
 export function isForbiddenUrl(raw: string, options: { allowLivePath?: boolean } = {}): boolean {
   try {
     const url = new URL(raw);
@@ -23,10 +33,30 @@ export function isForbiddenUrl(raw: string, options: { allowLivePath?: boolean }
   }
 }
 
+export function isTurkeyAdSlateProneUrl(raw: string): boolean {
+  try {
+    const host = new URL(raw).hostname.toLowerCase();
+    return TURKEY_AD_SLATE_HOSTS.some((pattern) => pattern.test(host));
+  } catch {
+    return false;
+  }
+}
+
 export async function fastCheck(entry: PlaylistEntry): Promise<FastCheckResult> {
   const start = Date.now();
   if (isForbiddenUrl(entry.url, { allowLivePath: entry.allowLivePath })) return { ok: false, reason: "forbidden_url" };
   if (hasSensitiveHeaders(entry)) return { ok: false, reason: "sensitive_headers" };
+
+  // For Turkish discovery we deliberately trust Volo (plus explicit manual
+  // overrides). Other website adapters may still discover Turkish URLs for
+  // diagnostics, but they are not allowed to publish them into the TV playlist.
+  if (isTurkeyEntry(entry) && !isAllowedTurkeySource(entry)) {
+    return { ok: false, reason: "turkey_non_volo_source" };
+  }
+  if (isTurkeyEntry(entry) && isTurkeyAdSlateProneUrl(entry.url)) {
+    return { ok: false, reason: "turkey_ad_slate_prone_host" };
+  }
+
   try {
     let response = await fetch(entry.url, {
       redirect: "follow",
@@ -48,6 +78,9 @@ export async function fastCheck(entry: PlaylistEntry): Promise<FastCheckResult> 
     }
     const contentType = response.headers.get("content-type") ?? "";
     if (!response.ok) return { ok: false, contentType, reason: `http_${response.status}` };
+    if (isTurkeyEntry(entry) && isTurkeyAdSlateProneUrl(response.url)) {
+      return { ok: false, contentType, reason: "turkey_ad_slate_prone_host" };
+    }
     const bytes = new Uint8Array((await response.clone().arrayBuffer()).slice(0, 512 * 1024));
     const prefix = Buffer.from(bytes).toString("utf8", 0, Math.min(bytes.length, 2048)).trimStart();
     if (/^<!doctype html|^<html/i.test(prefix) || contentType.includes("text/html")) return { ok: false, contentType, reason: "html" };
@@ -109,8 +142,10 @@ function firstSegmentUri(manifest: string): string | undefined {
 }
 
 async function fetchText(url: string, entry: PlaylistEntry): Promise<string> {
+  if (isTurkeyEntry(entry) && isTurkeyAdSlateProneUrl(url)) throw new Error("turkey_ad_slate_prone_host");
   const response = await fetch(url, { headers: requestHeaders(entry), signal: AbortSignal.timeout(10_000) });
   if (!response.ok) throw new Error(`http_${response.status}`);
+  if (isTurkeyEntry(entry) && isTurkeyAdSlateProneUrl(response.url)) throw new Error("turkey_ad_slate_prone_host");
   const text = await response.text();
   if (/^\s*</.test(text)) throw new Error("html");
   return text;
@@ -118,11 +153,13 @@ async function fetchText(url: string, entry: PlaylistEntry): Promise<string> {
 
 async function downloadSample(url: string, entry: PlaylistEntry, maxBytes: number): Promise<Buffer> {
   if (isForbiddenUrl(url, { allowLivePath: entry.allowLivePath })) throw new Error("forbidden_url");
+  if (isTurkeyEntry(entry) && isTurkeyAdSlateProneUrl(url)) throw new Error("turkey_ad_slate_prone_host");
   const response = await fetch(url, {
     headers: { ...requestHeaders(entry), Range: `bytes=0-${maxBytes - 1}` },
     signal: AbortSignal.timeout(15_000)
   });
   if (!response.ok && response.status !== 206) throw new Error(`http_${response.status}`);
+  if (isTurkeyEntry(entry) && isTurkeyAdSlateProneUrl(response.url)) throw new Error("turkey_ad_slate_prone_host");
   if (!response.body) throw new Error("no_body");
   const reader = response.body.getReader();
   const chunks: Buffer[] = [];
@@ -198,4 +235,22 @@ function publicHeaderRetries(entry: PlaylistEntry): Array<Record<string, string>
 
 function hasSensitiveHeaders(entry: PlaylistEntry): boolean {
   return Object.keys(entry.headers).some((key) => /cookie|authorization|password|token|key/i.test(key));
+}
+
+function isAllowedTurkeySource(entry: PlaylistEntry): boolean {
+  if (!isTurkeyEntry(entry)) return true;
+  if (entry.sourceName === "existing-playlist") return true;
+  if (entry.sourceName === "canlitv-volo") return true;
+  if (entry.sourceName.startsWith("manual-")) return true;
+  return false;
+}
+
+function isTurkeyEntry(entry: PlaylistEntry): boolean {
+  const value = `${entry.priorityCountry ?? ""} ${entry.country ?? ""} ${entry.groupTitle ?? ""}`
+    .toLocaleLowerCase("tr")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/ı/g, "i")
+    .replace(/ü/g, "u");
+  return value.includes("turkiye") || /(?:^|\s)tr(?:\s|$)/.test(value);
 }
