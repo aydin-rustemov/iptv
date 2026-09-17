@@ -82,9 +82,6 @@ async function main(): Promise<void> {
   const { entries: uniqueDiscovered, duplicatesRemoved } = dedupe(targeted.entries);
   const discoveryCandidates = preselect(uniqueDiscovered);
 
-  // Existing playlist links are checked independently. Locked manual channels are
-  // handled separately and never depend on GitHub runner validation because some
-  // providers are geo/network sensitive even though the user confirmed them on TV.
   const currentValidation = await validateEntries(currentEntries, true, true);
   const discoveryValidation = await validateEntries(discoveryCandidates, false, false);
 
@@ -207,9 +204,6 @@ function reconcilePlaylist(
   let removed = 0;
   let added = 0;
 
-  // Locked entries are matched against the existing playlist first. If a scraper
-  // previously replaced one of them, restore the exact user-provided URL in the
-  // same logical channel slot. These entries are never replaced or removed.
   for (const current of currentEntries) {
     const locked = findMatchingEntry(current, lockedEntries);
     if (locked) {
@@ -228,6 +222,32 @@ function reconcilePlaylist(
     }
 
     const working = currentWorkingByUrl.get(normalizeUrl(current.url));
+
+    // Azerbaijan policy: a validated YodaCDN stream is preferred for the same
+    // channel because it has proven the most stable on local TVs. If the current
+    // link is already working YodaCDN, never churn it. If current is another host
+    // and a validated Yoda alternative exists, migrate once to Yoda.
+    if (normalizedCountry(current) === "Azərbaycan") {
+      if (working && isYodaUrl(current.url)) {
+        output.push(working);
+        markUsed(working, usedUrls, usedKeys);
+        preserved++;
+        console.log(`[AZ YODA PRESERVED] ${displayName(current)}: ${safeHost(current.url)}`);
+        continue;
+      }
+
+      const yodaReplacement = findYodaReplacement(current, discovered, usedUrls);
+      if (yodaReplacement) {
+        const patched = keepChannelMetadata(current, yodaReplacement);
+        output.push(patched);
+        markUsed(patched, usedUrls, usedKeys);
+        usedUrls.add(normalizeUrl(yodaReplacement.url));
+        replaced++;
+        console.log(`[AZ YODA PREFERRED] ${displayName(current)}: ${safeHost(current.url)} -> ${safeHost(yodaReplacement.url)} (${yodaReplacement.sourceName})`);
+        continue;
+      }
+    }
+
     if (working) {
       output.push(working);
       markUsed(working, usedUrls, usedKeys);
@@ -249,10 +269,9 @@ function reconcilePlaylist(
     }
   }
 
-  // A locked channel may be completely absent from the current playlist. Add it
-  // back unconditionally, still using the exact manual URL.
   for (const locked of lockedEntries) {
     if (usedUrls.has(normalizeUrl(locked.url))) continue;
+    if (channelKeys(locked).some((key) => usedKeys.has(key))) continue;
     output.push(locked);
     markUsed(locked, usedUrls, usedKeys);
     added++;
@@ -295,9 +314,14 @@ function findReplacement(current: PlaylistEntry, candidates: ValidatedEntry[], u
     .sort((a, b) => replacementScore(b, current) - replacementScore(a, current) || b.score - a.score)[0];
 }
 
+function findYodaReplacement(current: PlaylistEntry, candidates: ValidatedEntry[], usedUrls: Set<string>): ValidatedEntry | undefined {
+  return findReplacement(current, candidates.filter((candidate) => isYodaUrl(candidate.url)), usedUrls);
+}
+
 function replacementScore(candidate: ValidatedEntry, current?: PlaylistEntry): number {
   let value = candidate.score;
   const country = normalizedCountry(current ?? candidate);
+  if (country === "Azərbaycan" && isYodaUrl(candidate.url)) value += 3000;
   if (country === "Türkiyə" && candidate.sourceName === "canlitv-volo") value += 2000;
   else if (candidate.sourceName.startsWith("canlitv-") || candidate.sourceName.includes("web")) value += 400;
   if (candidate.headers["Referer"] || candidate.headers["User-Agent"]) value -= 50;
@@ -468,6 +492,15 @@ function safeHost(raw: string): string {
     return new URL(raw).hostname;
   } catch {
     return raw;
+  }
+}
+
+function isYodaUrl(raw: string): boolean {
+  try {
+    const host = new URL(raw).hostname.toLowerCase();
+    return host === "yodacdn.net" || host.endsWith(".yodacdn.net");
+  } catch {
+    return false;
   }
 }
 
