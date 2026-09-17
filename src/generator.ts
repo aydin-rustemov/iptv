@@ -5,7 +5,7 @@ import type { PriorityChannelStatus, StatusOutput, ValidatedEntry } from "./type
 export function writePlaylist(entries: ValidatedEntry[], file = "output/playlist.m3u"): void {
   fs.mkdirSync(path.dirname(file), { recursive: true });
   let text = "#EXTM3U\n";
-  const ordered = [...entries].sort((a, b) => groupCountryRank(groupTitle(a)) - groupCountryRank(groupTitle(b)));
+  const ordered = [...entries].sort(comparePlaylistEntries);
   for (const entry of ordered) {
     const group = groupTitle(entry);
     const name = withWarningPrefix(displayName(entry.name), group);
@@ -23,6 +23,19 @@ export function writePlaylist(entries: ValidatedEntry[], file = "output/playlist
   fs.writeFileSync(file, text, "utf8");
 }
 
+function comparePlaylistEntries(a: ValidatedEntry, b: ValidatedEntry): number {
+  const country = groupCountryRank(groupTitle(a)) - groupCountryRank(groupTitle(b));
+  if (country !== 0) return country;
+
+  const category = categoryRank(a.category) - categoryRank(b.category);
+  if (category !== 0) return category;
+
+  const priority = (a.priorityOrder ?? Number.MAX_SAFE_INTEGER) - (b.priorityOrder ?? Number.MAX_SAFE_INTEGER);
+  if (priority !== 0) return priority;
+
+  return displayName(a.name).localeCompare(displayName(b.name), "az", { sensitivity: "base" });
+}
+
 function withWarningPrefix(name: string, group: string): string {
   if (!/Yoxlan/i.test(group)) return name;
   return name.startsWith("⚠") ? name : `⚠ ${name}`;
@@ -38,17 +51,33 @@ function displayName(value: string): string {
 }
 
 function groupCountryRank(group: string): number {
-  const normalized = group
+  const normalized = normalizeSortText(group);
+  if (/azerbaycan|^az$/.test(normalized)) return 0;
+  if (/turkiye|^tr$/.test(normalized)) return 1;
+  if (/rusiya|russia|^ru$/.test(normalized)) return 2;
+  if (/iran|^ir$/.test(normalized)) return 3;
+  return 4;
+}
+
+function categoryRank(category?: string): number {
+  const value = (category ?? "Other").toLocaleLowerCase("tr");
+  if (/general|umumi|ümumi/.test(value)) return 0;
+  if (/news|xeber|xəbər|haber/.test(value)) return 1;
+  if (/sport|idman/.test(value)) return 2;
+  if (/documentary|culture|sened|sənəd|medeniyyet|mədəniyyət/.test(value)) return 3;
+  if (/children|kids|usaq|uşaq|cocuk|çocuk/.test(value)) return 4;
+  if (/music|musiqi|muzik|müzik/.test(value)) return 5;
+  return 6;
+}
+
+function normalizeSortText(value: string): string {
+  return value
     .toLocaleLowerCase("tr")
     .normalize("NFKD")
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/[\u0259\u018f]/g, "e")
     .replace(/[\u0131\u0130]/g, "i")
     .replace(/[\u00fc\u00DC]/g, "u");
-  if (/azerbaycan|^az$/.test(normalized)) return 0;
-  if (/turkiye|^tr$/.test(normalized)) return 1;
-  if (/rusiya/.test(normalized)) return 2;
-  return 3;
 }
 
 export function writeStatus(status: StatusOutput, htmlFile = "output/status.html", jsonFile = "output/status.json"): void {
@@ -84,47 +113,48 @@ function groupTitle(entry: ValidatedEntry): string {
   if (entry.groupTitle?.includes("Yoxlan") || entry.groupTitle?.includes("YoxlanÄ")) return normalizeGroup(entry.groupTitle);
   const priorityCountry = normalizeCountryLabel(entry.priorityCountry);
   const country = normalizeCountryLabel(entry.country);
-  if (priorityCountry === "Türkiyə") return `Türkiyə — ${turkishGroup(entry.priorityCategory ?? entry.category)}`;
+
   if (priorityCountry === "Azərbaycan") return azerbaijanGroup(entry.priorityCategory ?? entry.category);
+  if (priorityCountry === "Türkiyə") return `Türkiyə — ${countryCategoryGroup(entry.priorityCategory ?? entry.category)}`;
+  if (priorityCountry === "Rusiya") return `Rusiya — ${countryCategoryGroup(entry.priorityCategory ?? entry.category)}`;
+  if (priorityCountry === "İran") return `İran — ${countryCategoryGroup(entry.priorityCategory ?? entry.category)}`;
   if (priorityCountry) return priorityCountry;
+
   if (country === "Azərbaycan") return azerbaijanGroup(entry.category);
-  if (country === "Türkiyə") return `Türkiyə — ${turkishGroup(entry.category)}`;
-  if (country === "Rusiya") return russianGroup(entry.category);
+  if (country === "Türkiyə") return `Türkiyə — ${countryCategoryGroup(entry.category)}`;
+  if (country === "Rusiya") return `Rusiya — ${countryCategoryGroup(entry.category)}`;
+  if (country === "İran") return `İran — ${countryCategoryGroup(entry.category)}`;
+
   return normalizeGroup(entry.groupTitle ?? entry.country ?? "Beynəlxalq");
 }
 
-function turkishGroup(category?: string): string {
-  if (category === "news" || category === "News") return "Xəbər";
-  if (category === "sports" || category === "Sports") return "İdman";
-  if (category === "documentary" || category === "culture" || category === "Documentary" || category === "Culture") return "Sənədli və mədəniyyət";
-  if (category === "children" || category === "Children") return "Uşaq";
-  if (category === "music" || category === "Music") return "Musiqi";
+function countryCategoryGroup(category?: string): string {
+  const value = (category ?? "").toLocaleLowerCase("tr");
+  if (/news|haber|xəbər/.test(value)) return "Xəbər";
+  if (/sport|idman/.test(value)) return "İdman";
+  if (/documentary|culture|sənəd|mədəni/.test(value)) return "Sənədli və mədəniyyət";
+  if (/children|kids|çocuk|uşaq/.test(value)) return "Uşaq";
+  if (/music|müzik|musiqi/.test(value)) return "Musiqi";
   return "Ümumi";
 }
 
 function azerbaijanGroup(category?: string): string {
-  if (category === "news" || category === "News") return "Azərbaycan — Xəbər";
-  if (category === "sports" || category === "Sports") return "Azərbaycan — İdman";
-  if (category === "music" || category === "Music") return "Azərbaycan — Musiqi";
-  if (category === "children" || category === "Children") return "Azərbaycan — Uşaq";
-  if (category === "regional" || category === "Other") return "Azərbaycan — Digər";
-  return "Azərbaycan";
-}
-
-function russianGroup(category?: string): string {
-  if (category === "News") return "Rusiya — Xəbər";
-  if (category === "Sports") return "Rusiya — İdman";
-  if (category === "Documentary" || category === "Culture") return "Rusiya — Sənədli və mədəniyyət";
-  if (category === "Children") return "Rusiya — Uşaq";
-  if (category === "Music") return "Rusiya — Musiqi";
-  return "Rusiya — Ümumi";
+  const value = (category ?? "").toLocaleLowerCase("tr");
+  if (/news|xəbər/.test(value)) return "Azərbaycan — Xəbər";
+  if (/sport|idman/.test(value)) return "Azərbaycan — İdman";
+  if (/music|musiqi/.test(value)) return "Azərbaycan — Musiqi";
+  if (/children|uşaq/.test(value)) return "Azərbaycan — Uşaq";
+  if (/regional|other/.test(value)) return "Azərbaycan — Digər";
+  return "Azərbaycan — Ümumi";
 }
 
 function normalizeCountryLabel(value?: string): string | undefined {
   if (!value) return undefined;
-  if (value === "Azərbaycan" || value === "AzÉ™rbaycan" || value === "AzÃ‰â„¢rbaycan") return "Azərbaycan";
-  if (value === "Türkiyə" || value === "TÃ¼rkiyÉ™" || value === "TÃƒÂ¼rkiyÃ‰â„¢") return "Türkiyə";
-  if (value === "Rusiya") return "Rusiya";
+  const normalized = normalizeSortText(value);
+  if (/azerbaycan|^az$/.test(normalized)) return "Azərbaycan";
+  if (/turkiye|^tr$/.test(normalized)) return "Türkiyə";
+  if (/rusiya|russia|^ru$/.test(normalized)) return "Rusiya";
+  if (/iran|^ir$/.test(normalized)) return "İran";
   return undefined;
 }
 
