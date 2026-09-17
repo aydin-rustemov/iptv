@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     env:
-      VOLO_BOOTSTRAP_CONCURRENCY: "4"
+      VOLO_BOOTSTRAP_CONCURRENCY: "6"
     steps:
       - uses: actions/checkout@v4
 
