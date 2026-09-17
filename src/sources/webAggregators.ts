@@ -309,8 +309,8 @@ function inferCountry(title: string, url: string, fallback: Country): Country {
 
   if (/azerbaycan|azerbaijan|azərbaycan|aztv|xezer|xəzər|ictimai|idman|medeniyyet|mədəniyyət|arb(?:\W|$)|arb24|cbc sport|cbc tv|baku tv|naxcivan|naxçıvan|qafqaz|kepez|kəpəz|kanal s/.test(value)) return "Azərbaycan";
   if (/rusya|russia|russian|россия|первый|пятый|нтв|рен(?:\W|$)|стс|тнт|звезда|карусель|пятница|матч|мир 24|твц|домашний/.test(value)) return "Rusiya";
-  if (/\biran\b|iranian|persian|farsi|irib|ifilm|press tv|iran international|voa persian|bbc persian|manoto|gem tv|simaye azadi|jame jam|sahar tv|irinn|شبکه|ایران/.test(value)) return "İran";
-  if (/\bturkiye\b|\btürkiye\b|\bturkey\b|\btürk\b|\bturk\b|\btrt\b|\bkanal d\b|\bshow tv\b|\bstar tv\b|\bnow tv\b|\btv8\b|\bteve2\b|\bkanal 7\b|\bbeyaz tv\b|\b360 tv\b|\bcnn türk\b|\bcnn turk\b|\ba haber\b|\bhabertürk\b|\bhaberturk\b|\bhaber global\b|\bhalk tv\b|\btgrt\b|\btv100\b|\btvnet\b|\ba spor\b|\bminika\b|\bdmax\b|\bpower türk\b|\bpowertürk\b|\bnumber 1 türk\b/.test(value)) return "Türkiyə";
+  if (/\biran\b|iranian|persian|farsi|irib|ifilm|press tv|iran international|voa persian|bbc persian|manoto|gem tv|persiana|tapesh|mihan tv|pars tv|simaye azadi|jame jam|sahar tv|irinn|pmc(?:\W|$)|شبکه|ایران/.test(value)) return "İran";
+  if (/\bturkiye\b|\btürkiye\b|\bturkey\b|\btürk\b|\bturk\b|\btrt\b|\batv\b|\bkanal d\b|\bshow tv\b|\bshow max\b|\bstar tv\b|\bnow tv\b|\btv8(?:\.5)?\b|\bteve2\b|\bkanal 7\b|\bbeyaz tv\b|\b360 tv\b|\btv4\b|\bflash haber\b|\bcnn türk\b|\bcnn turk\b|\bntv\b|\ba haber\b|\bhabertürk\b|\bhaberturk\b|\bhaber global\b|\bsözcü tv\b|\bsozcu tv\b|\bhalk tv\b|\btgrt\b|\btv100\b|\bbloomberg ht\b|\bülke tv\b|\bulke tv\b|\btvnet\b|\b24 tv\b|\ba para\b|\ba news\b|\bekotürk\b|\bekoturk\b|\btele1\b|\bulusal kanal\b|\ba spor\b|\bbein sports haber\b|\bht spor\b|\btjk tv\b|\bfb tv\b|\bgs tv\b|\btrt belgesel\b|\btrt 2\b|\bdiyanet tv\b|\byaban tv\b|\bminika\b|\bdmax\b|\btlc\b|\bdream türk\b|\bdream turk\b|\bkral pop\b|\bpower türk\b|\bpowertürk\b|\bnumber 1 türk\b|\bnumber 1 tv\b/.test(value)) return "Türkiyə";
 
   return fallback;
 }
@@ -361,11 +361,11 @@ function titleFromUrl(raw: string): string {
 }
 
 function cleanTitle(value: string): string {
-  return value.replace(/\b(?:canl[ıi]|yay[ıi]n|izle|watch|online|hd|kesintisiz)\b/giu, " ").replace(/\s+/g, " ").trim();
+  return value.replace(/\b(?:canl[ıi]|yay[ıi]n|izle|izlə|watch|online|hd|kesintisiz)\b/giu, " ").replace(/\s+/g, " ").trim();
 }
 
 function excluded(value: string): boolean {
-  return /radio|fm|webcam|kamera|camera|film|movie|dizi|series|fragman|trailer|vod|maç izle|mac izle/i.test(value);
+  return /radio|fm|webcam|kamera|camera|film|movie|dizi|series|fragman|trailer|vod|maç izle|mac izle|sitene tv ekle|siteye tv ekle|indi izle|indi izlə|hemen izle|hemen seyret|player aç|player ac|yayını aç|yayini ac|tıklayın|tiklayin/i.test(value);
 }
 
 function category(value: string): string {
