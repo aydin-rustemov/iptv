@@ -138,11 +138,20 @@ function inferEntryCountry(entry: Omit<PlaylistEntry, "url">, url: string): stri
   const base = normalizeCountry(entry.country ?? entry.groupTitle);
   const value = `${entry.name} ${entry.tvgName ?? ""} ${entry.tvgId ?? ""} ${entry.groupTitle ?? ""} ${url}`.toLocaleLowerCase("tr");
 
-  // Repair old playlists that were generated when Volo was incorrectly treated
-  // as a Turkey-only catalogue. Strong Iran/Persian identifiers override the
-  // stale group-title so the next generated playlist moves them to İran.
   if (/\biran\b|iranian|persian|farsi|irib|ifilm|press tv|iran international|voa persian|bbc persian|manoto|gem tv|persiana|tapesh|mihan tv|pars tv|simaye azadi|jame jam|sahar tv|irinn|pmc(?:\W|$)|شبکه|ایران/.test(value)) {
     return "İran";
+  }
+
+  if (/\baztv\b|\bxəzər tv\b|\bxezer tv\b|\bictimai tv\b|\barb24\b|\barb tv\b|\bspace tv\b|\breal tv\b|\bapa tv\b|\bidman tv\b|\bmədəniyyət tv\b|\bmedeniyyet tv\b|\bbaku tv\b|\bnaxçıvan tv\b|\bnaxcivan tv\b|\bqafqaz tv\b|\bkəpəz tv\b|\bkepez tv\b/.test(value)) {
+    return "Azərbaycan";
+  }
+
+  if (/\btrt(?:\s|\d|$)|\bkanal d\b|\bshow tv\b|\bstar tv\b|\bnow tv\b|\btv8(?:\.5)?\b|\bteve2\b|\bkanal 7\b|\bbeyaz tv\b|\b360 tv\b|\bcnn türk\b|\bcnn turk\b|\ba haber\b|\bhabertürk\b|\bhaberturk\b|\bhaber global\b|\bhalk tv\b|\btgrt\b|\btv100\b|\btvnet\b|\ba spor\b|\bminika\b|\bdmax\b/.test(value)) {
+    return "Türkiyə";
+  }
+
+  if (/\bроссия\b|\bпервый канал\b|\bнтв\b|\bтнт\b|\bстс\b|\bрен tv\b|\bрен тв\b|\bзвезда\b|\bкарусель\b|\bматч tv\b|\bматч тв\b/.test(value)) {
+    return "Rusiya";
   }
 
   return base;
