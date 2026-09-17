@@ -1,11 +1,14 @@
-export type Country = "Azərbaycan" | "Türkiyə" | "Rusiya";
+export type Country = "Azərbaycan" | "Türkiyə" | "Rusiya" | "İran" | "Beynəlxalq";
 export type Seed = { url: string; country: Country };
 export type Source = { name: string; seeds: Seed[]; hosts: string[] };
 export type ChannelPage = { url: string; title: string; country: Country };
 
+// Volo is a global catalogue, not a Turkey-only source. Channel pages are
+// classified individually by name/URL in webAggregators.ts. Unknown channels
+// stay Beynəlxalq instead of being incorrectly published under Türkiyə.
 const VOLO_SEEDS: Seed[] = Array.from({ length: 23 }, (_, index) => ({
   url: `https://tv.canlitvvolo.com/?sayfa=${index + 1}`,
-  country: "Türkiyə"
+  country: "Beynəlxalq"
 }));
 
 export const SOURCES: Source[] = [
