@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-09-16T21:51:13.080Z",
-  "published": 990,
-  "verifiedWorking": 1128,
+  "updatedAt": "2026-09-17T05:25:34.360Z",
+  "published": 971,
+  "verifiedWorking": 1098,
   "discovery": {
     "maintenance": {
-      "previous": 1001,
-      "preserved": 964,
-      "replaced": 17,
-      "removed": 20,
+      "previous": 990,
+      "preserved": 907,
+      "replaced": 55,
+      "removed": 28,
       "added": 9,
-      "published": 990
+      "published": 971
     },
     "lockedStaticChannels": [
       {
@@ -49,7 +49,7 @@
       }
     ],
     "canliTv": {
-      "updatedAt": "2026-09-16T21:23:22.805Z",
+      "updatedAt": "2026-09-17T04:58:55.146Z",
       "source": "canlitv-az",
       "ok": false,
       "error": "EAI_AGAIN: fetch failed"
@@ -61,8 +61,8 @@
         "seedPages": 1,
         "channelPages": 315,
         "processedPages": 315,
-        "manifestCandidates": 210,
-        "entries": 210
+        "manifestCandidates": 213,
+        "entries": 213
       },
       {
         "source": "canlitv-date",
@@ -70,8 +70,8 @@
         "seedPages": 1,
         "channelPages": 273,
         "processedPages": 273,
-        "manifestCandidates": 182,
-        "entries": 181
+        "manifestCandidates": 183,
+        "entries": 182
       },
       {
         "source": "canlitv-me",
@@ -97,8 +97,8 @@
         "seedPages": 23,
         "channelPages": 605,
         "processedPages": 600,
-        "manifestCandidates": 517,
-        "entries": 492
+        "manifestCandidates": 534,
+        "entries": 510
       },
       {
         "source": "canlitv-watch",
@@ -133,8 +133,8 @@
         "seedPages": 1,
         "channelPages": 83,
         "processedPages": 83,
-        "manifestCandidates": 168,
-        "entries": 145
+        "manifestCandidates": 171,
+        "entries": 148
       },
       {
         "source": "tvstream-az",
@@ -142,8 +142,8 @@
         "seedPages": 1,
         "channelPages": 14,
         "processedPages": 14,
-        "manifestCandidates": 155,
-        "entries": 155
+        "manifestCandidates": 171,
+        "entries": 171
       }
     ],
     "m3uSourceFailures": []

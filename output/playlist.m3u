@@ -24,21 +24,20 @@ https://cdn4.yayin.com.tr/kntv/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="arb-az" tvg-name="ARB" group-title="Azərbaycan",ARB
 https://str.yodacdn.net/arb/tracks-v1a1/mono.ts.m3u8
 #EXTINF:-1 tvg-id="cbc" tvg-name="CBC" group-title="Azərbaycan",CBC
-https://yayin2.canlitv.fun/live/cbc.stream/playlist.m3u8?hash=b6e23a42839c2de89ab58698ce1365cf
+https://yayin2.canlitv.fun/live/cbc.stream/playlist.m3u8?hash=77831054f25fd4f31cd1ec9a8430d8d6
 #EXTINF:-1 tvg-id="ictimai-tv" tvg-name="İctimai TV" group-title="Azərbaycan",İctimai TV
-https://bstelevision.com/proxy.php?mode=proxy&url=https://st2.mediabay.tv/IctimaiTV/playlist.m3u8?token=f1bdeda1f39ea4df3768e99a715e37bb32a61d5b-99e0dea32e86bbc70ce9f21e94828dc2-1789604456-1789593656
+#EXTVLCOPT:http-referrer=https://ictimai.tvstream.az/
+https://ictimai.tvstream.az/hls/stream6/index.m3u8
 #EXTINF:-1 tvg-id="space-tv-az" tvg-name="Space TV" group-title="Azərbaycan",Space TV
 https://str.yodacdn.net/space/tracks-v1a1/mono.ts.m3u8
 #EXTINF:-1 tvg-id="az-rbaycan-alvin-channel" tvg-name="Alvin Channel" group-title="Azərbaycan — Digər",Alvin Channel
 https://cdn10-alvinchannel.yayin.com.tr/alvinchannel/alvinchannel/chunklist_w1034510641.m3u8
-#EXTINF:-1 tvg-id="az-rbaycan-fortuna-tv" tvg-name="Fortuna TV" group-title="Azərbaycan — Digər",Fortuna TV
-https://edge2.taksimbilisim.com/ftvturk/bant1/chunks.m3u8
 #EXTINF:-1 tvg-id="az-rbaycan-sitene-tv-ekle" tvg-name="Sitene TV Ekle" group-title="Azərbaycan — Digər",Sitene TV Ekle
 https://dogusdyg-star.lg.mncdn.com/dogusdyg_star/live.m3u8?st=tciCyCSlx8UgFKvwZSwbrA&e=1789648744
 #EXTINF:-1 tvg-id="az-rbaycan-star-tv" tvg-name="Star TV" group-title="Azərbaycan — Digər",Star TV
 https://dygvideo.dygdigital.com/live/hls/startv4puhu/live.m3u8
 #EXTINF:-1 tvg-id="arb24" tvg-name="ARB24" group-title="Azərbaycan — Xəbər",ARB24
-https://yayin2.canlitv.fun/live/arb24.stream/playlist.m3u8?hash=b6e23a42839c2de89ab58698ce1365cf
+https://yayin2.canlitv.fun/live/arb24.stream/playlist.m3u8?hash=77831054f25fd4f31cd1ec9a8430d8d6
 #EXTINF:-1 tvg-id="az-rbaycan-kanal-d" tvg-name="Kanal D" group-title="Azərbaycan — Digər",Kanal D
 #EXTVLCOPT:http-referrer=https://tr.canlitv.watch/kanal-d
 https://tr.canlitv.watch/cixo/kanald.m3u8?t=89b46c3965a541aca7d45f37db1a0f7b0bcd7032bc970e63d13d46b1cbc7c74a
@@ -58,7 +57,7 @@ https://str.yodacdn.net/eltv/tracks-v1a1/mono.ts.m3u8
 #EXTINF:-1 tvg-id="az-rbaycan-gunaz-tv" tvg-name="Günaz TV" group-title="Azərbaycan — Digər",Günaz TV
 https://tv.gunaz.tv/hls/live.m3u8
 #EXTINF:-1 tvg-id="dunya-tv" tvg-name="Dünya TV" group-title="Azərbaycan",Dünya TV
-https://yayin2.canlitv.fun/live/dunyatv.stream/playlist.m3u8?hash=b6e23a42839c2de89ab58698ce1365cf
+https://yayin2.canlitv.fun/live/dunyatv.stream/playlist.m3u8?hash=77831054f25fd4f31cd1ec9a8430d8d6
 #EXTINF:-1 tvg-id="atv-tr" tvg-name="ATV" tvg-logo="https://i.imgur.com/HyVUwFC.png" group-title="Türkiyə — Ümumi",ATV
 https://tvaktuellr.iptv-playoutcenter.de/tvaktuellr/tvaktuellr.stream_1/chunks.m3u8
 #EXTINF:-1 tvg-id="show-tv" tvg-name="Show TV" group-title="Türkiyə — Ümumi",Show TV
@@ -141,8 +140,6 @@ https://live.duhnet.tv/S2/HLS_LIVE/eurodnp/playlist.m3u8
 https://live.artidijitalmedya.com/artidijital_astv/astv/playlist.m3u8
 #EXTINF:-1 tvg-id="LifeTV.tr@SD" tvg-name="Life TV (720p) [Not 24/7]" tvg-logo="https://i.imgur.com/lWeJxm0.png" group-title="Türkiyə — Xəbər",Life TV (720p) [Not 24/7]
 https://live.artidijitalmedya.com/artidijital_lifetv/lifetv/playlist.m3u8
-#EXTINF:-1 tvg-id="MekameleenTV.tr@SD" tvg-name="Mekameleen TV (1080p)" tvg-logo="https://i.imgur.com/q7iVchl.png" group-title="Türkiyə — Xəbər",Mekameleen TV (1080p)
-https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="OlayTurkTV.tr@SD" tvg-name="Olay Türk TV Kayseri (720p) [Geo-blocked]" tvg-logo="https://i.imgur.com/e9ca6gc.png" group-title="Türkiyə — Xəbər",Olay Türk TV Kayseri (720p) [Geo-blocked]
 https://live.artidijitalmedya.com/artidijital_olayturk/olayturk/playlist.m3u8
 #EXTINF:-1 tvg-id="GuneydoguTV.tr@SD" tvg-name="Guneydogu TV (720p)" tvg-logo="https://i.imgur.com/JT5pp3Y.png" group-title="Türkiyə — Xəbər",Guneydogu TV (720p)
@@ -175,14 +172,12 @@ https://live.artidijitalmedya.com/artidijital_mercantv/mercantv/playlist.m3u8
 http://canli.tvden.com.tr/hls/live.m3u8
 #EXTINF:-1 tvg-id="turkiy-canakkale-tv" tvg-name="ÇANAKKALE TV" group-title="Türkiyə — Ümumi",ÇANAKKALE TV
 https://live.artidijitalmedya.com/artidijital_tontv/tontv/playlist.m3u8
-#EXTINF:-1 tvg-id="turkiy-duzce-tv" tvg-name="DÜZCE TV" group-title="Türkiyə — Ümumi",DÜZCE TV
-https://bstelevision.com/proxy.php?mode=proxy&url=https://yayin1.canlitv.fun/canlitv/duzcetv.stream/playlist.m3u8?hash=444aa5e1053c1f4d54b690363b0ea49b
 #EXTINF:-1 tvg-id="turkiy-edessa-tv" tvg-name="EDESSA TV" group-title="Türkiyə — Ümumi",EDESSA TV
 https://canli.edessatv.com/hls/stream.m3u8
 #EXTINF:-1 tvg-id="turkiy-formula-tv-georgia" tvg-name="FORMULA TV GEORGİA" group-title="Türkiyə — Ümumi",FORMULA TV GEORGİA
 https://c4635.cdn.xsg.ge/c4635/TVFormula/mono.m3u8
 #EXTINF:-1 tvg-id="turkiy-fortuna-tv-az" tvg-name="FORTUNA TV AZ" group-title="Türkiyə — Ümumi",FORTUNA TV AZ
-https://edge1.socialsmart.tv/ftvturk/bant1/playlist.m3u8
+https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master_1660.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9NS8xMi8yMDE4IDEwOjExOjA2IFBNJmhhc2hfdmFsdWU9cGtzUElvZjBwOUFIcDZRenpxQmxLdz09JnZhbGlkbWludXRlcz01
 #EXTINF:-1 tvg-id="turkiy-genius-tv" tvg-name="GENİUS TV" group-title="Türkiyə — Ümumi",GENİUS TV
 https://mts1.iptv-playoutcenter.de/mts/mts-web/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9NS8xMi8yMDE4IDEwOjExOjA2IFBNJmhhc2hfdmFsdWU9cGtzUElvZjBwOUFIcDZRenpxQmxLdz09JnZhbGlkbWludXRlcz01
 #EXTINF:-1 tvg-id="turkiy-ilke-tv" tvg-name="İLKE TV" group-title="Türkiyə — Ümumi",İLKE TV
@@ -200,7 +195,7 @@ https://yayin.slowkaradeniztv.com:3390/hybrid/play.m3u8
 #EXTINF:-1 tvg-id="turkiy-kika-tv" tvg-name="KİKA TV" group-title="Türkiyə — Ümumi",KİKA TV
 https://kikahls.akamaized.net/hls/live/2022690/livetvkika_ww/master.m3u8
 #EXTINF:-1 tvg-id="turkiy-marao-tv-georgia" tvg-name="MARAO TV GEORGİA" group-title="Türkiyə — Ümumi",MARAO TV GEORGİA
-https://geohd.canlitvplayer.com/marao/index.m3u8?token=LqYXPdBAuJoQkhQHX-OVFi6d4c65WF51anz8_yAtdtk3X2yJwydIqsPoHP-Hzd3P1Gx_rUB2KtB7A1Qok2-7_1ak34u7vdoLGME-r-IEoYjMcOBwG06GMVm6gLgZOo7CslqZ37mWdh4lB13zHxyDGMdVg4GNG0fxfEBmX9hUmoSYz4sHGzg3U3Na93if6h1Y6G_FH-dCdUgsqX1FhmmSz1fAG7lH_VRJffwjpkuJr0UIIwRLwDeTd-LXU4SdpwJr
+https://geohd.canlitvplayer.com/marao/index.m3u8?token=59BCnECo_fzHEkzTcmjz9p4ivu0Q1D46ptc9OvAZ1GHSzQvXA4uTIDz4fwZlDx8RvNKVcxh5GBJc-B6DXPfiGvz_JDrbEIMLB2uUYT4LeWuq-NmL_L8p0o9PVKHB2Q7znqYzxNh_bup3RrF3Uec1Pyn_r3WGnxoeGnWuTdB0Qh9yQDwr6f4YssKZBmt7Fz4nkJAwRMY74vVMM59pPHDUJcJ-gnj5cDwGEL_Xq62Eqmp4gN0Vh8jobGIk4TjOMQMj
 #EXTINF:-1 tvg-id="turkiy-metropol-tv" tvg-name="METROPOL TV" group-title="Türkiyə — Ümumi",METROPOL TV
 https://edge.taksimbilisim.com/metropoltv/smil/playlist.m3u8
 #EXTINF:-1 tvg-id="turkiy-natural-ntr-tv" tvg-name="NATURAL NTR TV" group-title="Türkiyə — Ümumi",NATURAL NTR TV
@@ -208,7 +203,7 @@ https://edge.taksimbilisim.com/naturaltv/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="turkiy-ndr" tvg-name="NDR" group-title="Türkiyə — Ümumi",NDR
 https://ndrint.akamaized.net/hls/live/2020766/ndr_int/master.m3u8
 #EXTINF:-1 tvg-id="turkiy-pos-tv" tvg-name="POS TV" group-title="Türkiyə — Ümumi",POS TV
-https://geohd.canlitvplayer.com/postv/index.m3u8?token=Hptw_mkLrefeuCTjGEpBXAwWy4MdtHOn4DF1KgxCSA0xDafwDFxM7HSJa-RszFzyePx03V-HwKCI3tx6d4Pxi1xeN9rp3rSA65fig6-fOuzUJ1KJ8L9HsaxUCsxBJqkz812Wxx-m_cafCe9Am-t3k35quGjYiP1Qh53qx51BKTNJP09pSX_5y0SZpPVS7P8hfDKckRKsRozEWE3CpP224w-3xY0x71qxBXWQB9eo9ygnO_xNnuzdLvooT7LZfVVl
+https://geohd.canlitvplayer.com/postv/index.m3u8?token=R81G9i_TwUjygLrBIxJoBLMJ_ZYmX7GrFtpG8N1tBi5wpnEesd_1St-nJ9tJRfJ4eHNuPA4cqGCGU_uSLj8u926n1JneuHj8cpjgYg9_7lHr0rLca3k7WBfbiKm3BlXdYUoqPZ_FWzBaA5yvpHmskmgwjSHRdUhny5rXqZn-39YEqRQdL787D3JunkM3TgcqFO3JtaqjyLUJqo76ZXoFhpy-O-Se_qI-QAD_3hLGKinsuTXQo6E3trJ6PnqF8C2m
 #EXTINF:-1 tvg-id="turkiy-time-tv-35" tvg-name="TİME TV 35" group-title="Türkiyə — Ümumi",TİME TV 35
 https://cdn-time35tv.yayin.com.tr/time35tv/time35tv/playlist.m3u8
 #EXTINF:-1 tvg-id="turkiy-tirol-tv" tvg-name="TİROL TV" group-title="Türkiyə — Ümumi",TİROL TV
@@ -225,16 +220,10 @@ https://playlist.fasttvcdn.com/pl/rfrk9821hdy9dayo8wfyha/aile-tv/playlist/0.m3u8
 https://worldturktv.radyotelekom.com.tr:3971/live/worldturktvstreamlive.m3u8
 #EXTINF:-1 tvg-id="turkiy-zvezda-tb" tvg-name="ZVEZDA TB" group-title="Türkiyə — Ümumi",ZVEZDA TB
 https://tvchannelstream1.tvzvezda.ru/cdn/tvzvezda/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Ny82LzIwMTggOToxNzoyOSBQTSZoYXNoX3ZhbHVlPVE0SGR3UHJ5S2V3QUV4QWczZGlLU0E9PSZ2YWxpZG1pbnV0ZXM9NQ==
-#EXTINF:-1 tvg-id="bein-sports-haber" tvg-name="beIN Sports Haber" group-title="Türkiyə — İdman",beIN Sports Haber
-https://bstelevision.com/proxy.php?mode=proxy&url=https://tgn.bozztv.com/gin-dvrfl05/gin-beinsportshaber/index.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9OS8xNi8yMDI2IDEyOjM5OjAxIFBNJmhhc2hfdmFsdWU9YmlvaVpPdWNoSklEWGdQelByMklBdz09JnZhbGlkbWludXRlcz0xNDQwJnN0cm1fbGVuPTMx
 #EXTINF:-1 tvg-id="ekoturk-tv" tvg-name="Ekotürk TV" group-title="Türkiyə — Xəbər",Ekotürk TV
 https://cdn.ekoturk.net/hls/master.m3u8
-#EXTINF:-1 tvg-id="gs-tv" tvg-name="GS TV" group-title="Türkiyə — İdman",GS TV
-https://bstelevision.com/proxy.php?mode=proxy&url=https://tgn.bozztv.com/gin-dvrfl05/gin-beinsportshaber/index.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9OS8xNi8yMDI2IDEyOjM5OjM2IFBNJmhhc2hfdmFsdWU9aEo4ZEI1ZVNUUXFYUmM1allsNUpZQT09JnZhbGlkbWludXRlcz0xNDQwJnN0cm1fbGVuPTMx
 #EXTINF:-1 tvg-id="number-1-turk" tvg-name="Number 1 Türk" group-title="Türkiyə — Musiqi",Number 1 Türk
 https://b01c02nl.mediatriple.net/videoonlylive/mtkgeuihrlfwlive/broadcast_5c9e187770143.smil/playlist.m3u8
-#EXTINF:-1 tvg-id="sozcu-tv" tvg-name="Sözcü TV" group-title="Türkiyə — Xəbər",Sözcü TV
-https://bstelevision.com/proxy.php?mode=proxy&url=https://tgn.bozztv.com/gin-trn09/gin-sozcutv/index.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9OS8xNi8yMDI2IDEyOjM2OjU2IFBNJmhhc2hfdmFsdWU9VzNMWitYS3loNVdyUWRkT1gzOEl1QT09JnZhbGlkbWludXRlcz0xNDQwJnN0cm1fbGVuPTIx
 #EXTINF:-1 tvg-id="turkiy-19-corum-tv" tvg-name="19 ÇORUM TV" group-title="Türkiyə — Ümumi",19 ÇORUM TV
 https://live.euromediacenter.com/kanal19/index.m3u8
 #EXTINF:-1 tvg-id="turkiy-altas-tv-ordu" tvg-name="ALTAŞ TV ORDU" group-title="Türkiyə — Ümumi",ALTAŞ TV ORDU
@@ -242,7 +231,7 @@ https://edge1.taksimbilisim.com/altastv/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="turkiy-ard" tvg-name="ARD" group-title="Türkiyə — Ümumi",ARD
 https://derste247liveint.akamaized.net/hls/live/662735/daserste_int/master.m3u8
 #EXTINF:-1 tvg-id="turkiy-arteria-tv" tvg-name="ARTERİA TV ლაივი" group-title="Türkiyə — Ümumi",ARTERİA TV ლაივი
-https://geohd.canlitvplayer.com/artarea/index.m3u8?token=Lq1OvzMckwbYnmNQPDmJJQ_BslZXkXwP6ZZb7X5u3ZzZ392eFGZtCi0CcUaXVfyVYTcd0kPQBUYiproNJYkPiktDLIVMPLFaM46wVj5z7X0lfl20E_bSUB3QmPqc7xhWAOezC14V29nf2zzL44AfpsK2u9FKUReQxFwJzv_wuDWRsGpC0IiJ4w8ENLp8WfnBfdEqI6YxsZy01DWDCZbIvDRXU7AnMhmZpsbgSwFBVppIu4chle64fFvf2QIvRMBL
+https://geohd.canlitvplayer.com/artarea/index.m3u8?token=2X4wr4tYOjdU1TFT2MMJFH-6uYDL8zRaVp8dTam1ou8cTNK9_HvPA2W2g51ccovGZk7iDv5KYV5LdCSLVDIL8vAZFLabj5Vw_q0_b6QiEc0zIQM7DVxmgnEo_vn2oKZYlx9PbfV997iL_uXtA-TVCaiaJi-gOuy0hUAxjoP4SngU3TWyDz48oKP8v3iSjX-8lqkXmTeNSYbQ4Qs--weeyuNfpOFUkRMkBWa6JrMYbnmCem4yY82hSFuatnRzr5T8
 #EXTINF:-1 tvg-id="turkiy-brt-2-tv" tvg-name="BRT 2 TV" group-title="Türkiyə — Ümumi",BRT 2 TV
 https://edge.kuzeykibrissmart.tv/brt2hd/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="turkiy-cem-tv" tvg-name="CEM TV" group-title="Türkiyə — Ümumi",CEM TV
@@ -258,15 +247,15 @@ https://live.artidijitalmedya.com/artidijital_estv/estv/playlist.m3u8
 #EXTINF:-1 tvg-id="turkiy-finans-turk-tv" tvg-name="FİNANS TÜRK TV" group-title="Türkiyə — Ümumi",FİNANS TÜRK TV
 https://yayin30.haber100.com/live/finansturk/playlist.m3u8
 #EXTINF:-1 tvg-id="turkiy-gds-tv" tvg-name="GDS TV" group-title="Türkiyə — Ümumi",GDS TV
-https://geohd.canlitvplayer.com/gdstv/index.m3u8?token=CEotATcO3L_8dfoyerJQGJ5RR-XDZOm5eNaitHaENW-mzPRbb4ZOq6qQfK8xhTqC0mnIxzYi0yuZMExah9sCb8pIAeMvX_fXznvN5otpFwrux1K3SorQ4dXHKfrHgRc7ZHAl0hne-EGa2QZNAimdObQNU5SqX6j8UB8dabl9xJ9VDjB23LGhsZkWhS2zTwMqanVxwgbLDu8Mb_byQiY7ZZRH5ObfCKM3O_UY74dJ6BpPg61Lf_Dg51uyZIQmdVSF
+https://geohd.canlitvplayer.com/gdstv/index.m3u8?token=Z6ytlasKIPEVfovaNLSrYCqP8dc9GjwsvVYzTGw46jC5Tcb-Zrn5yCjPpXGRgSZAmcsD88niKCaRtRqg1YULy_-VJDQxm6kjbFp0DSQW7FUP6xkRkQcszp0frCHuyZXxchPfg3Li01OXOprdomnEks_yEYSlSV42HeR1quzIHRZPkVPmHEb8Y8jSvXfmQl2k8y4tvVdC57HaW7qeYdi1kW0P9AQ_ALsfjmcml4mufsJA3uwy9RrUlMaaSI_rGxX4
 #EXTINF:-1 tvg-id="turkiy-haber-61-tv" tvg-name="HABER 61 TV" group-title="Türkiyə — Xəbər",HABER 61 TV
 https://cdn1-haber61tv.yayin.com.tr/haber61tv/playlist.m3u8
 #EXTINF:-1 tvg-id="turkiy-hadi-tv-az" tvg-name="HADİ TV AZ" group-title="Türkiyə — Ümumi",HADİ TV AZ
 https://bucharest.zeuscdn724.com/lb0/H3/index.m3u8
 #EXTINF:-1 tvg-id="turkiy-ber-a-tv-canl-tv" tvg-name="IBERIA TV Canlı იბერია TV (ლაივი)" group-title="Türkiyə — Ümumi",IBERIA TV Canlı იბერია TV (ლაივი)
-https://geohd.canlitvplayer.com/formula/index.m3u8?token=7Xjv41a0xWUpjhk9MVA_FD4LBE8l4kNBy9txqyml4kyesY7CKVrm0ah8OrfdCDoiehykNWi4w2A2XsEv1kRZJEamD0OHzGTQYpYGVr9ct8v9UMv9My0AioSFV-WGPcNXqfZuScYsay_ryvYGTKnsPcbjXR-iYhX9A8LCdjBWx1Wq29F508e0NvSabsle9WhS5_s0UrdrqFKWHZ8PYATZZm580_I0bfnsfT6smJPFLvDlPfyZ_x5OOLfzGnvr00U8
+https://geohd.canlitvplayer.com/formula/index.m3u8?token=bAG0CbSuoe0v3_9W9eBA0lZg2YUYVvuTO28YGGapZGwwi6mLJwaCmVwki55_sDgobkHq5rOna433KJIKl5DbRIjdw_Dp8lOFytIlsAcQTuTeay9my4LRAXg4BrSGKjjlq0AIRtAzH3ZuiVyy1t9mnFKCSuJwMFsNWLds6rv3y4EQe4jZs7maMdct99m9Wk-qHCMpB-XmnVPbXn4NZgBxvkJYIAg9tdeAIXxNkQCN5o36zaKlq6cqMKQsw6iw59F-
 #EXTINF:-1 tvg-id="turkiy-merv-z-a-tv-geo" tvg-name="IMERVIZIA TV GEO" group-title="Türkiyə — Ümumi",IMERVIZIA TV GEO
-https://geohd.canlitvplayer.com/imervizia/index.m3u8?token=GD-kLgEUgaEGpf4K-krBcgbzlVgFbf6tGL6S6U7Jc_-9iTUeFA0Wj8URa6JvbXXw2YgK71bUlUcuP2F-HHpYezwArYK0QcBo8inMmlqW2QDMwFw1hH5PsQ3rPesFW_4KAJJBYwn6mRN0pGRHKn4SPom0uDqcT_6pjEiGfv8uRmQBEHX-bNlNr0HdPCrtTYtgm26IZeybfODdlzpmw3rqNKTALGWa4ykwELHgokJdyqsfmyytveO90OS2GKhQ5PHo
+https://geohd.canlitvplayer.com/imervizia/index.m3u8?token=wzd7eK5mXh_26lFVAB8wSU1GMdfp34QE7_22PC4EFKexWutKLICVrULk4oiv3NfDERhRvaa1MmU27RUVIASmyZO13ONlNCAbQhAOPf5y9hJWH7nAVOpvk3d58lMl6FjF5_t5_odhB1rIawR_ngEgIAV-Eer9-5mHVo40fUVJw4Oa29v0uFh0VLwSK4fHqGzPpzP_FnAzuoAIJuoijIefPTAEE2LZMRmDyPAMiIqtL_sMVl3jSo_JtBJgInYclxZ5
 #EXTINF:-1 tvg-id="turkiy-kanal-32-sparta" tvg-name="KANAL 32 ISPARTA" group-title="Türkiyə — Ümumi",KANAL 32 ISPARTA
 https://edge.taksimbilisim.com/kanal32/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="turkiy-kanal-6-tv" tvg-name="KANAL 6 TV" group-title="Türkiyə — Ümumi",KANAL 6 TV
@@ -276,7 +265,7 @@ https://tv.kanalb.tr/hls/kanalb/index.m3u8
 #EXTINF:-1 tvg-id="turkiy-kanal-t" tvg-name="KANAL T" group-title="Türkiyə — Ümumi",KANAL T
 https://edge.kuzeykibrissmart.tv/kanalt/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="turkiy-kavkas-a-tv" tvg-name="KAVKASIA TV" group-title="Türkiyə — Ümumi",KAVKASIA TV
-https://geohd.canlitvplayer.com/caucasia/index.m3u8?token=xLEEwP_71k48XrknNZ5Ha4a4r5R-JjmnuCFpLfktiV8fZ8K7Qdsspn0N5D6B-OuGotlD1kTGomrzfzHXrrEXzHfSkjRJaPvDLySbgTSVDLV6hzI4Hp0xbvpgHekiH1V6TnSiJP86z9nORjdQHm7bgt2zJdh6fEK0zwW8iucH-QW3SZoAxCkCNCRgTFXjEJbOqi2v48kGDRT6Y2UC1TjhEdurSV6rgxn8hien3kLV1WoDb4uUPlCPL592qryK0WYW
+https://geohd.canlitvplayer.com/caucasia/index.m3u8?token=GZdztdoIusvHIzIqvg7K29JBgTpW-HGPBLc2BG1j5RsWK0k8C1jKEQaD3-eR_SZpFIzb52PPgMf8DTOWRvEy0SyC0uQGwF5adE91CofAASnCxYYdW97rtCV6KlAbN3qY8UAU_F6cYWa28bWdqZvATXz9aG9cBXF8ot3lPm1MT2hEGl1lgHiMJ5vf6MNZK-E5DaSC1qj64StogsjUtLj6BXvoa5Hfi8I-gx4WER9Q-RZYV2QIRv1E0ElTDblGQoNX
 #EXTINF:-1 tvg-id="turkiy-k-br-s-genc-tv" tvg-name="KIBRIS GENÇ TV" group-title="Türkiyə — Ümumi",KIBRIS GENÇ TV
 https://edge.kuzeykibrissmart.tv/kibrisgenctv/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="turkiy-kudus-tv" tvg-name="KUDÜS TV" group-title="Türkiyə — Ümumi",KUDÜS TV
@@ -284,35 +273,35 @@ https://yayin3.haber100.com/kudustvapp/kudustv/playlist.m3u8
 #EXTINF:-1 tvg-id="turkiy-lalegul-tv" tvg-name="LALEGÜL TV" group-title="Türkiyə — Ümumi",LALEGÜL TV
 https://lbl.netmedya.net/hls/lalegultv.m3u8
 #EXTINF:-1 tvg-id="turkiy-obieqtivi-tv-geo" tvg-name="OBİEQTİVİ TV GEO" group-title="Türkiyə — Ümumi",OBİEQTİVİ TV GEO
-https://geohd.canlitvplayer.com/obiektivi/index.m3u8?token=2JkzotnV_QS7z9bu2norRFj_PAZVn-4DsZwSQ4gFpIIxcT6RH0JF_5WP5D6lft_Pj4cyVc-rDLJe7Z8vqsCKUDEc3FUXRV1kL64qBWV_HWrVt6MX7zchwjzTW23aKfI61LxzVoWq7djeax-ySlhrmyfDbnPRD3xMtDrjIV1YXE2EK4EKyD1TN7taqI5l3oIhuQJVtSZ2WC_LvI31m42dY-GRymmPtTOVTe1mSngawu4Os0c-0380ogcrVbkdu5AP
+https://geohd.canlitvplayer.com/obiektivi/index.m3u8?token=WWU0G5HO9k5l3gkqWOnM51RfzoJ7_7S8Y4RBv71_3CpY9bkMYMwt3UnKcXrehn9peMxyP__w_OHTyKGMe6OR9SPoFNcXLJbp66ZF12WFLqtgWuwcTwP4LTkCKfRbkG2btQjk3tpVf7BHxF8W0QQf653B8glSqgJBeD1IRsUw34YIM2zXyvrHgGJtV0uHtnRei1f5kykTwsS38O9k2R74tTtXqQHJX3cfdaeT-B9ziRTh0eP4QGVGh5mERYvX0vVs
 #EXTINF:-1 tvg-id="turkiy-rioni-tv" tvg-name="RİONİ TV ( რიონი )" group-title="Türkiyə — Ümumi",RİONİ TV ( რიონი )
-https://geohd.canlitvplayer.com/rioni/index.m3u8?token=b5TBL66qj3o0zf8hdqq2DNAy2MhSC-XObIeBRAWoS5SDoAQ4psFqbbL0xSc61GZYT89TutrGb7YjRLkGC_mij-Qof2xz6VRPrfLwA0VwU7ggQ3XcLBK7R218q4-BGrFdDCLh4IPHla0cWCy6IZ3Sr4xnz26HZvojtfSXMRDEt7ju9auymHGXqDa90aVfedaqJM0w7CACFrQg_n2p4QSvFl8Bm7cWFvGCLFFVMIU_kz2lugx4qC-4goThKPhdPt7g
+https://geohd.canlitvplayer.com/rioni/index.m3u8?token=mFuhv48YdbjoTz4bN4TBBtwfu1LfH76S8dnbvDLPKMlQdeegdnohbtRRnzySYeIPN9S5vclAy9TAcqQOMOM_CW2ArmvielwUe9JCMzeDcha0QoifXc_iTpQ6kd_nOaY1DZWqF59dKA6RA2gNbek0_40xFcdRXDOHww8v0WLF507RC94qGobtZsic7L5xU5ffvPHvYMG6ZiG18XjkzoP-DwXlhDPqRdHZLjrK-BQDPwdrH7AwJCjtI2e3kZRYGdmY
 #EXTINF:-1 tvg-id="turkiy-rustavi-2" tvg-name="RUSTAVİ 2" group-title="Türkiyə — Ümumi",RUSTAVİ 2
-https://geohd.canlitvplayer.com/rustavi2hqnew/index.m3u8?token=8pBh6wRq9SLFLdwBQgadMN3P6pilodD6ctPgUiRPCDDgEt3ugywCTOLzQq6sLwWno1AOvNBJL4hSZt9TiJz1exPDiX2A5Mbx348z8-6ze29Vavz_gjwTB2N3A-swAyDnYC1ZTiXTXabbj4T_ZU2Q9CEJ9H00FZjxClg-uL45fmFg2esZrgUujyKyP6fF-fKb3VYiSoR3V0A5CN2lUeck4FCXQsOyoofpC1fsoaYaQj7rpKKsFT1s5Cavm04Bm4Ux5XAJ_8l4h6HiQ5OLvNeqGA**
+https://geohd.canlitvplayer.com/rustavi2hqnew/index.m3u8?token=9PhRf7aGoTioCUDDlMXZNX614hIgTUUD2PTMPEQVeIfojXVpifhezIYkDQiJS9NBM25ZtrZyku8DAPH6HzH2BH3bSurwVYlyYBJjKRWMcdTIE5t0G6Be7tmsaJ_c-W_5NgE30EAO2bH9pAnDHsTQmLwC_FibDj60v7rH3zFbx5aC6DSg63l_Qfdk4Qw6Nzg6Pvhip2CO4_gAtK2Hnc500fjkj_1HnD_faJxQOSWbN0xqxvDd51_A70QYckCa0aGKn8dMol0lyi55R-d66ehawA**
 #EXTINF:-1 tvg-id="turkiy-starv-s-on-tv-georgia" tvg-name="STARVISION TV Georgia" group-title="Türkiyə — Ümumi",STARVISION TV Georgia
-https://geohd2.canlitvplayer.com/starvision/index.m3u8?token=UN0QalOyEUDFWiyjd0mwfOuTmS3gK1FIHqoprSx0bMr1o3Bm95Nib2AfV93wQ-no4GEvvqOhquTNa4uMyo09tGecKfYfELEf9262-iBCo5ftKgKKfrdJI_rBDpqlYnkUit7FUNv0Hk-U3EylB8Emt8vHBT66FqTSUrK015yrW4Yu7lRs-x_IzZbwMYyQ1KtV_BlB9AUXBsWsBc9Njes7twTSfkrFBHEzLbHJg1Cf2c-WpCDvTmj98YCRErXctyOYYsPTAiUhTEai1GjswzKQjg**
+https://geohd2.canlitvplayer.com/starvision/index.m3u8?token=msHu0w0UNcd7zLmjHIyoDnLUaQwhBzA8FulDQZ7ZOvCuzMPjvbYRqXHFNFXkpCQWVK75imZCBmOsYf_KDph8BTw0-KJNgrjX8Ds7SyePHsayy_bdRWbZIn6CRPM7DD2ecIhuo3mEP9GzseJKDlDpV8sNTmdrrBnMhx8GstUNWomxRn5LknD7JDoGI03_cjRmCYZiaX8e7RUQEb0JQR1tJlpsCpFG7MKpdvAgsMVPXtgMCISpO5rX_H8hMMlUsAAlX6Xy3zGvW2JRznqn6Uc_qQ**
 #EXTINF:-1 tvg-id="turkiy-tagesschau24-de" tvg-name="Tagesschau24 De" group-title="Türkiyə — Xəbər",Tagesschau24 De
 https://tagesschau.akamaized.net/hls/live/2020115/tagesschau/tagesschau_1/master.m3u8
 #EXTINF:-1 tvg-id="turkiy-teleokul-geo" tvg-name="TELEOKUL GEO - ტელესკოლა" group-title="Türkiyə — Ümumi",TELEOKUL GEO - ტელესკოლა
-https://geohd2.canlitvplayer.com/teleskola/index.m3u8?token=PAEm8dlxWBx3RNYTssxgHW0ScX0KZ6Q2ZaKYzMknXBnj-6VCVUSWbZni8QPZ6-eoJriOn58smO6uXVKyz7gi5ayd7Dfyaulu8PpKGPC4dQvMtAdFS8EtyIX9A8bPUZYmOStJkdxGkEtap7uu0NCFSi4aCbd4oCHNVRPPo7NfAmURFoXwWTJv_IvPhE-iLEtw8zWm28g7AFsqLnYbLTVozfLeAs3FeT0A0tlo5lUpDpj3G92U5uPfKvP28ZqsxkSZ
+https://geohd2.canlitvplayer.com/teleskola/index.m3u8?token=TmXTuH4Pn81552Qi9xKNDo6WQ_g41s3o9dwbskwo8Bvdgasbp7Q2yndRZrrI5nxpX9LGH26i3xBgF2AaJTux3HnnlfGfrrwbSDz_q_4Os37HPzivkcQbezjshL-V4y-y36Ui-cvL3ua7PjfcC0zkB3Rt68ANJJHFUzn_mzREVqWmRTIWKiHSM7sVY06r2ZFSOXLuMwDcNd2YxHfutKhdrZm3xgQSMiFRYLC3V90S_qk_pu0v9kSA6rPqgoEsunS5
 #EXTINF:-1 tvg-id="turkiy-trialeti-tv" tvg-name="TRİALETİ TV" group-title="Türkiyə — Ümumi",TRİALETİ TV
-https://geohd.canlitvplayer.com/trialeti/index.m3u8?token=QqOUB2jpLLfZDDIW65i_AX0ZEpz_FBnM0lAZn-H9pMBUSSlDRSNnMirF3L3jntlabne5cAot8Ar93zWRO7NJU6b2Q7XFf1Wu9PLSmVYSCUusmKFPAf2Lvb2CPK5hHTmuL5tjqyczlXEGDIQ2-O4wexw4bJomSP9-8oHHwTvuV8m6A74cfUa17ma5gv9aYNw2Z2eeNrh1gxZphnvJl6-SZZhWpAHUm9sUk-SWj1zA5_XT8cjTsuhOTobMh5UQPuqp
+https://geohd.canlitvplayer.com/trialeti/index.m3u8?token=I8mh-ddG5QPwgFWAfq9VR7DwZYcA2ZVx2nSMqKzBvn8HgZtriE-aV2mHKU_4C1FZnO6-t6R437wRPeVz9qPlX3DDavhAx76w2Unv4zMjXiST3CE5LyWmB7Ta3dno1I7tl78iH3NC3tEynACQiSPNjCF1ine2uUZrsF5hnB_AZR6pb6zUF9eEGKSn5_yJ51nYy60kzm5GeAEHgUsCCA7CwcQHD9-5phnSxU3fPTGhSf-uw4xmQgU_FOAlK__ofk8C
 #EXTINF:-1 tvg-id="turkiy-tv-41-kocaeli" tvg-name="TV 41 KOCAELİ" group-title="Türkiyə — Ümumi",TV 41 KOCAELİ
 https://live.artidijitalmedya.com/artidijital_tv41/tv41/playlist.m3u8
 #EXTINF:-1 tvg-id="turkiy-tv24-georgia-tv" tvg-name="TV24 GEORGİA TV" group-title="Türkiyə — Xəbər",TV24 GEORGİA TV
-https://geohd.canlitvplayer.com/tv24/index.m3u8?token=a4KQDIJ07YRLb23_ise7pmkr8czyem5jLdMLVad3PxcQpid7ZZsjr6JQsYQKHiLJ8_6JlBUiSOD9B23G7FKG8W7Qio-NGvhskUIkRVKtQtTue4UniFtC3mGbCKkxjyLICcpcDuKQ3U8-Jvls8WFy1oGiFp1ttZY0qO53jzou_m3FmYQCeJx3EcVjKK7L8S66bd68Zt_vtoQz5s60__HNXEUt3AS-e23v2EQtYp-19EOumJmgOGuqsySg6XQXE6HS
+https://geohd.canlitvplayer.com/tv24/index.m3u8?token=wwFCV8dnRkV0MAb9ZVePkXigP9Dril8pZNa9H2fxdCydI3JHvcKHgrFwHkZcSya6oTueO9CfRw66kdCFoV5lHHjKq7u4y4ccQczY-BF-36GS3sYWY0Iv2SXmZRAfu6frtdY0dUcvloBX18A3LB0MQsn1JOairh2mG4wCO3rjNOd6z7WZ0P8GlkvehLa3IJtoAnQAPPXYe62_-uSk-liMDomWh9gZOVJPFG_NhWM6dq-EKmuHtcKMIfehhZ4Oz7cz
 #EXTINF:-1 tvg-id="turkiy-vuslat-tv" tvg-name="VUSLAT TV" group-title="Türkiyə — Ümumi",VUSLAT TV
 https://live.artidijitalmedya.com/artidijital_vuslattv/vuslattv/playlist.m3u8
 #EXTINF:-1 tvg-id="turkiy-yol-tv" tvg-name="YOL TV" group-title="Türkiyə — Ümumi",YOL TV
 https://live.yoltv.com/hls/stream.m3u8
 #EXTINF:-1 tvg-id="turkiy-batumi-tv" tvg-name="BATUMİ TV" group-title="Türkiyə — Ümumi",BATUMİ TV
-https://geohd.canlitvplayer.com/batumitv/index.m3u8?token=profUPeBBQxVUelGfNm80a55UAnynqUz-mSuu3QE80ifq3zzjizbLhKVySZOepoqqWw3yGgJqCcwvjDyDaFe5UmOPujXbwqm1g2hvC28Tbel4CdDPG_1KhrxcnHUAlXmEQMZhjqZZPOG8O1DjEk0v7pl28zxf_MK_tuswZpmlwluNzSN4M-JydJjNbuf-Nav9ABIrIViHO7TXgjvLgMP4OrFo84SnwPgqbHpTmF3ZncoePqYH8Fg9z8_dZc-EePx
+https://geohd.canlitvplayer.com/batumitv/index.m3u8?token=186sWCb-KoeIUqDDOtQb2QGCdBiu1_bhFUOzWJc-kwF1YtpiiAdevMjBHYDz28i2XQP6WGHz0NMz8Vx_nRWjzRzY2n-xQZLTDFJX613r3_PywnXsbCgZS04ZWG3s2SQD3ZE7zT6IWBA_xUgLZQ5yMs2H0J9_B7-kbkvmDcVwlE4I25R823kbBE0MKJMGUjLbsOhGjxUYvwqAUrqVOw9Mv5WhSlR3LrRrvz6Fbb2JkvJ_Jh44W-wfdI2R1jDGBCTf
 #EXTINF:-1 tvg-id="turkiy-blizz-tv" tvg-name="BLİZZ TV" group-title="Türkiyə — Ümumi",BLİZZ TV
 https://stream03.welocal.stream/stream/fhd-frankenfernsehen_199261/ngrp:stream_all/playlist.m3u8
 #EXTINF:-1 tvg-id="turkiy-carac-tv" tvg-name="CARAC TV" group-title="Türkiyə — Ümumi",CARAC TV
 https://event.vedge.infomaniak.com/livecast/event/playlist.m3u8
 #EXTINF:-1 tvg-id="turkiy-pirveli-tv-izle" tvg-name="PİRVELİ TV İZLE" group-title="Türkiyə — Ümumi",PİRVELİ TV İZLE
-https://geohd2.canlitvplayer.com/pirvelitv/index.m3u8?token=NAUzGd8_0Tq3pLSmSz6JifjWfIAKwgjiYdeb00Cpi8iW2fv8X1WLJRwNWCu4q_RTJrCm1AJ1yrxKBOJTn2kg2hj67i54uflivtYGbGi3F3hOrk4ZJIcAoFt7HeKQLiZEDZrJaxPyoJ8UXuFXtGJ_Z0HfBZYcSGcfWXl8UUwndKfB38pFveDzO0Ddv_wkwwrzvmQ40XQYE4AXrbQKhSp-1paIsgNKPF3HGXOkFzoIhruO7L9__wqgpDkvGhTu-W4D
+https://geohd2.canlitvplayer.com/pirvelitv/index.m3u8?token=w9U-uAxQVyCa3J2c9s8qKEYvjbloafp53qefHwPYDHXviv_2qDKGNasNkMZRoSzkmAtP--Bw1RHK3yPCX-f5R2cw8omxcFvgqzo688fNeyvrqaPtDusId1cyZWOGxqoYEHf-4AyXL79f_0j0ERjuWPEh1dgsohlJGEQUJ4V-M0pBjf2ecHT1xREo-8eGEk47KYSb_NrMaC3oLdeAxp1xvwQIq4mN0NCMvUa9nsjKCLa67CDYhSjIYMPNAE0CQtSf
 #EXTINF:-1 tvg-id="turkiy-power-tv" tvg-name="POWER TV" group-title="Türkiyə — Ümumi",POWER TV
 https://livetv.powerapp.com.tr/powerTV/powerhd.smil/playlists.m3u8
 #EXTINF:-1 tvg-id="turkiy-rouge-tv" tvg-name="Rouge TV" group-title="Türkiyə — Ümumi",Rouge TV
@@ -327,42 +316,36 @@ https://cdn4.yayin.com.tr/rehbertv/video.m3u8
 https://live.artidijitalmedya.com/artidijital_sunrtv/sunrtv/playlist.m3u8
 #EXTINF:-1 tvg-id="turkiy-tv-1-kayseri" tvg-name="TV 1 KAYSERİ" group-title="Türkiyə — Ümumi",TV 1 KAYSERİ
 https://edge1.taksimbilisim.com/tv1/bant1/chunks.m3u8?hash=62d73cfb044b604a7f9b3f95709b5440
-#EXTINF:-1 tvg-id="ulusal-kanal" tvg-name="Ulusal Kanal" group-title="Türkiyə — Xəbər",Ulusal Kanal
-https://bstelevision.com/proxy.php?mode=proxy&url=https://tgn.bozztv.com/gin-dvrfl05/gin-ulusalkanal/index.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9OS8xNi8yMDI2IDEyOjM5OjM2IFBNJmhhc2hfdmFsdWU9akw1R0hvbHpyNzhaWkxZb0hjKzk2dz09JnZhbGlkbWludXRlcz0xNDQwJnN0cm1fbGVuPTI3
 #EXTINF:-1 tvg-id="turkiy-1-1-ukraine" tvg-name="1+1 UKRAİNE" group-title="Türkiyə — Ümumi",1+1 UKRAİNE
-https://rushdtv.canlitvplayer.com/1plus1international/index.m3u8?token=9LdORlW_nRlacj2r3SIJ5aDWTeUOw1AuRrFXtX3svX0sEwWkdxbqXXeFOPsc1WDGt0_YQleDAaoNFDQtxnWNCdXokJRgXU_jPh5ens8qd101aWe6Rz3nx-00BCiOBnja0g_7VzGodFozxqXtq2j3amqgogtJFnK0L2eFZUW36w0-moDOJHB2NpEU0RRvdrqpEXw0ZVFaduNFBLpglv8_2S02xl1HDDDM6Lem1um2udyYgQSwmwIEm2TnozTYgWpG5GEj9Nc_ITvlQ_A34RijiA**
+https://rushdtv.canlitvplayer.com/1plus1international/index.m3u8?token=bM2-sVVT4Rok4SZgkvA0hHiXvVLwicwvYuwygvjD_tAKlrQYfbinuWZh1DnsE89HkH3SkgUwwC-xYjJ-fJu1HQ-im4tj6uR_DDyoqMdVdLglyxU0ti5B5KhDD3rjUgLCAz_oIm4IyGcLAvn9tOK1RvlO2jntSZKfAKd1lcIwlG59kwlt9y0AwELRZxJMpnsM7YqJmY1Ji67YdfD5mt2h6PbveMy72IqeVNLkt_Qot24aJEJflgNEXeS1rbNGhzJ4TcQkEaMvtqNjYYLUfCF1DQ**
 #EXTINF:-1 tvg-id="turkiy-ada-tv" tvg-name="ADA TV" group-title="Türkiyə — Ümumi",ADA TV
 https://edge.kuzeykibrissmart.tv/adatv/bant1/playlist.m3u8
 #EXTINF:-1 tvg-id="turkiy-adjara-tv-izle" tvg-name="ADJARA TV İZLE" group-title="Türkiyə — Ümumi",ADJARA TV İZLE
-https://geohd2.canlitvplayer.com/adjara/index.m3u8?token=J0s8UgOIxJgFoK4ZTXeo6fCp80T5vL0GcDyzKBPDhhK7cMQRWwZ7BwWnDJRlGWE9-Fl4VdhPVnfVZpsmM9MzazWr17xWc7aKpFwATW24AWxvCo99cdIlA7pOYdgpesFEEZDWW96ZqqaX4wz6bGyX375hy5JV5uEoW_iSLKqrXUiTeQiv1QkPVpmekTHklr1P9NQx2PT5dFnxJC8pR9f0B33UL-BVZ-HXqgrOSz3eRXOzGUT0p4vIV693I5D8RNHY
+https://geohd2.canlitvplayer.com/adjara/index.m3u8?token=gmpKKGSW8of-t9SEXn7BH-0qTPO79_g0qxVvpWfEvZYVd0Qgsz7WBKnhtZg1Jwu4-P7vT6FGeqE-cqVYBAXBWCcVCL2hQwb2O3TVLDiRL5m24_Hr9Ia9iAMEG2qi6uyuem0JzMILFZFhu7wcT0ukJbl9roZRZHeB1-m84LgTqpSZ1Ko7QTh0A4TmlyuIFX1k_wnI4G1ZVvh1r_iCpFMvpf3u8vtOVXP7I0Uma02dBp3mF0cSerUmltbUPj6cPdeB
 #EXTINF:-1 tvg-id="turkiy-ak-ll-tv" tvg-name="AKILLI TV" group-title="Türkiyə — Ümumi",AKILLI TV
 https://yayin.santraltr.com/hls/rosatv.m3u8
 #EXTINF:-1 tvg-id="turkiy-comedy-cantral" tvg-name="COMEDY CANTRAL" group-title="Türkiyə — Ümumi",COMEDY CANTRAL
 https://s6.hopslan.com/vivaX/index.m3u8
 #EXTINF:-1 tvg-id="turkiy-comedy-channel-geo" tvg-name="COMEDY CHANNEL GEO" group-title="Türkiyə — Ümumi",COMEDY CHANNEL GEO
-https://geohd.canlitvplayer.com/comedy/index.m3u8?token=DnLowFgN3iEwJM3mCImNIJTxf1a6CGeqDWEVX7Ge2K064MX0pwq7Ff_q_t8UJaKfOosJ-4e3vjV6gl7UsdkxszLURwt2yi5-jjFo4kGe3DvXszwOBiJ3XjxfeSJbjx-yIhLaMeOLVY83QmRcjbyYQPQnKWdj5eM7y0vtnkE9gNgB3MYaczfv2HPVepIOQPa-dt6fTFjGOjh8B3du1rcQc5DbtdPciQaBSwjMaLJWB5PJAYHklP50kgz3YCBkwGMa
+https://geohd.canlitvplayer.com/comedy/index.m3u8?token=X7QxCyrtKYCZMz8DKjCtUjt24Gb8Sw9yiklzoYDfsOn3w5IZHfW-3ylRO8fJj-TRJgHnD4s2qbYP4Z6jN3usAm4BTkTMOCuWekbKwhBbMrMuCQ5cU2-HNncoSWI5JSJnLW_sQa5a46dxlXJqTWgyMKRrmewmTpzNeDZCg1ASy5w-nGEYWMYxdS8Qipe6_ALXHwq4UsunIdBvRgn0F5Pm4DIYP3r7g5YNn6apBZ7VLSYTEyTuUNQo9vNB5RaX8ABY
 #EXTINF:-1 tvg-id="turkiy-dunya-tv-az" tvg-name="DÜNYA TV AZ" group-title="Türkiyə — Ümumi",DÜNYA TV AZ
 https://stream.dunyatv.az/live/dunyatv.m3u8
 #EXTINF:-1 tvg-id="turkiy-imedi-tv" tvg-name="İMEDİ TV" group-title="Türkiyə — Ümumi",İMEDİ TV
-https://geohd.canlitvplayer.com/imedihd/index.m3u8?token=zFwJUjvGYQxvEWv3faSn7kHzAygaGioXak9PzcfV2kKV14tG7l5qYyg0um2m2kHe5GWFGgpPCjhogtEq1CnayYCGzDDUbGPeQxyXSVJKLp6Voj3qerajQfLDrgZuM1CAYBgKNmuATqHqr-ftaDkeB2IlAoPi6vwOqB8vJtaKDdzAA_xKR0XmnkwaaQAo17Zf2tgfxQI6jkUZm6Vr4mivB76U73U8sN-fPF6WUJiiXM71FKlptNmelaxxDqIgefN-
+https://geohd.canlitvplayer.com/imedihd/index.m3u8?token=PRwTp3zROflFSNaHPVEHbkT8HpoDy7nhgl08KQ2UEwUAgIp2-bDSclVuhiMl2zT_QCchXGcNMM9xy4EZiqE7pP7kUP0m1zPi5-V-lSbSOum4rfBGuEgxyQHDXYl04jgqJ9SRDE-kkVrVZvgDw13I4T925e4ZQ42Z9qxMlQRK5cbZKx2O_9tyBT_emXn3ieStRv5VI2JLY3o8Tm_Q_EJZspZtJh0UPkRg_dw1pKfz-uV4wni4aDWmJv4eTcCUBqgm
 #EXTINF:-1 tvg-id="turkiy-kanal-34" tvg-name="KANAL 34" group-title="Türkiyə — Ümumi",KANAL 34
 https://live.euromediacenter.com/kanal34/index.m3u8
-#EXTINF:-1 tvg-id="turkiy-kanal-42-konya-tv" tvg-name="KANAL 42 KONYA TV" group-title="Türkiyə — Ümumi",KANAL 42 KONYA TV
-https://bstelevision.com/proxy.php?mode=proxy&url=https://canliyayin.tv42.com.tr/memfs/0c8c4bc7-550a-4239-8e3d-6f4d768391bb_output_0.m3u8
 #EXTINF:-1 tvg-id="turkiy-maestro-tv" tvg-name="MAESTRO TV" group-title="Türkiyə — Ümumi",MAESTRO TV
-https://geohd.canlitvplayer.com/maestro/index.m3u8?token=omCpX3qHkwWf7Xv2gviLy8Cu-EeVE1wHFD1lmfummb_Dd6iocFylF9BoePNPDdh362tSO3ouJ8hmMn9HTzxlPFb790HbnigdVBAtoFr7ZQ2Fsm5lvH0bsDWkFKA2fXXhou1Zjvg-B2GSEaleRnrU7IG6pTogI1l-6B_C_k25yUG2P8Hclf6-AxscjxNz60ra4Dpa7N-xB4iZlxTmgRSp8w7LHZQ5v_CV-kAP8Q4Q3lzYIJ1UdTePFjUjG2w4ibEq
-#EXTINF:-1 tvg-id="turkiy-mar-tv" tvg-name="MAR TV" group-title="Türkiyə — Ümumi",MAR TV
-https://bstelevision.com/proxy.php?mode=proxy&url=https://yayin1.canlitv.fun/canlitv/marmaratv.stream/playlist.m3u8?hash=444aa5e1053c1f4d54b690363b0ea49b
+https://geohd.canlitvplayer.com/maestro/index.m3u8?token=N3Yrd7GdFlYqSsgu3Sf2hsITvwruNx2Yo-oh9toJpClvC469fkWBb0RHTXGRECNcf7wClUxXQB8k_CEnx8_XcpeZdWGMwf_AoJtoALoZPjNRncgUbHcXNUbiGZXFosml-h1BsXqqc3S-MrpQZ8dwG7sMnLInFxdSWlPyGSVGakmrdCvFNsokbwzBnqw-QvyL2T9qSSpyjt_hNSXBj7cCQHZ-Z5mcQu0nzINBbZSroYhA7vrIDV9Djr4vGZf_JysE
 #EXTINF:-1 tvg-id="turkiy-mihrap-tv" tvg-name="MİHRAP TV" group-title="Türkiyə — Ümumi",MİHRAP TV
 https://yayin30.haber100.com/live/mihraptv/playlist.m3u8
 #EXTINF:-1 tvg-id="turkiy-mor-tv" tvg-name="MOR TV" group-title="Türkiyə — Ümumi",MOR TV
 https://live.euromediacenter.com/tvmor/video.m3u8
 #EXTINF:-1 tvg-id="turkiy-mtavari-arxi" tvg-name="Mtavari Arxi - მთავარი არხი" group-title="Türkiyə — Ümumi",Mtavari Arxi - მთავარი არხი
-https://geohd.canlitvplayer.com/mtavari/index.m3u8?token=I_n5ZKnKNO_jMQ-7hOM0VOD--0q0I2Eo3w0934Mj0H_sg_Os5uXHEhImZGiM_FN6dWyu60Sm0OozagHQ9ABbQoalGtD9V3HoMVdww2mSh2g9j5F3eEcHEO5XX8xRSZjmPNpDw64ktMYWJ13Mu0rU7bT2ljibVWvL2yJd6rFcedkSRLT9ShXdSik3D1pOFZG3xheLMzL9c4PckTuLnchqiVc99ulsnF07dGg7CLH_dVJwc9zzgctwd2ky2OrEhrQU
+https://geohd.canlitvplayer.com/mtavari/index.m3u8?token=z8hRzATS89nea3DQQog-qPDy9wFcsNCkDXpZD79CJxsLvICiJaBOOf4Xr5K29OtM2af3s-DjYenMVhW8KMOs_OJ9f_SEX1P6fEDzPM08WM9fm4yldmescUb33MZl3j7LJXo0iD7O1N7yFwET_vHafDNLZ4B8-5Bxezouq9QZN2QG70lw2Nyjnvn8uIvLL442EEmOj00uWljhOzsh-DRspy4iQHDNpDcT8Wu_1WC-ZiU65OJXkshU5PYeu-Ucv4X6
 #EXTINF:-1 tvg-id="turkiy-tv25-batumi" tvg-name="TV25 Batumi" group-title="Türkiyə — Ümumi",TV25 Batumi
-https://geohd.canlitvplayer.com/tv25/index.m3u8?token=DySJG7T1p9jh5nWWlPiiB6tcQ6mC8XHxCQjfdJFnuVIYbQw5hkKDoDsmGV4Y0z0EsBKZ9MoYk2HivTNyNB7wDMgAq_f254q0PLGll0-V5a1eGMkuCRvAg3zWXw0X42MDnjuA1bL3hWtrTk0W-9AZO5kpoCWPGiFeljI7s_BzeOWBK4WN9VnCNGvdjQLBAp43PrLopfLZj06RHEcz69cgIu-PR-HY9SWVswJjm8D8Kp3l5Wn19Ss615gbXEe_cr1a
+https://geohd.canlitvplayer.com/tv25/index.m3u8?token=MRVDK45WSx27DAX1cgTwVaecfOdx8CsbEwEHMk_90XaFQcWAsCFEdPtbAO-FSaTSZ8vsaQrejEx4fVfSMA1xhMjNHSr3dBAqZekOc2aheYA6e1BcNmQckwsjdnFQKyhqAtHVcDg-w86zVELfmBDdF0MVrto-l6TPJVl3HKnRQ-_92r0B8kEuOfZsMJiX7zSsA0KlP5r_fLIe8DblxE-1p-h_VzhohgEHIKoSyQVtt1UyYLFzV0IayD5t9OYu0k4L
 #EXTINF:-1 tvg-id="turkiy-zoo-пapk-hayvanat-park" tvg-name="ZOO ПAPK - Hayvanat Parkı" group-title="Türkiyə — Ümumi",ZOO ПAPK - Hayvanat Parkı
-https://rushdtv.canlitvplayer.com/zoo/index.m3u8?token=3316eCgeUyc45UlRA3IXpX-VKD9bUF1kfHWZ3JfiJE0285LpjP8QiqMnx2yke49puzY-wffezxDCvz3jKr0bYZkQR7-_BWQdX_DvOZx4cuFei9iIoN2z4MBV_Zouv0onwQ30ehuVWJjmIqZNOCd1R8cPmE9EaEA5pNhk__kcpiSHHwqEZZk1M5z3hVUTTx1GzD-lGeNdmoBgZ4w3HFLXqbuAVXWN8C-99Vr-CLRidIY90sYC6V8LJF8dexMO-Lh1
+https://rushdtv.canlitvplayer.com/zoo/index.m3u8?token=B2mG0efhwpWBFW0YYbrcWYpCVdp3TTZHTv0WUF7Q6LdWILXeynR4SF4EmBiykHcIz4HrQRWJoAq4tZ353_yN1faeZJyy9ZBhZPrXr72MLhxCmnFXtJHtm9Ja4OO4HYKIU8tdjAPxaqVN2-pFB2gtakITC_476oZNPkAnQdFzsJVnB3NHJeby4C1ISRNvc1Fz3hUvhsvgZorVfifiuu7BdxHotkhSQnYRob9ctTpMEakL0PuwGWsFai1rw_jbCccg
 #EXTINF:-1 tvg-id="turkiy-damar-tv" tvg-name="DAMAR TV" group-title="Türkiyə — Ümumi",DAMAR TV
 https://cors-get-proxy.sirjosh.workers.dev/?url=https://tvsms.club/tv.php?kanal=damar&file=.m3u8
 #EXTINF:-1 tvg-id="turkiy-servus-tv" tvg-name="SERVUS TV" group-title="Türkiyə — Ümumi",SERVUS TV
@@ -381,8 +364,6 @@ https://live.artidijitalmedya.com/artidijital_astv/astv/chunks.m3u8
 https://cdn4.yayin.com.tr/serhattv/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="turkiy-etv-manisa" tvg-name="Etv Manisa" group-title="Türkiyə — Ümumi",Etv Manisa
 https://edge1.taksimbilisim.com/manisaetv/bant1/chunks.m3u8?hash=be25462f12a52713a6df725224a74a2e
-#EXTINF:-1 tvg-id="turkiy-fortuna-tv" tvg-name="Fortuna Tv" group-title="Türkiyə — Ümumi",Fortuna Tv
-https://edge2.taksimbilisim.com/ftvturk/bant1/chunks.m3u8?hash=be25462f12a52713a6df725224a74a2e
 #EXTINF:-1 tvg-id="turkiy-frt-tv" tvg-name="FRT TV" group-title="Türkiyə — Ümumi",FRT TV
 https://edge1.taksimbilisim.com/frttv/bant1/chunks.m3u8
 #EXTINF:-1 tvg-id="turkiy-grt-tv" tvg-name="GRT TV" group-title="Türkiyə — Ümumi",GRT TV
@@ -501,8 +482,6 @@ https://live.artidijitalmedya.com/artidijital_tv41/tv41/chunks.m3u8?hash=be25462
 https://edge2.taksimbilisim.com/tv52/bant1/chunks.m3u8?hash=be25462f12a52713a6df725224a74a2e
 #EXTINF:-1 tvg-id="turkiy-zarok-tv" tvg-name="Zarok TV" group-title="Türkiyə — Ümumi",Zarok TV
 https://zindikurmanci.zaroktv.com.tr/hls/0/stream.m3u8?cachebust=5ffc8f
-#EXTINF:-1 tvg-id="turkiy-biznes-tv" tvg-name="Biznes TV" group-title="Türkiyə — Ümumi",Biznes TV
-https://biznestv.az/hls/live.m3u8
 #EXTINF:-1 tvg-id="turkiy-cgtn-documentary" tvg-name="CGTN Documentary" group-title="Türkiyə — Sənədli və mədəniyyət",CGTN Documentary
 https://live-stream.cgtn.com/event-live/CGTN_1_1NAzByztAaY/index.m3u8
 #EXTINF:-1 tvg-id="turkiy-cine-1" tvg-name="Cine 1" group-title="Türkiyə — Ümumi",Cine 1
@@ -525,8 +504,6 @@ https://live.artidijitalmedya.com/artidijital_sat7turk/sat7turk/chunks.m3u8
 https://dost.stream.emsal.im/tv/live.m3u8?hash=be25462f12a52713a6df725224a74a2e
 #EXTINF:-1 tvg-id="turkiy-franken-tv" tvg-name="Franken Tv" group-title="Türkiyə — Ümumi",Franken Tv
 https://stream01.welocal.stream/stream/fhd-tvmainfranken_255661/ngrp:stream_all/chunklist_w1073867686_b446000.m3u8
-#EXTINF:-1 tvg-id="turkiy-luys-tv" tvg-name="Luys TV" group-title="Türkiyə — Ümumi",Luys TV
-https://b01c02nl.mediatriple.net/videoonlylive/mtpayqrfkgirxelive/broadcast_5e91c5ac96898.smil/mt_2.m3u8
 #EXTINF:-1 tvg-id="turkiy-mercan-tv" tvg-name="Mercan Tv" group-title="Türkiyə — Ümumi",Mercan Tv
 https://live.artidijitalmedya.com/artidijital_mercantv/mercantv/chunks.m3u8
 #EXTINF:-1 tvg-id="turkiy-tv-den" tvg-name="TV Den" group-title="Türkiyə — Ümumi",TV Den
@@ -556,27 +533,41 @@ https://ip252.ozelip.com:1936/protv5/protv5/chunklist_w1284005444.m3u8
 #EXTINF:-1 tvg-id="turkiy-wdr" tvg-name="WDR" group-title="Türkiyə — Ümumi",WDR
 https://wdrfsww247.akamaized.net/hls/live/2009628/wdr_msl4_fs247ww/master.m3u8
 #EXTINF:-1 tvg-id="turkiy-friday-tv-ru" tvg-name="FRİDAY TV RU" group-title="Türkiyə — Ümumi",FRİDAY TV RU
-https://rushdtv.canlitvplayer.com/friday/index.m3u8?token=Ygo6KYne1lr46FThyE0uFrCuoH_7vnUD9KFRsBlcKKJl-p7h4aN0vZRZFrak3glpViKq81mials5zweX1LXY86ycUkQUJAAgp72qEuJ1yDsjoQoTwXjZp0c1WO9WiLvCUqIcqKFON7V28Z1bNk2jGIULGBigvhKE_jxIOdUrzJXanQx8ne0TQHJC47LnYLOLizvDk5wNX05W3KrFSDH0XBWAHza5kaV-HqMfaVD2HpWAO9gJsAwy09LQmBLYpfwA
+https://rushdtv.canlitvplayer.com/friday/index.m3u8?token=DHR7uCKDuNkyMqOlTT3xtTihNfoDtc6LquM77oFrdgl3PcZJgIBQUw80cTYSkOmsw92C4ElNmpSD4JwXziLzCWziQCRsNJdk-XBghuHaC4_NUQnSdvM7js0MT3LmJgV5mP1e61soDbuoPl5vTQpJ_FJ-EPjRtcFBnFGEOms4WwR-XrKJPAK0x-Y1HtjoTxDhzW-0yUmeYbtHTUHF6URS7M8VqaXnn-LolpVV-0-A7YSJYTh-Tw44xGo-fYkQ7Gn-
 #EXTINF:-1 tvg-id="turkiy-mir-24" tvg-name="MİR 24" group-title="Türkiyə — Xəbər",MİR 24
-https://rushdtv.canlitvplayer.com/mir24/index.m3u8?token=x2u7liEgqacsJWv-Vs6RQfTLhlXyp0IeV5g6ndn1zCIlNr8crdWVkv_Nqmcw2tgZ3h-f6K9rcr4EAbMd-pTiFNCb8-1tcwBz6GaF-mk70MDr44djUve76SwWdf_nC0ZIYgQ7cNvGtG_H7BX3I8EswHRxV415HN8YVYm35ms46p612X-UCDSt7M6ReGAVYeBp2WqvMT6msvCFaDsf_CFfnlY3AUah8T3BCjLmovlMyBQeWdELWRy4r2ELZDoh4UAs
+https://rushdtv.canlitvplayer.com/mir24/index.m3u8?token=cP38itxkFaFmTNdp8UO7FOA6t5iyV1BvBFm3ALjsPupIzMgGBFTfzU0AzISZlq1UIzK2YLmOS23P5qwagiCMxvjsMZkRLbFnq96TLL-PCLZ-Jc19iHsDmqN5TBnGL25JuTuroNFcHtyoF-Tq9rEra_CjXgTGoRl2Z3kOJul9eAMUUruSJY9qiI0WWAhDx2gpgWHBj7fzsSjpnAsIh_dkF6nrVoXQw8LV1NBApNNYH-4SgGrO32qEpLIcuTOy8xjE
 #EXTINF:-1 tvg-id="turkiy-mir-tv" tvg-name="MİR TV" group-title="Türkiyə — Ümumi",MİR TV
-https://rushdtv.canlitvplayer.com/mir/index.m3u8?token=392EstB2FYOb_ZLs1qwzbzQytowXIeSTidzEzpLnvBX883aiyUf0pmCyoa6UtcunKOpfs585aZYRxzzelhF-uxdVYdB1_iJPqH3xiCqTlKB82_H0WTSNYlsYUyXEkVIBQ6_Dx-ZFhKOOCRts8uQpIdmpjS1mqos73V0DaKkVlsPUb_kUD_EmP6okdRGuGPP4o6ySu88MXf1hDjKJ7Hi4vrFpItGO9jbWHVwQESSLWZM8d3DLJ-IpOV-h4ZXF4ll5
+https://rushdtv.canlitvplayer.com/mir/index.m3u8?token=ZduW8f5-kDjwxzU8VFzxCGq6K5VcqmzAcUMSvLkOJEHFNr1YJvc-UkRQ10q-m5fmwyYvV1_7UviDkunUka1xOa2ZBlRaYVG6Ojx0rk8428eZIUMhzxicKS57eoit0MzLbdym9nQET4RJdO05H4b9cSCmDMrricTDAPbLRwIkZGly1jZ3-OacVfgho_WoVyR3HoBsz_DAV1oomLh6v8F9lOlhaOZmCuMTVvScXUp5nTifm3nxqMEQTaUxFPS_RKw_
 #EXTINF:-1 tvg-id="turkiy-1tv-georgia-gurcistan" tvg-name="1TV GEORGİA GÜRCİSTAN" group-title="Türkiyə — Ümumi",1TV GEORGİA GÜRCİSTAN
-https://geohd2.canlitvplayer.com/gpb/index.m3u8?token=Df7HFAdK9aewcDVVof5bGK1GxZjpPLBx3xhR4a15ovVUfIST4lWxpTGj719JIuJKub-t82nqcCvjc8k4FEN4jpR3ReYUdODAFU7wuMYE0t7VsqEMepfwpUhEldwRXnp7g29Wa8sll1r9PqT-vklrzyJKNWnyWFa-4eFnSNLScC4mGspfp2tWmD9sI5qffEXY5_LQyU3njppREiBReTdnN4r51q2dZs8CDiOFU2ioi6UGuF9CYDsD7MNiCycnZbR5
+https://geohd2.canlitvplayer.com/gpb/index.m3u8?token=VB-otIn4cSAO86CQkEPNnskWLlKo8SQ7CVwy-FtjZJvKNU7unWGnaF9sDxAiiiIQQi1HuBRaiY5WKaQODz33trQa7c68jfaX46j14PATYAFaKOMC88GRJG3I2XHvlxWjNirLXErvrsT4R1yOZcW55niu7vIzrC8jc0yL-F06tYTZNJXuI_ngVpfvpAhQAt2v0bTz5KebrEQYwUEXdiL-L71BNSVpST-LXu4RwO9oLmgeKpD4IYm1knTBs9XU1xMT
 #EXTINF:-1 tvg-id="turkiy-th-turk-haber-tv" tvg-name="TH TÜRK HABER TV" group-title="Türkiyə — Xəbər",TH TÜRK HABER TV
-https://edge1.taksimbilisim.com/turkhaber/bant1/chunks.m3u8?nimblesessionid=1735750958
+https://edge2.taksimbilisim.com/turkhaber/bant1/chunks.m3u8?nimblesessionid=471761015
 #EXTINF:-1 tvg-id="turkiy-tv-5-sponsor" tvg-name="TV 5 Sponsor" group-title="Türkiyə — Ümumi",TV 5 Sponsor
 https://ip252.ozelip.com:1936/protv5/protv5/chunklist_w1958248985.m3u8
 #EXTINF:-1 tvg-id="turkiy-kanal-65-van" tvg-name="KANAL 65 VAN" group-title="Türkiyə — Ümumi",KANAL 65 VAN
-https://live.artidijitalmedya.com/artidijital_van65/van65/chunks.m3u8?nimblesessionid=3981286822
+https://live.artidijitalmedya.com/artidijital_van65/van65/chunks.m3u8?nimblesessionid=3983635994
 #EXTINF:-1 tvg-id="turkiy-kon-tv-sora-sora-yar-sma" tvg-name="KON TV Sora Sora Yarışma" group-title="Türkiyə — Ümumi",KON TV Sora Sora Yarışma
 https://canli.kontv.com.tr/live/kontv.m3u8
-#EXTINF:-1 tvg-id="turkiy-c-news" tvg-name="C NEWS" group-title="Türkiyə — Xəbər",C NEWS
-https://cdndirector.dailymotion.com/cdn/live/video/x3b68jn.m3u8?sec=0vIA7Gf9shfE1-H3rqcGs_HMtlcWmzkjt4ygvB1dRyLmHYVOEIu5g9bprOxuDfZqBjOIzuKT2zxNySXr3bHs-TFKzmDhCl-NNG8uYGiFHyg
-#EXTINF:-1 tvg-id="turkiy-freedom-ua-tv-ukraine" tvg-name="FREEDOM UA TV UKRAİNE" group-title="Türkiyə — Ümumi",FREEDOM UA TV UKRAİNE
-https://bstelevision.com/proxy.php?mode=proxy&url=https://st2.mediabay.tv/UATV_HD/playlist.m3u8?token=989f8e160f6814cd5452e2d01545df398b271bf0-ebaa5c7f5c43ccd2d4b7f090b007c4fd-1789605566-1789594766
 #EXTINF:-1 tvg-id="turkiy-kanal-urfa" tvg-name="KANAL URFA" group-title="Türkiyə — Ümumi",KANAL URFA
 https://edge1.socialsmart.tv/kanalurfa/bant1/playlist.m3u8
+#EXTINF:-1 tvg-id="ntv-tr" tvg-name="NTV" group-title="Türkiyə — Xəbər",NTV
+https://dogusdyg-ntv.lg.mncdn.com/dogusdyg_ntv/live.m3u8?st=Q4Cy3H04EOqAHxXoKD4SPA&e=1789707759
+#EXTINF:-1 tvg-id="turkiy-38-kent-tv" tvg-name="38 KENT TV" group-title="Türkiyə — Ümumi",38 KENT TV
+https://live.artidijitalmedya.com/artidijital_kentturktv/kentturktv/playlist.m3u8
+#EXTINF:-1 tvg-id="turkiy-dw-deutsche-welle" tvg-name="DW (Deutsche Welle)" group-title="Türkiyə — Ümumi",DW (Deutsche Welle)
+https://daserste-live.ard-mcdn.de/daserste/live/hls/int/master.m3u8
+#EXTINF:-1 tvg-id="turkiy-meltem-tv" tvg-name="MELTEM TV" group-title="Türkiyə — Ümumi",MELTEM TV
+https://vhxyrsly.rocketcdn.com/meltemtv/chunklist.m3u8
+#EXTINF:-1 tvg-id="turkiy-kanal-12-az" tvg-name="KANAL 12 AZ" group-title="Türkiyə — Ümumi",KANAL 12 AZ
+https://live.artidijitalmedya.com/artidijital_kanal12/kanal12/chunks.m3u8?nimblesessionid=3983634226
+#EXTINF:-1 tvg-id="turkiy-van-tv" tvg-name="VAN TV" group-title="Türkiyə — Ümumi",VAN TV
+https://live.artidijitalmedya.com/artidijital_van65/van65/chunks.m3u8?nimblesessionid=3983631497
+#EXTINF:-1 tvg-id="turkiy-rt-documentary" tvg-name="RT Documentary" group-title="Türkiyə — Sənədli və mədəniyyət",RT Documentary
+https://rt-rtd.rttv.com/dvr/rtdoc/playlist.m3u8
+#EXTINF:-1 tvg-id="turkiy-aras-tv" tvg-name="ARAS TV" group-title="Türkiyə — Ümumi",ARAS TV
+https://corsply-v0s4.cfcross.workers.dev/?url=https://s6.hopslan.com/zdfX1/index.m3u8
+#EXTINF:-1 tvg-id="turkiy-evin-tv" tvg-name="EVİN TV" group-title="Türkiyə — Ümumi",EVİN TV
+https://corsply-v0s4.cfcross.workers.dev/?url=https%3A%2F%2Fs6.hopslan.com%2FzdfX1%2Ftracks-v1a1%2Fmono.ts.m3u8
 #EXTINF:-1 tvg-id="Channel12.ru@SD" tvg-name="12 канал (1080p)" tvg-logo="https://i.imgur.com/OA9hm6e.png" group-title="Rusiya — Ümumi",12 канал (1080p)
 https://12channel.bonus-tv.ru/cdn/12channel/playlist.m3u8
 #EXTINF:-1 tvg-id="360.ru@SD" tvg-name="360° (1080p)" tvg-logo="https://i.imgur.com/VTJqdoX.png" group-title="Rusiya — Ümumi",360° (1080p)
@@ -709,8 +700,6 @@ http://live-tolknews.cdnvideo.ru/tolknews/stream/playlist.m3u8
 https://live-3.otcnet.ru/sportivny/index.m3u8
 #EXTINF:-1 tvg-id="AstrahanRuSport.ru@SD" tvg-name="Астрахань.Ru Sport (720p)" tvg-logo="https://i.imgur.com/BKaEtqL.png" group-title="Rusiya — Ümumi",Астрахань.Ru Sport (720p)
 https://streaming.astrakhan.ru/astrakhanrusporthd/playlist.m3u8
-#EXTINF:-1 tvg-id="MMATVcom.ru@SD" tvg-name="MMA TV.com (1080p)" tvg-logo="https://i.imgur.com/QhdxNsB.png" group-title="Rusiya — Ümumi",MMA TV.com (1080p)
-https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8
 #EXTINF:-1 tvg-id="KHLPrime.ru@SD" tvg-name="KHL Prime (1080p)" tvg-logo="https://i.imgur.com/pwxT0ON.png" group-title="Rusiya — Ümumi",KHL Prime (1080p)
 http://stream.mcquack.net/178/index.m3u8
 #EXTINF:-1 tvg-id="MatchBoets.ru@SD" tvg-name="Match! Boets (576p)" tvg-logo="https://i.imgur.com/DogOkA4.png" group-title="Rusiya — Ümumi",Match! Boets (576p)
@@ -875,7 +864,7 @@ https://bl.rutube.ru/livestream/5c9327074e25ca86f3111d4085cbbb65/index.m3u8?e=20
 https://live-tvhope.cdnvideo.ru/tvhope-pull/tvhope_1/playlist.m3u8
 #EXTINF:-1 tvg-id="2x2.ru@SD" tvg-name="2x2 (576i)" tvg-logo="https://i.imgur.com/fhQFLEl.png" group-title="Rusiya — Ümumi",2x2 (576i)
 https://bl.rutube.ru/livestream/392b4686b770bae2da6bf5ac4574add5/index.m3u8?e=2068731801&s=tenr-yHXUv1wibfka78s2A&scheme=https
-#EXTINF:-1 tvg-id="Channel8Krasnoyarsk.ru@HD" tvg-name="Channel 8 Krasnoyarsk HD (1080p)',Channel 8 Krasnoyarsk HD (1080p)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Krasnoyarsk HD (1080p)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Krasnoyarsk HD (1080p)',Channel 8 Krasnoyarsk HD (1080p)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Krasnoyarsk HD (1080p)" group-title="Rusiya — Ümumi",Channel 8 Krasnoyarsk HD (1080p)',Channel 8 Krasnoyarsk HD (1080p)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Krasnoyarsk HD (1080p)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Krasnoyarsk HD (1080p)',Channel 8 Krasnoyarsk HD (1080p)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Krasnoyarsk HD (1080p)
+#EXTINF:-1 tvg-id="Channel8Krasnoyarsk.ru@HD" tvg-name="Channel 8 Krasnoyarsk HD (1080p)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Krasnoyarsk HD (1080p)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Krasnoyarsk HD (1080p)',Channel 8 Krasnoyarsk HD (1080p)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Krasnoyarsk HD (1080p)',Channel 8 Krasnoyarsk HD (1080p)',Channel 8 Krasnoyarsk HD (1080p)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Krasnoyarsk HD (1080p)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Krasnoyarsk HD (1080p)',Channel 8 Krasnoyarsk HD (1080p)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Krasnoyarsk HD (1080p)" group-title="Rusiya — Ümumi",Channel 8 Krasnoyarsk HD (1080p)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Krasnoyarsk HD (1080p)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Krasnoyarsk HD (1080p)',Channel 8 Krasnoyarsk HD (1080p)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Krasnoyarsk HD (1080p)',Channel 8 Krasnoyarsk HD (1080p)',Channel 8 Krasnoyarsk HD (1080p)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Krasnoyarsk HD (1080p)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Krasnoyarsk HD (1080p)',Channel 8 Krasnoyarsk HD (1080p)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Krasnoyarsk HD (1080p)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0
 #EXTVLCOPT:http-referrer=https://tshift-1.telecoma.tv/8channel/tracks-v1a1/mono.ts.m3u8
 https://tshift-1.telecoma.tv/8channel/tracks-v1a1/mono.ts.m3u8
@@ -883,8 +872,6 @@ https://tshift-1.telecoma.tv/8channel/tracks-v1a1/mono.ts.m3u8
 https://live-uvelirochka.cdnvideo.ru/uvelirochka/uvelirochka_720p3/playlist.m3u8
 #EXTINF:-1 tvg-id="UgraTV.ru@SD" tvg-name="Югра (1080p)" tvg-logo="https://i.imgur.com/561FRwI.png" group-title="Rusiya — Ümumi",Югра (1080p)
 https://live-ugratv.cdnvideo.ru/ugratv/ugratv/playlist.m3u8
-#EXTINF:-1 tvg-id="Moymir.ru@SD" tvg-name="Moy mir (720p)" tvg-logo="https://www.cableman.ru/sites/default/files/MM-TV_logo-1%5B1509%5D.png" group-title="Rusiya — Ümumi",Moy mir (720p)
-https://moymir.ru/hls/onair.m3u8
 #EXTINF:-1 tvg-id="3ABNRussia.ru@SD" tvg-name="Три Ангела (720p)" tvg-logo="https://i.imgur.com/4fhBbam.png" group-title="Rusiya — Ümumi",Три Ангела (720p)
 https://hls.tv.3angels.ru/stream.m3u8
 #EXTINF:-1 tvg-id="Drive.ru@SD" tvg-name="Drive (576i)" tvg-logo="https://i.imgur.com/FnuwfSC.png" group-title="Rusiya — Ümumi",Drive (576i)
@@ -893,11 +880,11 @@ https://stream8.cinerama.uz/1421/tracks-v1a1/mono.m3u8
 https://stream8.cinerama.uz/1423/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="KulinarTV.ru@SD" tvg-name="Kulinar TV (576p)" tvg-logo="https://smotret.tv/images/kulinar-tv.webp" group-title="Rusiya — Ümumi",Kulinar TV (576p)
 https://api.alpaca.t62a.com/hls/9110/stream0.m3u8
-#EXTINF:-1 tvg-id="Rossiya1Vainah.ru@SD" tvg-name="Rossiya 1 Vainah (576i)',Rossiya 1 Vainah (576i)',like Gecko) Chrome/146.0.0.0 Safari/537.36 OPR/130.0.0.0 (Edition std-2)',Rossiya 1 Vainah (576i)',like Gecko) Chrome/146.0.0.0 Safari/537.36 OPR/130.0.0.0 (Edition std-2)',Rossiya 1 Vainah (576i)',Rossiya 1 Vainah (576i)',like Gecko) Chrome/146.0.0.0 Safari/537.36 OPR/130.0.0.0 (Edition std-2)',Rossiya 1 Vainah (576i)" group-title="Rusiya — Ümumi",Rossiya 1 Vainah (576i)',Rossiya 1 Vainah (576i)',like Gecko) Chrome/146.0.0.0 Safari/537.36 OPR/130.0.0.0 (Edition std-2)',Rossiya 1 Vainah (576i)',like Gecko) Chrome/146.0.0.0 Safari/537.36 OPR/130.0.0.0 (Edition std-2)',Rossiya 1 Vainah (576i)',Rossiya 1 Vainah (576i)',like Gecko) Chrome/146.0.0.0 Safari/537.36 OPR/130.0.0.0 (Edition std-2)',Rossiya 1 Vainah (576i)
+#EXTINF:-1 tvg-id="Rossiya1Vainah.ru@SD" tvg-name="Rossiya 1 Vainah (576i)',like Gecko) Chrome/146.0.0.0 Safari/537.36 OPR/130.0.0.0 (Edition std-2)',Rossiya 1 Vainah (576i)',like Gecko) Chrome/146.0.0.0 Safari/537.36 OPR/130.0.0.0 (Edition std-2)',Rossiya 1 Vainah (576i)',Rossiya 1 Vainah (576i)',like Gecko) Chrome/146.0.0.0 Safari/537.36 OPR/130.0.0.0 (Edition std-2)',Rossiya 1 Vainah (576i)',Rossiya 1 Vainah (576i)',Rossiya 1 Vainah (576i)',like Gecko) Chrome/146.0.0.0 Safari/537.36 OPR/130.0.0.0 (Edition std-2)',Rossiya 1 Vainah (576i)',like Gecko) Chrome/146.0.0.0 Safari/537.36 OPR/130.0.0.0 (Edition std-2)',Rossiya 1 Vainah (576i)',Rossiya 1 Vainah (576i)',like Gecko) Chrome/146.0.0.0 Safari/537.36 OPR/130.0.0.0 (Edition std-2)',Rossiya 1 Vainah (576i)" group-title="Rusiya — Ümumi",Rossiya 1 Vainah (576i)',like Gecko) Chrome/146.0.0.0 Safari/537.36 OPR/130.0.0.0 (Edition std-2)',Rossiya 1 Vainah (576i)',like Gecko) Chrome/146.0.0.0 Safari/537.36 OPR/130.0.0.0 (Edition std-2)',Rossiya 1 Vainah (576i)',Rossiya 1 Vainah (576i)',like Gecko) Chrome/146.0.0.0 Safari/537.36 OPR/130.0.0.0 (Edition std-2)',Rossiya 1 Vainah (576i)',Rossiya 1 Vainah (576i)',Rossiya 1 Vainah (576i)',like Gecko) Chrome/146.0.0.0 Safari/537.36 OPR/130.0.0.0 (Edition std-2)',Rossiya 1 Vainah (576i)',like Gecko) Chrome/146.0.0.0 Safari/537.36 OPR/130.0.0.0 (Edition std-2)',Rossiya 1 Vainah (576i)',Rossiya 1 Vainah (576i)',like Gecko) Chrome/146.0.0.0 Safari/537.36 OPR/130.0.0.0 (Edition std-2)',Rossiya 1 Vainah (576i)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 OPR/130.0.0.0 (Edition std-2)
 #EXTVLCOPT:http-referrer=https://gtrkvainah.ru/
 https://live.chechensoft.ru/vainahtv/ngrp:vaynahtv_all/playlist.m3u8
-#EXTINF:-1 tvg-id="RTVi.ru@SD" tvg-name="RTVi (576p)',RTVi (576p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',RTVi (576p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',RTVi (576p)',RTVi (576p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',RTVi (576p)" group-title="Rusiya — Ümumi",RTVi (576p)',RTVi (576p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',RTVi (576p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',RTVi (576p)',RTVi (576p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',RTVi (576p)
+#EXTINF:-1 tvg-id="RTVi.ru@SD" tvg-name="RTVi (576p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',RTVi (576p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',RTVi (576p)',RTVi (576p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',RTVi (576p)',RTVi (576p)',RTVi (576p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',RTVi (576p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',RTVi (576p)',RTVi (576p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',RTVi (576p)" group-title="Rusiya — Ümumi",RTVi (576p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',RTVi (576p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',RTVi (576p)',RTVi (576p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',RTVi (576p)',RTVi (576p)',RTVi (576p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',RTVi (576p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',RTVi (576p)',RTVi (576p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',RTVi (576p)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
 https://shift03.isp.bg/RTVi/index.m3u8
 #EXTINF:-1 tvg-id="Ohotnikirybolov.ru@SD" tvg-name="Ohotnik i rybolov (576i)" tvg-logo="https://i.imgur.com/Bj1jI7F.png" group-title="Rusiya — Ümumi",Ohotnik i rybolov (576i)
@@ -914,7 +901,7 @@ https://v4.proofix.ru/0mir/index.m3u8
 https://bsttv.bonus-tv.ru/cdn/salyam/playlist.m3u8
 #EXTINF:-1 tvg-id="TNVPlanet.ru@SD" tvg-name="ТНВ-Планета (Казань) (576p)" tvg-logo="https://i.imgur.com/ijA1zDw.png" group-title="Rusiya — Ümumi",ТНВ-Планета (Казань) (576p)
 https://planeta.mediacdn.ru/cdn/tnvplanet/playlist.m3u8
-#EXTINF:-1 tvg-id="Channel8Novosibirsk.ru@SD" tvg-name="Channel 8 Novosibirsk (480i)',Channel 8 Novosibirsk (480i)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Novosibirsk (480i)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Novosibirsk (480i)',Channel 8 Novosibirsk (480i)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Novosibirsk (480i)" group-title="Rusiya — Ümumi",Channel 8 Novosibirsk (480i)',Channel 8 Novosibirsk (480i)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Novosibirsk (480i)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Novosibirsk (480i)',Channel 8 Novosibirsk (480i)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Novosibirsk (480i)
+#EXTINF:-1 tvg-id="Channel8Novosibirsk.ru@SD" tvg-name="Channel 8 Novosibirsk (480i)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Novosibirsk (480i)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Novosibirsk (480i)',Channel 8 Novosibirsk (480i)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Novosibirsk (480i)',Channel 8 Novosibirsk (480i)',Channel 8 Novosibirsk (480i)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Novosibirsk (480i)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Novosibirsk (480i)',Channel 8 Novosibirsk (480i)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Novosibirsk (480i)" group-title="Rusiya — Ümumi",Channel 8 Novosibirsk (480i)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Novosibirsk (480i)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Novosibirsk (480i)',Channel 8 Novosibirsk (480i)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Novosibirsk (480i)',Channel 8 Novosibirsk (480i)',Channel 8 Novosibirsk (480i)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Novosibirsk (480i)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Novosibirsk (480i)',Channel 8 Novosibirsk (480i)',like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',Channel 8 Novosibirsk (480i)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0
 https://live-8knsk.cdnvideo.ru/8knsk/stream1/playlist.m3u8
 #EXTINF:-1 tvg-id="ProBusiness.ru@SD" tvg-name="Pro Business (720p)" tvg-logo="https://i.imgur.com/1u8KvTD.png" group-title="Rusiya — Ümumi",Pro Business (720p)
@@ -943,7 +930,7 @@ http://stream.mcquack.net/181/index.m3u8
 http://stream.mcquack.net/265/index.m3u8
 #EXTINF:-1 tvg-id="Komediynoe.ru@HD" tvg-name="Komediynoe HD (1080p)" tvg-logo="https://i.imgur.com/cEKe8XC.png" group-title="Rusiya — Ümumi",Komediynoe HD (1080p)
 http://stream.mcquack.net/74/index.m3u8
-#EXTINF:-1 tvg-id="LawTV.ru@SD" tvg-name="Law TV (1080p)',Law TV (1080p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',Law TV (1080p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',Law TV (1080p)',Law TV (1080p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',Law TV (1080p)" group-title="Rusiya — Ümumi",Law TV (1080p)',Law TV (1080p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',Law TV (1080p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',Law TV (1080p)',Law TV (1080p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',Law TV (1080p)
+#EXTINF:-1 tvg-id="LawTV.ru@SD" tvg-name="Law TV (1080p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',Law TV (1080p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',Law TV (1080p)',Law TV (1080p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',Law TV (1080p)',Law TV (1080p)',Law TV (1080p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',Law TV (1080p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',Law TV (1080p)',Law TV (1080p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',Law TV (1080p)" group-title="Rusiya — Ümumi",Law TV (1080p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',Law TV (1080p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',Law TV (1080p)',Law TV (1080p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',Law TV (1080p)',Law TV (1080p)',Law TV (1080p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',Law TV (1080p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',Law TV (1080p)',Law TV (1080p)',like Gecko) Chrome/149.0.0.0 Safari/537.36',Law TV (1080p)
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36
 http://stream.mcquack.net/406/index.m3u8
 #EXTINF:-1 tvg-id="MoyaPlaneta.ru@SD" tvg-name="Moya Planeta (1080p)" tvg-logo="https://i.imgur.com/uIiAdBv.png" group-title="Rusiya — Ümumi",Moya Planeta (1080p)
@@ -1045,7 +1032,7 @@ http://s55766.cdn.ngenix.net/s55766-media-origin/rline_high/index.m3u8
 #EXTINF:-1 tvg-id="rusiya-rt-russia-today" tvg-name="RT - RUSSİA TODAY" group-title="Rusiya — Ümumi",RT - RUSSİA TODAY
 https://rtmp.api.rt.com/hls/rtdru.m3u8
 #EXTINF:-1 tvg-id="rusiya-yu-tv-russia" tvg-name="YU TV RUSSİA" group-title="Rusiya — Ümumi",YU TV RUSSİA
-https://rushdtv.canlitvplayer.com/illuzionplus/index.m3u8?token=6MVL63yujWnulzZ0ThSe40KIgp_gOaeBYNmux3yIxnWaVJFxOJHst3qf7mbHO87eKwml7p-kzQvYScmLeTxR7kV8iL0U1kn-XoYkw2azFZ1UJ--M8p1Ianpi9kZatndamznX_IaORRbFQaCe6HgStQ02IkWac_N56pL4jpfcabPVO_hiPx3X1nAy-luqXb3M_pDeYFbrjj0c5H-8ZS5PeeMvJxzksWQahc_LbtFD-7AqXldB8Y3BM_iCw7KgqYdDGyl8BnAUHwOElS-KSpkKJw**
+https://rushdtv.canlitvplayer.com/illuzionplus/index.m3u8?token=RhF3VtNjeSlCysQz_XyGGaWgKCQre_41Wi6ErnvjEcoX2OTPhf4NIRIk8V4XUHh44q1Otq7JrqUCxSSumDbb7SFitjw03x405o2DpbPduD3gVhq2uoq1uHnukKZwpadptGD5CRMyULk5Bun9ka9sLdFmWy7rXDe9M3Lr775SFuFt0DAmj1W5Q9BLppPRvpsAoTbMz3VJQcjsHg1MB73Mx3ybDlizPPrEbeBLOCLwGkZvxXpBm14CyS_emVpFOQOH77Pwi_jHAzotG4uxq20jhg**
 #EXTINF:-1 tvg-id="rusiya-твц" tvg-name="ТВЦ" group-title="Rusiya — Ümumi",ТВЦ
 https://tvc-hls.cdnvideo.ru/tvc-res/smil:vd9221_2.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="rusiya-izvestiya" tvg-name="izvestiya" group-title="Rusiya — Ümumi",izvestiya
@@ -1102,20 +1089,18 @@ https://vklive6-12.vkuser.net/hls/7234026998512.m3u8/sig/ItxKOpG9InA/expires/178
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36
 https://vkvsd71.okcdn.ru/cmaf/2599004474067/sig/g5VnZRWCWVo/expires/1789649350348/srcIp/20.98.142.131/urls/176.112.172.105/clientType/13/srcAg/CHROME/mid/3981627960275/get/hls_3981627960275.lrRjQQWGp3o.m3u8
 #EXTINF:-1 tvg-id="rusiya-tnt-comedy" tvg-name="TNT COMEDY" group-title="Rusiya — Ümumi",TNT COMEDY
-https://rushdtv.canlitvplayer.com/tntkomedia/index.m3u8?token=8Li1I0KiGJukxgPILCxkM8duZ2DxbpqYmb8sKoBYKXzjr3keXGD1ih5mLS3-awptOa1sfxwP8k_vKsj9SogsZ8PhnD0y9XudagslGuBwox55NGPstcXn42Ecw5xsSIpx41bxB5fqru8TqCb5gDI4hwlgKVlPxS0oI30NYmKwt9JfJMG-8r73kQzbB2UzxBh4hcnmi8F5qcTVTWpvzjnrAqZJf3PJLp2-Un2tFO-x1B4yN5NGxhnC7cCz0rXuwuxSWqhb6dytJu9k5aiXrSVb-w**
+https://rushdtv.canlitvplayer.com/tntkomedia/index.m3u8?token=oeBzSWBlAUOm42MW6RIOpizOLU3i4UU_GgnRPtna6BvHTP_rOQLM3fJ9nWiVc0bEULB7KOrd6TEqmOxqwqctqnuFQezvS0IABYkjK63sDl5Xoy_8yc8SycJEEN0DZdPtVUvuFUCRYozMXg0T4-iy2ucQ2FU0wykbC8LoUE3mToLtj18ywg2LgNUdunQBs972zLsJm38GLubz03aRNUt4WnYWErg49RaRIf_wTgEka-iDy7bUyl_9w974SrO-qjV6rD8tZKLiuQiCbQkNEr0E5Q**
 #EXTINF:-1 tvg-id="rusiya-tnt-russia-tv" tvg-name="TNT RUSSİA TV" group-title="Rusiya — Ümumi",TNT RUSSİA TV
-https://rushdtv.canlitvplayer.com/tntkomedia/index.m3u8?token=fbihD6kORacEQwSsN6vFHJwsO0smJSDatmOrZHax0dmhUj9U35P8cY2rCUa81WL060E66CeFYIm3-Zw2vTphsMiC6Sy6PRABk8jq05S76HmWshEH5AZvHe1CZL_uKqu3GTQ-ienLcKEEWgSGtwyViNujqxmNGTJeu-4RFWqp50IzntasjOT77Fx4YSzQmEE-yxmP1HsHkWO6pDxzuoil7H2VpYZ5IxrunS9s3lFWE6j8O_h3ckA6g4NCpsXGfu1W_OVQV60AST4lwkwknpSRDg**
-#EXTINF:-1 tvg-id="rusiya-рен-тв-ren-tv" tvg-name="РЕН ТВ -REN TV" group-title="Rusiya — Ümumi",РЕН ТВ -REN TV
-https://rushdtv.canlitvplayer.com/rentv/index.m3u8?token=efPOtuLRNIi3suoCJoxiizd4wQ0H9Tj2qUsVt43-shdHHWXL-2VVYRohBk8r_S5omfixGdhTy8iIfpiHgoeIc8d2xhs2X-rGzamyE5T3pzgsX4-3c4BzVwDRLmiMXffA8wKpcDJkr4caRBfbb1qBzYND7SwezRL2k68yx7na03_fTZyunk9pfC_BJJue7krspWxpvKJSfSn_tXDMKB98QRVuv-kjAcMWlpDMDvEfjSfzjFjk4PPbgYDStRZNrMRs
+https://rushdtv.canlitvplayer.com/tntkomedia/index.m3u8?token=9LbFRBCYn_W2tOXjBz73dJ43aL5zYIO3QUZaakVRRQVOg86jp789_Y5c1-PqQHNvZnqM19cs5DQctrGoWDQPhQvPLmNmdJjHGdjiEFT6IyKMT-XSTXqgJSSDoTQbC8EZ1oqFDauNXRNrWhUv-vhW3DK75cyibGlgnbOiY4HvBd7TyZJ2pzjmLyxrRpPiJUbr7nvHHLQ53qmPyevQYA9CP8V52R0a2zTDXh4rI_9IZhTm5eOTjDGQDxoBGbKCk0fBnvPwejBlE71Mr7ExUMJW5w**
 #EXTINF:-1 tvg-id="rusiya-domashniy-tv" tvg-name="DOMASHNİY TV" group-title="Rusiya — Ümumi",DOMASHNİY TV
-https://rushdtv.canlitvplayer.com/domashni/index.m3u8?token=AQqgcXw1-f8l7WpuUmJqTljOyGEjBYNmVm8AAIDlighLZu3s4W1V52WWYaEbgcn1vsRhnZ_m8pA_0krYPhx-tHyUmxnqVDBNawOzPXmtrE8TBRXTWEwv85FVRyq0O90X1Yor8kipdCsuG-Nj7tJM46ZlaGzwc-Pnzlej84dAaQu21YpqLRoTj9HXAqRDW4wjWDriJv3wCI_-2VbZnevgu_3oHu26sjXfVybz8IGVyUsNpnman-PWozApjfa7L8mA
+https://rushdtv.canlitvplayer.com/domashni/index.m3u8?token=uu6xzjpe17kSzsTH2r-GC4TDVCi_nN0-Dgc5RRVYScOnwk9_7G9qFJumS5zA1FvBQlP_5E7kzZMOlSU7Pr_HvpvVHqYwfaiclnMj1-2q4_DvE8PPWNoqFXKrwt3prD87WHVJI2LD1mw3PU_agmA4GhEzsTl7D6U2PitzqAZrwyxnT3djVft0OgqAYrUH_AeTO2Sx0SejiGP7q_AONcNSKTbruuthw73xKPRzPQADC1RlL0lftYRovuejp5j73036
 #EXTINF:-1 tvg-id="rusiya-1-respublikanskiy" tvg-name="1 respublikanskiy" group-title="Rusiya — Ümumi",1 respublikanskiy
 https://streaming.televizor-24-tochka.ru/live/27.m3u8?bw942519931004
 #EXTINF:-1 tvg-id="rusiya-karusel" tvg-name="karusel" group-title="Rusiya — Ümumi",karusel
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36
 https://vkvsd495.okcdn.ru/hls/16284492696124.m3u8/sig/qRpShp5erx0/expires/1789671120853/srcIp/4.154.236.225/urls/185.226.55.78/clientType/13/srcAg/CHROME/mid/15517475744572/video.m3u8?p
 #EXTINF:-1 tvg-id="rusiya-perviy-tv-rusya-первыи" tvg-name="Perviy Tv Rusya Первый" group-title="Rusiya — Ümumi",Perviy Tv Rusya Первый
-https://rushdtv.canlitvplayer.com/ort/index.m3u8?token=6jrXnbz9QKDVpz8veImHEgExhb4fR4kH09w1kNyJNFUVbL3n1goq8zzK4UMJfnRWlmicum68av024UJBrjbDzguRGAPIydOn1ormtT2MGiyWTqfsSnq4XZFEGT6-TF0kSU-gUNclwv7LtYA_Y7m2DnTNm16ce0wTfV7vYdUNftoe0evMty_6ropM1BbFZm3MNGAUwmGJzi86CaPdaGizeLCEUz-NIfGG7XJsp2CdqqV8nahq1seOZARnVESrCzs4
+https://rushdtv.canlitvplayer.com/ort/index.m3u8?token=NyTFbN0NTxXhsuwX_tZeS2Roa14WvW4hcXWPOIH7pGVRjl3KZzxHuCpRCvzxMQ0wWQaFgbiOL47w33MemXrEIamkz-C3ATU341rZxbMaobAu67gIXmTA77U8Hu2IDO-IjwSpMXafRHH_eDItedaHNQ7Nb6AsqpEdBnPdk_upXKE3yh9uBAbfDaT8VEBQyz2gbBo4bGVmid273I0N1UuftEkw1yWqbsBf5_hxkHSs7Vur_ih-LsyEQnp49zKGHZuK
 #EXTINF:-1 tvg-id="1TwenteTV.nl@SD" tvg-name="1Twente TV (1080p)" tvg-logo="https://i.imgur.com/ftiuNK3.png" group-title="General",1Twente TV (1080p)
 https://ms7.mx-cd.net/dtv-11/198-989148/1Twente_TV.smil/chunklist_w954512639_b4292608_slNLD.m3u8
 #EXTINF:-1 tvg-id="2Plus2Marathon.ua@SD" tvg-name="2+2 Marathon (1080p)" tvg-logo="https://i.imgur.com/v6KBgqk.png" group-title="General",2+2 Marathon (1080p)
@@ -1124,8 +1109,6 @@ https://lowa8026-cmyk.github.io/Ukraine/Edyni_Novyny/2Plus2Marafon.m3u8
 https://streaming.28kanala.eus/hls/z.m3u8
 #EXTINF:-1 tvg-id="2MMonde.ma@Plus1" tvg-name="2M Monde +1 (1080p)" tvg-logo="https://i.imgur.com/MvpntzA.png" group-title="General",2M Monde +1 (1080p)
 https://d2qh3gh0k5vp3v.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-n6pess5lwbghr/2M_ES.m3u8
-#EXTINF:-1 tvg-id="36TVHuacho.pe@SD" tvg-name="36 TV Huacho (720p)" tvg-logo="https://i.imgur.com/F4NZM3s.jpeg" group-title="General",36 TV Huacho (720p)
-https://live-evg10.tv360.bitel.com.pe/bitel/36tvSRT/playlist.m3u8
 #EXTINF:-1 tvg-id="A1TV.nl@SD" tvg-name="A1 TV (1080p) [Not 24/7]" tvg-logo="https://i.imgur.com/JZ1oTM2.png" group-title="General",A1 TV (1080p) [Not 24/7]
 https://stream.a1mediagroep.nl/hls/a1tv.m3u8
 #EXTINF:-1 tvg-id="A2iTV.it@SD" tvg-name="A2i TV (1080p)" tvg-logo="https://i.imgur.com/YlDFir7.jpg" group-title="General",A2i TV (1080p)
@@ -1289,8 +1272,6 @@ https://ammantv-live.ercdn.net/ammantvhd/ammantvhd.m3u8
 https://video1.azulstream.com:8081/antenaseistv/index.m3u8
 #EXTINF:-1 tvg-id="Antenna2TV.it@SD" tvg-name="Antenna 2 TV (720p)" tvg-logo="https://i.imgur.com/kNrzk3X.png" group-title="General",Antenna 2 TV (720p)
 https://58f12ffd2447a.streamlock.net/Antenna2/livestream/playlist.m3u8
-#EXTINF:-1 tvg-id="AsContenidos.bo@SD" tvg-name="As Contenidos (720p)" tvg-logo="https://ascontenidos.com.bo/wp-content/uploads/2023/07/cropped-logo512.png" group-title="General",As Contenidos (720p)
-https://master.tucableip.com/ascontenido/index.m3u8
 #EXTINF:-1 tvg-id="AustralTV.ec@SD" tvg-name="Austral TV (1080p)" tvg-logo="https://i.imgur.com/zgGuCYL.png" group-title="General",Austral TV (1080p)
 https://stmv3.voxtvhd.com.br/australtv/australtv/playlist.m3u8
 #EXTINF:-1 tvg-id="AutenticaTelevision.pe@SD" tvg-name="Auténtica Televisión (720p) [Not 24/7]" tvg-logo="https://i.imgur.com/bEJK3RN.png" group-title="General",Auténtica Televisión (720p) [Not 24/7]
@@ -1341,8 +1322,6 @@ https://alpha.tv.online.tm/hls/ch001.m3u8
 https://ss2.tvrdomi.com:1936/ame47/ame47/playlist.m3u8
 #EXTINF:-1 tvg-id="AmitelTV.bo@SD" tvg-name="Amitel TV (720p)" tvg-logo="https://amiteltv.com/wp-content/uploads/2026/01/LOGO-SIN-FONDO-WEB.png" group-title="General",Amitel TV (720p)
 https://stv2.boliviaplay.com.bo/hls/stream.m3u8
-#EXTINF:-1 tvg-id="ArarunaTV.br@SD" tvg-name="Araruna TV" tvg-logo="https://i.imgur.com/jl39ula.png" group-title="General",Araruna TV
-https://video05.logicahost.com.br/ararunatv/ararunatv/playlist.m3u8
 #EXTINF:-1 tvg-id="ArgentinisimaSatelital.ar@SD" tvg-name="Argentinísima Satelital (540p)" tvg-logo="https://i.imgur.com/xFgJawa.png" group-title="General",Argentinísima Satelital (540p)
 https://stream1.sersat.com/hls/argentinisima.m3u8
 #EXTINF:-1 tvg-id="ArkadagTV.tm@SD" tvg-name="Arkadag TV (406p) [Not 24/7]" tvg-logo="https://i.imgur.com/JdEb4Ug.png" group-title="General",Arkadag TV (406p) [Not 24/7]
@@ -1450,8 +1429,6 @@ https://blacknewschannel-xumo-us.amagi.tv/playlist.m3u8
 https://mumbai-edge.smartplaytv.in/10TV/index.m3u8
 #EXTINF:-1 tvg-id="24Kanal.ua@SD" tvg-name="24 Kanal (720p)" tvg-logo="https://pbs.twimg.com/profile_images/1498285886714298374/EMSJzC-0_400x400.jpg" group-title="News",24 Kanal (720p)
 https://cdn15.live-tv.cloud/ua_infinitas_tv/news24-abr/playlist.m3u8
-#EXTINF:-1 tvg-id="4DmasNoticiasTV.py@SD" tvg-name="4DmásNoticias TV (1080p) [Not 24/7]" tvg-logo="https://i.ibb.co/1fb5BtN/unnamed.png" group-title="News",4DmásNoticias TV (1080p) [Not 24/7]
-https://rds3.desdeparaguay.net/4dmasnoticiastv/4dmasnoticiastv/playlist.m3u8
 #EXTINF:-1 tvg-id="WMURTV91.us@HD" tvg-name="ABC 9 Manchester NH (WMUR-TV) (720p)" tvg-logo="https://upload.wikimedia.org/wikipedia/en/7/72/WMURCurrentLogo.png" group-title="News;Weather",ABC 9 Manchester NH (WMUR-TV) (720p)
 https://aegis-cloudfront-1.tubi.video/b77ffe96-c5d1-43a7-8687-306ff244d725/playlist.m3u8
 #EXTINF:-1 tvg-id="ABCNews.au@Sydney" tvg-name="ABC News (720p)" tvg-logo="https://i.imgur.com/BrW7gk8.png" group-title="News",ABC News (720p)
@@ -1481,9 +1458,6 @@ https://jmc-live.ercdn.net/amutv/amutv.m3u8
 https://5e50264bd6766.streamlock.net/mexiquense2/videomexiquense2/playlist.m3u8
 #EXTINF:-1 tvg-id="ANBNews.in@SD" tvg-name="ANB News (720p)" tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_ANB_NEWS/images/LOGO_HD/image.png" group-title="News",ANB News (720p)
 https://server.livelegitpro.in:9899/anbnews/anbnews/index.m3u8
-#EXTINF:-1 tvg-id="AnwarTV2.iq@SD" tvg-name="Anwar TV2 (720p)" tvg-logo="https://i.imgur.com/yHZXPcn.png" group-title="News",Anwar TV2 (720p)
-#EXTVLCOPT:http-referrer=https://odysee.com/
-https://cloud.odysee.live/content/f92670235a1ce2bce4cf77671cc4dcc2188baa1d/master.m3u8
 #EXTINF:-1 tvg-id="BBCNews.uk@UK" tvg-name="BBC News (1080p)" tvg-logo="https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_BBC_NEWS/images/LOGO_HD/image.png" group-title="News",BBC News (1080p)
 https://xemzi.short.gy/1000015
 #EXTINF:-1 tvg-id="BEKNews.us@SD" tvg-name="BEK TV News (720p)" tvg-logo="https://i.imgur.com/m80uxdz.png" group-title="News",BEK TV News (720p)
@@ -1504,8 +1478,6 @@ https://eazyvwqssi.erbvr.com/alghadtv/alghadtv.m3u8
 https://amarujala.ottlive.co.in/amarujala/index.m3u8
 #EXTINF:-1 tvg-id="24News.in@SD" tvg-name="24 News (576p)" tvg-logo="https://sund-images.sunnxt.com/202222/300x300_24News_202222_d63feca0-79ae-47ea-b75a-66c17d456f4c.png" group-title="News",24 News (576p)
 https://mumt07.tangotv.in/zHjX9OFlTWENTYFOURNEWS/index.m3u8
-#EXTINF:-1 tvg-id="AfrikInfoTV.gn@SD" tvg-name="Afrik Info TV" tvg-logo="https://i.imgur.com/hz2LOD8.jpeg" group-title="News",Afrik Info TV
-https://kali.vdopanel.com:3119/hybrid/play.m3u8
 #EXTINF:-1 tvg-id="AlMasarTV.ly@SD" tvg-name="Al Masar TV (576p)" tvg-logo="https://play-lh.googleusercontent.com/FHPrsr391mPFqKfTq6ZdvWPZNVfsZeTAVQ8rjQF-NosnRdNipUy5xa43RWkiF4tGcQU" group-title="News",Al Masar TV (576p)
 https://starmenajo.com/hls/almasar/index.m3u8
 #EXTINF:-1 tvg-id="AlMayadeenTV.lb@SD" tvg-name="Al Mayadeen (576p)" tvg-logo="https://i.imgur.com/GtQOKeW.png" group-title="News",Al Mayadeen (576p)
@@ -1559,8 +1531,6 @@ https://bloomberg.com/media-manifest/streams/qt.m3u8
 https://aegis-cloudfront-1.tubi.video/c95700f8-e51c-4a36-ad46-56f70fc9f1d9/playlist.m3u8
 #EXTINF:-1 tvg-id="Atlas.us@SD" tvg-name="Atlas (480p)" tvg-logo="https://whiplash.cc/assets/img/channels/atlas.png" group-title="Documentary",Atlas (480p)
 https://cdn.whiplash.cc/whiplash-atlas/index.m3u8
-#EXTINF:-1 tvg-id="AfarinBaxcha.iq@SD" tvg-name="Afarin Baxcha (1080p)" tvg-logo="https://i.postimg.cc/4xRkBDRx/Afarin-Baxcha-200.png" group-title="Kids",Afarin Baxcha (1080p)
-https://5dcabf026b188.streamlock.net/afarinTV/livestream/playlist.m3u8
 #EXTINF:-1 tvg-id="AfarinTV.iq@SD" tvg-name="Afarin TV (720p) [Not 24/7]" tvg-logo="https://i.imgur.com/6MnXD7g.png" group-title="Kids",Afarin TV (720p) [Not 24/7]
 https://65f16f0fdfc51.streamlock.net/afarinTV/livestream/playlist.m3u8
 #EXTINF:-1 tvg-id="AkiliKids.ke@SD" tvg-name="Akili Kids!" tvg-logo="https://i.imgur.com/xFm2co6.png" group-title="Kids",Akili Kids!
@@ -1648,8 +1618,6 @@ https://eco.streams.ovh:8081/barazatv/tracks-v1a1/mono.m3u8
 https://fl.biztv.media/music_720_QAKpGmVUjaPApCNjpsgBxrdqNihAkl/index.m3u8
 #EXTINF:-1 tvg-id="BTBMusic.pl@SD" tvg-name="BTB Music (1080p)" tvg-logo="https://btb.j00r.us/images/logo_BTBMusic.webp" group-title="Music",BTB Music (1080p)
 https://panel.btb.j00r.us/memfs/ebaffae6-0086-49d7-843d-57f2c561de86.m3u8
-#EXTINF:-1 tvg-id="AndyHaryana.in@SD" tvg-name="Andy Haryana (576p)" tvg-logo="https://i.imgur.com/rmCBD3e.png" group-title="Culture;Music",Andy Haryana (576p)
-https://mumt03.tangotv.in/Dsly5z3HANDYHARYANA/index.m3u8
 #EXTINF:-1 tvg-id="AtomicAcademyTV.ro@SD" tvg-name="Atomic Academy TV (480p)" tvg-logo="https://i.imgur.com/ZbrDIbZ.png" group-title="Music",Atomic Academy TV (480p)
 https://atomic.streamnet.ro/academia.m3u8
 #EXTINF:-1 tvg-id="AtomicTV.ro@SD" tvg-name="Atomic TV (360p)" tvg-logo="https://i.imgur.com/O4uI0Uy.png" group-title="Music",Atomic TV (360p)
@@ -1668,8 +1636,6 @@ https://rtmpcontrol.com:1936/balchitv/balchitv/playlist.m3u8
 https://2-fss-2.streamhoster.com/pl_120/206508-3261972-1/playlist.m3u8
 #EXTINF:-1 tvg-id="AuroraArte.it@SD" tvg-name="Aurora Arte (480p)" tvg-logo="https://i.imgur.com/Y1Yq3iV.png" group-title="Culture",Aurora Arte (480p)
 https://59d7d6f47d7fc.streamlock.net/auroraarte/auroraarte/playlist.m3u8
-#EXTINF:-1 tvg-id="AlHiwarTV.uk@SD" tvg-name="Alhiwar TV (1080p) [Not 24/7]" tvg-logo="https://i.imgur.com/UjOxwdd.png" group-title="Education",Alhiwar TV (1080p) [Not 24/7]
-https://mn-nl.mncdn.com/alhiwar_live/smil:alhiwar.smil/playlist.m3u8
 #EXTINF:-1 tvg-id="ARDalpha.de@SD" tvg-name="ARD-alpha (720p)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/ARD_alpha.svg/960px-ARD_alpha.svg.png" group-title="Education",ARD-alpha (720p)
 https://mcdn.br.de/br/fs/ard_alpha/hls/de/master.m3u8
 #EXTINF:-1 tvg-id="OPA.cr@SD" tvg-name="¡OPA! (1080i) [Geo-blocked]" tvg-logo="https://i.imgur.com/300c1ZH.png" group-title="Entertainment",¡OPA! (1080i) [Geo-blocked]
@@ -1770,8 +1736,6 @@ https://cb0c87cc605942ff9766a4e6744bbadc.mediatailor.us-east-1.amazonaws.com/v1/
 https://s1.abntelevision.com/avivamientoabr/stream/avivamientohd/avivamientohd/playlist.m3u8
 #EXTINF:-1 tvg-id="AztecaInternacional.mx@SD" tvg-name="Azteca Internacional (1080p)" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/e/eb/Azteca_Internacional_logo_2023.png" group-title="Entertainment",Azteca Internacional (1080p)
 https://azt-mun.otteravision.com/azt/mun/mun.m3u8
-#EXTINF:-1 tvg-id="BaanBaanTV73.th@SD" tvg-name="Baan Baan TV 73" tvg-logo="https://i.imgur.com/JGLy1Pm.png" group-title="Undefined",Baan Baan TV 73
-https://vdo.plathong.net/live8794/live8794/playlist.m3u8
 #EXTINF:-1 tvg-id="BajoTechoTV.do@SD" tvg-name="Bajo Techo TV (1080p) [Not 24/7]" tvg-logo="https://i.imgur.com/I2wRq88.png" group-title="Shop",Bajo Techo TV (1080p) [Not 24/7]
 https://fox.hostlagarto.com:8081/bajotechotv/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="BarkTV.us@SD" tvg-name="Bark TV (1080p)" tvg-logo="https://images.squarespace-cdn.com/content/v1/6a233007201fda6808a47ff9/f4f45cba-d340-4963-860a-37edaf91bc7f/BarkTV_Horizontal_Color.png" group-title="Entertainment",Bark TV (1080p)
@@ -1972,8 +1936,6 @@ https://mediaserver.abnvideos.com/streams/abnsat.m3u8
 https://c.streamhoster.com/link/hls/W5s3fS/inLo5pcsHjo/iqg9wps0m1x_5/playlist.m3u8
 #EXTINF:-1 tvg-id="AgroTV.ro@SD" tvg-name="Agro TV (360p) [Not 24/7]" tvg-logo="https://i.imgur.com/S7X1PiC.png" group-title="Outdoor",Agro TV (360p) [Not 24/7]
 https://agrotv.streamnet.ro/mobile_tv/agrotv.m3u8
-#EXTINF:-1 tvg-id="AguacateTV.ve@SD" tvg-name="Aguacate TV (1080p)" tvg-logo="https://i.ibb.co/wpWBsgf/IMG-20230705-154622.jpg" group-title="Entertainment",Aguacate TV (1080p)
-https://streamtv.intervenhosting.net:3040/hybrid/play.m3u8
 #EXTINF:-1 tvg-id="AlSahatTV.ye@SD" tvg-name="Al-Sahat TV (720p)" tvg-logo="https://i.imgur.com/UVndAta.png" group-title="Religious",Al-Sahat TV (720p)
 https://assahat.b-cdn.net/Assahat/assahatobs/index.m3u8
 #EXTINF:-1 tvg-id="AlauTV.kz@SD" tvg-name="Alau TV (576p)" tvg-logo="https://i.imgur.com/gK6ZRzp.png" group-title="Undefined",Alau TV (576p)
