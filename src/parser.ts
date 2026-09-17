@@ -47,7 +47,12 @@ export function parseM3u(text: string, sourceName: string): PlaylistEntry[] {
       pending = undefined;
       continue;
     }
-    entries.push({ ...pending, url, headers: { ...pending.headers, ...headers } });
+    entries.push({
+      ...pending,
+      country: inferEntryCountry(pending, url),
+      url,
+      headers: { ...pending.headers, ...headers }
+    });
     pending = undefined;
   }
 
@@ -84,6 +89,7 @@ export function normalizeCountry(raw?: string): string {
   if (upper === "AZ" || /AZER|AZƏR|AZERBAIJAN/i.test(value)) return "Azərbaycan";
   if (upper === "TR" || /TURK|TÜRK|TURKEY|TURKIYE|TÜRKİYE|TÜRKİYƏ|TÜRKIYƏ/i.test(value)) return "Türkiyə";
   if (upper === "RU" || /RUSS|РОСС|RUSSIAN|RUSIYA|RUSİYA/i.test(value)) return "Rusiya";
+  if (upper === "IR" || /\bIRAN\b|İRAN|PERSIAN|FARSI/i.test(value)) return "İran";
   if (upper === "US" || upper.includes("USA") || /UNITED STATES/i.test(value)) return "ABŞ";
   if (upper === "NL") return "Niderland";
   if (upper === "UA") return "Ukrayna";
@@ -124,6 +130,20 @@ function countryFromTvgId(tvgId?: string): string | undefined {
 function countryFromGroupTitle(groupTitle?: string): string | undefined {
   if (!groupTitle) return undefined;
   const normalized = normalizeCountry(groupTitle);
-  if (normalized === "Azərbaycan" || normalized === "Türkiyə" || normalized === "Rusiya") return normalized;
+  if (["Azərbaycan", "Türkiyə", "Rusiya", "İran"].includes(normalized)) return normalized;
   return undefined;
+}
+
+function inferEntryCountry(entry: Omit<PlaylistEntry, "url">, url: string): string {
+  const base = normalizeCountry(entry.country ?? entry.groupTitle);
+  const value = `${entry.name} ${entry.tvgName ?? ""} ${entry.tvgId ?? ""} ${entry.groupTitle ?? ""} ${url}`.toLocaleLowerCase("tr");
+
+  // Repair old playlists that were generated when Volo was incorrectly treated
+  // as a Turkey-only catalogue. Strong Iran/Persian identifiers override the
+  // stale group-title so the next generated playlist moves them to İran.
+  if (/\biran\b|iranian|persian|farsi|irib|ifilm|press tv|iran international|voa persian|bbc persian|manoto|gem tv|persiana|tapesh|mihan tv|pars tv|simaye azadi|jame jam|sahar tv|irinn|pmc(?:\W|$)|شبکه|ایران/.test(value)) {
+    return "İran";
+  }
+
+  return base;
 }
