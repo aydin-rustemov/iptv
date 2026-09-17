@@ -13,7 +13,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: bootstrap-turkey-volo
+  group: update-iptv-playlist
   cancel-in-progress: true
 
 jobs:
