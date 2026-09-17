@@ -13,7 +13,7 @@ const STATUS = "output/turkey-volo-bootstrap.json";
 const VOLO = "https://tv.canlitvvolo.com";
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
 const LIST_PAGES = 23;
-const CONCURRENCY = Math.min(Number(process.env["VOLO_BOOTSTRAP_CONCURRENCY"] ?? 4), 4);
+const CONCURRENCY = Math.min(Number(process.env["VOLO_BOOTSTRAP_CONCURRENCY"] ?? 6), 6);
 
 interface DiscoveredPage { url: string; hint: string; }
 interface ProcessResult { classifiedTurkey: boolean; entry?: ValidatedEntry; name?: string; reason?: string; }
