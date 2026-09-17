@@ -5,7 +5,7 @@ import type { PriorityChannelStatus, StatusOutput, ValidatedEntry } from "./type
 export function writePlaylist(entries: ValidatedEntry[], file = "output/playlist.m3u"): void {
   fs.mkdirSync(path.dirname(file), { recursive: true });
   let text = "#EXTM3U\n";
-  const ordered = [...entries].sort(comparePlaylistEntries);
+  const ordered = [...entries].filter(isDisplayableChannel).sort(comparePlaylistEntries);
   for (const entry of ordered) {
     const group = groupTitle(entry);
     const name = withWarningPrefix(displayName(entry.name), group);
@@ -21,6 +21,11 @@ export function writePlaylist(entries: ValidatedEntry[], file = "output/playlist
     text += `${entry.url}\n`;
   }
   fs.writeFileSync(file, text, "utf8");
+}
+
+function isDisplayableChannel(entry: ValidatedEntry): boolean {
+  const value = normalizeSortText(`${entry.name} ${entry.tvgName ?? ""}`);
+  return !/sitene tv ekle|siteye tv ekle|indi izle|hemen izle|hemen seyret|player ac|yayini ac|tiklayin/.test(value);
 }
 
 function comparePlaylistEntries(a: ValidatedEntry, b: ValidatedEntry): number {
