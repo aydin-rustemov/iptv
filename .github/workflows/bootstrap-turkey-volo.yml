@@ -7,6 +7,7 @@ on:
       - main
     paths:
       - "scripts/bootstrapTurkeyFromVolo.ts"
+      - "scripts/bootstrapTurkeyFromVoloV2.ts"
       - ".github/workflows/bootstrap-turkey-volo.yml"
 
 permissions:
@@ -21,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     env:
-      VOLO_BOOTSTRAP_CONCURRENCY: "8"
+      VOLO_BOOTSTRAP_CONCURRENCY: "4"
     steps:
       - uses: actions/checkout@v4
 
@@ -40,7 +41,7 @@ jobs:
         run: npx playwright install chromium
 
       - name: Rebuild Turkey block from Volo
-        run: npx tsx scripts/bootstrapTurkeyFromVolo.ts
+        run: npx tsx scripts/bootstrapTurkeyFromVoloV2.ts
 
       - name: Audit rebuilt playlist
         run: npm run audit
