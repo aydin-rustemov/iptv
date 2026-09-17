@@ -173,9 +173,6 @@ async function pageCandidates(page: ChannelPage, browser?: Browser): Promise<str
     }
   }
 
-  // Static HTML/iframe extraction is cheap. Use Playwright only when it did not
-  // already expose a playable manifest, except Volo where player JSON/network
-  // is the primary discovery path.
   const needsBrowser = found.size === 0 || isVolo(page.url);
   if (browser && needsBrowser) {
     (await captureNetwork(page.url, browser)).forEach((url) => found.add(url));
@@ -304,14 +301,17 @@ function channelLike(text: string, href: string): boolean {
   const value = `${text} ${href}`.toLocaleLowerCase("tr");
   if (/blog|program|yayin-akisi|frekans|iletisim|privacy|gizlilik|dmca|reklam|category|search|arama|favori|reyting/.test(value)) return false;
   if (/\/(?:tag|author|page)\//i.test(href)) return false;
-  return /canli|canlı|yayin|yayın|izle|live|watch|online|stream|tv|kanal|channel|spor|sport|haber|news|trt|atv|show|star|arb|cbc|xezer|xəzər|ictimai|aztv|idman|baku|нтв|тнт|рен|стс|россия|первый|пятый|звезда|карусель|матч|мир/i.test(value);
+  return /canli|canlı|yayin|yayın|izle|live|watch|online|stream|tv|kanal|channel|spor|sport|haber|news|trt|atv|show|star|arb|cbc|xezer|xəzər|ictimai|aztv|idman|baku|нтв|тнт|рен|стс|россия|первый|пятый|звезда|карусель|матч|мир|iran|persian|irib/i.test(value);
 }
 
 function inferCountry(title: string, url: string, fallback: Country): Country {
-  if (fallback !== "Türkiyə") return fallback;
   const value = `${title} ${url}`.toLocaleLowerCase("tr");
-  if (/azerbaycan|azerbaijan|azərbaycan|aztv|xezer|xəzər|ictimai|idman|medeniyyet|mədəniyyət|arb(?:\W|$)|cbc sport|cbc tv|baku tv|naxcivan|naxçıvan|qafqaz|kepez|kəpəz|kanal s/.test(value)) return "Azərbaycan";
+
+  if (/azerbaycan|azerbaijan|azərbaycan|aztv|xezer|xəzər|ictimai|idman|medeniyyet|mədəniyyət|arb(?:\W|$)|arb24|cbc sport|cbc tv|baku tv|naxcivan|naxçıvan|qafqaz|kepez|kəpəz|kanal s/.test(value)) return "Azərbaycan";
   if (/rusya|russia|russian|россия|первый|пятый|нтв|рен(?:\W|$)|стс|тнт|звезда|карусель|пятница|матч|мир 24|твц|домашний/.test(value)) return "Rusiya";
+  if (/\biran\b|iranian|persian|farsi|irib|ifilm|press tv|iran international|voa persian|bbc persian|manoto|gem tv|simaye azadi|jame jam|sahar tv|irinn|شبکه|ایران/.test(value)) return "İran";
+  if (/\bturkiye\b|\btürkiye\b|\bturkey\b|\btürk\b|\bturk\b|\btrt\b|\bkanal d\b|\bshow tv\b|\bstar tv\b|\bnow tv\b|\btv8\b|\bteve2\b|\bkanal 7\b|\bbeyaz tv\b|\b360 tv\b|\bcnn türk\b|\bcnn turk\b|\ba haber\b|\bhabertürk\b|\bhaberturk\b|\bhaber global\b|\bhalk tv\b|\btgrt\b|\btv100\b|\btvnet\b|\ba spor\b|\bminika\b|\bdmax\b|\bpower türk\b|\bpowertürk\b|\bnumber 1 türk\b/.test(value)) return "Türkiyə";
+
   return fallback;
 }
 
