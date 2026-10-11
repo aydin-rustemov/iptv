@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-09-17T05:25:34.360Z",
-  "published": 971,
-  "verifiedWorking": 1098,
+  "updatedAt": "2026-10-11T06:12:13.295Z",
+  "published": 843,
+  "verifiedWorking": 864,
   "discovery": {
     "maintenance": {
-      "previous": 990,
-      "preserved": 907,
-      "replaced": 55,
-      "removed": 28,
-      "added": 9,
-      "published": 971
+      "previous": 971,
+      "preserved": 830,
+      "replaced": 10,
+      "removed": 131,
+      "added": 3,
+      "published": 843
     },
     "lockedStaticChannels": [
       {
@@ -49,20 +49,20 @@
       }
     ],
     "canliTv": {
-      "updatedAt": "2026-09-17T04:58:55.146Z",
+      "updatedAt": "2026-10-11T05:56:44.876Z",
       "source": "canlitv-az",
       "ok": false,
-      "error": "EAI_AGAIN: fetch failed"
+      "error": "ENOTFOUND: fetch failed"
     },
     "webAggregators": [
       {
         "source": "canlitv-com",
         "ok": true,
         "seedPages": 1,
-        "channelPages": 315,
-        "processedPages": 315,
-        "manifestCandidates": 213,
-        "entries": 213
+        "channelPages": 329,
+        "processedPages": 329,
+        "manifestCandidates": 196,
+        "entries": 196
       },
       {
         "source": "canlitv-date",
@@ -70,8 +70,8 @@
         "seedPages": 1,
         "channelPages": 273,
         "processedPages": 273,
-        "manifestCandidates": 183,
-        "entries": 182
+        "manifestCandidates": 180,
+        "entries": 179
       },
       {
         "source": "canlitv-me",
@@ -79,8 +79,8 @@
         "seedPages": 1,
         "channelPages": 68,
         "processedPages": 68,
-        "manifestCandidates": 12,
-        "entries": 4
+        "manifestCandidates": 0,
+        "entries": 0
       },
       {
         "source": "canlitv-video",
@@ -93,21 +93,22 @@
       },
       {
         "source": "canlitv-volo",
-        "ok": true,
-        "seedPages": 23,
-        "channelPages": 605,
-        "processedPages": 600,
-        "manifestCandidates": 534,
-        "entries": 510
+        "ok": false,
+        "seedPages": 0,
+        "channelPages": 0,
+        "processedPages": 0,
+        "manifestCandidates": 0,
+        "entries": 0,
+        "error": "http_403; browser=browser_http_403"
       },
       {
         "source": "canlitv-watch",
         "ok": true,
         "seedPages": 2,
-        "channelPages": 116,
-        "processedPages": 116,
-        "manifestCandidates": 66,
-        "entries": 63
+        "channelPages": 115,
+        "processedPages": 115,
+        "manifestCandidates": 67,
+        "entries": 64
       },
       {
         "source": "glaz-tv-ru",
@@ -133,17 +134,17 @@
         "seedPages": 1,
         "channelPages": 83,
         "processedPages": 83,
-        "manifestCandidates": 171,
-        "entries": 148
+        "manifestCandidates": 157,
+        "entries": 134
       },
       {
         "source": "tvstream-az",
         "ok": true,
         "seedPages": 1,
-        "channelPages": 14,
-        "processedPages": 14,
-        "manifestCandidates": 171,
-        "entries": 171
+        "channelPages": 2,
+        "processedPages": 2,
+        "manifestCandidates": 10,
+        "entries": 10
       }
     ],
     "m3uSourceFailures": []
