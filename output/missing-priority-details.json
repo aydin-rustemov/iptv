@@ -32,13 +32,8 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 3,
+    "candidatesFound": 2,
     "candidates": [
-      {
-        "host": "yayin2.canlitv.fun",
-        "sourceName": "existing-playlist",
-        "result": "not_checked"
-      },
       {
         "host": "xezerxeber.az",
         "sourceName": "canlitv-watch",
@@ -72,7 +67,7 @@
     "candidates": [
       {
         "host": "yayin2.canlitv.fun",
-        "sourceName": "existing-playlist",
+        "sourceName": "canlitv-com",
         "result": "not_checked"
       }
     ],
@@ -131,13 +126,8 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 1,
-    "candidatesFound": 2,
+    "candidatesFound": 1,
     "candidates": [
-      {
-        "host": "yayin2.canlitv.fun",
-        "sourceName": "existing-playlist",
-        "result": "not_checked"
-      },
       {
         "host": "yayin2.canlitv.fun",
         "sourceName": "canlitv-date",
@@ -216,13 +206,8 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 1,
-    "candidatesFound": 2,
+    "candidatesFound": 1,
     "candidates": [
-      {
-        "host": "yayin2.canlitv.fun",
-        "sourceName": "existing-playlist",
-        "result": "not_checked"
-      },
       {
         "host": "yayin2.canlitv.fun",
         "sourceName": "canlitv-date",
@@ -325,7 +310,7 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 2,
+    "candidatesFound": 3,
     "candidates": [
       {
         "host": "tr.canlitv.watch",
@@ -335,6 +320,11 @@
       {
         "host": "www.livereacting.com",
         "sourceName": "canlitv-date",
+        "result": "not_checked"
+      },
+      {
+        "host": "yayin2.canlitv.fun",
+        "sourceName": "canlitv-com",
         "result": "not_checked"
       }
     ],
@@ -387,7 +377,7 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 3,
+    "candidatesFound": 4,
     "candidates": [
       {
         "host": "tr.canlitv.watch",
@@ -402,6 +392,11 @@
       {
         "host": "www.livereacting.com",
         "sourceName": "canlitv-date",
+        "result": "not_checked"
+      },
+      {
+        "host": "yayin2.canlitv.fun",
+        "sourceName": "canlitv-com",
         "result": "not_checked"
       }
     ],
@@ -508,16 +503,11 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 2,
+    "candidatesFound": 1,
     "candidates": [
       {
         "host": "rkhubpaomb.turknet.ercdn.net",
         "sourceName": "canlitv-watch",
-        "result": "not_checked"
-      },
-      {
-        "host": "rkhubpaomb.turknet.ercdn.net",
-        "sourceName": "canlitv-com",
         "result": "not_checked"
       }
     ],
@@ -621,7 +611,7 @@
   {
     "channel": "CNN Türk",
     "id": "cnn-turk",
-    "previousStatus": "all_candidates_failed",
+    "previousStatus": "not_found",
     "aliasesChecked": [
       "CNN Türk",
       "CNN Türk",
@@ -630,14 +620,8 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 1,
-    "candidatesFound": 1,
-    "candidates": [
-      {
-        "host": "yayin2.canlitv.fun",
-        "sourceName": "canlitv-com",
-        "result": "not_checked"
-      }
-    ],
+    "candidatesFound": 0,
+    "candidates": [],
     "socialAccounts": [
       {
         "platform": "youtube",
@@ -645,8 +629,7 @@
         "result": "live_hint_found_no_direct_manifest"
       }
     ],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
+    "finalStatus": "not_found_after_all_sources",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
@@ -669,7 +652,7 @@
         "result": "not_checked"
       },
       {
-        "host": "vsd166.okcdn.ru",
+        "host": "vsd250.okcdn.ru",
         "sourceName": "smotret-tv-ru",
         "result": "not_checked"
       },
@@ -789,7 +772,7 @@
   {
     "channel": "TV100",
     "id": "tv100",
-    "previousStatus": "all_candidates_failed",
+    "previousStatus": "not_found",
     "aliasesChecked": [
       "TV100",
       "TV100",
@@ -798,14 +781,8 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 1,
-    "candidatesFound": 1,
-    "candidates": [
-      {
-        "host": "yayin2.canlitv.fun",
-        "sourceName": "canlitv-com",
-        "result": "not_checked"
-      }
-    ],
+    "candidatesFound": 0,
+    "candidates": [],
     "socialAccounts": [
       {
         "platform": "youtube",
@@ -813,8 +790,7 @@
         "result": "live_hint_found_no_direct_manifest"
       }
     ],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
+    "finalStatus": "not_found_after_all_sources",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
@@ -855,7 +831,7 @@
   {
     "channel": "TVNET",
     "id": "tvnet",
-    "previousStatus": "not_found",
+    "previousStatus": "all_candidates_failed",
     "aliasesChecked": [
       "TVNET",
       "TVNET",
@@ -864,10 +840,17 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 0,
-    "candidates": [],
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "tvnet-live.lg.mncdn.com",
+        "sourceName": "canlitv-com",
+        "result": "not_checked"
+      }
+    ],
     "socialAccounts": [],
-    "finalStatus": "not_found_after_all_sources",
+    "bestResult": "not_checked",
+    "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
@@ -1008,7 +991,7 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 4,
+    "candidatesFound": 3,
     "candidates": [
       {
         "host": "tv-trtspor1.medya.trt.com.tr",
@@ -1023,11 +1006,6 @@
       {
         "host": "tv-trtspor1.medya.trt.com.tr",
         "sourceName": "canlitv-date",
-        "result": "not_checked"
-      },
-      {
-        "host": "yayin2.canlitv.fun",
-        "sourceName": "canlitv-com",
         "result": "not_checked"
       }
     ],
@@ -1078,16 +1056,11 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 2,
+    "candidatesFound": 1,
     "candidates": [
       {
         "host": "rnttwmjcin.turknet.ercdn.net",
         "sourceName": "canlitv-watch",
-        "result": "not_checked"
-      },
-      {
-        "host": "yayin2.canlitv.fun",
-        "sourceName": "canlitv-com",
         "result": "not_checked"
       }
     ],

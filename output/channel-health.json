@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-10-11T19:50:32.048Z",
-  "published": 820,
-  "verifiedWorking": 832,
+  "updatedAt": "2026-10-12T00:50:42.084Z",
+  "published": 812,
+  "verifiedWorking": 824,
   "discovery": {
     "maintenance": {
-      "previous": 840,
-      "preserved": 814,
-      "replaced": 6,
-      "removed": 20,
+      "previous": 820,
+      "preserved": 808,
+      "replaced": 4,
+      "removed": 8,
       "added": 0,
-      "published": 820
+      "published": 812
     },
     "lockedStaticChannels": [
       {
@@ -49,7 +49,7 @@
       }
     ],
     "canliTv": {
-      "updatedAt": "2026-10-11T19:35:47.847Z",
+      "updatedAt": "2026-10-12T00:37:13.693Z",
       "source": "canlitv-az",
       "ok": false,
       "error": "ENOTFOUND: fetch failed"
@@ -61,8 +61,8 @@
         "seedPages": 1,
         "channelPages": 329,
         "processedPages": 329,
-        "manifestCandidates": 199,
-        "entries": 199
+        "manifestCandidates": 210,
+        "entries": 210
       },
       {
         "source": "canlitv-date",
@@ -107,8 +107,8 @@
         "seedPages": 2,
         "channelPages": 115,
         "processedPages": 115,
-        "manifestCandidates": 67,
-        "entries": 64
+        "manifestCandidates": 68,
+        "entries": 65
       },
       {
         "source": "glaz-tv-ru",
@@ -125,7 +125,7 @@
         "seedPages": 1,
         "channelPages": 37,
         "processedPages": 37,
-        "manifestCandidates": 56,
+        "manifestCandidates": 38,
         "entries": 4
       },
       {
