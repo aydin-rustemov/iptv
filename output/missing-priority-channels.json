@@ -12,48 +12,12 @@
     "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
-    "id": "xezer-tv",
-    "name": "Xəzər TV",
-    "country": "Azərbaycan",
-    "category": "general",
-    "priority": 4,
-    "aliasesChecked": 2,
-    "candidatesFound": 2,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
-    "id": "arb24",
-    "name": "ARB24",
-    "country": "Azərbaycan",
-    "category": "news",
-    "priority": 6,
-    "aliasesChecked": 3,
-    "candidatesFound": 1,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
     "id": "baku-tv",
     "name": "Baku TV",
     "country": "Azərbaycan",
     "category": "news",
     "priority": 9,
     "aliasesChecked": 2,
-    "candidatesFound": 1,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
-  },
-  {
-    "id": "cbc",
-    "name": "CBC",
-    "country": "Azərbaycan",
-    "category": "general",
-    "priority": 10,
-    "aliasesChecked": 3,
     "candidatesFound": 1,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
@@ -82,18 +46,6 @@
     "candidatesValidated": 0,
     "status": "not_found",
     "failureReason": "No matching alias found in enabled M3U sources"
-  },
-  {
-    "id": "dunya-tv",
-    "name": "Dünya TV",
-    "country": "Azərbaycan",
-    "category": "general",
-    "priority": 16,
-    "aliasesChecked": 1,
-    "candidatesFound": 1,
-    "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "qafqaz-tv",
@@ -210,7 +162,7 @@
     "category": "general",
     "priority": 112,
     "aliasesChecked": 2,
-    "candidatesFound": 1,
+    "candidatesFound": 2,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
@@ -270,10 +222,10 @@
     "category": "news",
     "priority": 118,
     "aliasesChecked": 1,
-    "candidatesFound": 0,
+    "candidatesFound": 1,
     "candidatesValidated": 0,
-    "status": "not_found",
-    "failureReason": "No matching alias found in enabled M3U sources"
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "ntv-tr",
@@ -342,10 +294,10 @@
     "category": "news",
     "priority": 126,
     "aliasesChecked": 2,
-    "candidatesFound": 0,
+    "candidatesFound": 1,
     "candidatesValidated": 0,
-    "status": "not_found",
-    "failureReason": "No matching alias found in enabled M3U sources"
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "bloomberg-ht",
@@ -438,7 +390,7 @@
     "category": "sports",
     "priority": 136,
     "aliasesChecked": 1,
-    "candidatesFound": 3,
+    "candidatesFound": 4,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
@@ -462,7 +414,7 @@
     "category": "sports",
     "priority": 138,
     "aliasesChecked": 2,
-    "candidatesFound": 1,
+    "candidatesFound": 2,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
@@ -510,7 +462,7 @@
     "category": "documentary",
     "priority": 144,
     "aliasesChecked": 1,
-    "candidatesFound": 1,
+    "candidatesFound": 2,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
@@ -706,6 +658,18 @@
     "candidatesValidated": 0,
     "status": "not_found",
     "failureReason": "No matching alias found in enabled M3U sources"
+  },
+  {
+    "id": "number-1-turk",
+    "name": "Number 1 Türk",
+    "country": "Türkiyə",
+    "category": "music",
+    "priority": 164,
+    "aliasesChecked": 2,
+    "candidatesFound": 1,
+    "candidatesValidated": 0,
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "number-1-tv",
