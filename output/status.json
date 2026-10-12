@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-10-12T11:14:25.707Z",
+  "updatedAt": "2026-10-12T21:33:21.589Z",
   "sources": 11,
-  "downloadedEntries": 737,
-  "uniqueCandidates": 553,
-  "fastCheckPassed": 831,
-  "mediaCheckPassed": 817,
-  "published": 796,
-  "failed": 534,
-  "duplicatesRemoved": 184,
+  "downloadedEntries": 722,
+  "uniqueCandidates": 539,
+  "fastCheckPassed": 819,
+  "mediaCheckPassed": 805,
+  "published": 788,
+  "failed": 516,
+  "duplicatesRemoved": 183,
   "countryCounts": {
     "Azərbaycan": 23,
-    "Türkiyə": 181,
-    "Rusiya": 208,
+    "Türkiyə": 178,
+    "Rusiya": 206,
     "İran": 7,
     "İtaliya": 10,
     "HU": 2,
@@ -22,15 +22,15 @@
     "Mərakeş": 1,
     "TH": 1,
     "MX": 7,
-    "Dominikan Respublikası": 11,
+    "Dominikan Respublikası": 10,
     "Rumıniya": 8,
-    "ABŞ": 103,
+    "ABŞ": 102,
     "Avstraliya": 4,
     "KR": 3,
     "Peru": 6,
     "Argentina": 5,
     "BE": 3,
-    "BR": 3,
+    "BR": 2,
     "GR": 6,
     "IQ": 5,
     "QA": 11,
@@ -91,10 +91,10 @@
     "CW": 1
   },
   "categoryCounts": {
-    "General": 107,
-    "News": 97,
+    "Other": 496,
+    "General": 104,
+    "News": 94,
     "Sports": 9,
-    "Other": 498,
     "Documentary": 28,
     "Children": 24,
     "Culture": 6,
@@ -146,7 +146,7 @@
       "category": "general",
       "priority": 4,
       "aliasesChecked": 2,
-      "candidatesFound": 2,
+      "candidatesFound": 3,
       "candidatesValidated": 1,
       "selectedSource": "canlitv-date",
       "status": "working"
@@ -170,7 +170,7 @@
       "category": "news",
       "priority": 6,
       "aliasesChecked": 3,
-      "candidatesFound": 1,
+      "candidatesFound": 2,
       "candidatesValidated": 1,
       "selectedSource": "canlitv-com",
       "status": "working"
@@ -218,7 +218,7 @@
       "category": "general",
       "priority": 10,
       "aliasesChecked": 3,
-      "candidatesFound": 1,
+      "candidatesFound": 2,
       "candidatesValidated": 1,
       "selectedSource": "canlitv-date",
       "status": "working"
@@ -290,7 +290,7 @@
       "category": "general",
       "priority": 16,
       "aliasesChecked": 1,
-      "candidatesFound": 1,
+      "candidatesFound": 2,
       "candidatesValidated": 1,
       "selectedSource": "canlitv-date",
       "status": "working"
@@ -446,7 +446,7 @@
       "category": "general",
       "priority": 108,
       "aliasesChecked": 2,
-      "candidatesFound": 5,
+      "candidatesFound": 3,
       "candidatesValidated": 1,
       "selectedSource": "existing-playlist",
       "status": "working"
@@ -603,9 +603,9 @@
       "priority": 121,
       "aliasesChecked": 2,
       "candidatesFound": 2,
-      "candidatesValidated": 1,
-      "selectedSource": "existing-playlist",
-      "status": "working"
+      "candidatesValidated": 0,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "haber-global",
@@ -615,9 +615,9 @@
       "priority": 122,
       "aliasesChecked": 1,
       "candidatesFound": 1,
-      "candidatesValidated": 1,
-      "selectedSource": "existing-playlist",
-      "status": "working"
+      "candidatesValidated": 0,
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "sozcu-tv",
@@ -878,7 +878,7 @@
       "category": "documentary",
       "priority": 144,
       "aliasesChecked": 1,
-      "candidatesFound": 2,
+      "candidatesFound": 1,
       "candidatesValidated": 0,
       "status": "all_candidates_failed",
       "failureReason": "Matching candidates did not pass media validation"
@@ -1118,10 +1118,10 @@
       "category": "music",
       "priority": 164,
       "aliasesChecked": 2,
-      "candidatesFound": 1,
+      "candidatesFound": 0,
       "candidatesValidated": 0,
-      "status": "all_candidates_failed",
-      "failureReason": "Matching candidates did not pass media validation"
+      "status": "not_found",
+      "failureReason": "No matching alias found in enabled M3U sources"
     },
     {
       "id": "number-1-tv",

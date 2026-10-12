@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-10-12T11:14:25.707Z",
-  "published": 796,
-  "verifiedWorking": 817,
+  "updatedAt": "2026-10-12T21:33:21.590Z",
+  "published": 788,
+  "verifiedWorking": 805,
   "discovery": {
     "maintenance": {
-      "previous": 812,
-      "preserved": 785,
-      "replaced": 7,
-      "removed": 20,
-      "added": 4,
-      "published": 796
+      "previous": 796,
+      "preserved": 777,
+      "replaced": 10,
+      "removed": 9,
+      "added": 1,
+      "published": 788
     },
     "lockedStaticChannels": [
       {
@@ -49,7 +49,7 @@
       }
     ],
     "canliTv": {
-      "updatedAt": "2026-10-12T11:01:05.369Z",
+      "updatedAt": "2026-10-12T21:18:46.728Z",
       "source": "canlitv-az",
       "ok": false,
       "error": "ENOTFOUND: fetch failed"
@@ -61,8 +61,8 @@
         "seedPages": 1,
         "channelPages": 329,
         "processedPages": 329,
-        "manifestCandidates": 244,
-        "entries": 244
+        "manifestCandidates": 245,
+        "entries": 245
       },
       {
         "source": "canlitv-date",
@@ -70,8 +70,8 @@
         "seedPages": 1,
         "channelPages": 273,
         "processedPages": 273,
-        "manifestCandidates": 185,
-        "entries": 184
+        "manifestCandidates": 180,
+        "entries": 179
       },
       {
         "source": "canlitv-me",
@@ -139,12 +139,13 @@
       },
       {
         "source": "tvstream-az",
-        "ok": true,
-        "seedPages": 1,
-        "channelPages": 2,
-        "processedPages": 2,
-        "manifestCandidates": 11,
-        "entries": 11
+        "ok": false,
+        "seedPages": 0,
+        "channelPages": 0,
+        "processedPages": 0,
+        "manifestCandidates": 0,
+        "entries": 0,
+        "error": "http_403; browser=browser_http_403"
       }
     ],
     "m3uSourceFailures": []

@@ -252,6 +252,30 @@
     "failureReason": "Matching candidates did not pass media validation"
   },
   {
+    "id": "haberturk-tv",
+    "name": "Habertürk TV",
+    "country": "Türkiyə",
+    "category": "news",
+    "priority": 121,
+    "aliasesChecked": 2,
+    "candidatesFound": 2,
+    "candidatesValidated": 0,
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
+  },
+  {
+    "id": "haber-global",
+    "name": "Haber Global",
+    "country": "Türkiyə",
+    "category": "news",
+    "priority": 122,
+    "aliasesChecked": 1,
+    "candidatesFound": 1,
+    "candidatesValidated": 0,
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
+  },
+  {
     "id": "sozcu-tv",
     "name": "Sözcü TV",
     "country": "Türkiyə",
@@ -462,7 +486,7 @@
     "category": "documentary",
     "priority": 144,
     "aliasesChecked": 1,
-    "candidatesFound": 2,
+    "candidatesFound": 1,
     "candidatesValidated": 0,
     "status": "all_candidates_failed",
     "failureReason": "Matching candidates did not pass media validation"
@@ -666,10 +690,10 @@
     "category": "music",
     "priority": 164,
     "aliasesChecked": 2,
-    "candidatesFound": 1,
+    "candidatesFound": 0,
     "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
+    "status": "not_found",
+    "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
     "id": "number-1-tv",

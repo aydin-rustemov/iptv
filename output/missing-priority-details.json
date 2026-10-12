@@ -254,12 +254,12 @@
     "candidatesFound": 4,
     "candidates": [
       {
-        "host": "tr.canlitv.watch",
+        "host": "rkhubpaomb.turknet.ercdn.net",
         "sourceName": "canlitv-watch",
         "result": "not_checked"
       },
       {
-        "host": "rkhubpaomb.turknet.ercdn.net",
+        "host": "tr.canlitv.watch",
         "sourceName": "canlitv-watch",
         "result": "not_checked"
       },
@@ -299,7 +299,7 @@
         "result": "not_checked"
       },
       {
-        "host": "beyaztv-live.daioncdn.net",
+        "host": "yayin2.canlitv.fun",
         "sourceName": "canlitv-com",
         "result": "not_checked"
       }
@@ -538,7 +538,7 @@
         "result": "not_checked"
       },
       {
-        "host": "vsd81.okcdn.ru",
+        "host": "vsd166.okcdn.ru",
         "sourceName": "smotret-tv-ru",
         "result": "not_checked"
       },
@@ -575,6 +575,60 @@
       {
         "host": "yayin2.canlitv.fun",
         "sourceName": "canlitv-com",
+        "result": "not_checked"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "not_checked",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
+    "channel": "Habertürk TV",
+    "id": "haberturk-tv",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "Habertürk TV",
+      "Habertürk TV",
+      "Haberturk"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 2,
+    "candidates": [
+      {
+        "host": "tv.ensonhaber.com",
+        "sourceName": "existing-playlist",
+        "result": "not_checked"
+      },
+      {
+        "host": "rmtftbjlne.turknet.ercdn.net",
+        "sourceName": "canlitv-watch",
+        "result": "not_checked"
+      }
+    ],
+    "socialAccounts": [],
+    "bestResult": "not_checked",
+    "finalStatus": "all_direct_candidates_failed",
+    "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
+  },
+  {
+    "channel": "Haber Global",
+    "id": "haber-global",
+    "previousStatus": "all_candidates_failed",
+    "aliasesChecked": [
+      "Haber Global",
+      "Haber Global"
+    ],
+    "sourcesChecked": 11,
+    "officialPagesChecked": 0,
+    "officialSocialAccountsChecked": 0,
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "tv.ensonhaber.com",
+        "sourceName": "existing-playlist",
         "result": "not_checked"
       }
     ],
@@ -1050,16 +1104,11 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 2,
+    "candidatesFound": 1,
     "candidates": [
       {
         "host": "tv-trtbelgesel.medya.trt.com.tr",
         "sourceName": "canlitv-watch",
-        "result": "not_checked"
-      },
-      {
-        "host": "tv-trtbelgesel-dai.medya.trt.com.tr",
-        "sourceName": "canlitv-date",
         "result": "not_checked"
       }
     ],
@@ -1469,7 +1518,7 @@
   {
     "channel": "Number 1 Türk",
     "id": "number-1-turk",
-    "previousStatus": "all_candidates_failed",
+    "previousStatus": "not_found",
     "aliasesChecked": [
       "Number 1 Türk",
       "Number 1 Türk",
@@ -1479,14 +1528,8 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 1,
-    "candidatesFound": 1,
-    "candidates": [
-      {
-        "host": "b01c02nl.mediatriple.net",
-        "sourceName": "existing-playlist",
-        "result": "not_checked"
-      }
-    ],
+    "candidatesFound": 0,
+    "candidates": [],
     "socialAccounts": [
       {
         "platform": "youtube",
@@ -1494,8 +1537,7 @@
         "result": "http_404"
       }
     ],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
+    "finalStatus": "not_found_after_all_sources",
     "nextRecommendedDiscoveryMethod": "recheck official social account when continuous live is active"
   },
   {
