@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-10-13T07:08:22.621Z",
-  "published": 782,
-  "verifiedWorking": 809,
+  "updatedAt": "2026-10-13T17:15:54.973Z",
+  "published": 772,
+  "verifiedWorking": 797,
   "discovery": {
     "maintenance": {
-      "previous": 788,
-      "preserved": 773,
-      "replaced": 9,
-      "removed": 6,
-      "added": 0,
-      "published": 782
+      "previous": 782,
+      "preserved": 761,
+      "replaced": 10,
+      "removed": 11,
+      "added": 1,
+      "published": 772
     },
     "lockedStaticChannels": [
       {
@@ -49,7 +49,7 @@
       }
     ],
     "canliTv": {
-      "updatedAt": "2026-10-13T06:52:16.392Z",
+      "updatedAt": "2026-10-13T16:59:37.530Z",
       "source": "canlitv-az",
       "ok": false,
       "error": "ENOTFOUND: fetch failed"
@@ -61,8 +61,8 @@
         "seedPages": 1,
         "channelPages": 329,
         "processedPages": 329,
-        "manifestCandidates": 238,
-        "entries": 238
+        "manifestCandidates": 244,
+        "entries": 244
       },
       {
         "source": "canlitv-date",
@@ -70,8 +70,8 @@
         "seedPages": 1,
         "channelPages": 273,
         "processedPages": 273,
-        "manifestCandidates": 179,
-        "entries": 178
+        "manifestCandidates": 184,
+        "entries": 183
       },
       {
         "source": "canlitv-me",
@@ -107,8 +107,8 @@
         "seedPages": 2,
         "channelPages": 116,
         "processedPages": 116,
-        "manifestCandidates": 68,
-        "entries": 64
+        "manifestCandidates": 66,
+        "entries": 63
       },
       {
         "source": "glaz-tv-ru",
@@ -125,7 +125,7 @@
         "seedPages": 1,
         "channelPages": 37,
         "processedPages": 37,
-        "manifestCandidates": 18,
+        "manifestCandidates": 56,
         "entries": 4
       },
       {
@@ -134,8 +134,8 @@
         "seedPages": 1,
         "channelPages": 83,
         "processedPages": 83,
-        "manifestCandidates": 157,
-        "entries": 134
+        "manifestCandidates": 162,
+        "entries": 139
       },
       {
         "source": "tvstream-az",
