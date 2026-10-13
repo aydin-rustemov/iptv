@@ -538,7 +538,7 @@
         "result": "not_checked"
       },
       {
-        "host": "vsd166.okcdn.ru",
+        "host": "vsd81.okcdn.ru",
         "sourceName": "smotret-tv-ru",
         "result": "not_checked"
       },
@@ -598,12 +598,12 @@
     "candidatesFound": 2,
     "candidates": [
       {
-        "host": "tv.ensonhaber.com",
-        "sourceName": "existing-playlist",
+        "host": "rmtftbjlne.turknet.ercdn.net",
+        "sourceName": "canlitv-watch",
         "result": "not_checked"
       },
       {
-        "host": "rmtftbjlne.turknet.ercdn.net",
+        "host": "tv.ensonhaber.com",
         "sourceName": "canlitv-watch",
         "result": "not_checked"
       }
@@ -628,7 +628,7 @@
     "candidates": [
       {
         "host": "tv.ensonhaber.com",
-        "sourceName": "existing-playlist",
+        "sourceName": "canlitv-watch",
         "result": "not_checked"
       }
     ],

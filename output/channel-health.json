@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-10-12T21:33:21.590Z",
-  "published": 788,
-  "verifiedWorking": 805,
+  "updatedAt": "2026-10-13T07:08:22.621Z",
+  "published": 782,
+  "verifiedWorking": 809,
   "discovery": {
     "maintenance": {
-      "previous": 796,
-      "preserved": 777,
-      "replaced": 10,
-      "removed": 9,
-      "added": 1,
-      "published": 788
+      "previous": 788,
+      "preserved": 773,
+      "replaced": 9,
+      "removed": 6,
+      "added": 0,
+      "published": 782
     },
     "lockedStaticChannels": [
       {
@@ -49,7 +49,7 @@
       }
     ],
     "canliTv": {
-      "updatedAt": "2026-10-12T21:18:46.728Z",
+      "updatedAt": "2026-10-13T06:52:16.392Z",
       "source": "canlitv-az",
       "ok": false,
       "error": "ENOTFOUND: fetch failed"
@@ -61,8 +61,8 @@
         "seedPages": 1,
         "channelPages": 329,
         "processedPages": 329,
-        "manifestCandidates": 245,
-        "entries": 245
+        "manifestCandidates": 238,
+        "entries": 238
       },
       {
         "source": "canlitv-date",
@@ -70,8 +70,8 @@
         "seedPages": 1,
         "channelPages": 273,
         "processedPages": 273,
-        "manifestCandidates": 180,
-        "entries": 179
+        "manifestCandidates": 179,
+        "entries": 178
       },
       {
         "source": "canlitv-me",
@@ -105,9 +105,9 @@
         "source": "canlitv-watch",
         "ok": true,
         "seedPages": 2,
-        "channelPages": 115,
-        "processedPages": 115,
-        "manifestCandidates": 67,
+        "channelPages": 116,
+        "processedPages": 116,
+        "manifestCandidates": 68,
         "entries": 64
       },
       {
@@ -125,7 +125,7 @@
         "seedPages": 1,
         "channelPages": 37,
         "processedPages": 37,
-        "manifestCandidates": 56,
+        "manifestCandidates": 18,
         "entries": 4
       },
       {
@@ -139,13 +139,12 @@
       },
       {
         "source": "tvstream-az",
-        "ok": false,
-        "seedPages": 0,
-        "channelPages": 0,
-        "processedPages": 0,
-        "manifestCandidates": 0,
-        "entries": 0,
-        "error": "http_403; browser=browser_http_403"
+        "ok": true,
+        "seedPages": 1,
+        "channelPages": 2,
+        "processedPages": 2,
+        "manifestCandidates": 11,
+        "entries": 11
       }
     ],
     "m3uSourceFailures": []
