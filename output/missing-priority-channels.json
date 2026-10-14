@@ -294,10 +294,10 @@
     "category": "news",
     "priority": 124,
     "aliasesChecked": 1,
-    "candidatesFound": 0,
+    "candidatesFound": 1,
     "candidatesValidated": 0,
-    "status": "not_found",
-    "failureReason": "No matching alias found in enabled M3U sources"
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "tgrt-haber",
@@ -318,10 +318,10 @@
     "category": "news",
     "priority": 126,
     "aliasesChecked": 2,
-    "candidatesFound": 0,
+    "candidatesFound": 1,
     "candidatesValidated": 0,
-    "status": "not_found",
-    "failureReason": "No matching alias found in enabled M3U sources"
+    "status": "all_candidates_failed",
+    "failureReason": "Matching candidates did not pass media validation"
   },
   {
     "id": "bloomberg-ht",
@@ -438,10 +438,10 @@
     "category": "sports",
     "priority": 138,
     "aliasesChecked": 2,
-    "candidatesFound": 1,
+    "candidatesFound": 0,
     "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
+    "status": "not_found",
+    "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
     "id": "bein-sports-haber",

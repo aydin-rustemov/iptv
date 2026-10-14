@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-10-14T17:35:39.132Z",
+  "updatedAt": "2026-10-14T22:05:21.806Z",
   "sources": 11,
   "downloadedEntries": 672,
-  "uniqueCandidates": 512,
-  "fastCheckPassed": 777,
-  "mediaCheckPassed": 766,
-  "published": 744,
+  "uniqueCandidates": 515,
+  "fastCheckPassed": 775,
+  "mediaCheckPassed": 762,
+  "published": 739,
   "failed": 484,
-  "duplicatesRemoved": 160,
+  "duplicatesRemoved": 157,
   "countryCounts": {
     "Azərbaycan": 23,
     "Türkiyə": 169,
-    "Rusiya": 195,
+    "Rusiya": 192,
     "İran": 7,
     "İtaliya": 9,
     "HU": 2,
@@ -21,7 +21,6 @@
     "Mərakeş": 1,
     "TH": 1,
     "MX": 5,
-    "Dominikan Respublikası": 7,
     "Rumıniya": 8,
     "ABŞ": 98,
     "Avstraliya": 4,
@@ -29,7 +28,7 @@
     "Peru": 5,
     "Argentina": 4,
     "BE": 3,
-    "BR": 2,
+    "Dominikan Respublikası": 6,
     "GR": 6,
     "IQ": 5,
     "QA": 11,
@@ -62,6 +61,7 @@
     "YE": 2,
     "LB": 2,
     "PS": 2,
+    "BR": 1,
     "SA": 3,
     "LA": 1,
     "BJ": 1,
@@ -88,11 +88,11 @@
     "CW": 1
   },
   "categoryCounts": {
-    "General": 94,
+    "General": 91,
     "News": 91,
     "Sports": 9,
-    "Other": 470,
-    "Documentary": 25,
+    "Other": 469,
+    "Documentary": 24,
     "Children": 22,
     "Culture": 6,
     "Music": 26,
@@ -395,7 +395,7 @@
       "category": "general",
       "priority": 104,
       "aliasesChecked": 2,
-      "candidatesFound": 5,
+      "candidatesFound": 4,
       "candidatesValidated": 1,
       "selectedSource": "existing-playlist",
       "status": "working"
@@ -635,10 +635,10 @@
       "category": "news",
       "priority": 124,
       "aliasesChecked": 1,
-      "candidatesFound": 0,
+      "candidatesFound": 1,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "tgrt-haber",
@@ -659,10 +659,10 @@
       "category": "news",
       "priority": 126,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
+      "candidatesFound": 1,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "bloomberg-ht",
@@ -743,7 +743,7 @@
       "category": "news",
       "priority": 133,
       "aliasesChecked": 1,
-      "candidatesFound": 2,
+      "candidatesFound": 1,
       "candidatesValidated": 1,
       "selectedSource": "existing-playlist",
       "status": "working"
@@ -803,10 +803,10 @@
       "category": "sports",
       "priority": 138,
       "aliasesChecked": 2,
-      "candidatesFound": 1,
+      "candidatesFound": 0,
       "candidatesValidated": 0,
-      "status": "all_candidates_failed",
-      "failureReason": "Matching candidates did not pass media validation"
+      "status": "not_found",
+      "failureReason": "No matching alias found in enabled M3U sources"
     },
     {
       "id": "bein-sports-haber",
@@ -839,7 +839,7 @@
       "category": "sports",
       "priority": 141,
       "aliasesChecked": 1,
-      "candidatesFound": 2,
+      "candidatesFound": 1,
       "candidatesValidated": 1,
       "selectedSource": "existing-playlist",
       "status": "working"

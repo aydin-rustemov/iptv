@@ -498,7 +498,7 @@
         "result": "not_checked"
       },
       {
-        "host": "vsd166.okcdn.ru",
+        "host": "vsd250.okcdn.ru",
         "sourceName": "smotret-tv-ru",
         "result": "not_checked"
       },
@@ -600,7 +600,7 @@
   {
     "channel": "Halk TV",
     "id": "halk-tv",
-    "previousStatus": "not_found",
+    "previousStatus": "all_candidates_failed",
     "aliasesChecked": [
       "Halk TV",
       "Halk TV"
@@ -608,10 +608,17 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 0,
-    "candidates": [],
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "yayin2.canlitv.fun",
+        "sourceName": "canlitv-com",
+        "result": "not_checked"
+      }
+    ],
     "socialAccounts": [],
-    "finalStatus": "not_found_after_all_sources",
+    "bestResult": "not_checked",
+    "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
@@ -634,7 +641,7 @@
   {
     "channel": "TV100",
     "id": "tv100",
-    "previousStatus": "not_found",
+    "previousStatus": "all_candidates_failed",
     "aliasesChecked": [
       "TV100",
       "TV100",
@@ -643,8 +650,14 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 1,
-    "candidatesFound": 0,
-    "candidates": [],
+    "candidatesFound": 1,
+    "candidates": [
+      {
+        "host": "yayin2.canlitv.fun",
+        "sourceName": "canlitv-com",
+        "result": "not_checked"
+      }
+    ],
     "socialAccounts": [
       {
         "platform": "youtube",
@@ -652,7 +665,8 @@
         "result": "live_hint_found_no_direct_manifest"
       }
     ],
-    "finalStatus": "not_found_after_all_sources",
+    "bestResult": "not_checked",
+    "finalStatus": "all_direct_candidates_failed",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
@@ -897,7 +911,7 @@
   {
     "channel": "A Spor",
     "id": "a-spor",
-    "previousStatus": "all_candidates_failed",
+    "previousStatus": "not_found",
     "aliasesChecked": [
       "A Spor",
       "A Spor",
@@ -906,17 +920,10 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 0,
-    "candidatesFound": 1,
-    "candidates": [
-      {
-        "host": "yayin2.canlitv.fun",
-        "sourceName": "canlitv-com",
-        "result": "not_checked"
-      }
-    ],
+    "candidatesFound": 0,
+    "candidates": [],
     "socialAccounts": [],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
+    "finalStatus": "not_found_after_all_sources",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
