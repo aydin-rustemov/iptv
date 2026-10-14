@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-10-14T12:18:50.238Z",
-  "published": 749,
-  "verifiedWorking": 763,
+  "updatedAt": "2026-10-14T17:35:39.133Z",
+  "published": 744,
+  "verifiedWorking": 766,
   "discovery": {
     "maintenance": {
-      "previous": 754,
-      "preserved": 740,
-      "replaced": 9,
-      "removed": 5,
-      "added": 0,
-      "published": 749
+      "previous": 749,
+      "preserved": 732,
+      "replaced": 10,
+      "removed": 7,
+      "added": 2,
+      "published": 744
     },
     "lockedStaticChannels": [
       {
@@ -49,7 +49,7 @@
       }
     ],
     "canliTv": {
-      "updatedAt": "2026-10-14T12:02:02.202Z",
+      "updatedAt": "2026-10-14T17:18:47.130Z",
       "source": "canlitv-az",
       "ok": false,
       "error": "ENOTFOUND: fetch failed"
@@ -59,10 +59,10 @@
         "source": "canlitv-com",
         "ok": true,
         "seedPages": 1,
-        "channelPages": 329,
-        "processedPages": 329,
-        "manifestCandidates": 235,
-        "entries": 235
+        "channelPages": 328,
+        "processedPages": 328,
+        "manifestCandidates": 239,
+        "entries": 239
       },
       {
         "source": "canlitv-date",
@@ -70,8 +70,8 @@
         "seedPages": 1,
         "channelPages": 273,
         "processedPages": 273,
-        "manifestCandidates": 178,
-        "entries": 177
+        "manifestCandidates": 179,
+        "entries": 178
       },
       {
         "source": "canlitv-me",
@@ -79,8 +79,8 @@
         "seedPages": 1,
         "channelPages": 68,
         "processedPages": 68,
-        "manifestCandidates": 5,
-        "entries": 1
+        "manifestCandidates": 8,
+        "entries": 3
       },
       {
         "source": "canlitv-video",
@@ -134,8 +134,8 @@
         "seedPages": 1,
         "channelPages": 83,
         "processedPages": 83,
-        "manifestCandidates": 154,
-        "entries": 131
+        "manifestCandidates": 164,
+        "entries": 141
       },
       {
         "source": "tvstream-az",
@@ -143,8 +143,8 @@
         "seedPages": 1,
         "channelPages": 2,
         "processedPages": 2,
-        "manifestCandidates": 0,
-        "entries": 0
+        "manifestCandidates": 11,
+        "entries": 11
       }
     ],
     "m3uSourceFailures": []

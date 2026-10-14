@@ -318,10 +318,10 @@
     "category": "news",
     "priority": 126,
     "aliasesChecked": 2,
-    "candidatesFound": 1,
+    "candidatesFound": 0,
     "candidatesValidated": 0,
-    "status": "all_candidates_failed",
-    "failureReason": "Matching candidates did not pass media validation"
+    "status": "not_found",
+    "failureReason": "No matching alias found in enabled M3U sources"
   },
   {
     "id": "bloomberg-ht",

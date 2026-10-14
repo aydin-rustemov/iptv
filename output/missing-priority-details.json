@@ -498,7 +498,7 @@
         "result": "not_checked"
       },
       {
-        "host": "vsd81.okcdn.ru",
+        "host": "vsd166.okcdn.ru",
         "sourceName": "smotret-tv-ru",
         "result": "not_checked"
       },
@@ -634,7 +634,7 @@
   {
     "channel": "TV100",
     "id": "tv100",
-    "previousStatus": "all_candidates_failed",
+    "previousStatus": "not_found",
     "aliasesChecked": [
       "TV100",
       "TV100",
@@ -643,14 +643,8 @@
     "sourcesChecked": 11,
     "officialPagesChecked": 0,
     "officialSocialAccountsChecked": 1,
-    "candidatesFound": 1,
-    "candidates": [
-      {
-        "host": "yayin2.canlitv.fun",
-        "sourceName": "canlitv-com",
-        "result": "not_checked"
-      }
-    ],
+    "candidatesFound": 0,
+    "candidates": [],
     "socialAccounts": [
       {
         "platform": "youtube",
@@ -658,8 +652,7 @@
         "result": "live_hint_found_no_direct_manifest"
       }
     ],
-    "bestResult": "not_checked",
-    "finalStatus": "all_direct_candidates_failed",
+    "finalStatus": "not_found_after_all_sources",
     "nextRecommendedDiscoveryMethod": "target another public direct M3U source or official page manifest"
   },
   {
