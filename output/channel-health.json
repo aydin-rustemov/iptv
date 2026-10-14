@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-10-14T05:16:18.976Z",
-  "published": 754,
-  "verifiedWorking": 779,
+  "updatedAt": "2026-10-14T12:18:50.238Z",
+  "published": 749,
+  "verifiedWorking": 763,
   "discovery": {
     "maintenance": {
-      "previous": 766,
-      "preserved": 744,
-      "replaced": 10,
-      "removed": 12,
+      "previous": 754,
+      "preserved": 740,
+      "replaced": 9,
+      "removed": 5,
       "added": 0,
-      "published": 754
+      "published": 749
     },
     "lockedStaticChannels": [
       {
@@ -49,7 +49,7 @@
       }
     ],
     "canliTv": {
-      "updatedAt": "2026-10-14T05:01:01.713Z",
+      "updatedAt": "2026-10-14T12:02:02.202Z",
       "source": "canlitv-az",
       "ok": false,
       "error": "ENOTFOUND: fetch failed"
@@ -61,8 +61,8 @@
         "seedPages": 1,
         "channelPages": 329,
         "processedPages": 329,
-        "manifestCandidates": 242,
-        "entries": 242
+        "manifestCandidates": 235,
+        "entries": 235
       },
       {
         "source": "canlitv-date",
@@ -70,8 +70,8 @@
         "seedPages": 1,
         "channelPages": 273,
         "processedPages": 273,
-        "manifestCandidates": 179,
-        "entries": 178
+        "manifestCandidates": 178,
+        "entries": 177
       },
       {
         "source": "canlitv-me",
@@ -79,7 +79,7 @@
         "seedPages": 1,
         "channelPages": 68,
         "processedPages": 68,
-        "manifestCandidates": 7,
+        "manifestCandidates": 5,
         "entries": 1
       },
       {
@@ -107,8 +107,8 @@
         "seedPages": 2,
         "channelPages": 116,
         "processedPages": 116,
-        "manifestCandidates": 64,
-        "entries": 62
+        "manifestCandidates": 0,
+        "entries": 0
       },
       {
         "source": "glaz-tv-ru",
@@ -134,8 +134,8 @@
         "seedPages": 1,
         "channelPages": 83,
         "processedPages": 83,
-        "manifestCandidates": 158,
-        "entries": 135
+        "manifestCandidates": 154,
+        "entries": 131
       },
       {
         "source": "tvstream-az",
@@ -143,8 +143,8 @@
         "seedPages": 1,
         "channelPages": 2,
         "processedPages": 2,
-        "manifestCandidates": 11,
-        "entries": 11
+        "manifestCandidates": 0,
+        "entries": 0
       }
     ],
     "m3uSourceFailures": []
