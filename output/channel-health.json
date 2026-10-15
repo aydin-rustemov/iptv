@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-10-14T22:05:21.806Z",
-  "published": 739,
-  "verifiedWorking": 762,
+  "updatedAt": "2026-10-15T05:07:08.323Z",
+  "published": 732,
+  "verifiedWorking": 745,
   "discovery": {
     "maintenance": {
-      "previous": 744,
-      "preserved": 730,
-      "replaced": 9,
-      "removed": 5,
+      "previous": 739,
+      "preserved": 719,
+      "replaced": 13,
+      "removed": 7,
       "added": 0,
-      "published": 739
+      "published": 732
     },
     "lockedStaticChannels": [
       {
@@ -49,7 +49,7 @@
       }
     ],
     "canliTv": {
-      "updatedAt": "2026-10-14T21:46:51.084Z",
+      "updatedAt": "2026-10-15T04:49:27.498Z",
       "source": "canlitv-az",
       "ok": false,
       "error": "ENOTFOUND: fetch failed"
@@ -61,8 +61,8 @@
         "seedPages": 1,
         "channelPages": 329,
         "processedPages": 329,
-        "manifestCandidates": 234,
-        "entries": 234
+        "manifestCandidates": 225,
+        "entries": 225
       },
       {
         "source": "canlitv-date",
@@ -70,8 +70,8 @@
         "seedPages": 1,
         "channelPages": 273,
         "processedPages": 273,
-        "manifestCandidates": 179,
-        "entries": 178
+        "manifestCandidates": 178,
+        "entries": 177
       },
       {
         "source": "canlitv-me",
@@ -79,8 +79,8 @@
         "seedPages": 1,
         "channelPages": 68,
         "processedPages": 68,
-        "manifestCandidates": 7,
-        "entries": 2
+        "manifestCandidates": 6,
+        "entries": 3
       },
       {
         "source": "canlitv-video",
@@ -107,8 +107,8 @@
         "seedPages": 2,
         "channelPages": 116,
         "processedPages": 116,
-        "manifestCandidates": 0,
-        "entries": 0
+        "manifestCandidates": 4,
+        "entries": 4
       },
       {
         "source": "glaz-tv-ru",
@@ -125,8 +125,8 @@
         "seedPages": 1,
         "channelPages": 37,
         "processedPages": 37,
-        "manifestCandidates": 41,
-        "entries": 13
+        "manifestCandidates": 56,
+        "entries": 4
       },
       {
         "source": "smotret-tv-ru",
@@ -134,8 +134,8 @@
         "seedPages": 1,
         "channelPages": 83,
         "processedPages": 83,
-        "manifestCandidates": 161,
-        "entries": 138
+        "manifestCandidates": 155,
+        "entries": 132
       },
       {
         "source": "tvstream-az",
@@ -143,8 +143,8 @@
         "seedPages": 1,
         "channelPages": 2,
         "processedPages": 2,
-        "manifestCandidates": 11,
-        "entries": 11
+        "manifestCandidates": 0,
+        "entries": 0
       }
     ],
     "m3uSourceFailures": []

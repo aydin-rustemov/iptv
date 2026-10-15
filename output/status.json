@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-10-14T22:05:21.806Z",
+  "updatedAt": "2026-10-15T05:07:08.323Z",
   "sources": 11,
-  "downloadedEntries": 672,
-  "uniqueCandidates": 515,
-  "fastCheckPassed": 775,
-  "mediaCheckPassed": 762,
-  "published": 739,
-  "failed": 484,
-  "duplicatesRemoved": 157,
+  "downloadedEntries": 641,
+  "uniqueCandidates": 490,
+  "fastCheckPassed": 756,
+  "mediaCheckPassed": 745,
+  "published": 732,
+  "failed": 473,
+  "duplicatesRemoved": 151,
   "countryCounts": {
     "Azərbaycan": 23,
-    "Türkiyə": 169,
-    "Rusiya": 192,
+    "Türkiyə": 165,
+    "Rusiya": 190,
     "İran": 7,
     "İtaliya": 9,
     "HU": 2,
@@ -30,7 +30,7 @@
     "BE": 3,
     "Dominikan Respublikası": 6,
     "GR": 6,
-    "IQ": 5,
+    "IQ": 4,
     "QA": 11,
     "AE": 7,
     "Almaniya": 12,
@@ -91,7 +91,7 @@
     "General": 91,
     "News": 91,
     "Sports": 9,
-    "Other": 469,
+    "Other": 462,
     "Documentary": 24,
     "Children": 22,
     "Culture": 6,
@@ -695,10 +695,10 @@
       "category": "news",
       "priority": 129,
       "aliasesChecked": 2,
-      "candidatesFound": 1,
+      "candidatesFound": 0,
       "candidatesValidated": 0,
-      "status": "all_candidates_failed",
-      "failureReason": "Matching candidates did not pass media validation"
+      "status": "not_found",
+      "failureReason": "No matching alias found in enabled M3U sources"
     },
     {
       "id": "24-tv",
@@ -743,7 +743,7 @@
       "category": "news",
       "priority": 133,
       "aliasesChecked": 1,
-      "candidatesFound": 1,
+      "candidatesFound": 2,
       "candidatesValidated": 1,
       "selectedSource": "existing-playlist",
       "status": "working"
@@ -803,10 +803,10 @@
       "category": "sports",
       "priority": 138,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
+      "candidatesFound": 1,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "all_candidates_failed",
+      "failureReason": "Matching candidates did not pass media validation"
     },
     {
       "id": "bein-sports-haber",
@@ -839,7 +839,7 @@
       "category": "sports",
       "priority": 141,
       "aliasesChecked": 1,
-      "candidatesFound": 1,
+      "candidatesFound": 2,
       "candidatesValidated": 1,
       "selectedSource": "existing-playlist",
       "status": "working"
@@ -875,7 +875,7 @@
       "category": "documentary",
       "priority": 144,
       "aliasesChecked": 1,
-      "candidatesFound": 1,
+      "candidatesFound": 2,
       "candidatesValidated": 0,
       "status": "all_candidates_failed",
       "failureReason": "Matching candidates did not pass media validation"
@@ -1067,10 +1067,10 @@
       "category": "children",
       "priority": 160,
       "aliasesChecked": 2,
-      "candidatesFound": 1,
+      "candidatesFound": 0,
       "candidatesValidated": 0,
-      "status": "all_candidates_failed",
-      "failureReason": "Matching candidates did not pass media validation"
+      "status": "not_found",
+      "failureReason": "No matching alias found in enabled M3U sources"
     },
     {
       "id": "dream-turk",
