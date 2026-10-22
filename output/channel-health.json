@@ -1,51 +1,111 @@
 {
-  "updatedAt": "2026-10-22T19:22:07.636Z",
-  "published": 99,
-  "verifiedWorking": 87,
+  "updatedAt": "2026-10-22T20:02:45.752Z",
+  "published": 72,
+  "verifiedWorking": 70,
   "mandatoryTotal": 18,
-  "mandatoryVerified": 6,
+  "mandatoryVerified": 5,
   "mandatoryNeedsLocalTest": [
+    "atv-tr",
+    "now-tv"
+  ],
+  "mandatoryMissing": [
+    "aztv",
     "ictimai-tv",
     "idman-tv",
     "medeniyyet-tv",
     "xezer-tv",
+    "atv-az",
     "space-tv",
-    "arb",
     "cbc-sport",
     "real-tv",
     "arb24",
-    "show-tv",
-    "now-tv",
     "trt-1"
   ],
   "validation": "HTTP manifest + video segment ffprobe; no forced/unchecked channels",
   "countryCounts": {
-    "Azərbaycan": 16,
-    "Türkiyə": 63,
+    "Azərbaycan": 2,
+    "Türkiyə": 50,
     "Rusiya": 20
   },
-  "candidatesScanned": 276,
-  "candidatesWithVideo": 116,
+  "candidatesScanned": 254,
+  "candidatesWithVideo": 150,
   "rejected": {
-    "network_error": 42,
-    "http_404": 10,
-    "http_403": 16,
-    "http_410": 1,
-    "The operation was aborted due to timeout": 3,
-    "ffprobe_failed": 1,
-    "turkey_ad_slate_prone_host": 45,
-    "http_401": 1,
-    "timeout": 39,
-    "http_503": 1,
-    "http_502": 1
+    "http_403": 2,
+    "network_error": 5,
+    "turkey_ad_slate_prone_host": 56,
+    "html": 4,
+    "http_404": 9,
+    "timeout": 28
   },
   "sourcesLoaded": [
-    "iptv-org-azerbaijan",
-    "iptv-org-turkey",
     "iptv-org-russia",
-    "iptv-org-azerbaijani-language",
-    "iptv-org-turkish-language",
     "iptv-org-russian-language"
   ],
-  "sourceErrors": []
+  "sourceErrors": [],
+  "webSources": [
+    {
+      "source": "canlitv-com",
+      "ok": true,
+      "seedPages": 1,
+      "channelPages": 327,
+      "processedPages": 90,
+      "manifestCandidates": 109,
+      "entries": 107
+    },
+    {
+      "source": "canlitv-date",
+      "ok": true,
+      "seedPages": 1,
+      "channelPages": 273,
+      "processedPages": 90,
+      "manifestCandidates": 89,
+      "entries": 88
+    },
+    {
+      "source": "canlitv-me",
+      "ok": true,
+      "seedPages": 3,
+      "channelPages": 100,
+      "processedPages": 90,
+      "manifestCandidates": 0,
+      "entries": 0
+    },
+    {
+      "source": "canlitv-video",
+      "ok": true,
+      "seedPages": 3,
+      "channelPages": 45,
+      "processedPages": 45,
+      "manifestCandidates": 0,
+      "entries": 0
+    },
+    {
+      "source": "canlitv-volo",
+      "ok": false,
+      "seedPages": 0,
+      "channelPages": 0,
+      "processedPages": 0,
+      "manifestCandidates": 0,
+      "entries": 0,
+      "error": "http_403; browser=browser_http_403"
+    },
+    {
+      "source": "canlitv-watch",
+      "ok": true,
+      "seedPages": 2,
+      "channelPages": 117,
+      "processedPages": 90,
+      "manifestCandidates": 3,
+      "entries": 3
+    },
+    {
+      "source": "tvstream-az",
+      "ok": true,
+      "seedPages": 1,
+      "channelPages": 2,
+      "processedPages": 2,
+      "manifestCandidates": 11,
+      "entries": 11
+    }
+  ]
 }
