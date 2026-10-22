@@ -1,31 +1,60 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { PriorityChannelStatus, StatusOutput, ValidatedEntry } from "./types.js";
+import { isPublishableUrl, MAX_PLAYLIST_BYTES } from "./playlistGuard.js";
 
 export function writePlaylist(entries: ValidatedEntry[], file = "output/playlist.m3u"): void {
   fs.mkdirSync(path.dirname(file), { recursive: true });
-  let text = "#EXTM3U\n";
-  const ordered = [...entries].filter(isDisplayableChannel).sort(comparePlaylistEntries);
+  const ordered = entries.filter(isDisplayableChannel).sort(comparePlaylistEntries);
+  if (!ordered.length) throw new Error("Refusing to publish an empty IPTV playlist");
+
+  const lines: string[] = ["#EXTM3U\n"];
   for (const entry of ordered) {
     const group = groupTitle(entry);
     const name = withWarningPrefix(displayName(entry.name), group);
+    const logo = safeLogo(entry.tvgLogo);
     const attrs = [
-      `tvg-id="${escapeAttr(entry.tvgId ?? slug(name))}"`,
-      `tvg-name="${escapeAttr(entry.tvgName ?? name)}"`,
-      entry.tvgLogo ? `tvg-logo="${escapeAttr(entry.tvgLogo)}"` : undefined,
-      `group-title="${escapeAttr(group)}"`
+      'tvg-id="' + escapeAttr(entry.tvgId ?? slug(name)) + '"',
+      'tvg-name="' + escapeAttr(entry.tvgName ?? name) + '"',
+      logo ? 'tvg-logo="' + escapeAttr(logo) + '"' : undefined,
+      'group-title="' + escapeAttr(group) + '"'
     ].filter(Boolean).join(" ");
-    text += `#EXTINF:-1 ${attrs},${name}\n`;
-    if (entry.headers["User-Agent"]) text += `#EXTVLCOPT:http-user-agent=${entry.headers["User-Agent"]}\n`;
-    if (entry.headers["Referer"]) text += `#EXTVLCOPT:http-referrer=${entry.headers["Referer"]}\n`;
-    text += `${entry.url}\n`;
+    lines.push("#EXTINF:-1 " + attrs + "," + name + "\n");
+    const agent = safeHeader(entry.headers["User-Agent"]);
+    const referer = safeHeader(entry.headers["Referer"]);
+    if (agent) lines.push("#EXTVLCOPT:http-user-agent=" + agent + "\n");
+    if (referer) lines.push("#EXTVLCOPT:http-referrer=" + referer + "\n");
+    lines.push(entry.url + "\n");
   }
-  fs.writeFileSync(file, text, "utf8");
+
+  const playlist = lines.join("");
+  const size = Buffer.byteLength(playlist, "utf8");
+  if (size > MAX_PLAYLIST_BYTES) throw new Error("Playlist exceeds the 8 MiB safety limit: " + size + " bytes");
+
+  // Preserve the previously published playlist if generation fails.
+  const tempFile = file + ".tmp";
+  try {
+    fs.writeFileSync(tempFile, playlist, "utf8");
+    fs.renameSync(tempFile, file);
+  } finally {
+    if (fs.existsSync(tempFile)) fs.rmSync(tempFile, { force: true });
+  }
 }
 
-function isDisplayableChannel(entry: ValidatedEntry): boolean {
-  const value = normalizeSortText(`${entry.name} ${entry.tvgName ?? ""}`);
+export function isDisplayableChannel(entry: Pick<ValidatedEntry, "name" | "tvgName" | "url">): boolean {
+  if (!isPublishableUrl(entry.url)) return false;
+  const value = normalizeSortText((entry.name ?? "") + " " + (entry.tvgName ?? ""));
   return !/sitene tv ekle|siteye tv ekle|indi izle|hemen izle|hemen seyret|player ac|yayini ac|tiklayin/.test(value);
+}
+
+function safeLogo(raw?: string): string | undefined {
+  if (!raw || raw.length > 1024 || !isPublishableUrl(raw)) return undefined;
+  return raw;
+}
+
+function safeHeader(raw?: string): string | undefined {
+  if (!raw || raw.length > 512 || /[\r\n]/.test(raw)) return undefined;
+  return raw;
 }
 
 function comparePlaylistEntries(a: ValidatedEntry, b: ValidatedEntry): number {
@@ -52,7 +81,8 @@ function displayName(value: string): string {
     .replace(/"/g, "'")
     .replace(/\s+(?:tvg-id|tvg-name|tvg-logo|group-title)='[^']*'/gi, "")
     .replace(/\s+/g, " ")
-    .trim();
+    .trim()
+    .slice(0, 160);
 }
 
 function groupCountryRank(group: string): number {
@@ -103,7 +133,7 @@ export function countBy<T extends string | undefined>(entries: ValidatedEntry[],
 }
 
 function escapeAttr(value: string): string {
-  return value.replace(/"/g, "'");
+  return value.replace(/[\r\n]+/g, " ").replace(/"/g, "'").slice(0, 200);
 }
 
 function escapeHtml(value: string): string {
