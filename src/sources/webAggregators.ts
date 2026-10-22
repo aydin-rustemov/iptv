@@ -60,7 +60,7 @@ async function discoverSource(source: Source, browser?: Browser): Promise<{ entr
       seedPages++;
       collectChannelPages(pages, html, seed.url, seed.country, source);
 
-      if (manifestUrls(html, seed.url).length || source.name === "tvstream-az" || (source.name === "yoda-az" && /\/tv\/[^/]+\/?$/.test(new URL(seed.url).pathname))) {
+      if (manifestUrls(html, seed.url).length || (source.name === "yoda-az" && /\/tv\/[^/]+\/?$/.test(new URL(seed.url).pathname))) {
         pages.set(seed.url, {
           url: seed.url,
           title: pageTitle(html) || source.name,

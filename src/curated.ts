@@ -9,6 +9,7 @@ import { loadPriorityChannels, buildPriorityStatuses, tagPriorityEntries, writeM
 import { countBy, isDisplayableChannel, writePlaylist, writeStatus } from "./generator.js";
 import { regionOf, selectRegionalPlaylist, uniqueVerified, type Region } from "./regional.js";
 import { score } from "./selector.js";
+import { isMismatchedChannel } from "./channelMatchGuard.js";
 import { ensureMandatory, loadMandatoryChannels } from "./mandatory.js";
 import type { PlaylistEntry, StatusOutput, ValidatedEntry } from "./types.js";
 
@@ -50,7 +51,7 @@ async function main(): Promise<void> {
   // Official channel pages, priority-direct and manual CDN overrides are NEVER sources.
   const web = await discoverWebAggregators(new Set([
     "yoda-az", "canlitv-volo", "canlitv-video", "canlitv-me", "canlitv-watch",
-    "canlitv-com", "canlitv-date", "tvstream-az"
+    "canlitv-com", "canlitv-vin", "canlitv-date", "tvstream-az"
   ]));
   console.log("[WEB DISCOVERY]", JSON.stringify(web.statuses));
   const tvstream = await discoverTvstreamAz();
@@ -58,6 +59,7 @@ async function main(): Promise<void> {
   const discovered = tagPriorityEntries([...web.entries, ...tvstream.entries, ...sourceEntries.filter((entry) => regionOf(entry) === "RU")], priorities)
     .filter((entry) => regionOf(entry) !== undefined)
     .filter((entry) => isPublishableUrl(entry.url) && !isForbiddenUrl(entry.url, { allowLivePath: true }))
+    .filter((entry) => !isMismatchedChannel(entry))
     .sort((a, b) => candidateRank(b, regionOf(b)!) - candidateRank(a, regionOf(a)!));
 
   const seen = new Set<string>();
