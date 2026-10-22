@@ -1,19 +1,21 @@
 import fs from "node:fs";
 import { isPublishableUrl } from "./playlistGuard.js";
 import { isDisplayableChannel } from "./generator.js";
+import { isTurkeyAdSlateProneUrl } from "./validator.js";
 import type { PlaylistEntry, ValidatedEntry } from "./types.js";
 
 export interface MandatoryChannel {
   id: string;
   name: string;
   country: "Azərbaycan" | "Türkiyə";
-  urls: string[];
+  urls?: string[];
 }
 
 export interface MandatoryResult {
   entries: ValidatedEntry[];
   verifiedIds: string[];
   unverifiedIds: string[];
+  missingIds: string[];
 }
 
 export function loadMandatoryChannels(file = "config/mandatory-channels.json"): MandatoryChannel[] {
@@ -21,53 +23,42 @@ export function loadMandatoryChannels(file = "config/mandatory-channels.json"): 
   const ids = new Set<string>();
   for (const channel of parsed.channels) {
     if (ids.has(channel.id)) throw new Error("Duplicate mandatory channel: " + channel.id);
-    if (!channel.urls.some((url) => isPublishableUrl(url))) throw new Error("Missing candidate URL for " + channel.name);
     ids.add(channel.id);
   }
   return parsed.channels;
 }
 
+// Retained for legacy clients, not used by the scheduled web-only generator.
+// The configuration contains channel identities, NOT fabricated direct URLs.
 export function mandatoryCandidates(channels: MandatoryChannel[]): PlaylistEntry[] {
-  return channels.flatMap((channel, index) =>
-    channel.urls.filter((url) => isPublishableUrl(url)).map((url) => ({
-      sourceName: "mandatory-candidate",
-      tvgId: channel.id,
-      tvgName: channel.name,
-      name: channel.name,
-      country: channel.country,
-      category: "General",
-      groupTitle: channel.country,
-      url,
-      headers: {},
-      priorityId: channel.id,
-      priorityName: channel.name,
-      priorityCountry: channel.country,
-      priorityOrder: index + 1,
-      allowLivePath: true
-    }))
-  );
+  return channels.flatMap((channel) => (channel.urls ?? []).filter(isPublishableUrl).map((url) => ({
+    sourceName: "mandatory-candidate",
+    tvgId: channel.id, tvgName: channel.name, name: channel.name,
+    country: channel.country, groupTitle: channel.country, category: "General",
+    url, headers: {}, priorityId: channel.id
+  })));
 }
 
-// A user-requested mandatory channel stays visible even if the GitHub runner
-// cannot reach a geo-restricted stream. It is NEVER counted as verified.
 export function ensureMandatory(
   selectedVerified: ValidatedEntry[],
   allVerified: ValidatedEntry[],
   channels: MandatoryChannel[],
-  maximum = 100
+  maximum = 100,
+  scrapedCandidates: PlaylistEntry[] = []
 ): MandatoryResult {
   const output = [...selectedVerified];
   const verifiedIds: string[] = [];
   const unverifiedIds: string[] = [];
+  const missingIds: string[] = [];
   const mandatoryIds = new Set(channels.map((channel) => channel.id));
 
-  for (const channel of channels) {
-    const verified = allVerified
-      .filter((entry) => entry.priorityId === channel.id && entry.fast.ok && entry.media.ok && entry.media.hasVideo)
-      .sort((a, b) => b.score - a.score);
+  for (const [index, channel] of channels.entries()) {
+    const verified = allVerified.filter((entry) =>
+      entry.priorityId === channel.id && entry.fast.ok && entry.media.ok && entry.media.hasVideo);
     let existing = output.find((entry) => entry.priorityId === channel.id && entry.fast.ok && entry.media.ok);
     if (!existing) {
-      const chosen = verified.find((entry) => !output.some((item) => item.url === entry.url));
+      const chosen = verified.sort((a, b) => b.score - a.score)
+        .find((entry) => !output.some((item) => item.url === entry.url));
       if (chosen) {
         output.push(chosen);
         existing = chosen;
@@ -77,38 +68,50 @@ export function ensureMandatory(
       verifiedIds.push(channel.id);
       continue;
     }
-    const fallback = channel.urls.find((url) => isPublishableUrl(url) && !output.some((entry) => entry.url === url));
-    if (!fallback) throw new Error("No unique fallback URL for mandatory channel " + channel.name);
+
+    // Only use links genuinely discovered in the third-party player/network.
+    // The previous official CDN URLs are NEVER a fallback in this mode.
+    const candidate = scrapedCandidates
+      .filter((entry) => entry.priorityId === channel.id &&
+        entry.sourceName.startsWith("canlitv-") || entry.priorityId === channel.id &&
+        entry.sourceName === "tvstream-az")
+      .filter((entry) => isPublishableUrl(entry.url) &&
+        !isTurkeyAdSlateProneUrl(entry.url) &&
+        !output.some((item) => item.url === entry.url))
+      .sort((a, b) => Number(b.sourceName === "canlitv-volo") - Number(a.sourceName === "canlitv-volo"))[0];
+    if (!candidate) {
+      missingIds.push(channel.id);
+      continue;
+    }
+
     const warning: ValidatedEntry = {
-      sourceName: "mandatory-unverified",
+      ...candidate,
+      sourceName: "web-unverified",
+      tvgId: channel.id,
       name: channel.name,
       tvgName: channel.name,
-      tvgId: channel.id,
       country: channel.country,
-      category: "General",
       groupTitle: channel.country + " — Yoxlanmamış (yerli yoxla)",
-      url: fallback,
-      headers: {},
-      normalizedUrl: fallback,
       priorityId: channel.id,
-      priorityOrder: channels.indexOf(channel) + 1,
+      priorityOrder: index + 1,
+      normalizedUrl: candidate.url,
       score: -1,
-      fast: { ok: false, reason: "not_verified_from_github" },
-      media: { ok: false, hasVideo: false, hasAudio: false, bytesRead: 0, reason: "not_verified_from_github" }
+      fast: { ok: false, reason: "web_candidate_not_verified_by_github" },
+      media: { ok: false, hasVideo: false, hasAudio: false, bytesRead: 0, reason: "web_candidate_not_verified_by_github" }
     };
-    if (!isDisplayableChannel(warning)) throw new Error("Unpublishable mandatory fallback: " + channel.name);
+    if (!isDisplayableChannel(warning)) {
+      missingIds.push(channel.id);
+      continue;
+    }
     output.push(warning);
     unverifiedIds.push(channel.id);
   }
 
-  // Never discard one of the 18 explicitly required channels to make room for
-  // a lower-priority regional channel. Preserve verified streams otherwise.
   while (output.length > maximum) {
     let i = output.length - 1;
     while (i >= 0 && mandatoryIds.has(output[i]!.priorityId ?? "")) i--;
     if (i < 0) throw new Error("Mandatory channels exceed playlist capacity");
     output.splice(i, 1);
   }
-
-  return { entries: output, verifiedIds, unverifiedIds };
+  return { entries: output, verifiedIds, unverifiedIds, missingIds };
 }

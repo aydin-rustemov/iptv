@@ -6,10 +6,19 @@ export type ChannelPage = { url: string; title: string; country: Country };
 // Volo is a global catalogue, not a Turkey-only source. Channel pages are
 // classified individually by name/URL in webAggregators.ts. Unknown channels
 // stay Beynəlxalq instead of being incorrectly published under Türkiyə.
-const VOLO_SEEDS: Seed[] = Array.from({ length: 23 }, (_, index) => ({
-  url: `https://tv.canlitvvolo.com/?sayfa=${index + 1}`,
-  country: "Beynəlxalq"
-}));
+// Category pages go first: the first two list the Azerbaijani TV channels.
+// Generic home/list pages add major Turkish stations without scraping 23 pages.
+const VOLO_SEEDS: Seed[] = [
+  ...[1, 2].map((page) => ({
+    url: `https://tv.canlitvvolo.com/canli/azerbaycan-tv-kanallari-izle/?sayfa=${page}`,
+    country: "Azərbaycan" as const
+  })),
+  { url: "https://tv.canlitvvolo.com/canli-tv-list", country: "Beynəlxalq" },
+  ...[1, 2, 3, 4].map((page) => ({
+    url: `https://tv.canlitvvolo.com/?sayfa=${page}`,
+    country: "Beynəlxalq" as const
+  }))
+];
 
 export const SOURCES: Source[] = [
   { name: "canlitv-volo", seeds: VOLO_SEEDS, hosts: ["tv.canlitvvolo.com"] },

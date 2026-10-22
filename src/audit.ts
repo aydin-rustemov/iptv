@@ -33,9 +33,16 @@ if (entries.length === 0) errors.push("Playlist has no channels");
 if (urls.some((url) => !isPublishableUrl(url))) errors.push("Oversized, invalid or soon-expiring stream URL exists");
 if (status.published !== extinfCount) errors.push("Published count disagrees with status");
 const mandatory = JSON.parse(readJsonText("config/mandatory-channels.json")) as { channels: Array<{ id: string; name: string }> };
-const unverifiedIds = new Set<string>(JSON.parse(readJsonText("output/mandatory-health.json")).needsLocalTest as string[]);
+const mandatoryHealth = JSON.parse(readJsonText("output/mandatory-health.json")) as { needsLocalTest: string[]; missingNoWebStream: string[] };
+const unverifiedIds = new Set(mandatoryHealth.needsLocalTest);
+const missingIds = new Set(mandatoryHealth.missingNoWebStream);
 for (const channel of mandatory.channels) {
   const matching = entries.filter((entry) => entry.id === channel.id);
+  if (missingIds.has(channel.id)) {
+    if (matching.length) errors.push("Missing web channel must not have an invented link: " + channel.name);
+    warnings.push("No discovered web stream for mandatory channel: " + channel.name);
+    continue;
+  }
   if (matching.length !== 1) errors.push("Required TV channel missing or duplicated: " + channel.name);
   if (unverifiedIds.has(channel.id) && !/Yoxlanmamış/i.test(matching[0]?.group ?? "")) errors.push("Missing unverified warning for: " + channel.name);
 }
