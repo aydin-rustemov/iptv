@@ -26,10 +26,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     env:
-      IPTV_WEB_MAX_PAGES_PER_SOURCE: "600"
-      IPTV_WEB_PAGE_CONCURRENCY: "6"
-      IPTV_WEB_SOURCE_CONCURRENCY: "2"
-      IPTV_MAX_CANDIDATES: "5000"
       IPTV_MEDIA_CONCURRENCY: "12"
     steps:
       - uses: actions/checkout@v4
@@ -39,19 +35,13 @@ jobs:
           node-version: "22"
           cache: npm
 
-      - name: Install FFmpeg
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
-
       - name: Install dependencies
         run: npm ci
-
-      - name: Install Playwright Chromium
-        run: npx playwright install chromium
 
       - name: Typecheck
         run: npm run typecheck
 
-      - name: Update playlist incrementally
+      - name: Rebuild compact regional playlist from verified streams
         run: npm run update
 
       - name: Test and audit playlist
