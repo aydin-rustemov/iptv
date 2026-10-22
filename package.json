@@ -10,14 +10,16 @@
   "scripts": {
     "build": "tsc",
     "typecheck": "tsc --noEmit",
-    "update": "tsx src/index.ts",
+    "update": "tsx src/curated.ts",
     "priority:find": "tsx src/index.ts && tsx src/audit.ts",
     "audit": "tsx src/audit.ts",
     "canlitv:discover": "tsx src/sources/canlitvAz.ts",
     "canlitv:refresh": "tsx src/index.ts",
     "channel:health": "tsx src/index.ts && tsx src/audit.ts",
     "volo:test:arb": "tsx src/volo-arb.ts",
-    "test": "node --import tsx --test tests/*.test.ts"
+    "test": "node --import tsx --test tests/*.test.ts",
+    "update:legacy": "tsx src/index.ts",
+    "curate": "tsx src/curated.ts"
   },
   "dependencies": {
     "ffprobe-static": "^3.1.0",
