@@ -48,7 +48,7 @@ async function main(): Promise<void> {
   // Azerbaijan and Turkey: exclusively scrape the user-selected third-party TV sites.
   // Official channel pages, priority-direct and manual CDN overrides are NEVER sources.
   const web = await discoverWebAggregators(new Set([
-    "canlitv-volo", "canlitv-video", "canlitv-me", "canlitv-watch",
+    "yoda-az", "canlitv-volo", "canlitv-video", "canlitv-me", "canlitv-watch",
     "canlitv-com", "canlitv-date", "tvstream-az"
   ]));
   console.log("[WEB DISCOVERY]", JSON.stringify(web.statuses));
@@ -170,6 +170,7 @@ async function main(): Promise<void> {
 function candidateRank(entry: PlaylistEntry, region: Region): number {
   let ranking = 0;
   if (entry.priorityId) ranking += 2500;
+  if (region === "AZ" && entry.sourceName === "yoda-az") ranking += 30000;
   if (entry.sourceName === "canlitv-volo") ranking += 15000;
   if (entry.sourceName.startsWith("canlitv-") || entry.sourceName === "tvstream-az") ranking += 5000;
   if (region === "RU" && entry.sourceName === "iptv-org-russia") ranking += 1000;
