@@ -1,0 +1,165 @@
+{
+  "description": "Explicit required TV channels. URLs are candidates, NOT guaranteed working. Only video-validated URLs are marked verified; geo-blocked candidates may appear separately with a warning.",
+  "channels": [
+    {
+      "id": "aztv",
+      "name": "AzTV",
+      "country": "Azərbaycan",
+      "urls": [
+        "https://str.yodacdn.net/azertv/index.m3u8",
+        "https://str.yodacdn.net/aztv/index.m3u8",
+        "https://stream8.cinerama.uz/1455/tracks-v1a1/mono.m3u8"
+      ]
+    },
+    {
+      "id": "ictimai-tv",
+      "name": "İctimai TV",
+      "country": "Azərbaycan",
+      "urls": [
+        "https://live.itv.az/itv.m3u8",
+        "https://node19.connect.az:9081/tv/live/playlist.m3u8"
+      ]
+    },
+    {
+      "id": "idman-tv",
+      "name": "İdman TV",
+      "country": "Azərbaycan",
+      "urls": [
+        "https://str.yodacdn.net/idmantele/tracks-v3a1/mono.ts.m3u8",
+        "https://str.yodacdn.net/idmantele/index.m3u8"
+      ]
+    },
+    {
+      "id": "medeniyyet-tv",
+      "name": "Mədəniyyət TV",
+      "country": "Azərbaycan",
+      "urls": [
+        "https://str.yodacdn.net/medeniyyettele/index.m3u8",
+        "https://str.yodacdn.net/medeniyyet/index.m3u8"
+      ]
+    },
+    {
+      "id": "xezer-tv",
+      "name": "Xəzər TV",
+      "country": "Azərbaycan",
+      "urls": [
+        "https://www.xezerxeber.az/stream/index.m3u8",
+        "https://streams.livetv.az/azerbaijan/xezer/playlist.m3u8"
+      ]
+    },
+    {
+      "id": "atv-az",
+      "name": "ATV Azərbaycan",
+      "country": "Azərbaycan",
+      "urls": [
+        "https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8"
+      ]
+    },
+    {
+      "id": "space-tv",
+      "name": "Space TV",
+      "country": "Azərbaycan",
+      "urls": [
+        "https://str.yodacdn.net/space/tracks-v1a1/mono.ts.m3u8",
+        "https://streams.livetv.az/azerbaijan/space_stream/playlist.m3u8"
+      ]
+    },
+    {
+      "id": "arb",
+      "name": "ARB",
+      "country": "Azərbaycan",
+      "urls": [
+        "https://str.yodacdn.net/arb/tracks-v1a1/mono.ts.m3u8",
+        "https://streams.livetv.az/azerbaijan/arb/playlist.m3u8"
+      ]
+    },
+    {
+      "id": "cbc-sport",
+      "name": "CBC Sport",
+      "country": "Azərbaycan",
+      "urls": [
+        "https://mn-nl.mncdn.com/cbcsports_live/cbcsports/playlist.m3u8",
+        "https://cbcsports-live.lg.mncdn.com/cbcsports_live/cbcsports/chunklist.m3u8"
+      ]
+    },
+    {
+      "id": "real-tv",
+      "name": "Real TV",
+      "country": "Azərbaycan",
+      "urls": [
+        "https://str.yodacdn.net/real/tracks-v1a1/mono.ts.m3u8",
+        "https://str.yodacdn.net/real/index.m3u8"
+      ]
+    },
+    {
+      "id": "arb24",
+      "name": "ARB 24",
+      "country": "Azərbaycan",
+      "urls": [
+        "http://85.132.81.184:8080/arb24/live1/index.m3u8",
+        "http://85.132.81.184:8080/arb/live/index.m3u8"
+      ]
+    },
+    {
+      "id": "show-tv",
+      "name": "Show TV",
+      "country": "Türkiyə",
+      "urls": [
+        "https://showtvdvr.blutv.com/blutv_showtv_dvr2/live.m3u8",
+        "https://ciner-live.daioncdn.net/showtv/showtv.m3u8"
+      ]
+    },
+    {
+      "id": "atv-tr",
+      "name": "ATV",
+      "country": "Türkiyə",
+      "urls": [
+        "http://116.202.238.88/ATV_TR/tracks-v1a1/index.m3u8"
+      ]
+    },
+    {
+      "id": "kanal-d",
+      "name": "Kanal D",
+      "country": "Türkiyə",
+      "urls": [
+        "https://live.duhnet.tv/S2/HLS_LIVE/kanalddainp/track_4_1250/playlist.m3u8",
+        "https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&ce=3"
+      ]
+    },
+    {
+      "id": "now-tv",
+      "name": "NOW TV",
+      "country": "Türkiyə",
+      "urls": [
+        "https://foxtvdvr.blutv.com/blutv_foxtv_dvr2/live.m3u8",
+        "https://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv.m3u8"
+      ]
+    },
+    {
+      "id": "tv8",
+      "name": "TV8",
+      "country": "Türkiyə",
+      "urls": [
+        "https://tv8.daioncdn.net/tv8/tv8.m3u8"
+      ]
+    },
+    {
+      "id": "trt-1",
+      "name": "TRT 1",
+      "country": "Türkiyə",
+      "urls": [
+        "https://tv-trt1.medya.trt.com.tr/master.m3u8",
+        "https://tv-trt1.medya.trt.com.tr/master_720.m3u8"
+      ]
+    },
+    {
+      "id": "star-tv",
+      "name": "Star TV",
+      "country": "Türkiyə",
+      "urls": [
+        "https://dogus-live.daioncdn.net/startv/playlist.m3u8",
+        "https://dogus-live.daioncdn.net/startv/startv.m3u8"
+      ]
+    }
+  ]
+}
