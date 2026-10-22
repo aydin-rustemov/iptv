@@ -25,6 +25,8 @@ function channelIdentity(entry: PlaylistEntry): string {
 
 function hostReliability(entry: ValidatedEntry): number {
   let score = entry.score;
+  if (regionOf(entry) === "AZ" && entry.sourceName === "yoda-az") score += 50000;
+  if (regionOf(entry) === "AZ" && entry.sourceName === "tvstream-az") score += 15000;
   if (entry.priorityId) score += 1000;
   if (entry.sourceName === "manual-locked" || entry.sourceName === "manual-fallback") score += 200;
   if (/iptv-org-(?:azerbaijan|turkey|russia)/.test(entry.sourceName)) score += 100;
