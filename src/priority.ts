@@ -44,7 +44,7 @@ export function buildPriorityStatuses(
     const found = candidates.filter((entry) => entry.priorityId === priority.id);
     const good = validated.filter((entry) => entry.priorityId === priority.id);
     const picked = selected.find((entry) => entry.priorityId === priority.id);
-    const verifiedPicked = picked && picked.sourceName !== "canlitv-az-unverified";
+    const verifiedPicked = picked && picked.fast.ok && picked.media.ok && !picked.sourceName.includes("unverified");
     return {
       id: priority.id,
       name: priority.name,
