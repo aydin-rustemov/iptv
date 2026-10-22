@@ -4,6 +4,7 @@ import { normalizeCountry, parseM3u } from "./parser.js";
 import { fastCheck, isForbiddenUrl, mediaCheck } from "./validator.js";
 import { isPublishableUrl, MAX_PLAYLIST_BYTES } from "./playlistGuard.js";
 import { discoverWebAggregators } from "./sources/webAggregators.js";
+import { discoverTvstreamAz } from "./sources/tvstreamAz.js";
 import { loadPriorityChannels, buildPriorityStatuses, tagPriorityEntries, writeMissingPriority } from "./priority.js";
 import { countBy, isDisplayableChannel, writePlaylist, writeStatus } from "./generator.js";
 import { regionOf, selectRegionalPlaylist, uniqueVerified, type Region } from "./regional.js";
@@ -48,13 +49,16 @@ async function main(): Promise<void> {
   // Azerbaijan and Turkey: exclusively scrape the user-selected third-party TV sites.
   // Official channel pages, priority-direct and manual CDN overrides are NEVER sources.
   const web = await discoverWebAggregators(new Set([
-    "canlitv-volo", "canlitv-video", "canlitv-me", "canlitv-watch",
+    "yoda-az", "canlitv-volo", "canlitv-video", "canlitv-me", "canlitv-watch",
     "canlitv-com", "canlitv-date", "tvstream-az"
   ]));
   console.log("[WEB DISCOVERY]", JSON.stringify(web.statuses));
-  const discovered = tagPriorityEntries([...web.entries, ...sourceEntries.filter((entry) => regionOf(entry) === "RU")], priorities)
+  const tvstream = await discoverTvstreamAz();
+  console.log("[TVSTREAM DISCOVERY]", JSON.stringify({ attempted: tvstream.attempted, matched: tvstream.matched, reason: tvstream.reason }));
+  const discovered = tagPriorityEntries([...web.entries, ...tvstream.entries, ...sourceEntries.filter((entry) => regionOf(entry) === "RU")], priorities)
     .filter((entry) => regionOf(entry) !== undefined)
-    .filter((entry) => isPublishableUrl(entry.url) && !isForbiddenUrl(entry.url, { allowLivePath: true }));
+    .filter((entry) => isPublishableUrl(entry.url) && !isForbiddenUrl(entry.url, { allowLivePath: true }))
+    .sort((a, b) => candidateRank(b, regionOf(b)!) - candidateRank(a, regionOf(a)!));
 
   const seen = new Set<string>();
   const unique = discovered.filter((entry) => {
@@ -95,7 +99,7 @@ async function main(): Promise<void> {
 
   // Never publish a fabricated or official fallback for a priority channel.
   // The 3-hour update must not overwrite the existing playlist when every website fails.
-  if (!web.entries.some((entry) => regionOf(entry) === "AZ" || regionOf(entry) === "TR")) {
+  if (![...web.entries, ...tvstream.entries].some((entry) => regionOf(entry) === "AZ" || regionOf(entry) === "TR")) {
     throw new Error("All AZ/TR web scrapers returned no regional streams; not replacing playlist");
   }
   const required = ensureMandatory(selectRegionalPlaylist(verified).filter(isDisplayableChannel), verified, mandatory, 100, unique);
@@ -162,7 +166,8 @@ async function main(): Promise<void> {
     rejected: reasons,
     sourcesLoaded,
     sourceErrors: errors,
-    webSources: web.statuses
+    webSources: web.statuses,
+    tvstream: { attempted: tvstream.attempted, matched: tvstream.matched, reason: tvstream.reason }
   }, null, 2), "utf8");
   console.log("[PUBLISHED]", JSON.stringify({ published: selected.length, countryCounts: status.countryCounts, mandatoryVerified: required.verifiedIds, mandatoryNeedsLocalTest: required.unverifiedIds, mandatoryMissing: required.missingIds, failures: reasons, sourceErrors: errors }));
 }
@@ -170,6 +175,7 @@ async function main(): Promise<void> {
 function candidateRank(entry: PlaylistEntry, region: Region): number {
   let ranking = 0;
   if (entry.priorityId) ranking += 2500;
+  if (region === "AZ" && entry.sourceName === "yoda-az") ranking += 30000;
   if (entry.sourceName === "canlitv-volo") ranking += 15000;
   if (entry.sourceName.startsWith("canlitv-") || entry.sourceName === "tvstream-az") ranking += 5000;
   if (region === "RU" && entry.sourceName === "iptv-org-russia") ranking += 1000;

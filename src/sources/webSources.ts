@@ -20,7 +20,18 @@ const VOLO_SEEDS: Seed[] = [
   }))
 ];
 
+// Yoda is the first-choice Azerbaijani TV player, ahead of Volo and other sites.
+// Seed the main channel catalogue plus directly observed broadcaster pages.
+const YODA_SEEDS: Seed[] = [
+  { url: "https://yoda.az/tv/", country: "Azərbaycan" },
+  { url: "https://yoda.az/tv/arb/", country: "Azərbaycan" },
+  { url: "https://yoda.az/tv/space/", country: "Azərbaycan" },
+  { url: "https://yoda.az/tv/aztv/", country: "Azərbaycan" },
+  { url: "https://yoda.az/tv/ictimai/", country: "Azərbaycan" }
+];
+
 export const SOURCES: Source[] = [
+  { name: "yoda-az", seeds: YODA_SEEDS, hosts: ["yoda.az", "www.yoda.az", "yodaplayer.yodacdn.net"] },
   { name: "canlitv-volo", seeds: VOLO_SEEDS, hosts: ["tv.canlitvvolo.com"] },
   { name: "canlitv-video", seeds: [
     { url: "https://www.canlitv.video/kategori/azerbaycan", country: "Azərbaycan" },

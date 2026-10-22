@@ -74,11 +74,11 @@ export function ensureMandatory(
     const candidate = scrapedCandidates
       .filter((entry) => entry.priorityId === channel.id &&
         entry.sourceName.startsWith("canlitv-") || entry.priorityId === channel.id &&
-        entry.sourceName === "tvstream-az")
+        (entry.sourceName === "tvstream-az" || entry.sourceName === "yoda-az"))
       .filter((entry) => isPublishableUrl(entry.url) &&
         !isTurkeyAdSlateProneUrl(entry.url) &&
         !output.some((item) => item.url === entry.url))
-      .sort((a, b) => Number(b.sourceName === "canlitv-volo") - Number(a.sourceName === "canlitv-volo"))[0];
+      .sort((a, b) => sourcePriority(b.sourceName) - sourcePriority(a.sourceName))[0];
     if (!candidate) {
       missingIds.push(channel.id);
       continue;
@@ -114,4 +114,12 @@ export function ensureMandatory(
     output.splice(i, 1);
   }
   return { entries: output, verifiedIds, unverifiedIds, missingIds };
+}
+
+function sourcePriority(sourceName: string): number {
+  if (sourceName === "yoda-az") return 100;
+  if (sourceName === "tvstream-az") return 90;
+  if (sourceName === "canlitv-volo") return 80;
+  if (sourceName.startsWith("canlitv-")) return 60;
+  return 0;
 }
