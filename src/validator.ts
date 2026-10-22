@@ -49,12 +49,8 @@ export async function fastCheck(entry: PlaylistEntry): Promise<FastCheckResult> 
   if (isForbiddenUrl(entry.url, { allowLivePath: entry.allowLivePath })) return { ok: false, reason: "forbidden_url" };
   if (hasSensitiveHeaders(entry)) return { ok: false, reason: "sensitive_headers" };
 
-  // For Turkish discovery we deliberately trust Volo (plus explicit manual
-  // overrides). Other website adapters may still discover Turkish URLs for
-  // diagnostics, but they are not allowed to publish them into the TV playlist.
-  if (isTurkeyEntry(entry) && !isAllowedTurkeySource(entry)) {
-    return { ok: false, reason: "turkey_non_volo_source" };
-  }
+  // Regional M3U and official streams are eligible; only a real media probe
+  // determines whether a candidate is publishable.
   if (isTurkeyEntry(entry) && isTurkeyAdSlateProneUrl(entry.url)) {
     return { ok: false, reason: "turkey_ad_slate_prone_host" };
   }
@@ -259,14 +255,6 @@ function publicHeaderRetries(entry: PlaylistEntry): Array<Record<string, string>
 
 function hasSensitiveHeaders(entry: PlaylistEntry): boolean {
   return Object.keys(entry.headers).some((key) => /cookie|authorization|password|token|key/i.test(key));
-}
-
-function isAllowedTurkeySource(entry: PlaylistEntry): boolean {
-  if (!isTurkeyEntry(entry)) return true;
-  if (entry.sourceName === "existing-playlist") return true;
-  if (entry.sourceName.startsWith("canlitv-volo")) return true;
-  if (entry.sourceName.startsWith("manual-")) return true;
-  return false;
 }
 
 function isTurkeyEntry(entry: PlaylistEntry): boolean {
