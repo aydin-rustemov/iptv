@@ -1,0 +1,37 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="aztv" tvg-name="AzTV" group-title="Azərbaycan",AzTV
+https://str.yodacdn.net/aztv/index.m3u8
+#EXTINF:-1 tvg-id="ictimai-tv" tvg-name="İctimai TV" group-title="Azərbaycan",İctimai TV
+http://erlyvideo.izone.az/ictimaitv/mono.m3u8
+#EXTINF:-1 tvg-id="idman-tv" tvg-name="İdman TV" group-title="Azərbaycan",İdman TV
+https://str.yodacdn.net/idman/mono.m3u8
+#EXTINF:-1 tvg-id="medeniyyet-tv" tvg-name="Mədəniyyət TV" group-title="Azərbaycan",Mədəniyyət TV
+https://str.yodacdn.net/medeniyyet/index.m3u8
+#EXTINF:-1 tvg-id="xezer-tv" tvg-name="Xəzər TV" group-title="Azərbaycan",Xəzər TV
+http://erlyvideo.izone.az/xezertv/mono.m3u8
+#EXTINF:-1 tvg-id="atv-az" tvg-name="ATV Azərbaycan" group-title="Azərbaycan",ATV Azərbaycan
+https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8
+#EXTINF:-1 tvg-id="space-tv" tvg-name="Space TV" group-title="Azərbaycan",Space TV
+http://erlyvideo.izone.az/spacetv/mono.m3u8
+#EXTINF:-1 tvg-id="arb" tvg-name="ARB" group-title="Azərbaycan",ARB
+http://erlyvideo.izone.az/arb/mono.m3u8
+#EXTINF:-1 tvg-id="cbc-sport" tvg-name="CBC Sport" group-title="Azərbaycan",CBC Sport
+https://mn-nl.mncdn.com/cbcsports_live/cbcsports/playlist.m3u8
+#EXTINF:-1 tvg-id="real-tv" tvg-name="Real TV" group-title="Azərbaycan",Real TV
+https://str.yodacdn.net/real/tracks-v1a1/mono.ts.m3u8
+#EXTINF:-1 tvg-id="arb24" tvg-name="ARB 24" group-title="Azərbaycan",ARB 24
+http://erlyvideo.izone.az/arb24/mono.m3u8
+#EXTINF:-1 tvg-id="show-tv" tvg-name="Show TV" group-title="Türkiyə",Show TV
+https://showtvdvr.blutv.com/blutv_showtv_dvr2/live.m3u8
+#EXTINF:-1 tvg-id="atv-tr" tvg-name="ATV" group-title="Türkiyə",ATV
+http://116.202.238.88/ATV_TR/tracks-v1a1/index.m3u8
+#EXTINF:-1 tvg-id="kanal-d" tvg-name="Kanal D" group-title="Türkiyə",Kanal D
+https://live.duhnet.tv/S2/HLS_LIVE/kanalddainp/track_4_1250/playlist.m3u8
+#EXTINF:-1 tvg-id="now-tv" tvg-name="NOW TV" group-title="Türkiyə",NOW TV
+http://116.202.238.88/FOXTV_TR/index.m3u8
+#EXTINF:-1 tvg-id="tv8" tvg-name="TV8" group-title="Türkiyə",TV8
+http://315e5a5d.ottrast.com/iptv/8KSD5KFDXA6H88/2454/index.m3u8
+#EXTINF:-1 tvg-id="trt-1" tvg-name="TRT 1" group-title="Türkiyə",TRT 1
+https://trtcanlitv-lh.akamaihd.net/i/TRT1HD_1@181842/master.m3u8
+#EXTINF:-1 tvg-id="star-tv" tvg-name="Star TV" group-title="Türkiyə",Star TV
+https://raw.githubusercontent.com/ipstreet312/freeiptv/refs/heads/master/ressources/tur/star.m3u8
