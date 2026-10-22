@@ -4,6 +4,7 @@ import { normalizeCountry, parseM3u } from "./parser.js";
 import { fastCheck, isForbiddenUrl, mediaCheck } from "./validator.js";
 import { isPublishableUrl, isDirectManifestUrl, MAX_PLAYLIST_BYTES } from "./playlistGuard.js";
 import { yodaCdnCandidates } from "./sources/yodaCdn.js";
+import { turkeyAlternativeCandidates } from "./sources/turkeyAlternatives.js";
 import { discoverWebAggregators } from "./sources/webAggregators.js";
 import { discoverTvstreamAz } from "./sources/tvstreamAz.js";
 import { loadPriorityChannels, buildPriorityStatuses, tagPriorityEntries, writeMissingPriority } from "./priority.js";
@@ -57,7 +58,7 @@ async function main(): Promise<void> {
   console.log("[WEB DISCOVERY]", JSON.stringify(web.statuses));
   const tvstream = await discoverTvstreamAz();
   console.log("[TVSTREAM DISCOVERY]", JSON.stringify({ attempted: tvstream.attempted, matched: tvstream.matched, reason: tvstream.reason }));
-  const discovered = tagPriorityEntries([...web.entries, ...tvstream.entries, ...yodaCdnCandidates(), ...sourceEntries.filter((entry) => regionOf(entry) === "RU")], priorities)
+  const discovered = tagPriorityEntries([...web.entries, ...tvstream.entries, ...yodaCdnCandidates(), ...turkeyAlternativeCandidates(), ...sourceEntries.filter((entry) => regionOf(entry) === "RU")], priorities)
     .filter((entry) => regionOf(entry) !== undefined)
     .filter((entry) => isPublishableUrl(entry.url) && isDirectManifestUrl(entry.url) && !isForbiddenUrl(entry.url, { allowLivePath: true }))
     .filter((entry) => !isMismatchedChannel(entry))
@@ -180,6 +181,7 @@ function candidateRank(entry: PlaylistEntry, region: Region): number {
   if (entry.priorityId) ranking += 2500;
   if (region === "AZ" && entry.sourceName === "yoda-az") ranking += 30000;
   if (region === "AZ" && entry.sourceName === "yoda-az-cdn") ranking += 25000;
+  if (region === "TR" && entry.sourceName === "community-turkey-candidate") ranking += 14000;
   if (entry.sourceName === "canlitv-volo") ranking += 15000;
   if (entry.sourceName.startsWith("canlitv-") || entry.sourceName === "tvstream-az") ranking += 5000;
   if (region === "RU" && entry.sourceName === "iptv-org-russia") ranking += 1000;
