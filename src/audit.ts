@@ -47,25 +47,11 @@ for (const entry of entries) {
   }
 }
 
-// Locked manual channels are a user-controlled contract. They must appear once,
-// keep the exact configured URL, and must not be shadowed by a scraped duplicate.
-for (const locked of (manualConfig.channels ?? []).filter((channel) => channel.locked && channel.url)) {
-  const exact = entries.filter((entry) => entry.id === locked.id);
-  if (exact.length !== 1) {
-    errors.push(`Locked channel ${locked.name} must exist exactly once as tvg-id=${locked.id}`);
-    continue;
-  }
-  if (normalizeUrl(exact[0]!.url) !== normalizeUrl(locked.url!)) {
-    errors.push(`Locked channel ${locked.name} URL changed from manual configuration`);
-  }
-
-  const sameChannel = entries.filter((entry) =>
-    countryKey(entry.group) === countryKey(locked.group) &&
-    simplifiedName(entry.name) === simplifiedName(locked.name)
-  );
-  if (sameChannel.length !== 1) {
-    errors.push(`Locked channel ${locked.name} has a duplicate/shadow entry`);
-  }
+// Formerly locked channels are now only candidates. Never require a stream
+// to be published if it failed live video validation.
+for (const configured of (manualConfig.channels ?? []).filter((channel) => channel.locked)) {
+  const matching = entries.filter((entry) => entry.id === configured.id);
+  if (matching.length > 1) errors.push(`Duplicate manually configured channel: ${configured.name}`);
 }
 
 // Tokenized URLs are not a CI failure by themselves. The update job validates
