@@ -44,7 +44,7 @@ export function writePlaylist(entries: ValidatedEntry[], file = "output/playlist
 export function isDisplayableChannel(entry: Pick<ValidatedEntry, "name" | "tvgName" | "url">): boolean {
   if (!isPublishableUrl(entry.url)) return false;
   const value = normalizeSortText((entry.name ?? "") + " " + (entry.tvgName ?? ""));
-  return !/sitene tv ekle|siteye tv ekle|indi izle|hemen izle|hemen seyret|player ac|yayini ac|tiklayin/.test(value);
+  return !/sitene tv ekle|siteye tv ekle|indi izle|hemen izle|hemen seyret|player ac|yayini ac|tiklayin|tvstream|canli tv izle|canlitv\.com/.test(value);
 }
 
 function safeLogo(raw?: string): string | undefined {
