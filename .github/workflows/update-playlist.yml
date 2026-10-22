@@ -41,7 +41,14 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
-      - name: Rebuild compact regional playlist from verified streams
+      - name: Install Playwright Chromium for real player-network capture
+        run: npx playwright install --with-deps chromium
+
+      - name: Rebuild playlist from Volo and other live-TV websites
+        env:
+          IPTV_WEB_MAX_PAGES_PER_SOURCE: "90"
+          IPTV_WEB_PAGE_CONCURRENCY: "8"
+          IPTV_WEB_SOURCE_CONCURRENCY: "3"
         run: npm run update
 
       - name: Test and audit playlist
