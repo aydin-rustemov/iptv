@@ -1,4 +1,4 @@
-import { chromium, type Browser, type Page } from "playwright";
+import { chromium, type Browser } from "playwright";
 import type { PlaylistEntry } from "../types.js";
 import { isForbiddenUrl } from "../validator.js";
 import { isPublishableUrl } from "../playlistGuard.js";
