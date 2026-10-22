@@ -51,7 +51,7 @@ async function main(): Promise<void> {
   // Official channel pages, priority-direct and manual CDN overrides are NEVER sources.
   const web = await discoverWebAggregators(new Set([
     "yoda-az", "canlitv-volo", "canlitv-video", "canlitv-me", "canlitv-watch",
-    "canlitv-com", "canlitv-date", "tvstream-az"
+    "canlitv-com", "canlitv-vin", "canlitv-date", "tvstream-az"
   ]));
   console.log("[WEB DISCOVERY]", JSON.stringify(web.statuses));
   const tvstream = await discoverTvstreamAz();
