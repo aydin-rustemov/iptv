@@ -22,8 +22,16 @@ const VOLO_SEEDS: Seed[] = [
 
 export const SOURCES: Source[] = [
   { name: "canlitv-volo", seeds: VOLO_SEEDS, hosts: ["tv.canlitvvolo.com"] },
-  { name: "canlitv-video", seeds: [{ url: "https://www.canlitv.video/", country: "Türkiyə" }], hosts: ["canlitv.video"] },
-  { name: "canlitv-me", seeds: [{ url: "https://www.canlitv.me/", country: "Türkiyə" }], hosts: ["canlitv.me"] },
+  { name: "canlitv-video", seeds: [
+    { url: "https://www.canlitv.video/kategori/azerbaycan", country: "Azərbaycan" },
+    { url: "https://www.canlitv.video/hd", country: "Türkiyə" },
+    { url: "https://www.canlitv.video/", country: "Türkiyə" }
+  ], hosts: ["canlitv.video"] },
+  { name: "canlitv-me", seeds: [
+    { url: "https://www.canlitv.me/category/azerbaycan-kanallari", country: "Azərbaycan" },
+    { url: "https://www.canlitv.me/category/ulusalkanallar", country: "Türkiyə" },
+    { url: "https://www.canlitv.me/live", country: "Türkiyə" }
+  ], hosts: ["canlitv.me"] },
   { name: "canlitv-watch", seeds: [{ url: "https://tr.canlitv.watch/", country: "Türkiyə" }, { url: "https://tr.canlitv.watch/kanallar/azerbaycan", country: "Azərbaycan" }], hosts: ["canlitv.watch"] },
   { name: "canlitv-com", seeds: [{ url: "https://canlitv.com/televizyonlar", country: "Türkiyə" }], hosts: ["canlitv.com"] },
   { name: "canlitv-date", seeds: [{ url: "https://www.canlitv.date/", country: "Türkiyə" }], hosts: ["canlitv.date"] },
