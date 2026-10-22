@@ -44,7 +44,11 @@ export const SOURCES: Source[] = [
     { url: "https://www.canlitv.me/live", country: "Türkiyə" }
   ], hosts: ["canlitv.me"] },
   { name: "canlitv-watch", seeds: [{ url: "https://tr.canlitv.watch/", country: "Türkiyə" }, { url: "https://tr.canlitv.watch/kanallar/azerbaycan", country: "Azərbaycan" }], hosts: ["canlitv.watch"] },
-  { name: "canlitv-com", seeds: [{ url: "https://canlitv.com/televizyonlar", country: "Türkiyə" }], hosts: ["canlitv.com"] },
+  { name: "canlitv-com", seeds: [
+    { url: "https://canlitv.com/azerbaycan-kanallari", country: "Azərbaycan" },
+    { url: "https://canlitv.com/televizyonlar", country: "Türkiyə" }
+  ], hosts: ["canlitv.com"] },
+  { name: "canlitv-vin", seeds: [{ url: "https://www.canlitv.vin/kanallar/azerbaycan", country: "Azərbaycan" }], hosts: ["canlitv.vin"] },
   { name: "canlitv-date", seeds: [{ url: "https://www.canlitv.date/", country: "Türkiyə" }], hosts: ["canlitv.date"] },
   { name: "tvstream-az", seeds: [{ url: "https://tvstream.az/", country: "Azərbaycan" }], hosts: ["tvstream.az"] },
   { name: "smotret-tv-ru", seeds: [{ url: "https://smotret.tv/", country: "Rusiya" }], hosts: ["smotret.tv"] },
