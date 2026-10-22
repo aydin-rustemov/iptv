@@ -18,8 +18,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: update-iptv-playlist
-  cancel-in-progress: false
+  group: curated-iptv-playlist-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   update:
