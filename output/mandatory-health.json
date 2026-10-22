@@ -1,18 +1,7 @@
 {
-  "updatedAt": "2026-10-22T20:02:45.752Z",
+  "updatedAt": "2026-10-22T20:45:55.006Z",
   "total": 18,
   "verified": [
-    "arb",
-    "show-tv",
-    "kanal-d",
-    "tv8",
-    "star-tv"
-  ],
-  "needsLocalTest": [
-    "atv-tr",
-    "now-tv"
-  ],
-  "missingNoWebStream": [
     "aztv",
     "ictimai-tv",
     "idman-tv",
@@ -20,115 +9,125 @@
     "xezer-tv",
     "atv-az",
     "space-tv",
+    "arb",
     "cbc-sport",
     "real-tv",
     "arb24",
-    "trt-1"
+    "kanal-d",
+    "tv8"
+  ],
+  "needsLocalTest": [],
+  "missingNoWebStream": [
+    "show-tv",
+    "atv-tr",
+    "now-tv",
+    "trt-1",
+    "star-tv"
   ],
   "details": [
     {
       "name": "AzTV",
       "country": "Azərbaycan",
       "id": "aztv",
-      "status": "NO_WEB_STREAM_FOUND",
-      "candidates": 0
+      "status": "video_verified_on_github",
+      "candidates": 11
     },
     {
       "name": "İctimai TV",
       "country": "Azərbaycan",
       "id": "ictimai-tv",
-      "status": "NO_WEB_STREAM_FOUND",
-      "candidates": 0
+      "status": "video_verified_on_github",
+      "candidates": 4
     },
     {
       "name": "İdman TV",
       "country": "Azərbaycan",
       "id": "idman-tv",
-      "status": "NO_WEB_STREAM_FOUND",
-      "candidates": 0
+      "status": "video_verified_on_github",
+      "candidates": 3
     },
     {
       "name": "Mədəniyyət TV",
       "country": "Azərbaycan",
       "id": "medeniyyet-tv",
-      "status": "NO_WEB_STREAM_FOUND",
-      "candidates": 0
+      "status": "video_verified_on_github",
+      "candidates": 3
     },
     {
       "name": "Xəzər TV",
       "country": "Azərbaycan",
       "id": "xezer-tv",
-      "status": "NO_WEB_STREAM_FOUND",
-      "candidates": 0
+      "status": "video_verified_on_github",
+      "candidates": 2
     },
     {
       "name": "ATV Azərbaycan",
       "country": "Azərbaycan",
       "id": "atv-az",
-      "status": "NO_WEB_STREAM_FOUND",
-      "candidates": 0
+      "status": "video_verified_on_github",
+      "candidates": 2
     },
     {
       "name": "Space TV",
       "country": "Azərbaycan",
       "id": "space-tv",
-      "status": "NO_WEB_STREAM_FOUND",
-      "candidates": 0
+      "status": "video_verified_on_github",
+      "candidates": 7
     },
     {
       "name": "ARB",
       "country": "Azərbaycan",
       "id": "arb",
       "status": "video_verified_on_github",
-      "candidates": 3
+      "candidates": 7
     },
     {
       "name": "CBC Sport",
       "country": "Azərbaycan",
       "id": "cbc-sport",
-      "status": "NO_WEB_STREAM_FOUND",
-      "candidates": 0
+      "status": "video_verified_on_github",
+      "candidates": 2
     },
     {
       "name": "Real TV",
       "country": "Azərbaycan",
       "id": "real-tv",
-      "status": "NO_WEB_STREAM_FOUND",
-      "candidates": 0
+      "status": "video_verified_on_github",
+      "candidates": 2
     },
     {
       "name": "ARB 24",
       "country": "Azərbaycan",
       "id": "arb24",
-      "status": "NO_WEB_STREAM_FOUND",
-      "candidates": 0
+      "status": "video_verified_on_github",
+      "candidates": 4
     },
     {
       "name": "Show TV",
       "country": "Türkiyə",
       "id": "show-tv",
-      "status": "video_verified_on_github",
-      "candidates": 6
+      "status": "NO_WEB_STREAM_FOUND",
+      "candidates": 1
     },
     {
       "name": "ATV",
       "country": "Türkiyə",
       "id": "atv-tr",
-      "status": "WEB_LINK_NOT_VERIFIED_TEST_IN_AZERBAIJAN",
-      "candidates": 4
+      "status": "NO_WEB_STREAM_FOUND",
+      "candidates": 1
     },
     {
       "name": "Kanal D",
       "country": "Türkiyə",
       "id": "kanal-d",
       "status": "video_verified_on_github",
-      "candidates": 3
+      "candidates": 1
     },
     {
       "name": "NOW TV",
       "country": "Türkiyə",
       "id": "now-tv",
-      "status": "WEB_LINK_NOT_VERIFIED_TEST_IN_AZERBAIJAN",
+      "status": "NO_WEB_STREAM_FOUND",
       "candidates": 1
     },
     {
@@ -136,21 +135,21 @@
       "country": "Türkiyə",
       "id": "tv8",
       "status": "video_verified_on_github",
-      "candidates": 6
+      "candidates": 1
     },
     {
       "name": "TRT 1",
       "country": "Türkiyə",
       "id": "trt-1",
       "status": "NO_WEB_STREAM_FOUND",
-      "candidates": 0
+      "candidates": 1
     },
     {
       "name": "Star TV",
       "country": "Türkiyə",
       "id": "star-tv",
-      "status": "video_verified_on_github",
-      "candidates": 4
+      "status": "NO_WEB_STREAM_FOUND",
+      "candidates": 1
     }
   ]
 }
