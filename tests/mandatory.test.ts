@@ -24,13 +24,14 @@ test("config includes exactly the user-required 11 AZ and 7 TR channel IDs", () 
     "atv-az", "space-tv", "arb", "cbc-sport", "real-tv", "arb24",
     "show-tv", "atv-tr", "kanal-d", "now-tv", "tv8", "trt-1", "star-tv"
   ]);
-  assert.ok(mandatoryCandidates(configured).length >= configured.length);
+  assert.equal(mandatoryCandidates(configured).length, 0, "No official or static direct links are permitted");
 });
 
 test("working mandatory channels stay verified; inaccessible mandatory channels are clearly warned", () => {
   const channels = [channel("atv-az", "ATV Azərbaycan", "Azərbaycan"), channel("aztv", "AzTV", "Azərbaycan")];
   const working = verified("atv-az", "ATV Azərbaycan", "Azərbaycan");
-  const result = ensureMandatory([working], [working], channels, 3);
+  const webCandidate = { ...verified("aztv", "AzTV", "Azərbaycan"), sourceName: "canlitv-volo" };
+  const result = ensureMandatory([working], [working], channels, 3, [webCandidate]);
   assert.equal(result.entries.length, 2);
   assert.deepEqual(result.verifiedIds, ["atv-az"]);
   assert.deepEqual(result.unverifiedIds, ["aztv"]);
@@ -43,7 +44,16 @@ test("working mandatory channels stay verified; inaccessible mandatory channels 
 test("missing mandatory channels replace less important channels if maximum exceeded", () => {
   const others = [verified("other1", "Other 1", "Türkiyə"), verified("other2", "Other 2", "Türkiyə")];
   const required = [channel("aztv", "AzTV", "Azərbaycan")];
-  const result = ensureMandatory(others, others, required, 2);
+  const webCandidate = { ...verified("aztv", "AzTV", "Azərbaycan"), sourceName: "canlitv-volo" };
+  const result = ensureMandatory(others, others, required, 2, [webCandidate]);
   assert.equal(result.entries.length, 2);
   assert.ok(result.entries.some((entry) => entry.priorityId === "aztv"));
+});
+
+test("unavailable priority stream is reported missing instead of inventing official URL", () => {
+  const required = [channel("aztv", "AzTV", "Azərbaycan")];
+  const result = ensureMandatory([], [], required);
+  assert.equal(result.entries.length, 0);
+  assert.deepEqual(result.missingIds, ["aztv"]);
+  assert.deepEqual(result.unverifiedIds, []);
 });
