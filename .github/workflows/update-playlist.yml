@@ -67,6 +67,7 @@ jobs:
             output/missing-priority-details.json \
             output/playlist.previous.m3u \
             output/channel-health.json \
+            output/mandatory-health.json \
             output/canlitv-status.json \
             state/channel-registry.json; do
             if [ -e "$file" ]; then
