@@ -1,152 +1,35 @@
 {
-  "updatedAt": "2026-10-15T05:07:08.323Z",
-  "published": 732,
-  "verifiedWorking": 745,
-  "discovery": {
-    "maintenance": {
-      "previous": 739,
-      "preserved": 719,
-      "replaced": 13,
-      "removed": 7,
-      "added": 0,
-      "published": 732
-    },
-    "lockedStaticChannels": [
-      {
-        "id": "cbc-sport-az",
-        "name": "CBC Sport",
-        "url": "https://cbcsports-live.lg.mncdn.com/cbcsports_live/cbcsports/chunklist.m3u8"
-      },
-      {
-        "id": "arb-az",
-        "name": "ARB",
-        "url": "https://str.yodacdn.net/arb/tracks-v1a1/mono.ts.m3u8"
-      },
-      {
-        "id": "space-tv-az",
-        "name": "Space TV",
-        "url": "https://str.yodacdn.net/space/tracks-v1a1/mono.ts.m3u8"
-      },
-      {
-        "id": "real-tv-az",
-        "name": "Real TV",
-        "url": "https://str.yodacdn.net/real/tracks-v1a1/mono.ts.m3u8"
-      },
-      {
-        "id": "apa-tv-az",
-        "name": "APA TV",
-        "url": "https://str.yodacdn.net/apatv/tracks-v1a1/mono.ts.m3u8"
-      },
-      {
-        "id": "idman-tv-az",
-        "name": "İdman TV",
-        "url": "https://str.yodacdn.net/idmantele/tracks-v3a1/mono.ts.m3u8"
-      },
-      {
-        "id": "el-tv-az",
-        "name": "EL TV",
-        "url": "https://str.yodacdn.net/eltv/tracks-v1a1/mono.ts.m3u8"
-      }
-    ],
-    "canliTv": {
-      "updatedAt": "2026-10-15T04:49:27.498Z",
-      "source": "canlitv-az",
-      "ok": false,
-      "error": "ENOTFOUND: fetch failed"
-    },
-    "webAggregators": [
-      {
-        "source": "canlitv-com",
-        "ok": true,
-        "seedPages": 1,
-        "channelPages": 329,
-        "processedPages": 329,
-        "manifestCandidates": 225,
-        "entries": 225
-      },
-      {
-        "source": "canlitv-date",
-        "ok": true,
-        "seedPages": 1,
-        "channelPages": 273,
-        "processedPages": 273,
-        "manifestCandidates": 178,
-        "entries": 177
-      },
-      {
-        "source": "canlitv-me",
-        "ok": true,
-        "seedPages": 1,
-        "channelPages": 68,
-        "processedPages": 68,
-        "manifestCandidates": 6,
-        "entries": 3
-      },
-      {
-        "source": "canlitv-video",
-        "ok": true,
-        "seedPages": 1,
-        "channelPages": 29,
-        "processedPages": 29,
-        "manifestCandidates": 0,
-        "entries": 0
-      },
-      {
-        "source": "canlitv-volo",
-        "ok": false,
-        "seedPages": 0,
-        "channelPages": 0,
-        "processedPages": 0,
-        "manifestCandidates": 0,
-        "entries": 0,
-        "error": "http_403; browser=browser_http_403"
-      },
-      {
-        "source": "canlitv-watch",
-        "ok": true,
-        "seedPages": 2,
-        "channelPages": 116,
-        "processedPages": 116,
-        "manifestCandidates": 4,
-        "entries": 4
-      },
-      {
-        "source": "glaz-tv-ru",
-        "ok": true,
-        "seedPages": 1,
-        "channelPages": 43,
-        "processedPages": 43,
-        "manifestCandidates": 81,
-        "entries": 81
-      },
-      {
-        "source": "ontvtime-ru",
-        "ok": true,
-        "seedPages": 1,
-        "channelPages": 37,
-        "processedPages": 37,
-        "manifestCandidates": 56,
-        "entries": 4
-      },
-      {
-        "source": "smotret-tv-ru",
-        "ok": true,
-        "seedPages": 1,
-        "channelPages": 83,
-        "processedPages": 83,
-        "manifestCandidates": 155,
-        "entries": 132
-      },
-      {
-        "source": "tvstream-az",
-        "ok": true,
-        "seedPages": 1,
-        "channelPages": 2,
-        "processedPages": 2,
-        "manifestCandidates": 0,
-        "entries": 0
-      }
-    ],
-    "m3uSourceFailures": []
-  }
+  "updatedAt": "2026-10-22T18:42:23.149Z",
+  "published": 85,
+  "verifiedWorking": 85,
+  "validation": "HTTP manifest + video segment ffprobe; no forced/unchecked channels",
+  "countryCounts": {
+    "Azərbaycan": 5,
+    "Türkiyə": 60,
+    "Rusiya": 20
+  },
+  "candidatesScanned": 265,
+  "candidatesWithVideo": 120,
+  "rejected": {
+    "http_403": 10,
+    "network_error": 28,
+    "http_404": 11,
+    "timeout": 49,
+    "http_410": 1,
+    "The operation was aborted due to timeout": 3,
+    "ffprobe_failed": 1,
+    "turkey_ad_slate_prone_host": 39,
+    "http_401": 1,
+    "http_503": 1,
+    "http_502": 1
+  },
+  "sourcesLoaded": [
+    "iptv-org-azerbaijan",
+    "iptv-org-turkey",
+    "iptv-org-russia",
+    "iptv-org-azerbaijani-language",
+    "iptv-org-turkish-language",
+    "iptv-org-russian-language"
+  ],
+  "sourceErrors": []
 }
