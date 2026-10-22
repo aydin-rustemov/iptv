@@ -350,12 +350,6 @@ function normalizeFailure(reason?: string): string {
   return reason.replace(/[^a-z0-9_]+/gi, "_").toLowerCase();
 }
 
-function containsAlias(haystack: string, alias: string): boolean {
-  if (!alias) return false;
-  const escaped = alias.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
-  return new RegExp(`(^|\\s)${escaped}(\\s|$)`, "iu").test(haystack);
-}
-
 function categoryName(value: string): string {
   if (value === "news") return "News";
   if (value === "sports") return "Sports";
