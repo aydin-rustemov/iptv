@@ -27,3 +27,16 @@ test("correctly named Space TV may be validated as a distinct station", () => {
   assert.equal(isMismatchedChannel(space), false);
   assert.equal(isDisplayableChannel(space), true);
 });
+
+test("Turkish ATV must never play Alanya TV", () => {
+  const bad = candidate("ATV", "https://cdn-alanyatv.yayin.com.tr/alanyatv/alanyatv/playlist.m3u8", "atv-tr");
+  assert.equal(isMismatchedChannel(bad), true);
+});
+test("Turkish Star TV must never play AzStar", () => {
+  const bad = candidate("Star TV", "https://live.livestreamtv.ca/azstar/amlst:azstar/playlist.m3u8", "star-tv");
+  assert.equal(isMismatchedChannel(bad), true);
+});
+test("Turkish main TV8 must never play TV8.5", () => {
+  const bad = candidate("TV8", "https://example.com/tv8.5/playlist.m3u8", "tv8");
+  assert.equal(isMismatchedChannel(bad), true);
+});
