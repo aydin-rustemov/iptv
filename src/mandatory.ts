@@ -1,7 +1,7 @@
 import fs from "node:fs";
-import { isPublishableUrl } from "./playlistGuard.js";
+import { isPublishableUrl, isDirectManifestUrl } from "./playlistGuard.js";
 import { isDisplayableChannel } from "./generator.js";
-import { isTurkeyAdSlateProneUrl } from "./validator.js";
+import { isMismatchedChannel } from "./channelMatchGuard.js";
 import type { PlaylistEntry, ValidatedEntry } from "./types.js";
 
 export interface MandatoryChannel {
@@ -10,35 +10,33 @@ export interface MandatoryChannel {
   country: "Azərbaycan" | "Türkiyə";
   urls?: string[];
 }
-
 export interface MandatoryResult {
   entries: ValidatedEntry[];
   verifiedIds: string[];
   unverifiedIds: string[];
   missingIds: string[];
 }
-
 export function loadMandatoryChannels(file = "config/mandatory-channels.json"): MandatoryChannel[] {
   const parsed = JSON.parse(fs.readFileSync(file, "utf8")) as { channels: MandatoryChannel[] };
-  const ids = new Set<string>();
+  const seen = new Set<string>();
   for (const channel of parsed.channels) {
-    if (ids.has(channel.id)) throw new Error("Duplicate mandatory channel: " + channel.id);
-    ids.add(channel.id);
+    if (seen.has(channel.id)) throw Error("Duplicate mandatory channel: " + channel.id);
+    seen.add(channel.id);
   }
   return parsed.channels;
 }
-
-// Retained for legacy clients, not used by the scheduled web-only generator.
-// The configuration contains channel identities, NOT fabricated direct URLs.
 export function mandatoryCandidates(channels: MandatoryChannel[]): PlaylistEntry[] {
   return channels.flatMap((channel) => (channel.urls ?? []).filter(isPublishableUrl).map((url) => ({
-    sourceName: "mandatory-candidate",
-    tvgId: channel.id, tvgName: channel.name, name: channel.name,
-    country: channel.country, groupTitle: channel.country, category: "General",
-    url, headers: {}, priorityId: channel.id
+    sourceName: "mandatory-candidate", tvgId: channel.id, tvgName: channel.name,
+    name: channel.name, country: channel.country, groupTitle: channel.country,
+    category: "General", url, headers: {}, priorityId: channel.id
   })));
 }
 
+// Never insert an unverified Turkish URL: an HLS viewer page or Alanya TV under
+// the name ATV is worse than a missing channel. For Azerbaijan the user prefers
+// Yoda: display known Yoda M3U candidates by their NORMAL names, reporting any
+// CI geo-blocking in mandatory-health.json, NOT a warning in the channel name.
 export function ensureMandatory(
   selectedVerified: ValidatedEntry[],
   allVerified: ValidatedEntry[],
@@ -46,22 +44,26 @@ export function ensureMandatory(
   maximum = 100,
   scrapedCandidates: PlaylistEntry[] = []
 ): MandatoryResult {
-  const output = [...selectedVerified];
+  const output = [...selectedVerified].filter((entry) =>
+    entry.fast.ok && entry.media.ok && entry.media.hasVideo &&
+    isDirectManifestUrl(entry.url) && !isMismatchedChannel(entry));
   const verifiedIds: string[] = [];
   const unverifiedIds: string[] = [];
   const missingIds: string[] = [];
   const mandatoryIds = new Set(channels.map((channel) => channel.id));
 
   for (const [index, channel] of channels.entries()) {
-    const verified = allVerified.filter((entry) =>
-      entry.priorityId === channel.id && entry.fast.ok && entry.media.ok && entry.media.hasVideo);
-    let existing = output.find((entry) => entry.priorityId === channel.id && entry.fast.ok && entry.media.ok);
+    let existing = output.find((entry) => entry.priorityId === channel.id);
     if (!existing) {
-      const chosen = verified.sort((a, b) => b.score - a.score)
-        .find((entry) => !output.some((item) => item.url === entry.url));
-      if (chosen) {
-        output.push(chosen);
-        existing = chosen;
+      const candidates = allVerified
+        .filter((entry) => entry.priorityId === channel.id &&
+          entry.fast.ok && entry.media.ok && entry.media.hasVideo &&
+          isDirectManifestUrl(entry.url) && !isMismatchedChannel(entry))
+        .sort((a, b) => b.score - a.score);
+      const good = candidates.find((entry) => !output.some((item) => item.url === entry.url));
+      if (good) {
+        output.push(good);
+        existing = good;
       }
     }
     if (existing) {
@@ -69,57 +71,43 @@ export function ensureMandatory(
       continue;
     }
 
-    // Only use links genuinely discovered in the third-party player/network.
-    // The previous official CDN URLs are NEVER a fallback in this mode.
-    const candidate = scrapedCandidates
-      .filter((entry) => entry.priorityId === channel.id &&
-        entry.sourceName.startsWith("canlitv-") || entry.priorityId === channel.id &&
-        (entry.sourceName === "tvstream-az" || entry.sourceName === "yoda-az"))
-      .filter((entry) => isPublishableUrl(entry.url) &&
-        !isTurkeyAdSlateProneUrl(entry.url) &&
-        !output.some((item) => item.url === entry.url))
-      .sort((a, b) => sourcePriority(b.sourceName) - sourcePriority(a.sourceName))[0];
-    if (!candidate) {
+    // Only Azerbaijan may have a visible, clean-name Yoda CDN fallback.
+    // Its technical status remains explicitly unverified in machine-readable
+    // health reports, not falsely counted as video-verified.
+    const fallback = channel.country === "Azərbaycan"
+      ? scrapedCandidates.find((entry) => entry.priorityId === channel.id &&
+          (entry.sourceName === "yoda-az" || entry.sourceName === "yoda-az-cdn") &&
+          /(^|\.)yodacdn\.net$/i.test(new URL(entry.url).hostname) &&
+          isDirectManifestUrl(entry.url) && !isMismatchedChannel(entry) &&
+          !output.some((item) => item.url === entry.url))
+      : undefined;
+    if (!fallback) {
       missingIds.push(channel.id);
       continue;
     }
-
-    const warning: ValidatedEntry = {
-      ...candidate,
-      sourceName: "web-unverified",
-      tvgId: channel.id,
-      name: channel.name,
-      tvgName: channel.name,
-      country: channel.country,
-      groupTitle: channel.country + " — Yoxlanmamış (yerli yoxla)",
-      priorityId: channel.id,
-      priorityOrder: index + 1,
-      normalizedUrl: candidate.url,
-      score: -1,
-      fast: { ok: false, reason: "web_candidate_not_verified_by_github" },
-      media: { ok: false, hasVideo: false, hasAudio: false, bytesRead: 0, reason: "web_candidate_not_verified_by_github" }
+    const selected: ValidatedEntry = {
+      ...fallback,
+      name: channel.name, tvgName: channel.name, tvgId: channel.id,
+      country: channel.country, groupTitle: channel.country,
+      priorityId: channel.id, priorityOrder: index + 1,
+      normalizedUrl: fallback.url, score: -1,
+      fast: { ok: false, reason: "geo_or_unverified_yoda_cdn" },
+      media: { ok: false, hasVideo: false, hasAudio: false, bytesRead: 0,
+        reason: "geo_or_unverified_yoda_cdn" }
     };
-    if (!isDisplayableChannel(warning)) {
+    if (!isDisplayableChannel(selected)) {
       missingIds.push(channel.id);
       continue;
     }
-    output.push(warning);
+    output.push(selected);
     unverifiedIds.push(channel.id);
   }
 
   while (output.length > maximum) {
     let i = output.length - 1;
     while (i >= 0 && mandatoryIds.has(output[i]!.priorityId ?? "")) i--;
-    if (i < 0) throw new Error("Mandatory channels exceed playlist capacity");
+    if (i < 0) throw Error("Required channels exceed capacity");
     output.splice(i, 1);
   }
   return { entries: output, verifiedIds, unverifiedIds, missingIds };
-}
-
-function sourcePriority(sourceName: string): number {
-  if (sourceName === "yoda-az") return 100;
-  if (sourceName === "tvstream-az") return 90;
-  if (sourceName === "canlitv-volo") return 80;
-  if (sourceName.startsWith("canlitv-")) return 60;
-  return 0;
 }

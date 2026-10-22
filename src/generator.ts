@@ -70,13 +70,15 @@ function comparePlaylistEntries(a: ValidatedEntry, b: ValidatedEntry): number {
   return displayName(a.name).localeCompare(displayName(b.name), "az", { sensitivity: "base" });
 }
 
-function withWarningPrefix(name: string, group: string): string {
-  if (!/Yoxlan/i.test(group)) return name;
-  return name.startsWith("⚠") ? name : `⚠ ${name}`;
+function withWarningPrefix(name: string, _group: string): string {
+  // Playback health belongs in JSON status, not in a TV channel's display name.
+  return name;
 }
 
 function displayName(value: string): string {
   return value
+    .replace(/^\s*⚠\s*/, "")
+    .replace(/\bYoxlanmamış\b/gi, "")
     .replace(/[\r\n]+/g, " ")
     .replace(/"/g, "'")
     .replace(/\s+(?:tvg-id|tvg-name|tvg-logo|group-title)='[^']*'/gi, "")
@@ -145,7 +147,7 @@ function slug(value: string): string {
 }
 
 function groupTitle(entry: ValidatedEntry): string {
-  if (entry.groupTitle?.includes("Yoxlan") || entry.groupTitle?.includes("YoxlanÄ")) return normalizeGroup(entry.groupTitle);
+  if (entry.groupTitle?.includes("Yoxlan") || entry.groupTitle?.includes("YoxlanÄ")) return normalizeCountryLabel(entry.country) || "Beynəlxalq";
   const priorityCountry = normalizeCountryLabel(entry.priorityCountry);
   const country = normalizeCountryLabel(entry.country);
 

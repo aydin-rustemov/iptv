@@ -298,6 +298,8 @@ function publishable(url: string): boolean {
   return /^https?:\/\//i.test(url)
     && !isForbiddenUrl(url, { allowLivePath: true })
     && !/\.(ts|m4s|jpg|jpeg|png|gif|webp)(?:$|\?)/i.test(url)
+    && !/\/tools\/hls-player-embed|\/player\/|\/embed\//i.test(new URL(url).pathname)
+    && !new URL(url).searchParams.has("url")
     && !/license|widevine|playready|drm|doubleclick|googlesyndication|analytics|advert|\/ads?(?:\/|$)/i.test(url)
     && (/\.(m3u8|mpd)(?:$|\?)/i.test(url) || /manifest|playlist|master/i.test(url));
 }
@@ -320,15 +322,29 @@ function inferCountry(title: string, url: string, fallback: Country): Country {
   return fallback;
 }
 
+function yodaChannelName(pageUrl: string): string | undefined {
+  const slug = new URL(pageUrl).pathname.split("/").filter(Boolean)[1]?.toLowerCase();
+  const names: Record<string, string> = {
+    aztv: "AzTV", azertv: "AzTV", arb: "ARB", arbtv: "ARB",
+    space: "Space TV", spacetv: "Space TV", arb24: "ARB24",
+    idman: "İdman TV", ictimai: "İctimai TV", itv: "İctimai TV",
+    medeniyyet: "Mədəniyyət TV", xezer: "Xəzər TV", xezertv: "Xəzər TV",
+    atv: "ATV Azərbaycan", real: "Real TV", cbc: "CBC",
+    cbcsport: "CBC Sport", bakutv: "Baku TV", naxtv: "Naxçıvan TV"
+  };
+  return slug ? names[slug] : undefined;
+}
+
 function toEntry(sourceName: string, page: ChannelPage, url: string): PlaylistEntry {
+  const name = sourceName === "yoda-az" ? yodaChannelName(page.url) ?? page.title : page.title;
   return {
     sourceName,
-    tvgId: slug(`${page.country}-${page.title}`),
-    tvgName: page.title,
+    tvgId: slug(`${page.country}-${name}`),
+    tvgName: name,
     groupTitle: page.country,
     country: page.country,
-    category: category(page.title),
-    name: page.title,
+    category: category(name),
+    name,
     url,
     headers: {},
     candidateReferer: page.url,

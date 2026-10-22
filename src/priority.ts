@@ -160,17 +160,24 @@ export function normalizeName(value: string): string {
 
 function matchPriority(entry: PlaylistEntry, priorities: PriorityChannel[]): PriorityChannel | undefined {
   const country = normalizeCountry(entry.country ?? entry.groupTitle);
-  const haystack = normalizeName(`${entry.name} ${entry.tvgName ?? ""} ${entry.tvgId ?? ""} ${entry.groupTitle ?? ""}`);
-  const exact = priorities.find((priority) => {
-    if (normalizeCountry(priority.country) !== country) return false;
-    return [priority.name, ...priority.aliases].some((alias) => normalizeName(alias) === normalizeName(entry.name) || normalizeName(alias) === normalizeName(entry.tvgName ?? ""));
-  });
-  if (exact) return exact;
-
+  // Compare the explicit broadcaster's name only. NEVER match a substring of
+  // a site URL, group title or another station's name (ATV vs Alanya TV).
+  const channelName = normalizeChannelIdentity(entry.name);
+  const tvgName = normalizeChannelIdentity(entry.tvgName ?? "");
   return priorities.find((priority) => {
     if (normalizeCountry(priority.country) !== country) return false;
-    return [priority.name, ...priority.aliases].some((alias) => containsAlias(haystack, normalizeName(alias)));
+    return [priority.name, ...priority.aliases].some((alias) => {
+      const comparable = normalizeChannelIdentity(alias);
+      return Boolean(comparable) && (channelName === comparable || tvgName === comparable);
+    });
   });
+}
+
+function normalizeChannelIdentity(raw: string): string {
+  const value = normalizeName(raw)
+    .replace(/\b(?:canli|yayin|izle|izlə|online|watch|hd|fullhd|fhd|1080p|720p|4k|kesintisiz|turkiye|azerbaycan|azərbaycan)\b/gi, " ")
+    .replace(/\s+/g, " ").trim();
+  return value;
 }
 
 function loadSearchableMissingIds(file: string, priorities: PriorityChannel[]): Set<string> {
@@ -341,12 +348,6 @@ function normalizeFailure(reason?: string): string {
   if (/http_5\d\d/.test(reason)) return "http_5xx";
   if (/forbidden_url/.test(reason)) return "private_or_local_url";
   return reason.replace(/[^a-z0-9_]+/gi, "_").toLowerCase();
-}
-
-function containsAlias(haystack: string, alias: string): boolean {
-  if (!alias) return false;
-  const escaped = alias.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
-  return new RegExp(`(^|\\s)${escaped}(\\s|$)`, "iu").test(haystack);
 }
 
 function categoryName(value: string): string {

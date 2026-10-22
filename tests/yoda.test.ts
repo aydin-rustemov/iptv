@@ -35,11 +35,13 @@ test("required unverified ARB prefers actual Yoda player discovery, not guessed 
   const mandatory = [{ id: "arb", name: "ARB", country: "Azərbaycan" as const }];
   const web: PlaylistEntry[] = [
     entry("canlitv-volo", "https://test.example/volo.m3u8", false),
-    entry("yoda-az", "https://test.example/yoda.m3u8", false)
+    entry("yoda-az-cdn", "https://str.yodacdn.net/arb/tracks-v1a1/mono.ts.m3u8", false)
   ];
   const picked = ensureMandatory([], [], mandatory, 100, web);
   assert.equal(picked.entries.length, 1);
-  assert.equal(picked.entries[0]?.url, "https://test.example/yoda.m3u8");
+  assert.equal(picked.entries[0]?.url, "https://str.yodacdn.net/arb/tracks-v1a1/mono.ts.m3u8");
+  assert.equal(picked.entries[0]?.name, "ARB");
+  assert.equal(picked.entries[0]?.groupTitle, "Azərbaycan");
   assert.equal(picked.entries[0]?.fast.ok, false);
   assert.deepEqual(picked.unverifiedIds, ["arb"]);
 });

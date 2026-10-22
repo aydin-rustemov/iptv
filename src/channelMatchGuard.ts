@@ -21,5 +21,19 @@ export function isMismatchedChannel(entry: PlaylistEntry): boolean {
     return true;
   }
 
+  // Prevent a technically working but WRONG TV station being relabeled as a
+  // priority Turkish broadcaster. Checked against full host/path, not query.
+  const broadcastId = entry.priorityId;
+  const destination = (() => {
+    try { const parsed = new URL(entry.url); return (parsed.hostname + parsed.pathname).toLowerCase(); }
+    catch { return entry.url.toLowerCase().split("?")[0]!; }
+  })();
+  if (broadcastId === "atv-tr" && /alanya|alanyatv|atv\.az|azad|arb|arbgunes|antalyatv|\bazstar\b/.test(destination)) return true;
+  if (broadcastId === "show-tv" && /showplus|showmax|alanya|showhaber/.test(destination)) return true;
+  if (broadcastId === "star-tv" && /azstar|startvaz|starhaber|starspor|star-kibris|starkibris/.test(destination)) return true;
+  if (broadcastId === "kanal-d" && /kanal(?:1[2-9]|[2-9]\d?)|kanald(?:iyarbakir|ogus)|kanal7|eurod/.test(destination)) return true;
+  if (broadcastId === "now-tv" && /foxnews|foxlife|foxsports|nowhaber/.test(destination)) return true;
+  if (broadcastId === "tv8" && /tv8[.\-_]?5|tv85|tv8plus/.test(destination)) return true;
+  if (broadcastId === "trt-1" && /trt(?:2|3|haber|spor|belgesel|world|muzik|çocuk|cocuk)/.test(destination)) return true;
   return false;
 }
