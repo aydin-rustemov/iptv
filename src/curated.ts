@@ -57,7 +57,8 @@ async function main(): Promise<void> {
   console.log("[TVSTREAM DISCOVERY]", JSON.stringify({ attempted: tvstream.attempted, matched: tvstream.matched, reason: tvstream.reason }));
   const discovered = tagPriorityEntries([...web.entries, ...tvstream.entries, ...sourceEntries.filter((entry) => regionOf(entry) === "RU")], priorities)
     .filter((entry) => regionOf(entry) !== undefined)
-    .filter((entry) => isPublishableUrl(entry.url) && !isForbiddenUrl(entry.url, { allowLivePath: true }));
+    .filter((entry) => isPublishableUrl(entry.url) && !isForbiddenUrl(entry.url, { allowLivePath: true }))
+    .sort((a, b) => candidateRank(b, regionOf(b)!) - candidateRank(a, regionOf(a)!));
 
   const seen = new Set<string>();
   const unique = discovered.filter((entry) => {
