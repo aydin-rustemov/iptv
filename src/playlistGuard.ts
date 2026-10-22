@@ -20,3 +20,16 @@ export function isPublishableUrl(raw: string, now = Date.now()): boolean {
     return false;
   }
 }
+
+/** A player web page with ?url=...m3u8 is NOT an M3U8 stream. */
+export function isDirectManifestUrl(raw: string): boolean {
+  if (!isPublishableUrl(raw)) return false;
+  try {
+    const url = new URL(raw);
+    const pathname = url.pathname.toLowerCase();
+    if (/player|embed|watch|viewer|webplayer|m3u8-player|hls-player/i.test(pathname)) return false;
+    if (url.searchParams.has("url") || url.searchParams.has("src") || url.searchParams.has("streamUrl")) return false;
+    return /\.(?:m3u8|mpd)$/.test(pathname) ||
+      /\/(?:master|manifest|playlist)(?:\/|$)/.test(pathname);
+  } catch { return false; }
+}
