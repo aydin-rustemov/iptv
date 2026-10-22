@@ -5,7 +5,7 @@ import { SOURCES, type ChannelPage, type Country, type Source } from "./webSourc
 import { discoverTvstreamAz } from "./tvstream.js";
 
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
-const MAX_PAGES = Number(process.env["IPTV_WEB_MAX_PAGES_PER_SOURCE"] ?? 90);
+const MAX_PAGES = Number(process.env["IPTV_WEB_MAX_PAGES_PER_SOURCE"] ?? 48);
 const PAGE_CONCURRENCY = Number(process.env["IPTV_WEB_PAGE_CONCURRENCY"] ?? 8);
 const SOURCE_CONCURRENCY = Number(process.env["IPTV_WEB_SOURCE_CONCURRENCY"] ?? 3);
 
@@ -90,7 +90,9 @@ async function discoverSource(source: Source, browser?: Browser): Promise<{ entr
     }
   }
 
-  const selected = [...pages.values()].slice(0, MAX_PAGES);
+  // Keep a three-hour refresh bounded. Priority categories are listed first.
+  const sourceLimit = source.name === "canlitv-volo" ? MAX_PAGES : Math.min(MAX_PAGES, 26);
+  const selected = [...pages.values()].slice(0, sourceLimit);
   const entries: PlaylistEntry[] = [];
   let manifestCandidates = 0;
 
@@ -180,7 +182,7 @@ async function pageCandidates(page: ChannelPage, browser?: Browser): Promise<str
     manifestUrls(text, iframe).forEach((url) => found.add(url));
   }
 
-  const variants = variantUrls(html, page.url).slice(0, 4);
+  const variants = variantUrls(html, page.url).slice(0, isVolo(page.url) ? 3 : 2);
   for (const variant of variants) {
     const text = await fetchText(variant, page.url).catch(() => "");
     manifestUrls(text, variant).forEach((url) => found.add(url));
@@ -305,7 +307,7 @@ async function fetchText(url: string, referer?: string): Promise<string> {
       "Accept": "text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8",
       ...(referer ? { Referer: referer } : {})
     },
-    signal: AbortSignal.timeout(15_000)
+    signal: AbortSignal.timeout(9_000)
   });
   if (!response.ok) throw new Error(`http_${response.status}`);
   return await response.text();
