@@ -3,20 +3,16 @@ import { loadSources, downloadSource } from "./downloader.js";
 import { normalizeCountry, parseM3u } from "./parser.js";
 import { fastCheck, isForbiddenUrl, mediaCheck } from "./validator.js";
 import { isPublishableUrl, MAX_PLAYLIST_BYTES } from "./playlistGuard.js";
-import { manualOverrideCandidates, loadManualOverrides } from "./manualOverrides.js";
+import { discoverWebAggregators } from "./sources/webAggregators.js";
 import { loadPriorityChannels, buildPriorityStatuses, tagPriorityEntries, writeMissingPriority } from "./priority.js";
 import { countBy, isDisplayableChannel, writePlaylist, writeStatus } from "./generator.js";
 import { regionOf, selectRegionalPlaylist, uniqueVerified, type Region } from "./regional.js";
 import { score } from "./selector.js";
-import { ensureMandatory, loadMandatoryChannels, mandatoryCandidates } from "./mandatory.js";
-import type { PlaylistEntry, PriorityChannel, StatusOutput, ValidatedEntry } from "./types.js";
+import { ensureMandatory, loadMandatoryChannels } from "./mandatory.js";
+import type { PlaylistEntry, StatusOutput, ValidatedEntry } from "./types.js";
 
 const SOURCE_NAMES = new Set([
-  "iptv-org-azerbaijan",
-  "iptv-org-turkey",
   "iptv-org-russia",
-  "iptv-org-azerbaijani-language",
-  "iptv-org-turkish-language",
   "iptv-org-russian-language"
 ]);
 const SCAN_LIMITS: Record<Region, number> = { AZ: 160, TR: 400, RU: 280 };
@@ -26,7 +22,7 @@ const CONCURRENCY = 12;
 
 async function main(): Promise<void> {
   const sources = loadSources().filter((source) => SOURCE_NAMES.has(source.name));
-  if (sources.length < 3) throw new Error("Regional M3U sources are missing");
+  if (!sources.length) throw new Error("Russian fallback source is missing");
   const priorities = loadPriorityChannels();
   const mandatory = loadMandatoryChannels();
   const errors: string[] = [];
@@ -49,10 +45,14 @@ async function main(): Promise<void> {
     }
   }
 
-  // Overrides and published URLs are candidates only; none may bypass video validation.
-  const overrides = manualOverrideCandidates(loadManualOverrides());
-  const direct = directCandidates(priorities);
-  const discovered = tagPriorityEntries([...mandatoryCandidates(mandatory), ...overrides, ...direct, ...sourceEntries], priorities)
+  // Azerbaijan and Turkey: exclusively scrape the user-selected third-party TV sites.
+  // Official channel pages, priority-direct and manual CDN overrides are NEVER sources.
+  const web = await discoverWebAggregators(new Set([
+    "canlitv-volo", "canlitv-video", "canlitv-me", "canlitv-watch",
+    "canlitv-com", "canlitv-date", "tvstream-az"
+  ]));
+  console.log("[WEB DISCOVERY]", JSON.stringify(web.statuses));
+  const discovered = tagPriorityEntries([...web.entries, ...sourceEntries.filter((entry) => regionOf(entry) === "RU")], priorities)
     .filter((entry) => regionOf(entry) !== undefined)
     .filter((entry) => isPublishableUrl(entry.url) && !isForbiddenUrl(entry.url, { allowLivePath: true }));
 
@@ -93,7 +93,12 @@ async function main(): Promise<void> {
     }
   }
 
-  const required = ensureMandatory(selectRegionalPlaylist(verified).filter(isDisplayableChannel), verified, mandatory);
+  // Never publish a fabricated or official fallback for a priority channel.
+  // The 3-hour update must not overwrite the existing playlist when every website fails.
+  if (!web.entries.some((entry) => regionOf(entry) === "AZ" || regionOf(entry) === "TR")) {
+    throw new Error("All AZ/TR web scrapers returned no regional streams; not replacing playlist");
+  }
+  const required = ensureMandatory(selectRegionalPlaylist(verified).filter(isDisplayableChannel), verified, mandatory, 100, unique);
   const selected = required.entries;
   if (selected.length === 0) {
     throw new Error("No streams passed real video validation; preserving previous playlist");
@@ -111,7 +116,7 @@ async function main(): Promise<void> {
   const prioritiesStatus = buildPriorityStatuses(priorities, unique, verified, selected);
   const status: StatusOutput = {
     updatedAt: new Date().toISOString(),
-    sources: sourcesLoaded.length,
+    sources: sourcesLoaded.length + web.statuses.filter((x) => x.ok).length,
     downloadedEntries: discovered.length,
     uniqueCandidates: unique.length,
     fastCheckPassed: fastPassed,
@@ -121,7 +126,7 @@ async function main(): Promise<void> {
     duplicatesRemoved: discovered.length - unique.length,
     countryCounts: countBy(selected, (entry) => normalizeCountry(entry.country)),
     categoryCounts: countBy(selected, (entry) => entry.category),
-    degraded: selected.length < 80 || required.unverifiedIds.length > 0,
+    degraded: selected.length < 80 || required.unverifiedIds.length > 0 || required.missingIds.length > 0,
     priorityChannels: prioritiesStatus
   };
   writeStatus(status);
@@ -132,12 +137,14 @@ async function main(): Promise<void> {
     total: mandatory.length,
     verified: required.verifiedIds,
     needsLocalTest: required.unverifiedIds,
+    missingNoWebStream: required.missingIds,
     details: mandatory.map((channel) => ({
       name: channel.name,
       country: channel.country,
       id: channel.id,
-      status: required.verifiedIds.includes(channel.id) ? "video_verified_on_github" : "NOT_VERIFIED_TEST_IN_AZERBAIJAN",
-      candidates: channel.urls.length
+      status: required.verifiedIds.includes(channel.id) ? "video_verified_on_github" :
+        required.unverifiedIds.includes(channel.id) ? "WEB_LINK_NOT_VERIFIED_TEST_IN_AZERBAIJAN" : "NO_WEB_STREAM_FOUND",
+      candidates: unique.filter((entry) => entry.priorityId === channel.id).length
     }))
   }, null, 2), "utf8");
   fs.writeFileSync("output/channel-health.json", JSON.stringify({
@@ -147,45 +154,25 @@ async function main(): Promise<void> {
     mandatoryTotal: mandatory.length,
     mandatoryVerified: required.verifiedIds.length,
     mandatoryNeedsLocalTest: required.unverifiedIds,
+    mandatoryMissing: required.missingIds,
     validation: "HTTP manifest + video segment ffprobe; no forced/unchecked channels",
     countryCounts: status.countryCounts,
     candidatesScanned: probed,
     candidatesWithVideo: verified.length,
     rejected: reasons,
     sourcesLoaded,
-    sourceErrors: errors
+    sourceErrors: errors,
+    webSources: web.statuses
   }, null, 2), "utf8");
-  console.log("[PUBLISHED]", JSON.stringify({ published: selected.length, countryCounts: status.countryCounts, mandatoryVerified: required.verifiedIds, mandatoryNeedsLocalTest: required.unverifiedIds, failures: reasons, sourceErrors: errors }));
-}
-
-function directCandidates(priorities: PriorityChannel[]): PlaylistEntry[] {
-  return priorities.flatMap((priority) => (priority.directCandidates ?? []).map((url) => ({
-    sourceName: "priority-direct",
-    tvgId: priority.id,
-    tvgName: priority.name,
-    groupTitle: priority.country,
-    country: priority.country,
-    category: priority.category,
-    name: priority.name,
-    url,
-    headers: {},
-    priorityId: priority.id,
-    priorityName: priority.name,
-    priorityCountry: priority.country,
-    priorityCategory: priority.category,
-    priorityOrder: priority.priority,
-    allowLivePath: true
-  })));
+  console.log("[PUBLISHED]", JSON.stringify({ published: selected.length, countryCounts: status.countryCounts, mandatoryVerified: required.verifiedIds, mandatoryNeedsLocalTest: required.unverifiedIds, mandatoryMissing: required.missingIds, failures: reasons, sourceErrors: errors }));
 }
 
 function candidateRank(entry: PlaylistEntry, region: Region): number {
   let ranking = 0;
   if (entry.priorityId) ranking += 2500;
-  if (entry.sourceName.startsWith("manual-")) ranking += 3500;
-  if (entry.sourceName === "priority-direct") ranking += 3000;
-  if (entry.sourceName === "mandatory-candidate") ranking += 5000;
-  const regionalName = region === "AZ" ? "azerbaijan" : region === "TR" ? "turkey" : "russia";
-  if (entry.sourceName === "iptv-org-" + regionalName) ranking += 1000;
+  if (entry.sourceName === "canlitv-volo") ranking += 15000;
+  if (entry.sourceName.startsWith("canlitv-") || entry.sourceName === "tvstream-az") ranking += 5000;
+  if (region === "RU" && entry.sourceName === "iptv-org-russia") ranking += 1000;
   if (entry.headers["Referer"] || entry.headers["User-Agent"]) ranking -= 200;
   if (entry.url.includes("?")) ranking -= 50;
   return ranking - entry.url.length / 100;
