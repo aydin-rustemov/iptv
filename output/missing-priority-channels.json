@@ -1,5 +1,17 @@
 [
   {
+    "id": "cbc-sport",
+    "name": "CBC Sport",
+    "country": "Azərbaycan",
+    "category": "sports",
+    "priority": 11,
+    "aliasesChecked": 2,
+    "candidatesFound": 0,
+    "candidatesValidated": 0,
+    "status": "not_found",
+    "failureReason": "No matching alias found in enabled M3U sources"
+  },
+  {
     "id": "mtv-az",
     "name": "MTV Azərbaycan",
     "country": "Azərbaycan",

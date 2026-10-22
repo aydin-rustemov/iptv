@@ -1,11 +1,12 @@
 {
-  "updatedAt": "2026-10-22T20:45:55.006Z",
+  "updatedAt": "2026-10-22T21:59:53.998Z",
   "published": 48,
   "verifiedWorking": 48,
   "mandatoryTotal": 18,
-  "mandatoryVerified": 13,
+  "mandatoryVerified": 12,
   "mandatoryNeedsLocalTest": [],
   "mandatoryMissing": [
+    "cbc-sport",
     "show-tv",
     "atv-tr",
     "now-tv",
@@ -14,19 +15,19 @@
   ],
   "validation": "HTTP manifest + video segment ffprobe; no forced/unchecked channels",
   "countryCounts": {
-    "Azərbaycan": 19,
-    "Türkiyə": 9,
+    "Azərbaycan": 18,
+    "Türkiyə": 10,
     "Rusiya": 20
   },
-  "candidatesScanned": 220,
-  "candidatesWithVideo": 108,
+  "candidatesScanned": 221,
+  "candidatesWithVideo": 107,
   "rejected": {
-    "http_403": 50,
-    "http_404": 13,
-    "network_error": 5,
+    "http_403": 51,
+    "http_404": 14,
+    "network_error": 6,
     "http_400": 1,
     "turkey_ad_slate_prone_host": 16,
-    "timeout": 27
+    "timeout": 26
   },
   "sourcesLoaded": [
     "iptv-org-russia",
@@ -40,8 +41,8 @@
       "seedPages": 2,
       "channelPages": 353,
       "processedPages": 35,
-      "manifestCandidates": 33,
-      "entries": 31
+      "manifestCandidates": 32,
+      "entries": 32
     },
     {
       "source": "canlitv-date",
@@ -113,12 +114,12 @@
       "seedPages": 5,
       "channelPages": 10,
       "processedPages": 10,
-      "manifestCandidates": 319,
-      "entries": 49
+      "manifestCandidates": 321,
+      "entries": 51
     }
   ],
   "tvstream": {
     "attempted": 10,
-    "matched": 9
+    "matched": 8
   }
 }

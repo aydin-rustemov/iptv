@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T20:45:55.006Z",
+  "updatedAt": "2026-10-22T21:59:53.998Z",
   "total": 18,
   "verified": [
     "aztv",
@@ -10,7 +10,6 @@
     "atv-az",
     "space-tv",
     "arb",
-    "cbc-sport",
     "real-tv",
     "arb24",
     "kanal-d",
@@ -18,6 +17,7 @@
   ],
   "needsLocalTest": [],
   "missingNoWebStream": [
+    "cbc-sport",
     "show-tv",
     "atv-tr",
     "now-tv",
@@ -30,7 +30,7 @@
       "country": "Azərbaycan",
       "id": "aztv",
       "status": "video_verified_on_github",
-      "candidates": 11
+      "candidates": 13
     },
     {
       "name": "İctimai TV",
@@ -58,7 +58,7 @@
       "country": "Azərbaycan",
       "id": "xezer-tv",
       "status": "video_verified_on_github",
-      "candidates": 2
+      "candidates": 4
     },
     {
       "name": "ATV Azərbaycan",
@@ -85,8 +85,8 @@
       "name": "CBC Sport",
       "country": "Azərbaycan",
       "id": "cbc-sport",
-      "status": "video_verified_on_github",
-      "candidates": 2
+      "status": "NO_WEB_STREAM_FOUND",
+      "candidates": 0
     },
     {
       "name": "Real TV",
@@ -100,7 +100,7 @@
       "country": "Azərbaycan",
       "id": "arb24",
       "status": "video_verified_on_github",
-      "candidates": 4
+      "candidates": 5
     },
     {
       "name": "Show TV",

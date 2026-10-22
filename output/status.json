@@ -1,24 +1,25 @@
 {
-  "updatedAt": "2026-10-22T20:45:55.006Z",
+  "updatedAt": "2026-10-22T21:59:53.998Z",
   "sources": 10,
-  "downloadedEntries": 1125,
-  "uniqueCandidates": 646,
-  "fastCheckPassed": 110,
-  "mediaCheckPassed": 108,
+  "downloadedEntries": 1126,
+  "uniqueCandidates": 647,
+  "fastCheckPassed": 108,
+  "mediaCheckPassed": 107,
   "published": 48,
-  "failed": 112,
+  "failed": 114,
   "duplicatesRemoved": 479,
   "countryCounts": {
-    "Azərbaycan": 19,
-    "Türkiyə": 9,
+    "Azərbaycan": 18,
+    "Türkiyə": 10,
     "Rusiya": 20
   },
   "categoryCounts": {
     "General": 17,
     "News": 3,
-    "Sports": 4,
+    "Sports": 3,
     "Culture": 1,
     "Music": 4,
+    "Children": 1,
     "Documentary": 4,
     "Other": 12,
     "Movies": 3
@@ -32,7 +33,7 @@
       "category": "general",
       "priority": 1,
       "aliasesChecked": 3,
-      "candidatesFound": 11,
+      "candidatesFound": 13,
       "candidatesValidated": 4,
       "selectedSource": "tvstream-az",
       "status": "working"
@@ -68,8 +69,8 @@
       "category": "general",
       "priority": 4,
       "aliasesChecked": 2,
-      "candidatesFound": 2,
-      "candidatesValidated": 2,
+      "candidatesFound": 4,
+      "candidatesValidated": 4,
       "selectedSource": "canlitv-com",
       "status": "working"
     },
@@ -92,8 +93,8 @@
       "category": "news",
       "priority": 6,
       "aliasesChecked": 3,
-      "candidatesFound": 4,
-      "candidatesValidated": 4,
+      "candidatesFound": 5,
+      "candidatesValidated": 5,
       "selectedSource": "tvstream-az",
       "status": "working"
     },
@@ -152,10 +153,10 @@
       "category": "sports",
       "priority": 11,
       "aliasesChecked": 2,
-      "candidatesFound": 2,
-      "candidatesValidated": 2,
-      "selectedSource": "tvstream-az",
-      "status": "working"
+      "candidatesFound": 0,
+      "candidatesValidated": 0,
+      "status": "not_found",
+      "failureReason": "No matching alias found in enabled M3U sources"
     },
     {
       "id": "idman-tv",
@@ -212,8 +213,8 @@
       "category": "general",
       "priority": 16,
       "aliasesChecked": 1,
-      "candidatesFound": 3,
-      "candidatesValidated": 3,
+      "candidatesFound": 2,
+      "candidatesValidated": 2,
       "selectedSource": "canlitv-com",
       "status": "working"
     },

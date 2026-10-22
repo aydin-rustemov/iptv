@@ -9,7 +9,7 @@ https://ictimai.tvstream.az/hls/stream6/index.m3u8
 #EXTVLCOPT:http-referrer=https://tvstream.az/
 https://atv.tvstream.az/hls/stream7/index.m3u8
 #EXTINF:-1 tvg-id="xezer-tv" tvg-name="Xəzər TV" group-title="Azərbaycan — Ümumi",Xəzər TV
-https://yayin2.canlitv.fun/live/xezertv.stream/playlist.m3u8?hash=c61690b642b650b818d0702b8e842f14
+https://gcdn.2mdn.net/api/manifest/hls_variant/source/web_video_ads/id/f36cea7fbc059ab4/itag/0/playlist_type/LIVE/xpc/EgVovf3BOg%3D%3D/ctier/L/acao/yes/ip/0.0.0.0/ipbits/0/expire/1824242003/sparams/ip,ipbits,expire,source,id,itag,playlist_type,xpc,ctier,acao/signature/61DC0CC40A1FD08FBF541AF43386E7CB1C3B59A4.52C969927AC3D0383C38BBA69DA171467045015C/key/ck2/file/index.m3u8
 #EXTINF:-1 tvg-id="arb" tvg-name="ARB" group-title="Azərbaycan — Ümumi",ARB
 #EXTVLCOPT:http-referrer=https://tvstream.az/
 https://arb.tvstream.az/hls/stream5/index.m3u8
@@ -17,15 +17,15 @@ https://arb.tvstream.az/hls/stream5/index.m3u8
 #EXTVLCOPT:http-referrer=https://tvstream.az/
 https://space.tvstream.az/hls/stream8/index.m3u8
 #EXTINF:-1 tvg-id="cbc" tvg-name="CBC" group-title="Azərbaycan — Ümumi",CBC
-https://yayin2.canlitv.fun/live/cbc.stream/playlist.m3u8?hash=c61690b642b650b818d0702b8e842f14
+https://yayin2.canlitv.fun/live/cbc.stream/playlist.m3u8?hash=6d3e9256cc59358353bc1f031301de44
 #EXTINF:-1 tvg-id="dunya-tv" tvg-name="Dünya TV" group-title="Azərbaycan — Ümumi",Dünya TV
-https://yayin2.canlitv.fun/live/dunyatv.stream/playlist.m3u8?hash=c61690b642b650b818d0702b8e842f14
+https://yayin2.canlitv.fun/live/dunyatv.stream/playlist.m3u8?hash=6d3e9256cc59358353bc1f031301de44
 #EXTINF:-1 tvg-id="az-rbaycan-arb-gunes-tv" tvg-name="ARB Güneş TV" group-title="Azərbaycan — Ümumi",ARB Güneş TV
-https://yayin2.canlitv.fun/live/arbgunes.stream/playlist.m3u8?hash=c61690b642b650b818d0702b8e842f14
+https://yayin2.canlitv.fun/live/arbgunes.stream/playlist.m3u8?hash=6d3e9256cc59358353bc1f031301de44
 #EXTINF:-1 tvg-id="az-rbaycan-gunaz-tv" tvg-name="Günaz Tv" group-title="Azərbaycan — Ümumi",Günaz Tv
 https://tv.gunaz.tv/hls/live.m3u8
 #EXTINF:-1 tvg-id="az-rbaycan-kanal-s-az" tvg-name="Kanal S Az" group-title="Azərbaycan — Ümumi",Kanal S Az
-https://gcdn.2mdn.net/api/manifest/hls_variant/source/web_video_ads/id/f36cea7fbc059ab4/itag/0/playlist_type/LIVE/xpc/EgVovf3BOg%3D%3D/ctier/L/acao/yes/ip/0.0.0.0/ipbits/0/expire/1824237662/sparams/ip,ipbits,expire,source,id,itag,playlist_type,xpc,ctier,acao/signature/121596FED71C97D865B3FB9D2AE39281F10363B7.07834122283F5DF5B6D864726AE7D0042F692F16/key/ck2/file/index.m3u8
+https://yayin2.canlitv.fun/live/kanals.stream/playlist.m3u8?hash=6d3e9256cc59358353bc1f031301de44
 #EXTINF:-1 tvg-id="arb24" tvg-name="ARB24" group-title="Azərbaycan — Xəbər",ARB24
 #EXTVLCOPT:http-referrer=https://tvstream.az/
 https://arb24.tvstream.az/hls/stream/index.m3u8
@@ -34,14 +34,11 @@ https://arb24.tvstream.az/hls/stream/index.m3u8
 https://realtv.tvstream.az/hls/stream2/index.m3u8
 #EXTINF:-1 tvg-id="baku-tv" tvg-name="Baku TV" group-title="Azərbaycan — Xəbər",Baku TV
 https://rtmp.baku.tv/hls/bakutv.m3u8
-#EXTINF:-1 tvg-id="cbc-sport" tvg-name="CBC Sport" group-title="Azərbaycan — İdman",CBC Sport
-#EXTVLCOPT:http-referrer=https://tvstream.az/
-https://cbcsport.tvstream.az/hls/stream3/index.m3u8
 #EXTINF:-1 tvg-id="idman-tv" tvg-name="İdman TV" group-title="Azərbaycan — İdman",İdman TV
 #EXTVLCOPT:http-referrer=https://tvstream.az/
 https://idman.tvstream.az/hls/stream4/index.m3u8
 #EXTINF:-1 tvg-id="medeniyyet-tv" tvg-name="Mədəniyyət TV" group-title="Azərbaycan — Ümumi",Mədəniyyət TV
-https://yayin2.canlitv.fun/live/medeniyettv.stream/playlist.m3u8?hash=c61690b642b650b818d0702b8e842f14
+https://yayin2.canlitv.fun/live/medeniyettv.stream/playlist.m3u8?hash=6d3e9256cc59358353bc1f031301de44
 #EXTINF:-1 tvg-id="az-rbaycan-kn-music-tv" tvg-name="KN Music TV" group-title="Azərbaycan — Musiqi",KN Music TV
 https://cdn4.yayin.com.tr/kntv/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="az-rbaycan-max-music-tv" tvg-name="Max Music TV" group-title="Azərbaycan — Musiqi",Max Music TV
@@ -51,19 +48,21 @@ https://live.duhnet.tv/S2/HLS_LIVE/kanalddainp/track_4_1250/playlist.m3u8
 #EXTINF:-1 tvg-id="tv8" tvg-name="TV8" group-title="Türkiyə — Ümumi",TV8
 http://315e5a5d.ottrast.com/iptv/8KSD5KFDXA6H88/2454/index.m3u8
 #EXTINF:-1 tvg-id="turkiy-atv-azad-tv" tvg-name="Atv Azad TV" group-title="Türkiyə — Ümumi",Atv Azad TV
-https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8?hash=c61690b642b650b818d0702b8e842f14
+https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8?hash=6d3e9256cc59358353bc1f031301de44
 #EXTINF:-1 tvg-id="turkiy-show-tv-genel-turkiye" tvg-name="Show TV Genel Türkiye" group-title="Türkiyə — Ümumi",Show TV Genel Türkiye
-https://yayin2.canlitv.fun/live/showtv.stream/playlist.m3u8?hash=c61690b642b650b818d0702b8e842f14
+https://yayin2.canlitv.fun/live/showtv.stream/playlist.m3u8?hash=6d3e9256cc59358353bc1f031301de44
 #EXTINF:-1 tvg-id="turkiy-star-tv-genel-turkiye" tvg-name="Star TV Genel Türkiye" group-title="Türkiyə — Ümumi",Star TV Genel Türkiye
-https://yayin2.canlitv.fun/live/startv.stream/playlist.m3u8?hash=c61690b642b650b818d0702b8e842f14
+https://yayin2.canlitv.fun/live/startv.stream/playlist.m3u8?hash=6d3e9256cc59358353bc1f031301de44
 #EXTINF:-1 tvg-id="turkiy-trt-spor-spor-turkiye" tvg-name="TRT Spor Spor Türkiye" group-title="Türkiyə — İdman",TRT Spor Spor Türkiye
-https://yayin2.canlitv.fun/live/trtspor.stream/playlist.m3u8?hash=c61690b642b650b818d0702b8e842f14
+https://yayin2.canlitv.fun/live/trtspor.stream/playlist.m3u8?hash=6d3e9256cc59358353bc1f031301de44
 #EXTINF:-1 tvg-id="turkiy-dmax-belgesel-turkiye" tvg-name="DMAX Belgesel Türkiye" group-title="Türkiyə — Sənədli və mədəniyyət",DMAX Belgesel Türkiye
-https://yayin2.canlitv.fun/live/dmax.stream/playlist.m3u8?hash=c61690b642b650b818d0702b8e842f14
+https://yayin2.canlitv.fun/live/dmax.stream/playlist.m3u8?hash=6d3e9256cc59358353bc1f031301de44
 #EXTINF:-1 tvg-id="turkiy-tlc-belgesel-turkiye" tvg-name="TLC Belgesel Türkiye" group-title="Türkiyə — Sənədli və mədəniyyət",TLC Belgesel Türkiye
-https://yayin2.canlitv.fun/live/tlc.stream/playlist.m3u8?hash=c61690b642b650b818d0702b8e842f14
+https://yayin2.canlitv.fun/live/tlc.stream/playlist.m3u8?hash=6d3e9256cc59358353bc1f031301de44
 #EXTINF:-1 tvg-id="turkiy-yaban-tv-belgesel-turkiye" tvg-name="Yaban TV Belgesel Türkiye" group-title="Türkiyə — Sənədli və mədəniyyət",Yaban TV Belgesel Türkiye
-https://yayin1.canlitv.fun/canlitv/yabantv.stream/playlist.m3u8?hash=c61690b642b650b818d0702b8e842f14
+https://yayin1.canlitv.fun/canlitv/yabantv.stream/playlist.m3u8?hash=6d3e9256cc59358353bc1f031301de44
+#EXTINF:-1 tvg-id="turkiy-cocuk-kanallar" tvg-name="Çocuk Kanalları" group-title="Türkiyə — Uşaq",Çocuk Kanalları
+https://gcdn.2mdn.net/api/manifest/hls_variant/source/web_video_ads/id/a12a8bfc3b8f2f7c/itag/0/playlist_type/LIVE/xpc/EgVovf3BOg%3D%3D/ctier/L/acao/yes/ip/0.0.0.0/ipbits/0/expire/1824241797/sparams/ip,ipbits,expire,source,id,itag,playlist_type,xpc,ctier,acao/signature/156CB8E8B9084B6566F58319009D8FC70D03FE32.31A6D9E89CAF86456EB5AE444748093EE6E655D9/key/ck2/file/index.m3u8
 #EXTINF:-1 tvg-id="86.ru@SD" tvg-name="86 (1080p) [Not 24/7]" tvg-logo="https://i.imgur.com/0dRS4Cb.png" group-title="Rusiya — Ümumi",86 (1080p) [Not 24/7]
 https://sitv.ru/hls/s86.m3u8
 #EXTINF:-1 tvg-id="MatchUltra.ru@4K" tvg-name="Match! Ultra (1080p)" tvg-logo="https://www.kartina.tv/media/news/images/News/SEO/kanal-match-ultra.jpg" group-title="Rusiya — İdman",Match! Ultra (1080p)
@@ -76,6 +75,8 @@ http://176.118.197.101/1HD/index.m3u8
 http://stream.mcquack.net/92/index.m3u8
 #EXTINF:-1 tvg-id="black.ru@SD" tvg-name=".black (576p)" tvg-logo="https://i.imgur.com/Q4A6ci4.png" group-title="Rusiya — Ümumi",.black (576p)
 http://stream.mcquack.net/263/index.m3u8
+#EXTINF:-1 tvg-id="red.ru@SD" tvg-name=".red (576p)" tvg-logo="https://i.imgur.com/GET9Qut.png" group-title="Rusiya — Ümumi",.red (576p)
+http://5.188.159.128:8070/RED/index.m3u8
 #EXTINF:-1 tvg-id="red.ru@HD" tvg-name=".red HD (1080p)" tvg-logo="https://i.imgur.com/GET9Qut.png" group-title="Rusiya — Ümumi",.red HD (1080p)
 http://178.134.1.158:8081/red/index.m3u8
 #EXTINF:-1 tvg-id="scifi.ru@SD" tvg-name=".sci-fi (576p)" tvg-logo="https://i.imgur.com/nSSUHcg.png" group-title="Rusiya — Ümumi",.sci-fi (576p)
@@ -96,8 +97,6 @@ https://v4.proofix.ru/0mir/index.m3u8
 https://cdn-dvr.ntv.ru/Pes/index.m3u8
 #EXTINF:-1 tvg-id="S1.ru@SD" tvg-name="S1 (1080p) [Not 24/7]" tvg-logo="https://i.imgur.com/chNBF5t.png" group-title="Rusiya — Ümumi",S1 (1080p) [Not 24/7]
 https://sitv.ru/hls/stv.m3u8
-#EXTINF:-1 tvg-id="ShchyolkovskoeTV.ru@SD" tvg-name="Shchyolkovskoe TV (576p) [Not 24/7]" tvg-logo="https://i.imgur.com/0us6l04.png" group-title="Rusiya — Ümumi",Shchyolkovskoe TV (576p) [Not 24/7]
-http://stream0.tv41.ru/live.m3u8
 #EXTINF:-1 tvg-id="Shef.ru@SD" tvg-name="Shef (1080p)" tvg-logo="https://cdn2-static.ntv.ru/home/promo/24740/shef_llive.jpg" group-title="Rusiya — Ümumi",Shef (1080p)
 https://cdn-dvr.ntv.ru/Shef/index.m3u8
 #EXTINF:-1 tvg-id="Shokiruyushchee.ru@HD" tvg-name="Shokiruyushchee HD (1080p)" tvg-logo="https://i.imgur.com/UG63hZ0.png" group-title="Rusiya — Ümumi",Shokiruyushchee HD (1080p)
