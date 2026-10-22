@@ -4,9 +4,9 @@ import { isForbiddenUrl } from "../validator.js";
 import { SOURCES, type ChannelPage, type Country, type Source } from "./webSources.js";
 
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
-const MAX_PAGES = Number(process.env["IPTV_WEB_MAX_PAGES_PER_SOURCE"] ?? 600);
-const PAGE_CONCURRENCY = Number(process.env["IPTV_WEB_PAGE_CONCURRENCY"] ?? 6);
-const SOURCE_CONCURRENCY = Number(process.env["IPTV_WEB_SOURCE_CONCURRENCY"] ?? 2);
+const MAX_PAGES = Number(process.env["IPTV_WEB_MAX_PAGES_PER_SOURCE"] ?? 90);
+const PAGE_CONCURRENCY = Number(process.env["IPTV_WEB_PAGE_CONCURRENCY"] ?? 8);
+const SOURCE_CONCURRENCY = Number(process.env["IPTV_WEB_SOURCE_CONCURRENCY"] ?? 3);
 
 export interface WebSourceStatus {
   source: string;
@@ -24,13 +24,13 @@ export interface WebDiscoveryResult {
   statuses: WebSourceStatus[];
 }
 
-export async function discoverWebAggregators(): Promise<WebDiscoveryResult> {
+export async function discoverWebAggregators(sourceNames?: ReadonlySet<string>): Promise<WebDiscoveryResult> {
   const entries: PlaylistEntry[] = [];
   const statuses: WebSourceStatus[] = [];
   const browser = await chromium.launch({ headless: true }).catch(() => undefined);
 
   try {
-    await runPool(SOURCES, SOURCE_CONCURRENCY, async (source) => {
+    await runPool(SOURCES.filter((source) => !sourceNames || sourceNames.has(source.name)), SOURCE_CONCURRENCY, async (source) => {
       try {
         const result = await discoverSource(source, browser);
         entries.push(...result.entries);
@@ -192,8 +192,13 @@ async function captureNetwork(url: string, browser: Browser): Promise<string[]> 
   try {
     const page = await context.newPage();
     page.on("response", (response) => { void captureResponse(response, found); });
+    page.on("request", (request) => {
+      if (/\\.(?:m3u8|mpd)(?:$|\\?)/i.test(request.url()) && publishable(request.url())) found.add(request.url());
+    });
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 15_000 }).catch(() => undefined);
-    await page.waitForTimeout(2_000);
+    // Attempt only the channel's native video player, never ad or site buttons.
+    await page.locator("video").first().evaluate((video: HTMLVideoElement) => { void video.play().catch(() => undefined); }, { timeout: 2_000 }).catch(() => undefined);
+    await page.waitForTimeout(3_000);
   } catch {
     // Browser/network failures are source-local and must never abort the update.
   } finally {
