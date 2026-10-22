@@ -107,25 +107,6 @@ function parsePlaylistEntries(text: string): M3uEntry[] {
   return entries;
 }
 
-function simplifiedName(value: string): string {
-  return value
-    .toLocaleLowerCase("tr")
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[ıİ]/g, "i")
-    .replace(/[əƏ]/g, "e")
-    .replace(/[çÇ]/g, "c")
-    .replace(/[ğĞ]/g, "g")
-    .replace(/[öÖ]/g, "o")
-    .replace(/[şŞ]/g, "s")
-    .replace(/[üÜ]/g, "u")
-    .replace(/\b(?:canli|live|izle|seyret|yayin|yayini|hd|fhd|fullhd|full hd)\b/g, " ")
-    .replace(/\btv\b$/g, "")
-    .replace(/[^a-z0-9а-яё]+/giu, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
 function countryKey(value: string): string {
   const normalized = value
     .toLocaleLowerCase("tr")
