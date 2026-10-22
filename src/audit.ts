@@ -32,6 +32,14 @@ if (extinfCount !== entries.length) errors.push("Malformed EXTINF entry exists")
 if (entries.length === 0) errors.push("Playlist has no channels");
 if (urls.some((url) => !isPublishableUrl(url))) errors.push("Oversized, invalid or soon-expiring stream URL exists");
 if (status.published !== extinfCount) errors.push("Published count disagrees with status");
+const mandatory = JSON.parse(readJsonText("config/mandatory-channels.json")) as { channels: Array<{ id: string; name: string }> };
+const unverifiedIds = new Set<string>(JSON.parse(readJsonText("output/mandatory-health.json")).needsLocalTest as string[]);
+for (const channel of mandatory.channels) {
+  const matching = entries.filter((entry) => entry.id === channel.id);
+  if (matching.length !== 1) errors.push("Required TV channel missing or duplicated: " + channel.name);
+  if (unverifiedIds.has(channel.id) && !/Yoxlanmamış/i.test(matching[0]?.group ?? "")) errors.push("Missing unverified warning for: " + channel.name);
+}
+
 if (ids.length !== new Set(ids).size) errors.push("Duplicate channel ID exists");
 if (urls.length !== new Set(urls.map(normalizeUrl)).size) errors.push("Duplicate stream URL exists");
 if (urls.some((url) => isForbiddenUrl(url, { allowLivePath: true }))) errors.push("Private/local/gateway URL exists");
@@ -42,7 +50,7 @@ if (/widevine|playready|license|drm/i.test(playlist)) errors.push("DRM/license U
 // replace the real television ad break with a static digital-ad slate. Such a
 // stream is not acceptable for the final TV playlist.
 for (const entry of entries) {
-  if (countryKey(entry.group) === "TR" && isTurkeyAdSlateProneUrl(entry.url)) {
+  if (countryKey(entry.group) === "TR" && !/Yoxlanmamış/i.test(entry.group) && isTurkeyAdSlateProneUrl(entry.url)) {
     errors.push(`Turkish ad-slate-prone stream is still published: ${entry.name}`);
   }
 }
