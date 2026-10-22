@@ -4,7 +4,7 @@ import { isForbiddenUrl } from "../validator.js";
 import { SOURCES, type ChannelPage, type Country, type Source } from "./webSources.js";
 
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
-const MAX_PAGES = Number(process.env["IPTV_WEB_MAX_PAGES_PER_SOURCE"] ?? 90);
+const MAX_PAGES = Number(process.env["IPTV_WEB_MAX_PAGES_PER_SOURCE"] ?? 35);
 const PAGE_CONCURRENCY = Number(process.env["IPTV_WEB_PAGE_CONCURRENCY"] ?? 8);
 const SOURCE_CONCURRENCY = Number(process.env["IPTV_WEB_SOURCE_CONCURRENCY"] ?? 3);
 
@@ -60,7 +60,7 @@ async function discoverSource(source: Source, browser?: Browser): Promise<{ entr
       seedPages++;
       collectChannelPages(pages, html, seed.url, seed.country, source);
 
-      if (manifestUrls(html, seed.url).length || source.name === "tvstream-az") {
+      if (manifestUrls(html, seed.url).length || source.name === "tvstream-az" || (source.name === "yoda-az" && /\/tv\/[^/]+\/?$/.test(new URL(seed.url).pathname))) {
         pages.set(seed.url, {
           url: seed.url,
           title: pageTitle(html) || source.name,
@@ -73,7 +73,7 @@ async function discoverSource(source: Source, browser?: Browser): Promise<{ entr
     }
   }
 
-  const selected = [...pages.values()].slice(0, MAX_PAGES);
+  const selected = [...pages.values()].slice(0, source.name === "yoda-az" ? Math.min(45, MAX_PAGES) : MAX_PAGES);
   const entries: PlaylistEntry[] = [];
   let manifestCandidates = 0;
 
@@ -173,7 +173,7 @@ async function pageCandidates(page: ChannelPage, browser?: Browser): Promise<str
     }
   }
 
-  const needsBrowser = found.size === 0 || isVolo(page.url);
+  const needsBrowser = found.size === 0 || isVolo(page.url) || isYoda(page.url);
   if (browser && needsBrowser) {
     (await captureNetwork(page.url, browser)).forEach((url) => found.add(url));
     for (const variant of variants.slice(0, 2)) {
@@ -343,6 +343,12 @@ function allowedHost(raw: string, hosts: string[]): boolean {
   } catch {
     return false;
   }
+}
+
+function isYoda(raw: string): boolean {
+  try {
+    return ["yoda.az", "www.yoda.az", "yodaplayer.yodacdn.net"].includes(new URL(raw).hostname);
+  } catch { return false; }
 }
 
 function isVolo(raw: string): boolean {
