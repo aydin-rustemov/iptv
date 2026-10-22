@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import { isForbiddenUrl, isTurkeyAdSlateProneUrl } from "./validator.js";
+import { isPublishableUrl, MAX_PLAYLIST_BYTES } from "./playlistGuard.js";
 
 const playlist = fs.readFileSync("output/playlist.m3u", "utf8");
 const status = JSON.parse(readJsonText("output/status.json")) as { published?: number };
@@ -19,6 +20,8 @@ const errors: string[] = [];
 const warnings: string[] = [];
 
 if (!playlist.startsWith("#EXTM3U")) errors.push("Playlist does not begin with #EXTM3U");
+if (Buffer.byteLength(playlist, "utf8") > MAX_PLAYLIST_BYTES) errors.push("Playlist exceeds 8 MiB");
+if (playlist.split(/\r?\n/).some((line) => Buffer.byteLength(line, "utf8") > 8192)) errors.push("Oversized M3U line exists");
 
 const entries = parsePlaylistEntries(playlist);
 const ids = entries.map((entry) => entry.id).filter(Boolean);
@@ -26,6 +29,8 @@ const urls = entries.map((entry) => entry.url);
 const extinfCount = (playlist.match(/^#EXTINF/gm) ?? []).length;
 
 if (extinfCount !== entries.length) errors.push("Malformed EXTINF entry exists");
+if (entries.length === 0) errors.push("Playlist has no channels");
+if (urls.some((url) => !isPublishableUrl(url))) errors.push("Oversized, invalid or soon-expiring stream URL exists");
 if (status.published !== extinfCount) errors.push("Published count disagrees with status");
 if (ids.length !== new Set(ids).size) errors.push("Duplicate channel ID exists");
 if (urls.length !== new Set(urls.map(normalizeUrl)).size) errors.push("Duplicate stream URL exists");

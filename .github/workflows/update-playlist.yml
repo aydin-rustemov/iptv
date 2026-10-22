@@ -19,7 +19,7 @@ permissions:
 
 concurrency:
   group: update-iptv-playlist
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   update:
@@ -54,8 +54,15 @@ jobs:
       - name: Update playlist incrementally
         run: npm run update
 
-      - name: Audit playlist structure
-        run: npm run audit
+      - name: Test and audit playlist
+        run: |
+          npm test
+          npm run audit
+
+      - name: Verify publication fits GitHub limits
+        run: |
+          test "$(wc -c < output/playlist.m3u)" -le 8388608
+          test "$(wc -c < output/playlist.previous.m3u)" -le 8388608
 
       - name: Commit output files
         run: |

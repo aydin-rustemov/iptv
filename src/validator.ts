@@ -5,6 +5,7 @@ import { randomUUID } from "node:crypto";
 import { spawn } from "node:child_process";
 import ffprobeStatic from "ffprobe-static";
 import type { FastCheckResult, MediaCheckResult, PlaylistEntry } from "./types.js";
+import { isPublishableUrl } from "./playlistGuard.js";
 
 const USER_AGENT = "Mozilla/5.0 IPTV-Playlist-Updater/1.0";
 
@@ -44,6 +45,7 @@ export function isTurkeyAdSlateProneUrl(raw: string): boolean {
 
 export async function fastCheck(entry: PlaylistEntry): Promise<FastCheckResult> {
   const start = Date.now();
+  if (!isPublishableUrl(entry.url)) return { ok: false, reason: "oversized_or_expiring_url" };
   if (isForbiddenUrl(entry.url, { allowLivePath: entry.allowLivePath })) return { ok: false, reason: "forbidden_url" };
   if (hasSensitiveHeaders(entry)) return { ok: false, reason: "sensitive_headers" };
 
@@ -81,8 +83,9 @@ export async function fastCheck(entry: PlaylistEntry): Promise<FastCheckResult> 
     if (isTurkeyEntry(entry) && isTurkeyAdSlateProneUrl(response.url)) {
       return { ok: false, contentType, reason: "turkey_ad_slate_prone_host" };
     }
-    const bytes = new Uint8Array((await response.clone().arrayBuffer()).slice(0, 512 * 1024));
-    const prefix = Buffer.from(bytes).toString("utf8", 0, Math.min(bytes.length, 2048)).trimStart();
+    // Live video responses may never finish; sample only a bounded prefix.
+    const bytes = await readPrefix(response, 64 * 1024);
+    const prefix = bytes.toString("utf8", 0, Math.min(bytes.length, 2048)).trimStart();
     if (/^<!doctype html|^<html/i.test(prefix) || contentType.includes("text/html")) return { ok: false, contentType, reason: "html" };
     if (prefix.startsWith("#EXTM3U") || /\.m3u8(?:$|\?)/i.test(response.url)) return { ok: true, finalUrl: response.url, contentType, kind: "hls", latencyMs: Date.now() - start };
     if (prefix.includes("<MPD") || /\.mpd(?:$|\?)/i.test(response.url)) return { ok: true, finalUrl: response.url, contentType, kind: "dash", latencyMs: Date.now() - start };
@@ -151,6 +154,26 @@ async function fetchText(url: string, entry: PlaylistEntry): Promise<string> {
   return text;
 }
 
+async function readPrefix(response: Response, maxBytes: number): Promise<Buffer> {
+  if (!response.body) return Buffer.alloc(0);
+  const reader = response.body.getReader();
+  const chunks: Buffer[] = [];
+  let total = 0;
+  try {
+    while (total < maxBytes) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      const chunk = Buffer.from(value.subarray(0, maxBytes - total));
+      chunks.push(chunk);
+      total += chunk.length;
+    }
+  } finally {
+    await reader.cancel().catch(() => undefined);
+    reader.releaseLock();
+  }
+  return Buffer.concat(chunks, total);
+}
+
 async function downloadSample(url: string, entry: PlaylistEntry, maxBytes: number): Promise<Buffer> {
   if (isForbiddenUrl(url, { allowLivePath: entry.allowLivePath })) throw new Error("forbidden_url");
   if (isTurkeyEntry(entry) && isTurkeyAdSlateProneUrl(url)) throw new Error("turkey_ad_slate_prone_host");
@@ -168,11 +191,12 @@ async function downloadSample(url: string, entry: PlaylistEntry, maxBytes: numbe
     while (total < maxBytes) {
       const { done, value } = await reader.read();
       if (done) break;
-      const chunk = Buffer.from(value);
+      const chunk = Buffer.from(value.subarray(0, maxBytes - total));
       chunks.push(chunk);
       total += chunk.length;
     }
   } finally {
+    await reader.cancel().catch(() => undefined);
     reader.releaseLock();
   }
   return Buffer.concat(chunks, total);

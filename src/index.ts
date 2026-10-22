@@ -3,7 +3,7 @@ import { loadSources, downloadSource, updateSourceStats } from "./downloader.js"
 import { normalizeCountry, parseM3u } from "./parser.js";
 import { fastCheck, mediaCheck } from "./validator.js";
 import { dedupe, preselect, score } from "./selector.js";
-import { countBy, writePlaylist, writeStatus } from "./generator.js";
+import { countBy, isDisplayableChannel, writePlaylist, writeStatus } from "./generator.js";
 import type { FastCheckResult, MediaCheckResult, PlaylistEntry, PriorityChannel, StatusOutput, ValidatedEntry } from "./types.js";
 import { addTargetedPriorityCandidates, buildMissingPriorityDetails, buildPriorityStatuses, loadPriorityChannels, normalizeName, tagPriorityEntries, writeMissingPriority, writeMissingPriorityDetails } from "./priority.js";
 import { discoverCanliTvAz } from "./sources/canlitvAz.js";
@@ -91,8 +91,13 @@ async function main(): Promise<void> {
     discoveryValidation.validated,
     lockedEntries
   );
-  const selected = maintenance.entries;
-  const maintenanceStats = maintenance.stats;
+  const selected = maintenance.entries.filter(isDisplayableChannel);
+  if (!selected.length) throw new Error("Refusing to publish: no usable playback URLs");
+  const maintenanceStats = {
+    ...maintenance.stats,
+    removed: maintenance.stats.removed + maintenance.entries.length - selected.length,
+    published: selected.length
+  };
 
   const allCandidates = dedupe([...currentEntries, ...uniqueDiscovered, ...lockedEntries]).entries;
   const allValidated = dedupeValidated([...lockedEntries, ...currentValidation.validated, ...discoveryValidation.validated]);
@@ -112,7 +117,9 @@ async function main(): Promise<void> {
     targeted.officialSocialAccountsChecked
   );
 
-  if (fs.existsSync(PLAYLIST_FILE)) fs.copyFileSync(PLAYLIST_FILE, "output/playlist.previous.m3u");
+  // Never copy an oversized or corrupt old playlist into another tracked blob.
+  const previousWorking = dedupeValidated([...lockedEntries, ...currentValidation.validated]).filter(isDisplayableChannel);
+  if (previousWorking.length) writePlaylist(previousWorking, "output/playlist.previous.m3u");
   writePlaylist(selected);
   writeMissingPriority(priorityChannels);
   writeMissingPriorityDetails(missingDetails);
