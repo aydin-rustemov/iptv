@@ -8,7 +8,7 @@ import { loadPriorityChannels, buildPriorityStatuses, tagPriorityEntries, writeM
 import { countBy, writePlaylist, writeStatus } from "./generator.js";
 import { regionOf, selectRegionalPlaylist, uniqueVerified, type Region } from "./regional.js";
 import { score } from "./selector.js";
-import type { PlaylistEntry, PriorityChannel, SourceConfig, StatusOutput, ValidatedEntry } from "./types.js";
+import type { PlaylistEntry, PriorityChannel, StatusOutput, ValidatedEntry } from "./types.js";
 
 const SOURCE_NAMES = new Set([
   "iptv-org-azerbaijan",
@@ -22,13 +22,6 @@ const SCAN_LIMITS: Record<Region, number> = { AZ: 160, TR: 400, RU: 280 };
 const GOALS: Record<Region, number> = { AZ: 35, TR: 60, RU: 20 };
 const BATCH = 40;
 const CONCURRENCY = 12;
-
-interface ScanStats {
-  probed: number;
-  fastPassed: number;
-  verified: ValidatedEntry[];
-  failures: Record<string, number>;
-}
 
 async function main(): Promise<void> {
   const sources = loadSources().filter((source) => SOURCE_NAMES.has(source.name));
