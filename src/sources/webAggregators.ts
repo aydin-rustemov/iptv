@@ -2,6 +2,7 @@ import { chromium, type Browser, type Response } from "playwright";
 import type { PlaylistEntry } from "../types.js";
 import { isForbiddenUrl } from "../validator.js";
 import { SOURCES, type ChannelPage, type Country, type Source } from "./webSources.js";
+import { discoverTvstreamAz } from "./tvstream.js";
 
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
 const MAX_PAGES = Number(process.env["IPTV_WEB_MAX_PAGES_PER_SOURCE"] ?? 90);
@@ -50,6 +51,22 @@ export async function discoverWebAggregators(sourceNames?: ReadonlySet<string>):
 }
 
 async function discoverSource(source: Source, browser?: Browser): Promise<{ entries: PlaylistEntry[]; status: WebSourceStatus }> {
+  if (source.name === "tvstream-az" && browser) {
+    const entries = await discoverTvstreamAz(browser);
+    return {
+      entries,
+      status: {
+        source: source.name,
+        ok: entries.length > 0,
+        seedPages: 1,
+        channelPages: 10,
+        processedPages: 10,
+        manifestCandidates: entries.length,
+        entries: entries.length,
+        error: entries.length ? undefined : "tvstream_player_no_m3u8_requests"
+      }
+    };
+  }
   const pages = new Map<string, ChannelPage>();
   let seedPages = 0;
   let firstError: string | undefined;
