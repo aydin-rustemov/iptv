@@ -45,7 +45,7 @@ test("working channels stay verified; geo-limited Yoda streams use clean titles"
 test("missing mandatory channels replace less important channels if maximum exceeded", () => {
   const others = [verified("other1", "Other 1", "Türkiyə"), verified("other2", "Other 2", "Türkiyə")];
   const required = [channel("aztv", "AzTV", "Azərbaycan")];
-  const webCandidate = { ...verified("aztv", "AzTV", "Azərbaycan"), sourceName: "canlitv-volo" };
+  const webCandidate = { ...verified("aztv", "AzTV", "Azərbaycan"), url: "https://str.yodacdn.net/aztv/index.m3u8", sourceName: "yoda-az-cdn" };
   const result = ensureMandatory(others, others, required, 2, [webCandidate]);
   assert.equal(result.entries.length, 2);
   assert.ok(result.entries.some((entry) => entry.priorityId === "aztv"));
