@@ -5,7 +5,7 @@ import { fastCheck, isForbiddenUrl, mediaCheck } from "./validator.js";
 import { isPublishableUrl, MAX_PLAYLIST_BYTES } from "./playlistGuard.js";
 import { manualOverrideCandidates, loadManualOverrides } from "./manualOverrides.js";
 import { loadPriorityChannels, buildPriorityStatuses, tagPriorityEntries, writeMissingPriority } from "./priority.js";
-import { countBy, writePlaylist, writeStatus } from "./generator.js";
+import { countBy, isDisplayableChannel, writePlaylist, writeStatus } from "./generator.js";
 import { regionOf, selectRegionalPlaylist, uniqueVerified, type Region } from "./regional.js";
 import { score } from "./selector.js";
 import type { PlaylistEntry, PriorityChannel, StatusOutput, ValidatedEntry } from "./types.js";
@@ -91,7 +91,7 @@ async function main(): Promise<void> {
     }
   }
 
-  const selected = selectRegionalPlaylist(verified).filter((entry) => isPublishableUrl(entry.url));
+  const selected = selectRegionalPlaylist(verified).filter(isDisplayableChannel);
   if (selected.length === 0) {
     throw new Error("No streams passed real video validation; preserving previous playlist");
   }
