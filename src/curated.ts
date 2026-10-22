@@ -8,6 +8,7 @@ import { loadPriorityChannels, buildPriorityStatuses, tagPriorityEntries, writeM
 import { countBy, isDisplayableChannel, writePlaylist, writeStatus } from "./generator.js";
 import { regionOf, selectRegionalPlaylist, uniqueVerified, type Region } from "./regional.js";
 import { score } from "./selector.js";
+import { ensureMandatory, loadMandatoryChannels, mandatoryCandidates } from "./mandatory.js";
 import type { PlaylistEntry, PriorityChannel, StatusOutput, ValidatedEntry } from "./types.js";
 
 const SOURCE_NAMES = new Set([
@@ -27,6 +28,7 @@ async function main(): Promise<void> {
   const sources = loadSources().filter((source) => SOURCE_NAMES.has(source.name));
   if (sources.length < 3) throw new Error("Regional M3U sources are missing");
   const priorities = loadPriorityChannels();
+  const mandatory = loadMandatoryChannels();
   const errors: string[] = [];
   const sourcesLoaded: string[] = [];
   const downloaded = await Promise.allSettled(sources.map(async (source) => ({
@@ -50,7 +52,7 @@ async function main(): Promise<void> {
   // Overrides and published URLs are candidates only; none may bypass video validation.
   const overrides = manualOverrideCandidates(loadManualOverrides());
   const direct = directCandidates(priorities);
-  const discovered = tagPriorityEntries([...overrides, ...direct, ...sourceEntries], priorities)
+  const discovered = tagPriorityEntries([...mandatoryCandidates(mandatory), ...overrides, ...direct, ...sourceEntries], priorities)
     .filter((entry) => regionOf(entry) !== undefined)
     .filter((entry) => isPublishableUrl(entry.url) && !isForbiddenUrl(entry.url, { allowLivePath: true }));
 
@@ -91,7 +93,8 @@ async function main(): Promise<void> {
     }
   }
 
-  const selected = selectRegionalPlaylist(verified).filter(isDisplayableChannel);
+  const required = ensureMandatory(selectRegionalPlaylist(verified).filter(isDisplayableChannel), verified, mandatory);
+  const selected = required.entries;
   if (selected.length === 0) {
     throw new Error("No streams passed real video validation; preserving previous playlist");
   }
@@ -118,16 +121,32 @@ async function main(): Promise<void> {
     duplicatesRemoved: discovered.length - unique.length,
     countryCounts: countBy(selected, (entry) => normalizeCountry(entry.country)),
     categoryCounts: countBy(selected, (entry) => entry.category),
-    degraded: selected.length < 80,
+    degraded: selected.length < 80 || required.unverifiedIds.length > 0,
     priorityChannels: prioritiesStatus
   };
   writeStatus(status);
   writeMissingPriority(prioritiesStatus);
   fs.writeFileSync("output/missing-priority-details.json", "[]\n", "utf8");
+  fs.writeFileSync("output/mandatory-health.json", JSON.stringify({
+    updatedAt: status.updatedAt,
+    total: mandatory.length,
+    verified: required.verifiedIds,
+    needsLocalTest: required.unverifiedIds,
+    details: mandatory.map((channel) => ({
+      name: channel.name,
+      country: channel.country,
+      id: channel.id,
+      status: required.verifiedIds.includes(channel.id) ? "video_verified_on_github" : "NOT_VERIFIED_TEST_IN_AZERBAIJAN",
+      candidates: channel.urls.length
+    }))
+  }, null, 2), "utf8");
   fs.writeFileSync("output/channel-health.json", JSON.stringify({
     updatedAt: status.updatedAt,
     published: selected.length,
-    verifiedWorking: selected.length,
+    verifiedWorking: selected.length - required.unverifiedIds.length,
+    mandatoryTotal: mandatory.length,
+    mandatoryVerified: required.verifiedIds.length,
+    mandatoryNeedsLocalTest: required.unverifiedIds,
     validation: "HTTP manifest + video segment ffprobe; no forced/unchecked channels",
     countryCounts: status.countryCounts,
     candidatesScanned: probed,
@@ -136,7 +155,7 @@ async function main(): Promise<void> {
     sourcesLoaded,
     sourceErrors: errors
   }, null, 2), "utf8");
-  console.log("[PUBLISHED]", JSON.stringify({ published: selected.length, countryCounts: status.countryCounts, failures: reasons, sourceErrors: errors }));
+  console.log("[PUBLISHED]", JSON.stringify({ published: selected.length, countryCounts: status.countryCounts, mandatoryVerified: required.verifiedIds, mandatoryNeedsLocalTest: required.unverifiedIds, failures: reasons, sourceErrors: errors }));
 }
 
 function directCandidates(priorities: PriorityChannel[]): PlaylistEntry[] {
@@ -164,6 +183,7 @@ function candidateRank(entry: PlaylistEntry, region: Region): number {
   if (entry.priorityId) ranking += 2500;
   if (entry.sourceName.startsWith("manual-")) ranking += 3500;
   if (entry.sourceName === "priority-direct") ranking += 3000;
+  if (entry.sourceName === "mandatory-candidate") ranking += 5000;
   const regionalName = region === "AZ" ? "azerbaijan" : region === "TR" ? "turkey" : "russia";
   if (entry.sourceName === "iptv-org-" + regionalName) ranking += 1000;
   if (entry.headers["Referer"] || entry.headers["User-Agent"]) ranking -= 200;
