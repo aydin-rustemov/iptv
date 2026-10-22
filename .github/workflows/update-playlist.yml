@@ -58,6 +58,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f output/mandatory-health.json
           for file in \
             config/sources.json \
             output/playlist.m3u \
@@ -67,14 +68,12 @@ jobs:
             output/missing-priority-details.json \
             output/playlist.previous.m3u \
             output/channel-health.json \
-            output/mandatory-health.json \
             output/canlitv-status.json \
             state/channel-registry.json; do
             if [ -e "$file" ]; then
               git add "$file"
             fi
           done
-          git add -f output/mandatory-health.json
           if git diff --cached --quiet; then
             echo "No playlist changes"
           else
