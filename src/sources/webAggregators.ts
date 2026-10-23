@@ -2,6 +2,7 @@ import { chromium, type Browser, type Response } from "playwright";
 import type { PlaylistEntry } from "../types.js";
 import { isForbiddenUrl } from "../validator.js";
 import { SOURCES, type ChannelPage, type Country, type Source } from "./webSources.js";
+import { YODA_CATALOGUE, yodaChannelFromPage } from "./yodaCatalogue.js";
 import { sourcePageIdentity, priorityWebPageScore } from "./sourcePageIdentity.js";
 
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
@@ -80,6 +81,16 @@ async function discoverSource(source: Source, browser?: Browser): Promise<{ entr
   // Major broadcasters must be scanned before alphabetical/rank order.
   // Otherwise with 35/page the 7 priority Turkish TV stations are skipped.
   const budget = source.name.startsWith("icanlive-") ? Math.max(60, MAX_PAGES) : MAX_PAGES;
+  if (source.name === "yoda-az") {
+    // Catalogue is JS-driven on some clients: supplement links that were not
+    // present as static <a> tags. These are discovery PAGES only, not guessed streams.
+    const present = new Set([...pages.keys()].map((url) => yodaChannelFromPage(url)?.id).filter(Boolean));
+    for (const channel of YODA_CATALOGUE) {
+      if (present.has(channel.id)) continue;
+      const url = `https://yoda.az/tv/${channel.slugs[0]}/`;
+      pages.set(url, { url, title: channel.name, country: "Azərbaycan" });
+    }
+  }
   const selected = [...pages.values()]
     .sort((a, b) => priorityWebPageScore(b) - priorityWebPageScore(a))
     .slice(0, source.name === "yoda-az" ? Math.min(45, MAX_PAGES) : budget);
@@ -122,6 +133,11 @@ function collectChannelPages(
 ): void {
   for (const link of links(html, base)) {
     if (!allowedHost(link.href, source.hosts)) continue;
+    if (source.name === "yoda-az") {
+      const channel = yodaChannelFromPage(link.href);
+      if (channel) pages.set(link.href, { url: link.href, title: channel.name, country: "Azərbaycan" });
+      continue;
+    }
     if (source.name === "operativmm-az" || source.name.startsWith("icanlive-")) {
       const named = sourcePageIdentity(source.name, link.href, link.text, fallbackCountry);
       if (named) pages.set(named.url, named);
@@ -340,24 +356,12 @@ function inferCountry(title: string, url: string, fallback: Country): Country {
   return fallback;
 }
 
-function yodaChannelName(pageUrl: string): string | undefined {
-  const slug = new URL(pageUrl).pathname.split("/").filter(Boolean)[1]?.toLowerCase();
-  const names: Record<string, string> = {
-    aztv: "AzTV", azertv: "AzTV", arb: "ARB", arbtv: "ARB",
-    space: "Space TV", spacetv: "Space TV", arb24: "ARB24",
-    idman: "İdman TV", ictimai: "İctimai TV", itv: "İctimai TV",
-    medeniyyet: "Mədəniyyət TV", xezer: "Xəzər TV", xezertv: "Xəzər TV", xazartv: "Xəzər TV",
-    atv: "ATV Azərbaycan", real: "Real TV", cbc: "CBC",
-    cbcsport: "CBC Sport", bakutv: "Baku TV", naxtv: "Naxçıvan TV"
-  };
-  return slug ? names[slug] : undefined;
-}
-
 function toEntry(sourceName: string, page: ChannelPage, url: string): PlaylistEntry {
-  const name = sourceName === "yoda-az" ? yodaChannelName(page.url) ?? page.title : page.title;
+  const yoda = sourceName === "yoda-az" ? yodaChannelFromPage(page.url) : undefined;
+  const name = yoda?.name ?? page.title;
   return {
     sourceName,
-    tvgId: slug(`${page.country}-${name}`),
+    tvgId: yoda?.id ?? slug(`${page.country}-${name}`),
     tvgName: name,
     groupTitle: page.country,
     country: page.country,
@@ -366,6 +370,7 @@ function toEntry(sourceName: string, page: ChannelPage, url: string): PlaylistEn
     url,
     headers: {},
     candidateReferer: page.url,
+    ...(yoda ? { priorityId: yoda.id, priorityName: yoda.name, priorityCountry: "Azərbaycan" } : {}),
     allowLivePath: true
   };
 }
