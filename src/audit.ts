@@ -3,6 +3,7 @@ import { isForbiddenUrl, isTurkeyAdSlateProneUrl } from "./validator.js";
 import { isPublishableUrl, isDirectManifestUrl, MAX_PLAYLIST_BYTES } from "./playlistGuard.js";
 import { isMismatchedChannel } from "./channelMatchGuard.js";
 import { isAdvertisingStream, validCandidateIdentity } from "./sourcePolicy.js";
+import { isOfficialShowTvStream } from "./sources/showTvOfficial.js";
 
 const playlist = fs.readFileSync("output/playlist.m3u", "utf8");
 const status = JSON.parse(readJsonText("output/status.json")) as { published?: number; manualAzPlaylist?: boolean };
@@ -19,6 +20,14 @@ const manualConfig = JSON.parse(readJsonText("config/manual-channel-overrides.js
   }>;
 };
 const errors: string[] = [];
+const showTvSource = fs.existsSync("output/showtv-source-status.json")
+  ? JSON.parse(readJsonText("output/showtv-source-status.json")) as {status:string;url?:string;networkStatus?:number;page?:string}
+  : undefined;
+function officialShowTvCaptured(entry: {id:string;url:string}): boolean {
+  return entry.id === "show-tv" && Boolean(showTvSource?.status === "official_hls_captured" &&
+    showTvSource.networkStatus === 200 && showTvSource.page === "https://www.showtv.com.tr/canli-yayin" &&
+    showTvSource.url === entry.url && isOfficialShowTvStream(entry.url));
+}
 const warnings: string[] = [];
 
 if (!playlist.startsWith("#EXTM3U")) errors.push("Playlist does not begin with #EXTM3U");
@@ -32,8 +41,8 @@ const extinfCount = (playlist.match(/^#EXTINF/gm) ?? []).length;
 
 if (extinfCount !== entries.length) errors.push("Malformed EXTINF entry exists");
 if (entries.length === 0) errors.push("Playlist has no channels");
-if (urls.some((url) => !isPublishableUrl(url))) errors.push("Oversized, invalid or soon-expiring stream URL exists");
-if (urls.some((url) => !isDirectManifestUrl(url))) errors.push("HTML/web HLS player link in playlist");
+if (entries.some((entry) => !isPublishableUrl(entry.url) && !officialShowTvCaptured(entry))) errors.push("Oversized, invalid or soon-expiring stream URL exists");
+if (entries.some((entry) => !isDirectManifestUrl(entry.url) && !officialShowTvCaptured(entry))) errors.push("HTML/web HLS player link in playlist");
 if (urls.some(isAdvertisingStream)) errors.push("Advertising HLS stream masquerading as a TV channel");
 if (entries.some((entry) => /yoxlanmamış|⚠/i.test(entry.name + " " + entry.group))) errors.push("Diagnostic warning leaked into TV channel label");
 if (status.published !== extinfCount) errors.push("Published count disagrees with status");
@@ -63,10 +72,11 @@ for (const channel of mandatory.channels) {
   if (matching.length !== 1) errors.push("Required TV channel missing or duplicated: " + channel.name);
   if (unverifiedIds.has(channel.id)) {
     const chosen = matching[0];
+    const isOfficialShow = chosen && officialShowTvCaptured(chosen) && chosen.group === "Türkiyə";
     const isManualAz = status.manualAzPlaylist && manualAzEntries.some((entry) =>
       entry.id === channel.id && chosen && entry.url === chosen.url);
-    if (!chosen || !chosen.group.startsWith("Azərbaycan") ||
-        (!isManualAz && !yodaRegionalUrls.has(channel.id + "|" + chosen.url))) {
+    if (!isOfficialShow && (!chosen || !chosen.group.startsWith("Azərbaycan") ||
+        (!isManualAz && !yodaRegionalUrls.has(channel.id + "|" + chosen.url)))) {
       errors.push("AZ channel lacks Yoda/manual provenance: " + channel.name);
     }
   }
@@ -84,7 +94,7 @@ if (/widevine|playready|license|drm/i.test(playlist)) errors.push("DRM/license U
 for (const entry of entries) {
   const inspected = { sourceName: "audit", name: entry.name, tvgName: entry.name, url: entry.url, country: countryKey(entry.group) === "TR" ? "Türkiyə" : countryKey(entry.group) === "RU" ? "Rusiya" : "Azərbaycan", priorityId: entry.id, headers: {} };
   if (isMismatchedChannel(inspected) || !validCandidateIdentity(inspected)) errors.push("Wrong broadcaster URL or country for channel: " + entry.name);
-  if (countryKey(entry.group) === "TR" && !/Yoxlanmamış/i.test(entry.group) && isTurkeyAdSlateProneUrl(entry.url)) {
+  if (countryKey(entry.group) === "TR" && !/Yoxlanmamış/i.test(entry.group) && isTurkeyAdSlateProneUrl(entry.url) && !officialShowTvCaptured(entry)) {
     errors.push(`Turkish ad-slate-prone stream is still published: ${entry.name}`);
   }
 }
