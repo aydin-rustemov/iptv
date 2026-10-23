@@ -1,400 +1,307 @@
 {
-  "updatedAt": "2026-10-23T18:23:33.573Z",
-  "mode": "fixed-12-non-yoda",
-  "location": "github-runner-not-AZ",
-  "disclaimer": "HLS video and second manifest confirmed from GitHub IP only; AZ playback and pictured broadcaster NOT confirmed.",
-  "fixedCount": 12,
-  "visibleInM3u": 3,
-  "offlineOrGeoRestricted": 9,
-  "sourceFeeds": [
-    {
-      "source": "free-tv-az",
-      "entries": 11,
-      "accepted": 1
-    },
-    {
-      "source": "iptv-org-az",
-      "entries": 22,
-      "accepted": 7
-    },
-    {
-      "source": "simuratli-az",
-      "entries": 35,
-      "accepted": 6
-    },
-    {
-      "source": "yusiff-az-tr",
-      "entries": 417,
-      "accepted": 8
-    }
+  "mode": "recent-user-sites-no-playback-validation",
+  "updatedAt": "2026-10-23T18:40:04.803Z",
+  "sites": [
+    "https://icanlive.tv/kategori/399/azerbaijan-tv-kanallari.html",
+    "https://operativmm.az/az/canli-tv"
   ],
-  "conflictingUrlsRejected": 0,
-  "sourceCandidates": 48,
-  "sourceCandidatesPassed": 5,
-  "channels": [
+  "disclaimer": "Captured real HLS URLs from source page/player; no HTTP/HLS/ffprobe/playback check. No AZ-IP guarantee.",
+  "slots": [
     {
       "id": "aztv",
       "name": "AzTV",
       "group": "Dövlət",
       "order": 1,
-      "status": "video_confirmed_on_github",
-      "source": "community-cinerama",
-      "url": "https://stream8.cinerama.uz/1455/tracks-v1a1/mono.m3u8",
-      "probes": [
+      "candidates": [
         {
           "source": "community-cinerama",
-          "url": "https://stream8.cinerama.uz/1455/tracks-v1a1/mono.m3u8",
-          "state": "video_confirmed_on_github",
-          "latencyMs": 1642,
-          "codec": "h264"
+          "url": "https://stream8.cinerama.uz/1455/tracks-v1a1/mono.m3u8"
         },
         {
           "source": "community-moby",
-          "url": "https://tv.mobyservice.ru/AZTV/tracks-v1a1/mono.m3u8",
-          "state": "http_404"
+          "url": "https://tv.mobyservice.ru/AZTV/tracks-v1a1/mono.m3u8"
         },
         {
           "source": "community-gist",
-          "url": "https://live.aztv.az/hls/aztv/index.m3u8",
-          "state": "network_error"
-        },
-        {
-          "source": "iptv-org-az",
-          "url": "http://109.205.166.68/server124/aztv/index3.m3u8?e=1676581573&st=AzGSZjk1DpXY1SLc1m4OvA",
-          "state": "video_confirmed_on_github",
-          "latencyMs": 862,
-          "codec": "h264"
+          "url": "https://live.aztv.az/hls/aztv/index.m3u8"
         }
-      ]
+      ],
+      "status": "source_url_collected_no_playback_check",
+      "chosen": {
+        "url": "https://stream8.cinerama.uz/1455/tracks-v1a1/mono.m3u8",
+        "site": "icanlive",
+        "page": "https://icanlive.tv/canli/9891/aztv.html",
+        "foundBy": "network-response"
+      },
+      "reason": "found_hls"
     },
     {
       "id": "ictimai-tv",
       "name": "İctimai TV",
       "group": "Dövlət",
       "order": 2,
-      "status": "no_confirmed_stream",
-      "probes": [
+      "candidates": [
         {
           "source": "community-connect",
-          "url": "https://node19.connect.az:9081/tv/live/playlist.m3u8",
-          "state": "timeout"
+          "url": "https://node19.connect.az:9081/tv/live/playlist.m3u8"
         },
         {
           "source": "community-tvcdn",
-          "url": "http://stream.tvcdn.net/azerbaycan/ictimai-tv.m3u8",
-          "state": "network_error"
+          "url": "http://stream.tvcdn.net/azerbaycan/ictimai-tv.m3u8"
         },
         {
           "source": "community-old",
-          "url": "http://109.205.166.68/server124/ictimai_tv/index.m3u8",
-          "state": "http_403"
+          "url": "http://109.205.166.68/server124/ictimai_tv/index.m3u8"
         },
         {
           "source": "official-last",
-          "url": "https://live.itv.az/itv.m3u8",
-          "state": "timeout"
+          "url": "https://live.itv.az/itv.m3u8"
         },
         {
           "source": "community-gist",
-          "url": "https://live.itv.az/hls/itv/index.m3u8",
-          "state": "timeout"
+          "url": "https://live.itv.az/hls/itv/index.m3u8"
         }
-      ]
+      ],
+      "status": "no_direct_hls_found",
+      "reason": "not_in_icanlive_az_catalogue; operativmm_source_http_403"
     },
     {
       "id": "idman-tv",
       "name": "İdman TV",
       "group": "Dövlət",
       "order": 3,
-      "status": "no_confirmed_stream",
-      "probes": [
+      "candidates": [
         {
           "source": "community-old",
-          "url": "http://109.205.166.68/server124/idman_az/index.m3u8",
-          "state": "http_403"
+          "url": "http://109.205.166.68/server124/idman_az/index.m3u8"
         },
         {
           "source": "community-tvcdn",
-          "url": "http://stream.tvcdn.net/azerbaycan/idman-tv.m3u8",
-          "state": "network_error"
+          "url": "http://stream.tvcdn.net/azerbaycan/idman-tv.m3u8"
         },
         {
           "source": "community-gist",
-          "url": "https://live.aztv.az/hls/idmantv/index.m3u8",
-          "state": "network_error"
+          "url": "https://live.aztv.az/hls/idmantv/index.m3u8"
         }
-      ]
+      ],
+      "status": "no_direct_hls_found",
+      "reason": "not_in_icanlive_az_catalogue; known_page_no_direct_hls_found; operativmm_source_http_403"
     },
     {
       "id": "medeniyyet-tv",
       "name": "Mədəniyyət TV",
       "group": "Dövlət",
       "order": 4,
-      "status": "no_confirmed_stream",
-      "probes": [
+      "candidates": [
         {
           "source": "community-tvcdn",
-          "url": "http://stream.tvcdn.net/azerbaycan/medeniyyet-tv.m3u8",
-          "state": "network_error"
+          "url": "http://stream.tvcdn.net/azerbaycan/medeniyyet-tv.m3u8"
         },
         {
           "source": "community-moby",
-          "url": "https://tv.mobyservice.ru/Madaniyyat/tracks-v1a1/mono.m3u8",
-          "state": "http_404"
+          "url": "https://tv.mobyservice.ru/Madaniyyat/tracks-v1a1/mono.m3u8"
         },
         {
           "source": "community-gist",
-          "url": "https://live.aztv.az/hls/madaniyyattv/index.m3u8",
-          "state": "network_error"
+          "url": "https://live.aztv.az/hls/madaniyyattv/index.m3u8"
         }
-      ]
+      ],
+      "status": "no_direct_hls_found",
+      "reason": "no_direct_hls_found; known_page_no_direct_hls_found; operativmm_source_http_403"
     },
     {
       "id": "xezer-tv",
       "name": "Xəzər TV",
       "group": "Özəl",
       "order": 5,
-      "status": "no_confirmed_stream",
-      "probes": [
+      "candidates": [
         {
           "source": "community-tvcdn",
-          "url": "http://stream.tvcdn.net/azerbaycan/xezer-tv.m3u8",
-          "state": "network_error"
+          "url": "http://stream.tvcdn.net/azerbaycan/xezer-tv.m3u8"
         },
         {
           "source": "community-moby",
-          "url": "https://tv.mobyservice.ru/Hazar/tracks-v1a1/mono.m3u8",
-          "state": "http_404"
+          "url": "https://tv.mobyservice.ru/Hazar/tracks-v1a1/mono.m3u8"
         },
         {
           "source": "community-moby",
-          "url": "https://tv.mobyservice.ru/Xezer/tracks-v1a1/mono.m3u8",
-          "state": "http_404"
+          "url": "https://tv.mobyservice.ru/Xezer/tracks-v1a1/mono.m3u8"
         },
         {
           "source": "official-last",
-          "url": "https://www.xezerxeber.az/stream/index.m3u8",
-          "state": "http_410"
-        },
-        {
-          "source": "yusiff-az-tr",
-          "url": "https://raw.githubusercontent.com/UzunMuhalefet/streams/main/myvideo-az/xezer-tv.m3u8",
-          "state": "http_404"
+          "url": "https://www.xezerxeber.az/stream/index.m3u8"
         }
-      ]
+      ],
+      "status": "no_direct_hls_found",
+      "reason": "not_in_icanlive_az_catalogue; known_page_no_direct_hls_found; operativmm_source_http_403"
     },
     {
       "id": "atv-az",
       "name": "ATV Azərbaycan",
       "group": "Özəl",
       "order": 6,
-      "status": "video_confirmed_on_github",
-      "source": "official-last",
-      "url": "https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8",
-      "probes": [
+      "candidates": [
         {
           "source": "community-stream",
-          "url": "https://stream.atv.az/WebRTCAppEE/streams/780339739845112514894920_adaptive.m3u8",
-          "state": "network_error"
+          "url": "https://stream.atv.az/WebRTCAppEE/streams/780339739845112514894920_adaptive.m3u8"
         },
         {
           "source": "official-last",
-          "url": "https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8",
-          "state": "video_confirmed_on_github",
-          "latencyMs": 987,
-          "codec": "h264"
-        },
-        {
-          "source": "simuratli-az",
-          "url": "http://85.132.81.184:8080/atv/index.m3u8",
-          "state": "timeout"
+          "url": "https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8"
         }
-      ]
+      ],
+      "status": "source_url_collected_no_playback_check",
+      "chosen": {
+        "url": "https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8",
+        "site": "icanlive",
+        "page": "https://icanlive.tv/canli/9090/atv-5.html",
+        "foundBy": "network-response"
+      },
+      "reason": "found_hls"
     },
     {
       "id": "arb",
       "name": "ARB",
       "group": "Özəl",
       "order": 7,
-      "status": "no_confirmed_stream",
-      "probes": [
+      "candidates": [
         {
           "source": "community-tvcdn",
-          "url": "http://stream.tvcdn.net/azerbaycan/arb-tv.m3u8",
-          "state": "network_error"
+          "url": "http://stream.tvcdn.net/azerbaycan/arb-tv.m3u8"
         },
         {
           "source": "community-livetv",
-          "url": "https://streams.livetv.az/azerbaijan/arb/playlist.m3u8",
-          "state": "network_error"
+          "url": "https://streams.livetv.az/azerbaijan/arb/playlist.m3u8"
         },
         {
           "source": "community-old",
-          "url": "http://109.205.166.68/server124/arb/index.m3u8",
-          "state": "http_403"
+          "url": "http://109.205.166.68/server124/arb/index.m3u8"
         },
         {
           "source": "community-moby",
-          "url": "https://tv.mobyservice.ru/ARB/tracks-v1a1/mono.m3u8",
-          "state": "http_404"
-        },
-        {
-          "source": "yusiff-az-tr",
-          "url": "https://raw.githubusercontent.com/UzunMuhalefet/streams/main/myvideo-az/arb.m3u8",
-          "state": "http_404"
+          "url": "https://tv.mobyservice.ru/ARB/tracks-v1a1/mono.m3u8"
         }
-      ]
+      ],
+      "status": "no_direct_hls_found",
+      "reason": "not_in_icanlive_az_catalogue; operativmm_source_http_403"
     },
     {
       "id": "space-tv",
       "name": "Space TV",
       "group": "Özəl",
       "order": 8,
-      "status": "no_confirmed_stream",
-      "probes": [
+      "candidates": [
         {
           "source": "community-tvcdn",
-          "url": "http://stream.tvcdn.net/azerbaycan/space-tv.m3u8",
-          "state": "network_error"
+          "url": "http://stream.tvcdn.net/azerbaycan/space-tv.m3u8"
         },
         {
           "source": "community-livetv",
-          "url": "https://streams.livetv.az/azerbaijan/space_stream/playlist.m3u8",
-          "state": "network_error"
+          "url": "https://streams.livetv.az/azerbaijan/space_stream/playlist.m3u8"
         },
         {
           "source": "community-old",
-          "url": "http://109.205.166.68/server124/space_tv/index.m3u8",
-          "state": "http_403"
+          "url": "http://109.205.166.68/server124/space_tv/index.m3u8"
         },
         {
           "source": "community-moby",
-          "url": "https://tv.mobyservice.ru/Space/tracks-v1a1/mono.m3u8",
-          "state": "http_404"
+          "url": "https://tv.mobyservice.ru/Space/tracks-v1a1/mono.m3u8"
         },
         {
           "source": "official-last",
-          "url": "https://stream.spacetv.az/hls/live.m3u8",
-          "state": "network_error"
-        },
-        {
-          "source": "yusiff-az-tr",
-          "url": "https://raw.githubusercontent.com/UzunMuhalefet/streams/main/myvideo-az/space-tv.m3u8",
-          "state": "http_404"
+          "url": "https://stream.spacetv.az/hls/live.m3u8"
         }
-      ]
+      ],
+      "status": "no_direct_hls_found",
+      "reason": "not_in_icanlive_az_catalogue; known_page_no_direct_hls_found; operativmm_source_http_403"
     },
     {
       "id": "cbc-sport",
       "name": "CBC Sport",
       "group": "Özəl",
       "order": 9,
-      "status": "no_confirmed_stream",
-      "probes": [
+      "candidates": [
         {
           "source": "community-gist",
-          "url": "https://live.cbcsport.az/hls/cbcsport/index.m3u8",
-          "state": "network_error"
+          "url": "https://live.cbcsport.az/hls/cbcsport/index.m3u8"
         },
         {
           "source": "community-iptv",
-          "url": "https://mn-nl.mncdn.com/cbcsports_live/cbcsports/playlist.m3u8",
-          "state": "network_error"
+          "url": "https://mn-nl.mncdn.com/cbcsports_live/cbcsports/playlist.m3u8"
         },
         {
           "source": "community-cdn",
-          "url": "https://cbcsports-live.lg.mncdn.com/cbcsports_live/cbcsports/chunklist.m3u8",
-          "state": "http_403"
+          "url": "https://cbcsports-live.lg.mncdn.com/cbcsports_live/cbcsports/chunklist.m3u8"
         }
-      ]
+      ],
+      "status": "no_direct_hls_found",
+      "reason": "not_in_icanlive_az_catalogue; operativmm_source_http_403"
     },
     {
       "id": "real-tv",
       "name": "Real TV",
       "group": "Özəl",
       "order": 10,
-      "status": "no_confirmed_stream",
-      "probes": [
+      "candidates": [
         {
           "source": "community-tvcdn",
-          "url": "http://stream.tvcdn.net/azerbaycan/real-tv.m3u8",
-          "state": "network_error"
+          "url": "http://stream.tvcdn.net/azerbaycan/real-tv.m3u8"
         },
         {
           "source": "community-moby",
-          "url": "https://tv.mobyservice.ru/Real/tracks-v1a1/mono.m3u8",
-          "state": "http_404"
+          "url": "https://tv.mobyservice.ru/Real/tracks-v1a1/mono.m3u8"
         }
-      ]
+      ],
+      "status": "no_direct_hls_found",
+      "reason": "not_in_icanlive_az_catalogue; operativmm_source_http_403"
     },
     {
       "id": "arb24",
       "name": "ARB 24",
       "group": "Özəl",
       "order": 11,
-      "status": "no_confirmed_stream",
-      "probes": [
+      "candidates": [
         {
           "source": "community-tvcdn",
-          "url": "http://stream.tvcdn.net/azerbaycan/arb-24.m3u8",
-          "state": "network_error"
+          "url": "http://stream.tvcdn.net/azerbaycan/arb-24.m3u8"
         },
         {
           "source": "community-moby",
-          "url": "https://tv.mobyservice.ru/ARB24/tracks-v1a1/mono.m3u8",
-          "state": "http_404"
+          "url": "https://tv.mobyservice.ru/ARB24/tracks-v1a1/mono.m3u8"
         },
         {
           "source": "community-old",
-          "url": "http://85.132.81.184:8080/arb24/live1/index.m3u8",
-          "state": "timeout"
-        },
-        {
-          "source": "yusiff-az-tr",
-          "url": "https://raw.githubusercontent.com/UzunMuhalefet/streams/main/myvideo-az/arb-24.m3u8",
-          "state": "http_404"
-        },
-        {
-          "source": "simuratli-az",
-          "url": "http://85.132.81.184:8080/arb/live/index.m3u8",
-          "state": "timeout"
+          "url": "http://85.132.81.184:8080/arb24/live1/index.m3u8"
         }
-      ]
+      ],
+      "status": "no_direct_hls_found",
+      "reason": "not_in_icanlive_az_catalogue; known_page_no_direct_hls_found; operativmm_source_http_403"
     },
     {
       "id": "baku-tv",
       "name": "Baku TV",
       "group": "Özəl",
       "order": 12,
-      "status": "video_confirmed_on_github",
-      "source": "community-iptv",
-      "url": "https://rtmp.baku.tv/hls/bakutv.m3u8",
-      "probes": [
+      "candidates": [
         {
           "source": "community-iptv",
-          "url": "https://rtmp.baku.tv/hls/bakutv.m3u8",
-          "state": "video_confirmed_on_github",
-          "latencyMs": 269,
-          "codec": "h264"
+          "url": "https://rtmp.baku.tv/hls/bakutv.m3u8"
         },
         {
           "source": "community-1080",
-          "url": "https://rtmp.baku.tv/hls/bakutv_1080p.m3u8",
-          "state": "video_confirmed_on_github",
-          "latencyMs": 219,
-          "codec": "h264"
-        },
-        {
-          "source": "yusiff-az-tr",
-          "url": "https://raw.githubusercontent.com/UzunMuhalefet/streams/refs/heads/main/myvideo-az/baku-tv.m3u8",
-          "state": "http_404"
-        },
-        {
-          "source": "simuratli-az",
-          "url": "https://rtmp.baku.tv/live/bakutv_720p.m3u8",
-          "state": "http_404"
+          "url": "https://rtmp.baku.tv/hls/bakutv_1080p.m3u8"
         }
-      ]
+      ],
+      "status": "source_url_collected_no_playback_check",
+      "chosen": {
+        "url": "https://rtmp.baku.tv/hls/bakutv.m3u8",
+        "site": "icanlive",
+        "page": "https://icanlive.tv/canli/25866/baku-tv.html",
+        "foundBy": "network-response"
+      },
+      "reason": "found_hls"
     }
-  ]
+  ],
+  "found": 3,
+  "missing": 9
 }

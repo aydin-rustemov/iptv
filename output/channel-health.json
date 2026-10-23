@@ -1,10 +1,14 @@
 {
-  "updatedAt": "2026-10-23T18:23:33.573Z",
+  "updatedAt": "2026-10-23T18:40:04.803Z",
   "published": 3,
-  "verifiedWorking": 3,
+  "verifiedWorking": 0,
   "mandatoryTotal": 18,
-  "mandatoryVerified": 3,
-  "mandatoryNeedsLocalTest": [],
+  "mandatoryVerified": 0,
+  "mandatoryNeedsLocalTest": [
+    "aztv",
+    "atv-az",
+    "baku-tv"
+  ],
   "mandatoryMissing": [
     "ictimai-tv",
     "idman-tv",
@@ -23,7 +27,7 @@
     "trt-1",
     "star-tv"
   ],
-  "validation": "HLS video and second manifest confirmed from GitHub IP only; AZ playback and pictured broadcaster NOT confirmed.",
+  "validation": "Original HLS URL captured from user's iCanlive/OperativMM pages, NOT tested for video/playback",
   "stability": {
     "attempted": 36,
     "failed": 28,
@@ -33,25 +37,25 @@
     {
       "id": "aztv",
       "name": "AzTV",
-      "source": "community-cinerama",
+      "source": "icanlive",
+      "page": "https://icanlive.tv/canli/9891/aztv.html",
       "urlHost": "stream8.cinerama.uz",
-      "sourceTier": 1,
       "localPlaybackVerified": false
     },
     {
       "id": "atv-az",
       "name": "ATV Azərbaycan",
-      "source": "official-last",
+      "source": "icanlive",
+      "page": "https://icanlive.tv/canli/9090/atv-5.html",
       "urlHost": "lives.atv.az",
-      "sourceTier": 1,
       "localPlaybackVerified": false
     },
     {
       "id": "baku-tv",
       "name": "Baku TV",
-      "source": "community-iptv",
+      "source": "icanlive",
+      "page": "https://icanlive.tv/canli/25866/baku-tv.html",
       "urlHost": "rtmp.baku.tv",
-      "sourceTier": 1,
       "localPlaybackVerified": false
     }
   ],
@@ -60,11 +64,12 @@
     "Türkiyə": 0,
     "Rusiya": 0
   },
-  "candidatesScanned": 48,
-  "candidatesWithVideo": 5,
+  "candidatesScanned": 0,
+  "candidatesWithVideo": 0,
   "rejected": 43,
   "sourcesLoaded": [
-    "fixed-12-non-yoda"
+    "icanlive",
+    "operativmm"
   ],
   "sourceErrors": [],
   "webSources": [],

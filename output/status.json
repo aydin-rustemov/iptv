@@ -1,12 +1,13 @@
 {
-  "updatedAt": "2026-10-23T18:23:33.573Z",
+  "updatedAt": "2026-10-23T18:40:04.803Z",
   "sources": [
-    "fixed-12-non-yoda"
+    "icanlive",
+    "operativmm"
   ],
   "downloadedEntries": 48,
   "uniqueCandidates": 48,
-  "fastCheckPassed": 5,
-  "mediaCheckPassed": 5,
+  "fastCheckPassed": 0,
+  "mediaCheckPassed": 0,
   "published": 3,
   "failed": 43,
   "duplicatesRemoved": 1,
@@ -25,136 +26,113 @@
       "name": "AzTV",
       "country": "Azərbaycan",
       "priority": 1,
-      "selectedSource": "community-cinerama",
-      "candidatesFound": 4,
-      "candidatesValidated": 2,
-      "status": "video_confirmed_on_github",
-      "localPlaybackVerified": false
+      "status": "source_url_collected_no_playback_check",
+      "selectedSource": "icanlive",
+      "candidatesValidated": 0
     },
     {
       "id": "ictimai-tv",
       "name": "İctimai TV",
       "country": "Azərbaycan",
       "priority": 2,
+      "status": "source_unavailable",
       "selectedSource": "none",
-      "candidatesFound": 5,
-      "candidatesValidated": 0,
-      "status": "no_confirmed_stream",
-      "localPlaybackVerified": false
+      "candidatesValidated": 0
     },
     {
       "id": "idman-tv",
       "name": "İdman TV",
       "country": "Azərbaycan",
       "priority": 3,
+      "status": "source_unavailable",
       "selectedSource": "none",
-      "candidatesFound": 3,
-      "candidatesValidated": 0,
-      "status": "no_confirmed_stream",
-      "localPlaybackVerified": false
+      "candidatesValidated": 0
     },
     {
       "id": "medeniyyet-tv",
       "name": "Mədəniyyət TV",
       "country": "Azərbaycan",
       "priority": 4,
+      "status": "source_unavailable",
       "selectedSource": "none",
-      "candidatesFound": 3,
-      "candidatesValidated": 0,
-      "status": "no_confirmed_stream",
-      "localPlaybackVerified": false
+      "candidatesValidated": 0
     },
     {
       "id": "xezer-tv",
       "name": "Xəzər TV",
       "country": "Azərbaycan",
       "priority": 5,
+      "status": "source_unavailable",
       "selectedSource": "none",
-      "candidatesFound": 5,
-      "candidatesValidated": 0,
-      "status": "no_confirmed_stream",
-      "localPlaybackVerified": false
+      "candidatesValidated": 0
     },
     {
       "id": "atv-az",
       "name": "ATV Azərbaycan",
       "country": "Azərbaycan",
       "priority": 6,
-      "selectedSource": "official-last",
-      "candidatesFound": 3,
-      "candidatesValidated": 1,
-      "status": "video_confirmed_on_github",
-      "localPlaybackVerified": false
+      "status": "source_url_collected_no_playback_check",
+      "selectedSource": "icanlive",
+      "candidatesValidated": 0
     },
     {
       "id": "arb",
       "name": "ARB",
       "country": "Azərbaycan",
       "priority": 7,
+      "status": "source_unavailable",
       "selectedSource": "none",
-      "candidatesFound": 5,
-      "candidatesValidated": 0,
-      "status": "no_confirmed_stream",
-      "localPlaybackVerified": false
+      "candidatesValidated": 0
     },
     {
       "id": "space-tv",
       "name": "Space TV",
       "country": "Azərbaycan",
       "priority": 8,
+      "status": "source_unavailable",
       "selectedSource": "none",
-      "candidatesFound": 6,
-      "candidatesValidated": 0,
-      "status": "no_confirmed_stream",
-      "localPlaybackVerified": false
+      "candidatesValidated": 0
     },
     {
       "id": "cbc-sport",
       "name": "CBC Sport",
       "country": "Azərbaycan",
       "priority": 9,
+      "status": "source_unavailable",
       "selectedSource": "none",
-      "candidatesFound": 3,
-      "candidatesValidated": 0,
-      "status": "no_confirmed_stream",
-      "localPlaybackVerified": false
+      "candidatesValidated": 0
     },
     {
       "id": "real-tv",
       "name": "Real TV",
       "country": "Azərbaycan",
       "priority": 10,
+      "status": "source_unavailable",
       "selectedSource": "none",
-      "candidatesFound": 2,
-      "candidatesValidated": 0,
-      "status": "no_confirmed_stream",
-      "localPlaybackVerified": false
+      "candidatesValidated": 0
     },
     {
       "id": "arb24",
       "name": "ARB 24",
       "country": "Azərbaycan",
       "priority": 11,
+      "status": "source_unavailable",
       "selectedSource": "none",
-      "candidatesFound": 5,
-      "candidatesValidated": 0,
-      "status": "no_confirmed_stream",
-      "localPlaybackVerified": false
+      "candidatesValidated": 0
     },
     {
       "id": "baku-tv",
       "name": "Baku TV",
       "country": "Azərbaycan",
       "priority": 12,
-      "selectedSource": "community-iptv",
-      "candidatesFound": 4,
-      "candidatesValidated": 2,
-      "status": "video_confirmed_on_github",
-      "localPlaybackVerified": false
+      "status": "source_url_collected_no_playback_check",
+      "selectedSource": "icanlive",
+      "candidatesValidated": 0
     }
   ],
   "manualAzPlaylist": true,
   "manualAzRequiresDevicePlaybackTest": true,
   "note": "Seven channels proved HLS/video on GitHub runner, but no AZ-device playback or broadcaster-picture identity proof.",
-  "fixed12Mode": true
+  "fixed12Mode": true,
+  "sourceMode": "icanlive_operativmm_no_video_validation"
 }

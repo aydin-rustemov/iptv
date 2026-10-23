@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-10-23T18:23:33.573Z",
+  "updatedAt": "2026-10-23T18:40:04.803Z",
   "total": 18,
-  "verified": [
+  "verified": [],
+  "needsLocalTest": [
     "aztv",
     "atv-az",
     "baku-tv"
   ],
-  "needsLocalTest": [],
   "missingNoWebStream": [
     "ictimai-tv",
     "idman-tv",
@@ -30,126 +30,126 @@
       "name": "AzTV",
       "country": "Azərbaycan",
       "id": "aztv",
-      "status": "github_video_confirmed_local_playback_unknown",
-      "candidates": 4
+      "status": "source_url_collected_no_video_test",
+      "candidates": 1
     },
     {
       "name": "İctimai TV",
       "country": "Azərbaycan",
       "id": "ictimai-tv",
-      "status": "no_github_video_confirmed_stream",
-      "candidates": 5
+      "status": "no_direct_hls_from_user_sites",
+      "candidates": 0
     },
     {
       "name": "İdman TV",
       "country": "Azərbaycan",
       "id": "idman-tv",
-      "status": "no_github_video_confirmed_stream",
-      "candidates": 3
+      "status": "no_direct_hls_from_user_sites",
+      "candidates": 0
     },
     {
       "name": "Mədəniyyət TV",
       "country": "Azərbaycan",
       "id": "medeniyyet-tv",
-      "status": "no_github_video_confirmed_stream",
-      "candidates": 3
+      "status": "no_direct_hls_from_user_sites",
+      "candidates": 0
     },
     {
       "name": "Xəzər TV",
       "country": "Azərbaycan",
       "id": "xezer-tv",
-      "status": "no_github_video_confirmed_stream",
-      "candidates": 5
+      "status": "no_direct_hls_from_user_sites",
+      "candidates": 0
     },
     {
       "name": "ATV Azərbaycan",
       "country": "Azərbaycan",
       "id": "atv-az",
-      "status": "github_video_confirmed_local_playback_unknown",
-      "candidates": 3
+      "status": "source_url_collected_no_video_test",
+      "candidates": 1
     },
     {
       "name": "Space TV",
       "country": "Azərbaycan",
       "id": "space-tv",
-      "status": "no_github_video_confirmed_stream",
-      "candidates": 6
+      "status": "no_direct_hls_from_user_sites",
+      "candidates": 0
     },
     {
       "name": "ARB",
       "country": "Azərbaycan",
       "id": "arb",
-      "status": "no_github_video_confirmed_stream",
-      "candidates": 5
+      "status": "no_direct_hls_from_user_sites",
+      "candidates": 0
     },
     {
       "name": "CBC Sport",
       "country": "Azərbaycan",
       "id": "cbc-sport",
-      "status": "no_github_video_confirmed_stream",
-      "candidates": 3
+      "status": "no_direct_hls_from_user_sites",
+      "candidates": 0
     },
     {
       "name": "Real TV",
       "country": "Azərbaycan",
       "id": "real-tv",
-      "status": "no_github_video_confirmed_stream",
-      "candidates": 2
+      "status": "no_direct_hls_from_user_sites",
+      "candidates": 0
     },
     {
       "name": "ARB 24",
       "country": "Azərbaycan",
       "id": "arb24",
-      "status": "no_github_video_confirmed_stream",
-      "candidates": 5
+      "status": "no_direct_hls_from_user_sites",
+      "candidates": 0
     },
     {
       "name": "Show TV",
       "country": "Türkiyə",
       "id": "show-tv",
-      "status": "no_github_video_confirmed_stream",
+      "status": "no_direct_hls_from_user_sites",
       "candidates": 0
     },
     {
       "name": "ATV",
       "country": "Türkiyə",
       "id": "atv-tr",
-      "status": "no_github_video_confirmed_stream",
+      "status": "no_direct_hls_from_user_sites",
       "candidates": 0
     },
     {
       "name": "Kanal D",
       "country": "Türkiyə",
       "id": "kanal-d",
-      "status": "no_github_video_confirmed_stream",
+      "status": "no_direct_hls_from_user_sites",
       "candidates": 0
     },
     {
       "name": "NOW TV",
       "country": "Türkiyə",
       "id": "now-tv",
-      "status": "no_github_video_confirmed_stream",
+      "status": "no_direct_hls_from_user_sites",
       "candidates": 0
     },
     {
       "name": "TV8",
       "country": "Türkiyə",
       "id": "tv8",
-      "status": "no_github_video_confirmed_stream",
+      "status": "no_direct_hls_from_user_sites",
       "candidates": 0
     },
     {
       "name": "TRT 1",
       "country": "Türkiyə",
       "id": "trt-1",
-      "status": "no_github_video_confirmed_stream",
+      "status": "no_direct_hls_from_user_sites",
       "candidates": 0
     },
     {
       "name": "Star TV",
       "country": "Türkiyə",
       "id": "star-tv",
-      "status": "no_github_video_confirmed_stream",
+      "status": "no_direct_hls_from_user_sites",
       "candidates": 0
     }
   ]
