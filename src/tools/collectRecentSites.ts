@@ -116,8 +116,9 @@ for(const slot of slots){
     if(selected)break;
   }
  }else reason="not_in_icanlive_az_catalogue";
- if(!selected&&knownIcanlivePages[slot.id]){
-   const result=await extract(knownIcanlivePages[slot.id],"icanlive",slot);
+ const knownPage=knownIcanlivePages[slot.id];
+ if(!selected&&knownPage){
+   const result=await extract(knownPage,"icanlive",slot);
    console.log("[SITE CAPTURE]",JSON.stringify({id:slot.id,site:"icanlive-direct",code:result.status,found:result.links.length}));
    selected=result.links[0];
    if(!selected)reason+="; known_page_"+result.status;
