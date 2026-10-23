@@ -1,10 +1,19 @@
 {
   "mode": "recent-user-sites-no-playback-validation",
-  "updatedAt": "2026-10-23T18:40:04.803Z",
+  "updatedAt": "2026-10-23T18:53:36.616Z",
   "sites": [
     "https://icanlive.tv/kategori/399/azerbaijan-tv-kanallari.html",
     "https://operativmm.az/az/canli-tv"
   ],
+  "officialTurkeySource": "https://www.showtv.com.tr/canli-yayin",
+  "officialShowTv": {
+    "page": "https://www.showtv.com.tr/canli-yayin",
+    "fetchedAt": "2026-10-23T18:53:30.926Z",
+    "status": "official_hls_captured",
+    "url": "https://ciner.daioncdn.net/showtv/showtv_1080p.m3u8?ex=1664766175&st=RBzhSuGauna0OGld-DJUVA&tv=1&sid=8uxrcqxmxp8c&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&ce=3",
+    "foundBy": "network-response",
+    "networkStatus": 200
+  },
   "disclaimer": "Captured real HLS URLs from source page/player; no HTTP/HLS/ffprobe/playback check. No AZ-IP guarantee.",
   "slots": [
     {
@@ -155,7 +164,7 @@
         "url": "https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8",
         "site": "icanlive",
         "page": "https://icanlive.tv/canli/9090/atv-5.html",
-        "foundBy": "network-response"
+        "foundBy": "network"
       },
       "reason": "found_hls"
     },

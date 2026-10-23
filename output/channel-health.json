@@ -1,13 +1,14 @@
 {
-  "updatedAt": "2026-10-23T18:40:04.803Z",
-  "published": 3,
+  "updatedAt": "2026-10-23T18:53:36.616Z",
+  "published": 4,
   "verifiedWorking": 0,
   "mandatoryTotal": 18,
   "mandatoryVerified": 0,
   "mandatoryNeedsLocalTest": [
     "aztv",
     "atv-az",
-    "baku-tv"
+    "baku-tv",
+    "show-tv"
   ],
   "mandatoryMissing": [
     "ictimai-tv",
@@ -19,7 +20,6 @@
     "cbc-sport",
     "real-tv",
     "arb24",
-    "show-tv",
     "atv-tr",
     "kanal-d",
     "now-tv",
@@ -57,11 +57,19 @@
       "page": "https://icanlive.tv/canli/25866/baku-tv.html",
       "urlHost": "rtmp.baku.tv",
       "localPlaybackVerified": false
+    },
+    {
+      "id": "show-tv",
+      "name": "Show TV",
+      "source": "showtv-official",
+      "page": "https://www.showtv.com.tr/canli-yayin",
+      "urlHost": "ciner.daioncdn.net",
+      "localPlaybackVerified": false
     }
   ],
   "countryCounts": {
     "Azərbaycan": 3,
-    "Türkiyə": 0,
+    "Türkiyə": 1,
     "Rusiya": 0
   },
   "candidatesScanned": 0,
@@ -69,7 +77,8 @@
   "rejected": 43,
   "sourcesLoaded": [
     "icanlive",
-    "operativmm"
+    "operativmm",
+    "showtv-official"
   ],
   "sourceErrors": [],
   "webSources": [],

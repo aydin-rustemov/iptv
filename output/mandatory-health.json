@@ -1,11 +1,12 @@
 {
-  "updatedAt": "2026-10-23T18:40:04.803Z",
+  "updatedAt": "2026-10-23T18:53:36.616Z",
   "total": 18,
   "verified": [],
   "needsLocalTest": [
     "aztv",
     "atv-az",
-    "baku-tv"
+    "baku-tv",
+    "show-tv"
   ],
   "missingNoWebStream": [
     "ictimai-tv",
@@ -17,7 +18,6 @@
     "cbc-sport",
     "real-tv",
     "arb24",
-    "show-tv",
     "atv-tr",
     "kanal-d",
     "now-tv",
@@ -107,8 +107,8 @@
       "name": "Show TV",
       "country": "Türkiyə",
       "id": "show-tv",
-      "status": "no_direct_hls_from_user_sites",
-      "candidates": 0
+      "status": "source_url_collected_no_video_test",
+      "candidates": 1
     },
     {
       "name": "ATV",
