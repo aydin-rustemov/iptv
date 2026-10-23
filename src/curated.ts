@@ -194,7 +194,7 @@ async function main(): Promise<void> {
         selectedSource: picked?.sourceName, selectedHost: picked ? new URL(picked.url).hostname : undefined,
         attempted: sixAttempts.filter((entry) => entry.channelId === id) };
     })
-  }, null, 2) + "\\n", "utf8");
+  }, null, 2) + "\n", "utf8");
   fs.writeFileSync("output/channel-health.json", JSON.stringify({
     updatedAt: status.updatedAt,
     published: selected.length,

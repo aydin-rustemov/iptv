@@ -61,11 +61,26 @@ jobs:
           test "$(wc -c < output/playlist.m3u)" -le 8388608
           test "$(wc -c < output/playlist.previous.m3u)" -le 8388608
 
+      # Always preserve the scan results, including when a later publish step fails.
+      # A workflow's green/red state alone must not hide channel-level failures.
+      - name: Upload channel diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iptv-diagnostics-${{ github.run_id }}
+          retention-days: 7
+          if-no-files-found: warn
+          path: |
+            output/az-six-health.json
+            output/channel-health.json
+            output/mandatory-health.json
+            output/status.json
+
       - name: Commit output files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f output/mandatory-health.json
+          git add -f output/mandatory-health.json output/az-six-health.json
           for file in \
             config/sources.json \
             output/playlist.m3u \
