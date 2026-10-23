@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T18:16:27.721Z",
+  "updatedAt": "2026-10-23T18:23:33.573Z",
   "total": 18,
   "verified": [
     "aztv",
@@ -31,7 +31,7 @@
       "country": "Azərbaycan",
       "id": "aztv",
       "status": "github_video_confirmed_local_playback_unknown",
-      "candidates": 3
+      "candidates": 4
     },
     {
       "name": "İctimai TV",
@@ -59,28 +59,28 @@
       "country": "Azərbaycan",
       "id": "xezer-tv",
       "status": "no_github_video_confirmed_stream",
-      "candidates": 4
+      "candidates": 5
     },
     {
       "name": "ATV Azərbaycan",
       "country": "Azərbaycan",
       "id": "atv-az",
       "status": "github_video_confirmed_local_playback_unknown",
-      "candidates": 2
+      "candidates": 3
     },
     {
       "name": "Space TV",
       "country": "Azərbaycan",
       "id": "space-tv",
       "status": "no_github_video_confirmed_stream",
-      "candidates": 5
+      "candidates": 6
     },
     {
       "name": "ARB",
       "country": "Azərbaycan",
       "id": "arb",
       "status": "no_github_video_confirmed_stream",
-      "candidates": 4
+      "candidates": 5
     },
     {
       "name": "CBC Sport",
@@ -101,7 +101,7 @@
       "country": "Azərbaycan",
       "id": "arb24",
       "status": "no_github_video_confirmed_stream",
-      "candidates": 3
+      "candidates": 5
     },
     {
       "name": "Show TV",

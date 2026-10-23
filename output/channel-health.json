@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T18:16:27.721Z",
+  "updatedAt": "2026-10-23T18:23:33.573Z",
   "published": 3,
   "verifiedWorking": 3,
   "mandatoryTotal": 18,
@@ -60,9 +60,9 @@
     "Türkiyə": 0,
     "Rusiya": 0
   },
-  "candidatesScanned": 39,
-  "candidatesWithVideo": 4,
-  "rejected": 35,
+  "candidatesScanned": 48,
+  "candidatesWithVideo": 5,
+  "rejected": 43,
   "sourcesLoaded": [
     "fixed-12-non-yoda"
   ],

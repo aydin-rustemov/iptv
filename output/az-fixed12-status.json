@@ -1,13 +1,36 @@
 {
-  "updatedAt": "2026-10-23T18:16:27.721Z",
+  "updatedAt": "2026-10-23T18:23:33.573Z",
   "mode": "fixed-12-non-yoda",
   "location": "github-runner-not-AZ",
   "disclaimer": "HLS video and second manifest confirmed from GitHub IP only; AZ playback and pictured broadcaster NOT confirmed.",
   "fixedCount": 12,
   "visibleInM3u": 3,
   "offlineOrGeoRestricted": 9,
-  "sourceCandidates": 39,
-  "sourceCandidatesPassed": 4,
+  "sourceFeeds": [
+    {
+      "source": "free-tv-az",
+      "entries": 11,
+      "accepted": 1
+    },
+    {
+      "source": "iptv-org-az",
+      "entries": 22,
+      "accepted": 7
+    },
+    {
+      "source": "simuratli-az",
+      "entries": 35,
+      "accepted": 6
+    },
+    {
+      "source": "yusiff-az-tr",
+      "entries": 417,
+      "accepted": 8
+    }
+  ],
+  "conflictingUrlsRejected": 0,
+  "sourceCandidates": 48,
+  "sourceCandidatesPassed": 5,
   "channels": [
     {
       "id": "aztv",
@@ -22,7 +45,7 @@
           "source": "community-cinerama",
           "url": "https://stream8.cinerama.uz/1455/tracks-v1a1/mono.m3u8",
           "state": "video_confirmed_on_github",
-          "latencyMs": 1081,
+          "latencyMs": 1642,
           "codec": "h264"
         },
         {
@@ -34,6 +57,13 @@
           "source": "community-gist",
           "url": "https://live.aztv.az/hls/aztv/index.m3u8",
           "state": "network_error"
+        },
+        {
+          "source": "iptv-org-az",
+          "url": "http://109.205.166.68/server124/aztv/index3.m3u8?e=1676581573&st=AzGSZjk1DpXY1SLc1m4OvA",
+          "state": "video_confirmed_on_github",
+          "latencyMs": 862,
+          "codec": "h264"
         }
       ]
     },
@@ -145,6 +175,11 @@
           "source": "official-last",
           "url": "https://www.xezerxeber.az/stream/index.m3u8",
           "state": "http_410"
+        },
+        {
+          "source": "yusiff-az-tr",
+          "url": "https://raw.githubusercontent.com/UzunMuhalefet/streams/main/myvideo-az/xezer-tv.m3u8",
+          "state": "http_404"
         }
       ]
     },
@@ -166,8 +201,13 @@
           "source": "official-last",
           "url": "https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8",
           "state": "video_confirmed_on_github",
-          "latencyMs": 814,
+          "latencyMs": 987,
           "codec": "h264"
+        },
+        {
+          "source": "simuratli-az",
+          "url": "http://85.132.81.184:8080/atv/index.m3u8",
+          "state": "timeout"
         }
       ]
     },
@@ -196,6 +236,11 @@
         {
           "source": "community-moby",
           "url": "https://tv.mobyservice.ru/ARB/tracks-v1a1/mono.m3u8",
+          "state": "http_404"
+        },
+        {
+          "source": "yusiff-az-tr",
+          "url": "https://raw.githubusercontent.com/UzunMuhalefet/streams/main/myvideo-az/arb.m3u8",
           "state": "http_404"
         }
       ]
@@ -231,6 +276,11 @@
           "source": "official-last",
           "url": "https://stream.spacetv.az/hls/live.m3u8",
           "state": "network_error"
+        },
+        {
+          "source": "yusiff-az-tr",
+          "url": "https://raw.githubusercontent.com/UzunMuhalefet/streams/main/myvideo-az/space-tv.m3u8",
+          "state": "http_404"
         }
       ]
     },
@@ -298,6 +348,16 @@
           "source": "community-old",
           "url": "http://85.132.81.184:8080/arb24/live1/index.m3u8",
           "state": "timeout"
+        },
+        {
+          "source": "yusiff-az-tr",
+          "url": "https://raw.githubusercontent.com/UzunMuhalefet/streams/main/myvideo-az/arb-24.m3u8",
+          "state": "http_404"
+        },
+        {
+          "source": "simuratli-az",
+          "url": "http://85.132.81.184:8080/arb/live/index.m3u8",
+          "state": "timeout"
         }
       ]
     },
@@ -314,15 +374,25 @@
           "source": "community-iptv",
           "url": "https://rtmp.baku.tv/hls/bakutv.m3u8",
           "state": "video_confirmed_on_github",
-          "latencyMs": 327,
+          "latencyMs": 269,
           "codec": "h264"
         },
         {
           "source": "community-1080",
           "url": "https://rtmp.baku.tv/hls/bakutv_1080p.m3u8",
           "state": "video_confirmed_on_github",
-          "latencyMs": 288,
+          "latencyMs": 219,
           "codec": "h264"
+        },
+        {
+          "source": "yusiff-az-tr",
+          "url": "https://raw.githubusercontent.com/UzunMuhalefet/streams/refs/heads/main/myvideo-az/baku-tv.m3u8",
+          "state": "http_404"
+        },
+        {
+          "source": "simuratli-az",
+          "url": "https://rtmp.baku.tv/live/bakutv_720p.m3u8",
+          "state": "http_404"
         }
       ]
     }

@@ -1,14 +1,14 @@
 {
-  "updatedAt": "2026-10-23T18:16:27.721Z",
+  "updatedAt": "2026-10-23T18:23:33.573Z",
   "sources": [
     "fixed-12-non-yoda"
   ],
-  "downloadedEntries": 39,
-  "uniqueCandidates": 39,
-  "fastCheckPassed": 4,
-  "mediaCheckPassed": 4,
+  "downloadedEntries": 48,
+  "uniqueCandidates": 48,
+  "fastCheckPassed": 5,
+  "mediaCheckPassed": 5,
   "published": 3,
-  "failed": 35,
+  "failed": 43,
   "duplicatesRemoved": 1,
   "countryCounts": {
     "Azərbaycan": 3,
@@ -26,8 +26,8 @@
       "country": "Azərbaycan",
       "priority": 1,
       "selectedSource": "community-cinerama",
-      "candidatesFound": 3,
-      "candidatesValidated": 1,
+      "candidatesFound": 4,
+      "candidatesValidated": 2,
       "status": "video_confirmed_on_github",
       "localPlaybackVerified": false
     },
@@ -70,7 +70,7 @@
       "country": "Azərbaycan",
       "priority": 5,
       "selectedSource": "none",
-      "candidatesFound": 4,
+      "candidatesFound": 5,
       "candidatesValidated": 0,
       "status": "no_confirmed_stream",
       "localPlaybackVerified": false
@@ -81,7 +81,7 @@
       "country": "Azərbaycan",
       "priority": 6,
       "selectedSource": "official-last",
-      "candidatesFound": 2,
+      "candidatesFound": 3,
       "candidatesValidated": 1,
       "status": "video_confirmed_on_github",
       "localPlaybackVerified": false
@@ -92,7 +92,7 @@
       "country": "Azərbaycan",
       "priority": 7,
       "selectedSource": "none",
-      "candidatesFound": 4,
+      "candidatesFound": 5,
       "candidatesValidated": 0,
       "status": "no_confirmed_stream",
       "localPlaybackVerified": false
@@ -103,7 +103,7 @@
       "country": "Azərbaycan",
       "priority": 8,
       "selectedSource": "none",
-      "candidatesFound": 5,
+      "candidatesFound": 6,
       "candidatesValidated": 0,
       "status": "no_confirmed_stream",
       "localPlaybackVerified": false
@@ -136,7 +136,7 @@
       "country": "Azərbaycan",
       "priority": 11,
       "selectedSource": "none",
-      "candidatesFound": 3,
+      "candidatesFound": 5,
       "candidatesValidated": 0,
       "status": "no_confirmed_stream",
       "localPlaybackVerified": false
@@ -147,7 +147,7 @@
       "country": "Azərbaycan",
       "priority": 12,
       "selectedSource": "community-iptv",
-      "candidatesFound": 2,
+      "candidatesFound": 4,
       "candidatesValidated": 2,
       "status": "video_confirmed_on_github",
       "localPlaybackVerified": false
