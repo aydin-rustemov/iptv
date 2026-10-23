@@ -36,6 +36,8 @@ jobs:
       - run: npm run typecheck
       - name: Independently probe all twelve channels and alternatives
         run: npx tsx src/tools/fixed12.ts
+      - name: Run channel identity and feed-discovery regression tests
+        run: npm test
       - name: Audit no Yoda or duplicate station and preserve requested order
         run: |
           node --input-type=module <<'NODE'
