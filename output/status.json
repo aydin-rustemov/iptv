@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-10-22T21:59:53.998Z",
+  "updatedAt": "2026-10-23T05:17:32.968Z",
   "sources": 10,
-  "downloadedEntries": 1126,
-  "uniqueCandidates": 647,
-  "fastCheckPassed": 108,
-  "mediaCheckPassed": 107,
+  "downloadedEntries": 1117,
+  "uniqueCandidates": 639,
+  "fastCheckPassed": 107,
+  "mediaCheckPassed": 105,
   "published": 48,
-  "failed": 114,
-  "duplicatesRemoved": 479,
+  "failed": 111,
+  "duplicatesRemoved": 478,
   "countryCounts": {
     "Azərbaycan": 18,
     "Türkiyə": 10,
@@ -16,12 +16,11 @@
   "categoryCounts": {
     "General": 17,
     "News": 3,
-    "Sports": 3,
+    "Sports": 4,
     "Culture": 1,
     "Music": 4,
-    "Children": 1,
-    "Documentary": 4,
-    "Other": 12,
+    "Documentary": 3,
+    "Other": 13,
     "Movies": 3
   },
   "degraded": true,
@@ -33,9 +32,9 @@
       "category": "general",
       "priority": 1,
       "aliasesChecked": 3,
-      "candidatesFound": 13,
-      "candidatesValidated": 4,
-      "selectedSource": "tvstream-az",
+      "candidatesFound": 9,
+      "candidatesValidated": 3,
+      "selectedSource": "canlitv-com",
       "status": "working"
     },
     {
@@ -57,10 +56,10 @@
       "category": "general",
       "priority": 3,
       "aliasesChecked": 4,
-      "candidatesFound": 2,
-      "candidatesValidated": 2,
-      "selectedSource": "tvstream-az",
-      "status": "working"
+      "candidatesFound": 0,
+      "candidatesValidated": 0,
+      "status": "not_found",
+      "failureReason": "No matching alias found in enabled M3U sources"
     },
     {
       "id": "xezer-tv",
@@ -69,8 +68,8 @@
       "category": "general",
       "priority": 4,
       "aliasesChecked": 2,
-      "candidatesFound": 4,
-      "candidatesValidated": 4,
+      "candidatesFound": 2,
+      "candidatesValidated": 2,
       "selectedSource": "canlitv-com",
       "status": "working"
     },
@@ -81,8 +80,8 @@
       "category": "general",
       "priority": 5,
       "aliasesChecked": 2,
-      "candidatesFound": 7,
-      "candidatesValidated": 4,
+      "candidatesFound": 9,
+      "candidatesValidated": 5,
       "selectedSource": "tvstream-az",
       "status": "working"
     },
@@ -93,8 +92,8 @@
       "category": "news",
       "priority": 6,
       "aliasesChecked": 3,
-      "candidatesFound": 5,
-      "candidatesValidated": 5,
+      "candidatesFound": 4,
+      "candidatesValidated": 4,
       "selectedSource": "tvstream-az",
       "status": "working"
     },
@@ -105,9 +104,9 @@
       "category": "general",
       "priority": 7,
       "aliasesChecked": 2,
-      "candidatesFound": 7,
-      "candidatesValidated": 4,
-      "selectedSource": "tvstream-az",
+      "candidatesFound": 5,
+      "candidatesValidated": 2,
+      "selectedSource": "canlitv-com",
       "status": "working"
     },
     {
@@ -141,8 +140,8 @@
       "category": "general",
       "priority": 10,
       "aliasesChecked": 3,
-      "candidatesFound": 2,
-      "candidatesValidated": 2,
+      "candidatesFound": 3,
+      "candidatesValidated": 3,
       "selectedSource": "canlitv-com",
       "status": "working"
     },
@@ -153,10 +152,10 @@
       "category": "sports",
       "priority": 11,
       "aliasesChecked": 2,
-      "candidatesFound": 0,
-      "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "candidatesFound": 2,
+      "candidatesValidated": 2,
+      "selectedSource": "tvstream-az",
+      "status": "working"
     },
     {
       "id": "idman-tv",
@@ -213,8 +212,8 @@
       "category": "general",
       "priority": 16,
       "aliasesChecked": 1,
-      "candidatesFound": 2,
-      "candidatesValidated": 2,
+      "candidatesFound": 3,
+      "candidatesValidated": 3,
       "selectedSource": "canlitv-com",
       "status": "working"
     },

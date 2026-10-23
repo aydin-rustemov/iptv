@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T21:59:53.998Z",
+  "updatedAt": "2026-10-23T05:17:32.968Z",
   "total": 18,
   "verified": [
     "aztv",
@@ -7,9 +7,9 @@
     "idman-tv",
     "medeniyyet-tv",
     "xezer-tv",
-    "atv-az",
     "space-tv",
     "arb",
+    "cbc-sport",
     "real-tv",
     "arb24",
     "kanal-d",
@@ -17,7 +17,7 @@
   ],
   "needsLocalTest": [],
   "missingNoWebStream": [
-    "cbc-sport",
+    "atv-az",
     "show-tv",
     "atv-tr",
     "now-tv",
@@ -30,7 +30,7 @@
       "country": "Azərbaycan",
       "id": "aztv",
       "status": "video_verified_on_github",
-      "candidates": 13
+      "candidates": 9
     },
     {
       "name": "İctimai TV",
@@ -58,35 +58,35 @@
       "country": "Azərbaycan",
       "id": "xezer-tv",
       "status": "video_verified_on_github",
-      "candidates": 4
+      "candidates": 2
     },
     {
       "name": "ATV Azərbaycan",
       "country": "Azərbaycan",
       "id": "atv-az",
-      "status": "video_verified_on_github",
-      "candidates": 2
+      "status": "NO_WEB_STREAM_FOUND",
+      "candidates": 0
     },
     {
       "name": "Space TV",
       "country": "Azərbaycan",
       "id": "space-tv",
       "status": "video_verified_on_github",
-      "candidates": 7
+      "candidates": 5
     },
     {
       "name": "ARB",
       "country": "Azərbaycan",
       "id": "arb",
       "status": "video_verified_on_github",
-      "candidates": 7
+      "candidates": 9
     },
     {
       "name": "CBC Sport",
       "country": "Azərbaycan",
       "id": "cbc-sport",
-      "status": "NO_WEB_STREAM_FOUND",
-      "candidates": 0
+      "status": "video_verified_on_github",
+      "candidates": 2
     },
     {
       "name": "Real TV",
@@ -100,7 +100,7 @@
       "country": "Azərbaycan",
       "id": "arb24",
       "status": "video_verified_on_github",
-      "candidates": 5
+      "candidates": 4
     },
     {
       "name": "Show TV",

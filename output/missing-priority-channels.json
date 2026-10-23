@@ -1,11 +1,11 @@
 [
   {
-    "id": "cbc-sport",
-    "name": "CBC Sport",
+    "id": "atv-az",
+    "name": "ATV Azərbaycan",
     "country": "Azərbaycan",
-    "category": "sports",
-    "priority": 11,
-    "aliasesChecked": 2,
+    "category": "general",
+    "priority": 3,
+    "aliasesChecked": 4,
     "candidatesFound": 0,
     "candidatesValidated": 0,
     "status": "not_found",
