@@ -1,0 +1,76 @@
+name: Fixed 12 Azerbaijan IPTV Monitor
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "31 */3 * * *"
+  push:
+    branches:
+      - main
+      - feat/fixed-12-az-no-yoda-20261023
+    paths:
+      - "config/az-fixed12.json"
+      - "src/tools/fixed12.ts"
+      - ".github/workflows/fixed12.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fixed12-iptv
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - name: Independently probe all twelve channels and alternatives
+        run: npx tsx src/tools/fixed12.ts
+      - name: Audit no Yoda or duplicate station and preserve requested order
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const config=JSON.parse(fs.readFileSync('config/az-fixed12.json','utf8'));
+          const report=JSON.parse(fs.readFileSync('output/az-fixed12-status.json','utf8'));
+          const list=fs.readFileSync('output/azerbaijan-fixed.m3u','utf8');
+          if(config.channels.length!==12||report.channels.length!==12)throw Error('All 12 fixed slots must remain');
+          if(!report.channels.every((c,i)=>c.id===config.channels[i].id))throw Error('Fixed order drifted');
+          if(/yoda|yodacdn/i.test(list))throw Error('Disallowed Yoda source');
+          const ids=[...list.matchAll(/tvg-id="([^"]+)"/g)].map(x=>x[1]);
+          if(new Set(ids).size!==ids.length)throw Error('Duplicate station');
+          const indices=ids.map(id=>config.channels.findIndex(c=>c.id===id));
+          if(indices.some((n,i)=>n<0||(i>0&&n<=indices[i-1])))throw Error('Wrong channel order');
+          if(ids.length!==report.visibleInM3u)throw Error('Misreported working count');
+          console.log('Fixed channel catalogue validated. GitHub video confirmed:',ids.length);
+          NODE
+      - name: Upload complete AZ monitoring report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: az-fixed12-${{ github.run_id }}
+          path: |
+            output/az-fixed12-status.json
+            output/azerbaijan-fixed.m3u
+            output/azerbaijan-fixed.html
+          retention-days: 14
+          if-no-files-found: warn
+      - name: Verify main playlist metadata audit
+        run: npm run audit
+      - name: Commit validated playlist and status
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f output/az-fixed12-status.json output/azerbaijan-fixed.m3u output/azerbaijan-fixed.html output/playlist.m3u output/azerbaijan-manual.m3u output/priority-test.m3u output/status.json output/mandatory-health.json output/channel-health.json
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "Refresh AZ fixed12 video-confirmed links and health"
+          git pull --rebase origin main
+          git push origin HEAD:main
