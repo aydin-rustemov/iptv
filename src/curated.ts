@@ -4,6 +4,7 @@ import { normalizeCountry, parseM3u } from "./parser.js";
 import { fastCheck, isForbiddenUrl, mediaCheck } from "./validator.js";
 import { isPublishableUrl, isDirectManifestUrl, MAX_PLAYLIST_BYTES } from "./playlistGuard.js";
 import { yodaCdnCandidates } from "./sources/yodaCdn.js";
+import { azSixCandidates, AZ_SIX_IDS } from "./sources/azSixCandidates.js";
 import { turkeyAlternativeCandidates } from "./sources/turkeyAlternatives.js";
 import { officialLastResortCandidates } from "./sources/officialFallback.js";
 import { normalizeBroadcaster, validCandidateIdentity, isKnownBrokenOnDevice, sourceTier } from "./sourcePolicy.js";
@@ -65,7 +66,7 @@ async function main(): Promise<void> {
   const tvstream = await discoverTvstreamAz();
   console.log("[TVSTREAM DISCOVERY]", JSON.stringify({ attempted: tvstream.attempted, matched: tvstream.matched, reason: tvstream.reason }));
   const discovered = tagPriorityEntries([
-    ...web.entries, ...tvstream.entries, ...yodaCdnCandidates(),
+    ...web.entries, ...tvstream.entries, ...yodaCdnCandidates(), ...azSixCandidates(),
     ...turkeyAlternativeCandidates(), ...sourceEntries, ...officialLastResortCandidates()
   ].map(normalizeBroadcaster), priorities)
     .filter((entry) => regionOf(entry) !== undefined)
@@ -86,6 +87,7 @@ async function main(): Promise<void> {
   let probed = 0;
   let fastPassed = 0;
   const reasons: Record<string, number> = {};
+  const sixAttempts: Array<{ channelId: string; source: string; host: string; result: string }> = [];
 
   for (const region of ["AZ", "TR", "RU"] as const) {
     const ordered = unique.filter((entry) => regionOf(entry) === region)
@@ -95,7 +97,13 @@ async function main(): Promise<void> {
     for (let i = 0; i < scanLimit; i += BATCH) {
       const batch = ordered.slice(i, Math.min(i + BATCH, scanLimit));
       const results = await runPool(batch, CONCURRENCY, validate);
-      for (const result of results) {
+      for (let index = 0; index < results.length; index++) {
+        const result = results[index]!;
+        const entry = batch[index]!;
+        if (entry.priorityId && AZ_SIX_IDS.has(entry.priorityId)) {
+          sixAttempts.push({ channelId: entry.priorityId, source: entry.sourceName, host: new URL(entry.url).hostname,
+            result: result.verified ? "first_video_probe_passed" : result.reason ?? "failed" });
+        }
         probed++;
         if (result.fastPassed) fastPassed++;
         if (result.verified) verified.push(result.verified);
@@ -178,6 +186,15 @@ async function main(): Promise<void> {
       candidates: unique.filter((entry) => entry.priorityId === channel.id).length
     }))
   }, null, 2), "utf8");
+  fs.writeFileSync("output/az-six-health.json", JSON.stringify({
+    updatedAt: status.updatedAt,
+    channels: [...AZ_SIX_IDS].map((id) => {
+      const picked = selected.find((entry) => entry.priorityId === id);
+      return { id, result: picked ? "second_video_probe_passed" : "no_verified_stream",
+        selectedSource: picked?.sourceName, selectedHost: picked ? new URL(picked.url).hostname : undefined,
+        attempted: sixAttempts.filter((entry) => entry.channelId === id) };
+    })
+  }, null, 2) + "\\n", "utf8");
   fs.writeFileSync("output/channel-health.json", JSON.stringify({
     updatedAt: status.updatedAt,
     published: selected.length,
@@ -203,6 +220,7 @@ async function main(): Promise<void> {
 
 function candidateRank(entry: PlaylistEntry, region: Region): number {
   let ranking = (4 - sourceTier(entry)) * 100_000;
+  if (entry.priorityId && AZ_SIX_IDS.has(entry.priorityId)) ranking += 600_000;
   if (entry.priorityId) ranking += 2500;
   if (region === "AZ" && entry.sourceName === "yoda-az") ranking += 30000;
   if (region === "AZ" && entry.sourceName === "yoda-az-cdn") ranking += 25000;
