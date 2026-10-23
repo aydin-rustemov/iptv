@@ -31,8 +31,37 @@ const YODA_SEEDS: Seed[] = [
   { url: "https://yoda.az/tv/xazartv/", country: "Azərbaycan" }
 ];
 
+// Local AZ catalogue: the links are channel pages, not public M3U files.
+// Probe each named player and do not assume channels marked "official site"
+// have a portable direct stream.
+const OPERATIVMM_SEEDS: Seed[] = [
+  { url: "https://operativmm.az/az/canli-tv", country: "Azərbaycan" },
+  { url: "https://operativmm.az/az/canli-tv/aztv", country: "Azərbaycan" },
+  { url: "https://operativmm.az/az/canli-tv/xezer-tv", country: "Azərbaycan" }
+];
+
+const ICANLIVE_AZ_SEEDS: Seed[] = [
+  { url: "https://icanlive.tv/kategori/399/azerbaijan-tv-kanallari.html", country: "Azərbaycan" }
+];
+const ICANLIVE_TR_SEEDS: Seed[] = [
+  ...[1, 2, 3, 4].map((page) => ({
+    url: "https://icanlive.tv/kategori/291/turkiye-tv-kanallari.html" + (page === 1 ? "" : "?page=" + page),
+    country: "Türkiyə" as const
+  }))
+];
+const ICANLIVE_RU_SEEDS: Seed[] = [
+  ...[1, 2, 3, 4, 5, 6, 7, 8].map((page) => ({
+    url: "https://icanlive.tv/kategori/343/rusya-tv-kanallari.html" + (page === 1 ? "" : "?page=" + page),
+    country: "Rusiya" as const
+  }))
+];
+
 export const SOURCES: Source[] = [
   { name: "yoda-az", seeds: YODA_SEEDS, hosts: ["yoda.az", "www.yoda.az", "yodaplayer.yodacdn.net"] },
+  { name: "operativmm-az", seeds: OPERATIVMM_SEEDS, hosts: ["operativmm.az"] },
+  { name: "icanlive-az", seeds: ICANLIVE_AZ_SEEDS, hosts: ["icanlive.tv"] },
+  { name: "icanlive-tr", seeds: ICANLIVE_TR_SEEDS, hosts: ["icanlive.tv"] },
+  { name: "icanlive-ru", seeds: ICANLIVE_RU_SEEDS, hosts: ["icanlive.tv"] },
   { name: "canlitv-volo", seeds: VOLO_SEEDS, hosts: ["tv.canlitvvolo.com"] },
   { name: "canlitv-video", seeds: [
     { url: "https://www.canlitv.video/kategori/azerbaycan", country: "Azərbaycan" },

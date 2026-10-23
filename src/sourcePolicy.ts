@@ -49,7 +49,7 @@ export function sourceTier(entry: PlaylistEntry): number {
   const region = entry.country === "Azərbaycan" ? "AZ" : entry.country === "Türkiyə" ? "TR" : "RU";
   if (entry.sourceName === "official-last-resort") return 3;
   if (region === "AZ" && (entry.sourceName === "yoda-az" || entry.sourceName === "yoda-az-cdn")) return 0;
-  if (/^(?:canlitv-|tvstream-az)/.test(entry.sourceName)) return 1;
+  if (/^(?:canlitv-|tvstream-az|operativmm-az|icanlive-(?:az|tr|ru))/.test(entry.sourceName)) return 1;
   if (entry.sourceName.startsWith("community-") || entry.sourceName.startsWith("iptv-org-")) return 2;
   return 2;
 }
