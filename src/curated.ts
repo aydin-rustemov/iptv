@@ -5,6 +5,9 @@ import { fastCheck, isForbiddenUrl, mediaCheck } from "./validator.js";
 import { isPublishableUrl, isDirectManifestUrl, MAX_PLAYLIST_BYTES } from "./playlistGuard.js";
 import { yodaCdnCandidates } from "./sources/yodaCdn.js";
 import { turkeyAlternativeCandidates } from "./sources/turkeyAlternatives.js";
+import { officialLastResortCandidates } from "./sources/officialFallback.js";
+import { normalizeBroadcaster, validCandidateIdentity, isKnownBrokenOnDevice, sourceTier } from "./sourcePolicy.js";
+import { confirmLongerLivedStreams } from "./stability.js";
 import { discoverWebAggregators } from "./sources/webAggregators.js";
 import { discoverTvstreamAz } from "./sources/tvstreamAz.js";
 import { loadPriorityChannels, buildPriorityStatuses, tagPriorityEntries, writeMissingPriority } from "./priority.js";
@@ -17,7 +20,9 @@ import type { PlaylistEntry, StatusOutput, ValidatedEntry } from "./types.js";
 
 const SOURCE_NAMES = new Set([
   "iptv-org-russia",
-  "iptv-org-russian-language"
+  "iptv-org-russian-language",
+  "iptv-org-azerbaijan",
+  "iptv-org-turkey"
 ]);
 const SCAN_LIMITS: Record<Region, number> = { AZ: 160, TR: 400, RU: 280 };
 const GOALS: Record<Region, number> = { AZ: 35, TR: 60, RU: 20 };
@@ -58,15 +63,18 @@ async function main(): Promise<void> {
   console.log("[WEB DISCOVERY]", JSON.stringify(web.statuses));
   const tvstream = await discoverTvstreamAz();
   console.log("[TVSTREAM DISCOVERY]", JSON.stringify({ attempted: tvstream.attempted, matched: tvstream.matched, reason: tvstream.reason }));
-  const discovered = tagPriorityEntries([...web.entries, ...tvstream.entries, ...yodaCdnCandidates(), ...turkeyAlternativeCandidates(), ...sourceEntries.filter((entry) => regionOf(entry) === "RU")], priorities)
+  const discovered = tagPriorityEntries([
+    ...web.entries, ...tvstream.entries, ...yodaCdnCandidates(),
+    ...turkeyAlternativeCandidates(), ...sourceEntries, ...officialLastResortCandidates()
+  ].map(normalizeBroadcaster), priorities)
     .filter((entry) => regionOf(entry) !== undefined)
     .filter((entry) => isPublishableUrl(entry.url) && isDirectManifestUrl(entry.url) && !isForbiddenUrl(entry.url, { allowLivePath: true }))
-    .filter((entry) => !isMismatchedChannel(entry))
+    .filter((entry) => !isMismatchedChannel(entry) && validCandidateIdentity(entry) && !isKnownBrokenOnDevice(entry))
     .sort((a, b) => candidateRank(b, regionOf(b)!) - candidateRank(a, regionOf(a)!));
 
   const seen = new Set<string>();
   const unique = discovered.filter((entry) => {
-    const key = regionOf(entry) + "|" + entry.url;
+    const key = entry.url; // A URL cannot represent two different TV channels.
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
@@ -97,7 +105,10 @@ async function main(): Promise<void> {
       }
       const distinct = uniqueVerified(verified, region).length;
       console.log("[PROGRESS]", region, "tested=", Math.min(i + BATCH, scanLimit), "uniqueWorking=", distinct);
-      if (distinct >= GOALS[region]) break;
+      // Every required channel must have its own candidates probed.
+      const requiredHere = mandatory.filter((c) => regionOf({ country: c.country }) === region);
+      const requiredFound = requiredHere.every((c) => verified.some((v) => v.priorityId === c.id));
+      if (distinct >= GOALS[region] && requiredFound) break;
     }
   }
 
@@ -106,8 +117,19 @@ async function main(): Promise<void> {
   if (![...web.entries, ...tvstream.entries].some((entry) => regionOf(entry) === "AZ" || regionOf(entry) === "TR")) {
     throw new Error("All AZ/TR web scrapers returned no regional streams; not replacing playlist");
   }
-  const required = ensureMandatory(selectRegionalPlaylist(verified).filter(isDisplayableChannel), verified, mandatory, 100, unique);
-  const selected = required.entries;
+  const firstPass = ensureMandatory(selectRegionalPlaylist(verified).filter(isDisplayableChannel), verified, mandatory, 100, unique);
+  const stable = await confirmLongerLivedStreams(firstPass.entries, verified, async (entry) => {
+    const result = await validate(entry);
+    return Boolean(result.verified);
+  });
+  const selected = stable.entries;
+  const present = new Set(selected.map((entry) => entry.priorityId).filter(Boolean));
+  const required = {
+    verifiedIds: mandatory.filter((c) => present.has(c.id)).map((c) => c.id),
+    unverifiedIds: [] as string[],
+    missingIds: mandatory.filter((c) => !present.has(c.id)).map((c) => c.id)
+  };
+  console.log("[STABILITY]", JSON.stringify({ attempted: stable.attempted, failed: stable.failed.length, switched: stable.switched.length, missingRequired: required.missingIds }));
   if (selected.length === 0) {
     throw new Error("No streams passed real video validation; preserving previous playlist");
   }
@@ -163,7 +185,9 @@ async function main(): Promise<void> {
     mandatoryVerified: required.verifiedIds.length,
     mandatoryNeedsLocalTest: required.unverifiedIds,
     mandatoryMissing: required.missingIds,
-    validation: "HTTP manifest + video segment ffprobe; no forced/unchecked channels",
+    validation: "HTTP/ffprobe video and another probe 65 seconds later; cannot guarantee TV content identity",
+    stability: { attempts: stable.attempted, failed: stable.failed, switched: stable.switched },
+    selectedSources: selected.map((entry) => ({ id: entry.priorityId ?? entry.tvgId ?? entry.name, name: entry.name, source: entry.sourceName, urlHost: new URL(entry.url).hostname, sourceTier: sourceTier(entry) })),
     countryCounts: status.countryCounts,
     candidatesScanned: probed,
     candidatesWithVideo: verified.length,
@@ -177,7 +201,7 @@ async function main(): Promise<void> {
 }
 
 function candidateRank(entry: PlaylistEntry, region: Region): number {
-  let ranking = 0;
+  let ranking = (4 - sourceTier(entry)) * 100_000;
   if (entry.priorityId) ranking += 2500;
   if (region === "AZ" && entry.sourceName === "yoda-az") ranking += 30000;
   if (region === "AZ" && entry.sourceName === "yoda-az-cdn") ranking += 25000;

@@ -2,6 +2,7 @@ import fs from "node:fs";
 import { isForbiddenUrl, isTurkeyAdSlateProneUrl } from "./validator.js";
 import { isPublishableUrl, isDirectManifestUrl, MAX_PLAYLIST_BYTES } from "./playlistGuard.js";
 import { isMismatchedChannel } from "./channelMatchGuard.js";
+import { isAdvertisingStream, validCandidateIdentity } from "./sourcePolicy.js";
 
 const playlist = fs.readFileSync("output/playlist.m3u", "utf8");
 const status = JSON.parse(readJsonText("output/status.json")) as { published?: number };
@@ -33,6 +34,7 @@ if (extinfCount !== entries.length) errors.push("Malformed EXTINF entry exists")
 if (entries.length === 0) errors.push("Playlist has no channels");
 if (urls.some((url) => !isPublishableUrl(url))) errors.push("Oversized, invalid or soon-expiring stream URL exists");
 if (urls.some((url) => !isDirectManifestUrl(url))) errors.push("HTML/web HLS player link in playlist");
+if (urls.some(isAdvertisingStream)) errors.push("Advertising HLS stream masquerading as a TV channel");
 if (entries.some((entry) => /yoxlanmamış|⚠/i.test(entry.name + " " + entry.group))) errors.push("Diagnostic warning leaked into TV channel label");
 if (status.published !== extinfCount) errors.push("Published count disagrees with status");
 const mandatory = JSON.parse(readJsonText("config/mandatory-channels.json")) as { channels: Array<{ id: string; name: string }> };
@@ -66,7 +68,8 @@ if (/widevine|playready|license|drm/i.test(playlist)) errors.push("DRM/license U
 // replace the real television ad break with a static digital-ad slate. Such a
 // stream is not acceptable for the final TV playlist.
 for (const entry of entries) {
-  if (isMismatchedChannel({ sourceName: "audit", name: entry.name, tvgName: entry.name, url: entry.url, country: countryKey(entry.group) === "TR" ? "Türkiyə" : "Azərbaycan", priorityId: entry.id, headers: {} })) errors.push("Wrong broadcaster URL for channel: " + entry.name);
+  const inspected = { sourceName: "audit", name: entry.name, tvgName: entry.name, url: entry.url, country: countryKey(entry.group) === "TR" ? "Türkiyə" : countryKey(entry.group) === "RU" ? "Rusiya" : "Azərbaycan", priorityId: entry.id, headers: {} };
+  if (isMismatchedChannel(inspected) || !validCandidateIdentity(inspected)) errors.push("Wrong broadcaster URL or country for channel: " + entry.name);
   if (countryKey(entry.group) === "TR" && !/Yoxlanmamış/i.test(entry.group) && isTurkeyAdSlateProneUrl(entry.url)) {
     errors.push(`Turkish ad-slate-prone stream is still published: ${entry.name}`);
   }

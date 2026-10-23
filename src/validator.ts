@@ -6,6 +6,7 @@ import { spawn } from "node:child_process";
 import ffprobeStatic from "ffprobe-static";
 import type { FastCheckResult, MediaCheckResult, PlaylistEntry } from "./types.js";
 import { isPublishableUrl } from "./playlistGuard.js";
+import { isAdvertisingStream } from "./sourcePolicy.js";
 
 const USER_AGENT = "Mozilla/5.0 IPTV-Playlist-Updater/1.0";
 
@@ -46,6 +47,7 @@ export function isTurkeyAdSlateProneUrl(raw: string): boolean {
 export async function fastCheck(entry: PlaylistEntry): Promise<FastCheckResult> {
   const start = Date.now();
   if (!isPublishableUrl(entry.url)) return { ok: false, reason: "oversized_or_expiring_url" };
+  if (isAdvertisingStream(entry.url)) return { ok: false, reason: "advertising_hls_not_channel" };
   if (isForbiddenUrl(entry.url, { allowLivePath: entry.allowLivePath })) return { ok: false, reason: "forbidden_url" };
   if (hasSensitiveHeaders(entry)) return { ok: false, reason: "sensitive_headers" };
 
@@ -74,6 +76,7 @@ export async function fastCheck(entry: PlaylistEntry): Promise<FastCheckResult> 
         }
       }
     }
+    if (isAdvertisingStream(response.url)) return { ok: false, reason: "advertising_redirect" };
     const contentType = response.headers.get("content-type") ?? "";
     if (!response.ok) return { ok: false, contentType, reason: `http_${response.status}` };
     if (isTurkeyEntry(entry) && isTurkeyAdSlateProneUrl(response.url)) {
