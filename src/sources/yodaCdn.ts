@@ -5,7 +5,7 @@ import type { PlaylistEntry } from "../types.js";
 // Their status is reported separately, never called 'verified' without playback.
 const KNOWN_YODA_CHANNELS = [
   { id: "aztv", name: "AzTV", url: "https://str.yodacdn.net/aztv/index.m3u8" },
-  { id: "medeniyyet-tv", name: "Mədəniyyət TV", url: "https://str.yodacdn.net/medeniyyet/index.m3u8" },
+  { id: "medeniyyet-tv", name: "Mədəniyyət TV", url: "https://str.yodacdn.net/medeniyyettele/index.m3u8" },
   { id: "idman-tv", name: "İdman TV", url: "https://str.yodacdn.net/idman/mono.m3u8" },
   { id: "arb", name: "ARB", url: "https://str.yodacdn.net/arb/tracks-v1a1/mono.ts.m3u8" },
   { id: "space-tv", name: "Space TV", url: "https://str.yodacdn.net/space/tracks-v1a1/mono.ts.m3u8" }
