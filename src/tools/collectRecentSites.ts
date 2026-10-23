@@ -1,6 +1,5 @@
 import fs from "node:fs";
-import { chromium, type BrowserContext, type Page } from "playwright";
-import type { PlaylistEntry } from "../types.js";
+import { chromium, type Page } from "playwright";
 
 type SiteName="icanlive"|"operativmm";
 type Slot={id:string;name:string;group:string;order:number};
