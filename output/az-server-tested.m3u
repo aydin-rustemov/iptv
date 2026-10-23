@@ -1,0 +1,15 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="aztv" tvg-name="AzTV" group-title="Azərbaycan",AzTV
+https://stream8.cinerama.uz/1455/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="atv-az" tvg-name="ATV Azərbaycan" group-title="Azərbaycan",ATV Azərbaycan
+https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8
+#EXTINF:-1 tvg-id="baku-tv" tvg-name="Baku TV" group-title="Azərbaycan",Baku TV
+https://rtmp.baku.tv/hls/bakutv.m3u8
+#EXTINF:-1 tvg-id="kanal-s" tvg-name="Kanal S" group-title="Azərbaycan",Kanal S
+https://lives.atv.az:5443/KANAL-S/streams/kanals.m3u8
+#EXTINF:-1 tvg-id="ayaz-tv" tvg-name="Ayaz TV" group-title="Azərbaycan",Ayaz TV
+https://janya-ayaztv.vgcdn.net/ptnr-WebApp/title-Ayaz_TV/v1/vglive-sk-934820/main.m3u8
+#EXTINF:-1 tvg-id="kn-music" tvg-name="KN Music TV" group-title="Azərbaycan",KN Music TV
+https://cdn4.yayin.com.tr/kntv/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="vilayet-tv" tvg-name="Vilayət TV" group-title="Azərbaycan",Vilayət TV
+https://nl.livekadeh.com/hls2/vilayet.m3u8
