@@ -1,0 +1,52 @@
+name: AZ Broadcast Frame Review
+
+on:
+  push:
+    branches: [fix/az-verified-source-audit-20261023]
+    paths: [.github/workflows/preview-az.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  frames:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect FFmpeg and collect actual channel video frames
+        run: |
+          mkdir -p /tmp/az-preview
+          python3 - <<'PY'
+          from concurrent.futures import ThreadPoolExecutor
+          import subprocess
+          channels={
+            'aztv':'https://stream8.cinerama.uz/1455/tracks-v1a1/mono.m3u8',
+            'atv-az':'https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8',
+            'baku-tv':'https://rtmp.baku.tv/hls/bakutv_1080p.m3u8',
+            'kanal-s':'https://lives.atv.az:5443/KANAL-S/streams/kanals.m3u8',
+            'ayaz-tv':'https://janya-ayaztv.vgcdn.net/ptnr-WebApp/title-Ayaz_TV/v1/vglive-sk-934820/main.m3u8',
+            'kn-music':'https://cdn4.yayin.com.tr/kntv/tracks-v1a1/mono.m3u8',
+            'vilayet-tv':'https://nl.livekadeh.com/hls2/vilayet.m3u8'
+          }
+          def job(pair):
+            name,url=pair
+            path='/tmp/az-preview/'+name+'.jpg'
+            cmd=['ffmpeg','-nostdin','-hide_banner','-loglevel','error','-y',
+                 '-rw_timeout','14000000','-i',url,'-frames:v','1','-q:v','5',path]
+            try:
+              r=subprocess.run(cmd,capture_output=True,text=True,timeout=32)
+              print('[FRAME]',name,'ok' if r.returncode==0 else 'FAIL',r.stderr[-180:])
+            except Exception as e:
+              print('[FRAME]',name,'ERROR',str(e)[:150])
+          with ThreadPoolExecutor(max_workers=7) as ex: list(ex.map(job,channels.items()))
+          PY
+      - name: Upload private visual samples
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: az-stream-frames-${{ github.run_id }}
+          path: /tmp/az-preview/*.jpg
+          if-no-files-found: warn
+          retention-days: 1
