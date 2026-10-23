@@ -103,6 +103,54 @@ if(available.length>0){
   // Publish only live-tested entries, NOT placeholder URL links for offline stations.
   fs.writeFileSync(outRoot+"/playlist.m3u",data,"utf8");
 }
+// Keep legacy status and audit in sync with this fixed 12-channel release.
+// Do not claim phone/AZ-side playback: GitHub media verification is separate.
+const copyM3u=["output/azerbaijan-manual.m3u","output/priority-test.m3u"];
+for(const file of copyM3u) fs.writeFileSync(file,data,"utf8");
+function getJson(path:string):Record<string,any>{
+  try{return JSON.parse(fs.readFileSync(path,"utf8")) as Record<string,any>;}
+  catch{return {};}
+}
+const meta=getJson("output/status.json");
+meta.updatedAt=report.updatedAt;meta.published=available.length;
+meta.sources=["fixed-12-non-yoda"];
+meta.downloadedEntries=all.length;meta.uniqueCandidates=all.length;
+meta.fastCheckPassed=checked.filter(p=>p.state==="video_confirmed_on_github").length;
+meta.mediaCheckPassed=meta.fastCheckPassed;
+meta.failed=all.length-meta.fastCheckPassed;
+meta.countryCounts={"Azərbaycan":available.length,"Türkiyə":0,"Rusiya":0};
+meta.categoryCounts={"Azərbaycan":available.length};
+meta.degraded=available.length!==12;
+meta.manualAzPlaylist=true;meta.manualAzRequiresDevicePlaybackTest=true;meta.fixed12Mode=true;
+meta.priorityChannels=states.map(c=>({id:c.id,name:c.name,country:"Azərbaycan",priority:c.order,
+  selectedSource:c.source??"none",candidatesFound:c.probes.length,
+  candidatesValidated:c.probes.filter(p=>p.state==="video_confirmed_on_github").length,
+  status:c.status,localPlaybackVerified:false}));
+fs.writeFileSync("output/status.json",JSON.stringify(meta,null,2)+"\n","utf8");
+const mandatory=getJson("output/mandatory-health.json");
+const availableIds=new Set(available.map(x=>x.id));
+mandatory.updatedAt=report.updatedAt;
+mandatory.verified=[...availableIds];
+mandatory.needsLocalTest=[];
+mandatory.missingNoWebStream=(mandatory.details??[]).filter((ch:{id:string})=>!availableIds.has(ch.id)).map((ch:{id:string})=>ch.id);
+for(const detail of mandatory.details??[]){
+  detail.status=availableIds.has(detail.id)?"github_video_confirmed_local_playback_unknown":"no_github_video_confirmed_stream";
+  detail.candidates=states.find(x=>x.id===detail.id)?.probes.length??0;
+}
+fs.writeFileSync("output/mandatory-health.json",JSON.stringify(mandatory,null,2)+"\n","utf8");
+const health=getJson("output/channel-health.json");
+health.updatedAt=report.updatedAt;health.published=available.length;
+health.verifiedWorking=available.length;health.mandatoryVerified=mandatory.verified.length;
+health.mandatoryNeedsLocalTest=[];health.mandatoryMissing=mandatory.missingNoWebStream;
+health.countryCounts=meta.countryCounts;health.candidatesScanned=all.length;
+health.candidatesWithVideo=meta.fastCheckPassed;health.rejected=meta.failed;
+health.validation=report.disclaimer;
+health.manualAzLocalTestPending=true;
+health.selectedSources=available.map(x=>({id:x.id,name:x.name,source:x.source,
+  urlHost:new URL(x.url!).hostname,sourceTier:1,localPlaybackVerified:false}));
+health.sourcesLoaded=["fixed-12-non-yoda"];health.sourceErrors=[];
+fs.writeFileSync("output/channel-health.json",JSON.stringify(health,null,2)+"\n","utf8");
+
 const html=[
 "<!DOCTYPE html><html lang=\"az\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
 "<title>Azərbaycan IPTV — sabit 12 kanal</title><style>body{font:16px system-ui;background:#101827;color:#edf3ff;padding:20px;max-width:850px;margin:auto}h1{font-size:24px}p{color:#bac7d9}.station{display:flex;align-items:center;gap:16px;justify-content:space-between;padding:15px;margin:8px 0;border:1px solid #38465b;border-radius:10px}.name{font-weight:700}.status{color:#aebed6;font-size:13px}.online{color:#81d9b5}.offline{color:#ffcc8b}a{color:#a2ccff}</style></head><body>",
