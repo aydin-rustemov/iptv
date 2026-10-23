@@ -4,6 +4,7 @@ import { normalizeCountry, parseM3u } from "./parser.js";
 import { fastCheck, isForbiddenUrl, mediaCheck } from "./validator.js";
 import { isPublishableUrl, isDirectManifestUrl, MAX_PLAYLIST_BYTES } from "./playlistGuard.js";
 import { yodaCdnCandidates } from "./sources/yodaCdn.js";
+import { YODA_CATALOGUE, YODA_REGION_REASON, yodaRegionalEntries, overlayYodaRegional } from "./sources/yodaCatalogue.js";
 import { azSixCandidates, AZ_SIX_IDS } from "./sources/azSixCandidates.js";
 import { turkeyAlternativeCandidates } from "./sources/turkeyAlternatives.js";
 import { officialLastResortCandidates } from "./sources/officialFallback.js";
@@ -83,6 +84,11 @@ async function main(): Promise<void> {
   });
   console.log("[DISCOVERY] candidates=", discovered.length, "unique=", unique.length);
 
+  // User explicitly wants Yoda Azerbaijan streams published without foreign-IP
+  // HTTP, ffprobe or 65-second validation. Still require actual extracted M3U URLs.
+  const yodaGeoOnly = yodaRegionalEntries(unique);
+  console.log("[YODA AZ-ONLY]", JSON.stringify({ catalogued: YODA_CATALOGUE.length, found: yodaGeoOnly.length,
+    names: yodaGeoOnly.map((e) => e.name) }));
   const verified: ValidatedEntry[] = [];
   let probed = 0;
   let fastPassed = 0;
@@ -90,7 +96,8 @@ async function main(): Promise<void> {
   const sixAttempts: Array<{ channelId: string; source: string; host: string; result: string }> = [];
 
   for (const region of ["AZ", "TR", "RU"] as const) {
-    const ordered = unique.filter((entry) => regionOf(entry) === region)
+    const ordered = unique.filter((entry) => regionOf(entry) === region &&
+      entry.sourceName !== "yoda-az" && entry.sourceName !== "yoda-az-cdn")
       .sort((a, b) => candidateRank(b, region) - candidateRank(a, region));
     const scanLimit = Math.min(SCAN_LIMITS[region], ordered.length);
     console.log("[REGION]", region, "available=", ordered.length, "scanLimit=", scanLimit);
@@ -131,11 +138,11 @@ async function main(): Promise<void> {
     const result = await validate(entry);
     return Boolean(result.verified);
   });
-  const selected = stable.entries;
+  const selected = overlayYodaRegional(stable.entries, yodaGeoOnly, 100);
   const present = new Set(selected.map((entry) => entry.priorityId).filter(Boolean));
   const required = {
-    verifiedIds: mandatory.filter((c) => present.has(c.id)).map((c) => c.id),
-    unverifiedIds: [] as string[],
+    verifiedIds: mandatory.filter((c) => selected.some((e) => e.priorityId === c.id && e.fast.ok && e.media.ok)).map((c) => c.id),
+    unverifiedIds: mandatory.filter((c) => selected.some((e) => e.priorityId === c.id && e.fast.reason === YODA_REGION_REASON)).map((c) => c.id),
     missingIds: mandatory.filter((c) => !present.has(c.id)).map((c) => c.id)
   };
   console.log("[STABILITY]", JSON.stringify({ attempted: stable.attempted, failed: stable.failed.length, switched: stable.switched.length, missingRequired: required.missingIds }));
@@ -171,6 +178,17 @@ async function main(): Promise<void> {
   writeStatus(status);
   writeMissingPriority(prioritiesStatus);
   fs.writeFileSync("output/missing-priority-details.json", "[]\n", "utf8");
+  fs.writeFileSync("output/yoda-status.json", JSON.stringify({
+    updatedAt: status.updatedAt,
+    mode: "AZ_IP_ONLY_NO_GITHUB_VIDEO_CHECK",
+    catalogued: YODA_CATALOGUE.length,
+    entries: selected.filter((e) => e.fast.reason === YODA_REGION_REASON).map((e) => ({
+      id: e.priorityId ?? e.tvgId ?? e.name, name: e.name, url: e.url, source: e.sourceName,
+      page: e.candidateReferer, checkedOnGithub: false
+    })),
+    catalogue: YODA_CATALOGUE.map((station) => ({ id: station.id, name: station.name,
+      published: selected.some((e) => e.fast.reason === YODA_REGION_REASON && (e.priorityId === station.id || e.tvgId === station.id)) }))
+  }, null, 2) + "\n", "utf8");
   fs.writeFileSync("output/mandatory-health.json", JSON.stringify({
     updatedAt: status.updatedAt,
     total: mandatory.length,
@@ -182,7 +200,7 @@ async function main(): Promise<void> {
       country: channel.country,
       id: channel.id,
       status: required.verifiedIds.includes(channel.id) ? "video_verified_on_github" :
-        required.unverifiedIds.includes(channel.id) ? "WEB_LINK_NOT_VERIFIED_TEST_IN_AZERBAIJAN" : "NO_WEB_STREAM_FOUND",
+        required.unverifiedIds.includes(channel.id) ? "YODA_AZERBAIJAN_IP_ONLY_GITHUB_CHECK_SKIPPED" : "NO_WEB_STREAM_FOUND",
       candidates: unique.filter((entry) => entry.priorityId === channel.id).length
     }))
   }, null, 2), "utf8");
@@ -203,8 +221,9 @@ async function main(): Promise<void> {
     mandatoryVerified: required.verifiedIds.length,
     mandatoryNeedsLocalTest: required.unverifiedIds,
     mandatoryMissing: required.missingIds,
-    validation: "HTTP/ffprobe video and another probe 65 seconds later; cannot guarantee TV content identity",
+    validation: "Non-Yoda candidates: HTTP/ffprobe video + 65s retest. Yoda AZ: bypassed geo-IP probing by user request.",
     stability: { attempts: stable.attempted, failed: stable.failed, switched: stable.switched },
+    yodaAzWithoutGithubCheck: selected.filter((e) => e.fast.reason === YODA_REGION_REASON).length,
     selectedSources: selected.map((entry) => ({ id: entry.priorityId ?? entry.tvgId ?? entry.name, name: entry.name, source: entry.sourceName, urlHost: new URL(entry.url).hostname, sourceTier: sourceTier(entry) })),
     countryCounts: status.countryCounts,
     candidatesScanned: probed,
