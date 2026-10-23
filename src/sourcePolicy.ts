@@ -64,3 +64,13 @@ export function validCandidateIdentity(entry: PlaylistEntry): boolean {
   if (/^(?:çocuk kanalları|cocuk kanallari|canlı tv|kanallar|tüm kanallar)$/i.test(entry.name)) return false;
   return true;
 }
+
+/** User's 2026-10-23 playback report takes precedence over short CI probes. */
+export function isKnownBrokenOnDevice(entry: PlaylistEntry): boolean {
+  const raw = entry.url.toLowerCase();
+  if (entry.priorityId === "xezer-tv" && /gcdn\.2mdn\.net|web_video_ads/.test(raw)) return true;
+  if (entry.priorityId === "medeniyyet-tv" && /canlitv\.fun\/live\/medeniyettv\.stream/.test(raw)) return true;
+  if (entry.country === "Türkiyə" && /canlitv\.fun\/live\/.*\?hash=/.test(raw)) return true;
+  if (entry.priorityId === "tv8" && /ottrast\.com\/iptv\//.test(raw)) return true;
+  return false;
+}
