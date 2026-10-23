@@ -36,7 +36,7 @@ export function sourcePageIdentity(
     if (!/^\/canli\/\d+\/[^/]+\.html$/i.test(url.pathname)) return undefined;
     // Catalogue labels contain popularity counters: "ATV 3,583,083".
     // Never mistake their counters, region, or page slug for channel identity.
-    let title = linkText.replace(/\s+[\d][\d,.\s]*$/, "").trim();
+    let title = linkText.replace(/\s+\d{1,3}(?:[,.]\d{3})*(?:\s+izlenme)?$/i, "").trim();
     if (!title) {
       title = url.pathname.split("/").at(-1)!.replace(/\.html$/i, "").replace(/[-_]+/g, " ");
     }
