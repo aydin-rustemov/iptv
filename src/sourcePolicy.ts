@@ -61,6 +61,34 @@ export function validCandidateIdentity(entry: PlaylistEntry): boolean {
   if (entry.country === "Türkiyə" && (/(?:^|\.)atv\.az$/.test(host) ||
     host.endsWith(".tvstream.az") || host.endsWith(".yodacdn.net"))) return false;
   if (entry.country === "Azərbaycan" && entry.priorityId === "atv-tr") return false;
+
+  // Shared Yoda CDN and TVSTREAM accounts host many DIFFERENT TV stations.
+  // The media URL must identify the requested channel, not just have video.
+  const id = entry.priorityId ?? "";
+  const names: Record<string, RegExp> = {
+    "aztv": /(?:aztv|azertv|aztvhd)/,
+    "ictimai-tv": /(?:ictimai|itv)/,
+    "idman-tv": /(?:idman|idmantele)/,
+    "medeniyyet-tv": /(?:medeniyyet|medeniyyettele)/,
+    "xezer-tv": /(?:xezer|xazar)/,
+    "atv-az": /(?:atv|azad)/,
+    "arb": /(?:^|[/.\-_])arb(?:[/.\-_]|$)/,
+    "arb24": /arb24/,
+    "space-tv": /space/,
+    "cbc-sport": /(?:cbcsport|cbcsports)/,
+    "real-tv": /real/
+  };
+  const expected = names[id];
+  if (entry.country === "Azərbaycan" && expected) {
+    try {
+      const parsed = new URL(entry.url);
+      const identifier = (parsed.hostname + parsed.pathname).toLowerCase();
+      const onSharedYoda = /(?:^|\.)yodacdn\.net$/.test(host);
+      const onTvstream = host === "tvstream.az" || host.endsWith(".tvstream.az");
+      if ((onSharedYoda || onTvstream) && !expected.test(identifier)) return false;
+      if (onSharedYoda && id === "arb" && /arb24|arbgunes|arb-gunes/.test(identifier)) return false;
+    } catch { return false; }
+  }
   if (/^(?:çocuk kanalları|cocuk kanallari|canlı tv|kanallar|tüm kanallar)$/i.test(entry.name)) return false;
   return true;
 }
