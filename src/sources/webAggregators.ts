@@ -87,13 +87,16 @@ async function discoverSource(source: Source, browser?: Browser): Promise<{ entr
     const present = new Set([...pages.keys()].map((url) => yodaChannelFromPage(url)?.id).filter(Boolean));
     for (const channel of YODA_CATALOGUE) {
       if (present.has(channel.id)) continue;
-      const url = `https://yoda.az/tv/${channel.slugs[0]}/`;
-      pages.set(url, { url, title: channel.name, country: "Azərbaycan" });
+      const mustHave = new Set(["arb", "real-tv", "medeniyyet-tv", "ictimai-tv", "xezer-tv", "space-tv"]);
+      for (const slug of (mustHave.has(channel.id) ? channel.slugs : channel.slugs.slice(0, 1))) {
+        const url = `https://yoda.az/tv/${slug}/`;
+        pages.set(url, { url, title: channel.name, country: "Azərbaycan" });
+      }
     }
   }
   const selected = [...pages.values()]
     .sort((a, b) => priorityWebPageScore(b) - priorityWebPageScore(a))
-    .slice(0, source.name === "yoda-az" ? Math.min(45, MAX_PAGES) : budget);
+    .slice(0, source.name === "yoda-az" ? Math.max(75, MAX_PAGES) : budget);
   const entries: PlaylistEntry[] = [];
   let manifestCandidates = 0;
 
