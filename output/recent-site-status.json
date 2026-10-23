@@ -1,6 +1,6 @@
 {
   "mode": "recent-user-sites-no-playback-validation",
-  "updatedAt": "2026-10-23T18:53:36.616Z",
+  "updatedAt": "2026-10-23T21:35:42.995Z",
   "sites": [
     "https://icanlive.tv/kategori/399/azerbaijan-tv-kanallari.html",
     "https://operativmm.az/az/canli-tv"
@@ -8,9 +8,9 @@
   "officialTurkeySource": "https://www.showtv.com.tr/canli-yayin",
   "officialShowTv": {
     "page": "https://www.showtv.com.tr/canli-yayin",
-    "fetchedAt": "2026-10-23T18:53:30.926Z",
+    "fetchedAt": "2026-10-23T21:35:37.582Z",
     "status": "official_hls_captured",
-    "url": "https://ciner.daioncdn.net/showtv/showtv_1080p.m3u8?ex=1664766175&st=RBzhSuGauna0OGld-DJUVA&tv=1&sid=8uxrcqxmxp8c&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&ce=3",
+    "url": "https://ciner.daioncdn.net/showtv/showtv_1080p.m3u8?ex=1664766175&st=RBzhSuGauna0OGld-DJUVA&tv=1&sid=8uy5tc0a5gep&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&ce=3",
     "foundBy": "network-response",
     "networkStatus": 200
   },
