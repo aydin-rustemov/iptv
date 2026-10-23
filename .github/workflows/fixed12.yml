@@ -9,6 +9,7 @@ on:
     paths:
       - "config/az-fixed12.json"
       - "src/tools/collectRecentSites.ts"
+      - "src/sources/showTvOfficial.ts"
       - ".github/workflows/fixed12.yml"
 
 permissions:
@@ -61,6 +62,8 @@ jobs:
             output/az-fixed12-status.json
             output/azerbaijan-fixed.m3u
             output/azerbaijan-fixed.html
+            output/showtv-source-status.json
+            output/turkey-official.m3u
           retention-days: 14
           if-no-files-found: warn
       - name: Audit metadata only
@@ -74,7 +77,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for file in output/recent-site-status.json output/az-fixed12-status.json output/azerbaijan-fixed.m3u output/azerbaijan-fixed.html output/playlist.m3u output/azerbaijan-manual.m3u output/priority-test.m3u output/status.json output/mandatory-health.json output/channel-health.json; do
+          for file in output/recent-site-status.json output/az-fixed12-status.json output/azerbaijan-fixed.m3u output/azerbaijan-fixed.html output/showtv-source-status.json output/turkey-official.m3u output/playlist.m3u output/azerbaijan-manual.m3u output/priority-test.m3u output/status.json output/mandatory-health.json output/channel-health.json; do
             if [ -f "$file" ]; then git add -f "$file"; fi
           done
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
