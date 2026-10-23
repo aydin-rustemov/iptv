@@ -1,4 +1,6 @@
 import { normalizeCountry } from "./parser.js";
+import { sourceTier, validCandidateIdentity, isKnownBrokenOnDevice } from "./sourcePolicy.js";
+import { isMismatchedChannel } from "./channelMatchGuard.js";
 import type { PlaylistEntry, ValidatedEntry } from "./types.js";
 
 export const REGIONAL_LIMITS = { total: 100, az: 35, tr: 60, ru: 20 } as const;
@@ -39,8 +41,8 @@ export function uniqueVerified(entries: ValidatedEntry[], region: Region): Valid
   const takenNames = new Set<string>();
   const takenUrls = new Set<string>();
   return entries
-    .filter((entry) => regionOf(entry) === region && entry.fast.ok && entry.media.ok && entry.media.hasVideo)
-    .sort((a, b) => hostReliability(b) - hostReliability(a))
+    .filter((entry) => regionOf(entry) === region && entry.fast.ok && entry.media.ok && entry.media.hasVideo && validCandidateIdentity(entry) && !isMismatchedChannel(entry) && !isKnownBrokenOnDevice(entry))
+    .sort((a, b) => sourceTier(a) - sourceTier(b) || hostReliability(b) - hostReliability(a))
     .filter((entry) => {
       const name = channelIdentity(entry);
       const url = entry.url;
