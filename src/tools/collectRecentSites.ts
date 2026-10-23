@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import { chromium, type Page } from "playwright";
+import { collectOfficialShowTv } from "../sources/showTvOfficial.js";
 
 type SiteName="icanlive"|"operativmm";
 type Slot={id:string;name:string;group:string;order:number};
@@ -132,6 +133,8 @@ for(const slot of slots){
  reports.push({...slot,status:selected?"source_url_collected_no_playback_check":"no_direct_hls_found",
   ...(selected?{chosen:selected}:{}),reason});
 }
+const showTv=await collectOfficialShowTv(ctx);
+console.log("[OFFICIAL SHOW TV]",JSON.stringify({status:showTv.status,source:showTv.page,foundBy:showTv.foundBy,networkStatus:showTv.networkStatus,host:showTv.url ? new URL(showTv.url).hostname : undefined}));
 await ctx.close();await browser.close();
 const selected=reports.filter(r=>r.chosen),playlist=["#EXTM3U"];
 for(const item of selected){
@@ -142,19 +145,30 @@ for(const item of selected){
   playlist.push(url);
 }
 const out={mode:"recent-user-sites-no-playback-validation",updatedAt:new Date().toISOString(),
-  sites:[icanliveCategory,"https://operativmm.az/az/canli-tv"],
+  sites:[icanliveCategory,"https://operativmm.az/az/canli-tv"],officialTurkeySource:"https://www.showtv.com.tr/canli-yayin",
+  officialShowTv:showTv,
   disclaimer:"Captured real HLS URLs from source page/player; no HTTP/HLS/ffprobe/playback check. No AZ-IP guarantee.",
   slots:reports,found:selected.length,missing:12-selected.length};
 fs.mkdirSync("output",{recursive:true});
 fs.writeFileSync("output/recent-site-status.json",JSON.stringify(out,null,2)+"\n");
 fs.writeFileSync("output/az-fixed12-status.json",JSON.stringify(out,null,2)+"\n");
+fs.writeFileSync("output/showtv-source-status.json",JSON.stringify(showTv,null,2)+"\n");
 const newM3u=playlist.join("\n")+"\n";
+const showTvM3u=showTv.url ? [
+ '#EXTINF:-1 tvg-id="show-tv" tvg-name="Show TV" group-title="Türkiyə",Show TV',
+ "#EXTVLCOPT:http-referrer=https://www.showtv.com.tr/canli-yayin",
+ "#EXTVLCOPT:http-origin=https://www.showtv.com.tr",
+ showTv.url
+].join("\n")+"\n" : "";
+fs.writeFileSync("output/turkey-official.m3u","#EXTM3U\n"+showTvM3u,"utf8");
+const mainM3u=newM3u+showTvM3u;
 fs.writeFileSync("output/azerbaijan-fixed.m3u",newM3u);
 // Only update public M3U when a genuine site media URL was extracted. An
 // inaccessible 403 page must not erase the previous public output.
 if(selected.length){
- for(const path of ["output/playlist.m3u","output/azerbaijan-manual.m3u","output/priority-test.m3u"])
+ for(const path of ["output/azerbaijan-manual.m3u","output/priority-test.m3u"])
    fs.writeFileSync(path,newM3u,"utf8");
+ fs.writeFileSync("output/playlist.m3u",mainM3u,"utf8");
 }
 const included=new Set(selected.map(x=>x.id));
 function readJson(path:string):Record<string,any>{
@@ -164,10 +178,10 @@ function readJson(path:string):Record<string,any>{
 if(selected.length){
  const status=readJson("output/status.json");
  Object.assign(status,{
-   updatedAt:out.updatedAt,published:selected.length,manualAzPlaylist:true,
+   updatedAt:out.updatedAt,published:selected.length+(showTv.url?1:0),manualAzPlaylist:true,
    manualAzRequiresDevicePlaybackTest:true,sourceMode:"icanlive_operativmm_no_video_validation",
-   sources:["icanlive","operativmm"],fastCheckPassed:0,mediaCheckPassed:0,
-   countryCounts:{"Azərbaycan":selected.length,"Türkiyə":0,"Rusiya":0},
+   sources:["icanlive","operativmm","showtv-official"],fastCheckPassed:0,mediaCheckPassed:0,
+   countryCounts:{"Azərbaycan":selected.length,"Türkiyə":showTv.url?1:0,"Rusiya":0},
    degraded:selected.length<12
  });
  status.priorityChannels=slots.map(x=>({
@@ -176,20 +190,21 @@ if(selected.length){
    selectedSource:reports.find(r=>r.id===x.id)?.chosen?.site??"none",
    candidatesValidated:0
  }));
+ status.priorityChannels.push({id:"show-tv",name:"Show TV",country:"Türkiyə",status:showTv.url?"official_source_hls_captured_no_video_test":"source_unavailable",selectedSource:showTv.url?"showtv-official":"none",candidatesValidated:0});
  fs.writeFileSync("output/status.json",JSON.stringify(status,null,2)+"\n");
 
  const mand=readJson("output/mandatory-health.json");
  mand.updatedAt=out.updatedAt;mand.verified=[];
- mand.needsLocalTest=[...included];
- mand.missingNoWebStream=(mand.details??[]).filter((x:{id:string})=>!included.has(x.id)).map((x:{id:string})=>x.id);
+ mand.needsLocalTest=[...included,...(showTv.url?["show-tv"]:[])];
+ mand.missingNoWebStream=(mand.details??[]).filter((x:{id:string})=>!included.has(x.id)&&!(x.id==="show-tv"&&showTv.url)).map((x:{id:string})=>x.id);
  for(const row of mand.details??[]){
-    row.status=included.has(row.id)?"source_url_collected_no_video_test":"no_direct_hls_from_user_sites";
-    row.candidates=included.has(row.id)?1:0;
+    row.status=(included.has(row.id)||(row.id==="show-tv"&&showTv.url))?"source_url_collected_no_video_test":"no_direct_hls_from_user_sites";
+    row.candidates=(included.has(row.id)||(row.id==="show-tv"&&showTv.url))?1:0;
  }
  fs.writeFileSync("output/mandatory-health.json",JSON.stringify(mand,null,2)+"\n");
 
  const health=readJson("output/channel-health.json");
- health.updatedAt=out.updatedAt;health.published=selected.length;
+ health.updatedAt=out.updatedAt;health.published=selected.length+(showTv.url?1:0);
  health.verifiedWorking=0;health.mandatoryVerified=0;
  health.mandatoryNeedsLocalTest=mand.needsLocalTest;
  health.mandatoryMissing=mand.missingNoWebStream;
@@ -200,7 +215,8 @@ if(selected.length){
    id:r.id,name:r.name,source:r.chosen!.site,page:r.chosen!.page,
    urlHost:new URL(r.chosen!.url).hostname,localPlaybackVerified:false
  }));
- health.sourcesLoaded=["icanlive","operativmm"];health.manualAzLocalTestPending=true;
+ if(showTv.url)health.selectedSources.push({id:"show-tv",name:"Show TV",source:"showtv-official",page:showTv.page,urlHost:new URL(showTv.url).hostname,localPlaybackVerified:false});
+ health.sourcesLoaded=["icanlive","operativmm","showtv-official"];health.manualAzLocalTestPending=true;
  fs.writeFileSync("output/channel-health.json",JSON.stringify(health,null,2)+"\n");
 }
 
