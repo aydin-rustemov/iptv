@@ -31,7 +31,7 @@ test("Wrongly grouped AZ broadcaster is restored to Azerbaijan before matching",
 
 test("Yoda first, alternative source next, broadcaster link last", () => {
   const a = stream("ARB", "arb", "https://str.yodacdn.net/arb/index.m3u8", "Azərbaycan", "yoda-az");
-  const b = stream("ARB", "arb", "https://arb.tvstream.az/hls/stream5/index.m3u8", "Azərbaycan", "tvstream-az");
+  const b = stream("ARB", "arb", "https://arb.tvstream.az/hls/stream10/index.m3u8", "Azərbaycan", "tvstream-az");
   const c = stream("ARB", "arb", "https://iptv.example/arb.m3u8", "Azərbaycan", "iptv-org-azerbaijan");
   const d = stream("ARB", "arb", "https://arb.example/arb.m3u8", "Azərbaycan", "official-last-resort");
   assert.deepEqual([a,b,c,d].map(sourceTier), [0,1,2,3]);
@@ -41,7 +41,7 @@ test("Yoda first, alternative source next, broadcaster link last", () => {
 
 test("Selected stream failing its second probe falls back to another source", async () => {
   const yoda = verified(stream("ARB", "arb", "https://str.yodacdn.net/arb/index.m3u8", "Azərbaycan", "yoda-az"));
-  const backup = verified(stream("ARB", "arb", "https://arb.tvstream.az/hls/stream5/index.m3u8", "Azərbaycan", "tvstream-az"));
+  const backup = verified(stream("ARB", "arb", "https://arb.tvstream.az/hls/stream10/index.m3u8", "Azərbaycan", "tvstream-az"));
   const r = await confirmLongerLivedStreams([yoda], [yoda,backup], async (e) => e.sourceName === "tvstream-az", 0);
   assert.equal(r.entries.length, 1);
   assert.equal(r.entries[0]?.sourceName, "tvstream-az");
