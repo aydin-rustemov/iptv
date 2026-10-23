@@ -55,7 +55,7 @@ const ALTERNATIVES = [
   }
 ] as const;
 
-export const AZ_SIX_IDS = new Set(ALTERNATIVES.map((x) => x.id));
+export const AZ_SIX_IDS: ReadonlySet<string> = new Set(ALTERNATIVES.map((x) => x.id));
 
 export function azSixCandidates(): PlaylistEntry[] {
   return ALTERNATIVES.flatMap((channel, index) => channel.urls.map((url) => ({
