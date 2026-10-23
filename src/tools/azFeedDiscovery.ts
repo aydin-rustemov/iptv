@@ -34,7 +34,7 @@ const IDS:Record<string,string>={
 const TVG_IDS:Record<string,string>={
   "aztv az":"aztv","ictimai tv az":"ictimai-tv","ictima itv az":"ictimai-tv","ictimai tv":"ictimai-tv",
   "idman tv az":"idman-tv","medeniyyet tv az":"medeniyyet-tv","xezer tv az":"xezer-tv",
-  "azad tv az":"atv-az","arb az":"arb","space tv az":"space-tv",
+  "azad tv az":"atv-az","azadtv az":"atv-az","arb az":"arb","arb24 az":"arb24","arbtv az":"arb","space tv az":"space-tv",
   "cbc sport az":"cbc-sport","real tv az":"real-tv","arb24 az":"arb24","baku tv az":"baku-tv"
 };
 function identify(title:string,rawTvg:string,group:string,source:string):string|undefined{
@@ -46,6 +46,8 @@ function identify(title:string,rawTvg:string,group:string,source:string):string|
   if(byId&&byName&&byId!==byName)return undefined;
   const found=byId||byName;
   if(!found)return undefined;
+  if(found==="arb" && /(?:gunes|arb24|arb 24)/.test(tvg))return undefined;
+  if(found==="atv-az" && /alanya|kanal.s/.test(tvg))return undefined;
   // Mixed AZ/TR playlist: only assign ATV to Azerbaijan with explicit AZ metadata.
   if(found==="atv-az" && source==="yusiff-az-tr" &&
       !/(?:azad.*\.az|atv\.az)/i.test(rawTvg) && !/azerbaycan|azerbaijan/i.test(group))return undefined;
