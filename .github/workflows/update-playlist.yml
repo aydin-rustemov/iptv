@@ -65,7 +65,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f output/mandatory-health.json
+          git add -f output/mandatory-health.json output/az-six-health.json
           for file in \
             config/sources.json \
             output/playlist.m3u \
