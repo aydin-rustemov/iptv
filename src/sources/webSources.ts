@@ -27,7 +27,8 @@ const YODA_SEEDS: Seed[] = [
   { url: "https://yoda.az/tv/arb/", country: "Azərbaycan" },
   { url: "https://yoda.az/tv/space/", country: "Azərbaycan" },
   { url: "https://yoda.az/tv/aztv/", country: "Azərbaycan" },
-  { url: "https://yoda.az/tv/ictimai/", country: "Azərbaycan" }
+  { url: "https://yoda.az/tv/ictimai/", country: "Azərbaycan" },
+  { url: "https://yoda.az/tv/xazartv/", country: "Azərbaycan" }
 ];
 
 export const SOURCES: Source[] = [
