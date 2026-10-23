@@ -24,6 +24,15 @@ const aliases:Record<string,string[]>={
   "arb24":["arb 24","arb24"],
   "baku-tv":["baku tv","baku.tv"]
 };
+// iCanlive sometimes omits older broadcasters from the current category list
+// although their original TV player pages still exist.
+const knownIcanlivePages:Record<string,string>={
+  "idman-tv":"https://icanlive.tv/canli/12971/idman-tv.html",
+  "medeniyyet-tv":"https://icanlive.tv/canli/12882/medeniyyet-tv.html",
+  "xezer-tv":"https://icanlive.tv/canli/31981/xezer-tv.html",
+  "space-tv":"https://icanlive.tv/canli/30302/space-tv.html",
+  "arb24":"https://icanlive.tv/canli/25736/arb-24.html"
+};
 const operativSlugs:Record<string,string>={
   aztv:"aztv","ictimai-tv":"ictimai-tv","idman-tv":"idman-tv",
   "medeniyyet-tv":"medeniyyet","xezer-tv":"xezer-tv",
@@ -107,6 +116,12 @@ for(const slot of slots){
     if(selected)break;
   }
  }else reason="not_in_icanlive_az_catalogue";
+ if(!selected&&knownIcanlivePages[slot.id]){
+   const result=await extract(knownIcanlivePages[slot.id],"icanlive",slot);
+   console.log("[SITE CAPTURE]",JSON.stringify({id:slot.id,site:"icanlive-direct",code:result.status,found:result.links.length}));
+   selected=result.links[0];
+   if(!selected)reason+="; known_page_"+result.status;
+ }
  if(!selected){
    const result=await extract("https://operativmm.az/az/canli-tv/"+operativSlugs[slot.id],"operativmm",slot);
    console.log("[SITE CAPTURE]",JSON.stringify({id:slot.id,site:"operativmm",code:result.status,found:result.links.length}));
