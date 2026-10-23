@@ -1,5 +1,7 @@
 # IPTV Playlist
 
+> **IMPORTANT (2026-10-23):** The static GitHub playlist `output/playlist.m3u` and `output/azerbaijan-manual.m3u` have **not** worked on the user's Azerbaijani IPTV player. Do not treat them as verified playback URLs. Yoda uses short-lived HLS tokens linked to requesting IP and User-Agent, so foreign GitHub-generated or guessed unsigned URLs are not reliable. See [Azerbaijan-local gateway setup](docs/az-local-gateway.md) for the experimental same-IP token-refreshing solution. Local real-video validation is still required. Automated scraping/publishing is paused.
+
 This project downloads publicly available IPTV stream candidates, validates actual media playback and publishes up to 100 region-focused channels after checking for actual video packets (Azerbaijan first, then Turkey and Russia).
 
 No local server is required. The user's computer may be turned off. The playlist is rebuilt from fresh AZ, TR and RU source playlists by GitHub Actions on a three-hour UTC cron (scheduling can be delayed by GitHub). The job publishes only streams that passed the runner's checks; this does not guarantee playback in every country or TV app. Expiring signed links, provider geo-restrictions and browser-only playback can still prevent channels from playing.

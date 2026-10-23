@@ -28,3 +28,18 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run audit
+      - name: Smoke test AZ local gateway HTTP playlist and health
+        shell: bash
+        run: |
+          AZ_GATEWAY_HOST=127.0.0.1 AZ_GATEWAY_PORT=18787 npm run gateway:az > /tmp/az-gateway.log 2>&1 &
+          GATEWAY_PID=$!
+          trap 'kill "$GATEWAY_PID" 2>/dev/null || true' EXIT
+          for i in {1..20}; do
+            if curl --silent --fail http://127.0.0.1:18787/health > /tmp/az-health.json; then break; fi
+            sleep 1
+          done
+          grep -q '"channels": 29' /tmp/az-health.json
+          curl --silent --fail http://127.0.0.1:18787/playlist.m3u > /tmp/az-playlist.m3u
+          grep -q 'tvg-id="arb"' /tmp/az-playlist.m3u
+          grep -q 'tvg-id="real-tv"' /tmp/az-playlist.m3u
+          test "$(grep -c '^#EXTINF' /tmp/az-playlist.m3u)" -eq 29
