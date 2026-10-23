@@ -2,6 +2,7 @@ import { chromium, type Browser, type Response } from "playwright";
 import type { PlaylistEntry } from "../types.js";
 import { isForbiddenUrl } from "../validator.js";
 import { SOURCES, type ChannelPage, type Country, type Source } from "./webSources.js";
+import { sourcePageIdentity, priorityWebPageScore } from "./sourcePageIdentity.js";
 
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
 const MAX_PAGES = Number(process.env["IPTV_WEB_MAX_PAGES_PER_SOURCE"] ?? 35);
@@ -60,7 +61,10 @@ async function discoverSource(source: Source, browser?: Browser): Promise<{ entr
       seedPages++;
       collectChannelPages(pages, html, seed.url, seed.country, source);
 
-      if (manifestUrls(html, seed.url).length || (source.name === "yoda-az" && /\/tv\/[^/]+\/?$/.test(new URL(seed.url).pathname))) {
+      if (source.name === "operativmm-az" && /\/az\/canli-tv\/[^/]+\/?$/.test(new URL(seed.url).pathname)) {
+        const named = sourcePageIdentity(source.name, seed.url, "", seed.country);
+        if (named) pages.set(seed.url, named);
+      } else if (manifestUrls(html, seed.url).length || (source.name === "yoda-az" && /\/tv\/[^/]+\/?$/.test(new URL(seed.url).pathname))) {
         pages.set(seed.url, {
           url: seed.url,
           title: pageTitle(html) || source.name,
@@ -73,7 +77,12 @@ async function discoverSource(source: Source, browser?: Browser): Promise<{ entr
     }
   }
 
-  const selected = [...pages.values()].slice(0, source.name === "yoda-az" ? Math.min(45, MAX_PAGES) : MAX_PAGES);
+  // Major broadcasters must be scanned before alphabetical/rank order.
+  // Otherwise with 35/page the 7 priority Turkish TV stations are skipped.
+  const budget = source.name.startsWith("icanlive-") ? Math.max(60, MAX_PAGES) : MAX_PAGES;
+  const selected = [...pages.values()]
+    .sort((a, b) => priorityWebPageScore(b) - priorityWebPageScore(a))
+    .slice(0, source.name === "yoda-az" ? Math.min(45, MAX_PAGES) : budget);
   const entries: PlaylistEntry[] = [];
   let manifestCandidates = 0;
 
@@ -112,7 +121,13 @@ function collectChannelPages(
   source: Source
 ): void {
   for (const link of links(html, base)) {
-    if (!allowedHost(link.href, source.hosts) || !channelLike(link.text, link.href)) continue;
+    if (!allowedHost(link.href, source.hosts)) continue;
+    if (source.name === "operativmm-az" || source.name.startsWith("icanlive-")) {
+      const named = sourcePageIdentity(source.name, link.href, link.text, fallbackCountry);
+      if (named) pages.set(named.url, named);
+      continue;
+    }
+    if (!channelLike(link.text, link.href)) continue;
     const title = cleanTitle(link.text) || titleFromUrl(link.href);
     if (!title || excluded(title)) continue;
     pages.set(link.href, {
@@ -173,7 +188,10 @@ async function pageCandidates(page: ChannelPage, browser?: Browser): Promise<str
     }
   }
 
-  const needsBrowser = found.size === 0 || isVolo(page.url) || isYoda(page.url);
+  const hostname = new URL(page.url).hostname;
+  const special = hostname === "operativmm.az" || hostname === "www.operativmm.az" ||
+    hostname === "icanlive.tv" || hostname === "www.icanlive.tv";
+  const needsBrowser = found.size === 0 || isVolo(page.url) || isYoda(page.url) || special;
   if (browser && needsBrowser) {
     (await captureNetwork(page.url, browser)).forEach((url) => found.add(url));
     for (const variant of variants.slice(0, 2)) {
