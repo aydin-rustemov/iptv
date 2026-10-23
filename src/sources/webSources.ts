@@ -57,11 +57,11 @@ const ICANLIVE_RU_SEEDS: Seed[] = [
 ];
 
 export const SOURCES: Source[] = [
+  { name: "yoda-az", seeds: YODA_SEEDS, hosts: ["yoda.az", "www.yoda.az", "yodaplayer.yodacdn.net"] },
   { name: "operativmm-az", seeds: OPERATIVMM_SEEDS, hosts: ["operativmm.az"] },
   { name: "icanlive-az", seeds: ICANLIVE_AZ_SEEDS, hosts: ["icanlive.tv"] },
   { name: "icanlive-tr", seeds: ICANLIVE_TR_SEEDS, hosts: ["icanlive.tv"] },
   { name: "icanlive-ru", seeds: ICANLIVE_RU_SEEDS, hosts: ["icanlive.tv"] },
-  { name: "yoda-az", seeds: YODA_SEEDS, hosts: ["yoda.az", "www.yoda.az", "yodaplayer.yodacdn.net"] },
   { name: "canlitv-volo", seeds: VOLO_SEEDS, hosts: ["tv.canlitvvolo.com"] },
   { name: "canlitv-video", seeds: [
     { url: "https://www.canlitv.video/kategori/azerbaycan", country: "Azərbaycan" },
