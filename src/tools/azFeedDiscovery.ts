@@ -35,7 +35,7 @@ const TVG_IDS:Record<string,string>={
   "aztv az":"aztv","ictimai tv az":"ictimai-tv","ictima itv az":"ictimai-tv","ictimai tv":"ictimai-tv",
   "idman tv az":"idman-tv","medeniyyet tv az":"medeniyyet-tv","xezer tv az":"xezer-tv",
   "azad tv az":"atv-az","azadtv az":"atv-az","arb az":"arb","arb24 az":"arb24","arbtv az":"arb","space tv az":"space-tv",
-  "cbc sport az":"cbc-sport","real tv az":"real-tv","arb24 az":"arb24","baku tv az":"baku-tv"
+  "cbc sport az":"cbc-sport","real tv az":"real-tv","baku tv az":"baku-tv"
 };
 function identify(title:string,rawTvg:string,group:string,source:string):string|undefined{
   const tvg=key(rawTvg.replace(/@(?:sd|hd|fhd).*$/i,""));
