@@ -146,5 +146,71 @@ const out={mode:"recent-user-sites-no-playback-validation",updatedAt:new Date().
   slots:reports,found:selected.length,missing:12-selected.length};
 fs.mkdirSync("output",{recursive:true});
 fs.writeFileSync("output/recent-site-status.json",JSON.stringify(out,null,2)+"\n");
-fs.writeFileSync("output/azerbaijan-fixed.m3u",playlist.join("\n")+"\n");
+const newM3u=playlist.join("\n")+"\n";
+fs.writeFileSync("output/azerbaijan-fixed.m3u",newM3u);
+// Only update public M3U when a genuine site media URL was extracted. An
+// inaccessible 403 page must not erase the previous public output.
+if(selected.length){
+ for(const path of ["output/playlist.m3u","output/azerbaijan-manual.m3u","output/priority-test.m3u"])
+   fs.writeFileSync(path,newM3u,"utf8");
+}
+const included=new Set(selected.map(x=>x.id));
+function readJson(path:string):Record<string,any>{
+ try{return JSON.parse(fs.readFileSync(path,"utf8")) as Record<string,any>}
+ catch{return {}}
+}
+if(selected.length){
+ const status=readJson("output/status.json");
+ Object.assign(status,{
+   updatedAt:out.updatedAt,published:selected.length,manualAzPlaylist:true,
+   manualAzRequiresDevicePlaybackTest:true,sourceMode:"icanlive_operativmm_no_video_validation",
+   sources:["icanlive","operativmm"],fastCheckPassed:0,mediaCheckPassed:0,
+   countryCounts:{"Azərbaycan":selected.length,"Türkiyə":0,"Rusiya":0},
+   degraded:selected.length<12
+ });
+ status.priorityChannels=slots.map(x=>({
+   id:x.id,name:x.name,country:"Azərbaycan",priority:x.order,
+   status:included.has(x.id)?"source_url_collected_no_playback_check":"source_unavailable",
+   selectedSource:reports.find(r=>r.id===x.id)?.chosen?.site??"none",
+   candidatesValidated:0
+ }));
+ fs.writeFileSync("output/status.json",JSON.stringify(status,null,2)+"\n");
+
+ const mand=readJson("output/mandatory-health.json");
+ mand.updatedAt=out.updatedAt;mand.verified=[];
+ mand.needsLocalTest=[...included];
+ mand.missingNoWebStream=(mand.details??[]).filter((x:{id:string})=>!included.has(x.id)).map((x:{id:string})=>x.id);
+ for(const row of mand.details??[]){
+    row.status=included.has(row.id)?"source_url_collected_no_video_test":"no_direct_hls_from_user_sites";
+    row.candidates=included.has(row.id)?1:0;
+ }
+ fs.writeFileSync("output/mandatory-health.json",JSON.stringify(mand,null,2)+"\n");
+
+ const health=readJson("output/channel-health.json");
+ health.updatedAt=out.updatedAt;health.published=selected.length;
+ health.verifiedWorking=0;health.mandatoryVerified=0;
+ health.mandatoryNeedsLocalTest=mand.needsLocalTest;
+ health.mandatoryMissing=mand.missingNoWebStream;
+ health.countryCounts=status.countryCounts;
+ health.candidatesScanned=0;health.candidatesWithVideo=0;
+ health.validation="Original HLS URL captured from user's iCanlive/OperativMM pages, NOT tested for video/playback";
+ health.selectedSources=selected.map(r=>({
+   id:r.id,name:r.name,source:r.chosen!.site,page:r.chosen!.page,
+   urlHost:new URL(r.chosen!.url).hostname,localPlaybackVerified:false
+ }));
+ health.sourcesLoaded=["icanlive","operativmm"];health.manualAzLocalTestPending=true;
+ fs.writeFileSync("output/channel-health.json",JSON.stringify(health,null,2)+"\n");
+}
+
+function esc(value:string){return value.replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;")}
+const html=[
+'<!doctype html><html lang="az"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Azərbaycan TV - 12 sabit kanal</title>',
+'<style>body{background:#101726;color:#edf4ff;font:16px system-ui;max-width:780px;margin:0 auto;padding:24px}h1{font-size:24px}p{color:#acbcd0;line-height:1.5}.station{display:flex;justify-content:space-between;gap:12px;padding:14px;border-bottom:1px solid #334056}.yes{color:#7cdebd}.no{color:#f3bb84}a{color:#9ecdfc}</style></head><body>',
+'<h1>Azərbaycan IPTV — 12 sabit kanal</h1>',
+'<p>İstifadəçinin iCanlive və OperativMM saytlarından M3U8 linkləri yoxlanmadan götürülüb. Video işləməsi təsdiqlənməyib. Kanal adı və sırası dəyişmir.</p>',
+'<p><a href="./azerbaijan-fixed.m3u">M3U playlist</a></p>',
+...reports.map(c=>'<div class="station"><span>'+c.order+'. '+esc(c.name)+'</span><span class="'+(c.chosen?"yes":"no")+'">'+(c.chosen?"M3U8 götürüldü":"M3U8 tapılmadı")+'</span></div>'),
+'</body></html>'
+].join("\n");
+fs.writeFileSync("output/azerbaijan-fixed.html",html,"utf8");
 console.log("[SITE CAPTURE SUMMARY]",JSON.stringify({found:selected.map(s=>({id:s.id,source:s.chosen!.site,host:new URL(s.chosen!.url).hostname})),missing:reports.filter(x=>!x.chosen).map(x=>({id:x.id,reason:x.reason}))}));
