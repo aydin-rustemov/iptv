@@ -19,7 +19,8 @@
     "volo:test:arb": "tsx src/volo-arb.ts",
     "test": "node --import tsx --test tests/*.test.ts",
     "update:legacy": "tsx src/index.ts",
-    "curate": "tsx src/curated.ts"
+    "curate": "tsx src/curated.ts",
+    "gateway:az": "tsx src/gateway/server.ts"
   },
   "dependencies": {
     "ffprobe-static": "^3.1.0",
