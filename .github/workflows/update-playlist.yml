@@ -1,18 +1,9 @@
 name: Update IPTV Playlist
 
+# Manual-mode maintenance: user requested to repair the AZ player first.
+# Resume scheduled discovery only after Azerbaijan device playback is confirmed.
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - "src/**"
-      - "config/**"
-      - "package.json"
-      - "package-lock.json"
-      - ".github/workflows/update-playlist.yml"
-  schedule:
-    - cron: "17 */3 * * *"
 
 permissions:
   contents: write
