@@ -33,7 +33,7 @@ const operativSlugs:Record<string,string>={
 };
 const clean=(text:string)=>text.toLocaleLowerCase("az").normalize("NFKD")
  .replace(/[\u0300-\u036f]/g,"").replace(/ə/g,"e").replace(/ı/g,"i")
- .replace(/[\s_.]+/g," ").replace(/\s*\d[\d,\s.]*$/,"").trim();
+ .replace(/[\s_.]+/g," ").replace(/\s+\d{1,3}(?:,\d{3})+$/,"").replace(/\s+\d{3,}$/,"").trim();
 function mediaUrl(raw:string):boolean{
  try {
   const u=new URL(raw);
