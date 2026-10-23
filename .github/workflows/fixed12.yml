@@ -8,9 +8,11 @@ on:
     branches:
       - main
       - feat/fixed-12-az-no-yoda-20261023
+      - feat/fixed12-dynamic-nonyoda-feeds-20261023
     paths:
       - "config/az-fixed12.json"
       - "src/tools/fixed12.ts"
+      - "src/tools/azFeedDiscovery.ts"
       - ".github/workflows/fixed12.yml"
 
 permissions:
@@ -34,6 +36,8 @@ jobs:
       - run: npm run typecheck
       - name: Independently probe all twelve channels and alternatives
         run: npx tsx src/tools/fixed12.ts
+      - name: Run channel identity and feed-discovery regression tests
+        run: npm test
       - name: Audit no Yoda or duplicate station and preserve requested order
         run: |
           node --input-type=module <<'NODE'

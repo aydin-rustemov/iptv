@@ -2,6 +2,7 @@ import fs from "node:fs";
 import { fastCheck, mediaCheck, isForbiddenUrl } from "../validator.js";
 import { isDirectManifestUrl } from "../playlistGuard.js";
 import { isAdvertisingStream } from "../sourcePolicy.js";
+import { gatherExternalSources } from "./azFeedDiscovery.js";
 import type { PlaylistEntry } from "../types.js";
 
 type Candidate = { source: string; url: string };
@@ -21,9 +22,28 @@ if(config.mode!=="fixed-12-non-yoda" ||
   config.channels.some((ch,i)=>ch.order!==i+1||!ch.name||!ch.candidates?.length)){
   throw new Error("The fixed 12 station order/identity has changed");
 }
-const all=config.channels.flatMap(ch=>ch.candidates.map(c=>({ch,c})));
-const seen=new Set<string>();
+// A fixed channel slot is distinct from its fluctuating sources. Each refresh
+// also discovers NEW HLS candidates from trusted public AZ/M3U feeds.
+const remote=await gatherExternalSources();
+const all=config.channels.flatMap(ch=>{
+  const list=[...ch.candidates,...(remote.candidates.get(ch.id)??[])];
+  const seenUrls=new Set<string>();
+  return list.filter(c=>{
+    if(seenUrls.has(c.url))return false;
+    seenUrls.add(c.url);
+    return true;
+  }).slice(0,20).map(c=>({ch,c}));
+});
+const owners=new Map<string,Set<string>>();
 for(const {ch,c} of all){
+  if(!owners.has(c.url))owners.set(c.url,new Set());
+  owners.get(c.url)!.add(ch.id);
+}
+// The same stream claimed as different broadcasters is untrustworthy.
+const conflicting=new Set([...owners].filter(([,ids])=>ids.size>1).map(([url])=>url));
+const usable=all.filter(x=>!conflicting.has(x.c.url));
+const seen=new Set<string>();
+for(const {ch,c} of usable){
   if(/yoda|yodacdn/i.test(c.url+" "+c.source)) throw Error("Yoda is prohibited: "+ch.id);
   if(!isDirectManifestUrl(c.url)||isForbiddenUrl(c.url,{allowLivePath:true})||isAdvertisingStream(c.url))throw Error("Unsafe/non-HLS candidate: "+ch.id);
   const key=ch.id+"|"+c.url;
@@ -47,9 +67,9 @@ function identityCompatible(ch:FixedChannel,c:Candidate):boolean{
   return true;
 }
 let cursor=0;
-const checked:Probe[]=Array.from({length:all.length},()=>({source:"",url:"",state:"not_checked"}));
+const checked:Probe[]=Array.from({length:usable.length},()=>({source:"",url:"",state:"not_checked"}));
 async function check(index:number):Promise<void>{
-  const {ch,c}=all[index]!,record:Probe={source:c.source,url:c.url,state:"unknown"};
+  const {ch,c}=usable[index]!,record:Probe={source:c.source,url:c.url,state:"unknown"};
   checked[index]=record;
   try{
     if(!identityCompatible(ch,c)){record.state="wrong_channel_identity";return;}
@@ -71,10 +91,10 @@ async function check(index:number):Promise<void>{
   finally{console.log("[FIXED12]",JSON.stringify({channel:ch.name,source:c.source,status:record.state,host:new URL(c.url).hostname}));}
 }
 await Promise.all(Array.from({length:8},async()=>{
-  while(cursor<all.length){const id=cursor++;await check(id);}
+  while(cursor<usable.length){const id=cursor++;await check(id);}
 }));
 const states:ChannelState[]=config.channels.map(ch=>{
-  const probes=all.flatMap(({ch:ref},index)=>ref.id===ch.id?[checked[index]!]:[]);
+  const probes=usable.flatMap(({ch:ref},index)=>ref.id===ch.id?[checked[index]!]:[]);
   const available=probes.find(x=>x.state==="video_confirmed_on_github");
   return {id:ch.id,name:ch.name,group:ch.group,order:ch.order,
     status:available?"video_confirmed_on_github":"no_confirmed_stream",
@@ -84,7 +104,8 @@ const available=states.filter(s=>s.status==="video_confirmed_on_github");
 const report={updatedAt:new Date().toISOString(),mode:"fixed-12-non-yoda",location:"github-runner-not-AZ",
   disclaimer:"HLS video and second manifest confirmed from GitHub IP only; AZ playback and pictured broadcaster NOT confirmed.",
   fixedCount:12,visibleInM3u:available.length,offlineOrGeoRestricted:12-available.length,
-  sourceCandidates:all.length,sourceCandidatesPassed:checked.filter(p=>p.state==="video_confirmed_on_github").length,
+  sourceFeeds:remote.report,conflictingUrlsRejected:conflicting.size,
+  sourceCandidates:usable.length,sourceCandidatesPassed:checked.filter(p=>p.state==="video_confirmed_on_github").length,
   channels:states};
 fs.mkdirSync(outRoot,{recursive:true});
 fs.writeFileSync(outRoot+"/az-fixed12-status.json",JSON.stringify(report,null,2)+"\n","utf8");
@@ -114,10 +135,10 @@ function getJson(path:string):Record<string,any>{
 const meta=getJson("output/status.json");
 meta.updatedAt=report.updatedAt;meta.published=available.length;
 meta.sources=["fixed-12-non-yoda"];
-meta.downloadedEntries=all.length;meta.uniqueCandidates=all.length;
+meta.downloadedEntries=usable.length;meta.uniqueCandidates=usable.length;
 meta.fastCheckPassed=checked.filter(p=>p.state==="video_confirmed_on_github").length;
 meta.mediaCheckPassed=meta.fastCheckPassed;
-meta.failed=all.length-meta.fastCheckPassed;
+meta.failed=usable.length-meta.fastCheckPassed;
 meta.countryCounts={"Azərbaycan":available.length,"Türkiyə":0,"Rusiya":0};
 meta.categoryCounts={"Azərbaycan":available.length};
 meta.degraded=available.length!==12;
@@ -142,7 +163,7 @@ const health=getJson("output/channel-health.json");
 health.updatedAt=report.updatedAt;health.published=available.length;
 health.verifiedWorking=available.length;health.mandatoryVerified=mandatory.verified.length;
 health.mandatoryNeedsLocalTest=[];health.mandatoryMissing=mandatory.missingNoWebStream;
-health.countryCounts=meta.countryCounts;health.candidatesScanned=all.length;
+health.countryCounts=meta.countryCounts;health.candidatesScanned=usable.length;
 health.candidatesWithVideo=meta.fastCheckPassed;health.rejected=meta.failed;
 health.validation=report.disclaimer;
 health.manualAzLocalTestPending=true;
@@ -161,4 +182,4 @@ const html=[
 "</body></html>"
 ].join("\n");
 fs.writeFileSync(outRoot+"/azerbaijan-fixed.html",html,"utf8");
-console.log("[FIXED12-SUMMARY]",JSON.stringify({ordered:states.map(x=>x.name),visible:available.map(x=>x.id),unavailable:states.filter(x=>x.status!=="video_confirmed_on_github").map(x=>x.id),tested:all.length}));
+console.log("[FIXED12-SUMMARY]",JSON.stringify({ordered:states.map(x=>x.name),visible:available.map(x=>x.id),unavailable:states.filter(x=>x.status!=="video_confirmed_on_github").map(x=>x.id),tested:usable.length,feeds:remote.report}));
