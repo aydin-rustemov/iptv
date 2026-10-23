@@ -11,7 +11,7 @@ const BROADCASTERS = [
   { id: "kanal-d", name: "Kanal D", country: "Türkiyə", url: "https://live.duhnet.tv/S2/HLS_LIVE/kanalddainp/track_4_1250/playlist.m3u8" },
   { id: "trt-1", name: "TRT 1", country: "Türkiyə", url: "https://tv-trt1.medya.trt.com.tr/master.m3u8" },
   { id: "show-tv", name: "Show TV", country: "Türkiyə", url: "https://ciner-live.daioncdn.net/showtv/showtv.m3u8" },
-  { id: "atv-tr", name: "ATV", country: "Türkiyə", url: "https://turknet.ercdn.net/atv/atv.m3u8" },
+
   { id: "now-tv", name: "NOW TV", country: "Türkiyə", url: "https://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv.m3u8" },
   { id: "tv8", name: "TV8", country: "Türkiyə", url: "https://tv8.daioncdn.net/tv8/tv8.m3u8" },
   { id: "star-tv", name: "Star TV", country: "Türkiyə", url: "https://dogus-live.daioncdn.net/startv/startv.m3u8" }
