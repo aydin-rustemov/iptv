@@ -1,0 +1,21 @@
+name: Inspect Recent IPTV Source Pages
+on:
+  push:
+    branches: [feat/operativ-icanlive-no-validation-20261023]
+    paths: ["src/tools/inspectRecentSites.ts", ".github/workflows/inspect-recent-sites.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install chromium
+      - run: npx tsx src/tools/inspectRecentSites.ts
