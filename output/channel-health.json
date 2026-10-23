@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-10-23T16:24:18.371Z",
-  "published": 7,
-  "verifiedWorking": 7,
+  "updatedAt": "2026-10-23T18:16:27.721Z",
+  "published": 3,
+  "verifiedWorking": 3,
   "mandatoryTotal": 18,
-  "mandatoryVerified": 2,
+  "mandatoryVerified": 3,
   "mandatoryNeedsLocalTest": [],
   "mandatoryMissing": [
     "ictimai-tv",
@@ -23,7 +23,7 @@
     "trt-1",
     "star-tv"
   ],
-  "validation": "Video packet/codec confirmed from GitHub runner with 2 manifest requests; local AZ device and actual broadcaster visual identity NOT confirmed.",
+  "validation": "HLS video and second manifest confirmed from GitHub IP only; AZ playback and pictured broadcaster NOT confirmed.",
   "stability": {
     "attempted": 36,
     "failed": 28,
@@ -35,68 +35,36 @@
       "name": "AzTV",
       "source": "community-cinerama",
       "urlHost": "stream8.cinerama.uz",
-      "sourceTier": 2,
+      "sourceTier": 1,
       "localPlaybackVerified": false
     },
     {
       "id": "atv-az",
       "name": "ATV Azərbaycan",
-      "source": "iptv-org",
+      "source": "official-last",
       "urlHost": "lives.atv.az",
-      "sourceTier": 2,
+      "sourceTier": 1,
       "localPlaybackVerified": false
     },
     {
       "id": "baku-tv",
       "name": "Baku TV",
-      "source": "iptv-org",
+      "source": "community-iptv",
       "urlHost": "rtmp.baku.tv",
-      "sourceTier": 2,
-      "localPlaybackVerified": false
-    },
-    {
-      "id": "kanal-s",
-      "name": "Kanal S",
-      "source": "iptv-org",
-      "urlHost": "lives.atv.az",
-      "sourceTier": 2,
-      "localPlaybackVerified": false
-    },
-    {
-      "id": "ayaz-tv",
-      "name": "Ayaz TV",
-      "source": "iptv-org",
-      "urlHost": "janya-ayaztv.vgcdn.net",
-      "sourceTier": 2,
-      "localPlaybackVerified": false
-    },
-    {
-      "id": "kn-music",
-      "name": "KN Music TV",
-      "source": "iptv-org",
-      "urlHost": "cdn4.yayin.com.tr",
-      "sourceTier": 2,
-      "localPlaybackVerified": false
-    },
-    {
-      "id": "vilayet-tv",
-      "name": "Vilayət TV",
-      "source": "iptv-org",
-      "urlHost": "nl.livekadeh.com",
-      "sourceTier": 2,
+      "sourceTier": 1,
       "localPlaybackVerified": false
     }
   ],
   "countryCounts": {
-    "Azərbaycan": 7,
+    "Azərbaycan": 3,
     "Türkiyə": 0,
     "Rusiya": 0
   },
-  "candidatesScanned": 36,
-  "candidatesWithVideo": 8,
-  "rejected": 28,
+  "candidatesScanned": 39,
+  "candidatesWithVideo": 4,
+  "rejected": 35,
   "sourcesLoaded": [
-    "github-live-hls-probe"
+    "fixed-12-non-yoda"
   ],
   "sourceErrors": [],
   "webSources": [],

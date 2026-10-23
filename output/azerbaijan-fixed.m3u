@@ -1,0 +1,7 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="aztv" tvg-name="AzTV" group-title="Azərbaycan",AzTV
+https://stream8.cinerama.uz/1455/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="atv-az" tvg-name="ATV Azərbaycan" group-title="Azərbaycan",ATV Azərbaycan
+https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8
+#EXTINF:-1 tvg-id="baku-tv" tvg-name="Baku TV" group-title="Azərbaycan",Baku TV
+https://rtmp.baku.tv/hls/bakutv.m3u8

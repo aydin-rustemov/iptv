@@ -1,9 +1,10 @@
 {
-  "updatedAt": "2026-10-23T16:24:18.371Z",
+  "updatedAt": "2026-10-23T18:16:27.721Z",
   "total": 18,
   "verified": [
     "aztv",
-    "atv-az"
+    "atv-az",
+    "baku-tv"
   ],
   "needsLocalTest": [],
   "missingNoWebStream": [
@@ -29,78 +30,78 @@
       "name": "AzTV",
       "country": "Azərbaycan",
       "id": "aztv",
-      "status": "github_video_test_passed_not_az_playback_verified",
-      "candidates": 1
+      "status": "github_video_confirmed_local_playback_unknown",
+      "candidates": 3
     },
     {
       "name": "İctimai TV",
       "country": "Azərbaycan",
       "id": "ictimai-tv",
       "status": "no_github_video_confirmed_stream",
-      "candidates": 0
+      "candidates": 5
     },
     {
       "name": "İdman TV",
       "country": "Azərbaycan",
       "id": "idman-tv",
       "status": "no_github_video_confirmed_stream",
-      "candidates": 0
+      "candidates": 3
     },
     {
       "name": "Mədəniyyət TV",
       "country": "Azərbaycan",
       "id": "medeniyyet-tv",
       "status": "no_github_video_confirmed_stream",
-      "candidates": 0
+      "candidates": 3
     },
     {
       "name": "Xəzər TV",
       "country": "Azərbaycan",
       "id": "xezer-tv",
       "status": "no_github_video_confirmed_stream",
-      "candidates": 0
+      "candidates": 4
     },
     {
       "name": "ATV Azərbaycan",
       "country": "Azərbaycan",
       "id": "atv-az",
-      "status": "github_video_test_passed_not_az_playback_verified",
-      "candidates": 1
+      "status": "github_video_confirmed_local_playback_unknown",
+      "candidates": 2
     },
     {
       "name": "Space TV",
       "country": "Azərbaycan",
       "id": "space-tv",
       "status": "no_github_video_confirmed_stream",
-      "candidates": 0
+      "candidates": 5
     },
     {
       "name": "ARB",
       "country": "Azərbaycan",
       "id": "arb",
       "status": "no_github_video_confirmed_stream",
-      "candidates": 0
+      "candidates": 4
     },
     {
       "name": "CBC Sport",
       "country": "Azərbaycan",
       "id": "cbc-sport",
       "status": "no_github_video_confirmed_stream",
-      "candidates": 0
+      "candidates": 3
     },
     {
       "name": "Real TV",
       "country": "Azərbaycan",
       "id": "real-tv",
       "status": "no_github_video_confirmed_stream",
-      "candidates": 0
+      "candidates": 2
     },
     {
       "name": "ARB 24",
       "country": "Azərbaycan",
       "id": "arb24",
       "status": "no_github_video_confirmed_stream",
-      "candidates": 0
+      "candidates": 3
     },
     {
       "name": "Show TV",
