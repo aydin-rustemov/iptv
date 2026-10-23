@@ -146,6 +146,7 @@ const out={mode:"recent-user-sites-no-playback-validation",updatedAt:new Date().
   slots:reports,found:selected.length,missing:12-selected.length};
 fs.mkdirSync("output",{recursive:true});
 fs.writeFileSync("output/recent-site-status.json",JSON.stringify(out,null,2)+"\n");
+fs.writeFileSync("output/az-fixed12-status.json",JSON.stringify(out,null,2)+"\n");
 const newM3u=playlist.join("\n")+"\n";
 fs.writeFileSync("output/azerbaijan-fixed.m3u",newM3u);
 // Only update public M3U when a genuine site media URL was extracted. An
