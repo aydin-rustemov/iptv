@@ -40,6 +40,13 @@ if (status.published !== extinfCount) errors.push("Published count disagrees wit
 const mandatory = JSON.parse(readJsonText("config/mandatory-channels.json")) as { channels: Array<{ id: string; name: string }> };
 const mandatoryHealth = JSON.parse(readJsonText("output/mandatory-health.json")) as { needsLocalTest: string[]; missingNoWebStream: string[] };
 const unverifiedIds = new Set(mandatoryHealth.needsLocalTest);
+const yodaReport = JSON.parse(readJsonText("output/yoda-status.json")) as {
+  entries: Array<{ id: string; name: string; url: string; source: string; checkedOnGithub: boolean }>
+};
+const yodaRegionalUrls = new Set(yodaReport.entries
+  .filter((row) => (row.source === "yoda-az" || row.source === "yoda-az-cdn") &&
+    row.checkedOnGithub === false)
+  .map((row) => row.id + "|" + row.url));
 const missingIds = new Set(mandatoryHealth.missingNoWebStream);
 for (const channel of mandatory.channels) {
   const matching = entries.filter((entry) => entry.id === channel.id);
@@ -51,9 +58,9 @@ for (const channel of mandatory.channels) {
   if (matching.length !== 1) errors.push("Required TV channel missing or duplicated: " + channel.name);
   if (unverifiedIds.has(channel.id)) {
     const chosen = matching[0];
-    if (chosen && (!chosen.group.startsWith("Azərbaycan") ||
-      !/\.yodacdn\.net$/.test(new URL(chosen.url).hostname))) {
-      errors.push("Unverified fallback must be a real Yoda CDN Azerbaijan channel: " + channel.name);
+    if (!chosen || !chosen.group.startsWith("Azərbaycan") ||
+        !yodaRegionalUrls.has(channel.id + "|" + chosen.url)) {
+      errors.push("Unverified AZ channel must be traceable to a Yoda player page: " + channel.name);
     }
   }
 }

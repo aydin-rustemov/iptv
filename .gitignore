@@ -21,5 +21,6 @@ output/*
 !output/canlitv-status.json
 !output/channel-health.json
 !output/az-six-health.json
+!output/yoda-status.json
 !output/playlist-volo-test.m3u
 !output/volo-arb-status.json

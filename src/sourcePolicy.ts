@@ -96,7 +96,10 @@ export function validCandidateIdentity(entry: PlaylistEntry): boolean {
       const identifier = (parsed.hostname + parsed.pathname).toLowerCase();
       const onSharedYoda = /(?:^|\.)yodacdn\.net$/.test(host);
       const onTvstream = host === "tvstream.az" || host.endsWith(".tvstream.az");
-      if ((onSharedYoda || onTvstream) && !expected.test(identifier)) return false;
+      // A channel-specific Yoda player page is stronger identity evidence than
+      // an opaque CDN path: do not reject its stream based on a numeric CDN ID.
+      // Direct CDN guesses still require broadcaster-identifying path text.
+      if ((onSharedYoda || onTvstream) && entry.sourceName !== "yoda-az" && !expected.test(identifier)) return false;
       if (onSharedYoda && id === "arb" && /arb24|arbgunes|arb-gunes/.test(identifier)) return false;
     } catch { return false; }
   }
