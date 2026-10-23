@@ -5,7 +5,7 @@ import { isMismatchedChannel } from "./channelMatchGuard.js";
 import { isAdvertisingStream, validCandidateIdentity } from "./sourcePolicy.js";
 
 const playlist = fs.readFileSync("output/playlist.m3u", "utf8");
-const status = JSON.parse(readJsonText("output/status.json")) as { published?: number };
+const status = JSON.parse(readJsonText("output/status.json")) as { published?: number; manualAzPlaylist?: boolean };
 const manualConfig = JSON.parse(readJsonText("config/manual-channel-overrides.json")) as {
   channels?: Array<{
     id: string;
@@ -40,9 +40,14 @@ if (status.published !== extinfCount) errors.push("Published count disagrees wit
 const mandatory = JSON.parse(readJsonText("config/mandatory-channels.json")) as { channels: Array<{ id: string; name: string }> };
 const mandatoryHealth = JSON.parse(readJsonText("output/mandatory-health.json")) as { needsLocalTest: string[]; missingNoWebStream: string[] };
 const unverifiedIds = new Set(mandatoryHealth.needsLocalTest);
-const yodaReport = JSON.parse(readJsonText("output/yoda-status.json")) as {
-  entries: Array<{ id: string; name: string; url: string; source: string; checkedOnGithub: boolean }>
-};
+const manualAzEntries = status.manualAzPlaylist
+  ? parsePlaylistEntries(fs.readFileSync("output/azerbaijan-manual.m3u", "utf8"))
+  : [];
+const yodaReport = status.manualAzPlaylist
+  ? { entries: [] as Array<{ id: string; name: string; url: string; source: string; checkedOnGithub: boolean }> }
+  : JSON.parse(readJsonText("output/yoda-status.json")) as {
+      entries: Array<{ id: string; name: string; url: string; source: string; checkedOnGithub: boolean }>
+    };
 const yodaRegionalUrls = new Set(yodaReport.entries
   .filter((row) => (row.source === "yoda-az" || row.source === "yoda-az-cdn") &&
     row.checkedOnGithub === false)
@@ -58,9 +63,11 @@ for (const channel of mandatory.channels) {
   if (matching.length !== 1) errors.push("Required TV channel missing or duplicated: " + channel.name);
   if (unverifiedIds.has(channel.id)) {
     const chosen = matching[0];
+    const isManualAz = status.manualAzPlaylist && manualAzEntries.some((entry) =>
+      entry.id === channel.id && chosen && entry.url === chosen.url);
     if (!chosen || !chosen.group.startsWith("Azərbaycan") ||
-        !yodaRegionalUrls.has(channel.id + "|" + chosen.url)) {
-      errors.push("Unverified AZ channel must be traceable to a Yoda player page: " + channel.name);
+        (!isManualAz && !yodaRegionalUrls.has(channel.id + "|" + chosen.url))) {
+      errors.push("AZ channel lacks Yoda/manual provenance: " + channel.name);
     }
   }
 }

@@ -72,3 +72,24 @@ test("Never publish generic unidentified Yoda TV list page as a channel", () => 
     candidate("generic", "TV", "https://media.example.net/id/index.m3u8")
   ]), []);
 });
+
+test("Never assign an unrelated NTV stream to ARB even when captured on ARB player page", () => {
+  const wrong = candidate("arb", "ARB", "https://str.yodacdn.net/ntv/video.m3u8");
+  const correct = candidate("arb", "ARB", "https://str.yodacdn.net/arb/tracks-v1a1/mono.ts.m3u8");
+  assert.equal(yodaRegionalEntries([wrong]).length, 0);
+  assert.equal(yodaRegionalEntries([correct]).length, 1);
+});
+
+test("Yoda fallback cannot map unrelated stations to AzTV stream", () => {
+  for (const id of ["kanal-s","naxcivan-tv","arb-gunes","qafqaz-tv"]) {
+    const wrong = candidate(id, id, "https://str.yodacdn.net/azertv/index.m3u8");
+    assert.equal(yodaRegionalEntries([wrong]).length, 0, id);
+  }
+});
+
+test("Exact duplicate public tvg-id must be removed even when country or priority differ", () => {
+  const left = verified("canlitv-com");
+  const right = { ...verified("tvstream-az"), country: "Azərbaycan", priorityId: "some-other", tvgId: left.tvgId,
+    url: "https://other.example.com/another/playlist.m3u8" };
+  assert.equal(overlayYodaRegional([left,right], []).length, 1);
+});

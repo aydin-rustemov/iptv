@@ -1,22 +1,23 @@
 {
-  "updatedAt": "2026-10-23T06:51:52.337Z",
+  "updatedAt": "2026-10-23T14:18:57.130Z",
   "total": 18,
   "verified": [
+    "kanal-d"
+  ],
+  "needsLocalTest": [
     "aztv",
     "ictimai-tv",
     "idman-tv",
+    "medeniyyet-tv",
     "xezer-tv",
     "atv-az",
     "space-tv",
     "arb",
     "cbc-sport",
     "real-tv",
-    "arb24",
-    "kanal-d"
+    "arb24"
   ],
-  "needsLocalTest": [],
   "missingNoWebStream": [
-    "medeniyyet-tv",
     "show-tv",
     "atv-tr",
     "now-tv",
@@ -29,78 +30,78 @@
       "name": "AzTV",
       "country": "Azərbaycan",
       "id": "aztv",
-      "status": "video_verified_on_github",
-      "candidates": 11
+      "status": "MANUAL_AZ_PLAYBACK_NOT_VERIFIED",
+      "candidates": 1
     },
     {
       "name": "İctimai TV",
       "country": "Azərbaycan",
       "id": "ictimai-tv",
-      "status": "video_verified_on_github",
-      "candidates": 5
+      "status": "MANUAL_AZ_PLAYBACK_NOT_VERIFIED",
+      "candidates": 1
     },
     {
       "name": "İdman TV",
       "country": "Azərbaycan",
       "id": "idman-tv",
-      "status": "video_verified_on_github",
-      "candidates": 3
+      "status": "MANUAL_AZ_PLAYBACK_NOT_VERIFIED",
+      "candidates": 1
     },
     {
       "name": "Mədəniyyət TV",
       "country": "Azərbaycan",
       "id": "medeniyyet-tv",
-      "status": "NO_WEB_STREAM_FOUND",
+      "status": "MANUAL_AZ_PLAYBACK_NOT_VERIFIED",
       "candidates": 1
     },
     {
       "name": "Xəzər TV",
       "country": "Azərbaycan",
       "id": "xezer-tv",
-      "status": "video_verified_on_github",
-      "candidates": 6
+      "status": "MANUAL_AZ_PLAYBACK_NOT_VERIFIED",
+      "candidates": 1
     },
     {
       "name": "ATV Azərbaycan",
       "country": "Azərbaycan",
       "id": "atv-az",
-      "status": "video_verified_on_github",
-      "candidates": 4
+      "status": "MANUAL_AZ_PLAYBACK_NOT_VERIFIED",
+      "candidates": 1
     },
     {
       "name": "Space TV",
       "country": "Azərbaycan",
       "id": "space-tv",
-      "status": "video_verified_on_github",
-      "candidates": 4
+      "status": "MANUAL_AZ_PLAYBACK_NOT_VERIFIED",
+      "candidates": 1
     },
     {
       "name": "ARB",
       "country": "Azərbaycan",
       "id": "arb",
-      "status": "video_verified_on_github",
-      "candidates": 5
+      "status": "MANUAL_AZ_PLAYBACK_NOT_VERIFIED",
+      "candidates": 1
     },
     {
       "name": "CBC Sport",
       "country": "Azərbaycan",
       "id": "cbc-sport",
-      "status": "video_verified_on_github",
-      "candidates": 2
+      "status": "MANUAL_AZ_PLAYBACK_NOT_VERIFIED",
+      "candidates": 1
     },
     {
       "name": "Real TV",
       "country": "Azərbaycan",
       "id": "real-tv",
-      "status": "video_verified_on_github",
-      "candidates": 2
+      "status": "MANUAL_AZ_PLAYBACK_NOT_VERIFIED",
+      "candidates": 1
     },
     {
       "name": "ARB 24",
       "country": "Azərbaycan",
       "id": "arb24",
-      "status": "video_verified_on_github",
-      "candidates": 2
+      "status": "MANUAL_AZ_PLAYBACK_NOT_VERIFIED",
+      "candidates": 1
     },
     {
       "name": "Show TV",

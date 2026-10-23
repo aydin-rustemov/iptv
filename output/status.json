@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026-10-23T06:51:52.337Z",
+  "updatedAt": "2026-10-23T14:18:57.130Z",
   "sources": 16,
   "downloadedEntries": 1577,
   "uniqueCandidates": 960,
   "fastCheckPassed": 181,
   "mediaCheckPassed": 171,
-  "published": 93,
+  "published": 100,
   "failed": 212,
   "duplicatesRemoved": 617,
   "countryCounts": {
-    "Azərbaycan": 15,
+    "Azərbaycan": 22,
     "Türkiyə": 60,
     "Rusiya": 18
   },
@@ -31,9 +31,9 @@
       "priority": 1,
       "aliasesChecked": 3,
       "candidatesFound": 11,
-      "candidatesValidated": 3,
-      "selectedSource": "icanlive-az",
-      "status": "working"
+      "candidatesValidated": 0,
+      "selectedSource": "manual-az",
+      "status": "manual_local_test_pending"
     },
     {
       "id": "ictimai-tv",
@@ -43,9 +43,9 @@
       "priority": 2,
       "aliasesChecked": 3,
       "candidatesFound": 5,
-      "candidatesValidated": 2,
-      "selectedSource": "tvstream-az",
-      "status": "working"
+      "candidatesValidated": 0,
+      "selectedSource": "manual-az",
+      "status": "manual_local_test_pending"
     },
     {
       "id": "atv-az",
@@ -55,9 +55,9 @@
       "priority": 3,
       "aliasesChecked": 4,
       "candidatesFound": 4,
-      "candidatesValidated": 4,
-      "selectedSource": "icanlive-az",
-      "status": "working"
+      "candidatesValidated": 0,
+      "selectedSource": "manual-az",
+      "status": "manual_local_test_pending"
     },
     {
       "id": "xezer-tv",
@@ -67,9 +67,9 @@
       "priority": 4,
       "aliasesChecked": 2,
       "candidatesFound": 6,
-      "candidatesValidated": 3,
-      "selectedSource": "canlitv-com",
-      "status": "working"
+      "candidatesValidated": 0,
+      "selectedSource": "manual-az",
+      "status": "manual_local_test_pending"
     },
     {
       "id": "arb",
@@ -79,9 +79,9 @@
       "priority": 5,
       "aliasesChecked": 2,
       "candidatesFound": 5,
-      "candidatesValidated": 2,
-      "selectedSource": "tvstream-az",
-      "status": "working"
+      "candidatesValidated": 0,
+      "selectedSource": "manual-az",
+      "status": "manual_local_test_pending"
     },
     {
       "id": "arb24",
@@ -91,9 +91,9 @@
       "priority": 6,
       "aliasesChecked": 3,
       "candidatesFound": 2,
-      "candidatesValidated": 2,
-      "selectedSource": "tvstream-az",
-      "status": "working"
+      "candidatesValidated": 0,
+      "selectedSource": "manual-az",
+      "status": "manual_local_test_pending"
     },
     {
       "id": "space-tv",
@@ -103,9 +103,9 @@
       "priority": 7,
       "aliasesChecked": 2,
       "candidatesFound": 4,
-      "candidatesValidated": 2,
-      "selectedSource": "canlitv-com",
-      "status": "working"
+      "candidatesValidated": 0,
+      "selectedSource": "manual-az",
+      "status": "manual_local_test_pending"
     },
     {
       "id": "real-tv",
@@ -115,9 +115,9 @@
       "priority": 8,
       "aliasesChecked": 2,
       "candidatesFound": 2,
-      "candidatesValidated": 2,
-      "selectedSource": "tvstream-az",
-      "status": "working"
+      "candidatesValidated": 0,
+      "selectedSource": "manual-az",
+      "status": "manual_local_test_pending"
     },
     {
       "id": "baku-tv",
@@ -127,9 +127,9 @@
       "priority": 9,
       "aliasesChecked": 2,
       "candidatesFound": 3,
-      "candidatesValidated": 3,
-      "selectedSource": "icanlive-az",
-      "status": "working"
+      "candidatesValidated": 0,
+      "selectedSource": "manual-az",
+      "status": "manual_local_test_pending"
     },
     {
       "id": "cbc",
@@ -140,8 +140,9 @@
       "aliasesChecked": 3,
       "candidatesFound": 0,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "manual_local_test_pending",
+      "failureReason": "No matching alias found in enabled M3U sources",
+      "selectedSource": "manual-az"
     },
     {
       "id": "cbc-sport",
@@ -151,9 +152,9 @@
       "priority": 11,
       "aliasesChecked": 2,
       "candidatesFound": 2,
-      "candidatesValidated": 2,
-      "selectedSource": "tvstream-az",
-      "status": "working"
+      "candidatesValidated": 0,
+      "selectedSource": "manual-az",
+      "status": "manual_local_test_pending"
     },
     {
       "id": "idman-tv",
@@ -163,9 +164,9 @@
       "priority": 12,
       "aliasesChecked": 3,
       "candidatesFound": 3,
-      "candidatesValidated": 2,
-      "selectedSource": "tvstream-az",
-      "status": "working"
+      "candidatesValidated": 0,
+      "selectedSource": "manual-az",
+      "status": "manual_local_test_pending"
     },
     {
       "id": "medeniyyet-tv",
@@ -176,8 +177,9 @@
       "aliasesChecked": 2,
       "candidatesFound": 1,
       "candidatesValidated": 0,
-      "status": "all_candidates_failed",
-      "failureReason": "Matching candidates did not pass media validation"
+      "status": "manual_local_test_pending",
+      "failureReason": "Matching candidates did not pass media validation",
+      "selectedSource": "manual-az"
     },
     {
       "id": "mtv-az",
@@ -188,8 +190,9 @@
       "aliasesChecked": 3,
       "candidatesFound": 0,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "missing",
+      "failureReason": "No matching alias found in enabled M3U sources",
+      "selectedSource": "none"
     },
     {
       "id": "arb-gunes",
@@ -200,8 +203,9 @@
       "aliasesChecked": 1,
       "candidatesFound": 0,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "missing",
+      "failureReason": "No matching alias found in enabled M3U sources",
+      "selectedSource": "none"
     },
     {
       "id": "dunya-tv",
@@ -212,8 +216,9 @@
       "aliasesChecked": 1,
       "candidatesFound": 0,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "manual_local_test_pending",
+      "failureReason": "No matching alias found in enabled M3U sources",
+      "selectedSource": "manual-az"
     },
     {
       "id": "kanal-s",
@@ -224,8 +229,9 @@
       "aliasesChecked": 2,
       "candidatesFound": 0,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "missing",
+      "failureReason": "No matching alias found in enabled M3U sources",
+      "selectedSource": "none"
     },
     {
       "id": "naxcivan-tv",
@@ -236,8 +242,9 @@
       "aliasesChecked": 2,
       "candidatesFound": 1,
       "candidatesValidated": 0,
-      "status": "all_candidates_failed",
-      "failureReason": "Matching candidates did not pass media validation"
+      "status": "missing",
+      "failureReason": "Matching candidates did not pass media validation",
+      "selectedSource": "none"
     },
     {
       "id": "qafqaz-tv",
@@ -248,8 +255,9 @@
       "aliasesChecked": 2,
       "candidatesFound": 0,
       "candidatesValidated": 0,
-      "status": "not_found",
-      "failureReason": "No matching alias found in enabled M3U sources"
+      "status": "missing",
+      "failureReason": "No matching alias found in enabled M3U sources",
+      "selectedSource": "none"
     },
     {
       "id": "el-tv",
@@ -260,8 +268,9 @@
       "aliasesChecked": 1,
       "candidatesFound": 1,
       "candidatesValidated": 0,
-      "status": "all_candidates_failed",
-      "failureReason": "Matching candidates did not pass media validation"
+      "status": "missing",
+      "failureReason": "Matching candidates did not pass media validation",
+      "selectedSource": "none"
     },
     {
       "id": "kepez-tv",
@@ -272,8 +281,9 @@
       "aliasesChecked": 2,
       "candidatesFound": 1,
       "candidatesValidated": 0,
-      "status": "all_candidates_failed",
-      "failureReason": "Matching candidates did not pass media validation"
+      "status": "missing",
+      "failureReason": "Matching candidates did not pass media validation",
+      "selectedSource": "none"
     },
     {
       "id": "trt-1",
@@ -1091,5 +1101,7 @@
       "status": "not_found",
       "failureReason": "No matching alias found in enabled M3U sources"
     }
-  ]
+  ],
+  "manualAzPlaylist": true,
+  "manualAzRequiresDevicePlaybackTest": true
 }

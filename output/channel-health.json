@@ -1,12 +1,23 @@
 {
-  "updatedAt": "2026-10-23T06:51:52.337Z",
-  "published": 93,
-  "verifiedWorking": 93,
+  "updatedAt": "2026-10-23T14:18:57.130Z",
+  "published": 100,
+  "verifiedWorking": 0,
   "mandatoryTotal": 18,
-  "mandatoryVerified": 11,
-  "mandatoryNeedsLocalTest": [],
-  "mandatoryMissing": [
+  "mandatoryVerified": 1,
+  "mandatoryNeedsLocalTest": [
+    "aztv",
+    "ictimai-tv",
+    "idman-tv",
     "medeniyyet-tv",
+    "xezer-tv",
+    "atv-az",
+    "space-tv",
+    "arb",
+    "cbc-sport",
+    "real-tv",
+    "arb24"
+  ],
+  "mandatoryMissing": [
     "show-tv",
     "atv-tr",
     "now-tv",
@@ -14,7 +25,7 @@
     "trt-1",
     "star-tv"
   ],
-  "validation": "HTTP/ffprobe video and another probe 65 seconds later; cannot guarantee TV content identity",
+  "validation": "Manual Azerbaijani URLs are candidate HLS sources; NOT tested on an Azerbaijani IP. Foreign country entries are retained from previous published M3U; no new playback validation performed.",
   "stability": {
     "attempts": 96,
     "failed": [
@@ -53,83 +64,6 @@
     ]
   },
   "selectedSources": [
-    {
-      "id": "aztv",
-      "name": "AzTV",
-      "source": "icanlive-az",
-      "urlHost": "stream8.cinerama.uz",
-      "sourceTier": 1
-    },
-    {
-      "id": "arb",
-      "name": "ARB",
-      "source": "tvstream-az",
-      "urlHost": "arb.tvstream.az",
-      "sourceTier": 1
-    },
-    {
-      "id": "atv-az",
-      "name": "ATV Azərbaycan",
-      "source": "icanlive-az",
-      "urlHost": "lives.atv.az",
-      "sourceTier": 1
-    },
-    {
-      "id": "arb24",
-      "name": "ARB24",
-      "source": "tvstream-az",
-      "urlHost": "arb24.tvstream.az",
-      "sourceTier": 1
-    },
-    {
-      "id": "idman-tv",
-      "name": "İdman TV",
-      "source": "tvstream-az",
-      "urlHost": "idman.tvstream.az",
-      "sourceTier": 1
-    },
-    {
-      "id": "real-tv",
-      "name": "Real TV",
-      "source": "tvstream-az",
-      "urlHost": "realtv.tvstream.az",
-      "sourceTier": 1
-    },
-    {
-      "id": "ictimai-tv",
-      "name": "İctimai TV",
-      "source": "tvstream-az",
-      "urlHost": "ictimai.tvstream.az",
-      "sourceTier": 1
-    },
-    {
-      "id": "cbc-sport",
-      "name": "CBC Sport",
-      "source": "tvstream-az",
-      "urlHost": "cbcsport.tvstream.az",
-      "sourceTier": 1
-    },
-    {
-      "id": "baku-tv",
-      "name": "Baku TV",
-      "source": "icanlive-az",
-      "urlHost": "rtmp.baku.tv",
-      "sourceTier": 1
-    },
-    {
-      "id": "xezer-tv",
-      "name": "Xəzər TV",
-      "source": "canlitv-com",
-      "urlHost": "yayin2.canlitv.fun",
-      "sourceTier": 1
-    },
-    {
-      "id": "space-tv",
-      "name": "Space TV",
-      "source": "canlitv-com",
-      "urlHost": "yayin2.canlitv.fun",
-      "sourceTier": 1
-    },
     {
       "id": "az-rbaycan-gunaz-tv",
       "name": "GunAz TV",
@@ -703,10 +637,186 @@
       "source": "icanlive-ru",
       "urlHost": "cdn.ntv.ru",
       "sourceTier": 1
+    },
+    {
+      "id": "aztv",
+      "name": "AzTV",
+      "source": "manual-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
+    },
+    {
+      "id": "ictimai-tv",
+      "name": "İctimai TV",
+      "source": "manual-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
+    },
+    {
+      "id": "atv-az",
+      "name": "ATV Azərbaycan",
+      "source": "manual-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
+    },
+    {
+      "id": "xezer-tv",
+      "name": "Xəzər TV",
+      "source": "manual-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
+    },
+    {
+      "id": "arb",
+      "name": "ARB",
+      "source": "manual-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
+    },
+    {
+      "id": "space-tv",
+      "name": "Space TV",
+      "source": "manual-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
+    },
+    {
+      "id": "medeniyyet-tv",
+      "name": "Mədəniyyət TV",
+      "source": "manual-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
+    },
+    {
+      "id": "idman-tv",
+      "name": "İdman TV",
+      "source": "manual-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
+    },
+    {
+      "id": "real-tv",
+      "name": "Real TV",
+      "source": "manual-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
+    },
+    {
+      "id": "arb24",
+      "name": "ARB 24",
+      "source": "manual-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
+    },
+    {
+      "id": "cbc-sport",
+      "name": "CBC Sport",
+      "source": "manual-az",
+      "urlHost": "cbcsports-live.lg.mncdn.com",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
+    },
+    {
+      "id": "baku-tv",
+      "name": "baku-tv",
+      "source": "manual-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
+    },
+    {
+      "id": "cbc",
+      "name": "cbc",
+      "source": "manual-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
+    },
+    {
+      "id": "apa-tv",
+      "name": "apa-tv",
+      "source": "manual-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
+    },
+    {
+      "id": "eltv",
+      "name": "eltv",
+      "source": "manual-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
+    },
+    {
+      "id": "biznes-tv",
+      "name": "biznes-tv",
+      "source": "manual-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
+    },
+    {
+      "id": "tmb-tv",
+      "name": "tmb-tv",
+      "source": "manual-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
+    },
+    {
+      "id": "tmb-az",
+      "name": "tmb-az",
+      "source": "manual-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
+    },
+    {
+      "id": "sh-tv",
+      "name": "sh-tv",
+      "source": "manual-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
+    },
+    {
+      "id": "kanal-35",
+      "name": "kanal-35",
+      "source": "manual-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
+    },
+    {
+      "id": "dunya-tv",
+      "name": "dunya-tv",
+      "source": "manual-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
+    },
+    {
+      "id": "show-plus-tv",
+      "name": "show-plus-tv",
+      "source": "manual-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0,
+      "localPlaybackVerified": false
     }
   ],
   "countryCounts": {
-    "Azərbaycan": 15,
+    "Azərbaycan": 22,
     "Türkiyə": 60,
     "Rusiya": 18
   },
@@ -856,5 +966,6 @@
   "tvstream": {
     "attempted": 10,
     "matched": 8
-  }
+  },
+  "manualAzLocalTestPending": true
 }

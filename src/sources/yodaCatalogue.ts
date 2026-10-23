@@ -49,6 +49,24 @@ export function yodaChannelFromPage(pageUrl: string): { id: string; name: string
   } catch { return undefined; }
 }
 
+// Yoda may make an unrelated live CDN request while a station page loads.
+// ARB -> /ntv/ and several channels -> /azertv/ were observed in the last run.
+// Identify broadcasters by exact CDN path, never merely by the host page title.
+export function yodaCdnMatchesStation(entry: PlaylistEntry): boolean {
+  try {
+    const u = new URL(entry.url);
+    if (!/(?:^|\.)yodacdn\.net$/i.test(u.hostname)) return true;
+    const segment = u.pathname.split("/").filter(Boolean)[0]?.toLowerCase() ?? "";
+    const fromPage = entry.candidateReferer ? yodaChannelFromPage(entry.candidateReferer) : undefined;
+    const id = fromPage?.id ?? entry.priorityId ?? entry.tvgId;
+    const known = YODA_CATALOGUE.find(station => station.id === id);
+    if (!known) return false;
+    // Native Yoda CDN path generally is the channel slug; at the time of
+    // discovery never attribute another station's stream to this page.
+    return known.slugs.includes(segment);
+  } catch { return false; }
+}
+
 export const YODA_REGION_REASON = "yoda_azerbaijan_only_skip_github_geo_probe";
 
 export function yodaRegionalEntries(entries: PlaylistEntry[]): ValidatedEntry[] {
@@ -59,7 +77,7 @@ export function yodaRegionalEntries(entries: PlaylistEntry[]): ValidatedEntry[] 
     if (original.sourceName !== "yoda-az" && original.sourceName !== "yoda-az-cdn") continue;
     if (original.country !== "Azərbaycan" || !isDirectManifestUrl(original.url) ||
         isAdvertisingStream(original.url) || isMismatchedChannel(original) ||
-        !validCandidateIdentity(original)) continue;
+        !validCandidateIdentity(original) || !yodaCdnMatchesStation(original)) continue;
     // Do not create generic "TV" or "Yoda" entries and never label ARB Günəş as ARB.
     if (/^(?:tv|yoda|azərbaycan|kanallar|player)$/i.test(original.name.trim())) continue;
     const id = original.priorityId ?? original.tvgId ?? original.name;
@@ -93,10 +111,14 @@ export function overlayYodaRegional(
   const out: ValidatedEntry[] = [];
   const keys = new Set<string>();
   const urls = new Set<string>();
+  const ids = new Set<string>();
   for (const item of [...yoda, ...existing]) {
     const key = stationKey(item);
-    if (keys.has(key) || urls.has(item.url)) continue;
-    keys.add(key); urls.add(item.url); out.push(item);
+    // Generator renders tvgId as the public channel identity; dedupe by that
+    // exact final ID as well as canonical name, country and URL.
+    const publicId = item.tvgId ?? item.name;
+    if (keys.has(key) || urls.has(item.url) || ids.has(publicId)) continue;
+    keys.add(key); urls.add(item.url); ids.add(publicId); out.push(item);
   }
   if (out.length <= maximum) return out;
   const fixed = out.filter(e => e.fast.reason === YODA_REGION_REASON);
