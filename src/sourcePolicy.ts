@@ -24,8 +24,15 @@ export function normalizeBroadcaster(entry: PlaylistEntry): PlaylistEntry {
   const pathname = url.pathname.toLowerCase();
   // The 'Atv Azad TV' page was wrongly inferred to be Turkish because the
   // generic site's category was Turkey. The actual stream is from AZ ATV.
+  // The ATV-operated host also carries KANAL-S. The hostname alone is NOT
+  // proof of ATV Azerbaijan: station identity must match its exact path.
+  if (/\/kanal[-_]?s(?:\/|$)/i.test(pathname)) {
+    return { ...entry, name: "Kanal S", tvgName: "Kanal S",
+      country: "Azərbaycan", groupTitle: "Azərbaycan",
+      priorityId: undefined, priorityCountry: undefined, tvgId: "kanal-s" };
+  }
   if (/^(atv azad tv|azad azerbaycan(?: tv)?|atv az(?:erbaycan)?)$/i.test(compact)
-      || host === "lives.atv.az" || /(?:^|\.)atv\.az$/.test(host) && /atv[_/-]/.test(pathname)) {
+      || (/^(?:lives\.)?atv\.az$/.test(host) && /\/atv_tv_stream\//i.test(pathname))) {
     return { ...entry, name: "ATV Azərbaycan", tvgName: "ATV Azərbaycan",
       country: "Azərbaycan", groupTitle: "Azərbaycan",
       priorityCountry: "Azərbaycan", priorityId: "atv-az", tvgId: "atv-az" };
@@ -48,7 +55,8 @@ export function normalizeBroadcaster(entry: PlaylistEntry): PlaylistEntry {
 export function sourceTier(entry: PlaylistEntry): number {
   const region = entry.country === "Azərbaycan" ? "AZ" : entry.country === "Türkiyə" ? "TR" : "RU";
   if (entry.sourceName === "official-last-resort") return 3;
-  if (region === "AZ" && (entry.sourceName === "yoda-az" || entry.sourceName === "yoda-az-cdn")) return 0;
+  if (region === "AZ" && (entry.sourceName === "yoda-az" || entry.sourceName === "yoda-az-cdn" ||
+    (entry.sourceName === "community-az-six" && /(?:^|\.)yodacdn\.net$/i.test(new URL(entry.url).hostname)))) return 0;
   if (/^(?:canlitv-|tvstream-az|operativmm-az|icanlive-(?:az|tr|ru))/.test(entry.sourceName)) return 1;
   if (entry.sourceName.startsWith("community-") || entry.sourceName.startsWith("iptv-org-")) return 2;
   return 2;
@@ -61,6 +69,9 @@ export function validCandidateIdentity(entry: PlaylistEntry): boolean {
   if (entry.country === "Türkiyə" && (/(?:^|\.)atv\.az$/.test(host) ||
     host.endsWith(".tvstream.az") || host.endsWith(".yodacdn.net"))) return false;
   if (entry.country === "Azərbaycan" && entry.priorityId === "atv-tr") return false;
+  // Regression: a KANAL-S stream was published as ATV Azerbaijan.
+  if (entry.priorityId === "atv-az" &&
+      /\/kanal[-_]?s(?:\/|$)/i.test(new URL(entry.url).pathname)) return false;
 
   // Shared Yoda CDN and TVSTREAM accounts host many DIFFERENT TV stations.
   // The media URL must identify the requested channel, not just have video.
@@ -96,7 +107,11 @@ export function validCandidateIdentity(entry: PlaylistEntry): boolean {
 /** User's 2026-10-23 playback report takes precedence over short CI probes. */
 export function isKnownBrokenOnDevice(entry: PlaylistEntry): boolean {
   const raw = entry.url.toLowerCase();
-  if (entry.priorityId === "xezer-tv" && /gcdn\.2mdn\.net|web_video_ads/.test(raw)) return true;
+  if (entry.priorityId === "xezer-tv" && /gcdn\.2mdn\.net|web_video_ads|canlitv\.fun\/live\/xezertv\.stream/.test(raw)) return true;
+  if (entry.priorityId === "space-tv" && /canlitv\.fun\/live\/spacetv\.stream/.test(raw)) return true;
+  if (entry.priorityId === "arb" && /arb\.tvstream\.az\/hls\/stream5\//.test(raw)) return true;
+  if (entry.priorityId === "real-tv" && /realtv\.tvstream\.az\/hls\/stream2\//.test(raw)) return true;
+  if (entry.priorityId === "ictimai-tv" && /ictimai\.tvstream\.az\/hls\/stream6\//.test(raw)) return true;
   if (entry.priorityId === "medeniyyet-tv" && /canlitv\.fun\/live\/medeniyettv\.stream/.test(raw)) return true;
   if (entry.country === "Türkiyə" && /canlitv\.fun\/live\/.*\?hash=/.test(raw)) return true;
   if (entry.priorityId === "tv8" && /ottrast\.com\/iptv\//.test(raw)) return true;
