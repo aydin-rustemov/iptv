@@ -1,35 +1,758 @@
 {
-  "updatedAt": "2026-10-23T05:17:32.968Z",
-  "published": 48,
-  "verifiedWorking": 48,
+  "updatedAt": "2026-10-23T05:43:26.870Z",
+  "published": 97,
+  "verifiedWorking": 97,
   "mandatoryTotal": 18,
-  "mandatoryVerified": 12,
+  "mandatoryVerified": 11,
   "mandatoryNeedsLocalTest": [],
   "mandatoryMissing": [
-    "atv-az",
+    "medeniyyet-tv",
     "show-tv",
     "atv-tr",
     "now-tv",
+    "tv8",
     "trt-1",
     "star-tv"
   ],
-  "validation": "HTTP manifest + video segment ffprobe; no forced/unchecked channels",
-  "countryCounts": {
-    "Azərbaycan": 18,
-    "Türkiyə": 10,
-    "Rusiya": 20
+  "validation": "HTTP/ffprobe video and another probe 65 seconds later; cannot guarantee TV content identity",
+  "stability": {
+    "attempts": 99,
+    "failed": [
+      {
+        "channel": "TV",
+        "source": "yoda-az",
+        "reason": "second_probe_failed"
+      },
+      {
+        "channel": ".red (576p)",
+        "source": "iptv-org-russia",
+        "reason": "second_probe_failed"
+      }
+    ],
+    "switched": [
+      {
+        "channel": "ARB",
+        "from": "tvstream-az",
+        "to": "canlitv-com"
+      },
+      {
+        "channel": "ATV Azərbaycan",
+        "from": "tvstream-az",
+        "to": "canlitv-com"
+      },
+      {
+        "channel": "Space TV",
+        "from": "tvstream-az",
+        "to": "canlitv-com"
+      }
+    ]
   },
-  "candidatesScanned": 216,
-  "candidatesWithVideo": 105,
+  "selectedSources": [
+    {
+      "id": "aztv",
+      "name": "AzTV",
+      "source": "yoda-az",
+      "urlHost": "str.yodacdn.net",
+      "sourceTier": 0
+    },
+    {
+      "id": "arb",
+      "name": "ARB",
+      "source": "canlitv-com",
+      "urlHost": "yayin2.canlitv.fun",
+      "sourceTier": 1
+    },
+    {
+      "id": "atv-az",
+      "name": "ATV Azərbaycan",
+      "source": "canlitv-com",
+      "urlHost": "lives.atv.az",
+      "sourceTier": 1
+    },
+    {
+      "id": "arb24",
+      "name": "ARB24",
+      "source": "tvstream-az",
+      "urlHost": "arb24.tvstream.az",
+      "sourceTier": 1
+    },
+    {
+      "id": "space-tv",
+      "name": "Space TV",
+      "source": "canlitv-com",
+      "urlHost": "yayin2.canlitv.fun",
+      "sourceTier": 1
+    },
+    {
+      "id": "idman-tv",
+      "name": "İdman TV",
+      "source": "tvstream-az",
+      "urlHost": "idman.tvstream.az",
+      "sourceTier": 1
+    },
+    {
+      "id": "real-tv",
+      "name": "Real TV",
+      "source": "tvstream-az",
+      "urlHost": "realtv.tvstream.az",
+      "sourceTier": 1
+    },
+    {
+      "id": "ictimai-tv",
+      "name": "İctimai TV",
+      "source": "tvstream-az",
+      "urlHost": "ictimai.tvstream.az",
+      "sourceTier": 1
+    },
+    {
+      "id": "cbc-sport",
+      "name": "CBC Sport",
+      "source": "tvstream-az",
+      "urlHost": "cbcsport.tvstream.az",
+      "sourceTier": 1
+    },
+    {
+      "id": "baku-tv",
+      "name": "Baku TV",
+      "source": "canlitv-com",
+      "urlHost": "rtmp.baku.tv",
+      "sourceTier": 1
+    },
+    {
+      "id": "cbc",
+      "name": "CBC",
+      "source": "canlitv-com",
+      "urlHost": "yayin2.canlitv.fun",
+      "sourceTier": 1
+    },
+    {
+      "id": "xezer-tv",
+      "name": "Xəzər TV",
+      "source": "canlitv-com",
+      "urlHost": "yayin2.canlitv.fun",
+      "sourceTier": 1
+    },
+    {
+      "id": "dunya-tv",
+      "name": "Dünya TV",
+      "source": "canlitv-com",
+      "urlHost": "yayin2.canlitv.fun",
+      "sourceTier": 1
+    },
+    {
+      "id": "az-rbaycan-gunaz-tv",
+      "name": "Günaz Tv",
+      "source": "canlitv-com",
+      "urlHost": "tv.gunaz.tv",
+      "sourceTier": 1
+    },
+    {
+      "id": "az-rbaycan-kn-music-tv",
+      "name": "KN Music TV",
+      "source": "canlitv-com",
+      "urlHost": "cdn4.yayin.com.tr",
+      "sourceTier": 1
+    },
+    {
+      "id": "az-rbaycan-max-music-tv",
+      "name": "Max Music TV",
+      "source": "canlitv-com",
+      "urlHost": "cdn4.yayin.com.tr",
+      "sourceTier": 1
+    },
+    {
+      "id": "az-rbaycan-arb-gunes-tv",
+      "name": "ARB Güneş TV",
+      "source": "canlitv-com",
+      "urlHost": "yayin2.canlitv.fun",
+      "sourceTier": 1
+    },
+    {
+      "id": "az-rbaycan-kanal-s-az",
+      "name": "Kanal S Az",
+      "source": "canlitv-com",
+      "urlHost": "yayin2.canlitv.fun",
+      "sourceTier": 1
+    },
+    {
+      "id": "AyazTV.az@SD",
+      "name": "Ayaz TV (720p)",
+      "source": "iptv-org-azerbaijan",
+      "urlHost": "janya-ayaztv.vgcdn.net",
+      "sourceTier": 2
+    },
+    {
+      "id": "VilayetTV.az@SD",
+      "name": "Vilayet TV",
+      "source": "iptv-org-azerbaijan",
+      "urlHost": "nl.livekadeh.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "turkiy-yaban-tv-belgesel-turkiye",
+      "name": "Yaban TV Belgesel Türkiye",
+      "source": "canlitv-date",
+      "urlHost": "yayin1.canlitv.fun",
+      "sourceTier": 1
+    },
+    {
+      "id": "tjk-tv",
+      "name": "TJK TV",
+      "source": "iptv-org-turkey",
+      "urlHost": "tjktv-live.tjk.org",
+      "sourceTier": 2
+    },
+    {
+      "id": "powerturk-slow",
+      "name": "PowerTürk Slow",
+      "source": "iptv-org-turkey",
+      "urlHost": "livetv.powerapp.com.tr",
+      "sourceTier": 2
+    },
+    {
+      "id": "powerturk-tv",
+      "name": "PowerTürk TV",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "diyanet-tv",
+      "name": "Diyanet TV",
+      "source": "iptv-org-turkey",
+      "urlHost": "eustr73.mediatriple.net",
+      "sourceTier": 2
+    },
+    {
+      "id": "dream-turk",
+      "name": "Dream Türk",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.duhnet.tv",
+      "sourceTier": 2
+    },
+    {
+      "id": "number-1-tv",
+      "name": "Number 1 TV",
+      "source": "iptv-org-turkey",
+      "urlHost": "b01c02nl.mediatriple.net",
+      "sourceTier": 2
+    },
+    {
+      "id": "flash-haber-tv",
+      "name": "Flash Haber TV",
+      "source": "iptv-org-turkey",
+      "urlHost": "b01c02nl.mediatriple.net",
+      "sourceTier": 2
+    },
+    {
+      "id": "fb-tv",
+      "name": "FB TV",
+      "source": "iptv-org-turkey",
+      "urlHost": "1hskrdto.rocketcdn.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "kanal-d",
+      "name": "Kanal D",
+      "source": "community-turkey-candidate",
+      "urlHost": "live.duhnet.tv",
+      "sourceTier": 2
+    },
+    {
+      "id": "EdessaTV.tr@SD",
+      "name": "Edessa TV (1080p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "canli.edessatv.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "IlkeTV.tr@HD",
+      "name": "Ilke TV (1080p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "stream.ilketv.com.tr",
+      "sourceTier": 2
+    },
+    {
+      "id": "SercemTV.tr@HD",
+      "name": "Sercem TV (1080p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "canli.sercemtv.com.tr",
+      "sourceTier": 2
+    },
+    {
+      "id": "HaberturkTV.tr@SD",
+      "name": "Haberturk TV (720p) [Not 24/7]",
+      "source": "iptv-org-turkey",
+      "urlHost": "tv.ensonhaber.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "Kanal23.tr@SD",
+      "name": "Kanal 23 (1080p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "cdn-kanal23.yayin.com.tr",
+      "sourceTier": 2
+    },
+    {
+      "id": "MeltemTV.tr@SD",
+      "name": "Meltem TV (1080p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "vhxyrsly.rocketcdn.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "AlanyaPostaTV.tr@SD",
+      "name": "Alanya Posta TV (1080p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "api-tv3.yayin.com.tr",
+      "sourceTier": 2
+    },
+    {
+      "id": "KocaeliTV.tr@SD",
+      "name": "Kocaeli TV (1080p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "edge.taksimbilisim.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "PowerLove.tr@SD",
+      "name": "Power Love (1080p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "livetv.powerapp.com.tr",
+      "sourceTier": 2
+    },
+    {
+      "id": "PowerDance.tr@SD",
+      "name": "Power Dance (1080p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "livetv.powerapp.com.tr",
+      "sourceTier": 2
+    },
+    {
+      "id": "PowerTV.tr@SD",
+      "name": "Power TV (Turkiye) (1080p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "livetv.powerapp.com.tr",
+      "sourceTier": 2
+    },
+    {
+      "id": "Kanal7Avrupa.tr@SD",
+      "name": "Kanal 7 Avrupa (720p) [Not 24/7]",
+      "source": "iptv-org-turkey",
+      "urlHost": "livetv.radyotvonline.net",
+      "sourceTier": 2
+    },
+    {
+      "id": "ASTV.tr@SD",
+      "name": "AS TV (900p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "PowerTurkAkustik.tr@SD",
+      "name": "PowerTurk Akustik (1080p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "livetv.powerapp.com.tr",
+      "sourceTier": 2
+    },
+    {
+      "id": "PowerTurkTaptaze.tr@SD",
+      "name": "PowerTurk Taptaze (1080p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "livetv.powerapp.com.tr",
+      "sourceTier": 2
+    },
+    {
+      "id": "MekameleenTV.tr@SD",
+      "name": "Mekameleen TV (1080p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "mn-nl.mncdn.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "TonTV.tr@SD",
+      "name": "Ton TV (720p) [Not 24/7]",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "ERTV.tr@SD",
+      "name": "ERTV (1080p) [Geo-blocked]",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "Kanal3.tr@SD",
+      "name": "Kanal 3 (1080p) [Not 24/7]",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "LifeTV.tr@SD",
+      "name": "Life TV (Turkiye) (720p) [Not 24/7]",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "OlayTurkTV.tr@SD",
+      "name": "OlayTurk TV (720p) [Geo-blocked]",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "AnadoluNetTV.tr@SD",
+      "name": "Anadolu Net TV (1080p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "KentTurk.tr@SD",
+      "name": "Kent Turk (1080p) [Not 24/7]",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "UrfaNatikTV.tr@SD",
+      "name": "Urfa Natik TV (720p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "VavTV.tr@SD",
+      "name": "Vav TV",
+      "source": "iptv-org-turkey",
+      "urlHost": "playlist.fasttvcdn.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "SemerkandTV.tr@SD",
+      "name": "Semerkand TV (1080p) [Not 24/7]",
+      "source": "iptv-org-turkey",
+      "urlHost": "b01c02nl.mediatriple.net",
+      "sourceTier": 2
+    },
+    {
+      "id": "LuysTV.tr@SD",
+      "name": "Luys TV (1080p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "b01c02nl.mediatriple.net",
+      "sourceTier": 2
+    },
+    {
+      "id": "TV264.tr@SD",
+      "name": "TV 264 (1080p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "b01c02nl.mediatriple.net",
+      "sourceTier": 2
+    },
+    {
+      "id": "4UTV.tr@SD",
+      "name": "4U TV (720p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "hls.4utv.live",
+      "sourceTier": 2
+    },
+    {
+      "id": "Ekoturk.tr@SD",
+      "name": "Ekoturk (720p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "cdn.ekoturk.net",
+      "sourceTier": 2
+    },
+    {
+      "id": "LalegulTV.tr@SD",
+      "name": "Lalegul TV (1080p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "lbl.netmedya.net",
+      "sourceTier": 2
+    },
+    {
+      "id": "AlZahraTVTurkic.tr@SD",
+      "name": "Al-Zahra TV Turkic (720p) [Not 24/7]",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.al-zahratv.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "HaberGlobal.tr@SD",
+      "name": "Haber Global (720p) [Not 24/7]",
+      "source": "iptv-org-turkey",
+      "urlHost": "tv.ensonhaber.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "FinansTurkTV.tr@SD",
+      "name": "Finans Turk TV (720p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "yayin30.haber100.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "ATVAlanya.tr@SD",
+      "name": "ATV Alanya (1080p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "cdn-alanyatv.yayin.com.tr",
+      "sourceTier": 2
+    },
+    {
+      "id": "ETVKayseri.tr@SD",
+      "name": "ETV Kayseri (720p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "ErzurumWebTV.tr@SD",
+      "name": "Erzurum Web TV (720p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "win29.yayin.com.tr",
+      "sourceTier": 2
+    },
+    {
+      "id": "BRTV.tr@SD",
+      "name": "BRTV (Turkiye) (720p) [Geo-blocked]",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "ESTV.tr@SD",
+      "name": "ES TV (720p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "KayTV.tr@SD",
+      "name": "Kay TV (576p) [Geo-blocked]",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "Tivi6.tr@SD",
+      "name": "Tivi 6 (720p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "Van65TV.tr@SD",
+      "name": "Van 65 TV",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "AksuTV.tr@SD",
+      "name": "Aksu TV (720p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "KanalV.tr@SD",
+      "name": "Kanal V (720p) [Not 24/7]",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "SunRTV.tr@SD",
+      "name": "Sun RTV (720p) [Not 24/7]",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "DiyarTV.tr@SD",
+      "name": "Diyar TV (720p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "Haber61TV.tr@SD",
+      "name": "Haber61 TV (720p) [Not 24/7]",
+      "source": "iptv-org-turkey",
+      "urlHost": "cdn-haber61tv.yayin.com.tr",
+      "sourceTier": 2
+    },
+    {
+      "id": "Kanal12.tr@SD",
+      "name": "Kanal 12 (720p)",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "Kanal15.tr@SD",
+      "name": "Kanal 15 (720p) [Not 24/7]",
+      "source": "iptv-org-turkey",
+      "urlHost": "live.artidijitalmedya.com",
+      "sourceTier": 2
+    },
+    {
+      "id": "86.ru@SD",
+      "name": "86 (1080p) [Not 24/7]",
+      "source": "iptv-org-russia",
+      "urlHost": "sitv.ru",
+      "sourceTier": 2
+    },
+    {
+      "id": "S1.ru@SD",
+      "name": "S1 (1080p) [Not 24/7]",
+      "source": "iptv-org-russia",
+      "urlHost": "sitv.ru",
+      "sourceTier": 2
+    },
+    {
+      "id": "Surgut24.ru@SD",
+      "name": "Surgut 24",
+      "source": "iptv-org-russia",
+      "urlHost": "sitv.ru",
+      "sourceTier": 2
+    },
+    {
+      "id": "Moymir.ru@SD",
+      "name": "Moy mir (720p)",
+      "source": "iptv-org-russia",
+      "urlHost": "moymir.ru",
+      "sourceTier": 2
+    },
+    {
+      "id": "3ABNRussia.ru@SD",
+      "name": "3ABN Russia (720p)",
+      "source": "iptv-org-russia",
+      "urlHost": "hls.tv.3angels.ru",
+      "sourceTier": 2
+    },
+    {
+      "id": "Pes.ru@SD",
+      "name": "Pes (1080p)",
+      "source": "iptv-org-russia",
+      "urlHost": "cdn-dvr.ntv.ru",
+      "sourceTier": 2
+    },
+    {
+      "id": "Shef.ru@SD",
+      "name": "Shef (1080p)",
+      "source": "iptv-org-russia",
+      "urlHost": "cdn-dvr.ntv.ru",
+      "sourceTier": 2
+    },
+    {
+      "id": "OtkritiymirZdorove.ru@SD",
+      "name": "Otkritiy mir. Zdorove (576p)",
+      "source": "iptv-org-russia",
+      "urlHost": "v4.proofix.ru",
+      "sourceTier": 2
+    },
+    {
+      "id": "1HDMusicTelevision.ru@HD",
+      "name": "1HD Music Television (1080p)",
+      "source": "iptv-org-russia",
+      "urlHost": "176.118.197.101",
+      "sourceTier": 2
+    },
+    {
+      "id": "MatchUltra.ru@4K",
+      "name": "Match! Ultra (1080p)",
+      "source": "iptv-org-russia",
+      "urlHost": "31.148.5.241",
+      "sourceTier": 2
+    },
+    {
+      "id": "Avto24.ru@SD",
+      "name": "Avto24 (576p)",
+      "source": "iptv-org-russia",
+      "urlHost": "stream.mcquack.net",
+      "sourceTier": 2
+    },
+    {
+      "id": "BRIDGEDeluxe.ru@HD",
+      "name": "BRIDGE Deluxe HD (576p)",
+      "source": "iptv-org-russia",
+      "urlHost": "stream.mcquack.net",
+      "sourceTier": 2
+    },
+    {
+      "id": "Kinopokaz.ru@SD",
+      "name": "Kinopokaz (576p)",
+      "source": "iptv-org-russia",
+      "urlHost": "stream.mcquack.net",
+      "sourceTier": 2
+    },
+    {
+      "id": "Komediynoe.ru@HD",
+      "name": "Komediynoe HD (1080p)",
+      "source": "iptv-org-russia",
+      "urlHost": "stream.mcquack.net",
+      "sourceTier": 2
+    },
+    {
+      "id": "Shokiruyushchee.ru@HD",
+      "name": "Shokiruyushchee HD (1080p)",
+      "source": "iptv-org-russia",
+      "urlHost": "stream.mcquack.net",
+      "sourceTier": 2
+    },
+    {
+      "id": "black.ru@SD",
+      "name": ".black (576p)",
+      "source": "iptv-org-russia",
+      "urlHost": "stream.mcquack.net",
+      "sourceTier": 2
+    },
+    {
+      "id": "red.ru@HD",
+      "name": ".red HD (1080p)",
+      "source": "iptv-org-russia",
+      "urlHost": "178.134.1.158",
+      "sourceTier": 2
+    },
+    {
+      "id": "scifi.ru@SD",
+      "name": ".sci-fi (576p)",
+      "source": "iptv-org-russia",
+      "urlHost": "stream.mcquack.net",
+      "sourceTier": 2
+    }
+  ],
+  "countryCounts": {
+    "Azərbaycan": 20,
+    "Türkiyə": 59,
+    "Rusiya": 18
+  },
+  "candidatesScanned": 391,
+  "candidatesWithVideo": 180,
   "rejected": {
-    "http_403": 49,
-    "http_404": 14,
-    "network_error": 5,
+    "http_403": 53,
+    "http_404": 17,
+    "timeout": 39,
+    "http_410": 1,
+    "network_error": 41,
+    "The operation was aborted due to timeout": 2,
+    "ffprobe_failed": 1,
+    "turkey_ad_slate_prone_host": 52,
     "http_400": 1,
-    "turkey_ad_slate_prone_host": 15,
-    "timeout": 27
+    "http_401": 1,
+    "http_502": 1,
+    "http_503": 1,
+    "no_hls_uri": 1
   },
   "sourcesLoaded": [
+    "iptv-org-azerbaijan",
+    "iptv-org-turkey",
     "iptv-org-russia",
     "iptv-org-russian-language"
   ],
@@ -41,8 +764,8 @@
       "seedPages": 2,
       "channelPages": 352,
       "processedPages": 35,
-      "manifestCandidates": 34,
-      "entries": 33
+      "manifestCandidates": 30,
+      "entries": 30
     },
     {
       "source": "canlitv-date",
@@ -111,15 +834,15 @@
     {
       "source": "yoda-az",
       "ok": true,
-      "seedPages": 5,
-      "channelPages": 10,
-      "processedPages": 10,
-      "manifestCandidates": 319,
-      "entries": 49
+      "seedPages": 6,
+      "channelPages": 12,
+      "processedPages": 12,
+      "manifestCandidates": 380,
+      "entries": 50
     }
   ],
   "tvstream": {
     "attempted": 10,
-    "matched": 7
+    "matched": 9
   }
 }
