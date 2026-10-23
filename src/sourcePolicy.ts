@@ -66,7 +66,7 @@ export function validCandidateIdentity(entry: PlaylistEntry): boolean {
   // The media URL must identify the requested channel, not just have video.
   const id = entry.priorityId ?? "";
   const names: Record<string, RegExp> = {
-    "aztv": /(?:aztv|azertv|aztvhd)/,
+    "aztv": /(?:aztv|azertv|aztvhd|^az\.tvstream\.az\/)/,
     "ictimai-tv": /(?:ictimai|itv)/,
     "idman-tv": /(?:idman|idmantele)/,
     "medeniyyet-tv": /(?:medeniyyet|medeniyyettele)/,
@@ -75,7 +75,7 @@ export function validCandidateIdentity(entry: PlaylistEntry): boolean {
     "arb": /(?:^|[/.\-_])arb(?:[/.\-_]|$)/,
     "arb24": /arb24/,
     "space-tv": /space/,
-    "cbc-sport": /(?:cbcsport|cbcsports)/,
+    "cbc-sport": /(?:cbcsport|cbcsports|^cbc\.tvstream\.az\/)/,
     "real-tv": /real/
   };
   const expected = names[id];
