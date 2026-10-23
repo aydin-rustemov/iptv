@@ -328,7 +328,7 @@ function yodaChannelName(pageUrl: string): string | undefined {
     aztv: "AzTV", azertv: "AzTV", arb: "ARB", arbtv: "ARB",
     space: "Space TV", spacetv: "Space TV", arb24: "ARB24",
     idman: "İdman TV", ictimai: "İctimai TV", itv: "İctimai TV",
-    medeniyyet: "Mədəniyyət TV", xezer: "Xəzər TV", xezertv: "Xəzər TV",
+    medeniyyet: "Mədəniyyət TV", xezer: "Xəzər TV", xezertv: "Xəzər TV", xazartv: "Xəzər TV",
     atv: "ATV Azərbaycan", real: "Real TV", cbc: "CBC",
     cbcsport: "CBC Sport", bakutv: "Baku TV", naxtv: "Naxçıvan TV"
   };
