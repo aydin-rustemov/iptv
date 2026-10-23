@@ -58,7 +58,8 @@ async function main(): Promise<void> {
   // Official channel pages, priority-direct and manual CDN overrides are NEVER sources.
   const web = await discoverWebAggregators(new Set([
     "yoda-az", "canlitv-volo", "canlitv-video", "canlitv-me", "canlitv-watch",
-    "canlitv-com", "canlitv-vin", "canlitv-date", "tvstream-az"
+    "canlitv-com", "canlitv-vin", "canlitv-date", "tvstream-az",
+    "operativmm-az", "icanlive-az", "icanlive-tr", "icanlive-ru"
   ]));
   console.log("[WEB DISCOVERY]", JSON.stringify(web.statuses));
   const tvstream = await discoverTvstreamAz();
@@ -206,6 +207,10 @@ function candidateRank(entry: PlaylistEntry, region: Region): number {
   if (region === "AZ" && entry.sourceName === "yoda-az") ranking += 30000;
   if (region === "AZ" && entry.sourceName === "yoda-az-cdn") ranking += 25000;
   if (region === "TR" && entry.sourceName === "community-turkey-candidate") ranking += 14000;
+  if (region === "AZ" && entry.sourceName === "operativmm-az") ranking += 19000;
+  if (region === "AZ" && entry.sourceName === "icanlive-az") ranking += 12000;
+  if (region === "TR" && entry.sourceName === "icanlive-tr") ranking += 12000;
+  if (region === "RU" && entry.sourceName === "icanlive-ru") ranking += 12000;
   if (entry.sourceName === "canlitv-volo") ranking += 15000;
   if (entry.sourceName.startsWith("canlitv-") || entry.sourceName === "tvstream-az") ranking += 5000;
   if (region === "RU" && entry.sourceName === "iptv-org-russia") ranking += 1000;
