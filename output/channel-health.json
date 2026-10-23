@@ -1,971 +1,107 @@
 {
-  "updatedAt": "2026-10-23T14:18:57.130Z",
-  "published": 100,
-  "verifiedWorking": 0,
+  "updatedAt": "2026-10-23T16:24:18.371Z",
+  "published": 7,
+  "verifiedWorking": 7,
   "mandatoryTotal": 18,
-  "mandatoryVerified": 1,
-  "mandatoryNeedsLocalTest": [
-    "aztv",
+  "mandatoryVerified": 2,
+  "mandatoryNeedsLocalTest": [],
+  "mandatoryMissing": [
     "ictimai-tv",
     "idman-tv",
     "medeniyyet-tv",
     "xezer-tv",
-    "atv-az",
     "space-tv",
     "arb",
     "cbc-sport",
     "real-tv",
-    "arb24"
-  ],
-  "mandatoryMissing": [
+    "arb24",
     "show-tv",
     "atv-tr",
+    "kanal-d",
     "now-tv",
     "tv8",
     "trt-1",
     "star-tv"
   ],
-  "validation": "Manual Azerbaijani URLs are candidate HLS sources; NOT tested on an Azerbaijani IP. Foreign country entries are retained from previous published M3U; no new playback validation performed.",
+  "validation": "Video packet/codec confirmed from GitHub runner with 2 manifest requests; local AZ device and actual broadcaster visual identity NOT confirmed.",
   "stability": {
-    "attempts": 96,
-    "failed": [
-      {
-        "channel": "TV",
-        "source": "yoda-az",
-        "reason": "second_probe_failed"
-      },
-      {
-        "channel": "Balabol",
-        "source": "icanlive-ru",
-        "reason": "second_probe_failed"
-      },
-      {
-        "channel": "BST",
-        "source": "icanlive-ru",
-        "reason": "second_probe_failed"
-      }
-    ],
-    "switched": [
-      {
-        "channel": "AzTV",
-        "from": "tvstream-az",
-        "to": "icanlive-az"
-      },
-      {
-        "channel": "ATV Azərbaycan",
-        "from": "tvstream-az",
-        "to": "icanlive-az"
-      },
-      {
-        "channel": "NTV",
-        "from": "icanlive-ru",
-        "to": "icanlive-ru"
-      }
-    ]
+    "attempted": 36,
+    "failed": 28,
+    "switched": 0
   },
   "selectedSources": [
     {
-      "id": "az-rbaycan-gunaz-tv",
-      "name": "GunAz TV",
-      "source": "icanlive-az",
-      "urlHost": "tv.gunaz.tv",
-      "sourceTier": 1
-    },
-    {
-      "id": "az-rbaycan-kn-music-tv",
-      "name": "KN Music TV",
-      "source": "icanlive-az",
-      "urlHost": "cdn4.yayin.com.tr",
-      "sourceTier": 1
-    },
-    {
-      "id": "az-rbaycan-ayaz-tv",
-      "name": "Ayaz TV",
-      "source": "icanlive-az",
-      "urlHost": "janya-ayaztv.vgcdn.net",
-      "sourceTier": 1
-    },
-    {
-      "id": "az-rbaycan-vilayet-tv",
-      "name": "Vilayet TV",
-      "source": "icanlive-az",
-      "urlHost": "nl.livekadeh.com",
-      "sourceTier": 1
-    },
-    {
-      "id": "24-tv",
-      "name": "24 TV",
-      "source": "icanlive-tr",
-      "urlHost": "tv.ensonhaber.com",
-      "sourceTier": 1
-    },
-    {
-      "id": "haberturk-tv",
-      "name": "Habertürk TV",
-      "source": "icanlive-tr",
-      "urlHost": "tv.ensonhaber.com",
-      "sourceTier": 1
-    },
-    {
-      "id": "bloomberg-ht",
-      "name": "Bloomberg HT",
-      "source": "icanlive-tr",
-      "urlHost": "mumbai-edge.smartplaytv.in",
-      "sourceTier": 1
-    },
-    {
-      "id": "trt-world",
-      "name": "TRT World",
-      "source": "icanlive-tr",
-      "urlHost": "dash2.antik.sk",
-      "sourceTier": 1
-    },
-    {
-      "id": "diyanet-tv",
-      "name": "Diyanet TV",
-      "source": "icanlive-tr",
-      "urlHost": "eustr73.mediatriple.net",
-      "sourceTier": 1
-    },
-    {
-      "id": "flash-haber-tv",
-      "name": "Flash Haber TV",
-      "source": "icanlive-tr",
-      "urlHost": "b01c02nl.mediatriple.net",
-      "sourceTier": 1
-    },
-    {
-      "id": "haber-global",
-      "name": "Haber Global",
-      "source": "icanlive-tr",
-      "urlHost": "tv.ensonhaber.com",
-      "sourceTier": 1
-    },
-    {
-      "id": "trt-muzik",
-      "name": "TRT Müzik",
-      "source": "icanlive-tr",
-      "urlHost": "stream8.cinerama.uz",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-edessa-tv",
-      "name": "Edessa TV",
-      "source": "icanlive-tr",
-      "urlHost": "canli.edessatv.com",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-alanya-posta-tv",
-      "name": "Alanya Posta TV",
-      "source": "icanlive-tr",
-      "urlHost": "api-tv3.yayin.com.tr",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-fortuna-tv",
-      "name": "Fortuna TV",
-      "source": "icanlive-tr",
-      "urlHost": "edge.taksimbilisim.com",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-atv-alanya",
-      "name": "ATV Alanya",
-      "source": "icanlive-tr",
-      "urlHost": "cdn-alanyatv.yayin.com.tr",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-bursa-as-tv",
-      "name": "Bursa AS TV",
-      "source": "icanlive-tr",
-      "urlHost": "live.artidijitalmedya.com",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-ertv-malatya",
-      "name": "ERTV Malatya",
-      "source": "icanlive-tr",
-      "urlHost": "live.artidijitalmedya.com",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-cine-1",
-      "name": "Cine 1",
-      "source": "icanlive-tr",
-      "urlHost": "canliyayin.cine1.com.tr",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-anadolu-net-tv",
-      "name": "Anadolu Net TV",
-      "source": "icanlive-tr",
-      "urlHost": "live.artidijitalmedya.com",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-ekoturk",
-      "name": "Ekoturk",
-      "source": "icanlive-tr",
-      "urlHost": "cdn.ekoturk.net",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-grand-cinema",
-      "name": "Grand Cinema",
-      "source": "icanlive-tr",
-      "urlHost": "gcinemahls.wns.live",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-bengu-turk",
-      "name": "Bengü Türk",
-      "source": "icanlive-tr",
-      "urlHost": "tv.ensonhaber.com",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-aras-tv",
-      "name": "Aras TV",
-      "source": "icanlive-tr",
-      "urlHost": "2.rtmp.org",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-cine5-tv",
-      "name": "Cine5 TV",
-      "source": "icanlive-tr",
-      "urlHost": "host.onlineradyotv.net",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-edirne-tv",
-      "name": "Edirne TV",
-      "source": "icanlive-tr",
-      "urlHost": "yayin.edirnetv.com",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-finans-turk-tv",
-      "name": "Finans Turk TV",
-      "source": "icanlive-tr",
-      "urlHost": "yayin30.haber100.com",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-etv-kayseri",
-      "name": "ETV Kayseri",
-      "source": "icanlive-tr",
-      "urlHost": "live.artidijitalmedya.com",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-erzurum-web-tv",
-      "name": "Erzurum Web TV",
-      "source": "icanlive-tr",
-      "urlHost": "win29.yayin.com.tr",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-brtv",
-      "name": "BRTV",
-      "source": "icanlive-tr",
-      "urlHost": "live.artidijitalmedya.com",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-es-tv",
-      "name": "ES TV",
-      "source": "icanlive-tr",
-      "urlHost": "live.artidijitalmedya.com",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-haber61-tv",
-      "name": "Haber61 TV",
-      "source": "icanlive-tr",
-      "urlHost": "win8.yayin.com.tr",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-aksu-tv",
-      "name": "Aksu TV",
-      "source": "icanlive-tr",
-      "urlHost": "live.artidijitalmedya.com",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-ciftci-tv",
-      "name": "Çiftçi TV",
-      "source": "icanlive-tr",
-      "urlHost": "live.artidijitalmedya.com",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-deniz-postasi-tv",
-      "name": "Deniz Postasi TV",
-      "source": "icanlive-tr",
-      "urlHost": "live.artidijitalmedya.com",
-      "sourceTier": 1
-    },
-    {
-      "id": "turkiy-duzce-tv",
-      "name": "Düzce TV",
-      "source": "icanlive-tr",
-      "urlHost": "yayin1.canlitv.fun",
-      "sourceTier": 1
-    },
-    {
-      "id": "tjk-tv",
-      "name": "TJK TV",
-      "source": "iptv-org-turkey",
-      "urlHost": "tjktv-live.tjk.org",
-      "sourceTier": 2
-    },
-    {
-      "id": "powerturk-slow",
-      "name": "PowerTürk Slow",
-      "source": "iptv-org-turkey",
-      "urlHost": "livetv.powerapp.com.tr",
-      "sourceTier": 2
-    },
-    {
-      "id": "powerturk-tv",
-      "name": "PowerTürk TV",
-      "source": "iptv-org-turkey",
-      "urlHost": "live.artidijitalmedya.com",
-      "sourceTier": 2
-    },
-    {
-      "id": "dream-turk",
-      "name": "Dream Türk",
-      "source": "iptv-org-turkey",
-      "urlHost": "live.duhnet.tv",
-      "sourceTier": 2
-    },
-    {
-      "id": "number-1-tv",
-      "name": "Number 1 TV",
-      "source": "iptv-org-turkey",
-      "urlHost": "b01c02nl.mediatriple.net",
-      "sourceTier": 2
-    },
-    {
-      "id": "fb-tv",
-      "name": "FB TV",
-      "source": "iptv-org-turkey",
-      "urlHost": "1hskrdto.rocketcdn.com",
-      "sourceTier": 2
-    },
-    {
-      "id": "kanal-d",
-      "name": "Kanal D",
-      "source": "community-turkey-candidate",
-      "urlHost": "live.duhnet.tv",
-      "sourceTier": 2
-    },
-    {
-      "id": "IlkeTV.tr@HD",
-      "name": "Ilke TV (1080p)",
-      "source": "iptv-org-turkey",
-      "urlHost": "stream.ilketv.com.tr",
-      "sourceTier": 2
-    },
-    {
-      "id": "SercemTV.tr@HD",
-      "name": "Sercem TV (1080p)",
-      "source": "iptv-org-turkey",
-      "urlHost": "canli.sercemtv.com.tr",
-      "sourceTier": 2
-    },
-    {
-      "id": "Kanal23.tr@SD",
-      "name": "Kanal 23 (1080p)",
-      "source": "iptv-org-turkey",
-      "urlHost": "cdn-kanal23.yayin.com.tr",
-      "sourceTier": 2
-    },
-    {
-      "id": "MeltemTV.tr@SD",
-      "name": "Meltem TV (1080p)",
-      "source": "iptv-org-turkey",
-      "urlHost": "vhxyrsly.rocketcdn.com",
-      "sourceTier": 2
-    },
-    {
-      "id": "KocaeliTV.tr@SD",
-      "name": "Kocaeli TV (1080p)",
-      "source": "iptv-org-turkey",
-      "urlHost": "edge.taksimbilisim.com",
-      "sourceTier": 2
-    },
-    {
-      "id": "PowerLove.tr@SD",
-      "name": "Power Love (1080p)",
-      "source": "iptv-org-turkey",
-      "urlHost": "livetv.powerapp.com.tr",
-      "sourceTier": 2
-    },
-    {
-      "id": "PowerDance.tr@SD",
-      "name": "Power Dance (1080p)",
-      "source": "iptv-org-turkey",
-      "urlHost": "livetv.powerapp.com.tr",
-      "sourceTier": 2
-    },
-    {
-      "id": "PowerTV.tr@SD",
-      "name": "Power TV (Turkiye) (1080p)",
-      "source": "iptv-org-turkey",
-      "urlHost": "livetv.powerapp.com.tr",
-      "sourceTier": 2
-    },
-    {
-      "id": "Kanal7Avrupa.tr@SD",
-      "name": "Kanal 7 Avrupa (720p) [Not 24/7]",
-      "source": "iptv-org-turkey",
-      "urlHost": "livetv.radyotvonline.net",
-      "sourceTier": 2
-    },
-    {
-      "id": "PowerTurkAkustik.tr@SD",
-      "name": "PowerTurk Akustik (1080p)",
-      "source": "iptv-org-turkey",
-      "urlHost": "livetv.powerapp.com.tr",
-      "sourceTier": 2
-    },
-    {
-      "id": "PowerTurkTaptaze.tr@SD",
-      "name": "PowerTurk Taptaze (1080p)",
-      "source": "iptv-org-turkey",
-      "urlHost": "livetv.powerapp.com.tr",
-      "sourceTier": 2
-    },
-    {
-      "id": "MekameleenTV.tr@SD",
-      "name": "Mekameleen TV (1080p)",
-      "source": "iptv-org-turkey",
-      "urlHost": "mn-nl.mncdn.com",
-      "sourceTier": 2
-    },
-    {
-      "id": "TonTV.tr@SD",
-      "name": "Ton TV (720p) [Not 24/7]",
-      "source": "iptv-org-turkey",
-      "urlHost": "live.artidijitalmedya.com",
-      "sourceTier": 2
-    },
-    {
-      "id": "Kanal3.tr@SD",
-      "name": "Kanal 3 (1080p) [Not 24/7]",
-      "source": "iptv-org-turkey",
-      "urlHost": "live.artidijitalmedya.com",
-      "sourceTier": 2
-    },
-    {
-      "id": "LifeTV.tr@SD",
-      "name": "Life TV (Turkiye) (720p) [Not 24/7]",
-      "source": "iptv-org-turkey",
-      "urlHost": "live.artidijitalmedya.com",
-      "sourceTier": 2
-    },
-    {
-      "id": "OlayTurkTV.tr@SD",
-      "name": "OlayTurk TV (720p) [Geo-blocked]",
-      "source": "iptv-org-turkey",
-      "urlHost": "live.artidijitalmedya.com",
-      "sourceTier": 2
-    },
-    {
-      "id": "KentTurk.tr@SD",
-      "name": "Kent Turk (1080p) [Not 24/7]",
-      "source": "iptv-org-turkey",
-      "urlHost": "live.artidijitalmedya.com",
-      "sourceTier": 2
-    },
-    {
-      "id": "UrfaNatikTV.tr@SD",
-      "name": "Urfa Natik TV (720p)",
-      "source": "iptv-org-turkey",
-      "urlHost": "live.artidijitalmedya.com",
-      "sourceTier": 2
-    },
-    {
-      "id": "VavTV.tr@SD",
-      "name": "Vav TV",
-      "source": "iptv-org-turkey",
-      "urlHost": "playlist.fasttvcdn.com",
-      "sourceTier": 2
-    },
-    {
-      "id": "SemerkandTV.tr@SD",
-      "name": "Semerkand TV (1080p) [Not 24/7]",
-      "source": "iptv-org-turkey",
-      "urlHost": "b01c02nl.mediatriple.net",
-      "sourceTier": 2
-    },
-    {
-      "id": "LuysTV.tr@SD",
-      "name": "Luys TV (1080p)",
-      "source": "iptv-org-turkey",
-      "urlHost": "b01c02nl.mediatriple.net",
-      "sourceTier": 2
-    },
-    {
-      "id": "rusiya-86",
-      "name": "86",
-      "source": "icanlive-ru",
-      "urlHost": "sitv.ru",
-      "sourceTier": 1
-    },
-    {
-      "id": "rusiya-ntv-hit",
-      "name": "NTV-Hit",
-      "source": "icanlive-ru",
-      "urlHost": "cdn-dvr.ntv.ru",
-      "sourceTier": 1
-    },
-    {
-      "id": "rusiya-ntv",
-      "name": "NTV",
-      "source": "icanlive-ru",
-      "urlHost": "cdn.ntv.ru",
-      "sourceTier": 1
-    },
-    {
-      "id": "rusiya-ren-tv",
-      "name": "Ren TV",
-      "source": "icanlive-ru",
-      "urlHost": "cdn.telecloud.tv",
-      "sourceTier": 1
-    },
-    {
-      "id": "rusiya-arkhyz-24",
-      "name": "Arkhyz 24",
-      "source": "icanlive-ru",
-      "urlHost": "live.mediacdn.ru",
-      "sourceTier": 1
-    },
-    {
-      "id": "rusiya-russia-1",
-      "name": "Russia 1",
-      "source": "icanlive-ru",
-      "urlHost": "live.smotrim.ru",
-      "sourceTier": 1
-    },
-    {
-      "id": "rusiya-russia-k",
-      "name": "Russia-K",
-      "source": "icanlive-ru",
-      "urlHost": "live.smotrim.ru",
-      "sourceTier": 1
-    },
-    {
-      "id": "rusiya-channel-one",
-      "name": "Channel One",
-      "source": "icanlive-ru",
-      "urlHost": "stream8.cinerama.uz",
-      "sourceTier": 1
-    },
-    {
-      "id": "rusiya-3abn-russia",
-      "name": "3ABN Russia",
-      "source": "icanlive-ru",
-      "urlHost": "hls.tv.3angels.ru",
-      "sourceTier": 1
-    },
-    {
-      "id": "rusiya-5-minut-tishiny",
-      "name": "5 minut tishiny",
-      "source": "icanlive-ru",
-      "urlHost": "cdn-dvr.ntv.ru",
-      "sourceTier": 1
-    },
-    {
-      "id": "rusiya-channel-8",
-      "name": "Channel 8",
-      "source": "icanlive-ru",
-      "urlHost": "v4.proofix.ru",
-      "sourceTier": 1
-    },
-    {
-      "id": "rusiya-channel-8-nternational",
-      "name": "Channel 8 International",
-      "source": "icanlive-ru",
-      "urlHost": "v4.proofix.ru",
-      "sourceTier": 1
-    },
-    {
-      "id": "rusiya-ntv-mir",
-      "name": "NTV Mir",
-      "source": "icanlive-ru",
-      "urlHost": "streaming.thestream.cyou",
-      "sourceTier": 1
-    },
-    {
-      "id": "rusiya-360-tv",
-      "name": "360 TV",
-      "source": "icanlive-ru",
-      "urlHost": "streaming.thestream.cyou",
-      "sourceTier": 1
-    },
-    {
-      "id": "rusiya-russia-24",
-      "name": "Russia 24",
-      "source": "icanlive-ru",
-      "urlHost": "streaming.televizor-24-tochka.ru",
-      "sourceTier": 1
-    },
-    {
-      "id": "rusiya-ntv-vitrina",
-      "name": "NTV Vitrina",
-      "source": "icanlive-ru",
-      "urlHost": "cdn.ntv.ru",
-      "sourceTier": 1
-    },
-    {
-      "id": "rusiya-ntv-style",
-      "name": "NTV Style",
-      "source": "icanlive-ru",
-      "urlHost": "cdn.ntv.ru",
-      "sourceTier": 1
-    },
-    {
-      "id": "rusiya-ntv-law",
-      "name": "NTV Law",
-      "source": "icanlive-ru",
-      "urlHost": "cdn.ntv.ru",
-      "sourceTier": 1
-    },
-    {
       "id": "aztv",
       "name": "AzTV",
-      "source": "manual-az",
-      "urlHost": "str.yodacdn.net",
-      "sourceTier": 0,
-      "localPlaybackVerified": false
-    },
-    {
-      "id": "ictimai-tv",
-      "name": "İctimai TV",
-      "source": "manual-az",
-      "urlHost": "str.yodacdn.net",
-      "sourceTier": 0,
+      "source": "community-cinerama",
+      "urlHost": "stream8.cinerama.uz",
+      "sourceTier": 2,
       "localPlaybackVerified": false
     },
     {
       "id": "atv-az",
       "name": "ATV Azərbaycan",
-      "source": "manual-az",
-      "urlHost": "str.yodacdn.net",
-      "sourceTier": 0,
-      "localPlaybackVerified": false
-    },
-    {
-      "id": "xezer-tv",
-      "name": "Xəzər TV",
-      "source": "manual-az",
-      "urlHost": "str.yodacdn.net",
-      "sourceTier": 0,
-      "localPlaybackVerified": false
-    },
-    {
-      "id": "arb",
-      "name": "ARB",
-      "source": "manual-az",
-      "urlHost": "str.yodacdn.net",
-      "sourceTier": 0,
-      "localPlaybackVerified": false
-    },
-    {
-      "id": "space-tv",
-      "name": "Space TV",
-      "source": "manual-az",
-      "urlHost": "str.yodacdn.net",
-      "sourceTier": 0,
-      "localPlaybackVerified": false
-    },
-    {
-      "id": "medeniyyet-tv",
-      "name": "Mədəniyyət TV",
-      "source": "manual-az",
-      "urlHost": "str.yodacdn.net",
-      "sourceTier": 0,
-      "localPlaybackVerified": false
-    },
-    {
-      "id": "idman-tv",
-      "name": "İdman TV",
-      "source": "manual-az",
-      "urlHost": "str.yodacdn.net",
-      "sourceTier": 0,
-      "localPlaybackVerified": false
-    },
-    {
-      "id": "real-tv",
-      "name": "Real TV",
-      "source": "manual-az",
-      "urlHost": "str.yodacdn.net",
-      "sourceTier": 0,
-      "localPlaybackVerified": false
-    },
-    {
-      "id": "arb24",
-      "name": "ARB 24",
-      "source": "manual-az",
-      "urlHost": "str.yodacdn.net",
-      "sourceTier": 0,
-      "localPlaybackVerified": false
-    },
-    {
-      "id": "cbc-sport",
-      "name": "CBC Sport",
-      "source": "manual-az",
-      "urlHost": "cbcsports-live.lg.mncdn.com",
-      "sourceTier": 0,
+      "source": "iptv-org",
+      "urlHost": "lives.atv.az",
+      "sourceTier": 2,
       "localPlaybackVerified": false
     },
     {
       "id": "baku-tv",
-      "name": "baku-tv",
-      "source": "manual-az",
-      "urlHost": "str.yodacdn.net",
-      "sourceTier": 0,
+      "name": "Baku TV",
+      "source": "iptv-org",
+      "urlHost": "rtmp.baku.tv",
+      "sourceTier": 2,
       "localPlaybackVerified": false
     },
     {
-      "id": "cbc",
-      "name": "cbc",
-      "source": "manual-az",
-      "urlHost": "str.yodacdn.net",
-      "sourceTier": 0,
+      "id": "kanal-s",
+      "name": "Kanal S",
+      "source": "iptv-org",
+      "urlHost": "lives.atv.az",
+      "sourceTier": 2,
       "localPlaybackVerified": false
     },
     {
-      "id": "apa-tv",
-      "name": "apa-tv",
-      "source": "manual-az",
-      "urlHost": "str.yodacdn.net",
-      "sourceTier": 0,
+      "id": "ayaz-tv",
+      "name": "Ayaz TV",
+      "source": "iptv-org",
+      "urlHost": "janya-ayaztv.vgcdn.net",
+      "sourceTier": 2,
       "localPlaybackVerified": false
     },
     {
-      "id": "eltv",
-      "name": "eltv",
-      "source": "manual-az",
-      "urlHost": "str.yodacdn.net",
-      "sourceTier": 0,
+      "id": "kn-music",
+      "name": "KN Music TV",
+      "source": "iptv-org",
+      "urlHost": "cdn4.yayin.com.tr",
+      "sourceTier": 2,
       "localPlaybackVerified": false
     },
     {
-      "id": "biznes-tv",
-      "name": "biznes-tv",
-      "source": "manual-az",
-      "urlHost": "str.yodacdn.net",
-      "sourceTier": 0,
-      "localPlaybackVerified": false
-    },
-    {
-      "id": "tmb-tv",
-      "name": "tmb-tv",
-      "source": "manual-az",
-      "urlHost": "str.yodacdn.net",
-      "sourceTier": 0,
-      "localPlaybackVerified": false
-    },
-    {
-      "id": "tmb-az",
-      "name": "tmb-az",
-      "source": "manual-az",
-      "urlHost": "str.yodacdn.net",
-      "sourceTier": 0,
-      "localPlaybackVerified": false
-    },
-    {
-      "id": "sh-tv",
-      "name": "sh-tv",
-      "source": "manual-az",
-      "urlHost": "str.yodacdn.net",
-      "sourceTier": 0,
-      "localPlaybackVerified": false
-    },
-    {
-      "id": "kanal-35",
-      "name": "kanal-35",
-      "source": "manual-az",
-      "urlHost": "str.yodacdn.net",
-      "sourceTier": 0,
-      "localPlaybackVerified": false
-    },
-    {
-      "id": "dunya-tv",
-      "name": "dunya-tv",
-      "source": "manual-az",
-      "urlHost": "str.yodacdn.net",
-      "sourceTier": 0,
-      "localPlaybackVerified": false
-    },
-    {
-      "id": "show-plus-tv",
-      "name": "show-plus-tv",
-      "source": "manual-az",
-      "urlHost": "str.yodacdn.net",
-      "sourceTier": 0,
+      "id": "vilayet-tv",
+      "name": "Vilayət TV",
+      "source": "iptv-org",
+      "urlHost": "nl.livekadeh.com",
+      "sourceTier": 2,
       "localPlaybackVerified": false
     }
   ],
   "countryCounts": {
-    "Azərbaycan": 22,
-    "Türkiyə": 60,
-    "Rusiya": 18
+    "Azərbaycan": 7,
+    "Türkiyə": 0,
+    "Rusiya": 0
   },
-  "candidatesScanned": 383,
-  "candidatesWithVideo": 171,
-  "rejected": {
-    "http_403": 54,
-    "http_404": 16,
-    "network_error": 39,
-    "timeout": 20,
-    "http_410": 1,
-    "The operation was aborted due to timeout": 3,
-    "turkey_ad_slate_prone_host": 74,
-    "http_400": 1,
-    "http_401": 1,
-    "http_502": 1,
-    "http_503": 1,
-    "no_hls_uri": 1
-  },
+  "candidatesScanned": 36,
+  "candidatesWithVideo": 8,
+  "rejected": 28,
   "sourcesLoaded": [
-    "iptv-org-azerbaijan",
-    "iptv-org-turkey",
-    "iptv-org-russia",
-    "iptv-org-russian-language"
+    "github-live-hls-probe"
   ],
   "sourceErrors": [],
-  "webSources": [
-    {
-      "source": "canlitv-com",
-      "ok": true,
-      "seedPages": 2,
-      "channelPages": 352,
-      "processedPages": 35,
-      "manifestCandidates": 46,
-      "entries": 44
-    },
-    {
-      "source": "canlitv-date",
-      "ok": true,
-      "seedPages": 1,
-      "channelPages": 273,
-      "processedPages": 35,
-      "manifestCandidates": 35,
-      "entries": 35
-    },
-    {
-      "source": "canlitv-me",
-      "ok": true,
-      "seedPages": 3,
-      "channelPages": 100,
-      "processedPages": 35,
-      "manifestCandidates": 0,
-      "entries": 0
-    },
-    {
-      "source": "canlitv-video",
-      "ok": true,
-      "seedPages": 3,
-      "channelPages": 45,
-      "processedPages": 35,
-      "manifestCandidates": 0,
-      "entries": 0
-    },
-    {
-      "source": "canlitv-vin",
-      "ok": true,
-      "seedPages": 1,
-      "channelPages": 37,
-      "processedPages": 35,
-      "manifestCandidates": 0,
-      "entries": 0
-    },
-    {
-      "source": "canlitv-volo",
-      "ok": false,
-      "seedPages": 0,
-      "channelPages": 0,
-      "processedPages": 0,
-      "manifestCandidates": 0,
-      "entries": 0,
-      "error": "http_403; browser=browser_http_403"
-    },
-    {
-      "source": "canlitv-watch",
-      "ok": true,
-      "seedPages": 2,
-      "channelPages": 117,
-      "processedPages": 35,
-      "manifestCandidates": 0,
-      "entries": 0
-    },
-    {
-      "source": "icanlive-az",
-      "ok": true,
-      "seedPages": 1,
-      "channelPages": 14,
-      "processedPages": 14,
-      "manifestCandidates": 15,
-      "entries": 14
-    },
-    {
-      "source": "icanlive-ru",
-      "ok": true,
-      "seedPages": 8,
-      "channelPages": 298,
-      "processedPages": 60,
-      "manifestCandidates": 151,
-      "entries": 151
-    },
-    {
-      "source": "icanlive-tr",
-      "ok": true,
-      "seedPages": 4,
-      "channelPages": 150,
-      "processedPages": 60,
-      "manifestCandidates": 98,
-      "entries": 98
-    },
-    {
-      "source": "operativmm-az",
-      "ok": true,
-      "seedPages": 3,
-      "channelPages": 21,
-      "processedPages": 21,
-      "manifestCandidates": 0,
-      "entries": 0
-    },
-    {
-      "source": "tvstream-az",
-      "ok": true,
-      "seedPages": 1,
-      "channelPages": 2,
-      "processedPages": 2,
-      "manifestCandidates": 11,
-      "entries": 11
-    },
-    {
-      "source": "yoda-az",
-      "ok": true,
-      "seedPages": 6,
-      "channelPages": 12,
-      "processedPages": 12,
-      "manifestCandidates": 377,
-      "entries": 47
-    }
-  ],
+  "webSources": [],
   "tvstream": {
-    "attempted": 10,
-    "matched": 8
+    "status": "not_used_in_quality_only_release"
   },
   "manualAzLocalTestPending": true
 }

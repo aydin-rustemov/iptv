@@ -1,0 +1,37 @@
+name: Probe AZ Live Streams
+
+on:
+  push:
+    branches:
+      - fix/az-verified-source-audit-20261023
+    paths:
+      - "src/tools/probeAZ.ts"
+      - ".github/workflows/probe-az.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - name: Probe AZ streams including video
+        run: npx tsx src/tools/probeAZ.ts
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: az-live-probe-${{ github.run_id }}
+          path: |
+            output/az-live-probe.json
+            output/az-gh-confirmed.m3u
+          if-no-files-found: warn
+          retention-days: 7

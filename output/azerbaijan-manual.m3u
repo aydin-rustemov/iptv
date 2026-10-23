@@ -1,67 +1,15 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="aztv" tvg-name="AzTV" group-title="Azərbaycan — Ümumi",AzTV
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://str.yodacdn.net/azertv/index.m3u8
-#EXTINF:-1 tvg-id="ictimai-tv" tvg-name="İctimai TV" group-title="Azərbaycan — Ümumi",İctimai TV
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://str.yodacdn.net/ictimaitele/index.m3u8
-#EXTINF:-1 tvg-id="atv-az" tvg-name="ATV Azərbaycan" group-title="Azərbaycan — Ümumi",ATV Azərbaycan
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://str.yodacdn.net/atv/index.m3u8
-#EXTINF:-1 tvg-id="xezer-tv" tvg-name="Xəzər TV" group-title="Azərbaycan — Ümumi",Xəzər TV
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://str.yodacdn.net/xazartv/index.m3u8
-#EXTINF:-1 tvg-id="arb" tvg-name="ARB" group-title="Azərbaycan — Ümumi",ARB
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://str.yodacdn.net/arb/tracks-v1a1/mono.ts.m3u8
-#EXTINF:-1 tvg-id="space-tv" tvg-name="Space TV" group-title="Azərbaycan — Ümumi",Space TV
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://str.yodacdn.net/space/index.m3u8
-#EXTINF:-1 tvg-id="medeniyyet-tv" tvg-name="Mədəniyyət TV" group-title="Azərbaycan — Mədəniyyət",Mədəniyyət TV
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://str.yodacdn.net/medeniyyettele/index.m3u8
-#EXTINF:-1 tvg-id="idman-tv" tvg-name="İdman TV" group-title="Azərbaycan — İdman",İdman TV
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://str.yodacdn.net/idmantele/index.m3u8
-#EXTINF:-1 tvg-id="real-tv" tvg-name="Real TV" group-title="Azərbaycan — Xəbər",Real TV
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://str.yodacdn.net/real/index.m3u8
-#EXTINF:-1 tvg-id="arb24" tvg-name="ARB24" group-title="Azərbaycan — Xəbər",ARB24
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://str.yodacdn.net/arb24/index.m3u8
-#EXTINF:-1 tvg-id="cbc-sport" tvg-name="CBC Sport" group-title="Azərbaycan — İdman",CBC Sport
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://cbcsports-live.lg.mncdn.com/cbcsports_live/cbcsports/chunklist.m3u8
-#EXTINF:-1 tvg-id="baku-tv" tvg-name="Baku TV" group-title="Azərbaycan — Xəbər",Baku TV
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://str.yodacdn.net/bakutv/index.m3u8
-#EXTINF:-1 tvg-id="cbc" tvg-name="CBC" group-title="Azərbaycan — Ümumi",CBC
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://str.yodacdn.net/cbc/index.m3u8
-#EXTINF:-1 tvg-id="apa-tv" tvg-name="APA TV" group-title="Azərbaycan — Xəbər",APA TV
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://str.yodacdn.net/apatv/index.m3u8
-#EXTINF:-1 tvg-id="eltv" tvg-name="ELTV" group-title="Azərbaycan — Regional",ELTV
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://str.yodacdn.net/eltv/index.m3u8
-#EXTINF:-1 tvg-id="biznes-tv" tvg-name="Biznes TV" group-title="Azərbaycan — Xəbər",Biznes TV
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://str.yodacdn.net/biznestv/index.m3u8
-#EXTINF:-1 tvg-id="tmb-tv" tvg-name="TMB TV" group-title="Azərbaycan — Digər",TMB TV
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://str.yodacdn.net/tmb/index.m3u8
-#EXTINF:-1 tvg-id="tmb-az" tvg-name="TMB Azərbaycan" group-title="Azərbaycan — Digər",TMB Azərbaycan
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://str.yodacdn.net/tmbaz/index.m3u8
-#EXTINF:-1 tvg-id="sh-tv" tvg-name="SH TV" group-title="Azərbaycan — Digər",SH TV
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://str.yodacdn.net/shtv/index.m3u8
-#EXTINF:-1 tvg-id="kanal-35" tvg-name="Kanal 35" group-title="Azərbaycan — Regional",Kanal 35
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://str.yodacdn.net/kanal35/index.m3u8
-#EXTINF:-1 tvg-id="dunya-tv" tvg-name="Dünya TV" group-title="Azərbaycan — Digər",Dünya TV
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://str.yodacdn.net/dunyatv/index.m3u8
-#EXTINF:-1 tvg-id="show-plus-tv" tvg-name="Show Plus TV" group-title="Azərbaycan — Digər",Show Plus TV
-#EXTVLCOPT:http-referrer=https://yoda.az/
-https://str.yodacdn.net/showplus/index.m3u8
+#EXTINF:-1 tvg-id="aztv" tvg-name="AzTV" group-title="Azərbaycan",AzTV
+https://stream8.cinerama.uz/1455/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="atv-az" tvg-name="ATV Azərbaycan" group-title="Azərbaycan",ATV Azərbaycan
+https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8
+#EXTINF:-1 tvg-id="baku-tv" tvg-name="Baku TV" group-title="Azərbaycan",Baku TV
+https://rtmp.baku.tv/hls/bakutv.m3u8
+#EXTINF:-1 tvg-id="kanal-s" tvg-name="Kanal S" group-title="Azərbaycan",Kanal S
+https://lives.atv.az:5443/KANAL-S/streams/kanals.m3u8
+#EXTINF:-1 tvg-id="ayaz-tv" tvg-name="Ayaz TV" group-title="Azərbaycan",Ayaz TV
+https://janya-ayaztv.vgcdn.net/ptnr-WebApp/title-Ayaz_TV/v1/vglive-sk-934820/main.m3u8
+#EXTINF:-1 tvg-id="kn-music" tvg-name="KN Music TV" group-title="Azərbaycan",KN Music TV
+https://cdn4.yayin.com.tr/kntv/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="vilayet-tv" tvg-name="Vilayət TV" group-title="Azərbaycan",Vilayət TV
+https://nl.livekadeh.com/hls2/vilayet.m3u8
