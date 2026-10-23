@@ -76,6 +76,25 @@ jobs:
             output/mandatory-health.json
             output/status.json
 
+      # A green code/test run is not proof of a usable TV playlist.
+      # Keep the previous public playlist when any of the six explicitly
+      # required Azerbaijani broadcasters is absent from the new build.
+      - name: Release gate for six essential AZ stations
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const report = JSON.parse(fs.readFileSync('output/mandatory-health.json', 'utf8'));
+          const required = ['arb', 'real-tv', 'medeniyyet-tv', 'ictimai-tv', 'xezer-tv', 'space-tv'];
+          const verified = new Set(report.verified ?? []);
+          const missing = required.filter(id => !verified.has(id));
+          if (missing.length) {
+            console.error('[RELEASE BLOCKED] Missing required AZ broadcasters:', missing.join(', '));
+            console.error('Use the uploaded iptv-diagnostics artifact to inspect candidate failures.');
+            process.exit(1);
+          }
+          console.log('[RELEASE READY] All six AZ station streams passed CI video checks; device verification remains separate.');
+          NODE
+
       - name: Commit output files
         run: |
           git config user.name "github-actions[bot]"
