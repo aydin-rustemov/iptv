@@ -72,34 +72,39 @@ jobs:
           if-no-files-found: warn
           path: |
             output/az-six-health.json
+            output/yoda-status.json
             output/channel-health.json
             output/mandatory-health.json
             output/status.json
 
-      # A green code/test run is not proof of a usable TV playlist.
-      # Keep the previous public playlist when any of the six explicitly
-      # required Azerbaijani broadcasters is absent from the new build.
-      - name: Release gate for six essential AZ stations
+      # The Yoda AZ catalogue is region locked. User explicitly wants its
+      # discovered M3U links included without a US GitHub playback probe.
+      # An HTML page is NEVER a playlist URL. Do not block the build solely
+      # because Yoda streams have skipped health checks.
+      - name: Release gate for Yoda regional TV mode
         run: |
           node <<'NODE'
           const fs = require('node:fs');
-          const report = JSON.parse(fs.readFileSync('output/mandatory-health.json', 'utf8'));
-          const required = ['arb', 'real-tv', 'medeniyyet-tv', 'ictimai-tv', 'xezer-tv', 'space-tv'];
-          const verified = new Set(report.verified ?? []);
-          const missing = required.filter(id => !verified.has(id));
-          if (missing.length) {
-            console.error('[RELEASE BLOCKED] Missing required AZ broadcasters:', missing.join(', '));
-            console.error('Use the uploaded iptv-diagnostics artifact to inspect candidate failures.');
+          const yoda = JSON.parse(fs.readFileSync('output/yoda-status.json', 'utf8'));
+          const health = JSON.parse(fs.readFileSync('output/mandatory-health.json', 'utf8'));
+          const count = yoda.entries?.length ?? 0;
+          const missing = ['arb', 'real-tv', 'medeniyyet-tv', 'ictimai-tv', 'xezer-tv', 'space-tv']
+            .filter(id => !health.verified?.includes(id) && !health.needsLocalTest?.includes(id));
+          console.log('[YODA AZ-ONLY] From Yoda:', count, 'catalogue:', yoda.catalogued);
+          if (missing.length) console.warn('[AZ REGIONAL MISSING] Source has no extracted M3U:', missing.join(', '));
+          // Never replace a public playlist with a fake list when all Yoda
+          // candidate discovery is broken (or source is totally unavailable).
+          if (!count) {
+            console.error('[RELEASE BLOCKED] No Yoda M3U candidate was actually discovered.');
             process.exit(1);
           }
-          console.log('[RELEASE READY] All six AZ station streams passed CI video checks; device verification remains separate.');
           NODE
 
       - name: Commit output files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f output/mandatory-health.json output/az-six-health.json
+          git add -f output/mandatory-health.json output/az-six-health.json output/yoda-status.json
           for file in \
             config/sources.json \
             output/playlist.m3u \
@@ -110,6 +115,7 @@ jobs:
             output/playlist.previous.m3u \
             output/channel-health.json \
             output/az-six-health.json \
+            output/yoda-status.json \
             output/canlitv-status.json \
             state/channel-registry.json; do
             if [ -e "$file" ]; then
