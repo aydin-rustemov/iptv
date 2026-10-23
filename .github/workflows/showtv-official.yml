@@ -2,7 +2,7 @@ name: Inspect official Show TV live player
 on:
   push:
     branches: [feat/showtv-official-live-20261023]
-    paths: [src/tools/inspectShowTvOfficial.ts, .github/workflows/showtv-official.yml]
+    paths: [src/tools/inspectShowTvOfficial.ts, src/tools/collectRecentSites.ts, src/sources/showTvOfficial.ts, src/audit.ts, tests/showTvOfficial.test.ts, .github/workflows/showtv-official.yml]
   workflow_dispatch:
 permissions:
   contents: read
@@ -26,5 +26,33 @@ jobs:
         with:
           name: showtv-network-${{ github.run_id }}
           path: output/showtv-official-inspect.json
+          retention-days: 1
+          if-no-files-found: warn
+  integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install chromium
+      - run: npm run typecheck
+      - run: npm test
+      - name: Refresh official Show TV and AZ source catalogue
+        run: npx tsx src/tools/collectRecentSites.ts
+      - name: Audit generated M3U and broadcaster identity
+        run: npm run audit
+      - name: Save integration result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: showtv-integration-${{ github.run_id }}
+          path: |
+            output/showtv-source-status.json
+            output/playlist.m3u
+            output/recent-site-status.json
           retention-days: 1
           if-no-files-found: warn
