@@ -55,7 +55,7 @@ export function yodaChannelFromPage(pageUrl: string): { id: string; name: string
 export function yodaCdnMatchesStation(entry: PlaylistEntry): boolean {
   try {
     const u = new URL(entry.url);
-    if (!/(?:^|\\.)yodacdn\\.net$/i.test(u.hostname)) return true;
+    if (!/(?:^|\.)yodacdn\.net$/i.test(u.hostname)) return true;
     const segment = u.pathname.split("/").filter(Boolean)[0]?.toLowerCase() ?? "";
     const fromPage = entry.candidateReferer ? yodaChannelFromPage(entry.candidateReferer) : undefined;
     const id = fromPage?.id ?? entry.priorityId ?? entry.tvgId;
