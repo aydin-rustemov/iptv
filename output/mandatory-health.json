@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T05:43:26.870Z",
+  "updatedAt": "2026-10-23T06:51:52.337Z",
   "total": 18,
   "verified": [
     "aztv",
@@ -30,7 +30,7 @@
       "country": "Azərbaycan",
       "id": "aztv",
       "status": "video_verified_on_github",
-      "candidates": 13
+      "candidates": 11
     },
     {
       "name": "İctimai TV",
@@ -58,28 +58,28 @@
       "country": "Azərbaycan",
       "id": "xezer-tv",
       "status": "video_verified_on_github",
-      "candidates": 5
+      "candidates": 6
     },
     {
       "name": "ATV Azərbaycan",
       "country": "Azərbaycan",
       "id": "atv-az",
       "status": "video_verified_on_github",
-      "candidates": 5
+      "candidates": 4
     },
     {
       "name": "Space TV",
       "country": "Azərbaycan",
       "id": "space-tv",
       "status": "video_verified_on_github",
-      "candidates": 6
+      "candidates": 4
     },
     {
       "name": "ARB",
       "country": "Azərbaycan",
       "id": "arb",
       "status": "video_verified_on_github",
-      "candidates": 7
+      "candidates": 5
     },
     {
       "name": "CBC Sport",
@@ -100,7 +100,7 @@
       "country": "Azərbaycan",
       "id": "arb24",
       "status": "video_verified_on_github",
-      "candidates": 4
+      "candidates": 2
     },
     {
       "name": "Show TV",
@@ -114,7 +114,7 @@
       "country": "Türkiyə",
       "id": "atv-tr",
       "status": "NO_WEB_STREAM_FOUND",
-      "candidates": 2
+      "candidates": 5
     },
     {
       "name": "Kanal D",
@@ -142,14 +142,14 @@
       "country": "Türkiyə",
       "id": "trt-1",
       "status": "NO_WEB_STREAM_FOUND",
-      "candidates": 1
+      "candidates": 3
     },
     {
       "name": "Star TV",
       "country": "Türkiyə",
       "id": "star-tv",
       "status": "NO_WEB_STREAM_FOUND",
-      "candidates": 3
+      "candidates": 4
     }
   ]
 }
