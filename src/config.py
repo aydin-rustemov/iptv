@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 """
 Channels database and configuration for IPTV automated streaming architecture.
-Pre-verified catalog of 120+ active channels across Azerbaijan, Turkey, and Russia.
+Catalog of 100+ active, verified channels across Azerbaijan, Turkey, and Russia.
+Includes 30 core Turkish national channels requested by user.
 """
 
 DEFAULT_HEADERS = {
@@ -11,1090 +12,797 @@ DEFAULT_HEADERS = {
     "Connection": "keep-alive"
 }
 
-CHANNELS = [
-    {
-        "id": "AzTV",
-        "name": "AzTV",
-        "group": "Azerbaycan",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Azerbaijan_Television_Logo.png/300px-Azerbaijan_Television_Logo.png",
-        "headers": {
-            "Referer": "https://aztv.az/"
-        },
-        "sources": [
-            "http://erlyvideo.izone.az:80/aztv/mono.m3u8",
-            "https://str.yodacdn.net/azertv/index.m3u8"
-        ]
-    },
-    {
-        "id": "IctimaiTV",
-        "name": "İctimai TV",
-        "group": "Azerbaycan",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/%C4%B0ctimai_TV_%282021%29.png/300px-%C4%B0ctimai_TV_%282021%29.png",
-        "sources": [
-            "http://erlyvideo.izone.az:80/ictimaitv/mono.m3u8",
-            "https://live.itv.az/itv.m3u8"
-        ]
-    },
-    {
-        "id": "ARBTV",
-        "name": "ARB TV",
-        "group": "Azerbaycan",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/ARB_TV_Logo.png/300px-ARB_TV_Logo.png",
-        "sources": [
-            "http://erlyvideo.izone.az:80/arb/mono.m3u8"
-        ]
-    },
-    {
-        "id": "ARB24",
-        "name": "ARB 24",
-        "group": "Azerbaycan",
-        "logo": "https://upload.wikimedia.org/wikipedia/az/thumb/8/88/ARB_24_loqo.png/300px-ARB_24_loqo.png",
-        "sources": [
-            "http://erlyvideo.izone.az:80/arb24/mono.m3u8"
-        ]
-    },
-    {
-        "id": "ARBGunesh",
-        "name": "ARB Günəş",
-        "group": "Azerbaycan",
-        "logo": "https://upload.wikimedia.org/wikipedia/az/thumb/8/84/ARB_G%C3%BCn%C9%99%C5%9F_loqo.png/300px-ARB_G%C3%BCn%C9%99%C5%9F_loqo.png",
-        "sources": [
-            "http://erlyvideo.izone.az:80/arbgunesh/mono.m3u8"
-        ]
-    },
-    {
-        "id": "SpaceTV",
-        "name": "Space TV",
-        "group": "Azerbaycan",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Space_TV_loqosu.png/300px-Space_TV_loqosu.png",
-        "sources": [
-            "http://erlyvideo.izone.az:80/spacetv/mono.m3u8"
-        ]
-    },
-    {
-        "id": "XezerTV",
-        "name": "Xəzər TV",
-        "group": "Azerbaycan",
-        "logo": "https://upload.wikimedia.org/wikipedia/az/thumb/9/9a/X%C9%99z%C9%99r_TV_logo.png/300px-X%C9%99z%C9%99r_TV_logo.png",
-        "sources": [
-            "http://erlyvideo.izone.az:80/xezertv/mono.m3u8"
-        ]
-    },
-    {
-        "id": "AzadTV",
-        "name": "ATV (Azad TV)",
-        "group": "Azerbaycan",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Azad_Azerbaycan_TV_logo.png/300px-Azad_Azerbaycan_TV_logo.png",
-        "sources": [
-            "https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8"
-        ]
-    },
-    {
-        "id": "BakuTV",
-        "name": "Baku TV",
-        "group": "Azerbaycan",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Baku_TV_%282018%29.png/300px-Baku_TV_%282018%29.png",
-        "sources": [
-            "https://rtmp.baku.tv/hls/bakutv.m3u8"
-        ]
-    },
-    {
-        "id": "CBCAzerbaijan",
-        "name": "CBC Azerbaijan",
-        "group": "Azerbaycan",
-        "logo": "https://upload.wikimedia.org/wikipedia/az/thumb/c/c5/CBC_Azerbaijan_TV_Logo.png/300px-CBC_Azerbaijan_TV_Logo.png",
-        "sources": [
-            "http://erlyvideo.izone.az:80/cbc/mono.m3u8"
-        ]
-    },
-    {
-        "id": "MedeniyyetTV",
-        "name": "Mədəniyyət TV",
-        "group": "Azerbaycan",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fc/M%C9%99d%C9%99niyy%C9%99t_TV_logo.png",
-        "sources": [
-            "http://erlyvideo.izone.az:80/medeniyyet/mono.m3u8"
-        ]
-    },
-    {
-        "id": "RealTV",
-        "name": "Real TV",
-        "group": "Azerbaycan",
-        "logo": "https://upload.wikimedia.org/wikipedia/az/thumb/d/d1/Real_TV_loqosu_%282019%29.jpg/300px-Real_TV_loqosu_%282019%29.jpg",
-        "sources": [
-            "http://erlyvideo.izone.az:80/realtv/mono.m3u8"
-        ]
-    },
-    {
-        "id": "DunyaTV",
-        "name": "Dünya TV",
-        "group": "Azerbaycan",
-        "logo": "https://upload.wikimedia.org/wikipedia/az/thumb/2/29/D%C3%BCnya_TV_loqosu.png/300px-D%C3%BCnya_TV_loqosu.png",
-        "sources": [
-            "http://erlyvideo.izone.az:80/dunyatv/mono.m3u8"
-        ]
-    },
-    {
-        "id": "APATV",
-        "name": "APA TV",
-        "group": "Azerbaycan",
-        "logo": "https://i.imgur.com/2CSW4V4.png",
-        "sources": [
-            "http://stream.apa.tv/apastream/index.m3u8"
-        ]
-    },
-    {
-        "id": "KanalS",
-        "name": "Kanal S",
-        "group": "Azerbaycan",
-        "logo": "https://i.imgur.com/W0JBoSQ.png",
-        "sources": [
-            "https://lives.atv.az:5443/KANAL-S/streams/kanals.m3u8"
-        ]
-    },
-    {
-        "id": "KepezTV",
-        "name": "Kəpəz TV",
-        "group": "Azerbaycan",
-        "logo": "https://upload.wikimedia.org/wikipedia/az/thumb/3/3e/K%C9%99p%C9%99z_TV_%282019-h.h.%29.png/300px-K%C9%99p%C9%99z_TV_%282019-h.h.%29.png",
-        "sources": [
-            "http://85.132.78.122:8050/hls/stream/index.m3u8"
-        ]
-    },
-    {
-        "id": "ELTV",
-        "name": "EL TV",
-        "group": "Azerbaycan",
-        "logo": "https://i.imgur.com/tTlokZ2.png",
-        "sources": [
-            "https://live.eltv.az/live/eltv/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "MuzTV",
-        "name": "Muz TV Azerbaijan",
-        "group": "Azerbaycan",
-        "logo": "https://i.imgur.com/CjySP1V.png",
-        "sources": [
-            "http://erlyvideo.izone.az:80/muztv/mono.m3u8"
-        ]
-    },
-    {
-        "id": "KNMusic",
-        "name": "KN Music TV",
-        "group": "Azerbaycan",
-        "logo": "https://www.knmusictv.com/wp-content/uploads/2026/01/LOGO2112.png",
-        "sources": [
-            "https://cdn4.yayin.com.tr/kntv/tracks-v1a1/mono.m3u8"
-        ]
-    },
-    {
-        "id": "GunAzTV",
-        "name": "GunAz TV",
-        "group": "Azerbaycan",
-        "logo": "https://i.imgur.com/2ZnQazl.png",
-        "sources": [
-            "https://tv.gunaz.tv/hls/live.m3u8"
-        ]
-    },
-    {
-        "id": "4UTV720p",
-        "name": "4U TV (720p)",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/PexhKwp.png",
-        "sources": [
-            "https://hls.4utv.live/hls/stream.m3u8"
-        ]
-    },
-    {
-        "id": "24TV720p",
-        "name": "24 TV (720p)",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/8FO41es.png",
-        "sources": [
-            "https://turkmedya-live.ercdn.net/tv24/tv24.m3u8"
-        ]
-    },
-    {
-        "id": "360720pNot247",
-        "name": "360 (720p) [Not 24/7]",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/agn47sQ.png",
-        "sources": [
-            "https://turkmedya-live.ercdn.net/tv360/tv360.m3u8"
-        ]
-    },
-    {
-        "id": "A2TV1080p",
-        "name": "A2TV (1080p)",
-        "group": "Turkiye",
-        "logo": "https://iatv.tmgrup.com.tr/site/v2/a2tv/i/a2tv-logo.png",
-        "sources": [
-            "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/a2tv/a2tv.m3u8"
-        ]
-    },
-    {
-        "id": "AHaber1080p",
-        "name": "A Haber (1080p)",
-        "group": "Turkiye",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Ahaber_Logo.png",
-        "sources": [
-            "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/ahaber/ahaber.m3u8"
-        ]
-    },
-    {
-        "id": "ASporSD1080p",
-        "name": "A Spor SD (1080p)",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/ZhkZzLf.png",
-        "sources": [
-            "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/aspor/aspor.m3u8"
-        ]
-    },
-    {
-        "id": "AksuTV720p",
-        "name": "Aksu TV (720p)",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/mgDCKiy.png",
-        "sources": [
-            "https://live.artidijitalmedya.com/artidijital_aksutv/aksutv/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "AlZahraTVTurkic720pNot247",
-        "name": "Al-Zahra TV Turkic (720p) [Not 24/7]",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/QEHKGnG.png",
-        "sources": [
-            "https://live.al-zahratv.com/live/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "AlanyaPostaTV1080p",
-        "name": "Alanya Posta TV (1080p)",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/a3w9eFe.png",
-        "sources": [
-            "https://api-tv3.yayin.com.tr/postatv/postatv/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "AlmahriahTV576p",
-        "name": "Almahriah TV (576p)",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/GgEeTNr.png",
-        "sources": [
-            "https://starmenajo.com/hls/almahriah/index.m3u8"
-        ]
-    },
-    {
-        "id": "AltasTV1080p",
-        "name": "Altas TV (1080p)",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/XaJ7fp6.png",
-        "sources": [
-            "https://edge1.socialsmart.tv/altastv/bant1/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "AnadoluNetTV1080p",
-        "name": "Anadolu Net TV (1080p)",
-        "group": "Turkiye",
-        "logo": "https://www.anadolunettv.com/d/r/logo.png",
-        "sources": [
-            "https://live.artidijitalmedya.com/artidijital_anadolunet/anadolunet/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "ArasTV576pNot247",
-        "name": "Aras TV (576p) [Not 24/7]",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/JsDCyWG.png",
-        "sources": [
-            "http://1.rtmp.org/tv217/yayin.stream/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "ASTV900p",
-        "name": "AS TV (900p)",
-        "group": "Turkiye",
-        "logo": "https://asset.artidijitalmedya.com/image/188x188/channels/v1/logo_13.png",
-        "sources": [
-            "https://live.artidijitalmedya.com/artidijital_astv/astv/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "ATVTurkiye1080p",
-        "name": "ATV (Turkiye) (1080p)",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/HyVUwFC.png",
-        "sources": [
-            "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_1080p.m3u8"
-        ]
-    },
-    {
-        "id": "ATVAlanya1080p",
-        "name": "ATV Alanya (1080p)",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/bUwarR0.png",
-        "sources": [
-            "https://cdn-alanyatv.yayin.com.tr/alanyatv/alanyatv/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "BricveSatrancTV480pNot247",
-        "name": "Bric ve Satranc TV (480p) [Not 24/7]",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/TXDV1ty.png",
-        "sources": [
-            "http://139.162.182.79/live/test/index.m3u8"
-        ]
-    },
-    {
-        "id": "BRTVTurkiye720pGeoblocked",
-        "name": "BRTV (Turkiye) (720p) [Geo-blocked]",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/U3qlEAp.png",
-        "sources": [
-            "https://live.artidijitalmedya.com/artidijital_brtv/brtv/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "CayTV720p",
-        "name": "Cay TV (720p)",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/ndupxwu.png",
-        "sources": [
-            "https://edge1.socialsmart.tv/caytv/bant1/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "CiftciTV720pNot247",
-        "name": "Ciftci TV (720p) [Not 24/7]",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/CLzP4vL.png",
-        "sources": [
-            "https://live.artidijitalmedya.com/artidijital_ciftcitv/ciftcitv/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "CNBCe",
-        "name": "CNBC-e",
-        "group": "Turkiye",
-        "logo": "https://s.cnbce.com/dist/images/logo-nav.png",
-        "sources": [
-            "https://hnpsechtsc.turknet.ercdn.net/xpnvudnlsv/cnbc-e/cnbc-e.m3u8"
-        ]
-    },
-    {
-        "id": "DenizPostasiTV720pNot247",
-        "name": "Deniz Postasi TV (720p) [Not 24/7]",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/Mm8hdfx.png",
-        "sources": [
-            "https://live.artidijitalmedya.com/artidijital_denizpostasi/denizpostasi/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "DHA720pNot247",
-        "name": "DHA (720p) [Not 24/7]",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/VZhag2x.png",
-        "sources": [
-            "https://603c568fccdf5.streamlock.net/live/dhaweb1_C5efC/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "DiyanetTV1080p",
-        "name": "Diyanet TV (1080p)",
-        "group": "Turkiye",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Diyanet_TV_logo.svg/960px-Diyanet_TV_logo.svg.png",
-        "sources": [
-            "https://eustr73.mediatriple.net/videoonlylive/mtikoimxnztxlive/broadcast_5e3bf95a47e07.smil/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "DiyarTV720p",
-        "name": "Diyar TV (720p)",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/qWkHjRA.png",
-        "sources": [
-            "https://live.artidijitalmedya.com/artidijital_diyartv/diyartv/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "DostTV576p",
-        "name": "Dost TV (576p)",
-        "group": "Turkiye",
-        "logo": "https://dosttv.com/wp-content/uploads/2022/02/dost_logo.png",
-        "sources": [
-            "https://dost.stream.emsal.im/tv/live.m3u8"
-        ]
-    },
-    {
-        "id": "DreamTurk720p",
-        "name": "Dream Turk (720p)",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/vJ8VaZi.png",
-        "sources": [
-            "https://live.duhnet.tv/S2/HLS_LIVE/dreamturknp/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "EdessaTV1080p",
-        "name": "Edessa TV (1080p)",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/rhU6j9I.png",
-        "sources": [
-            "https://canli.edessatv.com/hls/stream.m3u8"
-        ]
-    },
-    {
-        "id": "Ekoturk720p",
-        "name": "Ekoturk (720p)",
-        "group": "Turkiye",
-        "logo": "https://www.dsmart.com.tr/epg/images/0x60/5ffc18c6cfef0b15933a8b65",
-        "sources": [
-            "https://cdn.ekoturk.net/hls/master.m3u8"
-        ]
-    },
-    {
-        "id": "ElsharqTV1080pNot247",
-        "name": "Elsharq TV (1080p) [Not 24/7]",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/8vmfZb5.png",
-        "sources": [
-            "https://mn-nl.mncdn.com/elsharq_live/live/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "ERTV1080pGeoblocked",
-        "name": "ERTV (1080p) [Geo-blocked]",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/VDGEPrD.png",
-        "sources": [
-            "https://live.artidijitalmedya.com/artidijital_ertv_new/ertv/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "ErzurumWebTV720p",
-        "name": "Erzurum Web TV (720p)",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/HF7N4Li.png",
-        "sources": [
-            "https://win29.yayin.com.tr/erzurumwebtv/erzurumwebtv/iptvdelisi.m3u8"
-        ]
-    },
-    {
-        "id": "ESTV720p",
-        "name": "ES TV (720p)",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/epAEBrp.png",
-        "sources": [
-            "https://live.artidijitalmedya.com/artidijital_estv/estv/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "ETVKayseri720p",
-        "name": "ETV Kayseri (720p)",
-        "group": "Turkiye",
-        "logo": "https://yt3.googleusercontent.com/ytc/AIdro_msPtG6zfPKIJIIdvG4dehXLoVoXcHM2-2HL9YxsNYzGQ=s512-c-k-c0x00ffffff-no-rj",
-        "sources": [
-            "https://live.artidijitalmedya.com/artidijital_etv/etv/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "ETVManisa1080pNot247",
-        "name": "ETV Manisa (1080p) [Not 24/7]",
-        "group": "Turkiye",
-        "logo": "https://i.ibb.co/QKXtdkz/sOd3INg.png",
-        "sources": [
-            "https://edge1.socialsmart.tv/manisaetv/bant1/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "EuroD720p",
-        "name": "Euro D (720p)",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/x9kHsXo.png",
-        "sources": [
-            "https://live.duhnet.tv/S2/HLS_LIVE/eurodnp/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "FBTV",
-        "name": "FB TV",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/qBVqtYd.png",
-        "sources": [
-            "http://1hskrdto.rocketcdn.com/fenerbahcetv.smil/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "FinansTurkTV720p",
-        "name": "Finans Turk TV (720p)",
-        "group": "Turkiye",
-        "logo": "https://i.ibb.co/wBwmB1T/iY0osc7.png",
-        "sources": [
-            "https://yayin30.haber100.com/live/finansturk/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "FlashHaberTV",
-        "name": "Flash Haber TV",
-        "group": "Turkiye",
-        "logo": "",
-        "sources": [
-            "https://b01c02nl.mediatriple.net/videoonlylive/mtyycglqauzjhlive/broadcast_67c053c48829f.smil/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "FortunaTV720p",
-        "name": "Fortuna TV (720p)",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/ZbUSlOC.png",
-        "sources": [
-            "https://edge1.socialsmart.tv/ftvturk/bant1/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "GuneydoguTV720p",
-        "name": "Guneydogu TV (720p)",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/JT5pp3Y.png",
-        "sources": [
-            "https://edge1.socialsmart.tv/gtv/bant1/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "Haber61TV720pNot247",
-        "name": "Haber61 TV (720p) [Not 24/7]",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/2a2XUKl.png",
-        "sources": [
-            "https://cdn-haber61tv.yayin.com.tr/haber61tv/smil:haber61tv.smil/index.m3u8"
-        ]
-    },
-    {
-        "id": "HaberGlobal720pNot247",
-        "name": "Haber Global (720p) [Not 24/7]",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/fu6XeGS.png",
-        "sources": [
-            "https://tv.ensonhaber.com/haberglobal/haberglobal.m3u8"
-        ]
-    },
-    {
-        "id": "HaberturkTV720pNot247",
-        "name": "Haberturk TV (720p) [Not 24/7]",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/6Tw3rUp.png",
-        "sources": [
-            "https://tv.ensonhaber.com/haberturk/haberturk.m3u8"
-        ]
-    },
-    {
-        "id": "HalkTVSD1080p",
-        "name": "Halk TV SD (1080p)",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/xM0HA30.png",
-        "sources": [
-            "https://halktv-live.daioncdn.net/halktv/halktv.m3u8"
-        ]
-    },
-    {
-        "id": "HTSporTV1080p",
-        "name": "HTSpor TV (1080p)",
-        "group": "Turkiye",
-        "logo": "https://www.htspor.com/images/manifest/social-share-logo.png",
-        "sources": [
-            "https://ciner.daioncdn.net/ht-spor/ht-spor.m3u8?app=web"
-        ]
-    },
-    {
-        "id": "IcelTV720pNot247",
-        "name": "Icel TV (720p) [Not 24/7]",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/CGwImKv.png",
-        "sources": [
-            "https://edge1.socialsmart.tv/iceltv/bant1/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "IlkeTV1080p",
-        "name": "Ilke TV (1080p)",
-        "group": "Turkiye",
-        "logo": "https://ilketv.com.tr/wp-content/uploads/2024/06/logo.png",
-        "sources": [
-            "https://stream.ilketv.com.tr/hls/ilkecanli.m3u8"
-        ]
-    },
-    {
-        "id": "Kanal31080pNot247",
-        "name": "Kanal 3 (1080p) [Not 24/7]",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/eXErSv0.png",
-        "sources": [
-            "https://live.artidijitalmedya.com/artidijital_kanal3/kanal3/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "Kanal7Avrupa720pNot247",
-        "name": "Kanal 7 Avrupa (720p) [Not 24/7]",
-        "group": "Turkiye",
-        "logo": "https://i.imgur.com/wlfyj5l.png",
-        "sources": [
-            "https://livetv.radyotvonline.net/kanal7live/kanal7avr/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "1HDMusicTelevision1080p",
-        "name": "1HD Music Television (1080p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/4Ww7CsR.png",
-        "sources": [
-            "http://176.118.197.101/1HD/index.m3u8"
-        ]
-    },
-    {
-        "id": "2x2576i",
-        "name": "2x2 (576i)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/fhQFLEl.png",
-        "sources": [
-            "https://bl.rutube.ru/livestream/392b4686b770bae2da6bf5ac4574add5/index.m3u8?e=2068731801&s=tenr-yHXUv1wibfka78s2A&scheme=https"
-        ]
-    },
-    {
-        "id": "3ABNRussia720p",
-        "name": "3ABN Russia (720p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/4fhBbam.png",
-        "sources": [
-            "https://hls.tv.3angels.ru/stream.m3u8"
-        ]
-    },
-    {
-        "id": "5minuttishiny1080p",
-        "name": "5 minut tishiny (1080p)",
-        "group": "Rusiya",
-        "logo": "https://cdn2-static.ntv.ru/home/promo/24740/5minut_live.jpg",
-        "sources": [
-            "https://cdn-dvr.ntv.ru/5_minut_tishiny/index.m3u8"
-        ]
-    },
-    {
-        "id": "861080pNot247",
-        "name": "86 (1080p) [Not 24/7]",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/0dRS4Cb.png",
-        "sources": [
-            "https://sitv.ru/hls/s86.m3u8"
-        ]
-    },
-    {
-        "id": "3601080p",
-        "name": "360° (1080p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/VTJqdoX.png",
-        "sources": [
-            "https://cdn-evacoder-tv.facecast.io/evacoder_hls_hi/CkxfR1xNUAJwTgtXTBZTAJli/index.m3u8"
-        ]
-    },
-    {
-        "id": "360News1080p",
-        "name": "360° News (1080p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/YXDeX8q.png",
-        "sources": [
-            "https://live-vgtrksmotrim.cdnvideo.ru/vgtrksmotrim/smotrim-live-03-srt.smil/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "365daysTV576p",
-        "name": "365 days TV (576p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/NfnAiTR.png",
-        "sources": [
-            "http://stream.mcquack.net/70/index.m3u8"
-        ]
-    },
-    {
-        "id": "black576p",
-        "name": ".black (576p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/Q4A6ci4.png",
-        "sources": [
-            "http://stream.mcquack.net/263/index.m3u8"
-        ]
-    },
-    {
-        "id": "red576p",
-        "name": ".red (576p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/GET9Qut.png",
-        "sources": [
-            "http://5.188.159.128:8070/RED/index.m3u8"
-        ]
-    },
-    {
-        "id": "redHD1080p",
-        "name": ".red HD (1080p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/GET9Qut.png",
-        "sources": [
-            "http://178.134.1.158:8081/red/index.m3u8"
-        ]
-    },
-    {
-        "id": "scifi576p",
-        "name": ".sci-fi (576p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/nSSUHcg.png",
-        "sources": [
-            "http://stream.mcquack.net/180/index.m3u8"
-        ]
-    },
-    {
-        "id": "Afontovo",
-        "name": "Afontovo",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/StFfPaI.png",
-        "sources": [
-            "https://stream.afontovo.ru/hd.m3u8"
-        ]
-    },
-    {
-        "id": "AISTTV1080p",
-        "name": "AIST TV (1080p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/bcw0s4V.png",
-        "sources": [
-            "http://live2-aisttv.cdnvideo.ru/aisttv2/aisttv.sdp/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "AmediaHit1080p",
-        "name": "Amedia Hit (1080p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/a8ZBGBw.png",
-        "sources": [
-            "http://stream.mcquack.net/162/index.m3u8"
-        ]
-    },
-    {
-        "id": "AngelTVRussian720p",
-        "name": "Angel TV Russian (720p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/qKLEGU7.png",
-        "sources": [
-            "https://janya-digimix.akamaized.net/vglive-sk-955415/russia/ngrp:angelrussia_all/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "AnimalPlanetRussia1080p",
-        "name": "Animal Planet (Russia) (1080p)",
-        "group": "Rusiya",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/2018_Animal_Planet_logo.svg/960px-2018_Animal_Planet_logo.svg.png",
-        "sources": [
-            "http://stream.mcquack.net/114/index.m3u8"
-        ]
-    },
-    {
-        "id": "Aris24720pNot247",
-        "name": "Aris 24 (720p) [Not 24/7]",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/CTFVEAb.png",
-        "sources": [
-            "http://serv25.vintera.tv:8081/test/aris/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "Arkhyz241080p",
-        "name": "Arkhyz 24 (1080p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/blAtdkJ.png",
-        "sources": [
-            "https://live.mediacdn.ru/sr1/arhis24/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "Arsenal576p",
-        "name": "Arsenal (576p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/DBpVeb0.png",
-        "sources": [
-            "https://stream8.cinerama.uz/1414/tracks-v1a1/mono.m3u8"
-        ]
-    },
-    {
-        "id": "ARTRussia576p",
-        "name": "ART (Russia) (576p)",
-        "group": "Rusiya",
-        "logo": "https://optim.tildacdn.com/tild3134-3836-4338-a138-666666653363/-/format/webp/__.png.webp",
-        "sources": [
-            "http://89.104.114.24:8080/art/index.m3u8"
-        ]
-    },
-    {
-        "id": "Astrahan24720p",
-        "name": "Astrahan 24 (720p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/9WcnjQN.png",
-        "sources": [
-            "https://streaming.astrakhan.ru/astrakhan24/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "AstrahanRuSport720p",
-        "name": "Astrahan.Ru Sport (720p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/BKaEtqL.png",
-        "sources": [
-            "https://streaming.astrakhan.ru/astrakhanrusporthd/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "AstrahanRuTV480p",
-        "name": "Astrahan.Ru TV (480p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/w4ys6zm.png",
-        "sources": [
-            "https://streaming.astrakhan.ru/astrakhanrulivehd/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "Avto24576p",
-        "name": "Avto24 (576p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/GXSXmN2.png",
-        "sources": [
-            "http://stream.mcquack.net/78/index.m3u8"
-        ]
-    },
-    {
-        "id": "BabyTime576p",
-        "name": "Baby Time (576p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/lW3WIBD.png",
-        "sources": [
-            "http://178.134.1.158:8081/babytime/index.m3u8"
-        ]
-    },
-    {
-        "id": "Balabol1080p",
-        "name": "Balabol (1080p)",
-        "group": "Rusiya",
-        "logo": "https://cdn2-static.ntv.ru/home/promo/24740/balabol_vse.jpg",
-        "sources": [
-            "https://cdn-dvr.ntv.ru/Balabol/index.m3u8"
-        ]
-    },
-    {
-        "id": "Belgorod241080p",
-        "name": "Belgorod 24 (1080p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/EEirvyx.png",
-        "sources": [
-            "https://belnovosti.cdn.easyhoster.ru:8443/stream.m3u8"
-        ]
-    },
-    {
-        "id": "BigAsia720p",
-        "name": "Big Asia (720p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/vruuPKF.png",
-        "sources": [
-            "http://live-bigasia.cdnvideo.ru/bigasia/bigasia.smil/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "BlokbasterHD1080p",
-        "name": "Blokbaster HD (1080p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/KcOi4Os.png",
-        "sources": [
-            "http://stream.mcquack.net/364/index.m3u8"
-        ]
-    },
-    {
-        "id": "BollywoodHD576p",
-        "name": "Bollywood HD (576p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/YLQRnXt.png",
-        "sources": [
-            "http://176.118.197.101/Bollywood_HD/index.m3u8"
-        ]
-    },
-    {
-        "id": "BollywoodHDRussia576p",
-        "name": "Bollywood HD Russia (576p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/scDKOLS.png",
-        "sources": [
-            "https://xykt-fix.github.io/cinerama_edge01/hls/BOLLYWOOD_RU/Movie009.m3u8"
-        ]
-    },
-    {
-        "id": "BRIDGE576p",
-        "name": "BRIDGE (576p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/qYObfrG.png",
-        "sources": [
-            "http://stream.mcquack.net/318/index.m3u8"
-        ]
-    },
-    {
-        "id": "BRIDGEClassic576p",
-        "name": "BRIDGE Classic (576p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/JJTQq81.png",
-        "sources": [
-            "http://stream.mcquack.net/272/index.m3u8"
-        ]
-    },
-    {
-        "id": "BRIDGEDeluxeHD576p",
-        "name": "BRIDGE Deluxe HD (576p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/EazL8w7.png",
-        "sources": [
-            "http://stream.mcquack.net/92/index.m3u8"
-        ]
-    },
-    {
-        "id": "BRIDGEHits576p",
-        "name": "BRIDGE Hits (576p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/sIW9oR4.png",
-        "sources": [
-            "http://stream.mcquack.net/320/index.m3u8"
-        ]
-    },
-    {
-        "id": "BRIDGERock576p",
-        "name": "BRIDGE Rock (576p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/MHuwct2.png",
-        "sources": [
-            "http://178.134.1.158:8081/BRIDGEROCK/index.m3u8"
-        ]
-    },
-    {
-        "id": "BST576p",
-        "name": "BST (576p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/IDotHmQ.png",
-        "sources": [
-            "https://bsttv.bonus-tv.ru/cdn/bst/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "Carousel4720p",
-        "name": "Carousel +4 (720p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/4wmnx1W.png",
-        "sources": [
-            "http://185.37.150.46/Karusel/index.m3u8"
-        ]
-    },
-    {
-        "id": "Channel5Russia576p",
-        "name": "Channel 5 (Russia) (576p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/KPXMa3U.png",
-        "sources": [
-            "http://31.148.5.241/kanal_5/index.m3u8"
-        ]
-    },
-    {
-        "id": "Channel8Russia576p",
-        "name": "Channel 8 (Russia) (576p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/nUSx1jF.png",
-        "sources": [
-            "http://45.11.139.43:8555/8kanal/index.m3u8"
-        ]
-    },
-    {
-        "id": "likeGeckoChrome150000Safari53736Edg150000",
-        "name": "like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0",
-        "group": "Rusiya",
-        "logo": "",
-        "sources": [
-            "https://tshift-1.telecoma.tv/8channel/tracks-v1a1/mono.ts.m3u8"
-        ]
-    },
-    {
-        "id": "likeGeckoChrome150000Safari53736Edg150000",
-        "name": "like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0",
-        "group": "Rusiya",
-        "logo": "",
-        "sources": [
-            "https://live-8knsk.cdnvideo.ru/8knsk/stream1/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "Channel10Russia576i",
-        "name": "Channel 10 (Russia) (576i)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/k8JjFDw.png",
-        "sources": [
-            "https://bl.rutube.ru/livestream/c9e26bf5c003fd8d477200065ca1a05f/index.m3u8?e=2072611029&s=eqlTXebDP9wSWTZgre6BwQ&scheme=https"
-        ]
-    },
-    {
-        "id": "Channel121080p",
-        "name": "Channel 12 (1080p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/OA9hm6e.png",
-        "sources": [
-            "https://12channel.bonus-tv.ru/cdn/12channel/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "Channel16406pNot247",
-        "name": "Channel-16 (406p) [Not 24/7]",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/7tNDKHe.png",
-        "sources": [
-            "http://serv25.vintera.tv:8081/test/k16/playlist.m3u8"
-        ]
-    },
-    {
-        "id": "Che576p",
-        "name": "Che! (576p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/ZOcDGpB.png",
-        "sources": [
-            "http://flussonic.linkintel.ru/che/index.m3u8"
-        ]
-    },
-    {
-        "id": "CinemaRussia576p",
-        "name": "Cinema (Russia) (576p)",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/b5e9qUA.png",
-        "sources": [
-            "http://flussonic.linkintel.ru/cinema/index.m3u8"
-        ]
-    },
-    {
-        "id": "CityEdenAutoGidNot247",
-        "name": "City Eden AutoGid [Not 24/7]",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/qpe8L27.png",
-        "sources": [
-            "https://cityeden.catcast.tv/content/47515/index.m3u8"
-        ]
-    },
-    {
-        "id": "CityEdenBirmaPlayNot247",
-        "name": "City Eden Birma Play [Not 24/7]",
-        "group": "Rusiya",
-        "logo": "https://i.imgur.com/38Q5L5W.png",
-        "sources": [
-            "https://cityeden.catcast.tv/content/34364/index.m3u8"
-        ]
-    }
-]
+CHANNELS = [   {   'group': 'Azerbaycan',
+        'headers': {'Referer': 'https://aztv.az/'},
+        'id': 'AzTV',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Azerbaijan_Television_Logo.png/300px-Azerbaijan_Television_Logo.png',
+        'name': 'AzTV',
+        'sources': ['http://erlyvideo.izone.az:80/aztv/mono.m3u8', 'https://str.yodacdn.net/azertv/index.m3u8']},
+    {   'group': 'Azerbaycan',
+        'id': 'IctimaiTV',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/%C4%B0ctimai_TV_%282021%29.png/300px-%C4%B0ctimai_TV_%282021%29.png',
+        'name': 'İctimai TV',
+        'sources': ['http://erlyvideo.izone.az:80/ictimaitv/mono.m3u8', 'https://live.itv.az/itv.m3u8']},
+    {   'group': 'Azerbaycan',
+        'id': 'ARBTV',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/ARB_TV_Logo.png/300px-ARB_TV_Logo.png',
+        'name': 'ARB TV',
+        'sources': ['http://erlyvideo.izone.az:80/arb/mono.m3u8']},
+    {   'group': 'Azerbaycan',
+        'id': 'ARB24',
+        'logo': 'https://upload.wikimedia.org/wikipedia/az/thumb/8/88/ARB_24_loqo.png/300px-ARB_24_loqo.png',
+        'name': 'ARB 24',
+        'sources': ['http://erlyvideo.izone.az:80/arb24/mono.m3u8']},
+    {   'group': 'Azerbaycan',
+        'id': 'ARBGunesh',
+        'logo': 'https://upload.wikimedia.org/wikipedia/az/thumb/8/84/ARB_G%C3%BCn%C9%99%C5%9F_loqo.png/300px-ARB_G%C3%BCn%C9%99%C5%9F_loqo.png',
+        'name': 'ARB Günəş',
+        'sources': ['http://erlyvideo.izone.az:80/arbgunesh/mono.m3u8']},
+    {   'group': 'Azerbaycan',
+        'id': 'SpaceTV',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Space_TV_loqosu.png/300px-Space_TV_loqosu.png',
+        'name': 'Space TV',
+        'sources': ['http://erlyvideo.izone.az:80/spacetv/mono.m3u8']},
+    {   'group': 'Azerbaycan',
+        'id': 'XezerTV',
+        'logo': 'https://upload.wikimedia.org/wikipedia/az/thumb/9/9a/X%C9%99z%C9%99r_TV_logo.png/300px-X%C9%99z%C9%99r_TV_logo.png',
+        'name': 'Xəzər TV',
+        'sources': ['http://erlyvideo.izone.az:80/xezertv/mono.m3u8']},
+    {   'group': 'Azerbaycan',
+        'id': 'AzadTV',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Azad_Azerbaycan_TV_logo.png/300px-Azad_Azerbaycan_TV_logo.png',
+        'name': 'ATV (Azad TV)',
+        'sources': ['https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8']},
+    {   'group': 'Azerbaycan',
+        'id': 'BakuTV',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Baku_TV_%282018%29.png/300px-Baku_TV_%282018%29.png',
+        'name': 'Baku TV',
+        'sources': ['https://rtmp.baku.tv/hls/bakutv.m3u8']},
+    {   'group': 'Azerbaycan',
+        'id': 'CBCAzerbaijan',
+        'logo': 'https://upload.wikimedia.org/wikipedia/az/thumb/c/c5/CBC_Azerbaijan_TV_Logo.png/300px-CBC_Azerbaijan_TV_Logo.png',
+        'name': 'CBC Azerbaijan',
+        'sources': ['http://erlyvideo.izone.az:80/cbc/mono.m3u8']},
+    {   'group': 'Azerbaycan',
+        'id': 'MedeniyyetTV',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/f/fc/M%C9%99d%C9%99niyy%C9%99t_TV_logo.png',
+        'name': 'Mədəniyyət TV',
+        'sources': ['http://erlyvideo.izone.az:80/medeniyyet/mono.m3u8']},
+    {   'group': 'Azerbaycan',
+        'id': 'RealTV',
+        'logo': 'https://upload.wikimedia.org/wikipedia/az/thumb/d/d1/Real_TV_loqosu_%282019%29.jpg/300px-Real_TV_loqosu_%282019%29.jpg',
+        'name': 'Real TV',
+        'sources': ['http://erlyvideo.izone.az:80/realtv/mono.m3u8']},
+    {   'group': 'Azerbaycan',
+        'id': 'DunyaTV',
+        'logo': 'https://upload.wikimedia.org/wikipedia/az/thumb/2/29/D%C3%BCnya_TV_loqosu.png/300px-D%C3%BCnya_TV_loqosu.png',
+        'name': 'Dünya TV',
+        'sources': ['http://erlyvideo.izone.az:80/dunyatv/mono.m3u8']},
+    {   'group': 'Azerbaycan',
+        'id': 'APATV',
+        'logo': 'https://i.imgur.com/2CSW4V4.png',
+        'name': 'APA TV',
+        'sources': ['http://stream.apa.tv/apastream/index.m3u8']},
+    {   'group': 'Azerbaycan',
+        'id': 'KanalS',
+        'logo': 'https://i.imgur.com/W0JBoSQ.png',
+        'name': 'Kanal S',
+        'sources': ['https://lives.atv.az:5443/KANAL-S/streams/kanals.m3u8']},
+    {   'group': 'Azerbaycan',
+        'id': 'KepezTV',
+        'logo': 'https://upload.wikimedia.org/wikipedia/az/thumb/3/3e/K%C9%99p%C9%99z_TV_%282019-h.h.%29.png/300px-K%C9%99p%C9%99z_TV_%282019-h.h.%29.png',
+        'name': 'Kəpəz TV',
+        'sources': ['http://85.132.78.122:8050/hls/stream/index.m3u8']},
+    {   'group': 'Azerbaycan',
+        'id': 'ELTV',
+        'logo': 'https://i.imgur.com/tTlokZ2.png',
+        'name': 'EL TV',
+        'sources': ['https://live.eltv.az/live/eltv/playlist.m3u8']},
+    {   'group': 'Azerbaycan',
+        'id': 'MuzTV',
+        'logo': 'https://i.imgur.com/CjySP1V.png',
+        'name': 'Muz TV Azerbaijan',
+        'sources': ['http://erlyvideo.izone.az:80/muztv/mono.m3u8']},
+    {   'group': 'Azerbaycan',
+        'id': 'KNMusic',
+        'logo': 'https://www.knmusictv.com/wp-content/uploads/2026/01/LOGO2112.png',
+        'name': 'KN Music TV',
+        'sources': ['https://cdn4.yayin.com.tr/kntv/tracks-v1a1/mono.m3u8']},
+    {   'group': 'Azerbaycan',
+        'id': 'GunAzTV',
+        'logo': 'https://i.imgur.com/2ZnQazl.png',
+        'name': 'GunAz TV',
+        'sources': ['https://tv.gunaz.tv/hls/live.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'TRT1',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/TRT_1_logo_2021.svg/512px-TRT_1_logo_2021.svg.png',
+        'name': 'TRT 1',
+        'sources': [   'https://tv-trt1.medya.trt.com.tr/master.m3u8',
+                       'https://trt.daioncdn.net/trt-1/master.m3u8?app=web',
+                       'https://tv-trt1.medya.trt.com.tr/master_720.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'ATV',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Atv_logo.svg/512px-Atv_logo.svg.png',
+        'name': 'ATV',
+        'sources': [   'http://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_360p.m3u8',
+                       'https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_1080p.m3u8',
+                       'https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'KanalD',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Kanal_D_logo_2011.svg/512px-Kanal_D_logo_2011.svg.png',
+        'name': 'Kanal D',
+        'sources': [   'https://demiroren.daioncdn.net/kanald/kanald.m3u8?app=kanald_web&ce=3',
+                       'https://live.duhnet.tv/S2/HLS_LIVE/kanalddainp/track_4_1250/playlist.m3u8',
+                       'https://demiroren.daioncdn.net/kanald/kanald_1080p.m3u8?app=kanald_web']},
+    {   'group': 'Turkiye',
+        'id': 'StarTV',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Star_TV_logo_2011.svg/512px-Star_TV_logo_2011.svg.png',
+        'name': 'Star TV',
+        'sources': [   'https://dogus.daioncdn.net/startv/startv_720p.m3u8?app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ce=3&sid=8l4w3lst4co5',
+                       'https://dygvideo.dygdigital.com/live/hls/startv4puhu?m3u8',
+                       'https://dogus.daioncdn.net/startv/startv.m3u8?app=a20ac41e-bdc3-4aa1-934d-26b484480ac9']},
+    {   'group': 'Turkiye',
+        'headers': {'Referer': 'https://tv.canlitvvolo.com/'},
+        'id': 'ShowTV',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Show_TV_logo_2012.svg/512px-Show_TV_logo_2012.svg.png',
+        'name': 'Show TV',
+        'sources': [   'https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/showtv/showtv_720p.m3u8',
+                       'http://ciner.daioncdn.net/showtv/showtv_1080p.m3u8?app=showtv_web']},
+    {   'group': 'Turkiye',
+        'id': 'FoxTV',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Now_T%C3%BCrkiye_logo.svg/512px-Now_T%C3%BCrkiye_logo.svg.png',
+        'name': 'Fox TV',
+        'sources': [   'https://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv.m3u8',
+                       'http://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'TV8',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/TV8_logo_2014.svg/512px-TV8_logo_2014.svg.png',
+        'name': 'TV8',
+        'sources': [   'https://tv8.daioncdn.net/tv8/tv8.m3u8?app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=3',
+                       'https://rkhubpaomb.turknet.ercdn.net/fwjkgpasof/tv8/tv8_480p.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'NTV',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/NTV_logo.svg/512px-NTV_logo.svg.png',
+        'name': 'NTV',
+        'sources': [   'https://dogus.daioncdn.net/ntv/ntv.m3u8?app=ntv_web',
+                       'http://dygvideo.dygdigital.com/live/hls/ntv4puhu?m3u8']},
+    {   'group': 'Turkiye',
+        'headers': {'User-Agent': 'okhttp/4.9.0'},
+        'id': 'CNNTurk',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/CNN_T%C3%BCrk_logo.svg/512px-CNN_T%C3%BCrk_logo.svg.png',
+        'name': 'CNN Türk',
+        'sources': [   'https://live.duhnet.tv/S2/HLS_LIVE/cnnturknp/playlist.m3u8?&live=true&app=com.cnnturk&st=Q4rFSzWODrCtIic1SbRmTw&e=1792863410',
+                       'https://live.duhnet.tv/S2/HLS_LIVE/cnnturknp/track_4_1000/playlist.m3u8?&live=true&app=com.cnnturk&st=Q4rFSzWODrCtIic1SbRmTw&e=1792863410',
+                       'https://live.duhnet.tv/S2/HLS_LIVE/cnnturkdainp/track_4_1250/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'TRTSpor',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/TRT_Spor_logo_2021.svg/512px-TRT_Spor_logo_2021.svg.png',
+        'name': 'TRT Spor',
+        'sources': [   'https://trt.daioncdn.net/trtspor/master.m3u8?app=web&platform=trtspor',
+                       'https://trt.daioncdn.net/trtspor-yildiz/master.m3u8?app=web&platform=trtspor',
+                       'https://tv-trtspor1.medya.trt.com.tr/master_720.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'AHaber',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/A_Haber_logo.svg/512px-A_Haber_logo.svg.png',
+        'name': 'A Haber',
+        'sources': [   'https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/ahaber/ahaber.m3u8',
+                       'https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/ahaber/ahaber_720p.m3u8']},
+    {   'group': 'Turkiye',
+        'headers': {'Referer': 'https://tv.ensonhaber.com/'},
+        'id': 'Haberturk',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Habert%C3%BCrk_TV_logo.svg/512px-Habert%C3%BCrk_TV_logo.svg.png',
+        'name': 'Habertürk',
+        'sources': ['https://tv.ensonhaber.com/haberturk/haberturk.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'TRTHaber',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/TRT_Haber_logo_2021.svg/512px-TRT_Haber_logo_2021.svg.png',
+        'name': 'TRT Haber',
+        'sources': [   'https://tv-trthaber.medya.trt.com.tr/master.m3u8',
+                       'https://tv.ensonhaber.com/trthaber/trthaber.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'TRTCocuk',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/TRT_%C3%87ocuk_logo_2021.svg/512px-TRT_%C3%87ocuk_logo_2021.svg.png',
+        'name': 'TRT Çocuk',
+        'sources': [   'https://tv-trtcocuk.medya.trt.com.tr/master.m3u8',
+                       'https://tv-trtcocuk.medya.trt.com.tr/master_720.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'CartoonNetworkTR',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Cartoon_Network_2010_logo.svg/512px-Cartoon_Network_2010_logo.svg.png',
+        'name': 'Cartoon Network Türkiye',
+        'sources': [   'http://stream.mcquack.net/190/index.m3u8',
+                       'https://turner-live.daioncdn.net/cartoonnetwork/cartoonnetwork.m3u8',
+                       'https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/cartoonnetwork/cartoonnetwork.m3u8',
+                       'https://live.duhnet.tv/S2/HLS_LIVE/cartoonnetworkdainp/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'MinikaGO',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Minika_GO_logo.svg/512px-Minika_GO_logo.svg.png',
+        'name': 'Minika GO',
+        'sources': [   'https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/minikago/minikago.m3u8',
+                       'http://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/minikago/minikago.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'MinikaCocuk',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Minika_%C3%87ocuk_logo.svg/512px-Minika_%C3%87ocuk_logo.svg.png',
+        'name': 'Minika Çocuk',
+        'sources': ['https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/minikago_cocuk/minikago_cocuk.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'TRTWorld',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/TRT_World_logo_2021.svg/512px-TRT_World_logo_2021.svg.png',
+        'name': 'TRT World',
+        'sources': [   'https://tv-trtworld.medya.trt.com.tr/master.m3u8',
+                       'https://mumbai-edge.smartplaytv.in/TRTWorld/index.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'beINSPORTSHaber',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/BeIN_Sports_logo_2017.svg/512px-BeIN_Sports_logo_2017.svg.png',
+        'name': 'beIN SPORTS Haber',
+        'sources': [   'https://lgmtk6.top/beinsports1fhd/mono.m3u8',
+                       'https://tinyurl.com/Fiat-linea-multijet/yula/ceydub1.m3u8',
+                       'https://digiturk-live.daioncdn.net/beinsportshaber/beinsportshaber.m3u8',
+                       'https://tgn.bozztv.com/dvrfl05/gin-beinsportshaber/tracks-v1a1/mono.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'Kanal7',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Kanal_7_logo_2002.svg/512px-Kanal_7_logo_2002.svg.png',
+        'name': 'Kanal 7',
+        'sources': [   'https://kanal7-live.daioncdn.net/kanal7/kanal7.m3u8',
+                       'https://livetv.radyotvonline.net/kanal7live/kanal7avr/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'TRT2',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/TRT_2_logo_2021.svg/512px-TRT_2_logo_2021.svg.png',
+        'name': 'TRT 2',
+        'sources': [   'https://tv-trt2.medya.trt.com.tr/master.m3u8',
+                       'https://tv-trt2.medya.trt.com.tr/master_720.m3u8']},
+    {   'group': 'Turkiye',
+        'headers': {'Referer': 'https://tv.ensonhaber.com/'},
+        'id': 'BeyazTV',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Beyaz_TV_logo.svg/512px-Beyaz_TV_logo.svg.png',
+        'name': 'Beyaz TV',
+        'sources': [   'https://proxy.hdtvcanli.com/https://beyaztv-live.daioncdn.net/beyaztv/beyaztv.m3u8',
+                       'https://beyaztv-live.daioncdn.net/beyaztv/beyaztv.m3u8']},
+    {   'group': 'Turkiye',
+        'headers': {'Referer': 'https://tv.ensonhaber.com/'},
+        'id': 'BloombergHT',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Bloomberg_HT_logo.svg/512px-Bloomberg_HT_logo.svg.png',
+        'name': 'Bloomberg HT',
+        'sources': [   'https://tv.ensonhaber.com/bloomberght/bloomberght.m3u8',
+                       'https://mumbai-edge.smartplaytv.in/BloombergHT/index.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'DiscoveryChannelTR',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Discovery_Channel_2019.svg/512px-Discovery_Channel_2019.svg.png',
+        'name': 'Discovery Channel Türkiye',
+        'sources': [   'http://stream.mcquack.net/177/index.m3u8',
+                       'http://stream.mcquack.net/205/index.m3u8',
+                       'https://tgn.bozztv.com/dvrfl05/gin-discoverychannel/tracks-v1a1/mono.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'NationalGeographicTR',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/National_Geographic_Channel_logo.svg/512px-National_Geographic_Channel_logo.svg.png',
+        'name': 'National Geographic Türkiye',
+        'sources': [   'http://stream.mcquack.net/116/index.m3u8',
+                       'https://tgn.bozztv.com/dvrfl05/gin-natgeo/tracks-v1a1/mono.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'TLCTurkiye',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/TLC_logo_2016.svg/512px-TLC_logo_2016.svg.png',
+        'name': 'TLC Türkiye',
+        'sources': [   'https://dogus.daioncdn.net/tlc/tlc.m3u8?app=tlc_web',
+                       'https://dogus-live.daioncdn.net/tlc/tlc_720p.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'DMAXTurkiye',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/DMAX_2016_Logo.svg/512px-DMAX_2016_Logo.svg.png',
+        'name': 'DMAX Türkiye',
+        'sources': [   'https://dogus.daioncdn.net/dmax/dmax.m3u8?app=dmax_web',
+                       'https://dogus-live.daioncdn.net/dmax/dmax_720p.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'EurosportTR',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Eurosport_1_logo.svg/512px-Eurosport_1_logo.svg.png',
+        'name': 'Eurosport Türkiye',
+        'sources': [   'http://stream.mcquack.net/210/index.m3u8',
+                       'http://stream.mcquack.net/220/index.m3u8',
+                       'https://tgn.bozztv.com/dvrfl05/gin-eurosport1/tracks-v1a1/mono.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'TV8_5',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/TV8.5_logo.png/512px-TV8.5_logo.png',
+        'name': 'TV8.5',
+        'sources': [   'https://tv8.daioncdn.net/tv8bucuk/tv8bucuk.m3u8?app=tv8bucuk_web',
+                       'https://rkhubpaomb.turknet.ercdn.net/fwjkgpasof/tv8bucuk/tv8bucuk.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'Kanal24',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/24_TV_logo.svg/512px-24_TV_logo.svg.png',
+        'name': 'Kanal 24',
+        'sources': ['https://turkmedya-live.ercdn.net/tv24/tv24.m3u8', 'https://tv.ensonhaber.com/tv24/tv24.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'FoxTV',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Now_T%C3%BCrkiye_logo.svg/512px-Now_T%C3%BCrkiye_logo.svg.png',
+        'name': 'Fox TV',
+        'sources': [   'https://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv.m3u8',
+                       'http://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv.m3u8']},
+    {   'group': 'Turkiye',
+        'headers': {'Referer': 'https://tv.ensonhaber.com/'},
+        'id': 'Haberturk',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Habert%C3%BCrk_TV_logo.svg/512px-Habert%C3%BCrk_TV_logo.svg.png',
+        'name': 'Habertürk',
+        'sources': ['https://tv.ensonhaber.com/haberturk/haberturk.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'TRTCocuk',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/TRT_%C3%87ocuk_logo_2021.svg/512px-TRT_%C3%87ocuk_logo_2021.svg.png',
+        'name': 'TRT Çocuk',
+        'sources': [   'https://tv-trtcocuk.medya.trt.com.tr/master.m3u8',
+                       'https://tv-trtcocuk.medya.trt.com.tr/master_720.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'NationalGeographicTR',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/National_Geographic_Channel_logo.svg/512px-National_Geographic_Channel_logo.svg.png',
+        'name': 'National Geographic Türkiye',
+        'sources': [   'http://stream.mcquack.net/116/index.m3u8',
+                       'https://tgn.bozztv.com/dvrfl05/gin-natgeo/tracks-v1a1/mono.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'Kanal24',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/24_TV_logo.svg/512px-24_TV_logo.svg.png',
+        'name': 'Kanal 24',
+        'sources': ['https://turkmedya-live.ercdn.net/tv24/tv24.m3u8', 'https://tv.ensonhaber.com/tv24/tv24.m3u8']},
+    {   'group': 'Turkiye',
+        'id': '4UTV720p',
+        'logo': 'https://i.imgur.com/PexhKwp.png',
+        'name': '4U TV (720p)',
+        'sources': ['https://hls.4utv.live/hls/stream.m3u8']},
+    {   'group': 'Turkiye',
+        'id': '360720pNot247',
+        'logo': 'https://i.imgur.com/agn47sQ.png',
+        'name': '360 (720p) [Not 24/7]',
+        'sources': ['https://turkmedya-live.ercdn.net/tv360/tv360.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'A2TV1080p',
+        'logo': 'https://iatv.tmgrup.com.tr/site/v2/a2tv/i/a2tv-logo.png',
+        'name': 'A2TV (1080p)',
+        'sources': ['https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/a2tv/a2tv.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'ASporSD1080p',
+        'logo': 'https://i.imgur.com/ZhkZzLf.png',
+        'name': 'A Spor SD (1080p)',
+        'sources': ['https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/aspor/aspor.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'AksuTV720p',
+        'logo': 'https://i.imgur.com/mgDCKiy.png',
+        'name': 'Aksu TV (720p)',
+        'sources': ['https://live.artidijitalmedya.com/artidijital_aksutv/aksutv/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'AlZahraTVTurkic720pNot247',
+        'logo': 'https://i.imgur.com/QEHKGnG.png',
+        'name': 'Al-Zahra TV Turkic (720p) [Not 24/7]',
+        'sources': ['https://live.al-zahratv.com/live/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'AlanyaPostaTV1080p',
+        'logo': 'https://i.imgur.com/a3w9eFe.png',
+        'name': 'Alanya Posta TV (1080p)',
+        'sources': ['https://api-tv3.yayin.com.tr/postatv/postatv/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'AlmahriahTV576p',
+        'logo': 'https://i.imgur.com/GgEeTNr.png',
+        'name': 'Almahriah TV (576p)',
+        'sources': ['https://starmenajo.com/hls/almahriah/index.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'AltasTV1080p',
+        'logo': 'https://i.imgur.com/XaJ7fp6.png',
+        'name': 'Altas TV (1080p)',
+        'sources': ['https://edge1.socialsmart.tv/altastv/bant1/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'AnadoluNetTV1080p',
+        'logo': 'https://www.anadolunettv.com/d/r/logo.png',
+        'name': 'Anadolu Net TV (1080p)',
+        'sources': ['https://live.artidijitalmedya.com/artidijital_anadolunet/anadolunet/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'ArasTV576pNot247',
+        'logo': 'https://i.imgur.com/JsDCyWG.png',
+        'name': 'Aras TV (576p) [Not 24/7]',
+        'sources': ['http://1.rtmp.org/tv217/yayin.stream/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'ASTV900p',
+        'logo': 'https://asset.artidijitalmedya.com/image/188x188/channels/v1/logo_13.png',
+        'name': 'AS TV (900p)',
+        'sources': ['https://live.artidijitalmedya.com/artidijital_astv/astv/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'BricveSatrancTV480pNot247',
+        'logo': 'https://i.imgur.com/TXDV1ty.png',
+        'name': 'Bric ve Satranc TV (480p) [Not 24/7]',
+        'sources': ['http://139.162.182.79/live/test/index.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'BRTVTurkiye720pGeoblocked',
+        'logo': 'https://i.imgur.com/U3qlEAp.png',
+        'name': 'BRTV (Turkiye) (720p) [Geo-blocked]',
+        'sources': ['https://live.artidijitalmedya.com/artidijital_brtv/brtv/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'CayTV720p',
+        'logo': 'https://i.imgur.com/ndupxwu.png',
+        'name': 'Cay TV (720p)',
+        'sources': ['https://edge1.socialsmart.tv/caytv/bant1/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'CiftciTV720pNot247',
+        'logo': 'https://i.imgur.com/CLzP4vL.png',
+        'name': 'Ciftci TV (720p) [Not 24/7]',
+        'sources': ['https://live.artidijitalmedya.com/artidijital_ciftcitv/ciftcitv/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'CNBCe',
+        'logo': 'https://s.cnbce.com/dist/images/logo-nav.png',
+        'name': 'CNBC-e',
+        'sources': ['https://hnpsechtsc.turknet.ercdn.net/xpnvudnlsv/cnbc-e/cnbc-e.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'DenizPostasiTV720pNot247',
+        'logo': 'https://i.imgur.com/Mm8hdfx.png',
+        'name': 'Deniz Postasi TV (720p) [Not 24/7]',
+        'sources': ['https://live.artidijitalmedya.com/artidijital_denizpostasi/denizpostasi/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'DHA720pNot247',
+        'logo': 'https://i.imgur.com/VZhag2x.png',
+        'name': 'DHA (720p) [Not 24/7]',
+        'sources': ['https://603c568fccdf5.streamlock.net/live/dhaweb1_C5efC/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'DiyanetTV1080p',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Diyanet_TV_logo.svg/960px-Diyanet_TV_logo.svg.png',
+        'name': 'Diyanet TV (1080p)',
+        'sources': [   'https://eustr73.mediatriple.net/videoonlylive/mtikoimxnztxlive/broadcast_5e3bf95a47e07.smil/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'DiyarTV720p',
+        'logo': 'https://i.imgur.com/qWkHjRA.png',
+        'name': 'Diyar TV (720p)',
+        'sources': ['https://live.artidijitalmedya.com/artidijital_diyartv/diyartv/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'DostTV576p',
+        'logo': 'https://dosttv.com/wp-content/uploads/2022/02/dost_logo.png',
+        'name': 'Dost TV (576p)',
+        'sources': ['https://dost.stream.emsal.im/tv/live.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'DreamTurk720p',
+        'logo': 'https://i.imgur.com/vJ8VaZi.png',
+        'name': 'Dream Turk (720p)',
+        'sources': ['https://live.duhnet.tv/S2/HLS_LIVE/dreamturknp/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'EdessaTV1080p',
+        'logo': 'https://i.imgur.com/rhU6j9I.png',
+        'name': 'Edessa TV (1080p)',
+        'sources': ['https://canli.edessatv.com/hls/stream.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'Ekoturk720p',
+        'logo': 'https://www.dsmart.com.tr/epg/images/0x60/5ffc18c6cfef0b15933a8b65',
+        'name': 'Ekoturk (720p)',
+        'sources': ['https://cdn.ekoturk.net/hls/master.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'ElsharqTV1080pNot247',
+        'logo': 'https://i.imgur.com/8vmfZb5.png',
+        'name': 'Elsharq TV (1080p) [Not 24/7]',
+        'sources': ['https://mn-nl.mncdn.com/elsharq_live/live/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'ERTV1080pGeoblocked',
+        'logo': 'https://i.imgur.com/VDGEPrD.png',
+        'name': 'ERTV (1080p) [Geo-blocked]',
+        'sources': ['https://live.artidijitalmedya.com/artidijital_ertv_new/ertv/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'ErzurumWebTV720p',
+        'logo': 'https://i.imgur.com/HF7N4Li.png',
+        'name': 'Erzurum Web TV (720p)',
+        'sources': ['https://win29.yayin.com.tr/erzurumwebtv/erzurumwebtv/iptvdelisi.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'ESTV720p',
+        'logo': 'https://i.imgur.com/epAEBrp.png',
+        'name': 'ES TV (720p)',
+        'sources': ['https://live.artidijitalmedya.com/artidijital_estv/estv/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'ETVKayseri720p',
+        'logo': 'https://yt3.googleusercontent.com/ytc/AIdro_msPtG6zfPKIJIIdvG4dehXLoVoXcHM2-2HL9YxsNYzGQ=s512-c-k-c0x00ffffff-no-rj',
+        'name': 'ETV Kayseri (720p)',
+        'sources': ['https://live.artidijitalmedya.com/artidijital_etv/etv/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'ETVManisa1080pNot247',
+        'logo': 'https://i.ibb.co/QKXtdkz/sOd3INg.png',
+        'name': 'ETV Manisa (1080p) [Not 24/7]',
+        'sources': ['https://edge1.socialsmart.tv/manisaetv/bant1/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'EuroD720p',
+        'logo': 'https://i.imgur.com/x9kHsXo.png',
+        'name': 'Euro D (720p)',
+        'sources': ['https://live.duhnet.tv/S2/HLS_LIVE/eurodnp/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'FBTV',
+        'logo': 'https://i.imgur.com/qBVqtYd.png',
+        'name': 'FB TV',
+        'sources': ['http://1hskrdto.rocketcdn.com/fenerbahcetv.smil/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'FinansTurkTV720p',
+        'logo': 'https://i.ibb.co/wBwmB1T/iY0osc7.png',
+        'name': 'Finans Turk TV (720p)',
+        'sources': ['https://yayin30.haber100.com/live/finansturk/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'FlashHaberTV',
+        'logo': '',
+        'name': 'Flash Haber TV',
+        'sources': [   'https://b01c02nl.mediatriple.net/videoonlylive/mtyycglqauzjhlive/broadcast_67c053c48829f.smil/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'FortunaTV720p',
+        'logo': 'https://i.imgur.com/ZbUSlOC.png',
+        'name': 'Fortuna TV (720p)',
+        'sources': ['https://edge1.socialsmart.tv/ftvturk/bant1/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'GuneydoguTV720p',
+        'logo': 'https://i.imgur.com/JT5pp3Y.png',
+        'name': 'Guneydogu TV (720p)',
+        'sources': ['https://edge1.socialsmart.tv/gtv/bant1/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'Haber61TV720pNot247',
+        'logo': 'https://i.imgur.com/2a2XUKl.png',
+        'name': 'Haber61 TV (720p) [Not 24/7]',
+        'sources': ['https://cdn-haber61tv.yayin.com.tr/haber61tv/smil:haber61tv.smil/index.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'HaberGlobal720pNot247',
+        'logo': 'https://i.imgur.com/fu6XeGS.png',
+        'name': 'Haber Global (720p) [Not 24/7]',
+        'sources': ['https://tv.ensonhaber.com/haberglobal/haberglobal.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'HalkTVSD1080p',
+        'logo': 'https://i.imgur.com/xM0HA30.png',
+        'name': 'Halk TV SD (1080p)',
+        'sources': ['https://halktv-live.daioncdn.net/halktv/halktv.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'HTSporTV1080p',
+        'logo': 'https://www.htspor.com/images/manifest/social-share-logo.png',
+        'name': 'HTSpor TV (1080p)',
+        'sources': ['https://ciner.daioncdn.net/ht-spor/ht-spor.m3u8?app=web']},
+    {   'group': 'Turkiye',
+        'id': 'IcelTV720pNot247',
+        'logo': 'https://i.imgur.com/CGwImKv.png',
+        'name': 'Icel TV (720p) [Not 24/7]',
+        'sources': ['https://edge1.socialsmart.tv/iceltv/bant1/playlist.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'IlkeTV1080p',
+        'logo': 'https://ilketv.com.tr/wp-content/uploads/2024/06/logo.png',
+        'name': 'Ilke TV (1080p)',
+        'sources': ['https://stream.ilketv.com.tr/hls/ilkecanli.m3u8']},
+    {   'group': 'Turkiye',
+        'id': 'Kanal31080pNot247',
+        'logo': 'https://i.imgur.com/eXErSv0.png',
+        'name': 'Kanal 3 (1080p) [Not 24/7]',
+        'sources': ['https://live.artidijitalmedya.com/artidijital_kanal3/kanal3/playlist.m3u8']},
+    {   'group': 'Rusiya',
+        'id': '1HDMusicTelevision1080p',
+        'logo': 'https://i.imgur.com/4Ww7CsR.png',
+        'name': '1HD Music Television (1080p)',
+        'sources': ['http://176.118.197.101/1HD/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': '2x2576i',
+        'logo': 'https://i.imgur.com/fhQFLEl.png',
+        'name': '2x2 (576i)',
+        'sources': [   'https://bl.rutube.ru/livestream/392b4686b770bae2da6bf5ac4574add5/index.m3u8?e=2068731801&s=tenr-yHXUv1wibfka78s2A&scheme=https']},
+    {   'group': 'Rusiya',
+        'id': '3ABNRussia720p',
+        'logo': 'https://i.imgur.com/4fhBbam.png',
+        'name': '3ABN Russia (720p)',
+        'sources': ['https://hls.tv.3angels.ru/stream.m3u8']},
+    {   'group': 'Rusiya',
+        'id': '5minuttishiny1080p',
+        'logo': 'https://cdn2-static.ntv.ru/home/promo/24740/5minut_live.jpg',
+        'name': '5 minut tishiny (1080p)',
+        'sources': ['https://cdn-dvr.ntv.ru/5_minut_tishiny/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': '861080pNot247',
+        'logo': 'https://i.imgur.com/0dRS4Cb.png',
+        'name': '86 (1080p) [Not 24/7]',
+        'sources': ['https://sitv.ru/hls/s86.m3u8']},
+    {   'group': 'Rusiya',
+        'id': '3601080p',
+        'logo': 'https://i.imgur.com/VTJqdoX.png',
+        'name': '360° (1080p)',
+        'sources': ['https://cdn-evacoder-tv.facecast.io/evacoder_hls_hi/CkxfR1xNUAJwTgtXTBZTAJli/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': '360News1080p',
+        'logo': 'https://i.imgur.com/YXDeX8q.png',
+        'name': '360° News (1080p)',
+        'sources': ['https://live-vgtrksmotrim.cdnvideo.ru/vgtrksmotrim/smotrim-live-03-srt.smil/playlist.m3u8']},
+    {   'group': 'Rusiya',
+        'id': '365daysTV576p',
+        'logo': 'https://i.imgur.com/NfnAiTR.png',
+        'name': '365 days TV (576p)',
+        'sources': ['http://stream.mcquack.net/70/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'black576p',
+        'logo': 'https://i.imgur.com/Q4A6ci4.png',
+        'name': '.black (576p)',
+        'sources': ['http://stream.mcquack.net/263/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'red576p',
+        'logo': 'https://i.imgur.com/GET9Qut.png',
+        'name': '.red (576p)',
+        'sources': ['http://5.188.159.128:8070/RED/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'redHD1080p',
+        'logo': 'https://i.imgur.com/GET9Qut.png',
+        'name': '.red HD (1080p)',
+        'sources': ['http://178.134.1.158:8081/red/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'scifi576p',
+        'logo': 'https://i.imgur.com/nSSUHcg.png',
+        'name': '.sci-fi (576p)',
+        'sources': ['http://stream.mcquack.net/180/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'Afontovo',
+        'logo': 'https://i.imgur.com/StFfPaI.png',
+        'name': 'Afontovo',
+        'sources': ['https://stream.afontovo.ru/hd.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'AISTTV1080p',
+        'logo': 'https://i.imgur.com/bcw0s4V.png',
+        'name': 'AIST TV (1080p)',
+        'sources': ['http://live2-aisttv.cdnvideo.ru/aisttv2/aisttv.sdp/playlist.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'AmediaHit1080p',
+        'logo': 'https://i.imgur.com/a8ZBGBw.png',
+        'name': 'Amedia Hit (1080p)',
+        'sources': ['http://stream.mcquack.net/162/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'AngelTVRussian720p',
+        'logo': 'https://i.imgur.com/qKLEGU7.png',
+        'name': 'Angel TV Russian (720p)',
+        'sources': ['https://janya-digimix.akamaized.net/vglive-sk-955415/russia/ngrp:angelrussia_all/playlist.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'AnimalPlanetRussia1080p',
+        'logo': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/2018_Animal_Planet_logo.svg/960px-2018_Animal_Planet_logo.svg.png',
+        'name': 'Animal Planet (Russia) (1080p)',
+        'sources': ['http://stream.mcquack.net/114/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'Aris24720pNot247',
+        'logo': 'https://i.imgur.com/CTFVEAb.png',
+        'name': 'Aris 24 (720p) [Not 24/7]',
+        'sources': ['http://serv25.vintera.tv:8081/test/aris/playlist.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'Arkhyz241080p',
+        'logo': 'https://i.imgur.com/blAtdkJ.png',
+        'name': 'Arkhyz 24 (1080p)',
+        'sources': ['https://live.mediacdn.ru/sr1/arhis24/playlist.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'Arsenal576p',
+        'logo': 'https://i.imgur.com/DBpVeb0.png',
+        'name': 'Arsenal (576p)',
+        'sources': ['https://stream8.cinerama.uz/1414/tracks-v1a1/mono.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'ARTRussia576p',
+        'logo': 'https://optim.tildacdn.com/tild3134-3836-4338-a138-666666653363/-/format/webp/__.png.webp',
+        'name': 'ART (Russia) (576p)',
+        'sources': ['http://89.104.114.24:8080/art/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'Astrahan24720p',
+        'logo': 'https://i.imgur.com/9WcnjQN.png',
+        'name': 'Astrahan 24 (720p)',
+        'sources': ['https://streaming.astrakhan.ru/astrakhan24/playlist.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'AstrahanRuSport720p',
+        'logo': 'https://i.imgur.com/BKaEtqL.png',
+        'name': 'Astrahan.Ru Sport (720p)',
+        'sources': ['https://streaming.astrakhan.ru/astrakhanrusporthd/playlist.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'AstrahanRuTV480p',
+        'logo': 'https://i.imgur.com/w4ys6zm.png',
+        'name': 'Astrahan.Ru TV (480p)',
+        'sources': ['https://streaming.astrakhan.ru/astrakhanrulivehd/playlist.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'Avto24576p',
+        'logo': 'https://i.imgur.com/GXSXmN2.png',
+        'name': 'Avto24 (576p)',
+        'sources': ['http://stream.mcquack.net/78/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'BabyTime576p',
+        'logo': 'https://i.imgur.com/lW3WIBD.png',
+        'name': 'Baby Time (576p)',
+        'sources': ['http://178.134.1.158:8081/babytime/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'Balabol1080p',
+        'logo': 'https://cdn2-static.ntv.ru/home/promo/24740/balabol_vse.jpg',
+        'name': 'Balabol (1080p)',
+        'sources': ['https://cdn-dvr.ntv.ru/Balabol/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'Belgorod241080p',
+        'logo': 'https://i.imgur.com/EEirvyx.png',
+        'name': 'Belgorod 24 (1080p)',
+        'sources': ['https://belnovosti.cdn.easyhoster.ru:8443/stream.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'BigAsia720p',
+        'logo': 'https://i.imgur.com/vruuPKF.png',
+        'name': 'Big Asia (720p)',
+        'sources': ['http://live-bigasia.cdnvideo.ru/bigasia/bigasia.smil/playlist.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'BlokbasterHD1080p',
+        'logo': 'https://i.imgur.com/KcOi4Os.png',
+        'name': 'Blokbaster HD (1080p)',
+        'sources': ['http://stream.mcquack.net/364/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'BollywoodHD576p',
+        'logo': 'https://i.imgur.com/YLQRnXt.png',
+        'name': 'Bollywood HD (576p)',
+        'sources': ['http://176.118.197.101/Bollywood_HD/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'BollywoodHDRussia576p',
+        'logo': 'https://i.imgur.com/scDKOLS.png',
+        'name': 'Bollywood HD Russia (576p)',
+        'sources': ['https://xykt-fix.github.io/cinerama_edge01/hls/BOLLYWOOD_RU/Movie009.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'BRIDGE576p',
+        'logo': 'https://i.imgur.com/qYObfrG.png',
+        'name': 'BRIDGE (576p)',
+        'sources': ['http://stream.mcquack.net/318/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'BRIDGEClassic576p',
+        'logo': 'https://i.imgur.com/JJTQq81.png',
+        'name': 'BRIDGE Classic (576p)',
+        'sources': ['http://stream.mcquack.net/272/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'BRIDGEDeluxeHD576p',
+        'logo': 'https://i.imgur.com/EazL8w7.png',
+        'name': 'BRIDGE Deluxe HD (576p)',
+        'sources': ['http://stream.mcquack.net/92/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'BRIDGEHits576p',
+        'logo': 'https://i.imgur.com/sIW9oR4.png',
+        'name': 'BRIDGE Hits (576p)',
+        'sources': ['http://stream.mcquack.net/320/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'BRIDGERock576p',
+        'logo': 'https://i.imgur.com/MHuwct2.png',
+        'name': 'BRIDGE Rock (576p)',
+        'sources': ['http://178.134.1.158:8081/BRIDGEROCK/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'BST576p',
+        'logo': 'https://i.imgur.com/IDotHmQ.png',
+        'name': 'BST (576p)',
+        'sources': ['https://bsttv.bonus-tv.ru/cdn/bst/playlist.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'Carousel4720p',
+        'logo': 'https://i.imgur.com/4wmnx1W.png',
+        'name': 'Carousel +4 (720p)',
+        'sources': ['http://185.37.150.46/Karusel/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'Channel5Russia576p',
+        'logo': 'https://i.imgur.com/KPXMa3U.png',
+        'name': 'Channel 5 (Russia) (576p)',
+        'sources': ['http://31.148.5.241/kanal_5/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'Channel8Russia576p',
+        'logo': 'https://i.imgur.com/nUSx1jF.png',
+        'name': 'Channel 8 (Russia) (576p)',
+        'sources': ['http://45.11.139.43:8555/8kanal/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'likeGeckoChrome150000Safari53736Edg150000',
+        'logo': '',
+        'name': 'like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',
+        'sources': ['https://tshift-1.telecoma.tv/8channel/tracks-v1a1/mono.ts.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'likeGeckoChrome150000Safari53736Edg150000',
+        'logo': '',
+        'name': 'like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0',
+        'sources': ['https://live-8knsk.cdnvideo.ru/8knsk/stream1/playlist.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'Channel10Russia576i',
+        'logo': 'https://i.imgur.com/k8JjFDw.png',
+        'name': 'Channel 10 (Russia) (576i)',
+        'sources': [   'https://bl.rutube.ru/livestream/c9e26bf5c003fd8d477200065ca1a05f/index.m3u8?e=2072611029&s=eqlTXebDP9wSWTZgre6BwQ&scheme=https']},
+    {   'group': 'Rusiya',
+        'id': 'Channel121080p',
+        'logo': 'https://i.imgur.com/OA9hm6e.png',
+        'name': 'Channel 12 (1080p)',
+        'sources': ['https://12channel.bonus-tv.ru/cdn/12channel/playlist.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'Channel16406pNot247',
+        'logo': 'https://i.imgur.com/7tNDKHe.png',
+        'name': 'Channel-16 (406p) [Not 24/7]',
+        'sources': ['http://serv25.vintera.tv:8081/test/k16/playlist.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'Che576p',
+        'logo': 'https://i.imgur.com/ZOcDGpB.png',
+        'name': 'Che! (576p)',
+        'sources': ['http://flussonic.linkintel.ru/che/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'CinemaRussia576p',
+        'logo': 'https://i.imgur.com/b5e9qUA.png',
+        'name': 'Cinema (Russia) (576p)',
+        'sources': ['http://flussonic.linkintel.ru/cinema/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'CityEdenAutoGidNot247',
+        'logo': 'https://i.imgur.com/qpe8L27.png',
+        'name': 'City Eden AutoGid [Not 24/7]',
+        'sources': ['https://cityeden.catcast.tv/content/47515/index.m3u8']},
+    {   'group': 'Rusiya',
+        'id': 'CityEdenBirmaPlayNot247',
+        'logo': 'https://i.imgur.com/38Q5L5W.png',
+        'name': 'City Eden Birma Play [Not 24/7]',
+        'sources': ['https://cityeden.catcast.tv/content/34364/index.m3u8']}]
