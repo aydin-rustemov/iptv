@@ -1,334 +1,329 @@
 {
-  "timestamp": "2026-10-24T04:10:26.301628+00:00",
-  "elapsed_seconds": 5.75,
+  "timestamp": "2026-10-24T04:13:29.628428+00:00",
+  "elapsed_seconds": 5.85,
   "total_targets": 120,
-  "total_active": 119,
-  "total_failed": 1,
+  "total_active": 118,
+  "total_failed": 2,
   "categories": {
     "azerbaijan": 20,
     "turkey": 50,
-    "russia": 49
+    "russia": 48
   },
   "active_list": [
     {
       "name": "APA TV",
       "group": "Azerbaycan",
-      "latency": 0.147
+      "latency": 0.111
     },
     {
       "name": "ARB 24",
       "group": "Azerbaycan",
-      "latency": 0.023
+      "latency": 0.059
     },
     {
       "name": "ARB Günəş",
       "group": "Azerbaycan",
-      "latency": 0.025
+      "latency": 0.121
     },
     {
       "name": "ARB TV",
       "group": "Azerbaycan",
-      "latency": 0.151
+      "latency": 0.08
     },
     {
       "name": "ATV (Azad TV)",
       "group": "Azerbaycan",
-      "latency": 0.218
+      "latency": 0.186
     },
     {
       "name": "AzTV",
       "group": "Azerbaycan",
-      "latency": 0.153
+      "latency": 0.112
     },
     {
       "name": "Baku TV",
       "group": "Azerbaycan",
-      "latency": 0.378
+      "latency": 0.46
     },
     {
       "name": "CBC Azerbaijan",
       "group": "Azerbaycan",
-      "latency": 0.058
+      "latency": 0.118
     },
     {
       "name": "Dünya TV",
       "group": "Azerbaycan",
-      "latency": 0.034
+      "latency": 0.086
     },
     {
       "name": "EL TV",
       "group": "Azerbaycan",
-      "latency": 0.549
+      "latency": 0.41
     },
     {
       "name": "GunAz TV",
       "group": "Azerbaycan",
-      "latency": 0.336
+      "latency": 0.434
     },
     {
       "name": "KN Music TV",
       "group": "Azerbaycan",
-      "latency": 0.622
+      "latency": 0.529
     },
     {
       "name": "Kanal S",
       "group": "Azerbaycan",
-      "latency": 0.207
+      "latency": 0.177
     },
     {
       "name": "Kəpəz TV",
       "group": "Azerbaycan",
-      "latency": 0.13
+      "latency": 0.109
     },
     {
       "name": "Muz TV Azerbaijan",
       "group": "Azerbaycan",
-      "latency": 0.124
+      "latency": 0.012
     },
     {
       "name": "Mədəniyyət TV",
       "group": "Azerbaycan",
-      "latency": 0.023
+      "latency": 0.103
     },
     {
       "name": "Real TV",
       "group": "Azerbaycan",
-      "latency": 0.054
+      "latency": 0.114
     },
     {
       "name": "Space TV",
       "group": "Azerbaycan",
-      "latency": 0.118
+      "latency": 0.096
     },
     {
       "name": "Xəzər TV",
       "group": "Azerbaycan",
-      "latency": 0.027
+      "latency": 0.121
     },
     {
       "name": "İctimai TV",
       "group": "Azerbaycan",
-      "latency": 0.027
+      "latency": 0.06
     },
     {
       "name": ".black (576p)",
       "group": "Rusiya",
-      "latency": 0.32
-    },
-    {
-      "name": ".red HD (1080p)",
-      "group": "Rusiya",
-      "latency": 0.127
+      "latency": 0.192
     },
     {
       "name": ".sci-fi (576p)",
       "group": "Rusiya",
-      "latency": 0.201
+      "latency": 0.215
     },
     {
       "name": "1HD Music Television (1080p)",
       "group": "Rusiya",
-      "latency": 0.204
+      "latency": 0.293
     },
     {
       "name": "2x2 (576i)",
       "group": "Rusiya",
-      "latency": 0.486
+      "latency": 0.434
     },
     {
       "name": "360° (1080p)",
       "group": "Rusiya",
-      "latency": 0.364
+      "latency": 0.281
     },
     {
       "name": "360° News (1080p)",
       "group": "Rusiya",
-      "latency": 0.244
+      "latency": 0.235
     },
     {
       "name": "365 days TV (576p)",
       "group": "Rusiya",
-      "latency": 0.199
+      "latency": 0.194
     },
     {
       "name": "3ABN Russia (720p)",
       "group": "Rusiya",
-      "latency": 0.285
+      "latency": 0.331
     },
     {
       "name": "5 minut tishiny (1080p)",
       "group": "Rusiya",
-      "latency": 0.3
+      "latency": 0.278
     },
     {
       "name": "86 (1080p) [Not 24/7]",
       "group": "Rusiya",
-      "latency": 0.598
+      "latency": 0.516
     },
     {
       "name": "AIST TV (1080p)",
       "group": "Rusiya",
-      "latency": 0.111
+      "latency": 0.18
     },
     {
       "name": "ART (Russia) (576p)",
       "group": "Rusiya",
-      "latency": 0.185
+      "latency": 0.235
     },
     {
       "name": "Afontovo",
       "group": "Rusiya",
-      "latency": 0.909
+      "latency": 0.469
     },
     {
       "name": "Amedia Hit (1080p)",
       "group": "Rusiya",
-      "latency": 0.207
+      "latency": 0.191
     },
     {
       "name": "Angel TV Russian (720p)",
       "group": "Rusiya",
-      "latency": 0.825
+      "latency": 0.744
     },
     {
       "name": "Animal Planet (Russia) (1080p)",
       "group": "Rusiya",
-      "latency": 0.095
+      "latency": 0.261
     },
     {
       "name": "Aris 24 (720p) [Not 24/7]",
       "group": "Rusiya",
-      "latency": 0.109
+      "latency": 0.093
     },
     {
       "name": "Arkhyz 24 (1080p)",
       "group": "Rusiya",
-      "latency": 0.567
+      "latency": 0.537
     },
     {
       "name": "Arsenal (576p)",
       "group": "Rusiya",
-      "latency": 0.537
+      "latency": 0.502
     },
     {
       "name": "Astrahan 24 (720p)",
       "group": "Rusiya",
-      "latency": 0.498
+      "latency": 0.48
     },
     {
       "name": "Astrahan.Ru Sport (720p)",
       "group": "Rusiya",
-      "latency": 0.487
+      "latency": 0.424
     },
     {
       "name": "Astrahan.Ru TV (480p)",
       "group": "Rusiya",
-      "latency": 0.425
+      "latency": 0.441
     },
     {
       "name": "Avto24 (576p)",
       "group": "Rusiya",
-      "latency": 0.146
+      "latency": 0.131
     },
     {
       "name": "BRIDGE (576p)",
       "group": "Rusiya",
-      "latency": 0.148
+      "latency": 0.109
     },
     {
       "name": "BRIDGE Classic (576p)",
       "group": "Rusiya",
-      "latency": 0.104
+      "latency": 0.107
     },
     {
       "name": "BRIDGE Deluxe HD (576p)",
       "group": "Rusiya",
-      "latency": 0.098
+      "latency": 0.125
     },
     {
       "name": "BRIDGE Hits (576p)",
       "group": "Rusiya",
-      "latency": 0.091
+      "latency": 0.095
     },
     {
       "name": "BRIDGE Rock (576p)",
       "group": "Rusiya",
-      "latency": 0.022
+      "latency": 0.026
     },
     {
       "name": "BST (576p)",
       "group": "Rusiya",
-      "latency": 0.184
+      "latency": 0.197
     },
     {
       "name": "Baby Time (576p)",
       "group": "Rusiya",
-      "latency": 0.022
+      "latency": 0.053
     },
     {
       "name": "Balabol (1080p)",
       "group": "Rusiya",
-      "latency": 0.097
+      "latency": 0.135
     },
     {
       "name": "Belgorod 24 (1080p)",
       "group": "Rusiya",
-      "latency": 0.341
+      "latency": 0.342
     },
     {
       "name": "Big Asia (720p)",
       "group": "Rusiya",
-      "latency": 0.291
+      "latency": 0.139
     },
     {
       "name": "Blokbaster HD (1080p)",
       "group": "Rusiya",
-      "latency": 0.214
+      "latency": 0.112
     },
     {
       "name": "Bollywood HD (576p)",
       "group": "Rusiya",
-      "latency": 0.186
+      "latency": 0.141
     },
     {
       "name": "Bollywood HD Russia (576p)",
       "group": "Rusiya",
-      "latency": 0.334
+      "latency": 0.263
     },
     {
       "name": "Carousel +4 (720p)",
       "group": "Rusiya",
-      "latency": 0.275
+      "latency": 0.257
     },
     {
       "name": "Channel 10 (Russia) (576i)",
       "group": "Rusiya",
-      "latency": 0.544
+      "latency": 1.632
     },
     {
       "name": "Channel 12 (1080p)",
       "group": "Rusiya",
-      "latency": 0.244
+      "latency": 0.25
     },
     {
       "name": "Channel 5 (Russia) (576p)",
       "group": "Rusiya",
-      "latency": 0.421
+      "latency": 0.455
     },
     {
       "name": "Channel 8 (Russia) (576p)",
       "group": "Rusiya",
-      "latency": 0.241
+      "latency": 0.264
     },
     {
       "name": "Channel-16 (406p) [Not 24/7]",
       "group": "Rusiya",
-      "latency": 0.045
+      "latency": 0.063
     },
     {
       "name": "Che! (576p)",
       "group": "Rusiya",
-      "latency": 0.118
+      "latency": 0.12
     },
     {
       "name": "Cinema (Russia) (576p)",
@@ -338,157 +333,157 @@
     {
       "name": "City Eden AutoGid [Not 24/7]",
       "group": "Rusiya",
-      "latency": 0.306
+      "latency": 0.416
     },
     {
       "name": "City Eden Birma Play [Not 24/7]",
       "group": "Rusiya",
-      "latency": 0.503
+      "latency": 0.294
     },
     {
       "name": "like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0",
       "group": "Rusiya",
-      "latency": 0.31
+      "latency": 0.293
     },
     {
       "name": "like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0",
       "group": "Rusiya",
-      "latency": 0.526
+      "latency": 0.562
     },
     {
       "name": "24 TV (720p)",
       "group": "Turkiye",
-      "latency": 0.649
+      "latency": 0.879
     },
     {
       "name": "360 (720p) [Not 24/7]",
       "group": "Turkiye",
-      "latency": 0.645
+      "latency": 0.607
     },
     {
       "name": "4U TV (720p)",
       "group": "Turkiye",
-      "latency": 0.616
+      "latency": 0.526
     },
     {
       "name": "A Haber (1080p)",
       "group": "Turkiye",
-      "latency": 0.647
+      "latency": 0.636
     },
     {
       "name": "A Spor SD (1080p)",
       "group": "Turkiye",
-      "latency": 0.755
+      "latency": 0.668
     },
     {
       "name": "A2TV (1080p)",
       "group": "Turkiye",
-      "latency": 0.788
+      "latency": 0.735
     },
     {
       "name": "AS TV (900p)",
       "group": "Turkiye",
-      "latency": 0.588
+      "latency": 0.623
     },
     {
       "name": "ATV (Turkiye) (1080p)",
       "group": "Turkiye",
-      "latency": 1.069
+      "latency": 1.388
     },
     {
       "name": "ATV Alanya (1080p)",
       "group": "Turkiye",
-      "latency": 0.492
+      "latency": 0.545
     },
     {
       "name": "Aksu TV (720p)",
       "group": "Turkiye",
-      "latency": 0.722
+      "latency": 0.724
     },
     {
       "name": "Al-Zahra TV Turkic (720p) [Not 24/7]",
       "group": "Turkiye",
-      "latency": 0.533
+      "latency": 0.594
     },
     {
       "name": "Alanya Posta TV (1080p)",
       "group": "Turkiye",
-      "latency": 0.719
+      "latency": 0.607
     },
     {
       "name": "Almahriah TV (576p)",
       "group": "Turkiye",
-      "latency": 0.426
+      "latency": 0.598
     },
     {
       "name": "Altas TV (1080p)",
       "group": "Turkiye",
-      "latency": 0.686
+      "latency": 0.677
     },
     {
       "name": "Anadolu Net TV (1080p)",
       "group": "Turkiye",
-      "latency": 0.728
+      "latency": 0.661
     },
     {
       "name": "Aras TV (576p) [Not 24/7]",
       "group": "Turkiye",
-      "latency": 0.249
+      "latency": 0.243
     },
     {
       "name": "BRTV (Turkiye) (720p) [Geo-blocked]",
       "group": "Turkiye",
-      "latency": 0.564
+      "latency": 0.562
     },
     {
       "name": "Bric ve Satranc TV (480p) [Not 24/7]",
       "group": "Turkiye",
-      "latency": 0.159
+      "latency": 0.134
     },
     {
       "name": "CNBC-e",
       "group": "Turkiye",
-      "latency": 0.519
+      "latency": 0.76
     },
     {
       "name": "Cay TV (720p)",
       "group": "Turkiye",
-      "latency": 0.529
+      "latency": 0.597
     },
     {
       "name": "Ciftci TV (720p) [Not 24/7]",
       "group": "Turkiye",
-      "latency": 0.522
+      "latency": 0.653
     },
     {
       "name": "DHA (720p) [Not 24/7]",
       "group": "Turkiye",
-      "latency": 0.68
+      "latency": 0.539
     },
     {
       "name": "Deniz Postasi TV (720p) [Not 24/7]",
       "group": "Turkiye",
-      "latency": 0.71
+      "latency": 0.706
     },
     {
       "name": "Diyanet TV (1080p)",
       "group": "Turkiye",
-      "latency": 0.543
+      "latency": 0.525
     },
     {
       "name": "Diyar TV (720p)",
       "group": "Turkiye",
-      "latency": 0.587
+      "latency": 0.631
     },
     {
       "name": "Dost TV (576p)",
       "group": "Turkiye",
-      "latency": 0.377
+      "latency": 0.369
     },
     {
       "name": "Dream Turk (720p)",
       "group": "Turkiye",
-      "latency": 0.466
+      "latency": 0.505
     },
     {
       "name": "ERTV (1080p) [Geo-blocked]",
@@ -498,115 +493,119 @@
     {
       "name": "ES TV (720p)",
       "group": "Turkiye",
-      "latency": 0.107
+      "latency": 0.105
     },
     {
       "name": "ETV Kayseri (720p)",
       "group": "Turkiye",
-      "latency": 0.101
+      "latency": 0.128
     },
     {
       "name": "ETV Manisa (1080p) [Not 24/7]",
       "group": "Turkiye",
-      "latency": 0.478
+      "latency": 0.577
     },
     {
       "name": "Edessa TV (1080p)",
       "group": "Turkiye",
-      "latency": 0.418
+      "latency": 0.344
     },
     {
       "name": "Ekoturk (720p)",
       "group": "Turkiye",
-      "latency": 0.366
+      "latency": 0.309
     },
     {
       "name": "Elsharq TV (1080p) [Not 24/7]",
       "group": "Turkiye",
-      "latency": 0.395
+      "latency": 0.41
     },
     {
       "name": "Erzurum Web TV (720p)",
       "group": "Turkiye",
-      "latency": 0.397
+      "latency": 0.535
     },
     {
       "name": "Euro D (720p)",
       "group": "Turkiye",
-      "latency": 0.445
+      "latency": 0.572
     },
     {
       "name": "FB TV",
       "group": "Turkiye",
-      "latency": 0.183
+      "latency": 0.231
     },
     {
       "name": "Finans Turk TV (720p)",
       "group": "Turkiye",
-      "latency": 0.553
+      "latency": 0.749
     },
     {
       "name": "Flash Haber TV",
       "group": "Turkiye",
-      "latency": 0.427
+      "latency": 0.668
     },
     {
       "name": "Fortuna TV (720p)",
       "group": "Turkiye",
-      "latency": 0.444
+      "latency": 0.667
     },
     {
       "name": "Guneydogu TV (720p)",
       "group": "Turkiye",
-      "latency": 0.509
+      "latency": 0.669
     },
     {
       "name": "HTSpor TV (1080p)",
       "group": "Turkiye",
-      "latency": 0.386
+      "latency": 0.596
     },
     {
       "name": "Haber Global (720p) [Not 24/7]",
       "group": "Turkiye",
-      "latency": 0.464
+      "latency": 0.461
     },
     {
       "name": "Haber61 TV (720p) [Not 24/7]",
       "group": "Turkiye",
-      "latency": 0.391
+      "latency": 0.431
     },
     {
       "name": "Haberturk TV (720p) [Not 24/7]",
       "group": "Turkiye",
-      "latency": 0.388
+      "latency": 0.461
     },
     {
       "name": "Halk TV SD (1080p)",
       "group": "Turkiye",
-      "latency": 0.52
+      "latency": 0.749
     },
     {
       "name": "Icel TV (720p) [Not 24/7]",
       "group": "Turkiye",
-      "latency": 0.492
+      "latency": 0.549
     },
     {
       "name": "Ilke TV (1080p)",
       "group": "Turkiye",
-      "latency": 0.366
+      "latency": 0.438
     },
     {
       "name": "Kanal 3 (1080p) [Not 24/7]",
       "group": "Turkiye",
-      "latency": 0.171
+      "latency": 0.175
     },
     {
       "name": "Kanal 7 Avrupa (720p) [Not 24/7]",
       "group": "Turkiye",
-      "latency": 0.421
+      "latency": 0.407
     }
   ],
   "failed_list": [
+    {
+      "name": ".red HD (1080p)",
+      "group": "Rusiya"
+    },
     {
       "name": ".red (576p)",
       "group": "Rusiya"

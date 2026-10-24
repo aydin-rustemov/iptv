@@ -42,9 +42,9 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
           # Stage updated playlist and report files
-          git add player.m3u report.json
+          git add playlist.m3u report.json
           if [ -d "output" ]; then
-            git add output/player.m3u
+            git add output/playlist.m3u
           fi
           
           # Check if there are any changes staged

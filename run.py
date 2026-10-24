@@ -132,10 +132,10 @@ def main():
     tr_channels = [c for c in active_channels if c.get("group") == "Turkiye"]
     ru_channels = [c for c in active_channels if c.get("group") == "Rusiya"]
 
-    # Build and write single unified player.m3u file
-    M3UBuilder.save_playlist("player.m3u", active_channels, "IPTV Player Master Playlist")
+    # Build and write single unified playlist.m3u file
+    M3UBuilder.save_playlist("playlist.m3u", active_channels, "IPTV Master Playlist")
     if os.path.exists("output"):
-        M3UBuilder.save_playlist("output/player.m3u", active_channels, "IPTV Player Master Playlist")
+        M3UBuilder.save_playlist("output/playlist.m3u", active_channels, "IPTV Master Playlist")
 
     elapsed_time = round(time.time() - start_time, 2)
 
@@ -164,7 +164,7 @@ def main():
     logger.info(f"    - Azerbaycan: {len(az_channels)}")
     logger.info(f"    - Turkiye:    {len(tr_channels)}")
     logger.info(f"    - Rusiya:     {len(ru_channels)}")
-    logger.info("  Generated Playlist: player.m3u")
+    logger.info("  Generated Playlist: output/playlist.m3u & playlist.m3u")
     logger.info("==================================================")
 
 if __name__ == "__main__":

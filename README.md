@@ -14,7 +14,7 @@ Aşağıdakı linki birbaşa **VLC**, **TiviMate**, **IPTV Smarters**, **OTT Nav
 
 | Pleylist | Təsvir | Birbaşa Raw Link |
 |---|---|---|
-| **Vahid Pleyer Pleylisti (player.m3u)** | 120+ Aktiv Kanal (Azərbaycan + Türkiyə + Rusiya) | `https://raw.githubusercontent.com/aydin-rustemov/iptv/main/player.m3u` |
+| **Vahid Pleylist (playlist.m3u)** | 120+ Aktiv Kanal (Azərbaycan + Türkiyə + Rusiya) | `https://raw.githubusercontent.com/aydin-rustemov/iptv/main/output/playlist.m3u` |
 
 ---
 
@@ -33,7 +33,7 @@ iptv/
 │   └── m3u_builder.py        # Standartlara uyğun M3U generatoru (Referer və VLC direktivləri ilə)
 ├── run.py                    # Əsas orkestrator (bütün prosesi cəmi ~3-5 saniyədə icra edir)
 ├── requirements.txt          # Asılılıqlar
-├── player.m3u                # Vahid pleyer pleylist faylı (120+ aktiv kanal)
+├── output/playlist.m3u       # Vahid pleylist faylı (120+ aktiv kanal)
 └── report.json               # Hər icraatın dəqiq diaqnostika hesabatı (latency, status)
 ```
 
