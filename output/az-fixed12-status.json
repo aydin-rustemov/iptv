@@ -1,6 +1,6 @@
 {
   "mode": "recent-user-sites-no-playback-validation",
-  "updatedAt": "2026-10-24T04:55:03.701Z",
+  "updatedAt": "2026-10-24T11:26:40.373Z",
   "sites": [
     "https://icanlive.tv/kategori/399/azerbaijan-tv-kanallari.html",
     "https://operativmm.az/az/canli-tv"
@@ -8,9 +8,9 @@
   "officialTurkeySource": "https://www.showtv.com.tr/canli-yayin",
   "officialShowTv": {
     "page": "https://www.showtv.com.tr/canli-yayin",
-    "fetchedAt": "2026-10-24T04:54:59.044Z",
+    "fetchedAt": "2026-10-24T11:26:35.515Z",
     "status": "official_hls_captured",
-    "url": "https://ciner.daioncdn.net/showtv/showtv_1080p.m3u8?ex=1664766175&st=RBzhSuGauna0OGld-DJUVA&tv=1&sid=8uz908ixqc2g&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&ce=3",
+    "url": "https://ciner.daioncdn.net/showtv/showtv_1080p.m3u8?ex=1664766175&st=RBzhSuGauna0OGld-DJUVA&tv=1&sid=8v07xv9m94b3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&ce=3",
     "foundBy": "network-response",
     "networkStatus": 200
   },
@@ -164,7 +164,7 @@
         "url": "https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8",
         "site": "icanlive",
         "page": "https://icanlive.tv/canli/9090/atv-5.html",
-        "foundBy": "network-response"
+        "foundBy": "network"
       },
       "reason": "found_hls"
     },
