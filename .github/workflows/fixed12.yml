@@ -2,8 +2,6 @@ name: Fixed 12 Azerbaijan IPTV Monitor
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "31 */3 * * *"
   push:
     branches: [main]
     paths:
@@ -77,7 +75,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for file in output/recent-site-status.json output/az-fixed12-status.json output/azerbaijan-fixed.m3u output/azerbaijan-fixed.html output/showtv-source-status.json output/turkey-official.m3u output/playlist.m3u output/azerbaijan-manual.m3u output/priority-test.m3u output/status.json output/mandatory-health.json output/channel-health.json; do
+          for file in output/recent-site-status.json output/az-fixed12-status.json output/azerbaijan-fixed.m3u output/azerbaijan-fixed.html output/showtv-source-status.json output/turkey-official.m3u  output/azerbaijan-manual.m3u output/priority-test.m3u output/status.json output/mandatory-health.json output/channel-health.json; do
             if [ -f "$file" ]; then git add -f "$file"; fi
           done
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi

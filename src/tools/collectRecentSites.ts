@@ -168,7 +168,7 @@ fs.writeFileSync("output/azerbaijan-fixed.m3u",newM3u);
 if(selected.length){
  for(const path of ["output/azerbaijan-manual.m3u","output/priority-test.m3u"])
    fs.writeFileSync(path,newM3u,"utf8");
- fs.writeFileSync("output/playlist.m3u",mainM3u,"utf8");
+ fs.writeFileSync("output/az-fixed12.m3u",mainM3u,"utf8");
 }
 const included=new Set(selected.map(x=>x.id));
 function readJson(path:string):Record<string,any>{
