@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-11-08T21:23:47.643990+00:00",
-  "elapsed_seconds": 10.25,
+  "timestamp": "2026-11-09T03:08:03.571186+00:00",
+  "elapsed_seconds": 12.88,
   "total_targets": 149,
   "total_active": 149,
   "categories": {
@@ -13,7 +13,7 @@
       "name": "APA TV",
       "group": "Azerbaycan",
       "url": "http://stream.apa.tv/apastream/index.m3u8",
-      "latency": 0.375
+      "latency": 0.462
     },
     {
       "name": "ARB 24",
@@ -37,7 +37,7 @@
       "name": "ATV (Azad TV)",
       "group": "Azerbaycan",
       "url": "https://lives.atv.az:5443/ATV_TV_STREAM/streams/atvcanli.m3u8",
-      "latency": 0.995
+      "latency": 0.945
     },
     {
       "name": "AzTV",
@@ -49,7 +49,7 @@
       "name": "Baku TV",
       "group": "Azerbaycan",
       "url": "https://rtmp.baku.tv/hls/bakutv.m3u8",
-      "latency": 0.304
+      "latency": 0.259
     },
     {
       "name": "CBC Azerbaijan",
@@ -67,31 +67,31 @@
       "name": "EL TV",
       "group": "Azerbaycan",
       "url": "https://live.eltv.az/live/eltv/playlist.m3u8",
-      "latency": 1.309
+      "latency": 1.314
     },
     {
       "name": "GunAz TV",
       "group": "Azerbaycan",
       "url": "https://tv.gunaz.tv/hls/live.m3u8",
-      "latency": 0.458
+      "latency": 0.611
     },
     {
       "name": "KN Music TV",
       "group": "Azerbaycan",
       "url": "https://cdn4.yayin.com.tr/kntv/tracks-v1a1/mono.m3u8",
-      "latency": 0.383
+      "latency": 0.669
     },
     {
       "name": "Kanal S",
       "group": "Azerbaycan",
       "url": "https://lives.atv.az:5443/KANAL-S/streams/kanals.m3u8",
-      "latency": 0.992
+      "latency": 0.941
     },
     {
       "name": "Kəpəz TV",
       "group": "Azerbaycan",
       "url": "http://85.132.78.122:8050/hls/stream/index.m3u8",
-      "latency": 0.374
+      "latency": 0.481
     },
     {
       "name": "Muz TV Azerbaijan",
@@ -133,7 +133,7 @@
       "name": ".black (576p)",
       "group": "Rusiya",
       "url": "http://stream.mcquack.net/263/index.m3u8",
-      "latency": 0.14
+      "latency": 0.184
     },
     {
       "name": ".red (576p)",
@@ -145,403 +145,403 @@
       "name": ".red HD (1080p)",
       "group": "Rusiya",
       "url": "http://178.134.1.158:8081/red/index.m3u8",
-      "latency": 0.333
+      "latency": 0.426
     },
     {
       "name": ".sci-fi (576p)",
       "group": "Rusiya",
       "url": "http://stream.mcquack.net/180/index.m3u8",
-      "latency": 0.136
+      "latency": 0.59
     },
     {
       "name": "1HD Music Television (1080p)",
       "group": "Rusiya",
       "url": "http://176.118.197.101/1HD/index.m3u8",
-      "latency": 0.513
+      "latency": 0.51
     },
     {
       "name": "2x2 (576i)",
       "group": "Rusiya",
       "url": "https://bl.rutube.ru/livestream/392b4686b770bae2da6bf5ac4574add5/index.m3u8?e=2068731801&s=tenr-yHXUv1wibfka78s2A&scheme=https",
-      "latency": 1.175
+      "latency": 1.353
     },
     {
       "name": "360° (1080p)",
       "group": "Rusiya",
       "url": "https://cdn-evacoder-tv.facecast.io/evacoder_hls_hi/CkxfR1xNUAJwTgtXTBZTAJli/index.m3u8",
-      "latency": 0.872
+      "latency": 1.084
     },
     {
       "name": "360° News (1080p)",
       "group": "Rusiya",
       "url": "https://live-vgtrksmotrim.cdnvideo.ru/vgtrksmotrim/smotrim-live-03-srt.smil/playlist.m3u8",
-      "latency": 0.703
+      "latency": 0.789
     },
     {
       "name": "365 days TV (576p)",
       "group": "Rusiya",
       "url": "http://stream.mcquack.net/70/index.m3u8",
-      "latency": 0.143
+      "latency": 0.679
     },
     {
       "name": "3ABN Russia (720p)",
       "group": "Rusiya",
       "url": "https://hls.tv.3angels.ru/stream.m3u8",
-      "latency": 1.045
+      "latency": 1.45
     },
     {
       "name": "5 minut tishiny (1080p)",
       "group": "Rusiya",
       "url": "https://cdn-dvr.ntv.ru/5_minut_tishiny/index.m3u8",
-      "latency": 1.527
+      "latency": 1.348
     },
     {
       "name": "86 (1080p) [Not 24/7]",
       "group": "Rusiya",
       "url": "https://sitv.ru/hls/s86.m3u8",
-      "latency": 1.471
+      "latency": 1.771
     },
     {
       "name": "AIST TV (1080p)",
       "group": "Rusiya",
       "url": "http://live2-aisttv.cdnvideo.ru/aisttv2/aisttv.sdp/playlist.m3u8",
-      "latency": 1.06
+      "latency": 0.631
     },
     {
       "name": "ART (Russia) (576p)",
       "group": "Rusiya",
       "url": "http://89.104.114.24:8080/art/index.m3u8",
-      "latency": 0.292
+      "latency": 0.363
     },
     {
       "name": "Afontovo",
       "group": "Rusiya",
       "url": "https://stream.afontovo.ru/hd.m3u8",
-      "latency": 2.132
+      "latency": 1.131
     },
     {
       "name": "Amedia Hit (1080p)",
       "group": "Rusiya",
       "url": "http://stream.mcquack.net/162/index.m3u8",
-      "latency": 0.144
+      "latency": 0.19
     },
     {
       "name": "Angel TV Russian (720p)",
       "group": "Rusiya",
       "url": "https://janya-digimix.akamaized.net/vglive-sk-955415/russia/ngrp:angelrussia_all/playlist.m3u8",
-      "latency": 0.783
+      "latency": 0.722
     },
     {
       "name": "Animal Planet (Russia) (1080p)",
       "group": "Rusiya",
       "url": "http://stream.mcquack.net/114/index.m3u8",
-      "latency": 0.14
+      "latency": 0.45
     },
     {
       "name": "Aris 24 (720p) [Not 24/7]",
       "group": "Rusiya",
       "url": "http://serv25.vintera.tv:8081/test/aris/playlist.m3u8",
-      "latency": 0.812
+      "latency": 0.77
     },
     {
       "name": "Arkhyz 24 (1080p)",
       "group": "Rusiya",
       "url": "https://live.mediacdn.ru/sr1/arhis24/playlist.m3u8",
-      "latency": 0.894
+      "latency": 1.153
     },
     {
       "name": "Arsenal (576p)",
       "group": "Rusiya",
       "url": "https://stream8.cinerama.uz/1414/tracks-v1a1/mono.m3u8",
-      "latency": 0.734
+      "latency": 1.304
     },
     {
       "name": "Astrahan 24 (720p)",
       "group": "Rusiya",
       "url": "https://streaming.astrakhan.ru/astrakhan24/playlist.m3u8",
-      "latency": 0.679
+      "latency": 0.845
     },
     {
       "name": "Astrahan.Ru Sport (720p)",
       "group": "Rusiya",
       "url": "https://streaming.astrakhan.ru/astrakhanrusporthd/playlist.m3u8",
-      "latency": 0.668
+      "latency": 0.784
     },
     {
       "name": "Astrahan.Ru TV (480p)",
       "group": "Rusiya",
       "url": "https://streaming.astrakhan.ru/astrakhanrulivehd/playlist.m3u8",
-      "latency": 0.604
+      "latency": 0.742
     },
     {
       "name": "Avto24 (576p)",
       "group": "Rusiya",
       "url": "http://stream.mcquack.net/78/index.m3u8",
-      "latency": 0.134
+      "latency": 0.179
     },
     {
       "name": "BRIDGE (576p)",
       "group": "Rusiya",
       "url": "http://stream.mcquack.net/318/index.m3u8",
-      "latency": 0.14
+      "latency": 0.185
     },
     {
       "name": "BRIDGE Classic (576p)",
       "group": "Rusiya",
       "url": "http://stream.mcquack.net/272/index.m3u8",
-      "latency": 0.145
+      "latency": 0.182
     },
     {
       "name": "BRIDGE Deluxe HD (576p)",
       "group": "Rusiya",
       "url": "http://stream.mcquack.net/92/index.m3u8",
-      "latency": 0.243
+      "latency": 0.182
     },
     {
       "name": "BRIDGE Hits (576p)",
       "group": "Rusiya",
       "url": "http://stream.mcquack.net/320/index.m3u8",
-      "latency": 0.297
+      "latency": 0.183
     },
     {
       "name": "BRIDGE Rock (576p)",
       "group": "Rusiya",
       "url": "http://178.134.1.158:8081/BRIDGEROCK/index.m3u8",
-      "latency": 0.166
+      "latency": 0.211
     },
     {
       "name": "BST (576p)",
       "group": "Rusiya",
       "url": "https://bsttv.bonus-tv.ru/cdn/bst/playlist.m3u8",
-      "latency": 1.546
+      "latency": 1.282
     },
     {
       "name": "Baby Time (576p)",
       "group": "Rusiya",
       "url": "http://178.134.1.158:8081/babytime/index.m3u8",
-      "latency": 0.166
+      "latency": 0.211
     },
     {
       "name": "Balabol (1080p)",
       "group": "Rusiya",
       "url": "https://cdn-dvr.ntv.ru/Balabol/index.m3u8",
-      "latency": 0.605
+      "latency": 0.686
     },
     {
       "name": "Belgorod 24 (1080p)",
       "group": "Rusiya",
       "url": "https://belnovosti.cdn.easyhoster.ru:8443/stream.m3u8",
-      "latency": 0.99
+      "latency": 1.682
     },
     {
       "name": "Big Asia (720p)",
       "group": "Rusiya",
       "url": "http://live-bigasia.cdnvideo.ru/bigasia/bigasia.smil/playlist.m3u8",
-      "latency": 1.404
+      "latency": 0.641
     },
     {
       "name": "Blokbaster HD (1080p)",
       "group": "Rusiya",
       "url": "http://stream.mcquack.net/364/index.m3u8",
-      "latency": 0.133
+      "latency": 0.176
     },
     {
       "name": "Bollywood HD (576p)",
       "group": "Rusiya",
       "url": "http://176.118.197.101/Bollywood_HD/index.m3u8",
-      "latency": 0.255
+      "latency": 0.244
     },
     {
       "name": "Bollywood HD Russia (576p)",
       "group": "Rusiya",
       "url": "https://xykt-fix.github.io/cinerama_edge01/hls/BOLLYWOOD_RU/Movie009.m3u8",
-      "latency": 0.068
+      "latency": 0.07
     },
     {
       "name": "Carousel +4 (720p)",
       "group": "Rusiya",
       "url": "http://185.37.150.46/Karusel/index.m3u8",
-      "latency": 0.286
+      "latency": 0.381
     },
     {
       "name": "Channel 10 (Russia) (576i)",
       "group": "Rusiya",
       "url": "https://bl.rutube.ru/livestream/c9e26bf5c003fd8d477200065ca1a05f/index.m3u8?e=2072611029&s=eqlTXebDP9wSWTZgre6BwQ&scheme=https",
-      "latency": 0.657
+      "latency": 0.571
     },
     {
       "name": "Channel 12 (1080p)",
       "group": "Rusiya",
       "url": "https://12channel.bonus-tv.ru/cdn/12channel/playlist.m3u8",
-      "latency": 1.479
+      "latency": 1.063
     },
     {
       "name": "Channel 5 (Russia) (576p)",
       "group": "Rusiya",
       "url": "http://31.148.5.241/kanal_5/index.m3u8",
-      "latency": 1.501
+      "latency": 0.579
     },
     {
       "name": "Channel 8 (Russia) (576p)",
       "group": "Rusiya",
       "url": "http://45.11.139.43:8555/8kanal/index.m3u8",
-      "latency": 0.329
+      "latency": 0.408
     },
     {
       "name": "Channel-16 (406p) [Not 24/7]",
       "group": "Rusiya",
       "url": "http://serv25.vintera.tv:8081/test/k16/playlist.m3u8",
-      "latency": 0.155
+      "latency": 0.184
     },
     {
       "name": "Che! (576p)",
       "group": "Rusiya",
       "url": "http://flussonic.linkintel.ru/che/index.m3u8",
-      "latency": 0.741
+      "latency": 1.079
     },
     {
       "name": "Cinema (Russia) (576p)",
       "group": "Rusiya",
       "url": "http://flussonic.linkintel.ru/cinema/index.m3u8",
-      "latency": 0.715
+      "latency": 1.031
     },
     {
       "name": "City Eden AutoGid [Not 24/7]",
       "group": "Rusiya",
       "url": "https://cityeden.catcast.tv/content/47515/index.m3u8",
-      "latency": 0.645
+      "latency": 0.811
     },
     {
       "name": "City Eden Birma Play [Not 24/7]",
       "group": "Rusiya",
       "url": "https://cityeden.catcast.tv/content/34364/index.m3u8",
-      "latency": 0.646
+      "latency": 0.872
     },
     {
       "name": "like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0",
       "group": "Rusiya",
       "url": "https://live-8knsk.cdnvideo.ru/8knsk/stream1/playlist.m3u8",
-      "latency": 1.122
+      "latency": 0.689
     },
     {
       "name": "like Gecko) Chrome/150.0.0.0 Safari/537.36 Edg/150.0.0.0",
       "group": "Rusiya",
       "url": "https://tshift-1.telecoma.tv/8channel/tracks-v1a1/mono.ts.m3u8",
-      "latency": 1.31
+      "latency": 1.461
     },
     {
       "name": "360 (720p) [Not 24/7]",
       "group": "Turkiye",
       "url": "https://turkmedya-live.ercdn.net/tv360/tv360.m3u8",
-      "latency": 0.431
+      "latency": 0.838
     },
     {
       "name": "4U TV (720p)",
       "group": "Turkiye",
       "url": "https://hls.4utv.live/hls/stream.m3u8",
-      "latency": 0.394
+      "latency": 0.591
     },
     {
       "name": "A Haber",
       "group": "Turkiye",
       "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/ahaber/ahaber_720p.m3u8",
-      "latency": 0.292
+      "latency": 1.118
     },
     {
       "name": "A Spor SD (1080p)",
       "group": "Turkiye",
       "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/aspor/aspor.m3u8",
-      "latency": 0.889
+      "latency": 1.179
     },
     {
       "name": "A2TV (1080p)",
       "group": "Turkiye",
       "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/a2tv/a2tv.m3u8",
-      "latency": 0.792
+      "latency": 0.934
     },
     {
       "name": "AS TV (900p)",
       "group": "Turkiye",
       "url": "https://live.artidijitalmedya.com/artidijital_astv/astv/playlist.m3u8",
-      "latency": 1.076
+      "latency": 1.33
     },
     {
       "name": "ATV",
       "group": "Turkiye",
       "url": "http://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_360p.m3u8",
-      "latency": 0.638
+      "latency": 0.776
     },
     {
       "name": "Aksu TV (720p)",
       "group": "Turkiye",
       "url": "https://live.artidijitalmedya.com/artidijital_aksutv/aksutv/playlist.m3u8",
-      "latency": 0.995
+      "latency": 1.965
     },
     {
       "name": "Al-Zahra TV Turkic (720p) [Not 24/7]",
       "group": "Turkiye",
       "url": "https://live.al-zahratv.com/live/playlist.m3u8",
-      "latency": 0.438
+      "latency": 0.665
     },
     {
       "name": "Alanya Posta TV (1080p)",
       "group": "Turkiye",
       "url": "https://api-tv3.yayin.com.tr/postatv/postatv/playlist.m3u8",
-      "latency": 0.61
+      "latency": 0.926
     },
     {
       "name": "Almahriah TV (576p)",
       "group": "Turkiye",
       "url": "https://starmenajo.com/hls/almahriah/index.m3u8",
-      "latency": 0.431
+      "latency": 0.548
     },
     {
       "name": "Altas TV (1080p)",
       "group": "Turkiye",
       "url": "https://edge1.socialsmart.tv/altastv/bant1/playlist.m3u8",
-      "latency": 0.557
+      "latency": 0.768
     },
     {
       "name": "Anadolu Net TV (1080p)",
       "group": "Turkiye",
       "url": "https://live.artidijitalmedya.com/artidijital_anadolunet/anadolunet/playlist.m3u8",
-      "latency": 1.108
+      "latency": 1.578
     },
     {
       "name": "Aras TV (576p) [Not 24/7]",
       "group": "Turkiye",
       "url": "http://1.rtmp.org/tv217/yayin.stream/playlist.m3u8",
-      "latency": 0.386
+      "latency": 0.558
     },
     {
       "name": "BRTV (Turkiye) (720p) [Geo-blocked]",
       "group": "Turkiye",
       "url": "https://live.artidijitalmedya.com/artidijital_brtv/brtv/playlist.m3u8",
-      "latency": 0.834
+      "latency": 1.187
     },
     {
       "name": "Beyaz TV",
       "group": "Turkiye",
       "url": "https://beyaztv-live.daioncdn.net/beyaztv/beyaztv.m3u8",
-      "latency": 0.502
+      "latency": 0.753
     },
     {
       "name": "Bloomberg HT",
       "group": "Turkiye",
       "url": "https://tv.ensonhaber.com/bloomberght/bloomberght.m3u8",
-      "latency": 0.188
+      "latency": 0.334
     },
     {
       "name": "Bric ve Satranc TV (480p) [Not 24/7]",
       "group": "Turkiye",
       "url": "http://139.162.182.79/live/test/index.m3u8",
-      "latency": 0.226
+      "latency": 0.5
     },
     {
       "name": "CNBC-e",
       "group": "Turkiye",
       "url": "https://hnpsechtsc.turknet.ercdn.net/xpnvudnlsv/cnbc-e/cnbc-e.m3u8",
-      "latency": 0.908
+      "latency": 1.112
     },
     {
       "name": "CNN Türk",
@@ -553,19 +553,19 @@
       "name": "Cartoon Network Türkiye",
       "group": "Turkiye",
       "url": "http://stream.mcquack.net/190/index.m3u8",
-      "latency": 0.358
+      "latency": 0.619
     },
     {
       "name": "Cay TV (720p)",
       "group": "Turkiye",
       "url": "https://edge1.socialsmart.tv/caytv/bant1/playlist.m3u8",
-      "latency": 0.558
+      "latency": 0.778
     },
     {
       "name": "Ciftci TV (720p) [Not 24/7]",
       "group": "Turkiye",
       "url": "https://live.artidijitalmedya.com/artidijital_ciftcitv/ciftcitv/playlist.m3u8",
-      "latency": 0.702
+      "latency": 1.127
     },
     {
       "name": "DHA (720p) [Not 24/7]",
@@ -577,331 +577,331 @@
       "name": "DMAX Türkiye",
       "group": "Turkiye",
       "url": "https://dogus-blackout.daioncdn.net/tlctv_geoblock.smil/playlist.m3u8",
-      "latency": 0.991
+      "latency": 1.382
     },
     {
       "name": "Deniz Postasi TV (720p) [Not 24/7]",
       "group": "Turkiye",
       "url": "https://live.artidijitalmedya.com/artidijital_denizpostasi/denizpostasi/playlist.m3u8",
-      "latency": 0.981
+      "latency": 1.037
     },
     {
       "name": "Discovery Channel Türkiye",
       "group": "Turkiye",
       "url": "http://stream.mcquack.net/177/index.m3u8",
-      "latency": 0.151
+      "latency": 0.186
     },
     {
       "name": "Diyanet TV (1080p)",
       "group": "Turkiye",
       "url": "https://eustr73.mediatriple.net/videoonlylive/mtikoimxnztxlive/broadcast_5e3bf95a47e07.smil/playlist.m3u8",
-      "latency": 0.641
+      "latency": 0.873
     },
     {
       "name": "Diyar TV (720p)",
       "group": "Turkiye",
       "url": "https://live.artidijitalmedya.com/artidijital_diyartv/diyartv/playlist.m3u8",
-      "latency": 0.818
+      "latency": 2.287
     },
     {
       "name": "Dost TV (576p)",
       "group": "Turkiye",
       "url": "https://dost.stream.emsal.im/tv/live.m3u8",
-      "latency": 0.596
+      "latency": 0.793
     },
     {
       "name": "Dream Turk (720p)",
       "group": "Turkiye",
       "url": "https://live.duhnet.tv/S2/HLS_LIVE/dreamturknp/playlist.m3u8",
-      "latency": 0.538
+      "latency": 0.91
     },
     {
       "name": "ERTV (1080p) [Geo-blocked]",
       "group": "Turkiye",
       "url": "https://live.artidijitalmedya.com/artidijital_ertv_new/ertv/playlist.m3u8",
-      "latency": 0.137
+      "latency": 1.495
     },
     {
       "name": "ES TV (720p)",
       "group": "Turkiye",
       "url": "https://live.artidijitalmedya.com/artidijital_estv/estv/playlist.m3u8",
-      "latency": 0.136
+      "latency": 1.425
     },
     {
       "name": "ETV Kayseri (720p)",
       "group": "Turkiye",
       "url": "https://live.artidijitalmedya.com/artidijital_etv/etv/playlist.m3u8",
-      "latency": 0.137
+      "latency": 1.32
     },
     {
       "name": "ETV Manisa (1080p) [Not 24/7]",
       "group": "Turkiye",
       "url": "https://edge1.socialsmart.tv/manisaetv/bant1/playlist.m3u8",
-      "latency": 0.535
+      "latency": 0.754
     },
     {
       "name": "Edessa TV (1080p)",
       "group": "Turkiye",
       "url": "https://canli.edessatv.com/hls/stream.m3u8",
-      "latency": 0.347
+      "latency": 0.483
     },
     {
       "name": "Ekoturk (720p)",
       "group": "Turkiye",
       "url": "https://cdn.ekoturk.net/hls/master.m3u8",
-      "latency": 0.5
+      "latency": 0.666
     },
     {
       "name": "Elsharq TV (1080p) [Not 24/7]",
       "group": "Turkiye",
       "url": "https://mn-nl.mncdn.com/elsharq_live/live/playlist.m3u8",
-      "latency": 0.56
+      "latency": 0.578
     },
     {
       "name": "Erzurum Web TV (720p)",
       "group": "Turkiye",
       "url": "https://win29.yayin.com.tr/erzurumwebtv/erzurumwebtv/iptvdelisi.m3u8",
-      "latency": 0.635
+      "latency": 0.939
     },
     {
       "name": "Euro D (720p)",
       "group": "Turkiye",
       "url": "https://live.duhnet.tv/S2/HLS_LIVE/eurodnp/playlist.m3u8",
-      "latency": 0.566
+      "latency": 0.872
     },
     {
       "name": "Eurosport Türkiye",
       "group": "Turkiye",
       "url": "http://stream.mcquack.net/210/index.m3u8",
-      "latency": 0.31
+      "latency": 0.184
     },
     {
       "name": "FB TV",
       "group": "Turkiye",
       "url": "http://1hskrdto.rocketcdn.com/fenerbahcetv.smil/playlist.m3u8",
-      "latency": 0.559
+      "latency": 0.724
     },
     {
       "name": "Finans Turk TV (720p)",
       "group": "Turkiye",
       "url": "https://yayin30.haber100.com/live/finansturk/playlist.m3u8",
-      "latency": 0.116
+      "latency": 0.261
     },
     {
       "name": "Flash Haber TV",
       "group": "Turkiye",
       "url": "https://b01c02nl.mediatriple.net/videoonlylive/mtyycglqauzjhlive/broadcast_67c053c48829f.smil/playlist.m3u8",
-      "latency": 0.727
+      "latency": 1.136
     },
     {
       "name": "Fortuna TV (720p)",
       "group": "Turkiye",
       "url": "https://edge1.socialsmart.tv/ftvturk/bant1/playlist.m3u8",
-      "latency": 0.529
+      "latency": 0.771
     },
     {
       "name": "Fox TV",
       "group": "Turkiye",
       "url": "http://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv.m3u8",
-      "latency": 0.532
+      "latency": 0.716
     },
     {
       "name": "Fox TV",
       "group": "Turkiye",
-      "url": "https://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv.m3u8",
-      "latency": 0.813
+      "url": "http://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv.m3u8",
+      "latency": 0.313
     },
     {
       "name": "Guneydogu TV (720p)",
       "group": "Turkiye",
       "url": "https://edge1.socialsmart.tv/gtv/bant1/playlist.m3u8",
-      "latency": 0.535
+      "latency": 0.756
     },
     {
       "name": "HTSpor TV (1080p)",
       "group": "Turkiye",
       "url": "https://ciner.daioncdn.net/ht-spor/ht-spor.m3u8?app=web",
-      "latency": 0.414
+      "latency": 0.606
     },
     {
       "name": "Haber Global (720p) [Not 24/7]",
       "group": "Turkiye",
       "url": "https://tv.ensonhaber.com/haberglobal/haberglobal.m3u8",
-      "latency": 0.152
+      "latency": 0.261
     },
     {
       "name": "Haber61 TV (720p) [Not 24/7]",
       "group": "Turkiye",
       "url": "https://cdn-haber61tv.yayin.com.tr/haber61tv/smil:haber61tv.smil/index.m3u8",
-      "latency": 0.337
+      "latency": 0.641
     },
     {
       "name": "Habertürk",
       "group": "Turkiye",
       "url": "https://tv.ensonhaber.com/haberturk/haberturk.m3u8",
-      "latency": 0.513
+      "latency": 0.527
     },
     {
       "name": "Habertürk",
       "group": "Turkiye",
       "url": "https://tv.ensonhaber.com/haberturk/haberturk.m3u8",
-      "latency": 0.498
+      "latency": 0.335
     },
     {
       "name": "Halk TV SD (1080p)",
       "group": "Turkiye",
       "url": "https://halktv-live.daioncdn.net/halktv/halktv.m3u8",
-      "latency": 0.612
+      "latency": 0.851
     },
     {
       "name": "Icel TV (720p) [Not 24/7]",
       "group": "Turkiye",
       "url": "https://edge1.socialsmart.tv/iceltv/bant1/playlist.m3u8",
-      "latency": 0.547
+      "latency": 0.769
     },
     {
       "name": "Ilke TV (1080p)",
       "group": "Turkiye",
       "url": "https://stream.ilketv.com.tr/hls/ilkecanli.m3u8",
-      "latency": 0.357
+      "latency": 0.648
     },
     {
       "name": "Kanal 24",
       "group": "Turkiye",
-      "url": "https://turkmedya-live.ercdn.net/tv24/tv24.m3u8",
-      "latency": 0.507
+      "url": "https://tv.ensonhaber.com/tv24/tv24.m3u8",
+      "latency": 0.272
     },
     {
       "name": "Kanal 24",
       "group": "Turkiye",
-      "url": "https://turkmedya-live.ercdn.net/tv24/tv24.m3u8",
-      "latency": 0.503
+      "url": "https://tv.ensonhaber.com/tv24/tv24.m3u8",
+      "latency": 0.195
     },
     {
       "name": "Kanal 3 (1080p) [Not 24/7]",
       "group": "Turkiye",
       "url": "https://live.artidijitalmedya.com/artidijital_kanal3/kanal3/playlist.m3u8",
-      "latency": 0.137
+      "latency": 0.184
     },
     {
       "name": "Kanal 7",
       "group": "Turkiye",
-      "url": "https://kanal7-live.daioncdn.net/kanal7/kanal7.m3u8",
-      "latency": 0.525
+      "url": "https://livetv.radyotvonline.net/kanal7live/kanal7avr/playlist.m3u8",
+      "latency": 0.615
     },
     {
       "name": "Kanal D",
       "group": "Turkiye",
-      "url": "https://live.duhnet.tv/S2/HLS_LIVE/kanalddainp/track_4_1250/playlist.m3u8",
-      "latency": 0.617
+      "url": "https://demiroren.daioncdn.net/kanald/kanald_1080p.m3u8?app=kanald_web",
+      "latency": 0.848
     },
     {
       "name": "Minika GO",
       "group": "Turkiye",
       "url": "http://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/minikago/minikago.m3u8",
-      "latency": 0.465
+      "latency": 0.719
     },
     {
       "name": "Minika Çocuk",
       "group": "Turkiye",
       "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/minikago_cocuk/minikago_cocuk.m3u8",
-      "latency": 0.859
+      "latency": 1.176
     },
     {
       "name": "NTV",
       "group": "Turkiye",
-      "url": "http://dogusdyg-ntv.lg.mncdn.com/live/dogusdyg_ntv/master.m3u8?st=pKQWDHlOIQzJgWGlXlWKMw&e=1794259421",
-      "latency": 0.539
+      "url": "http://dogusdyg-ntv.lg.mncdn.com/live/dogusdyg_ntv/master.m3u8?st=ctcwRwoWur6YQRu9-aM6vg&e=1794280075",
+      "latency": 0.694
     },
     {
       "name": "National Geographic Türkiye",
       "group": "Turkiye",
       "url": "http://stream.mcquack.net/116/index.m3u8",
-      "latency": 0.309
+      "latency": 0.437
     },
     {
       "name": "National Geographic Türkiye",
       "group": "Turkiye",
       "url": "http://stream.mcquack.net/116/index.m3u8",
-      "latency": 0.14
+      "latency": 0.182
     },
     {
       "name": "Show TV",
       "group": "Turkiye",
-      "url": "https://ciner.daioncdn.net/showtv/showtv_1080p.m3u8?app=showtv_web",
-      "latency": 0.628
+      "url": "https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/showtv/showtv_720p.m3u8",
+      "latency": 1.067
     },
     {
       "name": "Star TV",
       "group": "Turkiye",
       "url": "https://dogus.daioncdn.net/startv/startv.m3u8?app=a20ac41e-bdc3-4aa1-934d-26b484480ac9",
-      "latency": 0.627
+      "latency": 0.833
     },
     {
       "name": "TLC Türkiye",
       "group": "Turkiye",
       "url": "https://dogus-blackout.daioncdn.net/tlctv_geoblock.smil/playlist.m3u8",
-      "latency": 1.035
+      "latency": 1.478
     },
     {
       "name": "TRT 1",
       "group": "Turkiye",
-      "url": "https://trt.daioncdn.net/trt-1/master.m3u8?app=web",
-      "latency": 0.647
+      "url": "https://tv-trt1.medya.trt.com.tr/master_720.m3u8",
+      "latency": 0.607
     },
     {
       "name": "TRT 2",
       "group": "Turkiye",
-      "url": "https://tv-trt2.medya.trt.com.tr/master.m3u8",
-      "latency": 0.5
+      "url": "https://tv-trt2.medya.trt.com.tr/master_720.m3u8",
+      "latency": 0.323
     },
     {
       "name": "TRT Haber",
       "group": "Turkiye",
       "url": "https://tv.ensonhaber.com/trthaber/trthaber.m3u8",
-      "latency": 0.489
+      "latency": 0.288
     },
     {
       "name": "TRT Spor",
       "group": "Turkiye",
-      "url": "https://trt.daioncdn.net/trtspor/master.m3u8?app=web&platform=trtspor",
-      "latency": 0.66
+      "url": "https://trt.daioncdn.net/trtspor-yildiz/master.m3u8?app=web&platform=trtspor",
+      "latency": 0.887
     },
     {
       "name": "TRT World",
       "group": "Turkiye",
-      "url": "https://tv-trtworld.medya.trt.com.tr/master.m3u8",
-      "latency": 0.515
+      "url": "https://mumbai-edge.smartplaytv.in/TRTWorld/index.m3u8",
+      "latency": 0.959
     },
     {
       "name": "TRT Çocuk",
       "group": "Turkiye",
       "url": "https://tv-trtcocuk.medya.trt.com.tr/master_720.m3u8",
-      "latency": 0.134
+      "latency": 0.289
     },
     {
       "name": "TRT Çocuk",
       "group": "Turkiye",
       "url": "https://tv-trtcocuk.medya.trt.com.tr/master.m3u8",
-      "latency": 0.005
+      "latency": 0.118
     },
     {
       "name": "TV8",
       "group": "Turkiye",
       "url": "https://tv8.daioncdn.net/tv8/tv8.m3u8?app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=3",
-      "latency": 0.665
+      "latency": 1.015
     },
     {
       "name": "TV8.5",
       "group": "Turkiye",
       "url": "https://tv8.daioncdn.net/tv8bucuk/tv8bucuk.m3u8?app=tv8bucuk_web",
-      "latency": 0.636
+      "latency": 0.789
     },
     {
       "name": "beIN SPORTS Haber",
       "group": "Turkiye",
       "url": "https://lgmtk6.top/beinsports1fhd/mono.m3u8",
-      "latency": 0.509
+      "latency": 0.766
     }
   ]
 }
